@@ -1,0 +1,39 @@
+//tag::vardef[]
+:gh-repo-owner: jmini
+:gh-repo-name: asciidoctorj-experiments
+:project-name: AsciidoctorJ Experiments
+:branch: master
+:twitter-handle: j2r2b
+:license: http://www.apache.org/licenses/LICENSE-2.0
+
+:repository: {gh-repo-owner}/{gh-repo-name}
+:homepage: https://{gh-repo-owner}.github.io/{gh-repo-name}
+:issues: https://github.com/{repository}/issues
+:setup: https://raw.githubusercontent.com/{repository}/{branch}/{oomph-file}
+:src-folder-url: https://github.com/{repository}/tree/{branch}/{src-folder-name}
+//end::vardef[]
+
+//tag::header[]
+= {project-name}
+Experiments with AsciidoctorJ.
+//end::header[]
+
+//tag::description[]
+== Description
+This repository contains some experiments I do with AsciidoctorJ.
+//end::description[]
+Read more on the link:{homepage}[project home page].
+
+//tag::contact-section[]
+== Get in touch
+
+Use the link:{issues}[{project-name} issue tracker] on GitHub.
+
+You can also contact me on Twitter: link:https://twitter.com/{twitter-handle}[@{twitter-handle}]
+//end::contact-section[]
+
+//tag::license-section[]
+== License
+
+link:{license}[Apache 2.0 License]
+//end::license-section[]
