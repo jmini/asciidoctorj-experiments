@@ -16,8 +16,24 @@ include::{github-readme}[tags=header]
 
 TIP: Do you want to improve this page? Please gh:edit[link-text='edit it on GitHub'].
 
-== Description
 include::{github-readme}[tags=description]
+
+=== ast-json
+
+This is an attempt to create a JSON output of the AST of the document.
+(see link:http://discuss.asciidoctor.org/Asciidoctor-AST-output-td4670.html[this discussion] on the mailing list)
+
+The main class is gh:view[path='ast-json/src/main/java/ast/json/AstJsonConverter.java', link-text='AstJsonConverter'].
+It can be registered and used like this:
+[source,java,indent=0]
+----
+include::../ast-json/src/main/java/ast/json/Main.java[tags='adoc-convert']
+----
+
+I have tried to run it on several examples provided in this folder
+gh:view[path='ast-json/examples', link-text='examples'].
+
+
 
 include::{github-readme}[tags=contact-section]
 

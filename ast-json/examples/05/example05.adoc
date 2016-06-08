@@ -1,0 +1,13 @@
+= Getting Started with Java
+Author Name <author@example.org>
+
+== Hello World example
+
+Copy the *HelloWorld.java* file.
+
+TIP: The application prints _Hello World!_ to the console.
+
+* Compile this source to a class file using `javac`.
+* Run the compiled class file using `java`.
+
+If you need help with the Java syntax check the link:http://docs.oracle.com/javase/8/docs/[Java 8 Javadoc].

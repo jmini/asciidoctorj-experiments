@@ -21,6 +21,9 @@ Experiments with AsciidoctorJ.
 //tag::description[]
 == Description
 This repository contains some experiments I do with AsciidoctorJ.
+
+* ast-json
+
 //end::description[]
 Read more on the link:{homepage}[project home page].
 
