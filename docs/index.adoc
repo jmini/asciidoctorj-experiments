@@ -31,7 +31,7 @@ include::../ast-json/src/main/java/ast/json/Main.java[tags='adoc-convert']
 ----
 
 I have tried to run it on several examples provided in this folder
-gh:view[path='ast-json/examples', link-text='examples'].
+gh:viewdir[path='ast-json/examples', link-text='examples'].
 
 
 
