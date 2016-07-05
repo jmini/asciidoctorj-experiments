@@ -43,91 +43,91 @@ public class AstJsonConverter extends AbstractConverter<JSONObject> {
 
   private JSONObject convertToJSONObject(ContentNode node) {
     JSONObject obj = new JSONObject();
-    obj.put("Attributes", mapToJSONObject(node.getAttributes()));
-    obj.put("Context", node.getContext());
-    obj.put("Id", node.getId());
-    obj.put("NodeName", node.getNodeName());
-    obj.put("Reftext", node.getReftext());
-    obj.put("Role", node.getRole());
-    obj.put("Roles", mapToJSONArray(node.getRoles()));
+    obj.put("attributes", mapToJSONObject(node.getAttributes()));
+    obj.put("context", node.getContext());
+    obj.put("id", node.getId());
+    obj.put("nodeName", node.getNodeName());
+    obj.put("reftext", node.getReftext());
+    obj.put("role", node.getRole());
+    obj.put("roles", mapToJSONArray(node.getRoles()));
     //node.getDocument() is not added to the JSON structure.
     //node.getParent() is not added to the JSON structure.
 
     if (node instanceof Cell) {
       Cell cell = (Cell) node;
-      obj.put("Colspan", cell.getColspan());
-      obj.put("Content", cell.getContent());
-      obj.put("HorizontalAlignment", cell.getHorizontalAlignment());
-      obj.put("InnerDocument", cell.getInnerDocument());
-      obj.put("Rowspan", cell.getRowspan());
-      obj.put("Style", cell.getStyle());
-      obj.put("Text", cell.getText());
-      obj.put("VerticalAlignment", cell.getVerticalAlignment());
+      obj.put("colspan", cell.getColspan());
+      obj.put("content", cell.getContent());
+      obj.put("horizontalAlignment", cell.getHorizontalAlignment());
+      obj.put("innerDocument", cell.getInnerDocument());
+      obj.put("rowspan", cell.getRowspan());
+      obj.put("style", cell.getStyle());
+      obj.put("text", cell.getText());
+      obj.put("verticalAlignment", cell.getVerticalAlignment());
       //cell.getColumn() is not added to the JSON structure.
     }
     else if (node instanceof Column) {
       Column column = (Column) node;
-      obj.put("ColumnNumber", column.getColumnNumber());
-      obj.put("HorizontalAlignment", column.getHorizontalAlignment());
-      obj.put("Style", column.getStyle());
-      obj.put("VerticalAlignment", column.getVerticalAlignment());
-      obj.put("Width", column.getWidth());
+      obj.put("columnNumber", column.getColumnNumber());
+      obj.put("horizontalAlignment", column.getHorizontalAlignment());
+      obj.put("style", column.getStyle());
+      obj.put("verticalAlignment", column.getVerticalAlignment());
+      obj.put("width", column.getWidth());
       //column.getTable() is not added to the JSON structure.
     }
     else if (node instanceof PhraseNode) {
       PhraseNode phraseNode = (PhraseNode) node;
-      obj.put("Type", phraseNode.getType());
-      obj.put("Text", phraseNode.getText());
-      obj.put("Target", phraseNode.getTarget());
+      obj.put("type", phraseNode.getType());
+      obj.put("text", phraseNode.getText());
+      obj.put("target", phraseNode.getTarget());
     }
     else if (node instanceof StructuralNode) {
       StructuralNode structuralNode = (StructuralNode) node;
-      obj.put("Level", structuralNode.getLevel());
-      obj.put("SourceLocation", structuralNode.getSourceLocation());
-      obj.put("Style", structuralNode.getStyle());
-      obj.put("Title", structuralNode.getTitle());
-      obj.put("Blocks", convertToJSONArray(structuralNode.getBlocks()));
-      obj.put("Content", structuralNode.getContent());
+      obj.put("level", structuralNode.getLevel());
+      obj.put("sourceLocation", structuralNode.getSourceLocation());
+      obj.put("style", structuralNode.getStyle());
+      obj.put("title", structuralNode.getTitle());
+      obj.put("blocks", convertToJSONArray(structuralNode.getBlocks()));
+      obj.put("content", structuralNode.getContent());
 
       if (structuralNode instanceof Block) {
         Block block = (Block) structuralNode;
-        obj.put("Lines", mapToJSONArray(block.getLines()));
-        obj.put("Source", block.getSource());
+        obj.put("lines", mapToJSONArray(block.getLines()));
+        obj.put("source", block.getSource());
       }
       else if (structuralNode instanceof DescriptionList) {
         DescriptionList descriptionList = (DescriptionList) structuralNode;
-        obj.put("Items", convertDescriptionListItemsToJSONArray(descriptionList));
+        obj.put("items", convertDescriptionListItemsToJSONArray(descriptionList));
       }
       else if (structuralNode instanceof Document) {
         Document document = (Document) structuralNode;
-        obj.put("Doctitle", document.getDoctitle());
-        obj.put("Options", mapToJSONObject(document.getOptions()));
-        obj.put("StructuredDoctitle", mapTitleToJSONObject(document.getStructuredDoctitle()));
+        obj.put("doctitle", document.getDoctitle());
+        obj.put("options", mapToJSONObject(document.getOptions()));
+        obj.put("structuredDoctitle", mapTitleToJSONObject(document.getStructuredDoctitle()));
       }
       else if (structuralNode instanceof org.asciidoctor.ast.List) {
         org.asciidoctor.ast.List list = (org.asciidoctor.ast.List) structuralNode;
-        obj.put("Items", convertToJSONArray(list.getItems()));
+        obj.put("items", convertToJSONArray(list.getItems()));
       }
       else if (structuralNode instanceof ListItem) {
         ListItem listItem = (ListItem) structuralNode;
-        obj.put("Marker", listItem.getMarker());
-        obj.put("Text", listItem.getText());
+        obj.put("marker", listItem.getMarker());
+        obj.put("text", listItem.getText());
       }
       else if (structuralNode instanceof Section) {
         Section section = (Section) structuralNode;
-        obj.put("Index", section.getIndex());
-        obj.put("Number", section.getNumber());
-        obj.put("SectionName", section.getSectionName());
-        obj.put("Special", section.isSpecial());
+        obj.put("index", section.getIndex());
+        obj.put("number", section.getNumber());
+        obj.put("sectionName", section.getSectionName());
+        obj.put("special", section.isSpecial());
       }
       else if (structuralNode instanceof Table) {
         Table table = (Table) structuralNode;
-        obj.put("Frame", table.getFrame());
-        obj.put("Grid", table.getGrid());
-        obj.put("Body", convertRowsToJSONArray(table.getBody()));
-        obj.put("Columns", convertToJSONArray(table.getColumns()));
-        obj.put("Footer", convertRowsToJSONArray(table.getFooter()));
-        obj.put("Header", convertRowsToJSONArray(table.getHeader()));
+        obj.put("frame", table.getFrame());
+        obj.put("grid", table.getGrid());
+        obj.put("body", convertRowsToJSONArray(table.getBody()));
+        obj.put("columns", convertToJSONArray(table.getColumns()));
+        obj.put("footer", convertRowsToJSONArray(table.getFooter()));
+        obj.put("header", convertRowsToJSONArray(table.getHeader()));
       }
     }
     return obj;
@@ -145,9 +145,9 @@ public class AstJsonConverter extends AbstractConverter<JSONObject> {
       return null;
     }
     JSONObject obj = new JSONObject();
-    obj.put("Combined", title.getCombined());
-    obj.put("Main", title.getMain());
-    obj.put("Subtitle", title.getSubtitle());
+    obj.put("combined", title.getCombined());
+    obj.put("main", title.getMain());
+    obj.put("subtitle", title.getSubtitle());
     return obj;
   }
 
@@ -169,8 +169,8 @@ public class AstJsonConverter extends AbstractConverter<JSONObject> {
 
   private Collection<?> convertDescriptionListEntryToJSONObject(DescriptionListEntry entry) {
     JSONObject obj = new JSONObject();
-    obj.put("Description", entry.getDescription());
-    obj.put("Terms", convertToJSONArray(entry.getTerms()));
+    obj.put("description", entry.getDescription());
+    obj.put("terms", convertToJSONArray(entry.getTerms()));
     return null;
   }
 

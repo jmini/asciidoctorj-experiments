@@ -1,54 +1,55 @@
 {
-    "Context": "document",
-    "Options": {
+    "nodeName": "document",
+    "level": 0,
+    "blocks": [
+        {
+            "nodeName": "paragraph",
+            "level": 0,
+            "roles": [],
+            "context": "paragraph",
+            "attributes": {},
+            "source": "Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin.",
+            "lines": ["Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin."],
+            "content": "Lorem ipsum dolor sit amet, {\"nodeName\":\"inline_quoted\",\"roles\":[],\"context\":\"quoted\",\"attributes\":{},\"text\":\"consectetur\",\"type\":\"strong\"} adipiscing elit. Donec {\"nodeName\":\"inline_quoted\",\"roles\":[],\"context\":\"quoted\",\"attributes\":{},\"text\":\"aliquam\",\"type\":\"emphasis\"} tempus quam et sollicitudin."
+        },
+        {
+            "nodeName": "paragraph",
+            "level": 0,
+            "roles": [],
+            "context": "paragraph",
+            "attributes": {},
+            "source": "Ut commodo _lorem_ nec lacinia finibus.\nEtiam *eu* ornare lectus.\nIn molestie `ut` augue a ultricies.",
+            "lines": [
+                "Ut commodo _lorem_ nec lacinia finibus.",
+                "Etiam *eu* ornare lectus.",
+                "In molestie `ut` augue a ultricies."
+            ],
+            "content": "Ut commodo {\"nodeName\":\"inline_quoted\",\"roles\":[],\"context\":\"quoted\",\"attributes\":{},\"text\":\"lorem\",\"type\":\"emphasis\"} nec lacinia finibus.\nEtiam {\"nodeName\":\"inline_quoted\",\"roles\":[],\"context\":\"quoted\",\"attributes\":{},\"text\":\"eu\",\"type\":\"strong\"} ornare lectus.\nIn molestie {\"nodeName\":\"inline_quoted\",\"roles\":[],\"context\":\"quoted\",\"attributes\":{},\"text\":\"ut\",\"type\":\"monospaced\"} augue a ultricies."
+        }
+    ],
+    "roles": [],
+    "context": "document",
+    "options": {
         "header_footer": false,
         "backend": "ast-json",
         "attributes": {}
     },
-    "Blocks": [
-        {
-            "Context": "paragraph",
-            "NodeName": "paragraph",
-            "Content": "Lorem ipsum dolor sit amet, {\"Context\":\"quoted\",\"Type\":\"strong\",\"NodeName\":\"inline_quoted\",\"Attributes\":{},\"Roles\":[],\"Text\":\"consectetur\"} adipiscing elit. Donec {\"Context\":\"quoted\",\"Type\":\"emphasis\",\"NodeName\":\"inline_quoted\",\"Attributes\":{},\"Roles\":[],\"Text\":\"aliquam\"} tempus quam et sollicitudin.",
-            "Attributes": {},
-            "Roles": [],
-            "Level": 0,
-            "Source": "Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin.",
-            "Lines": ["Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin."]
-        },
-        {
-            "Context": "paragraph",
-            "NodeName": "paragraph",
-            "Content": "Ut commodo {\"Context\":\"quoted\",\"Type\":\"emphasis\",\"NodeName\":\"inline_quoted\",\"Attributes\":{},\"Roles\":[],\"Text\":\"lorem\"} nec lacinia finibus.\nEtiam {\"Context\":\"quoted\",\"Type\":\"strong\",\"NodeName\":\"inline_quoted\",\"Attributes\":{},\"Roles\":[],\"Text\":\"eu\"} ornare lectus.\nIn molestie {\"Context\":\"quoted\",\"Type\":\"monospaced\",\"NodeName\":\"inline_quoted\",\"Attributes\":{},\"Roles\":[],\"Text\":\"ut\"} augue a ultricies.",
-            "Attributes": {},
-            "Roles": [],
-            "Level": 0,
-            "Source": "Ut commodo _lorem_ nec lacinia finibus.\nEtiam *eu* ornare lectus.\nIn molestie `ut` augue a ultricies.",
-            "Lines": [
-                "Ut commodo _lorem_ nec lacinia finibus.",
-                "Etiam *eu* ornare lectus.",
-                "In molestie `ut` augue a ultricies."
-            ]
-        }
-    ],
-    "NodeName": "document",
-    "Content": "{\"Context\":\"paragraph\",\"NodeName\":\"paragraph\",\"Content\":\"Lorem ipsum dolor sit amet, {\\\"Context\\\":\\\"quoted\\\",\\\"Type\\\":\\\"strong\\\",\\\"NodeName\\\":\\\"inline_quoted\\\",\\\"Attributes\\\":{},\\\"Roles\\\":[],\\\"Text\\\":\\\"consectetur\\\"} adipiscing elit. Donec {\\\"Context\\\":\\\"quoted\\\",\\\"Type\\\":\\\"emphasis\\\",\\\"NodeName\\\":\\\"inline_quoted\\\",\\\"Attributes\\\":{},\\\"Roles\\\":[],\\\"Text\\\":\\\"aliquam\\\"} tempus quam et sollicitudin.\",\"Attributes\":{},\"Roles\":[],\"Level\":0,\"Source\":\"Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin.\",\"Lines\":[\"Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin.\"]}\n{\"Context\":\"paragraph\",\"NodeName\":\"paragraph\",\"Content\":\"Ut commodo {\\\"Context\\\":\\\"quoted\\\",\\\"Type\\\":\\\"emphasis\\\",\\\"NodeName\\\":\\\"inline_quoted\\\",\\\"Attributes\\\":{},\\\"Roles\\\":[],\\\"Text\\\":\\\"lorem\\\"} nec lacinia finibus.\\nEtiam {\\\"Context\\\":\\\"quoted\\\",\\\"Type\\\":\\\"strong\\\",\\\"NodeName\\\":\\\"inline_quoted\\\",\\\"Attributes\\\":{},\\\"Roles\\\":[],\\\"Text\\\":\\\"eu\\\"} ornare lectus.\\nIn molestie {\\\"Context\\\":\\\"quoted\\\",\\\"Type\\\":\\\"monospaced\\\",\\\"NodeName\\\":\\\"inline_quoted\\\",\\\"Attributes\\\":{},\\\"Roles\\\":[],\\\"Text\\\":\\\"ut\\\"} augue a ultricies.\",\"Attributes\":{},\"Roles\":[],\"Level\":0,\"Source\":\"Ut commodo _lorem_ nec lacinia finibus.\\nEtiam *eu* ornare lectus.\\nIn molestie `ut` augue a ultricies.\",\"Lines\":[\"Ut commodo _lorem_ nec lacinia finibus.\",\"Etiam *eu* ornare lectus.\",\"In molestie `ut` augue a ultricies.\"]}",
-    "Attributes": {
-        "localtime": "19:53:23 CEST",
+    "attributes": {
+        "localtime": "17:33:23 CEST",
         "tip-caption": "Tip",
         "filetype": "html",
         "appendix-caption": "Appendix",
         "asciidoctor-version": "1.5.4",
-        "doctime": "19:53:23 CEST",
+        "doctime": "17:33:23 CEST",
         "safe-mode-secure": "",
         "toc-title": "Table of Contents",
-        "docdate": "2016-06-07",
+        "docdate": "2016-07-04",
         "manname-title": "NAME",
         "backend-ast-json": "",
         "basebackend-html": "",
         "stylesheet": "",
         "iconsdir": "./images/icons",
-        "localdate": "2016-06-07",
+        "localdate": "2016-07-04",
         "doctype-article": "",
         "warning-caption": "Warning",
         "figure-caption": "Figure",
@@ -57,10 +58,10 @@
         "basebackend-html-doctype-article": "",
         "docdir": "",
         "backend-ast-json-doctype-article": "",
-        "localdatetime": "2016-06-07 19:53:23 CEST",
+        "localdatetime": "2016-07-04 17:33:23 CEST",
         "toc-placement": "auto",
         "webfonts": "",
-        "docdatetime": "2016-06-07 19:53:23 CEST",
+        "docdatetime": "2016-07-04 17:33:23 CEST",
         "important-caption": "Important",
         "note-caption": "Note",
         "stylesdir": ".",
@@ -87,6 +88,5 @@
         "sectids": "",
         "attribute-undefined": "drop-line"
     },
-    "Roles": [],
-    "Level": 0
+    "content": "{\"nodeName\":\"paragraph\",\"level\":0,\"roles\":[],\"context\":\"paragraph\",\"attributes\":{},\"source\":\"Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin.\",\"lines\":[\"Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin.\"],\"content\":\"Lorem ipsum dolor sit amet, {\\\"nodeName\\\":\\\"inline_quoted\\\",\\\"roles\\\":[],\\\"context\\\":\\\"quoted\\\",\\\"attributes\\\":{},\\\"text\\\":\\\"consectetur\\\",\\\"type\\\":\\\"strong\\\"} adipiscing elit. Donec {\\\"nodeName\\\":\\\"inline_quoted\\\",\\\"roles\\\":[],\\\"context\\\":\\\"quoted\\\",\\\"attributes\\\":{},\\\"text\\\":\\\"aliquam\\\",\\\"type\\\":\\\"emphasis\\\"} tempus quam et sollicitudin.\"}\n{\"nodeName\":\"paragraph\",\"level\":0,\"roles\":[],\"context\":\"paragraph\",\"attributes\":{},\"source\":\"Ut commodo _lorem_ nec lacinia finibus.\\nEtiam *eu* ornare lectus.\\nIn molestie `ut` augue a ultricies.\",\"lines\":[\"Ut commodo _lorem_ nec lacinia finibus.\",\"Etiam *eu* ornare lectus.\",\"In molestie `ut` augue a ultricies.\"],\"content\":\"Ut commodo {\\\"nodeName\\\":\\\"inline_quoted\\\",\\\"roles\\\":[],\\\"context\\\":\\\"quoted\\\",\\\"attributes\\\":{},\\\"text\\\":\\\"lorem\\\",\\\"type\\\":\\\"emphasis\\\"} nec lacinia finibus.\\nEtiam {\\\"nodeName\\\":\\\"inline_quoted\\\",\\\"roles\\\":[],\\\"context\\\":\\\"quoted\\\",\\\"attributes\\\":{},\\\"text\\\":\\\"eu\\\",\\\"type\\\":\\\"strong\\\"} ornare lectus.\\nIn molestie {\\\"nodeName\\\":\\\"inline_quoted\\\",\\\"roles\\\":[],\\\"context\\\":\\\"quoted\\\",\\\"attributes\\\":{},\\\"text\\\":\\\"ut\\\",\\\"type\\\":\\\"monospaced\\\"} augue a ultricies.\"}"
 }

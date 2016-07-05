@@ -1,79 +1,83 @@
 {
-    "Context": "document",
-    "Options": {
+    "nodeName": "document",
+    "level": 0,
+    "blocks": [
+        {
+            "nodeName": "section",
+            "level": 1,
+            "blocks": [{
+                "nodeName": "paragraph",
+                "level": 1,
+                "roles": [],
+                "context": "paragraph",
+                "attributes": {},
+                "source": "Lorem ipsum dolor.",
+                "lines": ["Lorem ipsum dolor."],
+                "content": "Lorem ipsum dolor."
+            }],
+            "roles": [],
+            "index": 0,
+            "title": "This is the first section",
+            "content": "{\"nodeName\":\"paragraph\",\"level\":1,\"roles\":[],\"context\":\"paragraph\",\"attributes\":{},\"source\":\"Lorem ipsum dolor.\",\"lines\":[\"Lorem ipsum dolor.\"],\"content\":\"Lorem ipsum dolor.\"}",
+            "sectionName": "sect1",
+            "special": false,
+            "number": 1,
+            "context": "section",
+            "attributes": {},
+            "id": "_this_is_the_first_section"
+        },
+        {
+            "nodeName": "section",
+            "level": 1,
+            "blocks": [{
+                "nodeName": "paragraph",
+                "level": 1,
+                "roles": [],
+                "context": "paragraph",
+                "attributes": {},
+                "source": "Ut commodo lorem nec lacinia finibus.",
+                "lines": ["Ut commodo lorem nec lacinia finibus."],
+                "content": "Ut commodo lorem nec lacinia finibus."
+            }],
+            "roles": [],
+            "index": 1,
+            "title": "This is the second section",
+            "content": "{\"nodeName\":\"paragraph\",\"level\":1,\"roles\":[],\"context\":\"paragraph\",\"attributes\":{},\"source\":\"Ut commodo lorem nec lacinia finibus.\",\"lines\":[\"Ut commodo lorem nec lacinia finibus.\"],\"content\":\"Ut commodo lorem nec lacinia finibus.\"}",
+            "sectionName": "sect1",
+            "special": false,
+            "number": 1,
+            "context": "section",
+            "attributes": {},
+            "id": "_this_is_the_second_section"
+        }
+    ],
+    "roles": [],
+    "structuredDoctitle": {
+        "main": "This is the first section",
+        "combined": "This is the first section"
+    },
+    "context": "document",
+    "options": {
         "header_footer": false,
         "backend": "ast-json",
         "attributes": {}
     },
-    "Blocks": [
-        {
-            "Context": "section",
-            "Blocks": [{
-                "Context": "paragraph",
-                "NodeName": "paragraph",
-                "Content": "Lorem ipsum dolor.",
-                "Attributes": {},
-                "Roles": [],
-                "Level": 1,
-                "Source": "Lorem ipsum dolor.",
-                "Lines": ["Lorem ipsum dolor."]
-            }],
-            "NodeName": "section",
-            "Attributes": {},
-            "Title": "This is the first section",
-            "Roles": [],
-            "Index": 0,
-            "Number": 1,
-            "Content": "{\"Context\":\"paragraph\",\"NodeName\":\"paragraph\",\"Content\":\"Lorem ipsum dolor.\",\"Attributes\":{},\"Roles\":[],\"Level\":1,\"Source\":\"Lorem ipsum dolor.\",\"Lines\":[\"Lorem ipsum dolor.\"]}",
-            "Special": false,
-            "Level": 1,
-            "SectionName": "sect1",
-            "Id": "_this_is_the_first_section"
-        },
-        {
-            "Context": "section",
-            "Blocks": [{
-                "Context": "paragraph",
-                "NodeName": "paragraph",
-                "Content": "Ut commodo lorem nec lacinia finibus.",
-                "Attributes": {},
-                "Roles": [],
-                "Level": 1,
-                "Source": "Ut commodo lorem nec lacinia finibus.",
-                "Lines": ["Ut commodo lorem nec lacinia finibus."]
-            }],
-            "NodeName": "section",
-            "Attributes": {},
-            "Title": "This is the second section",
-            "Roles": [],
-            "Index": 1,
-            "Number": 1,
-            "Content": "{\"Context\":\"paragraph\",\"NodeName\":\"paragraph\",\"Content\":\"Ut commodo lorem nec lacinia finibus.\",\"Attributes\":{},\"Roles\":[],\"Level\":1,\"Source\":\"Ut commodo lorem nec lacinia finibus.\",\"Lines\":[\"Ut commodo lorem nec lacinia finibus.\"]}",
-            "Special": false,
-            "Level": 1,
-            "SectionName": "sect1",
-            "Id": "_this_is_the_second_section"
-        }
-    ],
-    "NodeName": "document",
-    "Content": "{\"Context\":\"section\",\"Blocks\":[{\"Context\":\"paragraph\",\"NodeName\":\"paragraph\",\"Content\":\"Lorem ipsum dolor.\",\"Attributes\":{},\"Roles\":[],\"Level\":1,\"Source\":\"Lorem ipsum dolor.\",\"Lines\":[\"Lorem ipsum dolor.\"]}],\"NodeName\":\"section\",\"Attributes\":{},\"Title\":\"This is the first section\",\"Roles\":[],\"Index\":0,\"Number\":1,\"Content\":\"{\\\"Context\\\":\\\"paragraph\\\",\\\"NodeName\\\":\\\"paragraph\\\",\\\"Content\\\":\\\"Lorem ipsum dolor.\\\",\\\"Attributes\\\":{},\\\"Roles\\\":[],\\\"Level\\\":1,\\\"Source\\\":\\\"Lorem ipsum dolor.\\\",\\\"Lines\\\":[\\\"Lorem ipsum dolor.\\\"]}\",\"Special\":false,\"Level\":1,\"SectionName\":\"sect1\",\"Id\":\"_this_is_the_first_section\"}\n{\"Context\":\"section\",\"Blocks\":[{\"Context\":\"paragraph\",\"NodeName\":\"paragraph\",\"Content\":\"Ut commodo lorem nec lacinia finibus.\",\"Attributes\":{},\"Roles\":[],\"Level\":1,\"Source\":\"Ut commodo lorem nec lacinia finibus.\",\"Lines\":[\"Ut commodo lorem nec lacinia finibus.\"]}],\"NodeName\":\"section\",\"Attributes\":{},\"Title\":\"This is the second section\",\"Roles\":[],\"Index\":1,\"Number\":1,\"Content\":\"{\\\"Context\\\":\\\"paragraph\\\",\\\"NodeName\\\":\\\"paragraph\\\",\\\"Content\\\":\\\"Ut commodo lorem nec lacinia finibus.\\\",\\\"Attributes\\\":{},\\\"Roles\\\":[],\\\"Level\\\":1,\\\"Source\\\":\\\"Ut commodo lorem nec lacinia finibus.\\\",\\\"Lines\\\":[\\\"Ut commodo lorem nec lacinia finibus.\\\"]}\",\"Special\":false,\"Level\":1,\"SectionName\":\"sect1\",\"Id\":\"_this_is_the_second_section\"}",
-    "Doctitle": "This is the first section",
-    "Attributes": {
-        "localtime": "19:53:21 CEST",
+    "attributes": {
+        "localtime": "17:29:42 CEST",
         "tip-caption": "Tip",
         "filetype": "html",
         "appendix-caption": "Appendix",
         "asciidoctor-version": "1.5.4",
-        "doctime": "19:53:21 CEST",
+        "doctime": "17:29:42 CEST",
         "safe-mode-secure": "",
         "toc-title": "Table of Contents",
-        "docdate": "2016-06-07",
+        "docdate": "2016-07-04",
         "manname-title": "NAME",
         "backend-ast-json": "",
         "basebackend-html": "",
         "stylesheet": "",
         "iconsdir": "./images/icons",
-        "localdate": "2016-06-07",
+        "localdate": "2016-07-04",
         "doctype-article": "",
         "warning-caption": "Warning",
         "figure-caption": "Figure",
@@ -82,10 +86,10 @@
         "basebackend-html-doctype-article": "",
         "docdir": "",
         "backend-ast-json-doctype-article": "",
-        "localdatetime": "2016-06-07 19:53:21 CEST",
+        "localdatetime": "2016-07-04 17:29:42 CEST",
         "toc-placement": "auto",
         "webfonts": "",
-        "docdatetime": "2016-06-07 19:53:21 CEST",
+        "docdatetime": "2016-07-04 17:29:42 CEST",
         "important-caption": "Important",
         "note-caption": "Note",
         "stylesdir": ".",
@@ -112,10 +116,6 @@
         "sectids": "",
         "attribute-undefined": "drop-line"
     },
-    "StructuredDoctitle": {
-        "Combined": "This is the first section",
-        "Main": "This is the first section"
-    },
-    "Roles": [],
-    "Level": 0
+    "doctitle": "This is the first section",
+    "content": "{\"nodeName\":\"section\",\"level\":1,\"blocks\":[{\"nodeName\":\"paragraph\",\"level\":1,\"roles\":[],\"context\":\"paragraph\",\"attributes\":{},\"source\":\"Lorem ipsum dolor.\",\"lines\":[\"Lorem ipsum dolor.\"],\"content\":\"Lorem ipsum dolor.\"}],\"roles\":[],\"index\":0,\"title\":\"This is the first section\",\"content\":\"{\\\"nodeName\\\":\\\"paragraph\\\",\\\"level\\\":1,\\\"roles\\\":[],\\\"context\\\":\\\"paragraph\\\",\\\"attributes\\\":{},\\\"source\\\":\\\"Lorem ipsum dolor.\\\",\\\"lines\\\":[\\\"Lorem ipsum dolor.\\\"],\\\"content\\\":\\\"Lorem ipsum dolor.\\\"}\",\"sectionName\":\"sect1\",\"special\":false,\"number\":1,\"context\":\"section\",\"attributes\":{},\"id\":\"_this_is_the_first_section\"}\n{\"nodeName\":\"section\",\"level\":1,\"blocks\":[{\"nodeName\":\"paragraph\",\"level\":1,\"roles\":[],\"context\":\"paragraph\",\"attributes\":{},\"source\":\"Ut commodo lorem nec lacinia finibus.\",\"lines\":[\"Ut commodo lorem nec lacinia finibus.\"],\"content\":\"Ut commodo lorem nec lacinia finibus.\"}],\"roles\":[],\"index\":1,\"title\":\"This is the second section\",\"content\":\"{\\\"nodeName\\\":\\\"paragraph\\\",\\\"level\\\":1,\\\"roles\\\":[],\\\"context\\\":\\\"paragraph\\\",\\\"attributes\\\":{},\\\"source\\\":\\\"Ut commodo lorem nec lacinia finibus.\\\",\\\"lines\\\":[\\\"Ut commodo lorem nec lacinia finibus.\\\"],\\\"content\\\":\\\"Ut commodo lorem nec lacinia finibus.\\\"}\",\"sectionName\":\"sect1\",\"special\":false,\"number\":1,\"context\":\"section\",\"attributes\":{},\"id\":\"_this_is_the_second_section\"}"
 }
