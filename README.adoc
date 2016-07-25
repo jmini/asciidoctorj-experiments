@@ -24,6 +24,7 @@ Experiments with AsciidoctorJ.
 This repository contains some experiments I do with AsciidoctorJ.
 
 * ast-json
+* html2adoc
 
 //end::description[]
 Read more on the link:{homepage}[project home page].

@@ -33,7 +33,10 @@ include::../ast-json/src/main/java/ast/json/Main.java[tags='adoc-convert']
 I have tried to run it on several examples provided in this folder
 gh:viewdir[path='ast-json/examples', link-text='examples'].
 
+=== html2adoc
 
+This is a converter from HTML to AsciiDoc.
+It is using JSoup to parse the HTML.
 
 include::{github-readme}[tags=contact-section]
 
