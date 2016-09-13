@@ -20,6 +20,9 @@ import html2adoc.convert.ParagraphConverter;
 import html2adoc.convert.StrongConverter;
 import html2adoc.convert.SubscriptConverter;
 import html2adoc.convert.SuperscriptConverter;
+import html2adoc.convert.TableTbodyConverter;
+import html2adoc.convert.TableTdConverter;
+import html2adoc.convert.TableTrConverter;
 import html2adoc.convert.TextNodeConverter;
 
 public class Html2Adoc {
@@ -34,6 +37,9 @@ public class Html2Adoc {
       new SuperscriptConverter(),
       new ListConverter(),
       new ListItemConverter(),
+      new TableTbodyConverter(),
+      new TableTrConverter(),
+      new TableTdConverter(),
       new TextNodeConverter(),
       new BrConverter());
 

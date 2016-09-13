@@ -14,6 +14,7 @@ import org.junit.runners.Suite.SuiteClasses;
     html2adoc.header.HeaderTest.class,
     html2adoc.list.ListTest.class,
     html2adoc.paragraph.ParagraphTest.class,
+    html2adoc.table.TableTest.class,
     html2adoc.unknown.UnknownTest.class
 })
 public class AllTests {
