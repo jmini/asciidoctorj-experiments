@@ -12,7 +12,10 @@ import org.junit.runners.Suite.SuiteClasses;
     html2adoc.format.SubscriptTest.class,
     html2adoc.format.SuperscriptTest.class,
     html2adoc.header.HeaderTest.class,
+    html2adoc.image.ImageTest.class,
+    html2adoc.link.LinkTest.class,
     html2adoc.list.ListTest.class,
+    html2adoc.listing.ListingTest.class,
     html2adoc.paragraph.ParagraphTest.class,
     html2adoc.table.TableTest.class,
     html2adoc.unknown.UnknownTest.class

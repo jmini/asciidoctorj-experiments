@@ -43,6 +43,14 @@ public class ParagraphTest {
   }
 
   @Test
+  public void testEmptyParagraph() throws Exception {
+    String html = "<p>&nbsp;</p>";
+    String result = Html2Adoc.convert(html);
+    String expected = "";
+    assertEquals(expected, result);
+  }
+
+  @Test
   public void testBrStart() throws Exception {
     String html = "<p><br>Lorem Ipsum</p>";
     String result = Html2Adoc.convert(html);

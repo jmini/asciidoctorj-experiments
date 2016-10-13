@@ -22,6 +22,13 @@ public class HeaderConverter extends AbstractConverter {
   @Override
   public IContext convert(IContext context, Node node, StringBuilder sb) {
     Element element = (Element) node;
+    Element aNameElement = findANameElement(element);
+    if (aNameElement != null) {
+      sb.append("[[");
+      sb.append(aNameElement.attr("name"));
+      sb.append("]]");
+      sb.append("\n");
+    }
     int count = Integer.valueOf(element.tagName().substring(1));
     sb.append(Strings.repeat("=", count));
     sb.append(" ");
@@ -29,5 +36,18 @@ public class HeaderConverter extends AbstractConverter {
     Html2Adoc.convert(newContext, sb, node);
     sb.append("\n\n");
     return context;
+  }
+
+  /**
+   * @param element
+   * @return
+   */
+  private Element findANameElement(Element element) {
+    for (Element e : element.children()) {
+      if ("a".equals(e.tagName()) && e.attr("name") != null) {
+        return e;
+      }
+    }
+    return null;
   }
 }

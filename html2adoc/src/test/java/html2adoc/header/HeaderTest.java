@@ -83,8 +83,6 @@ public class HeaderTest {
     String html = "<p>&nbsp;</p> <h1>Title</h1>";
     String result = Html2Adoc.convert(html);
     String expected = "" + //
-        " \n" + //
-        "\n" + //
         "= Title\n" + //
         "\n";
     assertEquals(expected, result);
@@ -126,6 +124,17 @@ public class HeaderTest {
     String result = Html2Adoc.convert(html);
     String expected = "" + //
         "== \"Lorem\"\n" + //
+        "\n";
+    assertEquals(expected, result);
+  }
+
+  @Test
+  public void testWithName() throws Exception {
+    String html = "<h2><!--nchpdeb--><a name=\"chap_7_4\">7.4.<!--nchpfin-->Title</a></h2>";
+    String result = Html2Adoc.convert(html);
+    String expected = "" + //
+        "[[chap_7_4]]\n" + //
+        "== 7.4. Title\n" + //
         "\n";
     assertEquals(expected, result);
   }

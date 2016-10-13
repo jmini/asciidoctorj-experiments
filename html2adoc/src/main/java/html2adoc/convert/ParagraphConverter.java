@@ -19,9 +19,13 @@ public class ParagraphConverter extends AbstractConverter {
 
   @Override
   public IContext convert(IContext context, Node node, StringBuilder sb) {
-    IContext newContext = ContextBuilder.build(context).withSpaceNeeded(false).create();
-    Html2Adoc.convert(newContext, sb, node);
-    sb.append("\n\n");
+    Element element = (Element) node;
+    String text = element.text();
+    if (element.children().size() != 0 || !text.matches("[" + (char) 160 + "\\s]+")) {
+      IContext newContext = ContextBuilder.build(context).withSpaceNeeded(false).create();
+      Html2Adoc.convert(newContext, sb, node);
+      sb.append("\n\n");
+    }
     return context;
   }
 

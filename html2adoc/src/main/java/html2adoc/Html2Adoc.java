@@ -13,8 +13,11 @@ import html2adoc.convert.BrConverter;
 import html2adoc.convert.EmphasisConverter;
 import html2adoc.convert.HeaderConverter;
 import html2adoc.convert.IConverter;
+import html2adoc.convert.ImageConverter;
+import html2adoc.convert.LinkConverter;
 import html2adoc.convert.ListConverter;
 import html2adoc.convert.ListItemConverter;
+import html2adoc.convert.ListingConverter;
 import html2adoc.convert.MonospaceConverter;
 import html2adoc.convert.ParagraphConverter;
 import html2adoc.convert.StrongConverter;
@@ -28,6 +31,7 @@ import html2adoc.convert.TextNodeConverter;
 public class Html2Adoc {
 
   static List<IConverter> CONVERTERS = Arrays.<IConverter> asList(
+      new ListingConverter(),
       new HeaderConverter(),
       new ParagraphConverter(),
       new EmphasisConverter(),
@@ -35,8 +39,10 @@ public class Html2Adoc {
       new StrongConverter(),
       new SubscriptConverter(),
       new SuperscriptConverter(),
+      new LinkConverter(),
       new ListConverter(),
       new ListItemConverter(),
+      new ImageConverter(),
       new TableTbodyConverter(),
       new TableTrConverter(),
       new TableTdConverter(),
