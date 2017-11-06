@@ -14,12 +14,12 @@ import com.google.common.io.Files;
 public class Main {
 
   public static void main(String[] args) throws IOException {
-//    convertAllExamples();
+    convertAllExamples();
 
-    convertExample(new File("./examples/01"));
+//    convertExample(new File("./examples/01"));
 //    convertExample(new File("./examples/02"));
 //    convertExample(new File("./examples/03"));
-    convertExample(new File("./examples/04"));
+//    convertExample(new File("./examples/04"));
 //    convertExample(new File("./examples/05"));
   }
 

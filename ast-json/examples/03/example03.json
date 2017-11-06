@@ -1,0 +1,232 @@
+{
+    "nodeName": "document",
+    "level": 0,
+    "blocks": [{
+        "nodeName": "table",
+        "level": 0,
+        "footer": [],
+        "grid": "all",
+        "columns": [
+            {
+                "nodeName": "column",
+                "horizontalAlignment": "LEFT",
+                "columnNumber": 1,
+                "roles": [],
+                "context": "column",
+                "width": 1,
+                "attributes": {
+                    "width": 1,
+                    "colnumber": 1,
+                    "valign": "top",
+                    "colpcwidth": 50,
+                    "halign": "left"
+                },
+                "verticalAlignment": "TOP"
+            },
+            {
+                "nodeName": "column",
+                "horizontalAlignment": "LEFT",
+                "columnNumber": 2,
+                "roles": [],
+                "context": "column",
+                "width": 1,
+                "attributes": {
+                    "width": 1,
+                    "colnumber": 2,
+                    "valign": "top",
+                    "colpcwidth": 50,
+                    "halign": "left"
+                },
+                "verticalAlignment": "TOP"
+            }
+        ],
+        "roles": [],
+        "context": "table",
+        "header": [],
+        "attributes": {
+            "tablepcwidth": 100,
+            "rowcount": 3,
+            "colcount": 2,
+            "style": "table"
+        },
+        "style": "table",
+        "body": [
+            [
+                {
+                    "nodeName": "cell",
+                    "colspan": 0,
+                    "horizontalAlignment": "LEFT",
+                    "roles": [],
+                    "rowspan": 0,
+                    "context": "cell",
+                    "attributes": {
+                        "width": 1,
+                        "colnumber": 1,
+                        "valign": "top",
+                        "halign": "left"
+                    },
+                    "text": "Cell in column 1, row 1",
+                    "content": ["Cell in column 1, row 1"],
+                    "verticalAlignment": "TOP"
+                },
+                {
+                    "nodeName": "cell",
+                    "colspan": 0,
+                    "horizontalAlignment": "LEFT",
+                    "roles": [],
+                    "rowspan": 0,
+                    "context": "cell",
+                    "attributes": {
+                        "width": 1,
+                        "colnumber": 2,
+                        "valign": "top",
+                        "halign": "left"
+                    },
+                    "text": "Cell in column 2, row 1",
+                    "content": ["Cell in column 2, row 1"],
+                    "verticalAlignment": "TOP"
+                }
+            ],
+            [
+                {
+                    "nodeName": "cell",
+                    "colspan": 0,
+                    "horizontalAlignment": "LEFT",
+                    "roles": [],
+                    "rowspan": 0,
+                    "context": "cell",
+                    "attributes": {
+                        "width": 1,
+                        "colnumber": 1,
+                        "valign": "top",
+                        "halign": "left"
+                    },
+                    "text": "Cell in column 1, row 2",
+                    "content": ["Cell in column 1, row 2"],
+                    "verticalAlignment": "TOP"
+                },
+                {
+                    "nodeName": "cell",
+                    "colspan": 0,
+                    "horizontalAlignment": "LEFT",
+                    "roles": [],
+                    "rowspan": 0,
+                    "context": "cell",
+                    "attributes": {
+                        "width": 1,
+                        "colnumber": 2,
+                        "valign": "top",
+                        "halign": "left"
+                    },
+                    "text": "Cell in column 2, row 2",
+                    "content": ["Cell in column 2, row 2"],
+                    "verticalAlignment": "TOP"
+                }
+            ],
+            [
+                {
+                    "nodeName": "cell",
+                    "colspan": 0,
+                    "horizontalAlignment": "LEFT",
+                    "roles": [],
+                    "rowspan": 0,
+                    "context": "cell",
+                    "attributes": {
+                        "width": 1,
+                        "colnumber": 1,
+                        "valign": "top",
+                        "halign": "left"
+                    },
+                    "text": "Cell in column 1, row 3",
+                    "content": ["Cell in column 1, row 3"],
+                    "verticalAlignment": "TOP"
+                },
+                {
+                    "nodeName": "cell",
+                    "colspan": 0,
+                    "horizontalAlignment": "LEFT",
+                    "roles": [],
+                    "rowspan": 0,
+                    "context": "cell",
+                    "attributes": {
+                        "width": 1,
+                        "colnumber": 2,
+                        "valign": "top",
+                        "halign": "left"
+                    },
+                    "text": "Cell in column 2, row 3",
+                    "content": ["Cell in column 2, row 3"],
+                    "verticalAlignment": "TOP"
+                }
+            ]
+        ],
+        "frame": "all"
+    }],
+    "roles": [],
+    "context": "document",
+    "options": {
+        "header_footer": false,
+        "backend": "ast-json",
+        "attributes": {}
+    },
+    "attributes": {
+        "localtime": "07:00:22 CET",
+        "tip-caption": "Tip",
+        "filetype": "html",
+        "appendix-caption": "Appendix",
+        "asciidoctor-version": "1.5.6.1",
+        "doctime": "07:00:22 CET",
+        "appendix-refsig": "Appendix",
+        "safe-mode-secure": "",
+        "localyear": "2017",
+        "toc-title": "Table of Contents",
+        "docdate": "2017-11-03",
+        "manname-title": "NAME",
+        "backend-ast-json": "",
+        "basebackend-html": "",
+        "stylesheet": "",
+        "iconsdir": "./images/icons",
+        "localdate": "2017-11-03",
+        "doctype-article": "",
+        "warning-caption": "Warning",
+        "figure-caption": "Figure",
+        "attribute-missing": "skip",
+        "section-refsig": "Section",
+        "outfilesuffix": "",
+        "basebackend-html-doctype-article": "",
+        "docdir": "",
+        "backend-ast-json-doctype-article": "",
+        "localdatetime": "2017-11-03 07:00:22 CET",
+        "toc-placement": "auto",
+        "webfonts": "",
+        "docdatetime": "2017-11-03 07:00:22 CET",
+        "important-caption": "Important",
+        "note-caption": "Note",
+        "stylesdir": ".",
+        "untitled-label": "Untitled",
+        "linkcss": "",
+        "max-include-depth": 64,
+        "caution-caption": "Caution",
+        "user-home": ".",
+        "filetype-html": "",
+        "max-attribute-value-size": 4096,
+        "safe-mode-level": 20,
+        "backend": "ast-json",
+        "safe-mode-name": "secure",
+        "notitle": "",
+        "table-caption": "Table",
+        "example-caption": "Example",
+        "embedded": "",
+        "basebackend": "html",
+        "prewrap": "",
+        "version-label": "Version",
+        "asciidoctor": "",
+        "last-update-label": "Last updated",
+        "doctype": "article",
+        "docyear": "2017",
+        "chapter-refsig": "Chapter",
+        "iconfont-remote": "",
+        "sectids": "",
+        "attribute-undefined": "drop-line"
+    }
+}

@@ -43,13 +43,14 @@ public class AstJsonConverter extends AbstractConverter<JSONObject> {
 
   private JSONObject convertToJSONObject(ContentNode node) {
     JSONObject obj = new JSONObject();
+//    obj.put("javaClass", node.getClass().getSimpleName());
     obj.put("attributes", mapToJSONObject(node.getAttributes()));
     obj.put("context", node.getContext());
     obj.put("id", node.getId());
     obj.put("nodeName", node.getNodeName());
     obj.put("reftext", node.getReftext());
     obj.put("role", node.getRole());
-    obj.put("roles", mapToJSONArray(node.getRoles()));
+    obj.put("roles", listToJSONArray(node.getRoles()));
     //node.getDocument() is not added to the JSON structure.
     //node.getParent() is not added to the JSON structure.
 
@@ -87,11 +88,11 @@ public class AstJsonConverter extends AbstractConverter<JSONObject> {
       obj.put("style", structuralNode.getStyle());
       obj.put("title", structuralNode.getTitle());
       obj.put("blocks", convertToJSONArray(structuralNode.getBlocks()));
-      obj.put("content", structuralNode.getContent());
+//      obj.put("content", structuralNode.getContent());
 
       if (structuralNode instanceof Block) {
         Block block = (Block) structuralNode;
-        obj.put("lines", mapToJSONArray(block.getLines()));
+        obj.put("lines", listToJSONArray(block.getLines()));
         obj.put("source", block.getSource());
       }
       else if (structuralNode instanceof DescriptionList) {
@@ -185,7 +186,7 @@ public class AstJsonConverter extends AbstractConverter<JSONObject> {
     return null;
   }
 
-  private JSONArray mapToJSONArray(List<String> list) {
+  private JSONArray listToJSONArray(List<String> list) {
     JSONArray array = new JSONArray();
     for (String e : list) {
       array.put(e);

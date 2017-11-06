@@ -1,36 +1,59 @@
 {
     "nodeName": "document",
     "level": 0,
-    "blocks": [
-        {
-            "nodeName": "section",
-            "sectionName": "section",
-            "special": false,
-            "number": 1,
-            "level": 1,
-            "blocks": [{
+    "blocks": [{
+        "nodeName": "section",
+        "sectionName": "section",
+        "special": false,
+        "number": 1,
+        "level": 1,
+        "blocks": [
+            {
                 "nodeName": "paragraph",
                 "level": 1,
                 "roles": [],
                 "context": "paragraph",
                 "attributes": {},
-                "source": "Lorem ipsum dolor.",
-                "lines": ["Lorem ipsum dolor."]
-            }],
-            "roles": [],
-            "context": "section",
-            "index": 0,
-            "attributes": {},
-            "id": "_this_is_the_first_section",
-            "title": "This is the first section"
-        },
-        {
-            "nodeName": "section",
-            "sectionName": "section",
-            "special": false,
-            "number": 1,
-            "level": 1,
-            "blocks": [{
+                "source": "Lorem ipsum dolor sit amet:",
+                "lines": ["Lorem ipsum dolor sit amet:"]
+            },
+            {
+                "nodeName": "ulist",
+                "level": 1,
+                "roles": [],
+                "context": "ulist",
+                "attributes": {},
+                "items": [
+                    {
+                        "nodeName": "list_item",
+                        "level": 1,
+                        "marker": "*",
+                        "roles": [],
+                        "context": "list_item",
+                        "attributes": {},
+                        "text": "First item"
+                    },
+                    {
+                        "nodeName": "list_item",
+                        "level": 1,
+                        "marker": "*",
+                        "roles": [],
+                        "context": "list_item",
+                        "attributes": {},
+                        "text": "Second item"
+                    },
+                    {
+                        "nodeName": "list_item",
+                        "level": 1,
+                        "marker": "*",
+                        "roles": [],
+                        "context": "list_item",
+                        "attributes": {},
+                        "text": "Third item"
+                    }
+                ]
+            },
+            {
                 "nodeName": "paragraph",
                 "level": 1,
                 "roles": [],
@@ -38,19 +61,19 @@
                 "attributes": {},
                 "source": "Ut commodo lorem nec lacinia finibus.",
                 "lines": ["Ut commodo lorem nec lacinia finibus."]
-            }],
-            "roles": [],
-            "context": "section",
-            "index": 1,
-            "attributes": {},
-            "id": "_this_is_the_second_section",
-            "title": "This is the second section"
-        }
-    ],
+            }
+        ],
+        "roles": [],
+        "context": "section",
+        "index": 0,
+        "attributes": {},
+        "id": "_a_small_list",
+        "title": "A small List"
+    }],
     "roles": [],
     "structuredDoctitle": {
-        "main": "This is the first section",
-        "combined": "This is the first section"
+        "main": "A small List",
+        "combined": "A small List"
     },
     "context": "document",
     "options": {
@@ -59,12 +82,12 @@
         "attributes": {}
     },
     "attributes": {
-        "localtime": "07:00:19 CET",
+        "localtime": "07:00:21 CET",
         "tip-caption": "Tip",
         "filetype": "html",
         "appendix-caption": "Appendix",
         "asciidoctor-version": "1.5.6.1",
-        "doctime": "07:00:19 CET",
+        "doctime": "07:00:21 CET",
         "appendix-refsig": "Appendix",
         "safe-mode-secure": "",
         "localyear": "2017",
@@ -85,10 +108,10 @@
         "basebackend-html-doctype-article": "",
         "docdir": "",
         "backend-ast-json-doctype-article": "",
-        "localdatetime": "2017-11-03 07:00:19 CET",
+        "localdatetime": "2017-11-03 07:00:21 CET",
         "toc-placement": "auto",
         "webfonts": "",
-        "docdatetime": "2017-11-03 07:00:19 CET",
+        "docdatetime": "2017-11-03 07:00:21 CET",
         "important-caption": "Important",
         "note-caption": "Note",
         "stylesdir": ".",
@@ -118,5 +141,5 @@
         "sectids": "",
         "attribute-undefined": "drop-line"
     },
-    "doctitle": "This is the first section"
+    "doctitle": "A small List"
 }
