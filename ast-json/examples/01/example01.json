@@ -1,81 +1,23 @@
+
 {
-    "nodeName": "document",
-    "level": 0,
-    "blocks": [
-        {
-            "nodeName": "section",
-            "sectionName": "section",
-            "special": false,
-            "number": 1,
-            "level": 1,
-            "blocks": [{
-                "nodeName": "paragraph",
-                "level": 1,
-                "roles": [],
-                "context": "paragraph",
-                "attributes": {},
-                "source": "Lorem ipsum dolor.",
-                "lines": ["Lorem ipsum dolor."]
-            }],
-            "roles": [],
-            "context": "section",
-            "index": 0,
-            "attributes": {},
-            "id": "_this_is_the_first_section",
-            "title": "This is the first section"
-        },
-        {
-            "nodeName": "section",
-            "sectionName": "section",
-            "special": false,
-            "number": 1,
-            "level": 1,
-            "blocks": [{
-                "nodeName": "paragraph",
-                "level": 1,
-                "roles": [],
-                "context": "paragraph",
-                "attributes": {},
-                "source": "Ut commodo lorem nec lacinia finibus.",
-                "lines": ["Ut commodo lorem nec lacinia finibus."]
-            }],
-            "roles": [],
-            "context": "section",
-            "index": 1,
-            "attributes": {},
-            "id": "_this_is_the_second_section",
-            "title": "This is the second section"
-        }
-    ],
-    "roles": [],
-    "structuredDoctitle": {
-        "main": "This is the first section",
-        "combined": "This is the first section"
-    },
-    "context": "document",
-    "options": {
-        "header_footer": false,
-        "backend": "ast-json",
-        "attributes": {}
-    },
     "attributes": {
-        "localtime": "07:00:19 CET",
+        "localtime": "07:21:35 CET",
         "tip-caption": "Tip",
         "filetype": "html",
         "appendix-caption": "Appendix",
         "asciidoctor-version": "1.5.6.1",
-        "doctime": "07:00:19 CET",
+        "doctime": "07:21:35 CET",
         "appendix-refsig": "Appendix",
         "safe-mode-secure": "",
         "localyear": "2017",
         "toc-title": "Table of Contents",
-        "docdate": "2017-11-03",
+        "docdate": "2017-11-07",
         "manname-title": "NAME",
         "backend-ast-json": "",
         "basebackend-html": "",
         "stylesheet": "",
         "iconsdir": "./images/icons",
-        "localdate": "2017-11-03",
+        "localdate": "2017-11-07",
         "doctype-article": "",
         "warning-caption": "Warning",
         "figure-caption": "Figure",
@@ -85,21 +27,21 @@
         "basebackend-html-doctype-article": "",
         "docdir": "",
         "backend-ast-json-doctype-article": "",
-        "localdatetime": "2017-11-03 07:00:19 CET",
+        "localdatetime": "2017-11-07 07:21:35 CET",
         "toc-placement": "auto",
         "webfonts": "",
-        "docdatetime": "2017-11-03 07:00:19 CET",
+        "docdatetime": "2017-11-07 07:21:35 CET",
         "important-caption": "Important",
         "note-caption": "Note",
         "stylesdir": ".",
         "untitled-label": "Untitled",
         "linkcss": "",
-        "max-include-depth": 64,
+        "max-include-depth": "64",
         "caution-caption": "Caution",
         "user-home": ".",
         "filetype-html": "",
-        "max-attribute-value-size": 4096,
-        "safe-mode-level": 20,
+        "max-attribute-value-size": "4096",
+        "safe-mode-level": "20",
         "backend": "ast-json",
         "safe-mode-name": "secure",
         "notitle": "",
@@ -118,5 +60,82 @@
         "sectids": "",
         "attribute-undefined": "drop-line"
     },
-    "doctitle": "This is the first section"
+    "context": "document",
+    "nodeName": "document",
+    "roles": [
+    ],
+    "level": 0,
+    "blocks": [
+        {
+            "attributes": {
+            },
+            "context": "section",
+            "id": "_this_is_the_first_section",
+            "nodeName": "section",
+            "roles": [
+            ],
+            "level": 1,
+            "title": "This is the first section",
+            "blocks": [
+                {
+                    "attributes": {
+                    },
+                    "context": "paragraph",
+                    "nodeName": "paragraph",
+                    "roles": [
+                    ],
+                    "level": 1,
+                    "lines": [
+                        "Lorem ipsum dolor."
+                    ],
+                    "source": "Lorem ipsum dolor."
+                }
+            ],
+            "index": 0,
+            "number": 1,
+            "sectionName": "section",
+            "special": false
+        },
+        {
+            "attributes": {
+            },
+            "context": "section",
+            "id": "_this_is_the_second_section",
+            "nodeName": "section",
+            "roles": [
+            ],
+            "level": 1,
+            "title": "This is the second section",
+            "blocks": [
+                {
+                    "attributes": {
+                    },
+                    "context": "paragraph",
+                    "nodeName": "paragraph",
+                    "roles": [
+                    ],
+                    "level": 1,
+                    "lines": [
+                        "Ut commodo lorem nec lacinia finibus."
+                    ],
+                    "source": "Ut commodo lorem nec lacinia finibus."
+                }
+            ],
+            "index": 1,
+            "number": 1,
+            "sectionName": "section",
+            "special": false
+        }
+    ],
+    "doctitle": "This is the first section",
+    "options": {
+        "header_footer": "false",
+        "to_dir": null,
+        "backend": "ast-json",
+        "attributes": "{}"
+    },
+    "structuredDoctitle": {
+        "combined": "This is the first section",
+        "main": "This is the first section"
+    }
 }

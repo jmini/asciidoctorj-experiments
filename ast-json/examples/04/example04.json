@@ -1,55 +1,23 @@
+
 {
-    "nodeName": "document",
-    "level": 0,
-    "blocks": [
-        {
-            "nodeName": "paragraph",
-            "level": 0,
-            "roles": [],
-            "context": "paragraph",
-            "attributes": {},
-            "source": "Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin.",
-            "lines": ["Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin."]
-        },
-        {
-            "nodeName": "paragraph",
-            "level": 0,
-            "roles": [],
-            "context": "paragraph",
-            "attributes": {},
-            "source": "Ut commodo _lorem_ nec lacinia finibus.\nEtiam *eu* ornare lectus.\nIn molestie `ut` augue a ultricies.",
-            "lines": [
-                "Ut commodo _lorem_ nec lacinia finibus.",
-                "Etiam *eu* ornare lectus.",
-                "In molestie `ut` augue a ultricies."
-            ]
-        }
-    ],
-    "roles": [],
-    "context": "document",
-    "options": {
-        "header_footer": false,
-        "backend": "ast-json",
-        "attributes": {}
-    },
     "attributes": {
-        "localtime": "07:00:23 CET",
+        "localtime": "07:21:46 CET",
         "tip-caption": "Tip",
         "filetype": "html",
         "appendix-caption": "Appendix",
         "asciidoctor-version": "1.5.6.1",
-        "doctime": "07:00:23 CET",
+        "doctime": "07:21:46 CET",
         "appendix-refsig": "Appendix",
         "safe-mode-secure": "",
         "localyear": "2017",
         "toc-title": "Table of Contents",
-        "docdate": "2017-11-03",
+        "docdate": "2017-11-07",
         "manname-title": "NAME",
         "backend-ast-json": "",
         "basebackend-html": "",
         "stylesheet": "",
         "iconsdir": "./images/icons",
-        "localdate": "2017-11-03",
+        "localdate": "2017-11-07",
         "doctype-article": "",
         "warning-caption": "Warning",
         "figure-caption": "Figure",
@@ -59,21 +27,21 @@
         "basebackend-html-doctype-article": "",
         "docdir": "",
         "backend-ast-json-doctype-article": "",
-        "localdatetime": "2017-11-03 07:00:23 CET",
+        "localdatetime": "2017-11-07 07:21:46 CET",
         "toc-placement": "auto",
         "webfonts": "",
-        "docdatetime": "2017-11-03 07:00:23 CET",
+        "docdatetime": "2017-11-07 07:21:46 CET",
         "important-caption": "Important",
         "note-caption": "Note",
         "stylesdir": ".",
         "untitled-label": "Untitled",
         "linkcss": "",
-        "max-include-depth": 64,
+        "max-include-depth": "64",
         "caution-caption": "Caution",
         "user-home": ".",
         "filetype-html": "",
-        "max-attribute-value-size": 4096,
-        "safe-mode-level": 20,
+        "max-attribute-value-size": "4096",
+        "safe-mode-level": "20",
         "backend": "ast-json",
         "safe-mode-name": "secure",
         "notitle": "",
@@ -91,5 +59,46 @@
         "iconfont-remote": "",
         "sectids": "",
         "attribute-undefined": "drop-line"
+    },
+    "context": "document",
+    "nodeName": "document",
+    "roles": [
+    ],
+    "level": 0,
+    "blocks": [
+        {
+            "attributes": {
+            },
+            "context": "paragraph",
+            "nodeName": "paragraph",
+            "roles": [
+            ],
+            "level": 0,
+            "lines": [
+                "Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin."
+            ],
+            "source": "Lorem ipsum dolor sit amet, *consectetur* adipiscing elit. Donec _aliquam_ tempus quam et sollicitudin."
+        },
+        {
+            "attributes": {
+            },
+            "context": "paragraph",
+            "nodeName": "paragraph",
+            "roles": [
+            ],
+            "level": 0,
+            "lines": [
+                "Ut commodo _lorem_ nec lacinia finibus.",
+                "Etiam *eu* ornare lectus.",
+                "In molestie `ut` augue a ultricies."
+            ],
+            "source": "Ut commodo _lorem_ nec lacinia finibus.\nEtiam *eu* ornare lectus.\nIn molestie `ut` augue a ultricies."
+        }
+    ],
+    "options": {
+        "header_footer": "false",
+        "to_dir": null,
+        "backend": "ast-json",
+        "attributes": "{}"
     }
 }

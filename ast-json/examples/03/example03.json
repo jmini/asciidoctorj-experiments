@@ -1,192 +1,23 @@
+
 {
-    "nodeName": "document",
-    "level": 0,
-    "blocks": [{
-        "nodeName": "table",
-        "level": 0,
-        "footer": [],
-        "grid": "all",
-        "columns": [
-            {
-                "nodeName": "column",
-                "horizontalAlignment": "LEFT",
-                "columnNumber": 1,
-                "roles": [],
-                "context": "column",
-                "width": 1,
-                "attributes": {
-                    "width": 1,
-                    "colnumber": 1,
-                    "valign": "top",
-                    "colpcwidth": 50,
-                    "halign": "left"
-                },
-                "verticalAlignment": "TOP"
-            },
-            {
-                "nodeName": "column",
-                "horizontalAlignment": "LEFT",
-                "columnNumber": 2,
-                "roles": [],
-                "context": "column",
-                "width": 1,
-                "attributes": {
-                    "width": 1,
-                    "colnumber": 2,
-                    "valign": "top",
-                    "colpcwidth": 50,
-                    "halign": "left"
-                },
-                "verticalAlignment": "TOP"
-            }
-        ],
-        "roles": [],
-        "context": "table",
-        "header": [],
-        "attributes": {
-            "tablepcwidth": 100,
-            "rowcount": 3,
-            "colcount": 2,
-            "style": "table"
-        },
-        "style": "table",
-        "body": [
-            [
-                {
-                    "nodeName": "cell",
-                    "colspan": 0,
-                    "horizontalAlignment": "LEFT",
-                    "roles": [],
-                    "rowspan": 0,
-                    "context": "cell",
-                    "attributes": {
-                        "width": 1,
-                        "colnumber": 1,
-                        "valign": "top",
-                        "halign": "left"
-                    },
-                    "text": "Cell in column 1, row 1",
-                    "content": ["Cell in column 1, row 1"],
-                    "verticalAlignment": "TOP"
-                },
-                {
-                    "nodeName": "cell",
-                    "colspan": 0,
-                    "horizontalAlignment": "LEFT",
-                    "roles": [],
-                    "rowspan": 0,
-                    "context": "cell",
-                    "attributes": {
-                        "width": 1,
-                        "colnumber": 2,
-                        "valign": "top",
-                        "halign": "left"
-                    },
-                    "text": "Cell in column 2, row 1",
-                    "content": ["Cell in column 2, row 1"],
-                    "verticalAlignment": "TOP"
-                }
-            ],
-            [
-                {
-                    "nodeName": "cell",
-                    "colspan": 0,
-                    "horizontalAlignment": "LEFT",
-                    "roles": [],
-                    "rowspan": 0,
-                    "context": "cell",
-                    "attributes": {
-                        "width": 1,
-                        "colnumber": 1,
-                        "valign": "top",
-                        "halign": "left"
-                    },
-                    "text": "Cell in column 1, row 2",
-                    "content": ["Cell in column 1, row 2"],
-                    "verticalAlignment": "TOP"
-                },
-                {
-                    "nodeName": "cell",
-                    "colspan": 0,
-                    "horizontalAlignment": "LEFT",
-                    "roles": [],
-                    "rowspan": 0,
-                    "context": "cell",
-                    "attributes": {
-                        "width": 1,
-                        "colnumber": 2,
-                        "valign": "top",
-                        "halign": "left"
-                    },
-                    "text": "Cell in column 2, row 2",
-                    "content": ["Cell in column 2, row 2"],
-                    "verticalAlignment": "TOP"
-                }
-            ],
-            [
-                {
-                    "nodeName": "cell",
-                    "colspan": 0,
-                    "horizontalAlignment": "LEFT",
-                    "roles": [],
-                    "rowspan": 0,
-                    "context": "cell",
-                    "attributes": {
-                        "width": 1,
-                        "colnumber": 1,
-                        "valign": "top",
-                        "halign": "left"
-                    },
-                    "text": "Cell in column 1, row 3",
-                    "content": ["Cell in column 1, row 3"],
-                    "verticalAlignment": "TOP"
-                },
-                {
-                    "nodeName": "cell",
-                    "colspan": 0,
-                    "horizontalAlignment": "LEFT",
-                    "roles": [],
-                    "rowspan": 0,
-                    "context": "cell",
-                    "attributes": {
-                        "width": 1,
-                        "colnumber": 2,
-                        "valign": "top",
-                        "halign": "left"
-                    },
-                    "text": "Cell in column 2, row 3",
-                    "content": ["Cell in column 2, row 3"],
-                    "verticalAlignment": "TOP"
-                }
-            ]
-        ],
-        "frame": "all"
-    }],
-    "roles": [],
-    "context": "document",
-    "options": {
-        "header_footer": false,
-        "backend": "ast-json",
-        "attributes": {}
-    },
     "attributes": {
-        "localtime": "07:00:22 CET",
+        "localtime": "07:21:43 CET",
         "tip-caption": "Tip",
         "filetype": "html",
         "appendix-caption": "Appendix",
         "asciidoctor-version": "1.5.6.1",
-        "doctime": "07:00:22 CET",
+        "doctime": "07:21:43 CET",
         "appendix-refsig": "Appendix",
         "safe-mode-secure": "",
         "localyear": "2017",
         "toc-title": "Table of Contents",
-        "docdate": "2017-11-03",
+        "docdate": "2017-11-07",
         "manname-title": "NAME",
         "backend-ast-json": "",
         "basebackend-html": "",
         "stylesheet": "",
         "iconsdir": "./images/icons",
-        "localdate": "2017-11-03",
+        "localdate": "2017-11-07",
         "doctype-article": "",
         "warning-caption": "Warning",
         "figure-caption": "Figure",
@@ -196,21 +27,21 @@
         "basebackend-html-doctype-article": "",
         "docdir": "",
         "backend-ast-json-doctype-article": "",
-        "localdatetime": "2017-11-03 07:00:22 CET",
+        "localdatetime": "2017-11-07 07:21:43 CET",
         "toc-placement": "auto",
         "webfonts": "",
-        "docdatetime": "2017-11-03 07:00:22 CET",
+        "docdatetime": "2017-11-07 07:21:43 CET",
         "important-caption": "Important",
         "note-caption": "Note",
         "stylesdir": ".",
         "untitled-label": "Untitled",
         "linkcss": "",
-        "max-include-depth": 64,
+        "max-include-depth": "64",
         "caution-caption": "Caution",
         "user-home": ".",
         "filetype-html": "",
-        "max-attribute-value-size": 4096,
-        "safe-mode-level": 20,
+        "max-attribute-value-size": "4096",
+        "safe-mode-level": "20",
         "backend": "ast-json",
         "safe-mode-name": "secure",
         "notitle": "",
@@ -228,5 +59,184 @@
         "iconfont-remote": "",
         "sectids": "",
         "attribute-undefined": "drop-line"
+    },
+    "context": "document",
+    "nodeName": "document",
+    "roles": [
+    ],
+    "level": 0,
+    "blocks": [
+        {
+            "attributes": {
+                "tablepcwidth": "100",
+                "rowcount": "3",
+                "colcount": "2",
+                "style": "table"
+            },
+            "context": "table",
+            "nodeName": "table",
+            "roles": [
+            ],
+            "level": 0,
+            "style": "table",
+            "frame": "all",
+            "grid": "all",
+            "body": [
+                [
+                    {
+                        "attributes": {
+                            "width": "1",
+                            "colnumber": "1",
+                            "valign": "top",
+                            "halign": "left"
+                        },
+                        "context": "cell",
+                        "nodeName": "cell",
+                        "roles": [
+                        ],
+                        "colspan": 0,
+                        "horizontalAlignment": "LEFT",
+                        "rowspan": 0,
+                        "text": "Cell in column 1, row 1",
+                        "verticalAlignment": "TOP"
+                    },
+                    {
+                        "attributes": {
+                            "width": "1",
+                            "colnumber": "2",
+                            "valign": "top",
+                            "halign": "left"
+                        },
+                        "context": "cell",
+                        "nodeName": "cell",
+                        "roles": [
+                        ],
+                        "colspan": 0,
+                        "horizontalAlignment": "LEFT",
+                        "rowspan": 0,
+                        "text": "Cell in column 2, row 1",
+                        "verticalAlignment": "TOP"
+                    }
+                ],
+                [
+                    {
+                        "attributes": {
+                            "width": "1",
+                            "colnumber": "1",
+                            "valign": "top",
+                            "halign": "left"
+                        },
+                        "context": "cell",
+                        "nodeName": "cell",
+                        "roles": [
+                        ],
+                        "colspan": 0,
+                        "horizontalAlignment": "LEFT",
+                        "rowspan": 0,
+                        "text": "Cell in column 1, row 2",
+                        "verticalAlignment": "TOP"
+                    },
+                    {
+                        "attributes": {
+                            "width": "1",
+                            "colnumber": "2",
+                            "valign": "top",
+                            "halign": "left"
+                        },
+                        "context": "cell",
+                        "nodeName": "cell",
+                        "roles": [
+                        ],
+                        "colspan": 0,
+                        "horizontalAlignment": "LEFT",
+                        "rowspan": 0,
+                        "text": "Cell in column 2, row 2",
+                        "verticalAlignment": "TOP"
+                    }
+                ],
+                [
+                    {
+                        "attributes": {
+                            "width": "1",
+                            "colnumber": "1",
+                            "valign": "top",
+                            "halign": "left"
+                        },
+                        "context": "cell",
+                        "nodeName": "cell",
+                        "roles": [
+                        ],
+                        "colspan": 0,
+                        "horizontalAlignment": "LEFT",
+                        "rowspan": 0,
+                        "text": "Cell in column 1, row 3",
+                        "verticalAlignment": "TOP"
+                    },
+                    {
+                        "attributes": {
+                            "width": "1",
+                            "colnumber": "2",
+                            "valign": "top",
+                            "halign": "left"
+                        },
+                        "context": "cell",
+                        "nodeName": "cell",
+                        "roles": [
+                        ],
+                        "colspan": 0,
+                        "horizontalAlignment": "LEFT",
+                        "rowspan": 0,
+                        "text": "Cell in column 2, row 3",
+                        "verticalAlignment": "TOP"
+                    }
+                ]
+            ],
+            "columns": [
+                {
+                    "attributes": {
+                        "width": "1",
+                        "colnumber": "1",
+                        "valign": "top",
+                        "colpcwidth": "50",
+                        "halign": "left"
+                    },
+                    "context": "column",
+                    "nodeName": "column",
+                    "roles": [
+                    ],
+                    "columnNumber": 1,
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "TOP",
+                    "width": 1
+                },
+                {
+                    "attributes": {
+                        "width": "1",
+                        "colnumber": "2",
+                        "valign": "top",
+                        "colpcwidth": "50",
+                        "halign": "left"
+                    },
+                    "context": "column",
+                    "nodeName": "column",
+                    "roles": [
+                    ],
+                    "columnNumber": 2,
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "TOP",
+                    "width": 1
+                }
+            ],
+            "footer": [
+            ],
+            "header": [
+            ]
+        }
+    ],
+    "options": {
+        "header_footer": "false",
+        "to_dir": null,
+        "backend": "ast-json",
+        "attributes": "{}"
     }
 }

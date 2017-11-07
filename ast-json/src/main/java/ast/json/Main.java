@@ -4,9 +4,18 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.StringWriter;
+import java.util.Collections;
+import java.util.Map;
+
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonStructure;
+import javax.json.JsonWriter;
+import javax.json.JsonWriterFactory;
+import javax.json.stream.JsonGenerator;
 
 import org.asciidoctor.OptionsBuilder;
-import org.json.JSONObject;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
@@ -46,13 +55,25 @@ public class Main {
       org.asciidoctor.Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
       asciidoctor.javaConverterRegistry().register(AstJsonConverter.class);
       OptionsBuilder options = OptionsBuilder.options().backend("ast-json");
-      JSONObject obj = asciidoctor.convert(content, options, JSONObject.class);
+      JsonObject obj = asciidoctor.convert(content, options, JsonObject.class);
       //end::adoc-convert[]
 
       File outputFile = new File(folder, Files.getNameWithoutExtension(adocFile.getName()) + ".json");
-      Files.write(obj.toString(4), outputFile, Charsets.UTF_8);
+      Files.write(jsonFormat(obj), outputFile, Charsets.UTF_8);
       System.out.println("Wrote JSON file : " + outputFile.getAbsolutePath());
     }
+  }
+
+  public static String jsonFormat(JsonStructure json) {
+    StringWriter stringWriter = new StringWriter();
+    Map<String, Boolean> config = Collections.singletonMap(JsonGenerator.PRETTY_PRINTING, Boolean.TRUE);
+    JsonWriterFactory writerFactory = Json.createWriterFactory(config);
+    JsonWriter jsonWriter = writerFactory.createWriter(stringWriter);
+
+    jsonWriter.write(json);
+    jsonWriter.close();
+
+    return stringWriter.toString();
   }
 
   private static File findAdocFile(File folder) {

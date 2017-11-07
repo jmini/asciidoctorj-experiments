@@ -1,111 +1,25 @@
+
 {
-    "nodeName": "document",
-    "level": 0,
-    "blocks": [{
-        "nodeName": "section",
-        "sectionName": "section",
-        "special": false,
-        "number": 1,
-        "level": 1,
-        "blocks": [
-            {
-                "nodeName": "paragraph",
-                "level": 1,
-                "roles": [],
-                "context": "paragraph",
-                "attributes": {},
-                "source": "Copy the *HelloWorld.java* file.",
-                "lines": ["Copy the *HelloWorld.java* file."]
-            },
-            {
-                "nodeName": "admonition",
-                "level": 1,
-                "roles": [],
-                "context": "admonition",
-                "attributes": {
-                    "textlabel": "Tip",
-                    "name": "tip",
-                    "style": "TIP"
-                },
-                "style": "TIP",
-                "source": "The application prints _Hello World!_ to the console.",
-                "lines": ["The application prints _Hello World!_ to the console."]
-            },
-            {
-                "nodeName": "ulist",
-                "level": 1,
-                "roles": [],
-                "context": "ulist",
-                "attributes": {},
-                "items": [
-                    {
-                        "nodeName": "list_item",
-                        "level": 1,
-                        "marker": "*",
-                        "roles": [],
-                        "context": "list_item",
-                        "attributes": {},
-                        "text": "Compile this source to a class file using {\"nodeName\":\"inline_quoted\",\"reftext\":\"javac\",\"roles\":[],\"context\":\"quoted\",\"attributes\":{},\"text\":\"javac\",\"type\":\"monospaced\"}."
-                    },
-                    {
-                        "nodeName": "list_item",
-                        "level": 1,
-                        "marker": "*",
-                        "roles": [],
-                        "context": "list_item",
-                        "attributes": {},
-                        "text": "Run the compiled class file using {\"nodeName\":\"inline_quoted\",\"reftext\":\"java\",\"roles\":[],\"context\":\"quoted\",\"attributes\":{},\"text\":\"java\",\"type\":\"monospaced\"}."
-                    }
-                ]
-            },
-            {
-                "nodeName": "paragraph",
-                "level": 1,
-                "roles": [],
-                "context": "paragraph",
-                "attributes": {},
-                "source": "If you need help with the Java syntax check the link:http://docs.oracle.com/javase/8/docs/[Java 8 Javadoc].",
-                "lines": ["If you need help with the Java syntax check the link:http://docs.oracle.com/javase/8/docs/[Java 8 Javadoc]."]
-            }
-        ],
-        "roles": [],
-        "context": "section",
-        "index": 0,
-        "attributes": {},
-        "id": "_hello_world_example",
-        "title": "Hello World example"
-    }],
-    "roles": [],
-    "structuredDoctitle": {
-        "main": "Getting Started with Java",
-        "combined": "Getting Started with Java"
-    },
-    "context": "document",
-    "options": {
-        "header_footer": false,
-        "backend": "ast-json",
-        "attributes": {}
-    },
     "attributes": {
-        "localtime": "07:00:24 CET",
+        "localtime": "07:21:48 CET",
         "tip-caption": "Tip",
         "filetype": "html",
         "appendix-caption": "Appendix",
         "asciidoctor-version": "1.5.6.1",
-        "doctime": "07:00:24 CET",
+        "doctime": "07:21:48 CET",
         "appendix-refsig": "Appendix",
         "safe-mode-secure": "",
         "localyear": "2017",
         "authorinitials": "AN",
         "toc-title": "Table of Contents",
-        "docdate": "2017-11-03",
+        "docdate": "2017-11-07",
         "manname-title": "NAME",
         "backend-ast-json": "",
         "basebackend-html": "",
         "stylesheet": "",
         "iconsdir": "./images/icons",
         "author": "Author Name",
-        "localdate": "2017-11-03",
+        "localdate": "2017-11-07",
         "doctype-article": "",
         "warning-caption": "Warning",
         "figure-caption": "Figure",
@@ -116,10 +30,10 @@
         "basebackend-html-doctype-article": "",
         "docdir": "",
         "backend-ast-json-doctype-article": "",
-        "localdatetime": "2017-11-03 07:00:24 CET",
+        "localdatetime": "2017-11-07 07:21:48 CET",
         "toc-placement": "auto",
         "webfonts": "",
-        "docdatetime": "2017-11-03 07:00:24 CET",
+        "docdatetime": "2017-11-07 07:21:48 CET",
         "important-caption": "Important",
         "authors": "Author Name",
         "note-caption": "Note",
@@ -127,17 +41,17 @@
         "stylesdir": ".",
         "untitled-label": "Untitled",
         "linkcss": "",
-        "max-include-depth": 64,
+        "max-include-depth": "64",
         "caution-caption": "Caution",
         "user-home": ".",
         "filetype-html": "",
-        "max-attribute-value-size": 4096,
-        "safe-mode-level": 20,
+        "max-attribute-value-size": "4096",
+        "safe-mode-level": "20",
         "backend": "ast-json",
         "safe-mode-name": "secure",
         "notitle": "",
         "table-caption": "Table",
-        "authorcount": 1,
+        "authorcount": "1",
         "example-caption": "Example",
         "embedded": "",
         "email": "author@example.org",
@@ -154,5 +68,115 @@
         "sectids": "",
         "attribute-undefined": "drop-line"
     },
-    "doctitle": "Getting Started with Java"
+    "context": "document",
+    "nodeName": "document",
+    "roles": [
+    ],
+    "level": 0,
+    "blocks": [
+        {
+            "attributes": {
+            },
+            "context": "section",
+            "id": "_hello_world_example",
+            "nodeName": "section",
+            "roles": [
+            ],
+            "level": 1,
+            "title": "Hello World example",
+            "blocks": [
+                {
+                    "attributes": {
+                    },
+                    "context": "paragraph",
+                    "nodeName": "paragraph",
+                    "roles": [
+                    ],
+                    "level": 1,
+                    "lines": [
+                        "Copy the *HelloWorld.java* file."
+                    ],
+                    "source": "Copy the *HelloWorld.java* file."
+                },
+                {
+                    "attributes": {
+                        "textlabel": "Tip",
+                        "name": "tip",
+                        "style": "TIP"
+                    },
+                    "context": "admonition",
+                    "nodeName": "admonition",
+                    "roles": [
+                    ],
+                    "level": 1,
+                    "style": "TIP",
+                    "lines": [
+                        "The application prints _Hello World!_ to the console."
+                    ],
+                    "source": "The application prints _Hello World!_ to the console."
+                },
+                {
+                    "attributes": {
+                    },
+                    "context": "ulist",
+                    "nodeName": "ulist",
+                    "roles": [
+                    ],
+                    "level": 1,
+                    "items": [
+                        {
+                            "attributes": {
+                            },
+                            "context": "list_item",
+                            "nodeName": "list_item",
+                            "roles": [
+                            ],
+                            "level": 1,
+                            "marker": "*",
+                            "text": "Compile this source to a class file using {\"attributes\"=>{}, \"context\"=>{\"attributes\"=>{}, \"context\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x6d0a14c2>, \"nodeName\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x153c6603>, \"reftext\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x19739906>, \"roles\"=>#<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x13aa54f1>, \"type\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x23e9dd78>, \"text\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x6408be5>}<Java::OrgGlassfishJson::JsonStringImpl:0x4331be30>, \"reftext\"=>{\"attributes\"=>{}, \"context\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x5600a278>, \"nodeName\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x77d54a41>, \"reftext\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x12421766>, \"roles\"=>#<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x731e0bff>, \"type\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x23c72128>, \"text\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x2890e479>}<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x1169fdfd>, \"type\"=>{\"attributes\"=>{}, \"context\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x4d174189>, \"nodeName\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0xc30f26d>, \"reftext\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x2a984952>, \"roles\"=>#<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x1dbc607d>, \"type\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0xa0e33db>, \"text\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x40b54762>}<Java::OrgGlassfishJson::JsonStringImpl:0x1bd59b82>}."
+                        },
+                        {
+                            "attributes": {
+                            },
+                            "context": "list_item",
+                            "nodeName": "list_item",
+                            "roles": [
+                            ],
+                            "level": 1,
+                            "marker": "*",
+                            "text": "Run the compiled class file using {\"attributes\"=>{}, \"context\"=>{\"attributes\"=>{}, \"context\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x9f48198>, \"nodeName\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x21698e5a>, \"reftext\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x2e8986b6>, \"roles\"=>#<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x3ad2883a>, \"type\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x3aca2579>, \"text\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x651cedfb>}<Java::OrgGlassfishJson::JsonStringImpl:0x5f68eec6>, \"reftext\"=>{\"attributes\"=>{}, \"context\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x31443680>, \"nodeName\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x3a988299>, \"reftext\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x1818390b>, \"roles\"=>#<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x7ef4aceb>, \"type\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x683fe7b5>, \"text\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x93fb44>}<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x74b7497b>, \"type\"=>{\"attributes\"=>{}, \"context\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x13d1f898>, \"nodeName\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x1bea7b0>, \"reftext\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x2d4a0671>, \"roles\"=>#<Java::OrgGlassfishJson::JsonArrayBuilderImpl::JsonArrayImpl:0x6e4e60f5>, \"type\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x3bcedb06>, \"text\"=>#<Java::OrgGlassfishJson::JsonStringImpl:0x72ceafeb>}<Java::OrgGlassfishJson::JsonStringImpl:0x1e482ecd>}."
+                        }
+                    ]
+                },
+                {
+                    "attributes": {
+                    },
+                    "context": "paragraph",
+                    "nodeName": "paragraph",
+                    "roles": [
+                    ],
+                    "level": 1,
+                    "lines": [
+                        "If you need help with the Java syntax check the link:http://docs.oracle.com/javase/8/docs/[Java 8 Javadoc]."
+                    ],
+                    "source": "If you need help with the Java syntax check the link:http://docs.oracle.com/javase/8/docs/[Java 8 Javadoc]."
+                }
+            ],
+            "index": 0,
+            "number": 1,
+            "sectionName": "section",
+            "special": false
+        }
+    ],
+    "doctitle": "Getting Started with Java",
+    "options": {
+        "header_footer": "false",
+        "to_dir": null,
+        "backend": "ast-json",
+        "attributes": "{}"
+    },
+    "structuredDoctitle": {
+        "combined": "Getting Started with Java",
+        "main": "Getting Started with Java"
+    }
 }
