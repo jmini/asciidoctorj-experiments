@@ -579,7 +579,7 @@ It can be registered and used like this:</p>
 <pre class="CodeRay highlight"><code data-lang="java">org.asciidoctor.Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
 asciidoctor.javaConverterRegistry().register(AstJsonConverter.class);
 OptionsBuilder options = OptionsBuilder.options().backend(<span class="string"><span class="delimiter">&quot;</span><span class="content">ast-json</span><span class="delimiter">&quot;</span></span>);
-JSONObject obj = asciidoctor.convert(content, options, JSONObject.class);</code></pre>
+JsonObject obj = asciidoctor.convert(content, options, JsonObject.class);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -618,7 +618,7 @@ It is using JSoup to parse the HTML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-07-25 08:54:32 CEST
+Last updated 2017-11-02 13:55:25 CET
 </div>
 </div>
 </body>
