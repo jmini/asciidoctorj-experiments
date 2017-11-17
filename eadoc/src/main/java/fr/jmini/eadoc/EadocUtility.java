@@ -41,13 +41,22 @@ public class EadocUtility {
     public static EBlock convertBlock(Block block) {
         EBlock eBlock = EadocFactory.eINSTANCE.createEBlock();
         mapStructuralNodeFields(eBlock, block);
-        // TODO: map fields
+        eBlock.setLines(block.getLines());
+        eBlock.setSource(block.getSource());
         return eBlock;
     }
 
     public static ECell convertCell(Cell cell) {
         ECell eCell = EadocFactory.eINSTANCE.createECell();
-        // TODO: map fields
+        eCell.setColumn(convertColumn(cell.getColumn()));
+        eCell.setColspan(cell.getColspan());
+        eCell.setRowspan(cell.getRowspan());
+        // eCell.set(cell.getText());
+        eCell.setSource(cell.getSource());
+        eCell.setStyle(cell.getStyle());
+        eCell.setHorizontalAlignment(cell.getHorizontalAlignment());
+        eCell.setVerticalAlignment(cell.getVerticalAlignment());
+        eCell.setInnerDocument(cell.getInnerDocument());
         return eCell;
     }
 
@@ -78,7 +87,7 @@ public class EadocUtility {
 
     private static void mapContentNodeFields(EContentNode eContentNode, ContentNode contentNode) {
         eContentNode.setId(contentNode.getId());
-        // XXX eContentNode.setNodeName(contentNode.getNodeName());
+        eContentNode.setNodeName(contentNode.getNodeName());
         // eContentNode.setParent(contentNode.getParent());
         eContentNode.setContext(contentNode.getContext());
         eContentNode.setInline(contentNode.isInline());
@@ -112,40 +121,50 @@ public class EadocUtility {
     public static EDescriptionList convertDescriptionList(DescriptionList descriptionList) {
         EDescriptionList eDescriptionList = EadocFactory.eINSTANCE.createEDescriptionList();
         mapStructuralNodeFields(eDescriptionList, descriptionList);
-        // TODO: map fields
+        // eDescriptionList.set(descriptionList.getItems());
         return eDescriptionList;
     }
 
     public static EDescriptionListEntry convertDescriptionListEntry(DescriptionListEntry descriptionListEntry) {
         EDescriptionListEntry eDescriptionListEntry = EadocFactory.eINSTANCE.createEDescriptionListEntry();
-        // TODO: map fields
+        // eDescriptionListEntry.set(descriptionListEntry.getTerms());
+        eDescriptionListEntry.setDescription(descriptionListEntry.getDescription());
         return eDescriptionListEntry;
     }
 
     public static EDocument convertDocument(Document document) {
         EDocument eDocument = EadocFactory.eINSTANCE.createEDocument();
         mapStructuralNodeFields(eDocument, document);
-        // TODO: map fields
+        eDocument.setStructuredDoctitle(convertTitle(document.getStructuredDoctitle()));
+        eDocument.setDoctitle(document.getDoctitle());
+        eDocument.setOptions(document.getOptions());
         return eDocument;
     }
 
     public static EDocumentHeader convertDocumentHeader(DocumentHeader documentHeader) {
         EDocumentHeader eDocumentHeader = EadocFactory.eINSTANCE.createEDocumentHeader();
-        // TODO: map fields
+        // eDocumentHeader.set( documentHeader. getAuthors());
+        eDocumentHeader.setDocumentTitle(convertTitle(documentHeader.getDocumentTitle()));
+        eDocumentHeader.setPageTitle(documentHeader.getPageTitle());
+        // eDocumentHeader.setA(documentHeader. getAuthor());
+        eDocumentHeader.setRevisionInfo(convertRevisionInfo(documentHeader.getRevisionInfo()));
+        eDocumentHeader.setAttributes(documentHeader.getAttributes());
         return eDocumentHeader;
     }
 
     public static EAdocList convertList(org.asciidoctor.ast.List list) {
         EAdocList eAdocList = EadocFactory.eINSTANCE.createEAdocList();
         mapStructuralNodeFields(eAdocList, list);
-        // TODO: map fields
+        // eAdocList.set(list.getItems());
         return eAdocList;
     }
 
     public static EListItem convertListItem(ListItem listItem) {
         EListItem eListItem = EadocFactory.eINSTANCE.createEListItem();
         mapStructuralNodeFields(eListItem, listItem);
-        // TODO: map fields
+        eListItem.setMarker(listItem.getMarker());
+        eListItem.setText(listItem.getText());
+        eListItem.setSource(listItem.getSource());
         return eListItem;
     }
 
@@ -167,14 +186,18 @@ public class EadocUtility {
 
     public static ERow convertRow(Row row) {
         ERow eRow = EadocFactory.eINSTANCE.createERow();
-        // TODO: map fields
+        // eRow.set(row.getCells());
         return eRow;
     }
 
     public static ESection convertSection(Section section) {
         ESection eSection = EadocFactory.eINSTANCE.createESection();
         mapStructuralNodeFields(eSection, section);
-        // TODO: map fields
+        eSection.setIndex(section.getIndex());
+        eSection.setNumber(section.getNumber());
+        eSection.setSectionName(section.getSectionName());
+        eSection.setSpecial(section.isSpecial());
+        eSection.setNumbered(section.isNumbered());
         return eSection;
     }
 
@@ -201,7 +224,14 @@ public class EadocUtility {
 
     private static void mapStructuralNodeFields(EStructuralNode eStructuralNode, StructuralNode structuralNode) {
         mapContentNodeFields(eStructuralNode, structuralNode);
-        // TODO: map fields
+        eStructuralNode.setTitle(structuralNode.getTitle());
+        eStructuralNode.setStyle(structuralNode.getStyle());
+        // eStructuralNode.setBlocks(structuralNode.getBlocks());
+        // eStructuralNode.set(structuralNode.getContent());
+        eStructuralNode.setLevel(structuralNode.getLevel());
+        // eStructuralNode.setContentModel(structuralNode.getContentModel());
+        eStructuralNode.setSourceLocation(convertCursor(structuralNode.getSourceLocation()));
+        // eStructuralNode.setSubstitutions(structuralNode.getSubstitutions());
     }
 
     public static EStructuredDocument convertStructuredDocument(StructuredDocument structuredDocument) {

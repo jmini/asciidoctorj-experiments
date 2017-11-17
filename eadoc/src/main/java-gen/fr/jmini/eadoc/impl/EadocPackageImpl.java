@@ -757,8 +757,107 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEBlock_Lines() {
+		return (EAttribute)eBlockEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEBlock_Source() {
+		return (EAttribute)eBlockEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getECell() {
 		return eCellEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getECell_Row() {
+		return (EReference)eCellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getECell_Column() {
+		return (EReference)eCellEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getECell_Colspan() {
+		return (EAttribute)eCellEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getECell_Rowspan() {
+		return (EAttribute)eCellEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getECell_Source() {
+		return (EAttribute)eCellEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getECell_Style() {
+		return (EAttribute)eCellEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getECell_HorizontalAlignment() {
+		return (EAttribute)eCellEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getECell_VerticalAlignment() {
+		return (EAttribute)eCellEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getECell_InnerDocument() {
+		return (EReference)eCellEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1054,8 +1153,35 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEDescriptionList_Items() {
+		return (EReference)eDescriptionListEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEDescriptionListEntry() {
 		return eDescriptionListEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEDescriptionListEntry_Terms() {
+		return (EReference)eDescriptionListEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEDescriptionListEntry_Description() {
+		return (EReference)eDescriptionListEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1072,8 +1198,80 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEDocument_StructuredDoctitle() {
+		return (EReference)eDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEDocument_Doctitle() {
+		return (EAttribute)eDocumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEDocument_Options() {
+		return (EAttribute)eDocumentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEDocumentHeader() {
 		return eDocumentHeaderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEDocumentHeader_Authors() {
+		return (EReference)eDocumentHeaderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEDocumentHeader_DocumentTitle() {
+		return (EReference)eDocumentHeaderEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEDocumentHeader_PageTitle() {
+		return (EAttribute)eDocumentHeaderEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEDocumentHeader_RevisionInfo() {
+		return (EReference)eDocumentHeaderEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEDocumentHeader_Attributes() {
+		return (EAttribute)eDocumentHeaderEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1090,8 +1288,44 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEAdocList_Items() {
+		return (EReference)eAdocListEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEListItem() {
 		return eListItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEListItem_Marker() {
+		return (EAttribute)eListItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEListItem_Text() {
+		return (EAttribute)eListItemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEListItem_Source() {
+		return (EAttribute)eListItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1180,8 +1414,62 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getERow_Cells() {
+		return (EReference)eRowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getESection() {
 		return eSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getESection_Index() {
+		return (EAttribute)eSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getESection_Number() {
+		return (EAttribute)eSectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getESection_SectionName() {
+		return (EAttribute)eSectionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getESection_Special() {
+		return (EAttribute)eSectionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getESection_Numbered() {
+		return (EAttribute)eSectionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1535,8 +1823,19 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eAuthorEClass, EAUTHOR__INITIALS);
 
 		eBlockEClass = createEClass(EBLOCK);
+		createEAttribute(eBlockEClass, EBLOCK__LINES);
+		createEAttribute(eBlockEClass, EBLOCK__SOURCE);
 
 		eCellEClass = createEClass(ECELL);
+		createEReference(eCellEClass, ECELL__ROW);
+		createEReference(eCellEClass, ECELL__COLUMN);
+		createEAttribute(eCellEClass, ECELL__COLSPAN);
+		createEAttribute(eCellEClass, ECELL__ROWSPAN);
+		createEAttribute(eCellEClass, ECELL__SOURCE);
+		createEAttribute(eCellEClass, ECELL__STYLE);
+		createEAttribute(eCellEClass, ECELL__HORIZONTAL_ALIGNMENT);
+		createEAttribute(eCellEClass, ECELL__VERTICAL_ALIGNMENT);
+		createEReference(eCellEClass, ECELL__INNER_DOCUMENT);
 
 		eColumnEClass = createEClass(ECOLUMN);
 		createEAttribute(eColumnEClass, ECOLUMN__STYLE);
@@ -1574,16 +1873,31 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eCursorEClass, ECURSOR__FILE);
 
 		eDescriptionListEClass = createEClass(EDESCRIPTION_LIST);
+		createEReference(eDescriptionListEClass, EDESCRIPTION_LIST__ITEMS);
 
 		eDescriptionListEntryEClass = createEClass(EDESCRIPTION_LIST_ENTRY);
+		createEReference(eDescriptionListEntryEClass, EDESCRIPTION_LIST_ENTRY__TERMS);
+		createEReference(eDescriptionListEntryEClass, EDESCRIPTION_LIST_ENTRY__DESCRIPTION);
 
 		eDocumentEClass = createEClass(EDOCUMENT);
+		createEReference(eDocumentEClass, EDOCUMENT__STRUCTURED_DOCTITLE);
+		createEAttribute(eDocumentEClass, EDOCUMENT__DOCTITLE);
+		createEAttribute(eDocumentEClass, EDOCUMENT__OPTIONS);
 
 		eDocumentHeaderEClass = createEClass(EDOCUMENT_HEADER);
+		createEReference(eDocumentHeaderEClass, EDOCUMENT_HEADER__AUTHORS);
+		createEReference(eDocumentHeaderEClass, EDOCUMENT_HEADER__DOCUMENT_TITLE);
+		createEAttribute(eDocumentHeaderEClass, EDOCUMENT_HEADER__PAGE_TITLE);
+		createEReference(eDocumentHeaderEClass, EDOCUMENT_HEADER__REVISION_INFO);
+		createEAttribute(eDocumentHeaderEClass, EDOCUMENT_HEADER__ATTRIBUTES);
 
 		eAdocListEClass = createEClass(EADOC_LIST);
+		createEReference(eAdocListEClass, EADOC_LIST__ITEMS);
 
 		eListItemEClass = createEClass(ELIST_ITEM);
+		createEAttribute(eListItemEClass, ELIST_ITEM__MARKER);
+		createEAttribute(eListItemEClass, ELIST_ITEM__TEXT);
+		createEAttribute(eListItemEClass, ELIST_ITEM__SOURCE);
 
 		ePhraseNodeEClass = createEClass(EPHRASE_NODE);
 		createEAttribute(ePhraseNodeEClass, EPHRASE_NODE__TARGET);
@@ -1596,8 +1910,14 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eRevisionInfoEClass, EREVISION_INFO__REMARK);
 
 		eRowEClass = createEClass(EROW);
+		createEReference(eRowEClass, EROW__CELLS);
 
 		eSectionEClass = createEClass(ESECTION);
+		createEAttribute(eSectionEClass, ESECTION__INDEX);
+		createEAttribute(eSectionEClass, ESECTION__NUMBER);
+		createEAttribute(eSectionEClass, ESECTION__SECTION_NAME);
+		createEAttribute(eSectionEClass, ESECTION__SPECIAL);
+		createEAttribute(eSectionEClass, ESECTION__NUMBERED);
 
 		eStructuralNodeEClass = createEClass(ESTRUCTURAL_NODE);
 		createEAttribute(eStructuralNodeEClass, ESTRUCTURAL_NODE__TITLE);
@@ -1669,20 +1989,30 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		// Add supertypes to classes
 		eAuthorEClass.getESuperTypes().add(this.getAuthor());
 		eBlockEClass.getESuperTypes().add(this.getEStructuralNode());
+		eBlockEClass.getESuperTypes().add(this.getBlock());
 		eCellEClass.getESuperTypes().add(this.getEContentNode());
+		eCellEClass.getESuperTypes().add(this.getCell());
 		eColumnEClass.getESuperTypes().add(this.getEContentNode());
 		eColumnEClass.getESuperTypes().add(this.getColumn());
 		eContentNodeEClass.getESuperTypes().add(this.getContentNode());
 		eContentPartEClass.getESuperTypes().add(this.getContentPart());
 		eCursorEClass.getESuperTypes().add(this.getCursor());
 		eDescriptionListEClass.getESuperTypes().add(this.getEStructuralNode());
+		eDescriptionListEClass.getESuperTypes().add(this.getDescriptionList());
+		eDescriptionListEntryEClass.getESuperTypes().add(this.getDescriptionListEntry());
 		eDocumentEClass.getESuperTypes().add(this.getEStructuralNode());
+		eDocumentEClass.getESuperTypes().add(this.getDocument());
+		eDocumentHeaderEClass.getESuperTypes().add(this.getDocumentHeader());
 		eAdocListEClass.getESuperTypes().add(this.getEStructuralNode());
+		eAdocListEClass.getESuperTypes().add(this.getAstList());
 		eListItemEClass.getESuperTypes().add(this.getEStructuralNode());
+		eListItemEClass.getESuperTypes().add(this.getListItem());
 		ePhraseNodeEClass.getESuperTypes().add(this.getEContentNode());
 		ePhraseNodeEClass.getESuperTypes().add(this.getPhraseNode());
 		eRevisionInfoEClass.getESuperTypes().add(this.getRevisionInfo());
+		eRowEClass.getESuperTypes().add(this.getRow());
 		eSectionEClass.getESuperTypes().add(this.getEStructuralNode());
+		eSectionEClass.getESuperTypes().add(this.getSection());
 		eStructuralNodeEClass.getESuperTypes().add(this.getEContentNode());
 		eStructuralNodeEClass.getESuperTypes().add(this.getStructuralNode());
 		eStructuredDocumentEClass.getESuperTypes().add(this.getStructuredDocument());
@@ -1744,8 +2074,27 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getEAuthor_Initials(), theEcorePackage.getEString(), "initials", null, 0, 1, EAuthor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eBlockEClass, EBlock.class, "EBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEBlock_Lines(), this.getStringList(), "lines", null, 0, 1, EBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEBlock_Source(), theEcorePackage.getEString(), "source", null, 0, 1, EBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eBlockEClass, this.getStringList(), "lines", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eBlockEClass, theEcorePackage.getEString(), "source", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eCellEClass, ECell.class, "ECell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getECell_Row(), this.getERow(), this.getERow_Cells(), "row", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getECell_Column(), this.getEColumn(), null, "column", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getECell_Colspan(), theEcorePackage.getEInt(), "colspan", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getECell_Rowspan(), theEcorePackage.getEInt(), "rowspan", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getECell_Source(), theEcorePackage.getEString(), "source", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getECell_Style(), theEcorePackage.getEString(), "style", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getECell_HorizontalAlignment(), this.getHorizontalAlignment(), "horizontalAlignment", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getECell_VerticalAlignment(), this.getVerticalAlignment(), "verticalAlignment", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getECell_InnerDocument(), this.getDocument(), null, "innerDocument", null, 0, 1, ECell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eCellEClass, theEcorePackage.getEString(), "getText", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eCellEClass, theEcorePackage.getEJavaObject(), "getContent", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eColumnEClass, EColumn.class, "EColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEColumn_Style(), theEcorePackage.getEString(), "style", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1905,16 +2254,65 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getECursor_File(), theEcorePackage.getEString(), "file", null, 0, 1, ECursor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eDescriptionListEClass, EDescriptionList.class, "EDescriptionList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEDescriptionList_Items(), this.getEDescriptionListEntry(), null, "items", null, 0, -1, EDescriptionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eDescriptionListEClass, theEcorePackage.getEBoolean(), "hasItems", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eDescriptionListEClass, theEcorePackage.getEString(), "render", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eDescriptionListEClass, theEcorePackage.getEString(), "convert", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eDescriptionListEntryEClass, EDescriptionListEntry.class, "EDescriptionListEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEDescriptionListEntry_Terms(), this.getEListItem(), null, "terms", null, 0, -1, EDescriptionListEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEDescriptionListEntry_Description(), this.getEListItem(), null, "description", null, 0, 1, EDescriptionListEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = addEOperation(eDescriptionListEntryEClass, null, "setDescription", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getListItem(), "item", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eDocumentEClass, EDocument.class, "EDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEDocument_StructuredDoctitle(), this.getETitle(), null, "structuredDoctitle", null, 0, 1, EDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEDocument_Doctitle(), theEcorePackage.getEString(), "doctitle", null, 0, 1, EDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEDocument_Options(), this.getObjectObjectMap(), "options", null, 0, 1, EDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eDocumentEClass, theEcorePackage.getEString(), "doctitle", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(eDocumentEClass, theEcorePackage.getEBoolean(), "isBasebackend", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "backend", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(eDocumentEClass, theEcorePackage.getEBoolean(), "basebackend", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "backend", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(eDocumentEClass, theEcorePackage.getEInt(), "getAndIncrementCounter", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "name", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(eDocumentEClass, theEcorePackage.getEInt(), "getAndIncrementCounter", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "name", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "initialValue", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eDocumentHeaderEClass, EDocumentHeader.class, "EDocumentHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEDocumentHeader_Authors(), this.getEAuthor(), null, "authors", null, 0, -1, EDocumentHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEDocumentHeader_DocumentTitle(), this.getETitle(), null, "documentTitle", null, 0, 1, EDocumentHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEDocumentHeader_PageTitle(), theEcorePackage.getEString(), "pageTitle", null, 0, 1, EDocumentHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEDocumentHeader_RevisionInfo(), this.getERevisionInfo(), null, "revisionInfo", null, 0, 1, EDocumentHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEDocumentHeader_Attributes(), this.getStringObjectMap(), "attributes", null, 0, 1, EDocumentHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eDocumentHeaderEClass, this.getAuthor(), "getAuthor", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eAdocListEClass, EAdocList.class, "EAdocList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEAdocList_Items(), this.getEStructuralNode(), null, "items", null, 0, -1, EAdocList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eAdocListEClass, theEcorePackage.getEBoolean(), "hasItems", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eAdocListEClass, theEcorePackage.getEString(), "render", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eAdocListEClass, theEcorePackage.getEString(), "convert", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eListItemEClass, EListItem.class, "EListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEListItem_Marker(), theEcorePackage.getEString(), "marker", null, 0, 1, EListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEListItem_Text(), theEcorePackage.getEString(), "text", null, 0, 1, EListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEListItem_Source(), theEcorePackage.getEString(), "source", null, 0, 1, EListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eListItemEClass, theEcorePackage.getEBoolean(), "hasText", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(ePhraseNodeEClass, EPhraseNode.class, "EPhraseNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEPhraseNode_Target(), theEcorePackage.getEString(), "target", null, 0, 1, EPhraseNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1931,8 +2329,24 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getERevisionInfo_Remark(), theEcorePackage.getEString(), "remark", null, 0, 1, ERevisionInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eRowEClass, ERow.class, "ERow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getERow_Cells(), this.getECell(), this.getECell_Row(), "cells", null, 0, -1, ERow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eSectionEClass, ESection.class, "ESection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getESection_Index(), theEcorePackage.getEInt(), "index", null, 0, 1, ESection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getESection_Number(), theEcorePackage.getEInt(), "number", null, 0, 1, ESection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getESection_SectionName(), theEcorePackage.getEString(), "sectionName", null, 0, 1, ESection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getESection_Special(), theEcorePackage.getEBoolean(), "special", null, 0, 1, ESection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getESection_Numbered(), theEcorePackage.getEBoolean(), "numbered", null, 0, 1, ESection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(eSectionEClass, theEcorePackage.getEInt(), "index", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eSectionEClass, theEcorePackage.getEInt(), "number", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eSectionEClass, theEcorePackage.getEString(), "sectname", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eSectionEClass, theEcorePackage.getEBoolean(), "special", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(eSectionEClass, theEcorePackage.getEBoolean(), "numbered", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eStructuralNodeEClass, EStructuralNode.class, "EStructuralNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEStructuralNode_Title(), theEcorePackage.getEString(), "title", null, 0, 1, EStructuralNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

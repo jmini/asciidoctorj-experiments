@@ -48,12 +48,54 @@ class EAuthor extends Author {
 	String initials
 }
 
-class EBlock extends EStructuralNode /*, Block */ {
-	
+class EBlock extends EStructuralNode, Block {
+    /**
+     * @deprecated Please use {@link #getLines}
+     */
+    op StringList lines() {
+    	this.getLines()
+    }
+
+    /**
+     * @return The original content of this block
+     */
+    StringList lines
+
+    /**
+     * @deprecated Please use {@link #getSource}
+     */
+    op String source() {
+    	this.getSource
+    }
+
+    String source
 }
 
-class ECell extends EContentNode /*, Cell */ {
-	
+class ECell extends EContentNode, Cell {
+
+    container ERow row opposite cells
+    refers EColumn column
+
+    int colspan
+
+    int rowspan
+
+    op String getText() {
+    	
+    }
+
+    String source
+
+    op Object getContent() {
+    	
+    }
+
+    String style
+
+    HorizontalAlignment horizontalAlignment
+    VerticalAlignment verticalAlignment
+
+    contains Document innerDocument
 }
 
 class EColumn extends EContentNode, Column {
@@ -282,28 +324,92 @@ class ECursor extends Cursor {
 	String file
 }
 
-class EDescriptionList extends EStructuralNode /*, DescriptionList */ {
-	
+class EDescriptionList extends EStructuralNode, DescriptionList {
+	contains EDescriptionListEntry[] items
+	op boolean hasItems() {
+		!this.items.isEmpty
+	}
+	op String render()
+	op String ^convert()
 }
 
-class EDescriptionListEntry /* extends DescriptionListEntry */ {
+class EDescriptionListEntry extends DescriptionListEntry {
+	contains EListItem[] terms
+	contains EListItem description
 	
+	op void setDescription(ListItem item) {
+		this.setDescription(EadocUtility.convertListItem(item))
+	}
 }
 
-class EDocument extends EStructuralNode /*, Document */ {
-	
+class EDocument extends EStructuralNode, Document {
+    contains ETitle structuredDoctitle
+    String doctitle
+    /**
+     * @deprecated Please use {@link #getDoctitle()}
+     */
+    op String doctitle() {
+        this.getDoctitle
+    }
+    op boolean isBasebackend(String backend) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    /**
+     * @deprecated Please use {@link #isBasebackend(String)}
+     */
+    op boolean basebackend(String backend) {
+    	this.isBasebackend(backend)
+    }
+
+    ObjectObjectMap options
+
+    op int getAndIncrementCounter(String name) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op int getAndIncrementCounter(String name, int initialValue) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
 }
 
-class EDocumentHeader /* extends DocumentHeader */ {
-	
+class EDocumentHeader extends DocumentHeader {
+    contains EAuthor[] authors
+
+    contains ETitle documentTitle
+
+    String pageTitle
+
+    op Author getAuthor() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    contains ERevisionInfo revisionInfo
+
+    StringObjectMap attributes
 }
 
-class EAdocList extends EStructuralNode /*, AstList */ {
-	
+class EAdocList extends EStructuralNode, AstList {
+    contains EStructuralNode[] items
+
+    op boolean hasItems() {
+    	!this.items.isEmpty
+    }
+
+	op String render()
+	op String ^convert()
 }
 
-class EListItem extends EStructuralNode /*, ListItem */ {
-	
+class EListItem extends EStructuralNode, ListItem {
+    String marker
+
+    String text
+
+    String source
+
+    op boolean hasText() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
 }
 
 class EPhraseNode extends EContentNode, PhraseNode {
@@ -320,12 +426,55 @@ class ERevisionInfo extends RevisionInfo {
 	String remark
 }
 
-class ERow /* extends Row */ {
-	
+class ERow extends Row {
+	contains ECell[] cells opposite row
 }
 
-class ESection extends EStructuralNode /*, Section */ {
-	
+class ESection extends EStructuralNode, Section {
+    /**
+     * @deprecated Please use {@link #getIndex()}
+     */
+    op int index() {
+    	this.getIndex
+    }
+
+    int index
+
+    /**
+     * @deprecated Please use {@link #getNumber()}
+     */
+    op int number() {
+    	this.getNumber
+    }
+
+    int number
+
+    /**
+     * @deprecated Please use {@link #getSectionName()}
+     */
+    op String sectname() {
+    	return this.getSectionName
+    }
+
+    String sectionName
+
+    /**
+     * @deprecated Please use {@link #isSpecial()}
+     */
+    op boolean special() {
+    	this.isSpecial
+    }
+
+    boolean special
+
+    /**
+     * @deprecated Please use {@link #isNumbered()}
+     */
+    op boolean numbered() {
+    	this.isNumbered
+    }
+
+    boolean numbered
 }
 
 class EStructuralNode extends EContentNode, StructuralNode {

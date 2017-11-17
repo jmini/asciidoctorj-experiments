@@ -231,6 +231,7 @@ public class EadocSwitch<T> extends Switch<T> {
 				EBlock eBlock = (EBlock)theEObject;
 				T result = caseEBlock(eBlock);
 				if (result == null) result = caseEStructuralNode(eBlock);
+				if (result == null) result = caseBlock(eBlock);
 				if (result == null) result = caseEContentNode(eBlock);
 				if (result == null) result = caseStructuralNode(eBlock);
 				if (result == null) result = caseContentNode(eBlock);
@@ -241,6 +242,7 @@ public class EadocSwitch<T> extends Switch<T> {
 				ECell eCell = (ECell)theEObject;
 				T result = caseECell(eCell);
 				if (result == null) result = caseEContentNode(eCell);
+				if (result == null) result = caseCell(eCell);
 				if (result == null) result = caseContentNode(eCell);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -279,6 +281,7 @@ public class EadocSwitch<T> extends Switch<T> {
 				EDescriptionList eDescriptionList = (EDescriptionList)theEObject;
 				T result = caseEDescriptionList(eDescriptionList);
 				if (result == null) result = caseEStructuralNode(eDescriptionList);
+				if (result == null) result = caseDescriptionList(eDescriptionList);
 				if (result == null) result = caseEContentNode(eDescriptionList);
 				if (result == null) result = caseStructuralNode(eDescriptionList);
 				if (result == null) result = caseContentNode(eDescriptionList);
@@ -288,6 +291,7 @@ public class EadocSwitch<T> extends Switch<T> {
 			case EadocPackage.EDESCRIPTION_LIST_ENTRY: {
 				EDescriptionListEntry eDescriptionListEntry = (EDescriptionListEntry)theEObject;
 				T result = caseEDescriptionListEntry(eDescriptionListEntry);
+				if (result == null) result = caseDescriptionListEntry(eDescriptionListEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -295,6 +299,7 @@ public class EadocSwitch<T> extends Switch<T> {
 				EDocument eDocument = (EDocument)theEObject;
 				T result = caseEDocument(eDocument);
 				if (result == null) result = caseEStructuralNode(eDocument);
+				if (result == null) result = caseDocument(eDocument);
 				if (result == null) result = caseEContentNode(eDocument);
 				if (result == null) result = caseStructuralNode(eDocument);
 				if (result == null) result = caseContentNode(eDocument);
@@ -304,6 +309,7 @@ public class EadocSwitch<T> extends Switch<T> {
 			case EadocPackage.EDOCUMENT_HEADER: {
 				EDocumentHeader eDocumentHeader = (EDocumentHeader)theEObject;
 				T result = caseEDocumentHeader(eDocumentHeader);
+				if (result == null) result = caseDocumentHeader(eDocumentHeader);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -311,6 +317,7 @@ public class EadocSwitch<T> extends Switch<T> {
 				EAdocList eAdocList = (EAdocList)theEObject;
 				T result = caseEAdocList(eAdocList);
 				if (result == null) result = caseEStructuralNode(eAdocList);
+				if (result == null) result = caseAstList(eAdocList);
 				if (result == null) result = caseEContentNode(eAdocList);
 				if (result == null) result = caseStructuralNode(eAdocList);
 				if (result == null) result = caseContentNode(eAdocList);
@@ -321,6 +328,7 @@ public class EadocSwitch<T> extends Switch<T> {
 				EListItem eListItem = (EListItem)theEObject;
 				T result = caseEListItem(eListItem);
 				if (result == null) result = caseEStructuralNode(eListItem);
+				if (result == null) result = caseListItem(eListItem);
 				if (result == null) result = caseEContentNode(eListItem);
 				if (result == null) result = caseStructuralNode(eListItem);
 				if (result == null) result = caseContentNode(eListItem);
@@ -346,6 +354,7 @@ public class EadocSwitch<T> extends Switch<T> {
 			case EadocPackage.EROW: {
 				ERow eRow = (ERow)theEObject;
 				T result = caseERow(eRow);
+				if (result == null) result = caseRow(eRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -353,6 +362,7 @@ public class EadocSwitch<T> extends Switch<T> {
 				ESection eSection = (ESection)theEObject;
 				T result = caseESection(eSection);
 				if (result == null) result = caseEStructuralNode(eSection);
+				if (result == null) result = caseSection(eSection);
 				if (result == null) result = caseEContentNode(eSection);
 				if (result == null) result = caseStructuralNode(eSection);
 				if (result == null) result = caseContentNode(eSection);

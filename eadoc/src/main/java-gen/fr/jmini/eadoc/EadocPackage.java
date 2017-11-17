@@ -948,13 +948,31 @@ public interface EadocPackage extends EPackage {
 	int EBLOCK__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Lines</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__LINES = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__SOURCE = ESTRUCTURAL_NODE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>EBlock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EBLOCK_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+	int EBLOCK_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ECellImpl <em>ECell</em>}' class.
@@ -1048,13 +1066,94 @@ public interface EadocPackage extends EPackage {
 	int ECELL__ROLES = ECONTENT_NODE__ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Row</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__ROW = ECONTENT_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Column</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__COLUMN = ECONTENT_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Colspan</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__COLSPAN = ECONTENT_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Rowspan</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__ROWSPAN = ECONTENT_NODE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__SOURCE = ECONTENT_NODE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__STYLE = ECONTENT_NODE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Horizontal Alignment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__HORIZONTAL_ALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Vertical Alignment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__VERTICAL_ALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Inner Document</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__INNER_DOCUMENT = ECONTENT_NODE_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>ECell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECELL_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 0;
+	int ECELL_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EColumnImpl <em>EColumn</em>}' class.
@@ -1502,13 +1601,22 @@ public interface EadocPackage extends EPackage {
 	int EDESCRIPTION_LIST__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__ITEMS = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>EDescription List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDESCRIPTION_LIST_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+	int EDESCRIPTION_LIST_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EDescriptionListEntryImpl <em>EDescription List Entry</em>}' class.
@@ -1521,13 +1629,31 @@ public interface EadocPackage extends EPackage {
 	int EDESCRIPTION_LIST_ENTRY = 30;
 
 	/**
+	 * The feature id for the '<em><b>Terms</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST_ENTRY__TERMS = DESCRIPTION_LIST_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST_ENTRY__DESCRIPTION = DESCRIPTION_LIST_ENTRY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>EDescription List Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDESCRIPTION_LIST_ENTRY_FEATURE_COUNT = 0;
+	int EDESCRIPTION_LIST_ENTRY_FEATURE_COUNT = DESCRIPTION_LIST_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EDocumentImpl <em>EDocument</em>}' class.
@@ -1675,13 +1801,40 @@ public interface EadocPackage extends EPackage {
 	int EDOCUMENT__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Structured Doctitle</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__STRUCTURED_DOCTITLE = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Doctitle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__DOCTITLE = ESTRUCTURAL_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Options</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__OPTIONS = ESTRUCTURAL_NODE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>EDocument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDOCUMENT_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+	int EDOCUMENT_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EDocumentHeaderImpl <em>EDocument Header</em>}' class.
@@ -1694,13 +1847,58 @@ public interface EadocPackage extends EPackage {
 	int EDOCUMENT_HEADER = 32;
 
 	/**
+	 * The feature id for the '<em><b>Authors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT_HEADER__AUTHORS = DOCUMENT_HEADER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Document Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT_HEADER__DOCUMENT_TITLE = DOCUMENT_HEADER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Page Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT_HEADER__PAGE_TITLE = DOCUMENT_HEADER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Revision Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT_HEADER__REVISION_INFO = DOCUMENT_HEADER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT_HEADER__ATTRIBUTES = DOCUMENT_HEADER_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>EDocument Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDOCUMENT_HEADER_FEATURE_COUNT = 0;
+	int EDOCUMENT_HEADER_FEATURE_COUNT = DOCUMENT_HEADER_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EAdocListImpl <em>EAdoc List</em>}' class.
@@ -1848,13 +2046,22 @@ public interface EadocPackage extends EPackage {
 	int EADOC_LIST__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__ITEMS = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>EAdoc List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EADOC_LIST_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+	int EADOC_LIST_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EListItemImpl <em>EList Item</em>}' class.
@@ -2002,13 +2209,40 @@ public interface EadocPackage extends EPackage {
 	int ELIST_ITEM__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Marker</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__MARKER = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__TEXT = ESTRUCTURAL_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__SOURCE = ESTRUCTURAL_NODE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>EList Item</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELIST_ITEM_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+	int ELIST_ITEM_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EPhraseNodeImpl <em>EPhrase Node</em>}' class.
@@ -2194,13 +2428,22 @@ public interface EadocPackage extends EPackage {
 	int EROW = 37;
 
 	/**
+	 * The feature id for the '<em><b>Cells</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROW__CELLS = ROW_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>ERow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EROW_FEATURE_COUNT = 0;
+	int EROW_FEATURE_COUNT = ROW_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ESectionImpl <em>ESection</em>}' class.
@@ -2348,13 +2591,58 @@ public interface EadocPackage extends EPackage {
 	int ESECTION__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__INDEX = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__NUMBER = ESTRUCTURAL_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Section Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__SECTION_NAME = ESTRUCTURAL_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Special</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__SPECIAL = ESTRUCTURAL_NODE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Numbered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__NUMBERED = ESTRUCTURAL_NODE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>ESection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ESECTION_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+	int ESECTION_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EStructuredDocumentImpl <em>EStructured Document</em>}' class.
@@ -3065,6 +3353,28 @@ public interface EadocPackage extends EPackage {
 	EClass getEBlock();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EBlock#getLines <em>Lines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lines</em>'.
+	 * @see fr.jmini.eadoc.EBlock#getLines()
+	 * @see #getEBlock()
+	 * @generated
+	 */
+	EAttribute getEBlock_Lines();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EBlock#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source</em>'.
+	 * @see fr.jmini.eadoc.EBlock#getSource()
+	 * @see #getEBlock()
+	 * @generated
+	 */
+	EAttribute getEBlock_Source();
+
+	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.ECell <em>ECell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3073,6 +3383,105 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getECell();
+
+	/**
+	 * Returns the meta object for the container reference '{@link fr.jmini.eadoc.ECell#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Row</em>'.
+	 * @see fr.jmini.eadoc.ECell#getRow()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EReference getECell_Row();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.ECell#getColumn <em>Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Column</em>'.
+	 * @see fr.jmini.eadoc.ECell#getColumn()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EReference getECell_Column();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECell#getColspan <em>Colspan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Colspan</em>'.
+	 * @see fr.jmini.eadoc.ECell#getColspan()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EAttribute getECell_Colspan();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECell#getRowspan <em>Rowspan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Rowspan</em>'.
+	 * @see fr.jmini.eadoc.ECell#getRowspan()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EAttribute getECell_Rowspan();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECell#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source</em>'.
+	 * @see fr.jmini.eadoc.ECell#getSource()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EAttribute getECell_Source();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECell#getStyle <em>Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see fr.jmini.eadoc.ECell#getStyle()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EAttribute getECell_Style();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECell#getHorizontalAlignment <em>Horizontal Alignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Horizontal Alignment</em>'.
+	 * @see fr.jmini.eadoc.ECell#getHorizontalAlignment()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EAttribute getECell_HorizontalAlignment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECell#getVerticalAlignment <em>Vertical Alignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Vertical Alignment</em>'.
+	 * @see fr.jmini.eadoc.ECell#getVerticalAlignment()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EAttribute getECell_VerticalAlignment();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fr.jmini.eadoc.ECell#getInnerDocument <em>Inner Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Inner Document</em>'.
+	 * @see fr.jmini.eadoc.ECell#getInnerDocument()
+	 * @see #getECell()
+	 * @generated
+	 */
+	EReference getECell_InnerDocument();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EColumn <em>EColumn</em>}'.
@@ -3422,6 +3831,17 @@ public interface EadocPackage extends EPackage {
 	EClass getEDescriptionList();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.EDescriptionList#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Items</em>'.
+	 * @see fr.jmini.eadoc.EDescriptionList#getItems()
+	 * @see #getEDescriptionList()
+	 * @generated
+	 */
+	EReference getEDescriptionList_Items();
+
+	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EDescriptionListEntry <em>EDescription List Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3430,6 +3850,28 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEDescriptionListEntry();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.EDescriptionListEntry#getTerms <em>Terms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Terms</em>'.
+	 * @see fr.jmini.eadoc.EDescriptionListEntry#getTerms()
+	 * @see #getEDescriptionListEntry()
+	 * @generated
+	 */
+	EReference getEDescriptionListEntry_Terms();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fr.jmini.eadoc.EDescriptionListEntry#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see fr.jmini.eadoc.EDescriptionListEntry#getDescription()
+	 * @see #getEDescriptionListEntry()
+	 * @generated
+	 */
+	EReference getEDescriptionListEntry_Description();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EDocument <em>EDocument</em>}'.
@@ -3442,6 +3884,39 @@ public interface EadocPackage extends EPackage {
 	EClass getEDocument();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link fr.jmini.eadoc.EDocument#getStructuredDoctitle <em>Structured Doctitle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Structured Doctitle</em>'.
+	 * @see fr.jmini.eadoc.EDocument#getStructuredDoctitle()
+	 * @see #getEDocument()
+	 * @generated
+	 */
+	EReference getEDocument_StructuredDoctitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EDocument#getDoctitle <em>Doctitle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Doctitle</em>'.
+	 * @see fr.jmini.eadoc.EDocument#getDoctitle()
+	 * @see #getEDocument()
+	 * @generated
+	 */
+	EAttribute getEDocument_Doctitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EDocument#getOptions <em>Options</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Options</em>'.
+	 * @see fr.jmini.eadoc.EDocument#getOptions()
+	 * @see #getEDocument()
+	 * @generated
+	 */
+	EAttribute getEDocument_Options();
+
+	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EDocumentHeader <em>EDocument Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3450,6 +3925,61 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEDocumentHeader();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.EDocumentHeader#getAuthors <em>Authors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Authors</em>'.
+	 * @see fr.jmini.eadoc.EDocumentHeader#getAuthors()
+	 * @see #getEDocumentHeader()
+	 * @generated
+	 */
+	EReference getEDocumentHeader_Authors();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fr.jmini.eadoc.EDocumentHeader#getDocumentTitle <em>Document Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Document Title</em>'.
+	 * @see fr.jmini.eadoc.EDocumentHeader#getDocumentTitle()
+	 * @see #getEDocumentHeader()
+	 * @generated
+	 */
+	EReference getEDocumentHeader_DocumentTitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EDocumentHeader#getPageTitle <em>Page Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Page Title</em>'.
+	 * @see fr.jmini.eadoc.EDocumentHeader#getPageTitle()
+	 * @see #getEDocumentHeader()
+	 * @generated
+	 */
+	EAttribute getEDocumentHeader_PageTitle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fr.jmini.eadoc.EDocumentHeader#getRevisionInfo <em>Revision Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Revision Info</em>'.
+	 * @see fr.jmini.eadoc.EDocumentHeader#getRevisionInfo()
+	 * @see #getEDocumentHeader()
+	 * @generated
+	 */
+	EReference getEDocumentHeader_RevisionInfo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EDocumentHeader#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Attributes</em>'.
+	 * @see fr.jmini.eadoc.EDocumentHeader#getAttributes()
+	 * @see #getEDocumentHeader()
+	 * @generated
+	 */
+	EAttribute getEDocumentHeader_Attributes();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EAdocList <em>EAdoc List</em>}'.
@@ -3462,6 +3992,17 @@ public interface EadocPackage extends EPackage {
 	EClass getEAdocList();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.EAdocList#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Items</em>'.
+	 * @see fr.jmini.eadoc.EAdocList#getItems()
+	 * @see #getEAdocList()
+	 * @generated
+	 */
+	EReference getEAdocList_Items();
+
+	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EListItem <em>EList Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3470,6 +4011,39 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEListItem();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EListItem#getMarker <em>Marker</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Marker</em>'.
+	 * @see fr.jmini.eadoc.EListItem#getMarker()
+	 * @see #getEListItem()
+	 * @generated
+	 */
+	EAttribute getEListItem_Marker();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EListItem#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see fr.jmini.eadoc.EListItem#getText()
+	 * @see #getEListItem()
+	 * @generated
+	 */
+	EAttribute getEListItem_Text();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EListItem#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source</em>'.
+	 * @see fr.jmini.eadoc.EListItem#getSource()
+	 * @see #getEListItem()
+	 * @generated
+	 */
+	EAttribute getEListItem_Source();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EPhraseNode <em>EPhrase Node</em>}'.
@@ -3568,6 +4142,17 @@ public interface EadocPackage extends EPackage {
 	EClass getERow();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.ERow#getCells <em>Cells</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Cells</em>'.
+	 * @see fr.jmini.eadoc.ERow#getCells()
+	 * @see #getERow()
+	 * @generated
+	 */
+	EReference getERow_Cells();
+
+	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.ESection <em>ESection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3576,6 +4161,61 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getESection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ESection#getIndex <em>Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Index</em>'.
+	 * @see fr.jmini.eadoc.ESection#getIndex()
+	 * @see #getESection()
+	 * @generated
+	 */
+	EAttribute getESection_Index();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ESection#getNumber <em>Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number</em>'.
+	 * @see fr.jmini.eadoc.ESection#getNumber()
+	 * @see #getESection()
+	 * @generated
+	 */
+	EAttribute getESection_Number();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ESection#getSectionName <em>Section Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Section Name</em>'.
+	 * @see fr.jmini.eadoc.ESection#getSectionName()
+	 * @see #getESection()
+	 * @generated
+	 */
+	EAttribute getESection_SectionName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ESection#isSpecial <em>Special</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Special</em>'.
+	 * @see fr.jmini.eadoc.ESection#isSpecial()
+	 * @see #getESection()
+	 * @generated
+	 */
+	EAttribute getESection_Special();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ESection#isNumbered <em>Numbered</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Numbered</em>'.
+	 * @see fr.jmini.eadoc.ESection#isNumbered()
+	 * @see #getESection()
+	 * @generated
+	 */
+	EAttribute getESection_Numbered();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EStructuralNode <em>EStructural Node</em>}'.
@@ -4214,6 +4854,22 @@ public interface EadocPackage extends EPackage {
 		EClass EBLOCK = eINSTANCE.getEBlock();
 
 		/**
+		 * The meta object literal for the '<em><b>Lines</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EBLOCK__LINES = eINSTANCE.getEBlock_Lines();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EBLOCK__SOURCE = eINSTANCE.getEBlock_Source();
+
+		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ECellImpl <em>ECell</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4222,6 +4878,78 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ECELL = eINSTANCE.getECell();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ECELL__ROW = eINSTANCE.getECell_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Column</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ECELL__COLUMN = eINSTANCE.getECell_Column();
+
+		/**
+		 * The meta object literal for the '<em><b>Colspan</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECELL__COLSPAN = eINSTANCE.getECell_Colspan();
+
+		/**
+		 * The meta object literal for the '<em><b>Rowspan</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECELL__ROWSPAN = eINSTANCE.getECell_Rowspan();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECELL__SOURCE = eINSTANCE.getECell_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECELL__STYLE = eINSTANCE.getECell_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Horizontal Alignment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECELL__HORIZONTAL_ALIGNMENT = eINSTANCE.getECell_HorizontalAlignment();
+
+		/**
+		 * The meta object literal for the '<em><b>Vertical Alignment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECELL__VERTICAL_ALIGNMENT = eINSTANCE.getECell_VerticalAlignment();
+
+		/**
+		 * The meta object literal for the '<em><b>Inner Document</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ECELL__INNER_DOCUMENT = eINSTANCE.getECell_InnerDocument();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EColumnImpl <em>EColumn</em>}' class.
@@ -4490,6 +5218,14 @@ public interface EadocPackage extends EPackage {
 		EClass EDESCRIPTION_LIST = eINSTANCE.getEDescriptionList();
 
 		/**
+		 * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDESCRIPTION_LIST__ITEMS = eINSTANCE.getEDescriptionList_Items();
+
+		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EDescriptionListEntryImpl <em>EDescription List Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4498,6 +5234,22 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EDESCRIPTION_LIST_ENTRY = eINSTANCE.getEDescriptionListEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Terms</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDESCRIPTION_LIST_ENTRY__TERMS = eINSTANCE.getEDescriptionListEntry_Terms();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDESCRIPTION_LIST_ENTRY__DESCRIPTION = eINSTANCE.getEDescriptionListEntry_Description();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EDocumentImpl <em>EDocument</em>}' class.
@@ -4510,6 +5262,30 @@ public interface EadocPackage extends EPackage {
 		EClass EDOCUMENT = eINSTANCE.getEDocument();
 
 		/**
+		 * The meta object literal for the '<em><b>Structured Doctitle</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDOCUMENT__STRUCTURED_DOCTITLE = eINSTANCE.getEDocument_StructuredDoctitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Doctitle</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDOCUMENT__DOCTITLE = eINSTANCE.getEDocument_Doctitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Options</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDOCUMENT__OPTIONS = eINSTANCE.getEDocument_Options();
+
+		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EDocumentHeaderImpl <em>EDocument Header</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4518,6 +5294,46 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EDOCUMENT_HEADER = eINSTANCE.getEDocumentHeader();
+
+		/**
+		 * The meta object literal for the '<em><b>Authors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDOCUMENT_HEADER__AUTHORS = eINSTANCE.getEDocumentHeader_Authors();
+
+		/**
+		 * The meta object literal for the '<em><b>Document Title</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDOCUMENT_HEADER__DOCUMENT_TITLE = eINSTANCE.getEDocumentHeader_DocumentTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Page Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDOCUMENT_HEADER__PAGE_TITLE = eINSTANCE.getEDocumentHeader_PageTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Revision Info</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDOCUMENT_HEADER__REVISION_INFO = eINSTANCE.getEDocumentHeader_RevisionInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDOCUMENT_HEADER__ATTRIBUTES = eINSTANCE.getEDocumentHeader_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EAdocListImpl <em>EAdoc List</em>}' class.
@@ -4530,6 +5346,14 @@ public interface EadocPackage extends EPackage {
 		EClass EADOC_LIST = eINSTANCE.getEAdocList();
 
 		/**
+		 * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EADOC_LIST__ITEMS = eINSTANCE.getEAdocList_Items();
+
+		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EListItemImpl <em>EList Item</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4538,6 +5362,30 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ELIST_ITEM = eINSTANCE.getEListItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Marker</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELIST_ITEM__MARKER = eINSTANCE.getEListItem_Marker();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELIST_ITEM__TEXT = eINSTANCE.getEListItem_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELIST_ITEM__SOURCE = eINSTANCE.getEListItem_Source();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EPhraseNodeImpl <em>EPhrase Node</em>}' class.
@@ -4618,6 +5466,14 @@ public interface EadocPackage extends EPackage {
 		EClass EROW = eINSTANCE.getERow();
 
 		/**
+		 * The meta object literal for the '<em><b>Cells</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROW__CELLS = eINSTANCE.getERow_Cells();
+
+		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ESectionImpl <em>ESection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4626,6 +5482,46 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ESECTION = eINSTANCE.getESection();
+
+		/**
+		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESECTION__INDEX = eINSTANCE.getESection_Index();
+
+		/**
+		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESECTION__NUMBER = eINSTANCE.getESection_Number();
+
+		/**
+		 * The meta object literal for the '<em><b>Section Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESECTION__SECTION_NAME = eINSTANCE.getESection_SectionName();
+
+		/**
+		 * The meta object literal for the '<em><b>Special</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESECTION__SPECIAL = eINSTANCE.getESection_Special();
+
+		/**
+		 * The meta object literal for the '<em><b>Numbered</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESECTION__NUMBERED = eINSTANCE.getESection_Numbered();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EStructuralNodeImpl <em>EStructural Node</em>}' class.
