@@ -5,8 +5,6 @@ package fr.jmini.eadoc.impl;
 import fr.jmini.eadoc.EContentNode;
 import fr.jmini.eadoc.EadocPackage;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.List;
 import java.util.Map;
 
@@ -14,8 +12,6 @@ import org.asciidoctor.ast.ContentNode;
 import org.asciidoctor.ast.Document;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -33,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getNodeName <em>Node Name</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getContext <em>Context</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getDocument <em>Document</em>}</li>
@@ -64,6 +61,26 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNodeName() <em>Node Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNodeName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NODE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNodeName() <em>Node Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNodeName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nodeName = NODE_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
@@ -203,6 +220,27 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EadocPackage.ECONTENT_NODE__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNodeName() {
+		return nodeName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNodeName(String newNodeName) {
+		String oldNodeName = nodeName;
+		nodeName = newNodeName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EadocPackage.ECONTENT_NODE__NODE_NAME, oldNodeName, nodeName));
 	}
 
 	/**
@@ -429,15 +467,6 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	 */
 	public String id() {
 		return this.getId();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNodeName() {
-		throw new UnsupportedOperationException("Not implemented");
 	}
 
 	/**
@@ -764,6 +793,8 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 		switch (featureID) {
 			case EadocPackage.ECONTENT_NODE__ID:
 				return getId();
+			case EadocPackage.ECONTENT_NODE__NODE_NAME:
+				return getNodeName();
 			case EadocPackage.ECONTENT_NODE__PARENT:
 				if (resolve) return getParent();
 				return basicGetParent();
@@ -797,6 +828,9 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 		switch (featureID) {
 			case EadocPackage.ECONTENT_NODE__ID:
 				setId((String)newValue);
+				return;
+			case EadocPackage.ECONTENT_NODE__NODE_NAME:
+				setNodeName((String)newValue);
 				return;
 			case EadocPackage.ECONTENT_NODE__PARENT:
 				setParent((ContentNode)newValue);
@@ -834,6 +868,9 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 			case EadocPackage.ECONTENT_NODE__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case EadocPackage.ECONTENT_NODE__NODE_NAME:
+				setNodeName(NODE_NAME_EDEFAULT);
+				return;
 			case EadocPackage.ECONTENT_NODE__PARENT:
 				setParent((ContentNode)null);
 				return;
@@ -869,6 +906,8 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 		switch (featureID) {
 			case EadocPackage.ECONTENT_NODE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case EadocPackage.ECONTENT_NODE__NODE_NAME:
+				return NODE_NAME_EDEFAULT == null ? nodeName != null : !NODE_NAME_EDEFAULT.equals(nodeName);
 			case EadocPackage.ECONTENT_NODE__PARENT:
 				return parent != null;
 			case EadocPackage.ECONTENT_NODE__CONTEXT:
@@ -893,99 +932,14 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	 * @generated
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case EadocPackage.ECONTENT_NODE___ID:
-				return id();
-			case EadocPackage.ECONTENT_NODE___GET_NODE_NAME:
-				return getNodeName();
-			case EadocPackage.ECONTENT_NODE___PARENT:
-				return parent();
-			case EadocPackage.ECONTENT_NODE___CONTEXT:
-				return context();
-			case EadocPackage.ECONTENT_NODE___DOCUMENT:
-				return document();
-			case EadocPackage.ECONTENT_NODE___GET_ATTR__OBJECT_OBJECT_BOOLEAN:
-				return getAttr(arguments.get(0), arguments.get(1), (Boolean)arguments.get(2));
-			case EadocPackage.ECONTENT_NODE___GET_ATTR__OBJECT_OBJECT:
-				return getAttr(arguments.get(0), arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___GET_ATTR__OBJECT:
-				return getAttr(arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___GET_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN:
-				return getAttribute(arguments.get(0), arguments.get(1), (Boolean)arguments.get(2));
-			case EadocPackage.ECONTENT_NODE___GET_ATTRIBUTE__OBJECT_OBJECT:
-				return getAttribute(arguments.get(0), arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___GET_ATTRIBUTE__OBJECT:
-				return getAttribute(arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___HAS_ATTR__OBJECT:
-				return hasAttr(arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___HAS_ATTR__OBJECT_BOOLEAN:
-				return hasAttr(arguments.get(0), (Boolean)arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___HAS_ATTRIBUTE__OBJECT:
-				return hasAttribute(arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___HAS_ATTRIBUTE__OBJECT_BOOLEAN:
-				return hasAttribute(arguments.get(0), (Boolean)arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___IS_ATTR__OBJECT_OBJECT:
-				return isAttr(arguments.get(0), arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___IS_ATTR__OBJECT_OBJECT_BOOLEAN:
-				return isAttr(arguments.get(0), arguments.get(1), (Boolean)arguments.get(2));
-			case EadocPackage.ECONTENT_NODE___IS_ATTRIBUTE__OBJECT_OBJECT:
-				return isAttribute(arguments.get(0), arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___IS_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN:
-				return isAttribute(arguments.get(0), arguments.get(1), (Boolean)arguments.get(2));
-			case EadocPackage.ECONTENT_NODE___SET_ATTR__OBJECT_OBJECT_BOOLEAN:
-				return setAttr(arguments.get(0), arguments.get(1), (Boolean)arguments.get(2));
-			case EadocPackage.ECONTENT_NODE___SET_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN:
-				return setAttribute(arguments.get(0), arguments.get(1), (Boolean)arguments.get(2));
-			case EadocPackage.ECONTENT_NODE___IS_OPTION__OBJECT:
-				return isOption(arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___IS_ROLE:
-				return isRole();
-			case EadocPackage.ECONTENT_NODE___HAS_ROLE__STRING:
-				return hasRole((String)arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___GET_ROLE:
-				return getRole();
-			case EadocPackage.ECONTENT_NODE___ROLE:
-				return role();
-			case EadocPackage.ECONTENT_NODE___ADD_ROLE__STRING:
-				addRole((String)arguments.get(0));
-				return null;
-			case EadocPackage.ECONTENT_NODE___REMOVE_ROLE__STRING:
-				removeRole((String)arguments.get(0));
-				return null;
-			case EadocPackage.ECONTENT_NODE___IS_REFTEXT:
-				return isReftext();
-			case EadocPackage.ECONTENT_NODE___GET_REFTEXT:
-				return getReftext();
-			case EadocPackage.ECONTENT_NODE___ICON_URI__STRING:
-				return iconUri((String)arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___MEDIA_URI__STRING:
-				return mediaUri((String)arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___IMAGE_URI__STRING:
-				return imageUri((String)arguments.get(0));
-			case EadocPackage.ECONTENT_NODE___IMAGE_URI__STRING_STRING:
-				return imageUri((String)arguments.get(0), (String)arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___READ_ASSET__STRING_OBJECT_OBJECT_MAP:
-				return readAsset((String)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case EadocPackage.ECONTENT_NODE___NORMALIZE_WEB_PATH__STRING_STRING_BOOLEAN:
-				return normalizeWebPath((String)arguments.get(0), (String)arguments.get(1), (Boolean)arguments.get(2));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
+		result.append(", nodeName: ");
+		result.append(nodeName);
 		result.append(", context: ");
 		result.append(context);
 		result.append(", inline: ");

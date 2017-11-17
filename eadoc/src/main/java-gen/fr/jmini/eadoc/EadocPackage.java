@@ -4,7 +4,7 @@ package fr.jmini.eadoc;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -15,14 +15,13 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
  * @see fr.jmini.eadoc.EadocFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel bundleManifest='false' modelDirectory='adoc-api-impl/src/main/java-gen' complianceLevel='8.0' basePackage='fr.jmini'"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel bundleManifest='false' operationReflection='false' modelDirectory='adoc-api-impl/src/main/java-gen' complianceLevel='8.0' basePackage='fr.jmini'"
  * @generated
  */
 public interface EadocPackage extends EPackage {
@@ -78,125 +77,61 @@ public interface EadocPackage extends EPackage {
 	int AUTHOR_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Author</em>' class.
+	 * The meta object id for the '{@link org.asciidoctor.ast.Block <em>Block</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.Block
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getBlock()
+	 * @generated
+	 */
+	int BLOCK = 1;
+
+	/**
+	 * The number of structural features of the '<em>Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR_OPERATION_COUNT = 0;
+	int BLOCK_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}' class.
+	 * The meta object id for the '{@link org.asciidoctor.ast.Cell <em>Cell</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.asciidoctor.ast.DocumentHeader
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDocumentHeader()
+	 * @see org.asciidoctor.ast.Cell
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getCell()
 	 * @generated
 	 */
-	int DOCUMENT_HEADER = 1;
+	int CELL = 2;
 
 	/**
-	 * The number of structural features of the '<em>Document Header</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT_HEADER_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Document Header</em>' class.
+	 * The number of structural features of the '<em>Cell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_HEADER_OPERATION_COUNT = 0;
+	int CELL_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}' class.
+	 * The meta object id for the '{@link org.asciidoctor.ast.Column <em>Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.asciidoctor.ast.Cursor
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getCursor()
+	 * @see org.asciidoctor.ast.Column
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getColumn()
 	 * @generated
 	 */
-	int CURSOR = 2;
+	int COLUMN = 3;
 
 	/**
-	 * The number of structural features of the '<em>Cursor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURSOR_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Cursor</em>' class.
+	 * The number of structural features of the '<em>Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CURSOR_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.asciidoctor.ast.RevisionInfo
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getRevisionInfo()
-	 * @generated
-	 */
-	int REVISION_INFO = 3;
-
-	/**
-	 * The number of structural features of the '<em>Revision Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REVISION_INFO_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Revision Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REVISION_INFO_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.asciidoctor.ast.StructuredDocument
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuredDocument()
-	 * @generated
-	 */
-	int STRUCTURED_DOCUMENT = 4;
-
-	/**
-	 * The number of structural features of the '<em>Structured Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_DOCUMENT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Structured Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_DOCUMENT_OPERATION_COUNT = 0;
+	int COLUMN_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.asciidoctor.ast.ContentNode <em>Content Node</em>}' class.
@@ -206,7 +141,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getContentNode()
 	 * @generated
 	 */
-	int CONTENT_NODE = 5;
+	int CONTENT_NODE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Content Node</em>' class.
@@ -218,15 +153,6 @@ public interface EadocPackage extends EPackage {
 	int CONTENT_NODE_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Content Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTENT_NODE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.asciidoctor.ast.ContentPart <em>Content Part</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,7 +160,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getContentPart()
 	 * @generated
 	 */
-	int CONTENT_PART = 6;
+	int CONTENT_PART = 5;
 
 	/**
 	 * The number of structural features of the '<em>Content Part</em>' class.
@@ -246,13 +172,61 @@ public interface EadocPackage extends EPackage {
 	int CONTENT_PART_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Content Part</em>' class.
+	 * The meta object id for the '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.Cursor
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getCursor()
+	 * @generated
+	 */
+	int CURSOR = 6;
+
+	/**
+	 * The number of structural features of the '<em>Cursor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_PART_OPERATION_COUNT = 0;
+	int CURSOR_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.DescriptionList <em>Description List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.DescriptionList
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDescriptionList()
+	 * @generated
+	 */
+	int DESCRIPTION_LIST = 7;
+
+	/**
+	 * The number of structural features of the '<em>Description List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_LIST_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.DescriptionListEntry <em>Description List Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.DescriptionListEntry
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDescriptionListEntry()
+	 * @generated
+	 */
+	int DESCRIPTION_LIST_ENTRY = 8;
+
+	/**
+	 * The number of structural features of the '<em>Description List Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_LIST_ENTRY_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.asciidoctor.ast.Document <em>Document</em>}' class.
@@ -262,7 +236,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDocument()
 	 * @generated
 	 */
-	int DOCUMENT = 7;
+	int DOCUMENT = 9;
 
 	/**
 	 * The number of structural features of the '<em>Document</em>' class.
@@ -274,13 +248,194 @@ public interface EadocPackage extends EPackage {
 	int DOCUMENT_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Document</em>' class.
+	 * The meta object id for the '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.DocumentHeader
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDocumentHeader()
+	 * @generated
+	 */
+	int DOCUMENT_HEADER = 10;
+
+	/**
+	 * The number of structural features of the '<em>Document Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_OPERATION_COUNT = 0;
+	int DOCUMENT_HEADER_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.List <em>Ast List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.List
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getAstList()
+	 * @generated
+	 */
+	int AST_LIST = 11;
+
+	/**
+	 * The number of structural features of the '<em>Ast List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AST_LIST_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.ListItem <em>List Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.ListItem
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getListItem()
+	 * @generated
+	 */
+	int LIST_ITEM = 12;
+
+	/**
+	 * The number of structural features of the '<em>List Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_ITEM_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.PhraseNode <em>Phrase Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.PhraseNode
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getPhraseNode()
+	 * @generated
+	 */
+	int PHRASE_NODE = 13;
+
+	/**
+	 * The number of structural features of the '<em>Phrase Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHRASE_NODE_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.RevisionInfo
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getRevisionInfo()
+	 * @generated
+	 */
+	int REVISION_INFO = 14;
+
+	/**
+	 * The number of structural features of the '<em>Revision Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVISION_INFO_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.Row <em>Row</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.Row
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getRow()
+	 * @generated
+	 */
+	int ROW = 15;
+
+	/**
+	 * The number of structural features of the '<em>Row</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROW_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.Section <em>Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.Section
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getSection()
+	 * @generated
+	 */
+	int SECTION = 16;
+
+	/**
+	 * The number of structural features of the '<em>Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.StructuralNode <em>Structural Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.StructuralNode
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNode()
+	 * @generated
+	 */
+	int STRUCTURAL_NODE = 17;
+
+	/**
+	 * The number of structural features of the '<em>Structural Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_NODE_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.StructuredDocument
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuredDocument()
+	 * @generated
+	 */
+	int STRUCTURED_DOCUMENT = 18;
+
+	/**
+	 * The number of structural features of the '<em>Structured Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DOCUMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.asciidoctor.ast.Table <em>Table</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.asciidoctor.ast.Table
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getTable()
+	 * @generated
+	 */
+	int TABLE = 19;
+
+	/**
+	 * The number of structural features of the '<em>Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.asciidoctor.ast.Title <em>Title</em>}' class.
@@ -290,7 +445,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getTitle()
 	 * @generated
 	 */
-	int TITLE = 8;
+	int TITLE = 20;
 
 	/**
 	 * The number of structural features of the '<em>Title</em>' class.
@@ -302,13 +457,23 @@ public interface EadocPackage extends EPackage {
 	int TITLE_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Title</em>' class.
+	 * The meta object id for the '{@link fr.jmini.eadoc.EadocUtility <em>Utility</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.EadocUtility
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEadocUtility()
+	 * @generated
+	 */
+	int EADOC_UTILITY = 21;
+
+	/**
+	 * The number of structural features of the '<em>Utility</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE_OPERATION_COUNT = 0;
+	int EADOC_UTILITY_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.util.Map<java.lang.String, java.lang.Object> <em>String Object Map</em>}' class.
@@ -318,7 +483,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringObjectMap()
 	 * @generated
 	 */
-	int STRING_OBJECT_MAP = 9;
+	int STRING_OBJECT_MAP = 22;
 
 	/**
 	 * The number of structural features of the '<em>String Object Map</em>' class.
@@ -330,15 +495,6 @@ public interface EadocPackage extends EPackage {
 	int STRING_OBJECT_MAP_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>String Object Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_OBJECT_MAP_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.util.Map<java.lang.Object, java.lang.Object> <em>Object Object Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,7 +502,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getObjectObjectMap()
 	 * @generated
 	 */
-	int OBJECT_OBJECT_MAP = 10;
+	int OBJECT_OBJECT_MAP = 23;
 
 	/**
 	 * The number of structural features of the '<em>Object Object Map</em>' class.
@@ -358,15 +514,6 @@ public interface EadocPackage extends EPackage {
 	int OBJECT_OBJECT_MAP_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Object Object Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_OBJECT_MAP_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.util.List<java.lang.String> <em>String List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -374,7 +521,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringList()
 	 * @generated
 	 */
-	int STRING_LIST = 11;
+	int STRING_LIST = 24;
 
 	/**
 	 * The number of structural features of the '<em>String List</em>' class.
@@ -386,15 +533,6 @@ public interface EadocPackage extends EPackage {
 	int STRING_LIST_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>String List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIST_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.util.List<org.asciidoctor.ast.ContentPart> <em>Content Part List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,7 +540,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getContentPartList()
 	 * @generated
 	 */
-	int CONTENT_PART_LIST = 12;
+	int CONTENT_PART_LIST = 25;
 
 	/**
 	 * The number of structural features of the '<em>Content Part List</em>' class.
@@ -414,13 +552,23 @@ public interface EadocPackage extends EPackage {
 	int CONTENT_PART_LIST_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Content Part List</em>' class.
+	 * The meta object id for the '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNodeList()
+	 * @generated
+	 */
+	int STRUCTURAL_NODE_LIST = 26;
+
+	/**
+	 * The number of structural features of the '<em>Structural Node List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_PART_LIST_OPERATION_COUNT = 0;
+	int STRUCTURAL_NODE_LIST_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EAuthorImpl <em>EAuthor</em>}' class.
@@ -430,7 +578,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEAuthor()
 	 * @generated
 	 */
-	int EAUTHOR = 13;
+	int EAUTHOR = 27;
 
 	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute.
@@ -496,196 +644,657 @@ public interface EadocPackage extends EPackage {
 	int EAUTHOR_FEATURE_COUNT = AUTHOR_FEATURE_COUNT + 6;
 
 	/**
-	 * The number of operations of the '<em>EAuthor</em>' class.
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EContentNodeImpl <em>EContent Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EContentNodeImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEContentNode()
+	 * @generated
+	 */
+	int ECONTENT_NODE = 31;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EAUTHOR_OPERATION_COUNT = AUTHOR_OPERATION_COUNT + 0;
+	int ECONTENT_NODE__ID = CONTENT_NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ECursorImpl <em>ECursor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fr.jmini.eadoc.impl.ECursorImpl
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECursor()
-	 * @generated
-	 */
-	int ECURSOR = 14;
-
-	/**
-	 * The feature id for the '<em><b>Line Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECURSOR__LINE_NUMBER = CURSOR_FEATURE_COUNT + 0;
+	int ECONTENT_NODE__NODE_NAME = CONTENT_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECURSOR__PATH = CURSOR_FEATURE_COUNT + 1;
+	int ECONTENT_NODE__PARENT = CONTENT_NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Dir</b></em>' attribute.
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECURSOR__DIR = CURSOR_FEATURE_COUNT + 2;
+	int ECONTENT_NODE__CONTEXT = CONTENT_NODE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>File</b></em>' attribute.
+	 * The feature id for the '<em><b>Document</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECURSOR__FILE = CURSOR_FEATURE_COUNT + 3;
+	int ECONTENT_NODE__DOCUMENT = CONTENT_NODE_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>ECursor</em>' class.
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECURSOR_FEATURE_COUNT = CURSOR_FEATURE_COUNT + 4;
+	int ECONTENT_NODE__INLINE = CONTENT_NODE_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of operations of the '<em>ECursor</em>' class.
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECURSOR_OPERATION_COUNT = CURSOR_OPERATION_COUNT + 0;
+	int ECONTENT_NODE__BLOCK = CONTENT_NODE_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ETitleImpl <em>ETitle</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fr.jmini.eadoc.impl.ETitleImpl
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETitle()
-	 * @generated
-	 */
-	int ETITLE = 15;
-
-	/**
-	 * The feature id for the '<em><b>Main</b></em>' attribute.
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ETITLE__MAIN = TITLE_FEATURE_COUNT + 0;
+	int ECONTENT_NODE__ATTRIBUTES = CONTENT_NODE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Subtitle</b></em>' attribute.
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ETITLE__SUBTITLE = TITLE_FEATURE_COUNT + 1;
+	int ECONTENT_NODE__ROLES = CONTENT_NODE_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Combined</b></em>' attribute.
+	 * The number of structural features of the '<em>EContent Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ETITLE__COMBINED = TITLE_FEATURE_COUNT + 2;
+	int ECONTENT_NODE_FEATURE_COUNT = CONTENT_NODE_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Sanitized</b></em>' attribute.
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EStructuralNodeImpl <em>EStructural Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EStructuralNodeImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEStructuralNode()
+	 * @generated
+	 */
+	int ESTRUCTURAL_NODE = 44;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ETITLE__SANITIZED = TITLE_FEATURE_COUNT + 3;
+	int ESTRUCTURAL_NODE__ID = ECONTENT_NODE__ID;
 
 	/**
-	 * The number of structural features of the '<em>ETitle</em>' class.
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ETITLE_FEATURE_COUNT = TITLE_FEATURE_COUNT + 4;
+	int ESTRUCTURAL_NODE__NODE_NAME = ECONTENT_NODE__NODE_NAME;
 
 	/**
-	 * The number of operations of the '<em>ETitle</em>' class.
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ETITLE_OPERATION_COUNT = TITLE_OPERATION_COUNT + 0;
+	int ESTRUCTURAL_NODE__PARENT = ECONTENT_NODE__PARENT;
 
 	/**
-	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ERevisionInfoImpl <em>ERevision Info</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fr.jmini.eadoc.impl.ERevisionInfoImpl
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERevisionInfo()
-	 * @generated
-	 */
-	int EREVISION_INFO = 16;
-
-	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EREVISION_INFO__DATE = REVISION_INFO_FEATURE_COUNT + 0;
+	int ESTRUCTURAL_NODE__CONTEXT = ECONTENT_NODE__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Document</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EREVISION_INFO__NUMBER = REVISION_INFO_FEATURE_COUNT + 1;
+	int ESTRUCTURAL_NODE__DOCUMENT = ECONTENT_NODE__DOCUMENT;
 
 	/**
-	 * The feature id for the '<em><b>Remark</b></em>' attribute.
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EREVISION_INFO__REMARK = REVISION_INFO_FEATURE_COUNT + 2;
+	int ESTRUCTURAL_NODE__INLINE = ECONTENT_NODE__INLINE;
 
 	/**
-	 * The number of structural features of the '<em>ERevision Info</em>' class.
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EREVISION_INFO_FEATURE_COUNT = REVISION_INFO_FEATURE_COUNT + 3;
+	int ESTRUCTURAL_NODE__BLOCK = ECONTENT_NODE__BLOCK;
 
 	/**
-	 * The number of operations of the '<em>ERevision Info</em>' class.
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EREVISION_INFO_OPERATION_COUNT = REVISION_INFO_OPERATION_COUNT + 0;
+	int ESTRUCTURAL_NODE__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__TITLE = ECONTENT_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__STYLE = ECONTENT_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__BLOCKS = ECONTENT_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__LEVEL = ECONTENT_NODE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__SOURCE_LOCATION = ECONTENT_NODE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__SUBSTITUTIONS = ECONTENT_NODE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>EStructural Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 6;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EBlockImpl <em>EBlock</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EBlockImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEBlock()
+	 * @generated
+	 */
+	int EBLOCK = 28;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__ID = ESTRUCTURAL_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__NODE_NAME = ESTRUCTURAL_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__PARENT = ESTRUCTURAL_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__CONTEXT = ESTRUCTURAL_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__DOCUMENT = ESTRUCTURAL_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__INLINE = ESTRUCTURAL_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__BLOCK = ESTRUCTURAL_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__TITLE = ESTRUCTURAL_NODE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__STYLE = ESTRUCTURAL_NODE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__BLOCKS = ESTRUCTURAL_NODE__BLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__SOURCE_LOCATION = ESTRUCTURAL_NODE__SOURCE_LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
+
+	/**
+	 * The number of structural features of the '<em>EBlock</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ECellImpl <em>ECell</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.ECellImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECell()
+	 * @generated
+	 */
+	int ECELL = 29;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__ID = ECONTENT_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__NODE_NAME = ECONTENT_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__PARENT = ECONTENT_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__CONTEXT = ECONTENT_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__DOCUMENT = ECONTENT_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__INLINE = ECONTENT_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__BLOCK = ECONTENT_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The number of structural features of the '<em>ECell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EColumnImpl <em>EColumn</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EColumnImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEColumn()
+	 * @generated
+	 */
+	int ECOLUMN = 30;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__ID = ECONTENT_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__NODE_NAME = ECONTENT_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__PARENT = ECONTENT_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__CONTEXT = ECONTENT_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__DOCUMENT = ECONTENT_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__INLINE = ECONTENT_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__BLOCK = ECONTENT_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__STYLE = ECONTENT_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__TABLE = ECONTENT_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__WIDTH = ECONTENT_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>HAlignment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__HALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>VAlignment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__VALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>EColumn</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EContentPartImpl <em>EContent Part</em>}' class.
@@ -695,7 +1304,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEContentPart()
 	 * @generated
 	 */
-	int ECONTENT_PART = 17;
+	int ECONTENT_PART = 32;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -788,22 +1397,1059 @@ public interface EadocPackage extends EPackage {
 	int ECONTENT_PART_FEATURE_COUNT = CONTENT_PART_FEATURE_COUNT + 9;
 
 	/**
-	 * The operation id for the '<em>Get Content</em>' operation.
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ECursorImpl <em>ECursor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.ECursorImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECursor()
 	 * @generated
-	 * @ordered
 	 */
-	int ECONTENT_PART___GET_CONTENT = CONTENT_PART_OPERATION_COUNT + 0;
+	int ECURSOR = 33;
 
 	/**
-	 * The number of operations of the '<em>EContent Part</em>' class.
+	 * The feature id for the '<em><b>Line Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_PART_OPERATION_COUNT = CONTENT_PART_OPERATION_COUNT + 1;
+	int ECURSOR__LINE_NUMBER = CURSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECURSOR__PATH = CURSOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Dir</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECURSOR__DIR = CURSOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECURSOR__FILE = CURSOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>ECursor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECURSOR_FEATURE_COUNT = CURSOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EDescriptionListImpl <em>EDescription List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EDescriptionListImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDescriptionList()
+	 * @generated
+	 */
+	int EDESCRIPTION_LIST = 34;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__ID = ESTRUCTURAL_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__NODE_NAME = ESTRUCTURAL_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__PARENT = ESTRUCTURAL_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__CONTEXT = ESTRUCTURAL_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__DOCUMENT = ESTRUCTURAL_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__INLINE = ESTRUCTURAL_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__BLOCK = ESTRUCTURAL_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__TITLE = ESTRUCTURAL_NODE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__STYLE = ESTRUCTURAL_NODE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__BLOCKS = ESTRUCTURAL_NODE__BLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__SOURCE_LOCATION = ESTRUCTURAL_NODE__SOURCE_LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
+
+	/**
+	 * The number of structural features of the '<em>EDescription List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EDescriptionListEntryImpl <em>EDescription List Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EDescriptionListEntryImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDescriptionListEntry()
+	 * @generated
+	 */
+	int EDESCRIPTION_LIST_ENTRY = 35;
+
+	/**
+	 * The number of structural features of the '<em>EDescription List Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST_ENTRY_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EDocumentImpl <em>EDocument</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EDocumentImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDocument()
+	 * @generated
+	 */
+	int EDOCUMENT = 36;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__ID = ESTRUCTURAL_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__NODE_NAME = ESTRUCTURAL_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__PARENT = ESTRUCTURAL_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__CONTEXT = ESTRUCTURAL_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__DOCUMENT = ESTRUCTURAL_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__INLINE = ESTRUCTURAL_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__BLOCK = ESTRUCTURAL_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__TITLE = ESTRUCTURAL_NODE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__STYLE = ESTRUCTURAL_NODE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__BLOCKS = ESTRUCTURAL_NODE__BLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__SOURCE_LOCATION = ESTRUCTURAL_NODE__SOURCE_LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
+
+	/**
+	 * The number of structural features of the '<em>EDocument</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EDocumentHeaderImpl <em>EDocument Header</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EDocumentHeaderImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDocumentHeader()
+	 * @generated
+	 */
+	int EDOCUMENT_HEADER = 37;
+
+	/**
+	 * The number of structural features of the '<em>EDocument Header</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT_HEADER_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EAdocListImpl <em>EAdoc List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EAdocListImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEAdocList()
+	 * @generated
+	 */
+	int EADOC_LIST = 38;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__ID = ESTRUCTURAL_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__NODE_NAME = ESTRUCTURAL_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__PARENT = ESTRUCTURAL_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__CONTEXT = ESTRUCTURAL_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__DOCUMENT = ESTRUCTURAL_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__INLINE = ESTRUCTURAL_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__BLOCK = ESTRUCTURAL_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__TITLE = ESTRUCTURAL_NODE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__STYLE = ESTRUCTURAL_NODE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__BLOCKS = ESTRUCTURAL_NODE__BLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__SOURCE_LOCATION = ESTRUCTURAL_NODE__SOURCE_LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
+
+	/**
+	 * The number of structural features of the '<em>EAdoc List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EListItemImpl <em>EList Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EListItemImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEListItem()
+	 * @generated
+	 */
+	int ELIST_ITEM = 39;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__ID = ESTRUCTURAL_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__NODE_NAME = ESTRUCTURAL_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__PARENT = ESTRUCTURAL_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__CONTEXT = ESTRUCTURAL_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__DOCUMENT = ESTRUCTURAL_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__INLINE = ESTRUCTURAL_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__BLOCK = ESTRUCTURAL_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__TITLE = ESTRUCTURAL_NODE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__STYLE = ESTRUCTURAL_NODE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__BLOCKS = ESTRUCTURAL_NODE__BLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__SOURCE_LOCATION = ESTRUCTURAL_NODE__SOURCE_LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
+
+	/**
+	 * The number of structural features of the '<em>EList Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EPhraseNodeImpl <em>EPhrase Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.EPhraseNodeImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEPhraseNode()
+	 * @generated
+	 */
+	int EPHRASE_NODE = 40;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__ID = ECONTENT_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__NODE_NAME = ECONTENT_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__PARENT = ECONTENT_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__CONTEXT = ECONTENT_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__DOCUMENT = ECONTENT_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__INLINE = ECONTENT_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__BLOCK = ECONTENT_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__TARGET = ECONTENT_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__TEXT = ECONTENT_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__TYPE = ECONTENT_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>EPhrase Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ERevisionInfoImpl <em>ERevision Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.ERevisionInfoImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERevisionInfo()
+	 * @generated
+	 */
+	int EREVISION_INFO = 41;
+
+	/**
+	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EREVISION_INFO__DATE = REVISION_INFO_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EREVISION_INFO__NUMBER = REVISION_INFO_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Remark</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EREVISION_INFO__REMARK = REVISION_INFO_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>ERevision Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EREVISION_INFO_FEATURE_COUNT = REVISION_INFO_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ERowImpl <em>ERow</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.ERowImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERow()
+	 * @generated
+	 */
+	int EROW = 42;
+
+	/**
+	 * The number of structural features of the '<em>ERow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROW_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ESectionImpl <em>ESection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.ESectionImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getESection()
+	 * @generated
+	 */
+	int ESECTION = 43;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__ID = ESTRUCTURAL_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__NODE_NAME = ESTRUCTURAL_NODE__NODE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__PARENT = ESTRUCTURAL_NODE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__CONTEXT = ESTRUCTURAL_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__DOCUMENT = ESTRUCTURAL_NODE__DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Inline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__INLINE = ESTRUCTURAL_NODE__INLINE;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__BLOCK = ESTRUCTURAL_NODE__BLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__TITLE = ESTRUCTURAL_NODE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__STYLE = ESTRUCTURAL_NODE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__BLOCKS = ESTRUCTURAL_NODE__BLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__SOURCE_LOCATION = ESTRUCTURAL_NODE__SOURCE_LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
+
+	/**
+	 * The number of structural features of the '<em>ESection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EStructuredDocumentImpl <em>EStructured Document</em>}' class.
@@ -813,7 +2459,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEStructuredDocument()
 	 * @generated
 	 */
-	int ESTRUCTURED_DOCUMENT = 18;
+	int ESTRUCTURED_DOCUMENT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -843,77 +2489,14 @@ public interface EadocPackage extends EPackage {
 	int ESTRUCTURED_DOCUMENT_FEATURE_COUNT = STRUCTURED_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Get Part By Id</em>' operation.
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ETableImpl <em>ETable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURED_DOCUMENT___GET_PART_BY_ID__STRING = STRUCTURED_DOCUMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get Part By Style</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURED_DOCUMENT___GET_PART_BY_STYLE__STRING = STRUCTURED_DOCUMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get Part By Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURED_DOCUMENT___GET_PART_BY_ROLE__STRING = STRUCTURED_DOCUMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Get Parts By Context</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURED_DOCUMENT___GET_PARTS_BY_CONTEXT__STRING = STRUCTURED_DOCUMENT_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Get Parts By Style</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURED_DOCUMENT___GET_PARTS_BY_STYLE__STRING = STRUCTURED_DOCUMENT_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Get Parts By Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURED_DOCUMENT___GET_PARTS_BY_ROLE__STRING = STRUCTURED_DOCUMENT_OPERATION_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>EStructured Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURED_DOCUMENT_OPERATION_COUNT = STRUCTURED_DOCUMENT_OPERATION_COUNT + 6;
-
-	/**
-	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EContentNodeImpl <em>EContent Node</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fr.jmini.eadoc.impl.EContentNodeImpl
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEContentNode()
+	 * @see fr.jmini.eadoc.impl.ETableImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETable()
 	 * @generated
 	 */
-	int ECONTENT_NODE = 19;
+	int ETABLE = 46;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -922,7 +2505,16 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__ID = CONTENT_NODE_FEATURE_COUNT + 0;
+	int ETABLE__ID = ESTRUCTURAL_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ETABLE__NODE_NAME = ESTRUCTURAL_NODE__NODE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -931,7 +2523,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__PARENT = CONTENT_NODE_FEATURE_COUNT + 1;
+	int ETABLE__PARENT = ESTRUCTURAL_NODE__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -940,7 +2532,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__CONTEXT = CONTENT_NODE_FEATURE_COUNT + 2;
+	int ETABLE__CONTEXT = ESTRUCTURAL_NODE__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Document</b></em>' reference.
@@ -949,7 +2541,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__DOCUMENT = CONTENT_NODE_FEATURE_COUNT + 3;
+	int ETABLE__DOCUMENT = ESTRUCTURAL_NODE__DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Inline</b></em>' attribute.
@@ -958,7 +2550,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__INLINE = CONTENT_NODE_FEATURE_COUNT + 4;
+	int ETABLE__INLINE = ESTRUCTURAL_NODE__INLINE;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' attribute.
@@ -967,7 +2559,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__BLOCK = CONTENT_NODE_FEATURE_COUNT + 5;
+	int ETABLE__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference.
@@ -976,7 +2568,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__ATTRIBUTES = CONTENT_NODE_FEATURE_COUNT + 6;
+	int ETABLE__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' reference.
@@ -985,349 +2577,208 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE__ROLES = CONTENT_NODE_FEATURE_COUNT + 7;
+	int ETABLE__ROLES = ESTRUCTURAL_NODE__ROLES;
 
 	/**
-	 * The number of structural features of the '<em>EContent Node</em>' class.
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE_FEATURE_COUNT = CONTENT_NODE_FEATURE_COUNT + 8;
+	int ETABLE__TITLE = ESTRUCTURAL_NODE__TITLE;
 
 	/**
-	 * The operation id for the '<em>Id</em>' operation.
+	 * The feature id for the '<em><b>Style</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___ID = CONTENT_NODE_OPERATION_COUNT + 0;
+	int ETABLE__STYLE = ESTRUCTURAL_NODE__STYLE;
 
 	/**
-	 * The operation id for the '<em>Get Node Name</em>' operation.
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___GET_NODE_NAME = CONTENT_NODE_OPERATION_COUNT + 1;
+	int ETABLE__BLOCKS = ESTRUCTURAL_NODE__BLOCKS;
 
 	/**
-	 * The operation id for the '<em>Parent</em>' operation.
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___PARENT = CONTENT_NODE_OPERATION_COUNT + 2;
+	int ETABLE__LEVEL = ESTRUCTURAL_NODE__LEVEL;
 
 	/**
-	 * The operation id for the '<em>Context</em>' operation.
+	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___CONTEXT = CONTENT_NODE_OPERATION_COUNT + 3;
+	int ETABLE__SOURCE_LOCATION = ESTRUCTURAL_NODE__SOURCE_LOCATION;
 
 	/**
-	 * The operation id for the '<em>Document</em>' operation.
+	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___DOCUMENT = CONTENT_NODE_OPERATION_COUNT + 4;
+	int ETABLE__SUBSTITUTIONS = ESTRUCTURAL_NODE__SUBSTITUTIONS;
 
 	/**
-	 * The operation id for the '<em>Get Attr</em>' operation.
+	 * The feature id for the '<em><b>Header Option</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___GET_ATTR__OBJECT_OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 5;
+	int ETABLE__HEADER_OPTION = ESTRUCTURAL_NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Get Attr</em>' operation.
+	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___GET_ATTR__OBJECT_OBJECT = CONTENT_NODE_OPERATION_COUNT + 6;
+	int ETABLE__COLUMNS = ESTRUCTURAL_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get Attr</em>' operation.
+	 * The feature id for the '<em><b>Header</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___GET_ATTR__OBJECT = CONTENT_NODE_OPERATION_COUNT + 7;
+	int ETABLE__HEADER = ESTRUCTURAL_NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Get Attribute</em>' operation.
+	 * The feature id for the '<em><b>Footer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___GET_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 8;
+	int ETABLE__FOOTER = ESTRUCTURAL_NODE_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Get Attribute</em>' operation.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___GET_ATTRIBUTE__OBJECT_OBJECT = CONTENT_NODE_OPERATION_COUNT + 9;
+	int ETABLE__BODY = ESTRUCTURAL_NODE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Get Attribute</em>' operation.
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___GET_ATTRIBUTE__OBJECT = CONTENT_NODE_OPERATION_COUNT + 10;
+	int ETABLE__FRAME = ESTRUCTURAL_NODE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Has Attr</em>' operation.
+	 * The feature id for the '<em><b>Grid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___HAS_ATTR__OBJECT = CONTENT_NODE_OPERATION_COUNT + 11;
+	int ETABLE__GRID = ESTRUCTURAL_NODE_FEATURE_COUNT + 6;
 
 	/**
-	 * The operation id for the '<em>Has Attr</em>' operation.
+	 * The number of structural features of the '<em>ETable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___HAS_ATTR__OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 12;
+	int ETABLE_FEATURE_COUNT = ESTRUCTURAL_NODE_FEATURE_COUNT + 7;
 
 	/**
-	 * The operation id for the '<em>Has Attribute</em>' operation.
+	 * The meta object id for the '{@link fr.jmini.eadoc.impl.ETitleImpl <em>ETitle</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.impl.ETitleImpl
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETitle()
+	 * @generated
+	 */
+	int ETITLE = 47;
+
+	/**
+	 * The feature id for the '<em><b>Main</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___HAS_ATTRIBUTE__OBJECT = CONTENT_NODE_OPERATION_COUNT + 13;
+	int ETITLE__MAIN = TITLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Has Attribute</em>' operation.
+	 * The feature id for the '<em><b>Subtitle</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___HAS_ATTRIBUTE__OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 14;
+	int ETITLE__SUBTITLE = TITLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Is Attr</em>' operation.
+	 * The feature id for the '<em><b>Combined</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___IS_ATTR__OBJECT_OBJECT = CONTENT_NODE_OPERATION_COUNT + 15;
+	int ETITLE__COMBINED = TITLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Is Attr</em>' operation.
+	 * The feature id for the '<em><b>Sanitized</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___IS_ATTR__OBJECT_OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 16;
+	int ETITLE__SANITIZED = TITLE_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Is Attribute</em>' operation.
+	 * The number of structural features of the '<em>ETitle</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE___IS_ATTRIBUTE__OBJECT_OBJECT = CONTENT_NODE_OPERATION_COUNT + 17;
+	int ETITLE_FEATURE_COUNT = TITLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Is Attribute</em>' operation.
+	 * The meta object id for the '{@link fr.jmini.eadoc.EHorizontalAlignment <em>EHorizontal Alignment</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.EHorizontalAlignment
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEHorizontalAlignment()
 	 * @generated
-	 * @ordered
 	 */
-	int ECONTENT_NODE___IS_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 18;
+	int EHORIZONTAL_ALIGNMENT = 48;
 
 	/**
-	 * The operation id for the '<em>Set Attr</em>' operation.
+	 * The meta object id for the '{@link fr.jmini.eadoc.EVerticalAlignment <em>EVertical Alignment</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see fr.jmini.eadoc.EVerticalAlignment
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEVerticalAlignment()
 	 * @generated
-	 * @ordered
 	 */
-	int ECONTENT_NODE___SET_ATTR__OBJECT_OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 19;
-
-	/**
-	 * The operation id for the '<em>Set Attribute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___SET_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 20;
-
-	/**
-	 * The operation id for the '<em>Is Option</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___IS_OPTION__OBJECT = CONTENT_NODE_OPERATION_COUNT + 21;
-
-	/**
-	 * The operation id for the '<em>Is Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___IS_ROLE = CONTENT_NODE_OPERATION_COUNT + 22;
-
-	/**
-	 * The operation id for the '<em>Has Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___HAS_ROLE__STRING = CONTENT_NODE_OPERATION_COUNT + 23;
-
-	/**
-	 * The operation id for the '<em>Get Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___GET_ROLE = CONTENT_NODE_OPERATION_COUNT + 24;
-
-	/**
-	 * The operation id for the '<em>Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___ROLE = CONTENT_NODE_OPERATION_COUNT + 25;
-
-	/**
-	 * The operation id for the '<em>Add Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___ADD_ROLE__STRING = CONTENT_NODE_OPERATION_COUNT + 26;
-
-	/**
-	 * The operation id for the '<em>Remove Role</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___REMOVE_ROLE__STRING = CONTENT_NODE_OPERATION_COUNT + 27;
-
-	/**
-	 * The operation id for the '<em>Is Reftext</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___IS_REFTEXT = CONTENT_NODE_OPERATION_COUNT + 28;
-
-	/**
-	 * The operation id for the '<em>Get Reftext</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___GET_REFTEXT = CONTENT_NODE_OPERATION_COUNT + 29;
-
-	/**
-	 * The operation id for the '<em>Icon Uri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___ICON_URI__STRING = CONTENT_NODE_OPERATION_COUNT + 30;
-
-	/**
-	 * The operation id for the '<em>Media Uri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___MEDIA_URI__STRING = CONTENT_NODE_OPERATION_COUNT + 31;
-
-	/**
-	 * The operation id for the '<em>Image Uri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___IMAGE_URI__STRING = CONTENT_NODE_OPERATION_COUNT + 32;
-
-	/**
-	 * The operation id for the '<em>Image Uri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___IMAGE_URI__STRING_STRING = CONTENT_NODE_OPERATION_COUNT + 33;
-
-	/**
-	 * The operation id for the '<em>Read Asset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___READ_ASSET__STRING_OBJECT_OBJECT_MAP = CONTENT_NODE_OPERATION_COUNT + 34;
-
-	/**
-	 * The operation id for the '<em>Normalize Web Path</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE___NORMALIZE_WEB_PATH__STRING_STRING_BOOLEAN = CONTENT_NODE_OPERATION_COUNT + 35;
-
-	/**
-	 * The number of operations of the '<em>EContent Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECONTENT_NODE_OPERATION_COUNT = CONTENT_NODE_OPERATION_COUNT + 36;
+	int EVERTICAL_ALIGNMENT = 49;
 
 
 	/**
@@ -1342,48 +2793,37 @@ public interface EadocPackage extends EPackage {
 	EClass getAuthor();
 
 	/**
-	 * Returns the meta object for class '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}'.
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.Block <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Document Header</em>'.
-	 * @see org.asciidoctor.ast.DocumentHeader
-	 * @model instanceClass="org.asciidoctor.ast.DocumentHeader"
+	 * @return the meta object for class '<em>Block</em>'.
+	 * @see org.asciidoctor.ast.Block
+	 * @model instanceClass="org.asciidoctor.ast.Block"
 	 * @generated
 	 */
-	EClass getDocumentHeader();
+	EClass getBlock();
 
 	/**
-	 * Returns the meta object for class '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}'.
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.Cell <em>Cell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cursor</em>'.
-	 * @see org.asciidoctor.ast.Cursor
-	 * @model instanceClass="org.asciidoctor.ast.Cursor"
+	 * @return the meta object for class '<em>Cell</em>'.
+	 * @see org.asciidoctor.ast.Cell
+	 * @model instanceClass="org.asciidoctor.ast.Cell"
 	 * @generated
 	 */
-	EClass getCursor();
+	EClass getCell();
 
 	/**
-	 * Returns the meta object for class '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}'.
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.Column <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Revision Info</em>'.
-	 * @see org.asciidoctor.ast.RevisionInfo
-	 * @model instanceClass="org.asciidoctor.ast.RevisionInfo"
+	 * @return the meta object for class '<em>Column</em>'.
+	 * @see org.asciidoctor.ast.Column
+	 * @model instanceClass="org.asciidoctor.ast.Column"
 	 * @generated
 	 */
-	EClass getRevisionInfo();
-
-	/**
-	 * Returns the meta object for class '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Structured Document</em>'.
-	 * @see org.asciidoctor.ast.StructuredDocument
-	 * @model instanceClass="org.asciidoctor.ast.StructuredDocument"
-	 * @generated
-	 */
-	EClass getStructuredDocument();
+	EClass getColumn();
 
 	/**
 	 * Returns the meta object for class '{@link org.asciidoctor.ast.ContentNode <em>Content Node</em>}'.
@@ -1408,6 +2848,39 @@ public interface EadocPackage extends EPackage {
 	EClass getContentPart();
 
 	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Cursor</em>'.
+	 * @see org.asciidoctor.ast.Cursor
+	 * @model instanceClass="org.asciidoctor.ast.Cursor"
+	 * @generated
+	 */
+	EClass getCursor();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.DescriptionList <em>Description List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Description List</em>'.
+	 * @see org.asciidoctor.ast.DescriptionList
+	 * @model instanceClass="org.asciidoctor.ast.DescriptionList"
+	 * @generated
+	 */
+	EClass getDescriptionList();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.DescriptionListEntry <em>Description List Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Description List Entry</em>'.
+	 * @see org.asciidoctor.ast.DescriptionListEntry
+	 * @model instanceClass="org.asciidoctor.ast.DescriptionListEntry"
+	 * @generated
+	 */
+	EClass getDescriptionListEntry();
+
+	/**
 	 * Returns the meta object for class '{@link org.asciidoctor.ast.Document <em>Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1419,6 +2892,116 @@ public interface EadocPackage extends EPackage {
 	EClass getDocument();
 
 	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Document Header</em>'.
+	 * @see org.asciidoctor.ast.DocumentHeader
+	 * @model instanceClass="org.asciidoctor.ast.DocumentHeader"
+	 * @generated
+	 */
+	EClass getDocumentHeader();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.List <em>Ast List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ast List</em>'.
+	 * @see org.asciidoctor.ast.List
+	 * @model instanceClass="org.asciidoctor.ast.List"
+	 * @generated
+	 */
+	EClass getAstList();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.ListItem <em>List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>List Item</em>'.
+	 * @see org.asciidoctor.ast.ListItem
+	 * @model instanceClass="org.asciidoctor.ast.ListItem"
+	 * @generated
+	 */
+	EClass getListItem();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.PhraseNode <em>Phrase Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Phrase Node</em>'.
+	 * @see org.asciidoctor.ast.PhraseNode
+	 * @model instanceClass="org.asciidoctor.ast.PhraseNode"
+	 * @generated
+	 */
+	EClass getPhraseNode();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Revision Info</em>'.
+	 * @see org.asciidoctor.ast.RevisionInfo
+	 * @model instanceClass="org.asciidoctor.ast.RevisionInfo"
+	 * @generated
+	 */
+	EClass getRevisionInfo();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.Row <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Row</em>'.
+	 * @see org.asciidoctor.ast.Row
+	 * @model instanceClass="org.asciidoctor.ast.Row"
+	 * @generated
+	 */
+	EClass getRow();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.Section <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Section</em>'.
+	 * @see org.asciidoctor.ast.Section
+	 * @model instanceClass="org.asciidoctor.ast.Section"
+	 * @generated
+	 */
+	EClass getSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.StructuralNode <em>Structural Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Structural Node</em>'.
+	 * @see org.asciidoctor.ast.StructuralNode
+	 * @model instanceClass="org.asciidoctor.ast.StructuralNode"
+	 * @generated
+	 */
+	EClass getStructuralNode();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Structured Document</em>'.
+	 * @see org.asciidoctor.ast.StructuredDocument
+	 * @model instanceClass="org.asciidoctor.ast.StructuredDocument"
+	 * @generated
+	 */
+	EClass getStructuredDocument();
+
+	/**
+	 * Returns the meta object for class '{@link org.asciidoctor.ast.Table <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Table</em>'.
+	 * @see org.asciidoctor.ast.Table
+	 * @model instanceClass="org.asciidoctor.ast.Table"
+	 * @generated
+	 */
+	EClass getTable();
+
+	/**
 	 * Returns the meta object for class '{@link org.asciidoctor.ast.Title <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1428,6 +3011,17 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTitle();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EadocUtility <em>Utility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Utility</em>'.
+	 * @see fr.jmini.eadoc.EadocUtility
+	 * @model instanceClass="fr.jmini.eadoc.EadocUtility"
+	 * @generated
+	 */
+	EClass getEadocUtility();
 
 	/**
 	 * Returns the meta object for class '{@link java.util.Map<java.lang.String, java.lang.Object> <em>String Object Map</em>}'.
@@ -1472,6 +3066,17 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getContentPartList();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Structural Node List</em>'.
+	 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
+	 * @model instanceClass="java.util.List<? extends org.asciidoctor.ast.StructuralNode>"
+	 * @generated
+	 */
+	EClass getStructuralNodeList();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EAuthor <em>EAuthor</em>}'.
@@ -1550,155 +3155,198 @@ public interface EadocPackage extends EPackage {
 	EAttribute getEAuthor_Initials();
 
 	/**
-	 * Returns the meta object for class '{@link fr.jmini.eadoc.ECursor <em>ECursor</em>}'.
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EBlock <em>EBlock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ECursor</em>'.
-	 * @see fr.jmini.eadoc.ECursor
+	 * @return the meta object for class '<em>EBlock</em>'.
+	 * @see fr.jmini.eadoc.EBlock
 	 * @generated
 	 */
-	EClass getECursor();
+	EClass getEBlock();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getLineNumber <em>Line Number</em>}'.
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.ECell <em>ECell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Line Number</em>'.
-	 * @see fr.jmini.eadoc.ECursor#getLineNumber()
-	 * @see #getECursor()
+	 * @return the meta object for class '<em>ECell</em>'.
+	 * @see fr.jmini.eadoc.ECell
 	 * @generated
 	 */
-	EAttribute getECursor_LineNumber();
+	EClass getECell();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getPath <em>Path</em>}'.
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EColumn <em>EColumn</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see fr.jmini.eadoc.ECursor#getPath()
-	 * @see #getECursor()
+	 * @return the meta object for class '<em>EColumn</em>'.
+	 * @see fr.jmini.eadoc.EColumn
 	 * @generated
 	 */
-	EAttribute getECursor_Path();
+	EClass getEColumn();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getDir <em>Dir</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Dir</em>'.
-	 * @see fr.jmini.eadoc.ECursor#getDir()
-	 * @see #getECursor()
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see fr.jmini.eadoc.EColumn#getStyle()
+	 * @see #getEColumn()
 	 * @generated
 	 */
-	EAttribute getECursor_Dir();
+	EAttribute getEColumn_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getFile <em>File</em>}'.
+	 * Returns the meta object for the container reference '{@link fr.jmini.eadoc.EColumn#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>File</em>'.
-	 * @see fr.jmini.eadoc.ECursor#getFile()
-	 * @see #getECursor()
+	 * @return the meta object for the container reference '<em>Table</em>'.
+	 * @see fr.jmini.eadoc.EColumn#getTable()
+	 * @see #getEColumn()
 	 * @generated
 	 */
-	EAttribute getECursor_File();
+	EReference getEColumn_Table();
 
 	/**
-	 * Returns the meta object for class '{@link fr.jmini.eadoc.ETitle <em>ETitle</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getWidth <em>Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ETitle</em>'.
-	 * @see fr.jmini.eadoc.ETitle
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see fr.jmini.eadoc.EColumn#getWidth()
+	 * @see #getEColumn()
 	 * @generated
 	 */
-	EClass getETitle();
+	EAttribute getEColumn_Width();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#getMain <em>Main</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getHAlignment <em>HAlignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Main</em>'.
-	 * @see fr.jmini.eadoc.ETitle#getMain()
-	 * @see #getETitle()
+	 * @return the meta object for the attribute '<em>HAlignment</em>'.
+	 * @see fr.jmini.eadoc.EColumn#getHAlignment()
+	 * @see #getEColumn()
 	 * @generated
 	 */
-	EAttribute getETitle_Main();
+	EAttribute getEColumn_HAlignment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#getSubtitle <em>Subtitle</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getVAlignment <em>VAlignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Subtitle</em>'.
-	 * @see fr.jmini.eadoc.ETitle#getSubtitle()
-	 * @see #getETitle()
+	 * @return the meta object for the attribute '<em>VAlignment</em>'.
+	 * @see fr.jmini.eadoc.EColumn#getVAlignment()
+	 * @see #getEColumn()
 	 * @generated
 	 */
-	EAttribute getETitle_Subtitle();
+	EAttribute getEColumn_VAlignment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#getCombined <em>Combined</em>}'.
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EContentNode <em>EContent Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Combined</em>'.
-	 * @see fr.jmini.eadoc.ETitle#getCombined()
-	 * @see #getETitle()
+	 * @return the meta object for class '<em>EContent Node</em>'.
+	 * @see fr.jmini.eadoc.EContentNode
 	 * @generated
 	 */
-	EAttribute getETitle_Combined();
+	EClass getEContentNode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#isSanitized <em>Sanitized</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sanitized</em>'.
-	 * @see fr.jmini.eadoc.ETitle#isSanitized()
-	 * @see #getETitle()
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getId()
+	 * @see #getEContentNode()
 	 * @generated
 	 */
-	EAttribute getETitle_Sanitized();
+	EAttribute getEContentNode_Id();
 
 	/**
-	 * Returns the meta object for class '{@link fr.jmini.eadoc.ERevisionInfo <em>ERevision Info</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getNodeName <em>Node Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ERevision Info</em>'.
-	 * @see fr.jmini.eadoc.ERevisionInfo
+	 * @return the meta object for the attribute '<em>Node Name</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getNodeName()
+	 * @see #getEContentNode()
 	 * @generated
 	 */
-	EClass getERevisionInfo();
+	EAttribute getEContentNode_NodeName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ERevisionInfo#getDate <em>Date</em>}'.
+	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date</em>'.
-	 * @see fr.jmini.eadoc.ERevisionInfo#getDate()
-	 * @see #getERevisionInfo()
+	 * @return the meta object for the reference '<em>Parent</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getParent()
+	 * @see #getEContentNode()
 	 * @generated
 	 */
-	EAttribute getERevisionInfo_Date();
+	EReference getEContentNode_Parent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ERevisionInfo#getNumber <em>Number</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see fr.jmini.eadoc.ERevisionInfo#getNumber()
-	 * @see #getERevisionInfo()
+	 * @return the meta object for the attribute '<em>Context</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getContext()
+	 * @see #getEContentNode()
 	 * @generated
 	 */
-	EAttribute getERevisionInfo_Number();
+	EAttribute getEContentNode_Context();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ERevisionInfo#getRemark <em>Remark</em>}'.
+	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getDocument <em>Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remark</em>'.
-	 * @see fr.jmini.eadoc.ERevisionInfo#getRemark()
-	 * @see #getERevisionInfo()
+	 * @return the meta object for the reference '<em>Document</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getDocument()
+	 * @see #getEContentNode()
 	 * @generated
 	 */
-	EAttribute getERevisionInfo_Remark();
+	EReference getEContentNode_Document();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#isInline <em>Inline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Inline</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#isInline()
+	 * @see #getEContentNode()
+	 * @generated
+	 */
+	EAttribute getEContentNode_Inline();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#isBlock <em>Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Block</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#isBlock()
+	 * @see #getEContentNode()
+	 * @generated
+	 */
+	EAttribute getEContentNode_Block();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attributes</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getAttributes()
+	 * @see #getEContentNode()
+	 * @generated
+	 */
+	EReference getEContentNode_Attributes();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Roles</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getRoles()
+	 * @see #getEContentNode()
+	 * @generated
+	 */
+	EReference getEContentNode_Roles();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EContentPart <em>EContent Part</em>}'.
@@ -1810,14 +3458,300 @@ public interface EadocPackage extends EPackage {
 	EReference getEContentPart_ParentPart();
 
 	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentPart#getContent() <em>Get Content</em>}' operation.
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.ECursor <em>ECursor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Content</em>' operation.
-	 * @see fr.jmini.eadoc.EContentPart#getContent()
+	 * @return the meta object for class '<em>ECursor</em>'.
+	 * @see fr.jmini.eadoc.ECursor
 	 * @generated
 	 */
-	EOperation getEContentPart__GetContent();
+	EClass getECursor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getLineNumber <em>Line Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Line Number</em>'.
+	 * @see fr.jmini.eadoc.ECursor#getLineNumber()
+	 * @see #getECursor()
+	 * @generated
+	 */
+	EAttribute getECursor_LineNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see fr.jmini.eadoc.ECursor#getPath()
+	 * @see #getECursor()
+	 * @generated
+	 */
+	EAttribute getECursor_Path();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getDir <em>Dir</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dir</em>'.
+	 * @see fr.jmini.eadoc.ECursor#getDir()
+	 * @see #getECursor()
+	 * @generated
+	 */
+	EAttribute getECursor_Dir();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ECursor#getFile <em>File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>File</em>'.
+	 * @see fr.jmini.eadoc.ECursor#getFile()
+	 * @see #getECursor()
+	 * @generated
+	 */
+	EAttribute getECursor_File();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EDescriptionList <em>EDescription List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EDescription List</em>'.
+	 * @see fr.jmini.eadoc.EDescriptionList
+	 * @generated
+	 */
+	EClass getEDescriptionList();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EDescriptionListEntry <em>EDescription List Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EDescription List Entry</em>'.
+	 * @see fr.jmini.eadoc.EDescriptionListEntry
+	 * @generated
+	 */
+	EClass getEDescriptionListEntry();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EDocument <em>EDocument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EDocument</em>'.
+	 * @see fr.jmini.eadoc.EDocument
+	 * @generated
+	 */
+	EClass getEDocument();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EDocumentHeader <em>EDocument Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EDocument Header</em>'.
+	 * @see fr.jmini.eadoc.EDocumentHeader
+	 * @generated
+	 */
+	EClass getEDocumentHeader();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EAdocList <em>EAdoc List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EAdoc List</em>'.
+	 * @see fr.jmini.eadoc.EAdocList
+	 * @generated
+	 */
+	EClass getEAdocList();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EListItem <em>EList Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EList Item</em>'.
+	 * @see fr.jmini.eadoc.EListItem
+	 * @generated
+	 */
+	EClass getEListItem();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EPhraseNode <em>EPhrase Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EPhrase Node</em>'.
+	 * @see fr.jmini.eadoc.EPhraseNode
+	 * @generated
+	 */
+	EClass getEPhraseNode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EPhraseNode#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target</em>'.
+	 * @see fr.jmini.eadoc.EPhraseNode#getTarget()
+	 * @see #getEPhraseNode()
+	 * @generated
+	 */
+	EAttribute getEPhraseNode_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EPhraseNode#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see fr.jmini.eadoc.EPhraseNode#getText()
+	 * @see #getEPhraseNode()
+	 * @generated
+	 */
+	EAttribute getEPhraseNode_Text();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EPhraseNode#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see fr.jmini.eadoc.EPhraseNode#getType()
+	 * @see #getEPhraseNode()
+	 * @generated
+	 */
+	EAttribute getEPhraseNode_Type();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.ERevisionInfo <em>ERevision Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ERevision Info</em>'.
+	 * @see fr.jmini.eadoc.ERevisionInfo
+	 * @generated
+	 */
+	EClass getERevisionInfo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ERevisionInfo#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date</em>'.
+	 * @see fr.jmini.eadoc.ERevisionInfo#getDate()
+	 * @see #getERevisionInfo()
+	 * @generated
+	 */
+	EAttribute getERevisionInfo_Date();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ERevisionInfo#getNumber <em>Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number</em>'.
+	 * @see fr.jmini.eadoc.ERevisionInfo#getNumber()
+	 * @see #getERevisionInfo()
+	 * @generated
+	 */
+	EAttribute getERevisionInfo_Number();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ERevisionInfo#getRemark <em>Remark</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Remark</em>'.
+	 * @see fr.jmini.eadoc.ERevisionInfo#getRemark()
+	 * @see #getERevisionInfo()
+	 * @generated
+	 */
+	EAttribute getERevisionInfo_Remark();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.ERow <em>ERow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ERow</em>'.
+	 * @see fr.jmini.eadoc.ERow
+	 * @generated
+	 */
+	EClass getERow();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.ESection <em>ESection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ESection</em>'.
+	 * @see fr.jmini.eadoc.ESection
+	 * @generated
+	 */
+	EClass getESection();
+
+	/**
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.EStructuralNode <em>EStructural Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EStructural Node</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode
+	 * @generated
+	 */
+	EClass getEStructuralNode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EStructuralNode#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode#getTitle()
+	 * @see #getEStructuralNode()
+	 * @generated
+	 */
+	EAttribute getEStructuralNode_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EStructuralNode#getStyle <em>Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode#getStyle()
+	 * @see #getEStructuralNode()
+	 * @generated
+	 */
+	EAttribute getEStructuralNode_Style();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.EStructuralNode#getBlocks <em>Blocks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Blocks</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode#getBlocks()
+	 * @see #getEStructuralNode()
+	 * @generated
+	 */
+	EReference getEStructuralNode_Blocks();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EStructuralNode#getLevel <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Level</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode#getLevel()
+	 * @see #getEStructuralNode()
+	 * @generated
+	 */
+	EAttribute getEStructuralNode_Level();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fr.jmini.eadoc.EStructuralNode#getSourceLocation <em>Source Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Source Location</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode#getSourceLocation()
+	 * @see #getEStructuralNode()
+	 * @generated
+	 */
+	EReference getEStructuralNode_SourceLocation();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link fr.jmini.eadoc.EStructuralNode#getSubstitutions <em>Substitutions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Substitutions</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode#getSubstitutions()
+	 * @see #getEStructuralNode()
+	 * @generated
+	 */
+	EAttribute getEStructuralNode_Substitutions();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EStructuredDocument <em>EStructured Document</em>}'.
@@ -1852,522 +3786,165 @@ public interface EadocPackage extends EPackage {
 	EReference getEStructuredDocument_Header();
 
 	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EStructuredDocument#getPartById(java.lang.String) <em>Get Part By Id</em>}' operation.
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.ETable <em>ETable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Part By Id</em>' operation.
-	 * @see fr.jmini.eadoc.EStructuredDocument#getPartById(java.lang.String)
+	 * @return the meta object for class '<em>ETable</em>'.
+	 * @see fr.jmini.eadoc.ETable
 	 * @generated
 	 */
-	EOperation getEStructuredDocument__GetPartById__String();
+	EClass getETable();
 
 	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EStructuredDocument#getPartByStyle(java.lang.String) <em>Get Part By Style</em>}' operation.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETable#isHeaderOption <em>Header Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Part By Style</em>' operation.
-	 * @see fr.jmini.eadoc.EStructuredDocument#getPartByStyle(java.lang.String)
+	 * @return the meta object for the attribute '<em>Header Option</em>'.
+	 * @see fr.jmini.eadoc.ETable#isHeaderOption()
+	 * @see #getETable()
 	 * @generated
 	 */
-	EOperation getEStructuredDocument__GetPartByStyle__String();
+	EAttribute getETable_HeaderOption();
 
 	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EStructuredDocument#getPartByRole(java.lang.String) <em>Get Part By Role</em>}' operation.
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.ETable#getColumns <em>Columns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Part By Role</em>' operation.
-	 * @see fr.jmini.eadoc.EStructuredDocument#getPartByRole(java.lang.String)
+	 * @return the meta object for the containment reference list '<em>Columns</em>'.
+	 * @see fr.jmini.eadoc.ETable#getColumns()
+	 * @see #getETable()
 	 * @generated
 	 */
-	EOperation getEStructuredDocument__GetPartByRole__String();
+	EReference getETable_Columns();
 
 	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EStructuredDocument#getPartsByContext(java.lang.String) <em>Get Parts By Context</em>}' operation.
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.ETable#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Parts By Context</em>' operation.
-	 * @see fr.jmini.eadoc.EStructuredDocument#getPartsByContext(java.lang.String)
+	 * @return the meta object for the containment reference list '<em>Header</em>'.
+	 * @see fr.jmini.eadoc.ETable#getHeader()
+	 * @see #getETable()
 	 * @generated
 	 */
-	EOperation getEStructuredDocument__GetPartsByContext__String();
+	EReference getETable_Header();
 
 	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EStructuredDocument#getPartsByStyle(java.lang.String) <em>Get Parts By Style</em>}' operation.
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.ETable#getFooter <em>Footer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Parts By Style</em>' operation.
-	 * @see fr.jmini.eadoc.EStructuredDocument#getPartsByStyle(java.lang.String)
+	 * @return the meta object for the containment reference list '<em>Footer</em>'.
+	 * @see fr.jmini.eadoc.ETable#getFooter()
+	 * @see #getETable()
 	 * @generated
 	 */
-	EOperation getEStructuredDocument__GetPartsByStyle__String();
+	EReference getETable_Footer();
 
 	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EStructuredDocument#getPartsByRole(java.lang.String) <em>Get Parts By Role</em>}' operation.
+	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.ETable#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Parts By Role</em>' operation.
-	 * @see fr.jmini.eadoc.EStructuredDocument#getPartsByRole(java.lang.String)
+	 * @return the meta object for the containment reference list '<em>Body</em>'.
+	 * @see fr.jmini.eadoc.ETable#getBody()
+	 * @see #getETable()
 	 * @generated
 	 */
-	EOperation getEStructuredDocument__GetPartsByRole__String();
+	EReference getETable_Body();
 
 	/**
-	 * Returns the meta object for class '{@link fr.jmini.eadoc.EContentNode <em>EContent Node</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETable#getFrame <em>Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>EContent Node</em>'.
-	 * @see fr.jmini.eadoc.EContentNode
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see fr.jmini.eadoc.ETable#getFrame()
+	 * @see #getETable()
 	 * @generated
 	 */
-	EClass getEContentNode();
+	EAttribute getETable_Frame();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETable#getGrid <em>Grid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#getId()
-	 * @see #getEContentNode()
+	 * @return the meta object for the attribute '<em>Grid</em>'.
+	 * @see fr.jmini.eadoc.ETable#getGrid()
+	 * @see #getETable()
 	 * @generated
 	 */
-	EAttribute getEContentNode_Id();
+	EAttribute getETable_Grid();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getParent <em>Parent</em>}'.
+	 * Returns the meta object for class '{@link fr.jmini.eadoc.ETitle <em>ETitle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#getParent()
-	 * @see #getEContentNode()
+	 * @return the meta object for class '<em>ETitle</em>'.
+	 * @see fr.jmini.eadoc.ETitle
 	 * @generated
 	 */
-	EReference getEContentNode_Parent();
+	EClass getETitle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getContext <em>Context</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#getMain <em>Main</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Context</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#getContext()
-	 * @see #getEContentNode()
+	 * @return the meta object for the attribute '<em>Main</em>'.
+	 * @see fr.jmini.eadoc.ETitle#getMain()
+	 * @see #getETitle()
 	 * @generated
 	 */
-	EAttribute getEContentNode_Context();
+	EAttribute getETitle_Main();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getDocument <em>Document</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#getSubtitle <em>Subtitle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Document</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#getDocument()
-	 * @see #getEContentNode()
+	 * @return the meta object for the attribute '<em>Subtitle</em>'.
+	 * @see fr.jmini.eadoc.ETitle#getSubtitle()
+	 * @see #getETitle()
 	 * @generated
 	 */
-	EReference getEContentNode_Document();
+	EAttribute getETitle_Subtitle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#isInline <em>Inline</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#getCombined <em>Combined</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inline</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#isInline()
-	 * @see #getEContentNode()
+	 * @return the meta object for the attribute '<em>Combined</em>'.
+	 * @see fr.jmini.eadoc.ETitle#getCombined()
+	 * @see #getETitle()
 	 * @generated
 	 */
-	EAttribute getEContentNode_Inline();
+	EAttribute getETitle_Combined();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#isBlock <em>Block</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.ETitle#isSanitized <em>Sanitized</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Block</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#isBlock()
-	 * @see #getEContentNode()
+	 * @return the meta object for the attribute '<em>Sanitized</em>'.
+	 * @see fr.jmini.eadoc.ETitle#isSanitized()
+	 * @see #getETitle()
 	 * @generated
 	 */
-	EAttribute getEContentNode_Block();
+	EAttribute getETitle_Sanitized();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for enum '{@link fr.jmini.eadoc.EHorizontalAlignment <em>EHorizontal Alignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attributes</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#getAttributes()
-	 * @see #getEContentNode()
+	 * @return the meta object for enum '<em>EHorizontal Alignment</em>'.
+	 * @see fr.jmini.eadoc.EHorizontalAlignment
 	 * @generated
 	 */
-	EReference getEContentNode_Attributes();
+	EEnum getEHorizontalAlignment();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getRoles <em>Roles</em>}'.
+	 * Returns the meta object for enum '{@link fr.jmini.eadoc.EVerticalAlignment <em>EVertical Alignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Roles</em>'.
-	 * @see fr.jmini.eadoc.EContentNode#getRoles()
-	 * @see #getEContentNode()
+	 * @return the meta object for enum '<em>EVertical Alignment</em>'.
+	 * @see fr.jmini.eadoc.EVerticalAlignment
 	 * @generated
 	 */
-	EReference getEContentNode_Roles();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#id() <em>Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Id</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#id()
-	 * @generated
-	 */
-	EOperation getEContentNode__Id();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getNodeName() <em>Get Node Name</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Node Name</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getNodeName()
-	 * @generated
-	 */
-	EOperation getEContentNode__GetNodeName();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#parent() <em>Parent</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Parent</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#parent()
-	 * @generated
-	 */
-	EOperation getEContentNode__Parent();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#context() <em>Context</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Context</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#context()
-	 * @generated
-	 */
-	EOperation getEContentNode__Context();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#document() <em>Document</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Document</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#document()
-	 * @generated
-	 */
-	EOperation getEContentNode__Document();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getAttr(java.lang.Object, java.lang.Object, boolean) <em>Get Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getAttr(java.lang.Object, java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__GetAttr__Object_Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getAttr(java.lang.Object, java.lang.Object) <em>Get Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getAttr(java.lang.Object, java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__GetAttr__Object_Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getAttr(java.lang.Object) <em>Get Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getAttr(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__GetAttr__Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getAttribute(java.lang.Object, java.lang.Object, boolean) <em>Get Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getAttribute(java.lang.Object, java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__GetAttribute__Object_Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getAttribute(java.lang.Object, java.lang.Object) <em>Get Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getAttribute(java.lang.Object, java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__GetAttribute__Object_Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getAttribute(java.lang.Object) <em>Get Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getAttribute(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__GetAttribute__Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#hasAttr(java.lang.Object) <em>Has Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Has Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#hasAttr(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__HasAttr__Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#hasAttr(java.lang.Object, boolean) <em>Has Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Has Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#hasAttr(java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__HasAttr__Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#hasAttribute(java.lang.Object) <em>Has Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Has Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#hasAttribute(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__HasAttribute__Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#hasAttribute(java.lang.Object, boolean) <em>Has Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Has Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#hasAttribute(java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__HasAttribute__Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#isAttr(java.lang.Object, java.lang.Object) <em>Is Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#isAttr(java.lang.Object, java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__IsAttr__Object_Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#isAttr(java.lang.Object, java.lang.Object, boolean) <em>Is Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#isAttr(java.lang.Object, java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__IsAttr__Object_Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#isAttribute(java.lang.Object, java.lang.Object) <em>Is Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#isAttribute(java.lang.Object, java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__IsAttribute__Object_Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#isAttribute(java.lang.Object, java.lang.Object, boolean) <em>Is Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#isAttribute(java.lang.Object, java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__IsAttribute__Object_Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#setAttr(java.lang.Object, java.lang.Object, boolean) <em>Set Attr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Attr</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#setAttr(java.lang.Object, java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__SetAttr__Object_Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#setAttribute(java.lang.Object, java.lang.Object, boolean) <em>Set Attribute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Attribute</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#setAttribute(java.lang.Object, java.lang.Object, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__SetAttribute__Object_Object_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#isOption(java.lang.Object) <em>Is Option</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Option</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#isOption(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getEContentNode__IsOption__Object();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#isRole() <em>Is Role</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Role</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#isRole()
-	 * @generated
-	 */
-	EOperation getEContentNode__IsRole();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#hasRole(java.lang.String) <em>Has Role</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Has Role</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#hasRole(java.lang.String)
-	 * @generated
-	 */
-	EOperation getEContentNode__HasRole__String();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getRole() <em>Get Role</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Role</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getRole()
-	 * @generated
-	 */
-	EOperation getEContentNode__GetRole();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#role() <em>Role</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Role</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#role()
-	 * @generated
-	 */
-	EOperation getEContentNode__Role();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#addRole(java.lang.String) <em>Add Role</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Role</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#addRole(java.lang.String)
-	 * @generated
-	 */
-	EOperation getEContentNode__AddRole__String();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#removeRole(java.lang.String) <em>Remove Role</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove Role</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#removeRole(java.lang.String)
-	 * @generated
-	 */
-	EOperation getEContentNode__RemoveRole__String();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#isReftext() <em>Is Reftext</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Reftext</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#isReftext()
-	 * @generated
-	 */
-	EOperation getEContentNode__IsReftext();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#getReftext() <em>Get Reftext</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Reftext</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#getReftext()
-	 * @generated
-	 */
-	EOperation getEContentNode__GetReftext();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#iconUri(java.lang.String) <em>Icon Uri</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Icon Uri</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#iconUri(java.lang.String)
-	 * @generated
-	 */
-	EOperation getEContentNode__IconUri__String();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#mediaUri(java.lang.String) <em>Media Uri</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Media Uri</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#mediaUri(java.lang.String)
-	 * @generated
-	 */
-	EOperation getEContentNode__MediaUri__String();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#imageUri(java.lang.String) <em>Image Uri</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Image Uri</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#imageUri(java.lang.String)
-	 * @generated
-	 */
-	EOperation getEContentNode__ImageUri__String();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#imageUri(java.lang.String, java.lang.String) <em>Image Uri</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Image Uri</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#imageUri(java.lang.String, java.lang.String)
-	 * @generated
-	 */
-	EOperation getEContentNode__ImageUri__String_String();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#readAsset(java.lang.String, java.util.Map<java.lang.Object, java.lang.Object>) <em>Read Asset</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Read Asset</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#readAsset(java.lang.String, java.util.Map<java.lang.Object, java.lang.Object>)
-	 * @generated
-	 */
-	EOperation getEContentNode__ReadAsset__String_ObjectObjectMap();
-
-	/**
-	 * Returns the meta object for the '{@link fr.jmini.eadoc.EContentNode#normalizeWebPath(java.lang.String, java.lang.String, boolean) <em>Normalize Web Path</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Normalize Web Path</em>' operation.
-	 * @see fr.jmini.eadoc.EContentNode#normalizeWebPath(java.lang.String, java.lang.String, boolean)
-	 * @generated
-	 */
-	EOperation getEContentNode__NormalizeWebPath__String_String_boolean();
+	EEnum getEVerticalAlignment();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2384,7 +3961,6 @@ public interface EadocPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -2403,44 +3979,34 @@ public interface EadocPackage extends EPackage {
 		EClass AUTHOR = eINSTANCE.getAuthor();
 
 		/**
-		 * The meta object literal for the '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}' class.
+		 * The meta object literal for the '{@link org.asciidoctor.ast.Block <em>Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.asciidoctor.ast.DocumentHeader
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDocumentHeader()
+		 * @see org.asciidoctor.ast.Block
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getBlock()
 		 * @generated
 		 */
-		EClass DOCUMENT_HEADER = eINSTANCE.getDocumentHeader();
+		EClass BLOCK = eINSTANCE.getBlock();
 
 		/**
-		 * The meta object literal for the '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}' class.
+		 * The meta object literal for the '{@link org.asciidoctor.ast.Cell <em>Cell</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.asciidoctor.ast.Cursor
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getCursor()
+		 * @see org.asciidoctor.ast.Cell
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getCell()
 		 * @generated
 		 */
-		EClass CURSOR = eINSTANCE.getCursor();
+		EClass CELL = eINSTANCE.getCell();
 
 		/**
-		 * The meta object literal for the '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}' class.
+		 * The meta object literal for the '{@link org.asciidoctor.ast.Column <em>Column</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.asciidoctor.ast.RevisionInfo
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getRevisionInfo()
+		 * @see org.asciidoctor.ast.Column
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getColumn()
 		 * @generated
 		 */
-		EClass REVISION_INFO = eINSTANCE.getRevisionInfo();
-
-		/**
-		 * The meta object literal for the '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.asciidoctor.ast.StructuredDocument
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuredDocument()
-		 * @generated
-		 */
-		EClass STRUCTURED_DOCUMENT = eINSTANCE.getStructuredDocument();
+		EClass COLUMN = eINSTANCE.getColumn();
 
 		/**
 		 * The meta object literal for the '{@link org.asciidoctor.ast.ContentNode <em>Content Node</em>}' class.
@@ -2463,6 +4029,36 @@ public interface EadocPackage extends EPackage {
 		EClass CONTENT_PART = eINSTANCE.getContentPart();
 
 		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.Cursor
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getCursor()
+		 * @generated
+		 */
+		EClass CURSOR = eINSTANCE.getCursor();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.DescriptionList <em>Description List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.DescriptionList
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDescriptionList()
+		 * @generated
+		 */
+		EClass DESCRIPTION_LIST = eINSTANCE.getDescriptionList();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.DescriptionListEntry <em>Description List Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.DescriptionListEntry
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDescriptionListEntry()
+		 * @generated
+		 */
+		EClass DESCRIPTION_LIST_ENTRY = eINSTANCE.getDescriptionListEntry();
+
+		/**
 		 * The meta object literal for the '{@link org.asciidoctor.ast.Document <em>Document</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2473,6 +4069,106 @@ public interface EadocPackage extends EPackage {
 		EClass DOCUMENT = eINSTANCE.getDocument();
 
 		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.DocumentHeader
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getDocumentHeader()
+		 * @generated
+		 */
+		EClass DOCUMENT_HEADER = eINSTANCE.getDocumentHeader();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.List <em>Ast List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.List
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getAstList()
+		 * @generated
+		 */
+		EClass AST_LIST = eINSTANCE.getAstList();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.ListItem <em>List Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.ListItem
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getListItem()
+		 * @generated
+		 */
+		EClass LIST_ITEM = eINSTANCE.getListItem();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.PhraseNode <em>Phrase Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.PhraseNode
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getPhraseNode()
+		 * @generated
+		 */
+		EClass PHRASE_NODE = eINSTANCE.getPhraseNode();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.RevisionInfo
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getRevisionInfo()
+		 * @generated
+		 */
+		EClass REVISION_INFO = eINSTANCE.getRevisionInfo();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.Row <em>Row</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.Row
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getRow()
+		 * @generated
+		 */
+		EClass ROW = eINSTANCE.getRow();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.Section <em>Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.Section
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getSection()
+		 * @generated
+		 */
+		EClass SECTION = eINSTANCE.getSection();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.StructuralNode <em>Structural Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.StructuralNode
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNode()
+		 * @generated
+		 */
+		EClass STRUCTURAL_NODE = eINSTANCE.getStructuralNode();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.StructuredDocument
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuredDocument()
+		 * @generated
+		 */
+		EClass STRUCTURED_DOCUMENT = eINSTANCE.getStructuredDocument();
+
+		/**
+		 * The meta object literal for the '{@link org.asciidoctor.ast.Table <em>Table</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.asciidoctor.ast.Table
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getTable()
+		 * @generated
+		 */
+		EClass TABLE = eINSTANCE.getTable();
+
+		/**
 		 * The meta object literal for the '{@link org.asciidoctor.ast.Title <em>Title</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2481,6 +4177,16 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TITLE = eINSTANCE.getTitle();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.EadocUtility <em>Utility</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.EadocUtility
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEadocUtility()
+		 * @generated
+		 */
+		EClass EADOC_UTILITY = eINSTANCE.getEadocUtility();
 
 		/**
 		 * The meta object literal for the '{@link java.util.Map<java.lang.String, java.lang.Object> <em>String Object Map</em>}' class.
@@ -2521,6 +4227,16 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTENT_PART_LIST = eINSTANCE.getContentPartList();
+
+		/**
+		 * The meta object literal for the '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNodeList()
+		 * @generated
+		 */
+		EClass STRUCTURAL_NODE_LIST = eINSTANCE.getStructuralNodeList();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EAuthorImpl <em>EAuthor</em>}' class.
@@ -2581,122 +4297,156 @@ public interface EadocPackage extends EPackage {
 		EAttribute EAUTHOR__INITIALS = eINSTANCE.getEAuthor_Initials();
 
 		/**
-		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ECursorImpl <em>ECursor</em>}' class.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EBlockImpl <em>EBlock</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.jmini.eadoc.impl.ECursorImpl
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECursor()
+		 * @see fr.jmini.eadoc.impl.EBlockImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEBlock()
 		 * @generated
 		 */
-		EClass ECURSOR = eINSTANCE.getECursor();
+		EClass EBLOCK = eINSTANCE.getEBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Line Number</b></em>' attribute feature.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ECellImpl <em>ECell</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.ECellImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECell()
 		 * @generated
 		 */
-		EAttribute ECURSOR__LINE_NUMBER = eINSTANCE.getECursor_LineNumber();
+		EClass ECELL = eINSTANCE.getECell();
 
 		/**
-		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EColumnImpl <em>EColumn</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EColumnImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEColumn()
 		 * @generated
 		 */
-		EAttribute ECURSOR__PATH = eINSTANCE.getECursor_Path();
+		EClass ECOLUMN = eINSTANCE.getEColumn();
 
 		/**
-		 * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECURSOR__DIR = eINSTANCE.getECursor_Dir();
+		EAttribute ECOLUMN__STYLE = eINSTANCE.getEColumn_Style();
 
 		/**
-		 * The meta object literal for the '<em><b>File</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Table</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECURSOR__FILE = eINSTANCE.getECursor_File();
+		EReference ECOLUMN__TABLE = eINSTANCE.getEColumn_Table();
 
 		/**
-		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ETitleImpl <em>ETitle</em>}' class.
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.jmini.eadoc.impl.ETitleImpl
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETitle()
 		 * @generated
 		 */
-		EClass ETITLE = eINSTANCE.getETitle();
+		EAttribute ECOLUMN__WIDTH = eINSTANCE.getEColumn_Width();
 
 		/**
-		 * The meta object literal for the '<em><b>Main</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>HAlignment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ETITLE__MAIN = eINSTANCE.getETitle_Main();
+		EAttribute ECOLUMN__HALIGNMENT = eINSTANCE.getEColumn_HAlignment();
 
 		/**
-		 * The meta object literal for the '<em><b>Subtitle</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>VAlignment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ETITLE__SUBTITLE = eINSTANCE.getETitle_Subtitle();
+		EAttribute ECOLUMN__VALIGNMENT = eINSTANCE.getEColumn_VAlignment();
 
 		/**
-		 * The meta object literal for the '<em><b>Combined</b></em>' attribute feature.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EContentNodeImpl <em>EContent Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EContentNodeImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEContentNode()
 		 * @generated
 		 */
-		EAttribute ETITLE__COMBINED = eINSTANCE.getETitle_Combined();
+		EClass ECONTENT_NODE = eINSTANCE.getEContentNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Sanitized</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ETITLE__SANITIZED = eINSTANCE.getETitle_Sanitized();
+		EAttribute ECONTENT_NODE__ID = eINSTANCE.getEContentNode_Id();
 
 		/**
-		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ERevisionInfoImpl <em>ERevision Info</em>}' class.
+		 * The meta object literal for the '<em><b>Node Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.jmini.eadoc.impl.ERevisionInfoImpl
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERevisionInfo()
 		 * @generated
 		 */
-		EClass EREVISION_INFO = eINSTANCE.getERevisionInfo();
+		EAttribute ECONTENT_NODE__NODE_NAME = eINSTANCE.getEContentNode_NodeName();
 
 		/**
-		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EREVISION_INFO__DATE = eINSTANCE.getERevisionInfo_Date();
+		EReference ECONTENT_NODE__PARENT = eINSTANCE.getEContentNode_Parent();
 
 		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Context</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EREVISION_INFO__NUMBER = eINSTANCE.getERevisionInfo_Number();
+		EAttribute ECONTENT_NODE__CONTEXT = eINSTANCE.getEContentNode_Context();
 
 		/**
-		 * The meta object literal for the '<em><b>Remark</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Document</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EREVISION_INFO__REMARK = eINSTANCE.getERevisionInfo_Remark();
+		EReference ECONTENT_NODE__DOCUMENT = eINSTANCE.getEContentNode_Document();
+
+		/**
+		 * The meta object literal for the '<em><b>Inline</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECONTENT_NODE__INLINE = eINSTANCE.getEContentNode_Inline();
+
+		/**
+		 * The meta object literal for the '<em><b>Block</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECONTENT_NODE__BLOCK = eINSTANCE.getEContentNode_Block();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ECONTENT_NODE__ATTRIBUTES = eINSTANCE.getEContentNode_Attributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ECONTENT_NODE__ROLES = eINSTANCE.getEContentNode_Roles();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EContentPartImpl <em>EContent Part</em>}' class.
@@ -2781,12 +4531,252 @@ public interface EadocPackage extends EPackage {
 		EReference ECONTENT_PART__PARENT_PART = eINSTANCE.getEContentPart_ParentPart();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Content</b></em>' operation.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ECursorImpl <em>ECursor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.ECursorImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECursor()
+		 * @generated
+		 */
+		EClass ECURSOR = eINSTANCE.getECursor();
+
+		/**
+		 * The meta object literal for the '<em><b>Line Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ECONTENT_PART___GET_CONTENT = eINSTANCE.getEContentPart__GetContent();
+		EAttribute ECURSOR__LINE_NUMBER = eINSTANCE.getECursor_LineNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECURSOR__PATH = eINSTANCE.getECursor_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECURSOR__DIR = eINSTANCE.getECursor_Dir();
+
+		/**
+		 * The meta object literal for the '<em><b>File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECURSOR__FILE = eINSTANCE.getECursor_File();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EDescriptionListImpl <em>EDescription List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EDescriptionListImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDescriptionList()
+		 * @generated
+		 */
+		EClass EDESCRIPTION_LIST = eINSTANCE.getEDescriptionList();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EDescriptionListEntryImpl <em>EDescription List Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EDescriptionListEntryImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDescriptionListEntry()
+		 * @generated
+		 */
+		EClass EDESCRIPTION_LIST_ENTRY = eINSTANCE.getEDescriptionListEntry();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EDocumentImpl <em>EDocument</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EDocumentImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDocument()
+		 * @generated
+		 */
+		EClass EDOCUMENT = eINSTANCE.getEDocument();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EDocumentHeaderImpl <em>EDocument Header</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EDocumentHeaderImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDocumentHeader()
+		 * @generated
+		 */
+		EClass EDOCUMENT_HEADER = eINSTANCE.getEDocumentHeader();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EAdocListImpl <em>EAdoc List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EAdocListImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEAdocList()
+		 * @generated
+		 */
+		EClass EADOC_LIST = eINSTANCE.getEAdocList();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EListItemImpl <em>EList Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EListItemImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEListItem()
+		 * @generated
+		 */
+		EClass ELIST_ITEM = eINSTANCE.getEListItem();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EPhraseNodeImpl <em>EPhrase Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EPhraseNodeImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEPhraseNode()
+		 * @generated
+		 */
+		EClass EPHRASE_NODE = eINSTANCE.getEPhraseNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPHRASE_NODE__TARGET = eINSTANCE.getEPhraseNode_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPHRASE_NODE__TEXT = eINSTANCE.getEPhraseNode_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPHRASE_NODE__TYPE = eINSTANCE.getEPhraseNode_Type();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ERevisionInfoImpl <em>ERevision Info</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.ERevisionInfoImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERevisionInfo()
+		 * @generated
+		 */
+		EClass EREVISION_INFO = eINSTANCE.getERevisionInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EREVISION_INFO__DATE = eINSTANCE.getERevisionInfo_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EREVISION_INFO__NUMBER = eINSTANCE.getERevisionInfo_Number();
+
+		/**
+		 * The meta object literal for the '<em><b>Remark</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EREVISION_INFO__REMARK = eINSTANCE.getERevisionInfo_Remark();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ERowImpl <em>ERow</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.ERowImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERow()
+		 * @generated
+		 */
+		EClass EROW = eINSTANCE.getERow();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ESectionImpl <em>ESection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.ESectionImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getESection()
+		 * @generated
+		 */
+		EClass ESECTION = eINSTANCE.getESection();
+
+		/**
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EStructuralNodeImpl <em>EStructural Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.EStructuralNodeImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEStructuralNode()
+		 * @generated
+		 */
+		EClass ESTRUCTURAL_NODE = eINSTANCE.getEStructuralNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESTRUCTURAL_NODE__TITLE = eINSTANCE.getEStructuralNode_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESTRUCTURAL_NODE__STYLE = eINSTANCE.getEStructuralNode_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Blocks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ESTRUCTURAL_NODE__BLOCKS = eINSTANCE.getEStructuralNode_Blocks();
+
+		/**
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESTRUCTURAL_NODE__LEVEL = eINSTANCE.getEStructuralNode_Level();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Location</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ESTRUCTURAL_NODE__SOURCE_LOCATION = eINSTANCE.getEStructuralNode_SourceLocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Substitutions</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESTRUCTURAL_NODE__SUBSTITUTIONS = eINSTANCE.getEStructuralNode_Substitutions();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EStructuredDocumentImpl <em>EStructured Document</em>}' class.
@@ -2815,414 +4805,132 @@ public interface EadocPackage extends EPackage {
 		EReference ESTRUCTURED_DOCUMENT__HEADER = eINSTANCE.getEStructuredDocument_Header();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Part By Id</b></em>' operation.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ETableImpl <em>ETable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.ETableImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETable()
 		 * @generated
 		 */
-		EOperation ESTRUCTURED_DOCUMENT___GET_PART_BY_ID__STRING = eINSTANCE.getEStructuredDocument__GetPartById__String();
+		EClass ETABLE = eINSTANCE.getETable();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Part By Style</b></em>' operation.
+		 * The meta object literal for the '<em><b>Header Option</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ESTRUCTURED_DOCUMENT___GET_PART_BY_STYLE__STRING = eINSTANCE.getEStructuredDocument__GetPartByStyle__String();
+		EAttribute ETABLE__HEADER_OPTION = eINSTANCE.getETable_HeaderOption();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Part By Role</b></em>' operation.
+		 * The meta object literal for the '<em><b>Columns</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ESTRUCTURED_DOCUMENT___GET_PART_BY_ROLE__STRING = eINSTANCE.getEStructuredDocument__GetPartByRole__String();
+		EReference ETABLE__COLUMNS = eINSTANCE.getETable_Columns();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Parts By Context</b></em>' operation.
+		 * The meta object literal for the '<em><b>Header</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ESTRUCTURED_DOCUMENT___GET_PARTS_BY_CONTEXT__STRING = eINSTANCE.getEStructuredDocument__GetPartsByContext__String();
+		EReference ETABLE__HEADER = eINSTANCE.getETable_Header();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Parts By Style</b></em>' operation.
+		 * The meta object literal for the '<em><b>Footer</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ESTRUCTURED_DOCUMENT___GET_PARTS_BY_STYLE__STRING = eINSTANCE.getEStructuredDocument__GetPartsByStyle__String();
+		EReference ETABLE__FOOTER = eINSTANCE.getETable_Footer();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Parts By Role</b></em>' operation.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ESTRUCTURED_DOCUMENT___GET_PARTS_BY_ROLE__STRING = eINSTANCE.getEStructuredDocument__GetPartsByRole__String();
+		EReference ETABLE__BODY = eINSTANCE.getETable_Body();
 
 		/**
-		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EContentNodeImpl <em>EContent Node</em>}' class.
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.jmini.eadoc.impl.EContentNodeImpl
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEContentNode()
 		 * @generated
 		 */
-		EClass ECONTENT_NODE = eINSTANCE.getEContentNode();
+		EAttribute ETABLE__FRAME = eINSTANCE.getETable_Frame();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Grid</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECONTENT_NODE__ID = eINSTANCE.getEContentNode_Id();
+		EAttribute ETABLE__GRID = eINSTANCE.getETable_Grid();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.ETitleImpl <em>ETitle</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.impl.ETitleImpl
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETitle()
 		 * @generated
 		 */
-		EReference ECONTENT_NODE__PARENT = eINSTANCE.getEContentNode_Parent();
+		EClass ETITLE = eINSTANCE.getETitle();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Main</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECONTENT_NODE__CONTEXT = eINSTANCE.getEContentNode_Context();
+		EAttribute ETITLE__MAIN = eINSTANCE.getETitle_Main();
 
 		/**
-		 * The meta object literal for the '<em><b>Document</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Subtitle</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECONTENT_NODE__DOCUMENT = eINSTANCE.getEContentNode_Document();
+		EAttribute ETITLE__SUBTITLE = eINSTANCE.getETitle_Subtitle();
 
 		/**
-		 * The meta object literal for the '<em><b>Inline</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Combined</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECONTENT_NODE__INLINE = eINSTANCE.getEContentNode_Inline();
+		EAttribute ETITLE__COMBINED = eINSTANCE.getETitle_Combined();
 
 		/**
-		 * The meta object literal for the '<em><b>Block</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Sanitized</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECONTENT_NODE__BLOCK = eINSTANCE.getEContentNode_Block();
+		EAttribute ETITLE__SANITIZED = eINSTANCE.getETitle_Sanitized();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference feature.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.EHorizontalAlignment <em>EHorizontal Alignment</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.EHorizontalAlignment
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEHorizontalAlignment()
 		 * @generated
 		 */
-		EReference ECONTENT_NODE__ATTRIBUTES = eINSTANCE.getEContentNode_Attributes();
+		EEnum EHORIZONTAL_ALIGNMENT = eINSTANCE.getEHorizontalAlignment();
 
 		/**
-		 * The meta object literal for the '<em><b>Roles</b></em>' reference feature.
+		 * The meta object literal for the '{@link fr.jmini.eadoc.EVerticalAlignment <em>EVertical Alignment</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fr.jmini.eadoc.EVerticalAlignment
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEVerticalAlignment()
 		 * @generated
 		 */
-		EReference ECONTENT_NODE__ROLES = eINSTANCE.getEContentNode_Roles();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___ID = eINSTANCE.getEContentNode__Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Node Name</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_NODE_NAME = eINSTANCE.getEContentNode__GetNodeName();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___PARENT = eINSTANCE.getEContentNode__Parent();
-
-		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___CONTEXT = eINSTANCE.getEContentNode__Context();
-
-		/**
-		 * The meta object literal for the '<em><b>Document</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___DOCUMENT = eINSTANCE.getEContentNode__Document();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_ATTR__OBJECT_OBJECT_BOOLEAN = eINSTANCE.getEContentNode__GetAttr__Object_Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_ATTR__OBJECT_OBJECT = eINSTANCE.getEContentNode__GetAttr__Object_Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_ATTR__OBJECT = eINSTANCE.getEContentNode__GetAttr__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN = eINSTANCE.getEContentNode__GetAttribute__Object_Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_ATTRIBUTE__OBJECT_OBJECT = eINSTANCE.getEContentNode__GetAttribute__Object_Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_ATTRIBUTE__OBJECT = eINSTANCE.getEContentNode__GetAttribute__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___HAS_ATTR__OBJECT = eINSTANCE.getEContentNode__HasAttr__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___HAS_ATTR__OBJECT_BOOLEAN = eINSTANCE.getEContentNode__HasAttr__Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___HAS_ATTRIBUTE__OBJECT = eINSTANCE.getEContentNode__HasAttribute__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___HAS_ATTRIBUTE__OBJECT_BOOLEAN = eINSTANCE.getEContentNode__HasAttribute__Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IS_ATTR__OBJECT_OBJECT = eINSTANCE.getEContentNode__IsAttr__Object_Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IS_ATTR__OBJECT_OBJECT_BOOLEAN = eINSTANCE.getEContentNode__IsAttr__Object_Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IS_ATTRIBUTE__OBJECT_OBJECT = eINSTANCE.getEContentNode__IsAttribute__Object_Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IS_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN = eINSTANCE.getEContentNode__IsAttribute__Object_Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Attr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___SET_ATTR__OBJECT_OBJECT_BOOLEAN = eINSTANCE.getEContentNode__SetAttr__Object_Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Attribute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___SET_ATTRIBUTE__OBJECT_OBJECT_BOOLEAN = eINSTANCE.getEContentNode__SetAttribute__Object_Object_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Option</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IS_OPTION__OBJECT = eINSTANCE.getEContentNode__IsOption__Object();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Role</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IS_ROLE = eINSTANCE.getEContentNode__IsRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Role</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___HAS_ROLE__STRING = eINSTANCE.getEContentNode__HasRole__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Role</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_ROLE = eINSTANCE.getEContentNode__GetRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Role</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___ROLE = eINSTANCE.getEContentNode__Role();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Role</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___ADD_ROLE__STRING = eINSTANCE.getEContentNode__AddRole__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove Role</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___REMOVE_ROLE__STRING = eINSTANCE.getEContentNode__RemoveRole__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Reftext</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IS_REFTEXT = eINSTANCE.getEContentNode__IsReftext();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Reftext</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___GET_REFTEXT = eINSTANCE.getEContentNode__GetReftext();
-
-		/**
-		 * The meta object literal for the '<em><b>Icon Uri</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___ICON_URI__STRING = eINSTANCE.getEContentNode__IconUri__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Media Uri</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___MEDIA_URI__STRING = eINSTANCE.getEContentNode__MediaUri__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Image Uri</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IMAGE_URI__STRING = eINSTANCE.getEContentNode__ImageUri__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Image Uri</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___IMAGE_URI__STRING_STRING = eINSTANCE.getEContentNode__ImageUri__String_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Read Asset</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___READ_ASSET__STRING_OBJECT_OBJECT_MAP = eINSTANCE.getEContentNode__ReadAsset__String_ObjectObjectMap();
-
-		/**
-		 * The meta object literal for the '<em><b>Normalize Web Path</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ECONTENT_NODE___NORMALIZE_WEB_PATH__STRING_STRING_BOOLEAN = eINSTANCE.getEContentNode__NormalizeWebPath__String_String_boolean();
+		EEnum EVERTICAL_ALIGNMENT = eINSTANCE.getEVerticalAlignment();
 
 	}
 

@@ -209,7 +209,7 @@
                 </dependencies>
             </plugin>
 
-            <!-- fixing generated code. See https://www.eclipse.org/forums/index.php/m/1776433/#msg_1776433 -->
+            <!-- fixes in the generated code -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
@@ -223,9 +223,34 @@
                         <configuration>
                             <target>
                                 <replace dir="${project.basedir}/src/main/java-gen/">
-                                    <replacefilter token="ReadAsset__String_Object>(" value="ReadAsset__String_ObjectObjectMap(" />
-                                    <replacefilter token="READ_ASSET__STRING_OBJECT>" value="READ_ASSET__STRING_OBJECT_OBJECT_MAP" />
-                                    <include name="**/*.java"/>
+                                    <replacefilter token="setSubstitutions(String" value="setSubstitutions(String..." />
+                                    <replacefilter token="setSubstitutions(final String" value="setSubstitutions(final String..." />
+                                    <include name="**/*EStructuralNode*.java"/>
+                                </replace>
+                                <replace dir="src/main/java-gen/" >
+                                    <replacetoken><![CDATA[} // EColumnImpl]]></replacetoken>
+                                    <replacevalue><![CDATA[
+    @Override
+    public org.asciidoctor.ast.Table.HorizontalAlignment getHorizontalAlignment() {
+        return fr.jmini.eadoc.EadocUtility.convertEHorizontalAlignment(getHAlignment());
+    }
+
+    @Override
+    public org.asciidoctor.ast.Table.VerticalAlignment getVerticalAlignment() {
+        return fr.jmini.eadoc.EadocUtility.convertEVerticalAlignment(getVAlignment());
+    }
+
+    @Override
+    public void setHorizontalAlignment(org.asciidoctor.ast.Table.HorizontalAlignment a) {
+        setHAlignment(fr.jmini.eadoc.EadocUtility.convertHorizontalAlignment(a));
+    }
+
+    @Override
+    public void setVerticalAlignment(org.asciidoctor.ast.Table.VerticalAlignment a) {
+        setVAlignment(fr.jmini.eadoc.EadocUtility.convertVerticalAlignment(a));
+    }
+} // EColumnImpl]]></replacevalue>
+                                    <include name="**/EColumnImpl.java"/>
                                 </replace>
                             </target>
                         </configuration>

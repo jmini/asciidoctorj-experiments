@@ -1,110 +1,78 @@
 @GenModel(
     bundleManifest="false",
+    operationReflection="false",
     modelDirectory="adoc-api-impl/src/main/java-gen",
     complianceLevel="8.0"
 )
 package fr.jmini.eadoc
 
 interface Author wraps org.asciidoctor.ast.Author {}
-interface DocumentHeader wraps org.asciidoctor.ast.DocumentHeader {}
-interface Cursor wraps org.asciidoctor.ast.Cursor {}
-interface RevisionInfo wraps org.asciidoctor.ast.RevisionInfo {}
-interface StructuredDocument wraps org.asciidoctor.ast.StructuredDocument {}
+interface Block wraps org.asciidoctor.ast.Block {}
+interface Cell wraps org.asciidoctor.ast.Cell {}
+interface Column wraps org.asciidoctor.ast.Column {}
 interface ContentNode wraps org.asciidoctor.ast.ContentNode {}
 interface ContentPart wraps org.asciidoctor.ast.ContentPart {}
+interface Cursor wraps org.asciidoctor.ast.Cursor {}
+interface DescriptionList wraps org.asciidoctor.ast.DescriptionList {}
+interface DescriptionListEntry wraps org.asciidoctor.ast.DescriptionListEntry {}
 interface Document wraps org.asciidoctor.ast.Document {}
+interface DocumentHeader wraps org.asciidoctor.ast.DocumentHeader {}
+interface AstList wraps org.asciidoctor.ast.List {}
+interface ListItem wraps org.asciidoctor.ast.ListItem {}
+interface PhraseNode wraps org.asciidoctor.ast.PhraseNode {}
+interface RevisionInfo wraps org.asciidoctor.ast.RevisionInfo {}
+interface Row wraps org.asciidoctor.ast.Row {}
+interface Section wraps org.asciidoctor.ast.Section {}
+interface StructuralNode wraps org.asciidoctor.ast.StructuralNode {}
+interface StructuredDocument wraps org.asciidoctor.ast.StructuredDocument {}
+interface Table wraps org.asciidoctor.ast.Table {}
 interface Title wraps org.asciidoctor.ast.Title {}
+
+interface EadocUtility wraps fr.jmini.eadoc.EadocUtility {}
 
 interface StringObjectMap wraps java.util.Map<String, Object> {}
 interface ObjectObjectMap wraps java.util.Map<Object, Object> {}
 interface StringList wraps java.util.List<String> {}
 interface ContentPartList wraps java.util.List<org.asciidoctor.ast.ContentPart> {}
+interface StructuralNodeList wraps java.util.List<? extends org.asciidoctor.ast.StructuralNode> {}
+
+enum EHorizontalAlignment {
+    LEFT, CENTER, RIGHT
+}
+
+enum EVerticalAlignment {
+    TOP, BOTTOM, MIDDLE
+}
+
 
 class EAuthor extends Author {
-		String email
-		String fullName
-		String firstName
-		String lastName
-		String middleName
-		String initials
+	String email
+	String fullName
+	String firstName
+	String lastName
+	String middleName
+	String initials
 }
 
-class ECursor extends Cursor {
-	int lineNumber
-	String path
-	String dir
-	String file
+class EBlock extends EStructuralNode /*, Block */ {
+	
 }
 
-class ETitle extends Title{
-
-    String main
-    String subtitle
-    String combined
-    boolean sanitized
+class ECell extends EContentNode /*, Cell */ {
+	
 }
 
-class ERevisionInfo extends RevisionInfo {
-		String date
-		String number
-		String remark
-}
+class EColumn extends EContentNode, Column {
+    String style
+    container ETable table opposite columns
+    
+    op int getColumnNumber() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
 
-class EContentPart extends ContentPart {
-		String ^id
-		int level
-		String context
-		String style
-		String role
-		String title
-		refers StringObjectMap attributes
-		contains EContentPart[] parts opposite parentPart
-		
-		op String getContent()
-		
-		container EContentPart parentPart opposite parts
-}
-
-class EStructuredDocument extends StructuredDocument {
-		contains EContentPart[] parts
-		refers DocumentHeader header
-
-		op ContentPart getPartById(String partId) {
-			if(partId === null) {
-				return null
-			}
-			return parts.findFirst[partId.equals(it.getId)]
-		}
-		op ContentPart getPartByStyle(String style) {
-			if(style === null) {
-				return null
-			}
-			return parts.findFirst[style.equals(it.getStyle)]
-		}
-		op ContentPart getPartByRole(String role) {
-			if(role === null) {
-				return null
-			}
-			return parts.findFirst[role.equals(it.getRole)]
-		}
-		op ContentPartList getPartsByContext(String context) {
-			if(context === null) {
-				return emptyList
-			}
-			return parts.filter[context.equals(it.getContext)].asEList
-		}
-		op ContentPartList getPartsByStyle(String style) {
-			if(style === null) {
-				return emptyList
-			}
-			return parts.filter[style.equals(it.getStyle)].asEList
-		}
-		op ContentPartList getPartsByRole(String role) {
-			if(role === null) {
-				return emptyList
-			}
-			return parts.filter[role.equals(it.getRole)].asEList
-		}
+    int width
+    EHorizontalAlignment hAlignment
+    EVerticalAlignment vAlignment
 }
 
 class EContentNode extends ContentNode {
@@ -117,14 +85,12 @@ class EContentNode extends ContentNode {
         this.getId
     }
 
-    op String getNodeName() {
-        throw new UnsupportedOperationException("Not implemented")
-    }
+    String nodeName
 
     refers ContentNode parent
-//    /**
-//     * @deprecated Use {@linkplain #getParent()}  instead.
-//     */
+    /**
+     * @deprecated Use {@linkplain #getParent()} instead.
+     */
     op ContentNode parent() {
         this.getParent
     }
@@ -240,7 +206,7 @@ class EContentNode extends ContentNode {
     op boolean setAttr(Object name, Object value, boolean overwrite) {
         setAttribute(name, value, overwrite)
     }
-//
+
     op boolean setAttribute(Object name, Object value, boolean overwrite) {
         throw new UnsupportedOperationException("Not implemented")
     }
@@ -298,5 +264,215 @@ class EContentNode extends ContentNode {
     op String normalizeWebPath(String path, String start, boolean preserveUriTarget) {
         throw new UnsupportedOperationException("Not implemented")
     }
+}
 
+class EContentPart extends ContentPart {
+	String ^id
+	int level
+	String context
+	String style
+	String role
+	String title
+	refers StringObjectMap attributes
+	contains EContentPart[] parts opposite parentPart
+	
+	op String getContent()
+	
+	container EContentPart parentPart opposite parts
+}
+
+class ECursor extends Cursor {
+	int lineNumber
+	String path
+	String dir
+	String file
+}
+
+class EDescriptionList extends EStructuralNode /*, DescriptionList */ {
+	
+}
+
+class EDescriptionListEntry /* extends DescriptionListEntry */ {
+	
+}
+
+class EDocument extends EStructuralNode /*, Document */ {
+	
+}
+
+class EDocumentHeader /* extends DocumentHeader */ {
+	
+}
+
+class EAdocList extends EStructuralNode /*, AstList */ {
+	
+}
+
+class EListItem extends EStructuralNode /*, ListItem */ {
+	
+}
+
+class EPhraseNode extends EContentNode, PhraseNode {
+	op String render()
+	op String ^convert()
+	String target
+	String text
+	String ^type
+}
+
+class ERevisionInfo extends RevisionInfo {
+	String date
+	String number
+	String remark
+}
+
+class ERow /* extends Row */ {
+	
+}
+
+class ESection extends EStructuralNode /*, Section */ {
+	
+}
+
+class EStructuralNode extends EContentNode, StructuralNode {
+    /**
+     * @deprecated Please use {@linkplain #getTitle()} instead
+     */
+    op String title() {
+    	this.getTitle
+    }
+    String title
+    /**
+     * @deprecated Please use {@linkplain #getStyle()} instead
+     */
+    op String style() {
+    	this.getStyle
+    }
+    String style
+
+    /**
+     * @return The list of child blocks of this block
+     * @deprecated Please use {@linkplain #getBlocks()} instead
+     */
+    op StructuralNodeList blocks() {
+    	this.getBlocks
+    }
+    
+    contains EStructuralNode[] blocks
+
+    op void append(StructuralNode block) {
+        this.getBlocks.add(EadocUtility.convertStructuralNode(block))
+    }
+
+    /**
+     * @deprecated Please use {@linkplain #getContent()} instead
+     */
+    op Object content() {
+    	this.getContent
+    }
+    
+    op Object getContent() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op String ^convert() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op StructuralNodeList findBy(ObjectObjectMap selector)  {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    int level
+
+    op String getContentModel() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    contains ECursor sourceLocation
+
+    String[] substitutions
+
+    op boolean isSubstitutionEnabled(String substitution) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op void removeSubstitution(String substitution) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op void addSubstitution(String substitution) {
+    	this.substitutions.add(substitution)
+    }
+
+    op void prependSubstitution(String substitution) {
+    	this.substitutions.add(0, substitution)
+    }
+    
+    op void setSubstitutions(String substitution){
+        throw new UnsupportedOperationException("Not implemented")
+    }
+}
+
+class EStructuredDocument extends StructuredDocument {
+	contains EContentPart[] parts
+	refers DocumentHeader header
+
+	op ContentPart getPartById(String partId) {
+		if(partId === null) {
+			return null
+		}
+		return parts.findFirst[partId.equals(it.getId)]
+	}
+	op ContentPart getPartByStyle(String style) {
+		if(style === null) {
+			return null
+		}
+		return parts.findFirst[style.equals(it.getStyle)]
+	}
+	op ContentPart getPartByRole(String role) {
+		if(role === null) {
+			return null
+		}
+		return parts.findFirst[role.equals(it.getRole)]
+	}
+	op ContentPartList getPartsByContext(String context) {
+		if(context === null) {
+			return emptyList
+		}
+		return parts.filter[context.equals(it.getContext)].asEList
+	}
+	op ContentPartList getPartsByStyle(String style) {
+		if(style === null) {
+			return emptyList
+		}
+		return parts.filter[style.equals(it.getStyle)].asEList
+	}
+	op ContentPartList getPartsByRole(String role) {
+		if(role === null) {
+			return emptyList
+		}
+		return parts.filter[role.equals(it.getRole)].asEList
+	}
+}
+
+class ETable extends EStructuralNode , Table {
+	boolean headerOption
+
+	op boolean hasHeaderOption() {
+		return this.isHeaderOption
+	}
+
+    contains EColumn[] columns opposite table
+    contains Row[] header
+    contains Row[] footer
+    contains Row[] body
+    String frame
+    String grid
+}
+
+class ETitle extends Title{
+	String main
+	String subtitle
+	String combined
+	boolean sanitized
 }

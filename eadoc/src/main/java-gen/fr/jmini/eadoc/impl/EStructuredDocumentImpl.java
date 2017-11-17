@@ -6,8 +6,6 @@ import fr.jmini.eadoc.EContentPart;
 import fr.jmini.eadoc.EStructuredDocument;
 import fr.jmini.eadoc.EadocPackage;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -325,30 +323,6 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 				return header != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case EadocPackage.ESTRUCTURED_DOCUMENT___GET_PART_BY_ID__STRING:
-				return getPartById((String)arguments.get(0));
-			case EadocPackage.ESTRUCTURED_DOCUMENT___GET_PART_BY_STYLE__STRING:
-				return getPartByStyle((String)arguments.get(0));
-			case EadocPackage.ESTRUCTURED_DOCUMENT___GET_PART_BY_ROLE__STRING:
-				return getPartByRole((String)arguments.get(0));
-			case EadocPackage.ESTRUCTURED_DOCUMENT___GET_PARTS_BY_CONTEXT__STRING:
-				return getPartsByContext((String)arguments.get(0));
-			case EadocPackage.ESTRUCTURED_DOCUMENT___GET_PARTS_BY_STYLE__STRING:
-				return getPartsByStyle((String)arguments.get(0));
-			case EadocPackage.ESTRUCTURED_DOCUMENT___GET_PARTS_BY_ROLE__STRING:
-				return getPartsByRole((String)arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //EStructuredDocumentImpl

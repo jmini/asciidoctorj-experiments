@@ -4,17 +4,28 @@ package fr.jmini.eadoc.util;
 
 import fr.jmini.eadoc.*;
 
-import java.util.List;
 import java.util.Map;
 
 import org.asciidoctor.ast.Author;
+import org.asciidoctor.ast.Block;
+import org.asciidoctor.ast.Cell;
+import org.asciidoctor.ast.Column;
 import org.asciidoctor.ast.ContentNode;
 import org.asciidoctor.ast.ContentPart;
 import org.asciidoctor.ast.Cursor;
+import org.asciidoctor.ast.DescriptionList;
+import org.asciidoctor.ast.DescriptionListEntry;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.DocumentHeader;
+import org.asciidoctor.ast.List;
+import org.asciidoctor.ast.ListItem;
+import org.asciidoctor.ast.PhraseNode;
 import org.asciidoctor.ast.RevisionInfo;
+import org.asciidoctor.ast.Row;
+import org.asciidoctor.ast.Section;
+import org.asciidoctor.ast.StructuralNode;
 import org.asciidoctor.ast.StructuredDocument;
+import org.asciidoctor.ast.Table;
 import org.asciidoctor.ast.Title;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -85,20 +96,16 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 				return createAuthorAdapter();
 			}
 			@Override
-			public Adapter caseDocumentHeader(DocumentHeader object) {
-				return createDocumentHeaderAdapter();
+			public Adapter caseBlock(Block object) {
+				return createBlockAdapter();
 			}
 			@Override
-			public Adapter caseCursor(Cursor object) {
-				return createCursorAdapter();
+			public Adapter caseCell(Cell object) {
+				return createCellAdapter();
 			}
 			@Override
-			public Adapter caseRevisionInfo(RevisionInfo object) {
-				return createRevisionInfoAdapter();
-			}
-			@Override
-			public Adapter caseStructuredDocument(StructuredDocument object) {
-				return createStructuredDocumentAdapter();
+			public Adapter caseColumn(Column object) {
+				return createColumnAdapter();
 			}
 			@Override
 			public Adapter caseContentNode(ContentNode object) {
@@ -109,12 +116,68 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 				return createContentPartAdapter();
 			}
 			@Override
+			public Adapter caseCursor(Cursor object) {
+				return createCursorAdapter();
+			}
+			@Override
+			public Adapter caseDescriptionList(DescriptionList object) {
+				return createDescriptionListAdapter();
+			}
+			@Override
+			public Adapter caseDescriptionListEntry(DescriptionListEntry object) {
+				return createDescriptionListEntryAdapter();
+			}
+			@Override
 			public Adapter caseDocument(Document object) {
 				return createDocumentAdapter();
 			}
 			@Override
+			public Adapter caseDocumentHeader(DocumentHeader object) {
+				return createDocumentHeaderAdapter();
+			}
+			@Override
+			public Adapter caseAstList(List object) {
+				return createAstListAdapter();
+			}
+			@Override
+			public Adapter caseListItem(ListItem object) {
+				return createListItemAdapter();
+			}
+			@Override
+			public Adapter casePhraseNode(PhraseNode object) {
+				return createPhraseNodeAdapter();
+			}
+			@Override
+			public Adapter caseRevisionInfo(RevisionInfo object) {
+				return createRevisionInfoAdapter();
+			}
+			@Override
+			public Adapter caseRow(Row object) {
+				return createRowAdapter();
+			}
+			@Override
+			public Adapter caseSection(Section object) {
+				return createSectionAdapter();
+			}
+			@Override
+			public Adapter caseStructuralNode(StructuralNode object) {
+				return createStructuralNodeAdapter();
+			}
+			@Override
+			public Adapter caseStructuredDocument(StructuredDocument object) {
+				return createStructuredDocumentAdapter();
+			}
+			@Override
+			public Adapter caseTable(Table object) {
+				return createTableAdapter();
+			}
+			@Override
 			public Adapter caseTitle(Title object) {
 				return createTitleAdapter();
+			}
+			@Override
+			public Adapter caseEadocUtility(EadocUtility object) {
+				return createEadocUtilityAdapter();
 			}
 			@Override
 			public Adapter caseStringObjectMap(Map<String, Object> object) {
@@ -125,40 +188,100 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 				return createObjectObjectMapAdapter();
 			}
 			@Override
-			public Adapter caseStringList(List<String> object) {
+			public Adapter caseStringList(java.util.List<String> object) {
 				return createStringListAdapter();
 			}
 			@Override
-			public Adapter caseContentPartList(List<ContentPart> object) {
+			public Adapter caseContentPartList(java.util.List<ContentPart> object) {
 				return createContentPartListAdapter();
+			}
+			@Override
+			public Adapter caseStructuralNodeList(java.util.List<? extends StructuralNode> object) {
+				return createStructuralNodeListAdapter();
 			}
 			@Override
 			public Adapter caseEAuthor(EAuthor object) {
 				return createEAuthorAdapter();
 			}
 			@Override
-			public Adapter caseECursor(ECursor object) {
-				return createECursorAdapter();
+			public Adapter caseEBlock(EBlock object) {
+				return createEBlockAdapter();
 			}
 			@Override
-			public Adapter caseETitle(ETitle object) {
-				return createETitleAdapter();
+			public Adapter caseECell(ECell object) {
+				return createECellAdapter();
 			}
 			@Override
-			public Adapter caseERevisionInfo(ERevisionInfo object) {
-				return createERevisionInfoAdapter();
+			public Adapter caseEColumn(EColumn object) {
+				return createEColumnAdapter();
+			}
+			@Override
+			public Adapter caseEContentNode(EContentNode object) {
+				return createEContentNodeAdapter();
 			}
 			@Override
 			public Adapter caseEContentPart(EContentPart object) {
 				return createEContentPartAdapter();
 			}
 			@Override
+			public Adapter caseECursor(ECursor object) {
+				return createECursorAdapter();
+			}
+			@Override
+			public Adapter caseEDescriptionList(EDescriptionList object) {
+				return createEDescriptionListAdapter();
+			}
+			@Override
+			public Adapter caseEDescriptionListEntry(EDescriptionListEntry object) {
+				return createEDescriptionListEntryAdapter();
+			}
+			@Override
+			public Adapter caseEDocument(EDocument object) {
+				return createEDocumentAdapter();
+			}
+			@Override
+			public Adapter caseEDocumentHeader(EDocumentHeader object) {
+				return createEDocumentHeaderAdapter();
+			}
+			@Override
+			public Adapter caseEAdocList(EAdocList object) {
+				return createEAdocListAdapter();
+			}
+			@Override
+			public Adapter caseEListItem(EListItem object) {
+				return createEListItemAdapter();
+			}
+			@Override
+			public Adapter caseEPhraseNode(EPhraseNode object) {
+				return createEPhraseNodeAdapter();
+			}
+			@Override
+			public Adapter caseERevisionInfo(ERevisionInfo object) {
+				return createERevisionInfoAdapter();
+			}
+			@Override
+			public Adapter caseERow(ERow object) {
+				return createERowAdapter();
+			}
+			@Override
+			public Adapter caseESection(ESection object) {
+				return createESectionAdapter();
+			}
+			@Override
+			public Adapter caseEStructuralNode(EStructuralNode object) {
+				return createEStructuralNodeAdapter();
+			}
+			@Override
 			public Adapter caseEStructuredDocument(EStructuredDocument object) {
 				return createEStructuredDocumentAdapter();
 			}
 			@Override
-			public Adapter caseEContentNode(EContentNode object) {
-				return createEContentNodeAdapter();
+			public Adapter caseETable(ETable object) {
+				return createETableAdapter();
+			}
+			@Override
+			public Adapter caseETitle(ETitle object) {
+				return createETitleAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -195,58 +318,44 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Block <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.asciidoctor.ast.DocumentHeader
+	 * @see org.asciidoctor.ast.Block
 	 * @generated
 	 */
-	public Adapter createDocumentHeaderAdapter() {
+	public Adapter createBlockAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Cell <em>Cell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.asciidoctor.ast.Cursor
+	 * @see org.asciidoctor.ast.Cell
 	 * @generated
 	 */
-	public Adapter createCursorAdapter() {
+	public Adapter createCellAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Column <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.asciidoctor.ast.RevisionInfo
+	 * @see org.asciidoctor.ast.Column
 	 * @generated
 	 */
-	public Adapter createRevisionInfoAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.asciidoctor.ast.StructuredDocument
-	 * @generated
-	 */
-	public Adapter createStructuredDocumentAdapter() {
+	public Adapter createColumnAdapter() {
 		return null;
 	}
 
@@ -279,6 +388,48 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Cursor <em>Cursor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.Cursor
+	 * @generated
+	 */
+	public Adapter createCursorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.DescriptionList <em>Description List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.DescriptionList
+	 * @generated
+	 */
+	public Adapter createDescriptionListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.DescriptionListEntry <em>Description List Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.DescriptionListEntry
+	 * @generated
+	 */
+	public Adapter createDescriptionListEntryAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Document <em>Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -293,6 +444,146 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.DocumentHeader <em>Document Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.DocumentHeader
+	 * @generated
+	 */
+	public Adapter createDocumentHeaderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.List <em>Ast List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.List
+	 * @generated
+	 */
+	public Adapter createAstListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.ListItem <em>List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.ListItem
+	 * @generated
+	 */
+	public Adapter createListItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.PhraseNode <em>Phrase Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.PhraseNode
+	 * @generated
+	 */
+	public Adapter createPhraseNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.RevisionInfo <em>Revision Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.RevisionInfo
+	 * @generated
+	 */
+	public Adapter createRevisionInfoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Row <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.Row
+	 * @generated
+	 */
+	public Adapter createRowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Section <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.Section
+	 * @generated
+	 */
+	public Adapter createSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.StructuralNode <em>Structural Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.StructuralNode
+	 * @generated
+	 */
+	public Adapter createStructuralNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.StructuredDocument <em>Structured Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.StructuredDocument
+	 * @generated
+	 */
+	public Adapter createStructuredDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Table <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.asciidoctor.ast.Table
+	 * @generated
+	 */
+	public Adapter createTableAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.asciidoctor.ast.Title <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -303,6 +594,20 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTitleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EadocUtility <em>Utility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EadocUtility
+	 * @generated
+	 */
+	public Adapter createEadocUtilityAdapter() {
 		return null;
 	}
 
@@ -363,6 +668,20 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
+	 * @generated
+	 */
+	public Adapter createStructuralNodeListAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EAuthor <em>EAuthor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -377,44 +696,58 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ECursor <em>ECursor</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EBlock <em>EBlock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.jmini.eadoc.ECursor
+	 * @see fr.jmini.eadoc.EBlock
 	 * @generated
 	 */
-	public Adapter createECursorAdapter() {
+	public Adapter createEBlockAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ETitle <em>ETitle</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ECell <em>ECell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.jmini.eadoc.ETitle
+	 * @see fr.jmini.eadoc.ECell
 	 * @generated
 	 */
-	public Adapter createETitleAdapter() {
+	public Adapter createECellAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ERevisionInfo <em>ERevision Info</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EColumn <em>EColumn</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.jmini.eadoc.ERevisionInfo
+	 * @see fr.jmini.eadoc.EColumn
 	 * @generated
 	 */
-	public Adapter createERevisionInfoAdapter() {
+	public Adapter createEColumnAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EContentNode <em>EContent Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EContentNode
+	 * @generated
+	 */
+	public Adapter createEContentNodeAdapter() {
 		return null;
 	}
 
@@ -433,6 +766,174 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ECursor <em>ECursor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.ECursor
+	 * @generated
+	 */
+	public Adapter createECursorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EDescriptionList <em>EDescription List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EDescriptionList
+	 * @generated
+	 */
+	public Adapter createEDescriptionListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EDescriptionListEntry <em>EDescription List Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EDescriptionListEntry
+	 * @generated
+	 */
+	public Adapter createEDescriptionListEntryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EDocument <em>EDocument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EDocument
+	 * @generated
+	 */
+	public Adapter createEDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EDocumentHeader <em>EDocument Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EDocumentHeader
+	 * @generated
+	 */
+	public Adapter createEDocumentHeaderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EAdocList <em>EAdoc List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EAdocList
+	 * @generated
+	 */
+	public Adapter createEAdocListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EListItem <em>EList Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EListItem
+	 * @generated
+	 */
+	public Adapter createEListItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EPhraseNode <em>EPhrase Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EPhraseNode
+	 * @generated
+	 */
+	public Adapter createEPhraseNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ERevisionInfo <em>ERevision Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.ERevisionInfo
+	 * @generated
+	 */
+	public Adapter createERevisionInfoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ERow <em>ERow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.ERow
+	 * @generated
+	 */
+	public Adapter createERowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ESection <em>ESection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.ESection
+	 * @generated
+	 */
+	public Adapter createESectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EStructuralNode <em>EStructural Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.EStructuralNode
+	 * @generated
+	 */
+	public Adapter createEStructuralNodeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EStructuredDocument <em>EStructured Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -447,16 +948,30 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.EContentNode <em>EContent Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ETable <em>ETable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.jmini.eadoc.EContentNode
+	 * @see fr.jmini.eadoc.ETable
 	 * @generated
 	 */
-	public Adapter createEContentNodeAdapter() {
+	public Adapter createETableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.jmini.eadoc.ETitle <em>ETitle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.jmini.eadoc.ETitle
+	 * @generated
+	 */
+	public Adapter createETitleAdapter() {
 		return null;
 	}
 

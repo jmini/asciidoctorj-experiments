@@ -5,8 +5,6 @@ package fr.jmini.eadoc.impl;
 import fr.jmini.eadoc.EContentPart;
 import fr.jmini.eadoc.EadocPackage;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 import java.util.Map;
 
@@ -635,20 +633,6 @@ public class EContentPartImpl extends MinimalEObjectImpl.Container implements EC
 				return basicGetParentPart() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case EadocPackage.ECONTENT_PART___GET_CONTENT:
-				return getContent();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

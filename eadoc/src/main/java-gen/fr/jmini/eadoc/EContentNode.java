@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.jmini.eadoc.EContentNode#getId <em>Id</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.EContentNode#getNodeName <em>Node Name</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EContentNode#getParent <em>Parent</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EContentNode#getContext <em>Context</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EContentNode#getDocument <em>Document</em>}</li>
@@ -59,6 +60,32 @@ public interface EContentNode extends EObject, ContentNode {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Node Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Node Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Node Name</em>' attribute.
+	 * @see #setNodeName(String)
+	 * @see fr.jmini.eadoc.EadocPackage#getEContentNode_NodeName()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getNodeName();
+
+	/**
+	 * Sets the value of the '{@link fr.jmini.eadoc.EContentNode#getNodeName <em>Node Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Node Name</em>' attribute.
+	 * @see #getNodeName()
+	 * @generated
+	 */
+	void setNodeName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' reference.
@@ -258,15 +285,10 @@ public interface EContentNode extends EObject, ContentNode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
-	 * @generated
-	 */
-	String getNodeName();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * @deprecated Use {@linkplain #getParent()} instead.
+	 * <!-- end-model-doc -->
 	 * @model type="fr.jmini.eadoc.ContentNode" unique="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getParent();'"
 	 * @generated
