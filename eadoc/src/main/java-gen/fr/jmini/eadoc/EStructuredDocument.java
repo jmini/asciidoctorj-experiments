@@ -102,7 +102,7 @@ public interface EStructuredDocument extends EObject, StructuredDocument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="fr.jmini.eadoc.ContentPartList" unique="false" contextUnique="false"
+	 * @model dataType="fr.jmini.eadoc.ContentPartList" unique="false" contextUnique="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if ((context == null))\n{\n\treturn <%org.eclipse.xtext.xbase.lib.CollectionLiterals%>.<<%org.asciidoctor.ast.ContentPart%>>emptyList();\n}\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%fr.jmini.eadoc.EContentPart%>, <%java.lang.Boolean%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%fr.jmini.eadoc.EContentPart%>, <%java.lang.Boolean%>>()\n{\n\tpublic <%java.lang.Boolean%> apply(final <%fr.jmini.eadoc.EContentPart%> it)\n\t{\n\t\treturn <%java.lang.Boolean%>.valueOf(context.equals(it.getContext()));\n\t}\n};\nreturn <%org.eclipse.emf.common.util.ECollections%>.<<%org.asciidoctor.ast.ContentPart%>>asEList(((<%org.asciidoctor.ast.ContentPart%>[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(<%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%fr.jmini.eadoc.EContentPart%>>filter(this.getParts(), _function), <%org.asciidoctor.ast.ContentPart%>.class)));'"
 	 * @generated
 	 */
@@ -111,7 +111,7 @@ public interface EStructuredDocument extends EObject, StructuredDocument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="fr.jmini.eadoc.ContentPartList" unique="false" styleUnique="false"
+	 * @model dataType="fr.jmini.eadoc.ContentPartList" unique="false" styleUnique="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if ((style == null))\n{\n\treturn <%org.eclipse.xtext.xbase.lib.CollectionLiterals%>.<<%org.asciidoctor.ast.ContentPart%>>emptyList();\n}\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%fr.jmini.eadoc.EContentPart%>, <%java.lang.Boolean%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%fr.jmini.eadoc.EContentPart%>, <%java.lang.Boolean%>>()\n{\n\tpublic <%java.lang.Boolean%> apply(final <%fr.jmini.eadoc.EContentPart%> it)\n\t{\n\t\treturn <%java.lang.Boolean%>.valueOf(style.equals(it.getStyle()));\n\t}\n};\nreturn <%org.eclipse.emf.common.util.ECollections%>.<<%org.asciidoctor.ast.ContentPart%>>asEList(((<%org.asciidoctor.ast.ContentPart%>[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(<%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%fr.jmini.eadoc.EContentPart%>>filter(this.getParts(), _function), <%org.asciidoctor.ast.ContentPart%>.class)));'"
 	 * @generated
 	 */
@@ -120,7 +120,7 @@ public interface EStructuredDocument extends EObject, StructuredDocument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="fr.jmini.eadoc.ContentPartList" unique="false" roleUnique="false"
+	 * @model dataType="fr.jmini.eadoc.ContentPartList" unique="false" roleUnique="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if ((role == null))\n{\n\treturn <%org.eclipse.xtext.xbase.lib.CollectionLiterals%>.<<%org.asciidoctor.ast.ContentPart%>>emptyList();\n}\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%fr.jmini.eadoc.EContentPart%>, <%java.lang.Boolean%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%fr.jmini.eadoc.EContentPart%>, <%java.lang.Boolean%>>()\n{\n\tpublic <%java.lang.Boolean%> apply(final <%fr.jmini.eadoc.EContentPart%> it)\n\t{\n\t\treturn <%java.lang.Boolean%>.valueOf(role.equals(it.getRole()));\n\t}\n};\nreturn <%org.eclipse.emf.common.util.ECollections%>.<<%org.asciidoctor.ast.ContentPart%>>asEList(((<%org.asciidoctor.ast.ContentPart%>[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(<%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%fr.jmini.eadoc.EContentPart%>>filter(this.getParts(), _function), <%org.asciidoctor.ast.ContentPart%>.class)));'"
 	 * @generated
 	 */

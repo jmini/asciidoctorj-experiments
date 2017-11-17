@@ -4,8 +4,6 @@ package fr.jmini.eadoc.util;
 
 import fr.jmini.eadoc.*;
 
-import java.util.Map;
-
 import org.asciidoctor.ast.Author;
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Cell;
@@ -178,26 +176,6 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEadocUtility(EadocUtility object) {
 				return createEadocUtilityAdapter();
-			}
-			@Override
-			public Adapter caseStringObjectMap(Map<String, Object> object) {
-				return createStringObjectMapAdapter();
-			}
-			@Override
-			public Adapter caseObjectObjectMap(Map<Object, Object> object) {
-				return createObjectObjectMapAdapter();
-			}
-			@Override
-			public Adapter caseStringList(java.util.List<String> object) {
-				return createStringListAdapter();
-			}
-			@Override
-			public Adapter caseContentPartList(java.util.List<ContentPart> object) {
-				return createContentPartListAdapter();
-			}
-			@Override
-			public Adapter caseStructuralNodeList(java.util.List<? extends StructuralNode> object) {
-				return createStructuralNodeListAdapter();
 			}
 			@Override
 			public Adapter caseEAuthor(EAuthor object) {
@@ -608,76 +586,6 @@ public class EadocAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEadocUtilityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map<java.lang.String, java.lang.Object> <em>String Object Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.Map<java.lang.String, java.lang.Object>
-	 * @generated
-	 */
-	public Adapter createStringObjectMapAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map<java.lang.Object, java.lang.Object> <em>Object Object Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.Map<java.lang.Object, java.lang.Object>
-	 * @generated
-	 */
-	public Adapter createObjectObjectMapAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.List<java.lang.String> <em>String List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.List<java.lang.String>
-	 * @generated
-	 */
-	public Adapter createStringListAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.List<org.asciidoctor.ast.ContentPart> <em>Content Part List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.List<org.asciidoctor.ast.ContentPart>
-	 * @generated
-	 */
-	public Adapter createContentPartListAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
-	 * @generated
-	 */
-	public Adapter createStructuralNodeListAdapter() {
 		return null;
 	}
 

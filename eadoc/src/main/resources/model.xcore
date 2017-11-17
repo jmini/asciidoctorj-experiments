@@ -28,22 +28,16 @@ interface StructuredDocument wraps org.asciidoctor.ast.StructuredDocument {}
 interface Table wraps org.asciidoctor.ast.Table {}
 interface Title wraps org.asciidoctor.ast.Title {}
 
+type HorizontalAlignment wraps org.asciidoctor.ast.Table.HorizontalAlignment
+type VerticalAlignment wraps org.asciidoctor.ast.Table.VerticalAlignment
+
 interface EadocUtility wraps fr.jmini.eadoc.EadocUtility {}
 
-interface StringObjectMap wraps java.util.Map<String, Object> {}
-interface ObjectObjectMap wraps java.util.Map<Object, Object> {}
-interface StringList wraps java.util.List<String> {}
-interface ContentPartList wraps java.util.List<org.asciidoctor.ast.ContentPart> {}
-interface StructuralNodeList wraps java.util.List<? extends org.asciidoctor.ast.StructuralNode> {}
-
-enum EHorizontalAlignment {
-    LEFT, CENTER, RIGHT
-}
-
-enum EVerticalAlignment {
-    TOP, BOTTOM, MIDDLE
-}
-
+type StringObjectMap wraps java.util.Map<String, Object>
+type ObjectObjectMap wraps java.util.Map<Object, Object>
+type StringList wraps java.util.List<String>
+type ContentPartList wraps java.util.List<org.asciidoctor.ast.ContentPart>
+type StructuralNodeList wraps java.util.List<? extends org.asciidoctor.ast.StructuralNode>
 
 class EAuthor extends Author {
 	String email
@@ -71,8 +65,8 @@ class EColumn extends EContentNode, Column {
     }
 
     int width
-    EHorizontalAlignment hAlignment
-    EVerticalAlignment vAlignment
+    HorizontalAlignment horizontalAlignment
+    VerticalAlignment verticalAlignment
 }
 
 class EContentNode extends ContentNode {
@@ -116,7 +110,7 @@ class EContentNode extends ContentNode {
       
       boolean block
       
-      refers StringObjectMap attributes
+      StringObjectMap attributes
 
     /**
      * @deprecated Use {@link #getAttribute(Object, Object, boolean)} instead
@@ -224,7 +218,7 @@ class EContentNode extends ContentNode {
     op String getRole() {
         throw new UnsupportedOperationException("Not implemented")
     }
-    refers StringList roles
+    StringList roles
     /**
      * @deprecated Use {@linkplain #getRole()}  instead.
      */
@@ -273,7 +267,7 @@ class EContentPart extends ContentPart {
 	String style
 	String role
 	String title
-	refers StringObjectMap attributes
+	StringObjectMap attributes
 	contains EContentPart[] parts opposite parentPart
 	
 	op String getContent()

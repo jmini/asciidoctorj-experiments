@@ -14,7 +14,6 @@ import fr.jmini.eadoc.EDescriptionList;
 import fr.jmini.eadoc.EDescriptionListEntry;
 import fr.jmini.eadoc.EDocument;
 import fr.jmini.eadoc.EDocumentHeader;
-import fr.jmini.eadoc.EHorizontalAlignment;
 import fr.jmini.eadoc.EListItem;
 import fr.jmini.eadoc.EPhraseNode;
 import fr.jmini.eadoc.ERevisionInfo;
@@ -24,7 +23,6 @@ import fr.jmini.eadoc.EStructuralNode;
 import fr.jmini.eadoc.EStructuredDocument;
 import fr.jmini.eadoc.ETable;
 import fr.jmini.eadoc.ETitle;
-import fr.jmini.eadoc.EVerticalAlignment;
 import fr.jmini.eadoc.EadocFactory;
 import fr.jmini.eadoc.EadocPackage;
 import fr.jmini.eadoc.EadocUtility;
@@ -55,7 +53,7 @@ import org.asciidoctor.ast.Title;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -229,41 +227,6 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stringObjectMapEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass objectObjectMapEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringListEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass contentPartListEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass structuralNodeListEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass eAuthorEClass = null;
 
 	/**
@@ -411,14 +374,49 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum eHorizontalAlignmentEEnum = null;
+	private EDataType horizontalAlignmentEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum eVerticalAlignmentEEnum = null;
+	private EDataType verticalAlignmentEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType stringObjectMapEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType objectObjectMapEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType stringListEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType contentPartListEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType structuralNodeListEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -687,51 +685,6 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStringObjectMap() {
-		return stringObjectMapEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getObjectObjectMap() {
-		return objectObjectMapEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStringList() {
-		return stringListEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getContentPartList() {
-		return contentPartListEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStructuralNodeList() {
-		return structuralNodeListEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEAuthor() {
 		return eAuthorEClass;
 	}
@@ -849,7 +802,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEColumn_HAlignment() {
+	public EAttribute getEColumn_HorizontalAlignment() {
 		return (EAttribute)eColumnEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -858,7 +811,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEColumn_VAlignment() {
+	public EAttribute getEColumn_VerticalAlignment() {
 		return (EAttribute)eColumnEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -939,8 +892,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEContentNode_Attributes() {
-		return (EReference)eContentNodeEClass.getEStructuralFeatures().get(7);
+	public EAttribute getEContentNode_Attributes() {
+		return (EAttribute)eContentNodeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -948,8 +901,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEContentNode_Roles() {
-		return (EReference)eContentNodeEClass.getEStructuralFeatures().get(8);
+	public EAttribute getEContentNode_Roles() {
+		return (EAttribute)eContentNodeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1020,8 +973,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEContentPart_Attributes() {
-		return (EReference)eContentPartEClass.getEStructuralFeatures().get(6);
+	public EAttribute getEContentPart_Attributes() {
+		return (EAttribute)eContentPartEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1443,8 +1396,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getEHorizontalAlignment() {
-		return eHorizontalAlignmentEEnum;
+	public EDataType getHorizontalAlignment() {
+		return horizontalAlignmentEDataType;
 	}
 
 	/**
@@ -1452,8 +1405,53 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getEVerticalAlignment() {
-		return eVerticalAlignmentEEnum;
+	public EDataType getVerticalAlignment() {
+		return verticalAlignmentEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getStringObjectMap() {
+		return stringObjectMapEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getObjectObjectMap() {
+		return objectObjectMapEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getStringList() {
+		return stringListEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getContentPartList() {
+		return contentPartListEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getStructuralNodeList() {
+		return structuralNodeListEDataType;
 	}
 
 	/**
@@ -1528,16 +1526,6 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 
 		eadocUtilityEClass = createEClass(EADOC_UTILITY);
 
-		stringObjectMapEClass = createEClass(STRING_OBJECT_MAP);
-
-		objectObjectMapEClass = createEClass(OBJECT_OBJECT_MAP);
-
-		stringListEClass = createEClass(STRING_LIST);
-
-		contentPartListEClass = createEClass(CONTENT_PART_LIST);
-
-		structuralNodeListEClass = createEClass(STRUCTURAL_NODE_LIST);
-
 		eAuthorEClass = createEClass(EAUTHOR);
 		createEAttribute(eAuthorEClass, EAUTHOR__EMAIL);
 		createEAttribute(eAuthorEClass, EAUTHOR__FULL_NAME);
@@ -1554,8 +1542,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eColumnEClass, ECOLUMN__STYLE);
 		createEReference(eColumnEClass, ECOLUMN__TABLE);
 		createEAttribute(eColumnEClass, ECOLUMN__WIDTH);
-		createEAttribute(eColumnEClass, ECOLUMN__HALIGNMENT);
-		createEAttribute(eColumnEClass, ECOLUMN__VALIGNMENT);
+		createEAttribute(eColumnEClass, ECOLUMN__HORIZONTAL_ALIGNMENT);
+		createEAttribute(eColumnEClass, ECOLUMN__VERTICAL_ALIGNMENT);
 
 		eContentNodeEClass = createEClass(ECONTENT_NODE);
 		createEAttribute(eContentNodeEClass, ECONTENT_NODE__ID);
@@ -1565,8 +1553,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEReference(eContentNodeEClass, ECONTENT_NODE__DOCUMENT);
 		createEAttribute(eContentNodeEClass, ECONTENT_NODE__INLINE);
 		createEAttribute(eContentNodeEClass, ECONTENT_NODE__BLOCK);
-		createEReference(eContentNodeEClass, ECONTENT_NODE__ATTRIBUTES);
-		createEReference(eContentNodeEClass, ECONTENT_NODE__ROLES);
+		createEAttribute(eContentNodeEClass, ECONTENT_NODE__ATTRIBUTES);
+		createEAttribute(eContentNodeEClass, ECONTENT_NODE__ROLES);
 
 		eContentPartEClass = createEClass(ECONTENT_PART);
 		createEAttribute(eContentPartEClass, ECONTENT_PART__ID);
@@ -1575,7 +1563,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eContentPartEClass, ECONTENT_PART__STYLE);
 		createEAttribute(eContentPartEClass, ECONTENT_PART__ROLE);
 		createEAttribute(eContentPartEClass, ECONTENT_PART__TITLE);
-		createEReference(eContentPartEClass, ECONTENT_PART__ATTRIBUTES);
+		createEAttribute(eContentPartEClass, ECONTENT_PART__ATTRIBUTES);
 		createEReference(eContentPartEClass, ECONTENT_PART__PARTS);
 		createEReference(eContentPartEClass, ECONTENT_PART__PARENT_PART);
 
@@ -1638,9 +1626,14 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eTitleEClass, ETITLE__COMBINED);
 		createEAttribute(eTitleEClass, ETITLE__SANITIZED);
 
-		// Create enums
-		eHorizontalAlignmentEEnum = createEEnum(EHORIZONTAL_ALIGNMENT);
-		eVerticalAlignmentEEnum = createEEnum(EVERTICAL_ALIGNMENT);
+		// Create data types
+		horizontalAlignmentEDataType = createEDataType(HORIZONTAL_ALIGNMENT);
+		verticalAlignmentEDataType = createEDataType(VERTICAL_ALIGNMENT);
+		stringObjectMapEDataType = createEDataType(STRING_OBJECT_MAP);
+		objectObjectMapEDataType = createEDataType(OBJECT_OBJECT_MAP);
+		stringListEDataType = createEDataType(STRING_LIST);
+		contentPartListEDataType = createEDataType(CONTENT_PART_LIST);
+		structuralNodeListEDataType = createEDataType(STRUCTURAL_NODE_LIST);
 	}
 
 	/**
@@ -1742,16 +1735,6 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 
 		initEClass(eadocUtilityEClass, EadocUtility.class, "EadocUtility", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(stringObjectMapEClass, Map.class, "StringObjectMap", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS, "java.util.Map<java.lang.String, java.lang.Object>");
-
-		initEClass(objectObjectMapEClass, Map.class, "ObjectObjectMap", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS, "java.util.Map<java.lang.Object, java.lang.Object>");
-
-		initEClass(stringListEClass, java.util.List.class, "StringList", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<java.lang.String>");
-
-		initEClass(contentPartListEClass, java.util.List.class, "ContentPartList", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<org.asciidoctor.ast.ContentPart>");
-
-		initEClass(structuralNodeListEClass, java.util.List.class, "StructuralNodeList", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<? extends org.asciidoctor.ast.StructuralNode>");
-
 		initEClass(eAuthorEClass, EAuthor.class, "EAuthor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEAuthor_Email(), theEcorePackage.getEString(), "email", null, 0, 1, EAuthor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEAuthor_FullName(), theEcorePackage.getEString(), "fullName", null, 0, 1, EAuthor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1768,8 +1751,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getEColumn_Style(), theEcorePackage.getEString(), "style", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEColumn_Table(), this.getETable(), this.getETable_Columns(), "table", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEColumn_Width(), theEcorePackage.getEInt(), "width", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEColumn_HAlignment(), this.getEHorizontalAlignment(), "hAlignment", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEColumn_VAlignment(), this.getEVerticalAlignment(), "vAlignment", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEColumn_HorizontalAlignment(), this.getHorizontalAlignment(), "horizontalAlignment", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEColumn_VerticalAlignment(), this.getVerticalAlignment(), "verticalAlignment", null, 0, 1, EColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(eColumnEClass, theEcorePackage.getEInt(), "getColumnNumber", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
@@ -1781,8 +1764,8 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEReference(getEContentNode_Document(), this.getDocument(), null, "document", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEContentNode_Inline(), theEcorePackage.getEBoolean(), "inline", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEContentNode_Block(), theEcorePackage.getEBoolean(), "block", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEContentNode_Attributes(), this.getStringObjectMap(), null, "attributes", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEContentNode_Roles(), this.getStringList(), null, "roles", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEContentNode_Attributes(), this.getStringObjectMap(), "attributes", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEContentNode_Roles(), this.getStringList(), "roles", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(eContentNodeEClass, theEcorePackage.getEString(), "id", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
@@ -1909,7 +1892,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getEContentPart_Style(), theEcorePackage.getEString(), "style", null, 0, 1, EContentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEContentPart_Role(), theEcorePackage.getEString(), "role", null, 0, 1, EContentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEContentPart_Title(), theEcorePackage.getEString(), "title", null, 0, 1, EContentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEContentPart_Attributes(), this.getStringObjectMap(), null, "attributes", null, 0, 1, EContentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEContentPart_Attributes(), this.getStringObjectMap(), "attributes", null, 0, 1, EContentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEContentPart_Parts(), this.getEContentPart(), this.getEContentPart_ParentPart(), "parts", null, 0, -1, EContentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEContentPart_ParentPart(), this.getEContentPart(), this.getEContentPart_Parts(), "parentPart", null, 0, 1, EContentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2033,16 +2016,14 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getETitle_Combined(), theEcorePackage.getEString(), "combined", null, 0, 1, ETitle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getETitle_Sanitized(), theEcorePackage.getEBoolean(), "sanitized", null, 0, 1, ETitle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(eHorizontalAlignmentEEnum, EHorizontalAlignment.class, "EHorizontalAlignment");
-		addEEnumLiteral(eHorizontalAlignmentEEnum, EHorizontalAlignment.LEFT);
-		addEEnumLiteral(eHorizontalAlignmentEEnum, EHorizontalAlignment.CENTER);
-		addEEnumLiteral(eHorizontalAlignmentEEnum, EHorizontalAlignment.RIGHT);
-
-		initEEnum(eVerticalAlignmentEEnum, EVerticalAlignment.class, "EVerticalAlignment");
-		addEEnumLiteral(eVerticalAlignmentEEnum, EVerticalAlignment.TOP);
-		addEEnumLiteral(eVerticalAlignmentEEnum, EVerticalAlignment.BOTTOM);
-		addEEnumLiteral(eVerticalAlignmentEEnum, EVerticalAlignment.MIDDLE);
+		// Initialize data types
+		initEDataType(horizontalAlignmentEDataType, Table.HorizontalAlignment.class, "HorizontalAlignment", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(verticalAlignmentEDataType, Table.VerticalAlignment.class, "VerticalAlignment", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(stringObjectMapEDataType, Map.class, "StringObjectMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.Map<java.lang.String, java.lang.Object>");
+		initEDataType(objectObjectMapEDataType, Map.class, "ObjectObjectMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.Map<java.lang.Object, java.lang.Object>");
+		initEDataType(stringListEDataType, java.util.List.class, "StringList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<java.lang.String>");
+		initEDataType(contentPartListEDataType, java.util.List.class, "ContentPartList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<org.asciidoctor.ast.ContentPart>");
+		initEDataType(structuralNodeListEDataType, java.util.List.class, "StructuralNodeList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<? extends org.asciidoctor.ast.StructuralNode>");
 
 		// Create resource
 		createResource(eNS_URI);

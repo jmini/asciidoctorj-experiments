@@ -192,26 +192,26 @@ public interface EContentPart extends EObject, ContentPart {
 	void setTitle(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' reference.
+	 * Returns the value of the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' reference isn't clear,
+	 * If the meaning of the '<em>Attributes</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attributes</em>' reference.
-	 * @see #setAttributes(Map<String, Object>)
+	 * @return the value of the '<em>Attributes</em>' attribute.
+	 * @see #setAttributes(Map)
 	 * @see fr.jmini.eadoc.EadocPackage#getEContentPart_Attributes()
-	 * @model type="fr.jmini.eadoc.StringObjectMap"
+	 * @model unique="false" dataType="fr.jmini.eadoc.StringObjectMap"
 	 * @generated
 	 */
 	Map<String, Object> getAttributes();
 
 	/**
-	 * Sets the value of the '{@link fr.jmini.eadoc.EContentPart#getAttributes <em>Attributes</em>}' reference.
+	 * Sets the value of the '{@link fr.jmini.eadoc.EContentPart#getAttributes <em>Attributes</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attributes</em>' reference.
+	 * @param value the new value of the '<em>Attributes</em>' attribute.
 	 * @see #getAttributes()
 	 * @generated
 	 */

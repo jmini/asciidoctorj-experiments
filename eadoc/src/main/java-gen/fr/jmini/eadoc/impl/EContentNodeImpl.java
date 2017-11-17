@@ -163,7 +163,7 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	protected boolean block = BLOCK_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAttributes()
@@ -173,7 +173,7 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	protected Map<String, Object> attributes;
 
 	/**
-	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' reference.
+	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoles()
@@ -387,25 +387,7 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Map<String, Object> getAttributes() {
-		if (attributes != null && ((EObject)attributes).eIsProxy()) {
-			InternalEObject oldAttributes = (InternalEObject)attributes;
-			attributes = (Map<String, Object>)eResolveProxy(oldAttributes);
-			if (attributes != oldAttributes) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EadocPackage.ECONTENT_NODE__ATTRIBUTES, oldAttributes, attributes));
-			}
-		}
-		return attributes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map<String, Object> basicGetAttributes() {
 		return attributes;
 	}
 
@@ -426,25 +408,7 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public List<String> getRoles() {
-		if (roles != null && ((EObject)roles).eIsProxy()) {
-			InternalEObject oldRoles = (InternalEObject)roles;
-			roles = (List<String>)eResolveProxy(oldRoles);
-			if (roles != oldRoles) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EadocPackage.ECONTENT_NODE__ROLES, oldRoles, roles));
-			}
-		}
-		return roles;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List<String> basicGetRoles() {
 		return roles;
 	}
 
@@ -808,11 +772,9 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 			case EadocPackage.ECONTENT_NODE__BLOCK:
 				return isBlock();
 			case EadocPackage.ECONTENT_NODE__ATTRIBUTES:
-				if (resolve) return getAttributes();
-				return basicGetAttributes();
+				return getAttributes();
 			case EadocPackage.ECONTENT_NODE__ROLES:
-				if (resolve) return getRoles();
-				return basicGetRoles();
+				return getRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -946,6 +908,10 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 		result.append(inline);
 		result.append(", block: ");
 		result.append(block);
+		result.append(", attributes: ");
+		result.append(attributes);
+		result.append(", roles: ");
+		result.append(roles);
 		result.append(')');
 		return result.toString();
 	}

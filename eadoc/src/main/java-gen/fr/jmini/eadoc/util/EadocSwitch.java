@@ -4,8 +4,6 @@ package fr.jmini.eadoc.util;
 
 import fr.jmini.eadoc.*;
 
-import java.util.Map;
-
 import org.asciidoctor.ast.Author;
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Cell;
@@ -219,36 +217,6 @@ public class EadocSwitch<T> extends Switch<T> {
 			case EadocPackage.EADOC_UTILITY: {
 				EadocUtility eadocUtility = (EadocUtility)theEObject;
 				T result = caseEadocUtility(eadocUtility);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EadocPackage.STRING_OBJECT_MAP: {
-				@SuppressWarnings("unchecked") Map<String, Object> stringObjectMap = (Map<String, Object>)theEObject;
-				T result = caseStringObjectMap(stringObjectMap);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EadocPackage.OBJECT_OBJECT_MAP: {
-				@SuppressWarnings("unchecked") Map<Object, Object> objectObjectMap = (Map<Object, Object>)theEObject;
-				T result = caseObjectObjectMap(objectObjectMap);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EadocPackage.STRING_LIST: {
-				@SuppressWarnings("unchecked") java.util.List<String> stringList = (java.util.List<String>)theEObject;
-				T result = caseStringList(stringList);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EadocPackage.CONTENT_PART_LIST: {
-				@SuppressWarnings("unchecked") java.util.List<ContentPart> contentPartList = (java.util.List<ContentPart>)theEObject;
-				T result = caseContentPartList(contentPartList);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EadocPackage.STRUCTURAL_NODE_LIST: {
-				@SuppressWarnings("unchecked") java.util.List<? extends StructuralNode> structuralNodeList = (java.util.List<? extends StructuralNode>)theEObject;
-				T result = caseStructuralNodeList(structuralNodeList);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -756,81 +724,6 @@ public class EadocSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEadocUtility(EadocUtility object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String Object Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String Object Map</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStringObjectMap(Map<String, Object> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object Object Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object Object Map</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseObjectObjectMap(Map<Object, Object> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String List</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String List</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStringList(java.util.List<String> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Content Part List</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Content Part List</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContentPartList(java.util.List<ContentPart> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Structural Node List</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Structural Node List</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStructuralNodeList(java.util.List<? extends StructuralNode> object) {
 		return null;
 	}
 

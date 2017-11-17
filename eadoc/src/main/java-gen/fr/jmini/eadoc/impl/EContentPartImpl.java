@@ -14,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -167,7 +166,7 @@ public class EContentPartImpl extends MinimalEObjectImpl.Container implements EC
 	protected String title = TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAttributes()
@@ -336,25 +335,7 @@ public class EContentPartImpl extends MinimalEObjectImpl.Container implements EC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Map<String, Object> getAttributes() {
-		if (attributes != null && ((EObject)attributes).eIsProxy()) {
-			InternalEObject oldAttributes = (InternalEObject)attributes;
-			attributes = (Map<String, Object>)eResolveProxy(oldAttributes);
-			if (attributes != oldAttributes) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EadocPackage.ECONTENT_PART__ATTRIBUTES, oldAttributes, attributes));
-			}
-		}
-		return attributes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map<String, Object> basicGetAttributes() {
 		return attributes;
 	}
 
@@ -514,8 +495,7 @@ public class EContentPartImpl extends MinimalEObjectImpl.Container implements EC
 			case EadocPackage.ECONTENT_PART__TITLE:
 				return getTitle();
 			case EadocPackage.ECONTENT_PART__ATTRIBUTES:
-				if (resolve) return getAttributes();
-				return basicGetAttributes();
+				return getAttributes();
 			case EadocPackage.ECONTENT_PART__PARTS:
 				return getParts();
 			case EadocPackage.ECONTENT_PART__PARENT_PART:
@@ -657,6 +637,8 @@ public class EContentPartImpl extends MinimalEObjectImpl.Container implements EC
 		result.append(role);
 		result.append(", title: ");
 		result.append(title);
+		result.append(", attributes: ");
+		result.append(attributes);
 		result.append(')');
 		return result.toString();
 	}

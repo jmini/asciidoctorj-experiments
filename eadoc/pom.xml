@@ -227,31 +227,6 @@
                                     <replacefilter token="setSubstitutions(final String" value="setSubstitutions(final String..." />
                                     <include name="**/*EStructuralNode*.java"/>
                                 </replace>
-                                <replace dir="src/main/java-gen/" >
-                                    <replacetoken><![CDATA[} // EColumnImpl]]></replacetoken>
-                                    <replacevalue><![CDATA[
-    @Override
-    public org.asciidoctor.ast.Table.HorizontalAlignment getHorizontalAlignment() {
-        return fr.jmini.eadoc.EadocUtility.convertEHorizontalAlignment(getHAlignment());
-    }
-
-    @Override
-    public org.asciidoctor.ast.Table.VerticalAlignment getVerticalAlignment() {
-        return fr.jmini.eadoc.EadocUtility.convertEVerticalAlignment(getVAlignment());
-    }
-
-    @Override
-    public void setHorizontalAlignment(org.asciidoctor.ast.Table.HorizontalAlignment a) {
-        setHAlignment(fr.jmini.eadoc.EadocUtility.convertHorizontalAlignment(a));
-    }
-
-    @Override
-    public void setVerticalAlignment(org.asciidoctor.ast.Table.VerticalAlignment a) {
-        setVAlignment(fr.jmini.eadoc.EadocUtility.convertVerticalAlignment(a));
-    }
-} // EColumnImpl]]></replacevalue>
-                                    <include name="**/EColumnImpl.java"/>
-                                </replace>
                             </target>
                         </configuration>
                     </execution>

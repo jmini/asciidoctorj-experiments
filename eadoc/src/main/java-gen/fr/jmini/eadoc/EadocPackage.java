@@ -4,7 +4,7 @@ package fr.jmini.eadoc;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -476,101 +476,6 @@ public interface EadocPackage extends EPackage {
 	int EADOC_UTILITY_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link java.util.Map<java.lang.String, java.lang.Object> <em>String Object Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.Map<java.lang.String, java.lang.Object>
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringObjectMap()
-	 * @generated
-	 */
-	int STRING_OBJECT_MAP = 22;
-
-	/**
-	 * The number of structural features of the '<em>String Object Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_OBJECT_MAP_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link java.util.Map<java.lang.Object, java.lang.Object> <em>Object Object Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.Map<java.lang.Object, java.lang.Object>
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getObjectObjectMap()
-	 * @generated
-	 */
-	int OBJECT_OBJECT_MAP = 23;
-
-	/**
-	 * The number of structural features of the '<em>Object Object Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_OBJECT_MAP_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link java.util.List<java.lang.String> <em>String List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.List<java.lang.String>
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringList()
-	 * @generated
-	 */
-	int STRING_LIST = 24;
-
-	/**
-	 * The number of structural features of the '<em>String List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIST_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link java.util.List<org.asciidoctor.ast.ContentPart> <em>Content Part List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.List<org.asciidoctor.ast.ContentPart>
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getContentPartList()
-	 * @generated
-	 */
-	int CONTENT_PART_LIST = 25;
-
-	/**
-	 * The number of structural features of the '<em>Content Part List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTENT_PART_LIST_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNodeList()
-	 * @generated
-	 */
-	int STRUCTURAL_NODE_LIST = 26;
-
-	/**
-	 * The number of structural features of the '<em>Structural Node List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURAL_NODE_LIST_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EAuthorImpl <em>EAuthor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,7 +483,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEAuthor()
 	 * @generated
 	 */
-	int EAUTHOR = 27;
+	int EAUTHOR = 22;
 
 	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute.
@@ -651,7 +556,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEContentNode()
 	 * @generated
 	 */
-	int ECONTENT_NODE = 31;
+	int ECONTENT_NODE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -717,7 +622,7 @@ public interface EadocPackage extends EPackage {
 	int ECONTENT_NODE__BLOCK = CONTENT_NODE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -726,7 +631,7 @@ public interface EadocPackage extends EPackage {
 	int ECONTENT_NODE__ATTRIBUTES = CONTENT_NODE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -751,7 +656,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEStructuralNode()
 	 * @generated
 	 */
-	int ESTRUCTURAL_NODE = 44;
+	int ESTRUCTURAL_NODE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -817,7 +722,7 @@ public interface EadocPackage extends EPackage {
 	int ESTRUCTURAL_NODE__BLOCK = ECONTENT_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -826,7 +731,7 @@ public interface EadocPackage extends EPackage {
 	int ESTRUCTURAL_NODE__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -905,7 +810,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEBlock()
 	 * @generated
 	 */
-	int EBLOCK = 28;
+	int EBLOCK = 23;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -971,7 +876,7 @@ public interface EadocPackage extends EPackage {
 	int EBLOCK__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -980,7 +885,7 @@ public interface EadocPackage extends EPackage {
 	int EBLOCK__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1059,7 +964,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECell()
 	 * @generated
 	 */
-	int ECELL = 29;
+	int ECELL = 24;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1125,7 +1030,7 @@ public interface EadocPackage extends EPackage {
 	int ECELL__BLOCK = ECONTENT_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1134,7 +1039,7 @@ public interface EadocPackage extends EPackage {
 	int ECELL__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1159,7 +1064,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEColumn()
 	 * @generated
 	 */
-	int ECOLUMN = 30;
+	int ECOLUMN = 25;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1225,7 +1130,7 @@ public interface EadocPackage extends EPackage {
 	int ECOLUMN__BLOCK = ECONTENT_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1234,7 +1139,7 @@ public interface EadocPackage extends EPackage {
 	int ECOLUMN__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1270,22 +1175,22 @@ public interface EadocPackage extends EPackage {
 	int ECOLUMN__WIDTH = ECONTENT_NODE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>HAlignment</b></em>' attribute.
+	 * The feature id for the '<em><b>Horizontal Alignment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECOLUMN__HALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 3;
+	int ECOLUMN__HORIZONTAL_ALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>VAlignment</b></em>' attribute.
+	 * The feature id for the '<em><b>Vertical Alignment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECOLUMN__VALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 4;
+	int ECOLUMN__VERTICAL_ALIGNMENT = ECONTENT_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>EColumn</em>' class.
@@ -1304,7 +1209,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEContentPart()
 	 * @generated
 	 */
-	int ECONTENT_PART = 32;
+	int ECONTENT_PART = 27;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1361,7 +1266,7 @@ public interface EadocPackage extends EPackage {
 	int ECONTENT_PART__TITLE = CONTENT_PART_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1404,7 +1309,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getECursor()
 	 * @generated
 	 */
-	int ECURSOR = 33;
+	int ECURSOR = 28;
 
 	/**
 	 * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -1459,7 +1364,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDescriptionList()
 	 * @generated
 	 */
-	int EDESCRIPTION_LIST = 34;
+	int EDESCRIPTION_LIST = 29;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1525,7 +1430,7 @@ public interface EadocPackage extends EPackage {
 	int EDESCRIPTION_LIST__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1534,7 +1439,7 @@ public interface EadocPackage extends EPackage {
 	int EDESCRIPTION_LIST__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1613,7 +1518,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDescriptionListEntry()
 	 * @generated
 	 */
-	int EDESCRIPTION_LIST_ENTRY = 35;
+	int EDESCRIPTION_LIST_ENTRY = 30;
 
 	/**
 	 * The number of structural features of the '<em>EDescription List Entry</em>' class.
@@ -1632,7 +1537,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDocument()
 	 * @generated
 	 */
-	int EDOCUMENT = 36;
+	int EDOCUMENT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1698,7 +1603,7 @@ public interface EadocPackage extends EPackage {
 	int EDOCUMENT__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1707,7 +1612,7 @@ public interface EadocPackage extends EPackage {
 	int EDOCUMENT__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1786,7 +1691,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEDocumentHeader()
 	 * @generated
 	 */
-	int EDOCUMENT_HEADER = 37;
+	int EDOCUMENT_HEADER = 32;
 
 	/**
 	 * The number of structural features of the '<em>EDocument Header</em>' class.
@@ -1805,7 +1710,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEAdocList()
 	 * @generated
 	 */
-	int EADOC_LIST = 38;
+	int EADOC_LIST = 33;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1871,7 +1776,7 @@ public interface EadocPackage extends EPackage {
 	int EADOC_LIST__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1880,7 +1785,7 @@ public interface EadocPackage extends EPackage {
 	int EADOC_LIST__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1959,7 +1864,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEListItem()
 	 * @generated
 	 */
-	int ELIST_ITEM = 39;
+	int ELIST_ITEM = 34;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2025,7 +1930,7 @@ public interface EadocPackage extends EPackage {
 	int ELIST_ITEM__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2034,7 +1939,7 @@ public interface EadocPackage extends EPackage {
 	int ELIST_ITEM__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2113,7 +2018,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEPhraseNode()
 	 * @generated
 	 */
-	int EPHRASE_NODE = 40;
+	int EPHRASE_NODE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2179,7 +2084,7 @@ public interface EadocPackage extends EPackage {
 	int EPHRASE_NODE__BLOCK = ECONTENT_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2188,7 +2093,7 @@ public interface EadocPackage extends EPackage {
 	int EPHRASE_NODE__ATTRIBUTES = ECONTENT_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2240,7 +2145,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERevisionInfo()
 	 * @generated
 	 */
-	int EREVISION_INFO = 41;
+	int EREVISION_INFO = 36;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -2286,7 +2191,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getERow()
 	 * @generated
 	 */
-	int EROW = 42;
+	int EROW = 37;
 
 	/**
 	 * The number of structural features of the '<em>ERow</em>' class.
@@ -2305,7 +2210,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getESection()
 	 * @generated
 	 */
-	int ESECTION = 43;
+	int ESECTION = 38;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2371,7 +2276,7 @@ public interface EadocPackage extends EPackage {
 	int ESECTION__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2380,7 +2285,7 @@ public interface EadocPackage extends EPackage {
 	int ESECTION__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2459,7 +2364,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEStructuredDocument()
 	 * @generated
 	 */
-	int ESTRUCTURED_DOCUMENT = 45;
+	int ESTRUCTURED_DOCUMENT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -2496,7 +2401,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETable()
 	 * @generated
 	 */
-	int ETABLE = 46;
+	int ETABLE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2562,7 +2467,7 @@ public interface EadocPackage extends EPackage {
 	int ETABLE__BLOCK = ESTRUCTURAL_NODE__BLOCK;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2571,7 +2476,7 @@ public interface EadocPackage extends EPackage {
 	int ETABLE__ATTRIBUTES = ESTRUCTURAL_NODE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference.
+	 * The feature id for the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2713,7 +2618,7 @@ public interface EadocPackage extends EPackage {
 	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getETitle()
 	 * @generated
 	 */
-	int ETITLE = 47;
+	int ETITLE = 42;
 
 	/**
 	 * The feature id for the '<em><b>Main</b></em>' attribute.
@@ -2761,24 +2666,74 @@ public interface EadocPackage extends EPackage {
 	int ETITLE_FEATURE_COUNT = TITLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link fr.jmini.eadoc.EHorizontalAlignment <em>EHorizontal Alignment</em>}' enum.
+	 * The meta object id for the '<em>Horizontal Alignment</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.jmini.eadoc.EHorizontalAlignment
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEHorizontalAlignment()
+	 * @see org.asciidoctor.ast.Table.HorizontalAlignment
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getHorizontalAlignment()
 	 * @generated
 	 */
-	int EHORIZONTAL_ALIGNMENT = 48;
+	int HORIZONTAL_ALIGNMENT = 43;
 
 	/**
-	 * The meta object id for the '{@link fr.jmini.eadoc.EVerticalAlignment <em>EVertical Alignment</em>}' enum.
+	 * The meta object id for the '<em>Vertical Alignment</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.jmini.eadoc.EVerticalAlignment
-	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEVerticalAlignment()
+	 * @see org.asciidoctor.ast.Table.VerticalAlignment
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getVerticalAlignment()
 	 * @generated
 	 */
-	int EVERTICAL_ALIGNMENT = 49;
+	int VERTICAL_ALIGNMENT = 44;
+
+	/**
+	 * The meta object id for the '<em>String Object Map</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Map
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringObjectMap()
+	 * @generated
+	 */
+	int STRING_OBJECT_MAP = 45;
+
+	/**
+	 * The meta object id for the '<em>Object Object Map</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Map
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getObjectObjectMap()
+	 * @generated
+	 */
+	int OBJECT_OBJECT_MAP = 46;
+
+	/**
+	 * The meta object id for the '<em>String List</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.List
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringList()
+	 * @generated
+	 */
+	int STRING_LIST = 47;
+
+	/**
+	 * The meta object id for the '<em>Content Part List</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.List
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getContentPartList()
+	 * @generated
+	 */
+	int CONTENT_PART_LIST = 48;
+
+	/**
+	 * The meta object id for the '<em>Structural Node List</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.List
+	 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNodeList()
+	 * @generated
+	 */
+	int STRUCTURAL_NODE_LIST = 49;
 
 
 	/**
@@ -3024,61 +2979,6 @@ public interface EadocPackage extends EPackage {
 	EClass getEadocUtility();
 
 	/**
-	 * Returns the meta object for class '{@link java.util.Map<java.lang.String, java.lang.Object> <em>String Object Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String Object Map</em>'.
-	 * @see java.util.Map<java.lang.String, java.lang.Object>
-	 * @model instanceClass="java.util.Map<java.lang.String, java.lang.Object>"
-	 * @generated
-	 */
-	EClass getStringObjectMap();
-
-	/**
-	 * Returns the meta object for class '{@link java.util.Map<java.lang.Object, java.lang.Object> <em>Object Object Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Object Object Map</em>'.
-	 * @see java.util.Map<java.lang.Object, java.lang.Object>
-	 * @model instanceClass="java.util.Map<java.lang.Object, java.lang.Object>"
-	 * @generated
-	 */
-	EClass getObjectObjectMap();
-
-	/**
-	 * Returns the meta object for class '{@link java.util.List<java.lang.String> <em>String List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String List</em>'.
-	 * @see java.util.List<java.lang.String>
-	 * @model instanceClass="java.util.List<java.lang.String>"
-	 * @generated
-	 */
-	EClass getStringList();
-
-	/**
-	 * Returns the meta object for class '{@link java.util.List<org.asciidoctor.ast.ContentPart> <em>Content Part List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Content Part List</em>'.
-	 * @see java.util.List<org.asciidoctor.ast.ContentPart>
-	 * @model instanceClass="java.util.List<org.asciidoctor.ast.ContentPart>"
-	 * @generated
-	 */
-	EClass getContentPartList();
-
-	/**
-	 * Returns the meta object for class '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Structural Node List</em>'.
-	 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
-	 * @model instanceClass="java.util.List<? extends org.asciidoctor.ast.StructuralNode>"
-	 * @generated
-	 */
-	EClass getStructuralNodeList();
-
-	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EAuthor <em>EAuthor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3218,26 +3118,26 @@ public interface EadocPackage extends EPackage {
 	EAttribute getEColumn_Width();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getHAlignment <em>HAlignment</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getHorizontalAlignment <em>Horizontal Alignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>HAlignment</em>'.
-	 * @see fr.jmini.eadoc.EColumn#getHAlignment()
+	 * @return the meta object for the attribute '<em>Horizontal Alignment</em>'.
+	 * @see fr.jmini.eadoc.EColumn#getHorizontalAlignment()
 	 * @see #getEColumn()
 	 * @generated
 	 */
-	EAttribute getEColumn_HAlignment();
+	EAttribute getEColumn_HorizontalAlignment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getVAlignment <em>VAlignment</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EColumn#getVerticalAlignment <em>Vertical Alignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>VAlignment</em>'.
-	 * @see fr.jmini.eadoc.EColumn#getVAlignment()
+	 * @return the meta object for the attribute '<em>Vertical Alignment</em>'.
+	 * @see fr.jmini.eadoc.EColumn#getVerticalAlignment()
 	 * @see #getEColumn()
 	 * @generated
 	 */
-	EAttribute getEColumn_VAlignment();
+	EAttribute getEColumn_VerticalAlignment();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EContentNode <em>EContent Node</em>}'.
@@ -3327,26 +3227,26 @@ public interface EadocPackage extends EPackage {
 	EAttribute getEContentNode_Block();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attributes</em>'.
+	 * @return the meta object for the attribute '<em>Attributes</em>'.
 	 * @see fr.jmini.eadoc.EContentNode#getAttributes()
 	 * @see #getEContentNode()
 	 * @generated
 	 */
-	EReference getEContentNode_Attributes();
+	EAttribute getEContentNode_Attributes();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentNode#getRoles <em>Roles</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getRoles <em>Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Roles</em>'.
+	 * @return the meta object for the attribute '<em>Roles</em>'.
 	 * @see fr.jmini.eadoc.EContentNode#getRoles()
 	 * @see #getEContentNode()
 	 * @generated
 	 */
-	EReference getEContentNode_Roles();
+	EAttribute getEContentNode_Roles();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EContentPart <em>EContent Part</em>}'.
@@ -3425,15 +3325,15 @@ public interface EadocPackage extends EPackage {
 	EAttribute getEContentPart_Title();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.jmini.eadoc.EContentPart#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentPart#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attributes</em>'.
+	 * @return the meta object for the attribute '<em>Attributes</em>'.
 	 * @see fr.jmini.eadoc.EContentPart#getAttributes()
 	 * @see #getEContentPart()
 	 * @generated
 	 */
-	EReference getEContentPart_Attributes();
+	EAttribute getEContentPart_Attributes();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link fr.jmini.eadoc.EContentPart#getParts <em>Parts</em>}'.
@@ -3927,24 +3827,81 @@ public interface EadocPackage extends EPackage {
 	EAttribute getETitle_Sanitized();
 
 	/**
-	 * Returns the meta object for enum '{@link fr.jmini.eadoc.EHorizontalAlignment <em>EHorizontal Alignment</em>}'.
+	 * Returns the meta object for data type '{@link org.asciidoctor.ast.Table.HorizontalAlignment <em>Horizontal Alignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>EHorizontal Alignment</em>'.
-	 * @see fr.jmini.eadoc.EHorizontalAlignment
+	 * @return the meta object for data type '<em>Horizontal Alignment</em>'.
+	 * @see org.asciidoctor.ast.Table.HorizontalAlignment
+	 * @model instanceClass="org.asciidoctor.ast.Table$HorizontalAlignment"
 	 * @generated
 	 */
-	EEnum getEHorizontalAlignment();
+	EDataType getHorizontalAlignment();
 
 	/**
-	 * Returns the meta object for enum '{@link fr.jmini.eadoc.EVerticalAlignment <em>EVertical Alignment</em>}'.
+	 * Returns the meta object for data type '{@link org.asciidoctor.ast.Table.VerticalAlignment <em>Vertical Alignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>EVertical Alignment</em>'.
-	 * @see fr.jmini.eadoc.EVerticalAlignment
+	 * @return the meta object for data type '<em>Vertical Alignment</em>'.
+	 * @see org.asciidoctor.ast.Table.VerticalAlignment
+	 * @model instanceClass="org.asciidoctor.ast.Table$VerticalAlignment"
 	 * @generated
 	 */
-	EEnum getEVerticalAlignment();
+	EDataType getVerticalAlignment();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Map <em>String Object Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>String Object Map</em>'.
+	 * @see java.util.Map
+	 * @model instanceClass="java.util.Map<java.lang.String, java.lang.Object>"
+	 * @generated
+	 */
+	EDataType getStringObjectMap();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Map <em>Object Object Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Object Object Map</em>'.
+	 * @see java.util.Map
+	 * @model instanceClass="java.util.Map<java.lang.Object, java.lang.Object>"
+	 * @generated
+	 */
+	EDataType getObjectObjectMap();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.List <em>String List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>String List</em>'.
+	 * @see java.util.List
+	 * @model instanceClass="java.util.List<java.lang.String>"
+	 * @generated
+	 */
+	EDataType getStringList();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.List <em>Content Part List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Content Part List</em>'.
+	 * @see java.util.List
+	 * @model instanceClass="java.util.List<org.asciidoctor.ast.ContentPart>"
+	 * @generated
+	 */
+	EDataType getContentPartList();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.List <em>Structural Node List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Structural Node List</em>'.
+	 * @see java.util.List
+	 * @model instanceClass="java.util.List<? extends org.asciidoctor.ast.StructuralNode>"
+	 * @generated
+	 */
+	EDataType getStructuralNodeList();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4189,56 +4146,6 @@ public interface EadocPackage extends EPackage {
 		EClass EADOC_UTILITY = eINSTANCE.getEadocUtility();
 
 		/**
-		 * The meta object literal for the '{@link java.util.Map<java.lang.String, java.lang.Object> <em>String Object Map</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.Map<java.lang.String, java.lang.Object>
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringObjectMap()
-		 * @generated
-		 */
-		EClass STRING_OBJECT_MAP = eINSTANCE.getStringObjectMap();
-
-		/**
-		 * The meta object literal for the '{@link java.util.Map<java.lang.Object, java.lang.Object> <em>Object Object Map</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.Map<java.lang.Object, java.lang.Object>
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getObjectObjectMap()
-		 * @generated
-		 */
-		EClass OBJECT_OBJECT_MAP = eINSTANCE.getObjectObjectMap();
-
-		/**
-		 * The meta object literal for the '{@link java.util.List<java.lang.String> <em>String List</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.List<java.lang.String>
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringList()
-		 * @generated
-		 */
-		EClass STRING_LIST = eINSTANCE.getStringList();
-
-		/**
-		 * The meta object literal for the '{@link java.util.List<org.asciidoctor.ast.ContentPart> <em>Content Part List</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.List<org.asciidoctor.ast.ContentPart>
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getContentPartList()
-		 * @generated
-		 */
-		EClass CONTENT_PART_LIST = eINSTANCE.getContentPartList();
-
-		/**
-		 * The meta object literal for the '{@link java.util.List<? extends org.asciidoctor.ast.StructuralNode> <em>Structural Node List</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.List<? extends org.asciidoctor.ast.StructuralNode>
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNodeList()
-		 * @generated
-		 */
-		EClass STRUCTURAL_NODE_LIST = eINSTANCE.getStructuralNodeList();
-
-		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EAuthorImpl <em>EAuthor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4351,20 +4258,20 @@ public interface EadocPackage extends EPackage {
 		EAttribute ECOLUMN__WIDTH = eINSTANCE.getEColumn_Width();
 
 		/**
-		 * The meta object literal for the '<em><b>HAlignment</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Horizontal Alignment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECOLUMN__HALIGNMENT = eINSTANCE.getEColumn_HAlignment();
+		EAttribute ECOLUMN__HORIZONTAL_ALIGNMENT = eINSTANCE.getEColumn_HorizontalAlignment();
 
 		/**
-		 * The meta object literal for the '<em><b>VAlignment</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Vertical Alignment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECOLUMN__VALIGNMENT = eINSTANCE.getEColumn_VAlignment();
+		EAttribute ECOLUMN__VERTICAL_ALIGNMENT = eINSTANCE.getEColumn_VerticalAlignment();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EContentNodeImpl <em>EContent Node</em>}' class.
@@ -4433,20 +4340,20 @@ public interface EadocPackage extends EPackage {
 		EAttribute ECONTENT_NODE__BLOCK = eINSTANCE.getEContentNode_Block();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECONTENT_NODE__ATTRIBUTES = eINSTANCE.getEContentNode_Attributes();
+		EAttribute ECONTENT_NODE__ATTRIBUTES = eINSTANCE.getEContentNode_Attributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Roles</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Roles</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECONTENT_NODE__ROLES = eINSTANCE.getEContentNode_Roles();
+		EAttribute ECONTENT_NODE__ROLES = eINSTANCE.getEContentNode_Roles();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EContentPartImpl <em>EContent Part</em>}' class.
@@ -4507,12 +4414,12 @@ public interface EadocPackage extends EPackage {
 		EAttribute ECONTENT_PART__TITLE = eINSTANCE.getEContentPart_Title();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECONTENT_PART__ATTRIBUTES = eINSTANCE.getEContentPart_Attributes();
+		EAttribute ECONTENT_PART__ATTRIBUTES = eINSTANCE.getEContentPart_Attributes();
 
 		/**
 		 * The meta object literal for the '<em><b>Parts</b></em>' containment reference list feature.
@@ -4913,24 +4820,74 @@ public interface EadocPackage extends EPackage {
 		EAttribute ETITLE__SANITIZED = eINSTANCE.getETitle_Sanitized();
 
 		/**
-		 * The meta object literal for the '{@link fr.jmini.eadoc.EHorizontalAlignment <em>EHorizontal Alignment</em>}' enum.
+		 * The meta object literal for the '<em>Horizontal Alignment</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.jmini.eadoc.EHorizontalAlignment
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEHorizontalAlignment()
+		 * @see org.asciidoctor.ast.Table.HorizontalAlignment
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getHorizontalAlignment()
 		 * @generated
 		 */
-		EEnum EHORIZONTAL_ALIGNMENT = eINSTANCE.getEHorizontalAlignment();
+		EDataType HORIZONTAL_ALIGNMENT = eINSTANCE.getHorizontalAlignment();
 
 		/**
-		 * The meta object literal for the '{@link fr.jmini.eadoc.EVerticalAlignment <em>EVertical Alignment</em>}' enum.
+		 * The meta object literal for the '<em>Vertical Alignment</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.jmini.eadoc.EVerticalAlignment
-		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getEVerticalAlignment()
+		 * @see org.asciidoctor.ast.Table.VerticalAlignment
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getVerticalAlignment()
 		 * @generated
 		 */
-		EEnum EVERTICAL_ALIGNMENT = eINSTANCE.getEVerticalAlignment();
+		EDataType VERTICAL_ALIGNMENT = eINSTANCE.getVerticalAlignment();
+
+		/**
+		 * The meta object literal for the '<em>String Object Map</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.Map
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringObjectMap()
+		 * @generated
+		 */
+		EDataType STRING_OBJECT_MAP = eINSTANCE.getStringObjectMap();
+
+		/**
+		 * The meta object literal for the '<em>Object Object Map</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.Map
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getObjectObjectMap()
+		 * @generated
+		 */
+		EDataType OBJECT_OBJECT_MAP = eINSTANCE.getObjectObjectMap();
+
+		/**
+		 * The meta object literal for the '<em>String List</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.List
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStringList()
+		 * @generated
+		 */
+		EDataType STRING_LIST = eINSTANCE.getStringList();
+
+		/**
+		 * The meta object literal for the '<em>Content Part List</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.List
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getContentPartList()
+		 * @generated
+		 */
+		EDataType CONTENT_PART_LIST = eINSTANCE.getContentPartList();
+
+		/**
+		 * The meta object literal for the '<em>Structural Node List</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.List
+		 * @see fr.jmini.eadoc.impl.EadocPackageImpl#getStructuralNodeList()
+		 * @generated
+		 */
+		EDataType STRUCTURAL_NODE_LIST = eINSTANCE.getStructuralNodeList();
 
 	}
 

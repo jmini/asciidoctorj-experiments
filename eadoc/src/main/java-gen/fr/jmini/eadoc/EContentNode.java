@@ -218,52 +218,52 @@ public interface EContentNode extends EObject, ContentNode {
 	void setBlock(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' reference.
+	 * Returns the value of the '<em><b>Attributes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' reference isn't clear,
+	 * If the meaning of the '<em>Attributes</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attributes</em>' reference.
-	 * @see #setAttributes(Map<String, Object>)
+	 * @return the value of the '<em>Attributes</em>' attribute.
+	 * @see #setAttributes(Map)
 	 * @see fr.jmini.eadoc.EadocPackage#getEContentNode_Attributes()
-	 * @model type="fr.jmini.eadoc.StringObjectMap"
+	 * @model unique="false" dataType="fr.jmini.eadoc.StringObjectMap"
 	 * @generated
 	 */
 	Map<String, Object> getAttributes();
 
 	/**
-	 * Sets the value of the '{@link fr.jmini.eadoc.EContentNode#getAttributes <em>Attributes</em>}' reference.
+	 * Sets the value of the '{@link fr.jmini.eadoc.EContentNode#getAttributes <em>Attributes</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attributes</em>' reference.
+	 * @param value the new value of the '<em>Attributes</em>' attribute.
 	 * @see #getAttributes()
 	 * @generated
 	 */
 	void setAttributes(Map<String, Object> value);
 
 	/**
-	 * Returns the value of the '<em><b>Roles</b></em>' reference.
+	 * Returns the value of the '<em><b>Roles</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Roles</em>' reference isn't clear,
+	 * If the meaning of the '<em>Roles</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roles</em>' reference.
-	 * @see #setRoles(List<String>)
+	 * @return the value of the '<em>Roles</em>' attribute.
+	 * @see #setRoles(List)
 	 * @see fr.jmini.eadoc.EadocPackage#getEContentNode_Roles()
-	 * @model type="fr.jmini.eadoc.StringList"
+	 * @model unique="false" dataType="fr.jmini.eadoc.StringList"
 	 * @generated
 	 */
 	List<String> getRoles();
 
 	/**
-	 * Sets the value of the '{@link fr.jmini.eadoc.EContentNode#getRoles <em>Roles</em>}' reference.
+	 * Sets the value of the '{@link fr.jmini.eadoc.EContentNode#getRoles <em>Roles</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Roles</em>' reference.
+	 * @param value the new value of the '<em>Roles</em>' attribute.
 	 * @see #getRoles()
 	 * @generated
 	 */
@@ -621,7 +621,7 @@ public interface EContentNode extends EObject, ContentNode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model unique="false" pathUnique="false" optsType="fr.jmini.eadoc.ObjectObjectMap" optsUnique="false"
+	 * @model unique="false" pathUnique="false" optsDataType="fr.jmini.eadoc.ObjectObjectMap" optsUnique="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
 	 * @generated
 	 */

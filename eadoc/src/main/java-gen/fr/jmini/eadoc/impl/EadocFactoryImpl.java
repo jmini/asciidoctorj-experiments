@@ -4,6 +4,13 @@ package fr.jmini.eadoc.impl;
 
 import fr.jmini.eadoc.*;
 
+import java.util.List;
+import java.util.Map;
+
+import org.asciidoctor.ast.ContentPart;
+import org.asciidoctor.ast.StructuralNode;
+import org.asciidoctor.ast.Table;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -91,10 +98,20 @@ public class EadocFactoryImpl extends EFactoryImpl implements EadocFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case EadocPackage.EHORIZONTAL_ALIGNMENT:
-				return createEHorizontalAlignmentFromString(eDataType, initialValue);
-			case EadocPackage.EVERTICAL_ALIGNMENT:
-				return createEVerticalAlignmentFromString(eDataType, initialValue);
+			case EadocPackage.HORIZONTAL_ALIGNMENT:
+				return createHorizontalAlignmentFromString(eDataType, initialValue);
+			case EadocPackage.VERTICAL_ALIGNMENT:
+				return createVerticalAlignmentFromString(eDataType, initialValue);
+			case EadocPackage.STRING_OBJECT_MAP:
+				return createStringObjectMapFromString(eDataType, initialValue);
+			case EadocPackage.OBJECT_OBJECT_MAP:
+				return createObjectObjectMapFromString(eDataType, initialValue);
+			case EadocPackage.STRING_LIST:
+				return createStringListFromString(eDataType, initialValue);
+			case EadocPackage.CONTENT_PART_LIST:
+				return createContentPartListFromString(eDataType, initialValue);
+			case EadocPackage.STRUCTURAL_NODE_LIST:
+				return createStructuralNodeListFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,10 +125,20 @@ public class EadocFactoryImpl extends EFactoryImpl implements EadocFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case EadocPackage.EHORIZONTAL_ALIGNMENT:
-				return convertEHorizontalAlignmentToString(eDataType, instanceValue);
-			case EadocPackage.EVERTICAL_ALIGNMENT:
-				return convertEVerticalAlignmentToString(eDataType, instanceValue);
+			case EadocPackage.HORIZONTAL_ALIGNMENT:
+				return convertHorizontalAlignmentToString(eDataType, instanceValue);
+			case EadocPackage.VERTICAL_ALIGNMENT:
+				return convertVerticalAlignmentToString(eDataType, instanceValue);
+			case EadocPackage.STRING_OBJECT_MAP:
+				return convertStringObjectMapToString(eDataType, instanceValue);
+			case EadocPackage.OBJECT_OBJECT_MAP:
+				return convertObjectObjectMapToString(eDataType, instanceValue);
+			case EadocPackage.STRING_LIST:
+				return convertStringListToString(eDataType, instanceValue);
+			case EadocPackage.CONTENT_PART_LIST:
+				return convertContentPartListToString(eDataType, instanceValue);
+			case EadocPackage.STRUCTURAL_NODE_LIST:
+				return convertStructuralNodeListToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -332,10 +359,8 @@ public class EadocFactoryImpl extends EFactoryImpl implements EadocFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EHorizontalAlignment createEHorizontalAlignmentFromString(EDataType eDataType, String initialValue) {
-		EHorizontalAlignment result = EHorizontalAlignment.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public Table.HorizontalAlignment createHorizontalAlignmentFromString(EDataType eDataType, String initialValue) {
+		return (Table.HorizontalAlignment)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -343,8 +368,8 @@ public class EadocFactoryImpl extends EFactoryImpl implements EadocFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEHorizontalAlignmentToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public String convertHorizontalAlignmentToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
@@ -352,10 +377,8 @@ public class EadocFactoryImpl extends EFactoryImpl implements EadocFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EVerticalAlignment createEVerticalAlignmentFromString(EDataType eDataType, String initialValue) {
-		EVerticalAlignment result = EVerticalAlignment.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public Table.VerticalAlignment createVerticalAlignmentFromString(EDataType eDataType, String initialValue) {
+		return (Table.VerticalAlignment)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -363,8 +386,103 @@ public class EadocFactoryImpl extends EFactoryImpl implements EadocFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEVerticalAlignmentToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public String convertVerticalAlignmentToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> createStringObjectMapFromString(EDataType eDataType, String initialValue) {
+		return (Map<String, Object>)super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertStringObjectMapToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public Map<Object, Object> createObjectObjectMapFromString(EDataType eDataType, String initialValue) {
+		return (Map<Object, Object>)super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertObjectObjectMapToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<String> createStringListFromString(EDataType eDataType, String initialValue) {
+		return (List<String>)super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertStringListToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<ContentPart> createContentPartListFromString(EDataType eDataType, String initialValue) {
+		return (List<ContentPart>)super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertContentPartListToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<? extends StructuralNode> createStructuralNodeListFromString(EDataType eDataType, String initialValue) {
+		return (List<? extends StructuralNode>)super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertStructuralNodeListToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**

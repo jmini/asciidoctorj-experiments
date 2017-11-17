@@ -22,8 +22,6 @@ import org.asciidoctor.ast.Section;
 import org.asciidoctor.ast.StructuralNode;
 import org.asciidoctor.ast.StructuredDocument;
 import org.asciidoctor.ast.Table;
-import org.asciidoctor.ast.Table.HorizontalAlignment;
-import org.asciidoctor.ast.Table.VerticalAlignment;
 import org.asciidoctor.ast.Title;
 import org.eclipse.emf.common.util.EList;
 
@@ -55,7 +53,11 @@ public class EadocUtility {
 
     public static EColumn convertColumn(Column column) {
         EColumn eColumn = EadocFactory.eINSTANCE.createEColumn();
-        // TODO: map fields
+        eColumn.setStyle(column.getStyle());
+        eColumn.setTable(convertTable(column.getTable()));
+        eColumn.setWidth(column.getWidth());
+        eColumn.setHorizontalAlignment(column.getHorizontalAlignment());
+        eColumn.setVerticalAlignment(column.getVerticalAlignment());
         return eColumn;
     }
 
@@ -204,14 +206,21 @@ public class EadocUtility {
 
     public static EStructuredDocument convertStructuredDocument(StructuredDocument structuredDocument) {
         EStructuredDocument eStructuredDocument = EadocFactory.eINSTANCE.createEStructuredDocument();
-        // TODO: map fields
+        // eStructuredDocument.set(structuredDocument.getParts());
+        eStructuredDocument.setHeader(structuredDocument.getHeader());
         return eStructuredDocument;
     }
 
     public static ETable convertTable(Table table) {
         ETable eTable = EadocFactory.eINSTANCE.createETable();
         mapStructuralNodeFields(eTable, table);
-        // TODO: map fields
+        eTable.setHeaderOption(table.hasHeaderOption());
+        // eTable.set( table.getColumns());
+        // eTable.set( table.getHeader());
+        // eTable.set( table.getFooter());
+        // eTable.set( table.getBody());
+        eTable.setFrame(table.getFrame());
+        eTable.setGrid(table.getGrid());
         return eTable;
     }
 
@@ -222,70 +231,6 @@ public class EadocUtility {
         eTitle.setCombined(title.getCombined());
         eTitle.setSanitized(title.isSanitized());
         return eTitle;
-    }
-
-    public static EVerticalAlignment convertVerticalAlignment(VerticalAlignment alignment) {
-        if (alignment == null) {
-            return null;
-        }
-        switch (alignment) {
-        case TOP:
-            return EVerticalAlignment.TOP;
-        case MIDDLE:
-            return EVerticalAlignment.MIDDLE;
-        case BOTTOM:
-            return EVerticalAlignment.BOTTOM;
-        default:
-            throw new IllegalArgumentException();
-        }
-    }
-
-    public static VerticalAlignment convertEVerticalAlignment(EVerticalAlignment alignment) {
-        if (alignment == null) {
-            return null;
-        }
-        switch (alignment) {
-        case TOP:
-            return VerticalAlignment.TOP;
-        case MIDDLE:
-            return VerticalAlignment.MIDDLE;
-        case BOTTOM:
-            return VerticalAlignment.BOTTOM;
-        default:
-            throw new IllegalArgumentException();
-        }
-    }
-
-    public static EHorizontalAlignment convertHorizontalAlignment(HorizontalAlignment alignment) {
-        if (alignment == null) {
-            return null;
-        }
-        switch (alignment) {
-        case LEFT:
-            return EHorizontalAlignment.LEFT;
-        case CENTER:
-            return EHorizontalAlignment.CENTER;
-        case RIGHT:
-            return EHorizontalAlignment.RIGHT;
-        default:
-            throw new IllegalArgumentException();
-        }
-    }
-
-    public static HorizontalAlignment convertEHorizontalAlignment(EHorizontalAlignment alignment) {
-        if (alignment == null) {
-            return null;
-        }
-        switch (alignment) {
-        case LEFT:
-            return HorizontalAlignment.LEFT;
-        case CENTER:
-            return HorizontalAlignment.CENTER;
-        case RIGHT:
-            return HorizontalAlignment.RIGHT;
-        default:
-            throw new IllegalArgumentException();
-        }
     }
 
     public static void convertAndAddAllContentPart(EList<EContentPart> eList, List<? extends ContentPart> parts) {

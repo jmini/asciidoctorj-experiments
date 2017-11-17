@@ -3,6 +3,7 @@
 package fr.jmini.eadoc;
 
 import org.asciidoctor.ast.Column;
+import org.asciidoctor.ast.Table;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,8 +17,8 @@ import org.asciidoctor.ast.Column;
  *   <li>{@link fr.jmini.eadoc.EColumn#getStyle <em>Style</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EColumn#getTable <em>Table</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EColumn#getWidth <em>Width</em>}</li>
- *   <li>{@link fr.jmini.eadoc.EColumn#getHAlignment <em>HAlignment</em>}</li>
- *   <li>{@link fr.jmini.eadoc.EColumn#getVAlignment <em>VAlignment</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.EColumn#getHorizontalAlignment <em>Horizontal Alignment</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.EColumn#getVerticalAlignment <em>Vertical Alignment</em>}</li>
  * </ul>
  *
  * @see fr.jmini.eadoc.EadocPackage#getEColumn()
@@ -106,62 +107,56 @@ public interface EColumn extends EContentNode, Column {
 	void setWidth(int value);
 
 	/**
-	 * Returns the value of the '<em><b>HAlignment</b></em>' attribute.
-	 * The literals are from the enumeration {@link fr.jmini.eadoc.EHorizontalAlignment}.
+	 * Returns the value of the '<em><b>Horizontal Alignment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>HAlignment</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Horizontal Alignment</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>HAlignment</em>' attribute.
-	 * @see fr.jmini.eadoc.EHorizontalAlignment
-	 * @see #setHAlignment(EHorizontalAlignment)
-	 * @see fr.jmini.eadoc.EadocPackage#getEColumn_HAlignment()
-	 * @model unique="false"
+	 * @return the value of the '<em>Horizontal Alignment</em>' attribute.
+	 * @see #setHorizontalAlignment(Table.HorizontalAlignment)
+	 * @see fr.jmini.eadoc.EadocPackage#getEColumn_HorizontalAlignment()
+	 * @model unique="false" dataType="fr.jmini.eadoc.HorizontalAlignment"
 	 * @generated
 	 */
-	EHorizontalAlignment getHAlignment();
+	Table.HorizontalAlignment getHorizontalAlignment();
 
 	/**
-	 * Sets the value of the '{@link fr.jmini.eadoc.EColumn#getHAlignment <em>HAlignment</em>}' attribute.
+	 * Sets the value of the '{@link fr.jmini.eadoc.EColumn#getHorizontalAlignment <em>Horizontal Alignment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>HAlignment</em>' attribute.
-	 * @see fr.jmini.eadoc.EHorizontalAlignment
-	 * @see #getHAlignment()
+	 * @param value the new value of the '<em>Horizontal Alignment</em>' attribute.
+	 * @see #getHorizontalAlignment()
 	 * @generated
 	 */
-	void setHAlignment(EHorizontalAlignment value);
+	void setHorizontalAlignment(Table.HorizontalAlignment value);
 
 	/**
-	 * Returns the value of the '<em><b>VAlignment</b></em>' attribute.
-	 * The literals are from the enumeration {@link fr.jmini.eadoc.EVerticalAlignment}.
+	 * Returns the value of the '<em><b>Vertical Alignment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>VAlignment</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Vertical Alignment</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>VAlignment</em>' attribute.
-	 * @see fr.jmini.eadoc.EVerticalAlignment
-	 * @see #setVAlignment(EVerticalAlignment)
-	 * @see fr.jmini.eadoc.EadocPackage#getEColumn_VAlignment()
-	 * @model unique="false"
+	 * @return the value of the '<em>Vertical Alignment</em>' attribute.
+	 * @see #setVerticalAlignment(Table.VerticalAlignment)
+	 * @see fr.jmini.eadoc.EadocPackage#getEColumn_VerticalAlignment()
+	 * @model unique="false" dataType="fr.jmini.eadoc.VerticalAlignment"
 	 * @generated
 	 */
-	EVerticalAlignment getVAlignment();
+	Table.VerticalAlignment getVerticalAlignment();
 
 	/**
-	 * Sets the value of the '{@link fr.jmini.eadoc.EColumn#getVAlignment <em>VAlignment</em>}' attribute.
+	 * Sets the value of the '{@link fr.jmini.eadoc.EColumn#getVerticalAlignment <em>Vertical Alignment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>VAlignment</em>' attribute.
-	 * @see fr.jmini.eadoc.EVerticalAlignment
-	 * @see #getVAlignment()
+	 * @param value the new value of the '<em>Vertical Alignment</em>' attribute.
+	 * @see #getVerticalAlignment()
 	 * @generated
 	 */
-	void setVAlignment(EVerticalAlignment value);
+	void setVerticalAlignment(Table.VerticalAlignment value);
 
 	/**
 	 * <!-- begin-user-doc -->
