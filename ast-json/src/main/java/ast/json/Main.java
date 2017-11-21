@@ -30,6 +30,7 @@ public class Main {
 //    convertExample(new File("./examples/03"));
 //    convertExample(new File("./examples/04"));
 //    convertExample(new File("./examples/05"));
+//    convertExample(new File("./examples/06"));
   }
 
   private static void convertAllExamples() throws IOException {

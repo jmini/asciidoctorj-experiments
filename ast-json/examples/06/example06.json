@@ -1,0 +1,112 @@
+
+{
+    "attributes": {
+        "localtime": "14:00:33 CET",
+        "tip-caption": "Tip",
+        "filetype": "html",
+        "appendix-caption": "Appendix",
+        "asciidoctor-version": "1.5.6.1",
+        "doctime": "14:00:33 CET",
+        "appendix-refsig": "Appendix",
+        "safe-mode-secure": "",
+        "localyear": "2017",
+        "toc-title": "Table of Contents",
+        "docdate": "2017-11-20",
+        "manname-title": "NAME",
+        "backend-ast-json": "",
+        "basebackend-html": "",
+        "stylesheet": "",
+        "iconsdir": "./images/icons",
+        "localdate": "2017-11-20",
+        "doctype-article": "",
+        "warning-caption": "Warning",
+        "figure-caption": "Figure",
+        "attribute-missing": "skip",
+        "section-refsig": "Section",
+        "outfilesuffix": "",
+        "basebackend-html-doctype-article": "",
+        "docdir": "",
+        "backend-ast-json-doctype-article": "",
+        "localdatetime": "2017-11-20 14:00:33 CET",
+        "toc-placement": "auto",
+        "webfonts": "",
+        "docdatetime": "2017-11-20 14:00:33 CET",
+        "important-caption": "Important",
+        "note-caption": "Note",
+        "stylesdir": ".",
+        "untitled-label": "Untitled",
+        "linkcss": "",
+        "max-include-depth": "64",
+        "caution-caption": "Caution",
+        "user-home": ".",
+        "filetype-html": "",
+        "max-attribute-value-size": "4096",
+        "safe-mode-level": "20",
+        "backend": "ast-json",
+        "safe-mode-name": "secure",
+        "notitle": "",
+        "table-caption": "Table",
+        "example-caption": "Example",
+        "embedded": "",
+        "basebackend": "html",
+        "prewrap": "",
+        "version-label": "Version",
+        "asciidoctor": "",
+        "last-update-label": "Last updated",
+        "doctitle": "My page",
+        "doctype": "article",
+        "docyear": "2017",
+        "chapter-refsig": "Chapter",
+        "iconfont-remote": "",
+        "sectids": "",
+        "attribute-undefined": "drop-line"
+    },
+    "context": "document",
+    "nodeName": "document",
+    "roles": [
+    ],
+    "level": 0,
+    "blocks": [
+        {
+            "attributes": {
+            },
+            "context": "section",
+            "id": "_totally_ignored_header",
+            "nodeName": "section",
+            "roles": [
+            ],
+            "level": 1,
+            "title": "Totally ignored header",
+            "blocks": [
+                {
+                    "attributes": {
+                    },
+                    "context": "paragraph",
+                    "nodeName": "paragraph",
+                    "roles": [
+                    ],
+                    "level": 1,
+                    "lines": [
+                        "What does it mean?"
+                    ],
+                    "source": "What does it mean?"
+                }
+            ],
+            "index": 0,
+            "number": 1,
+            "sectionName": "section",
+            "special": false
+        }
+    ],
+    "doctitle": "My page",
+    "options": {
+        "header_footer": "false",
+        "to_dir": null,
+        "backend": "ast-json",
+        "attributes": "{}"
+    },
+    "structuredDoctitle": {
+        "combined": "My page",
+        "main": "My page"
+    }
+}
