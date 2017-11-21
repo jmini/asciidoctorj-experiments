@@ -212,9 +212,9 @@ public class EadocUtility {
             return convertList((org.asciidoctor.ast.List) structuralNode);
         } else if (structuralNode instanceof ListItem) {
             return convertListItem((ListItem) structuralNode);
-        } else if (structuralNode instanceof ListItem) {
+        } else if (structuralNode instanceof Section) {
             return convertSection((Section) structuralNode);
-        } else if (structuralNode instanceof ListItem) {
+        } else if (structuralNode instanceof Table) {
             return convertTable((Table) structuralNode);
         }
         EStructuralNode eStructuralNode = EadocFactory.eINSTANCE.createEStructuralNode();
