@@ -1,0 +1,256 @@
+@GenModel(
+    bundleManifest="false",
+    modelDirectory="adoc-api-impl/src/main/java-gen",
+    complianceLevel="8.0"
+)
+package fr.jmini.eadoc
+
+interface Author wraps org.asciidoctor.ast.Author {}
+interface DocumentHeader wraps org.asciidoctor.ast.DocumentHeader {}
+interface RevisionInfo wraps org.asciidoctor.ast.RevisionInfo {}
+interface StructuredDocument wraps org.asciidoctor.ast.StructuredDocument {}
+interface ContentNode wraps org.asciidoctor.ast.ContentNode {}
+interface ContentPart wraps org.asciidoctor.ast.ContentPart {}
+interface Document wraps org.asciidoctor.ast.Document {}
+
+interface StringObjectMap wraps java.util.Map<String, Object> {}
+interface ObjectObjectMap wraps java.util.Map<Object, Object> {}
+interface StringList wraps java.util.List<String> {}
+interface ContentPartList wraps java.util.List<org.asciidoctor.ast.ContentPart> {}
+
+class EAuthor extends Author {
+		String email
+		String fullName
+		String firstName
+		String lastName
+		String middleName
+		String initials
+}
+
+class ERevisionInfo extends RevisionInfo {
+		String date
+		String number
+		String remark
+}
+
+class EContentPart extends ContentPart {
+		String contentPartId
+		int level
+		String context
+		String style
+		String role
+		String title
+		refers StringObjectMap attributes
+		contains EContentPart[] parts opposite parentPart
+		
+		op String getContent()
+		
+		container EContentPart parentPart opposite parts
+}
+
+class EStructuredDocument extends StructuredDocument {
+		refers ContentPartList parts
+		refers DocumentHeader header
+
+		op ContentPart getPartById(String partId) {
+			return null
+		}
+
+		op ContentPart getPartByStyle(String style) {}
+		op ContentPart getPartByRole(String role) {}
+		op ContentPartList getPartsByContext(String context) {}
+		op ContentPartList getPartsByStyle(String style) {}
+		op ContentPartList getPartsByRole(String role) {}
+}
+
+class EContentNode /* extends ContentNode */ {
+    String nodeId
+    
+    /**
+     * @deprecated Please use {@link #getId()}
+     */
+    op String _deprecated_id() {
+        this.nodeId
+    }
+
+    op String getNodeName() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    refers ContentNode parent
+//    /**
+//     * @deprecated Use {@linkplain #getParent()}  instead.
+//     */
+op    ContentNode _deprecated_parent() {
+        this.parent
+    }
+
+	String context
+	
+    /**
+     * @deprecated Use {@linkplain #getContext()}  instead.
+     */
+    op String _deprecated_context() {
+        this.context
+    }
+
+     refers Document document
+    /**
+     * @deprecated Use {@linkplain #getDocument()}  instead.
+     */
+op   Document _deprecated_document()
+
+      boolean inline
+      
+      boolean block
+      
+      refers StringObjectMap attributes
+
+    /**
+     * @deprecated Use {@link #getAttribute(Object, Object, boolean)} instead
+     */
+    op Object getAttr(Object name, Object defaultValue, boolean inherit) {
+        this.getAttribute(name, defaultValue, inherit)
+    }
+
+    /**
+     * @deprecated Use {@link #getAttribute(Object, Object)} instead
+     */
+    op Object getAttr(Object name, Object defaultValue) {
+        this.getAttribute(name, defaultValue)
+    }
+
+    /**
+     * @deprecated Use {@link #getAttribute(Object)} instead
+     */
+    op Object getAttr(Object name) {
+        this.getAttribute(name)
+    }
+
+    op Object getAttribute(Object name, Object defaultValue, boolean inherit) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op Object getAttribute(Object name, Object defaultValue) {
+    	if(this.attributes.containsKey(name)) {
+    		this.attributes.get(name)
+    	} else {
+    		defaultValue
+    	}
+    }
+
+    op Object getAttribute(Object name) {
+        return this.attributes.get(name)
+    }
+
+    /**
+     * @deprecated Use {@link #hasAttribute(Object)} instead
+     */
+    op boolean hasAttr(Object name) {
+        hasAttribute(name)
+    }
+
+    /**
+     * @deprecated Use {@link #hasAttribute(Object, boolean)} instead
+     */
+    op boolean hasAttr(Object name, boolean inherited) {
+        hasAttribute(name, inherited)
+    }
+
+      op boolean hasAttribute(Object name) {
+      	this.attributes.containsKey(name)
+      }
+
+    op boolean hasAttribute(Object name, boolean inherited) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    /**
+     * @deprecated Use {@link #isAttribute(Object, Object)} instead.
+     */
+    op boolean isAttr(Object name, Object expected) {
+	isAttribute(name, expected)
+    }
+
+    /**
+     * @deprecated Use {@link #isAttribute(Object, Object, boolean)} instead.
+     */
+op    boolean isAttr(Object name, Object expected, boolean inherit) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+op    boolean isAttribute(Object name, Object expected) {
+        expected.equals(getAttribute(name))
+    }
+
+
+op    boolean isAttribute(Object name, Object expected, boolean inherit) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    /**
+     * @deprecated Use {@link #setAttribute(Object, Object, boolean)} instead.
+     */
+op    boolean setAttr(Object name, Object value, boolean overwrite) {
+        setAttribute(name, value, overwrite)
+    }
+//
+op    boolean setAttribute(Object name, Object value, boolean overwrite) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+op    boolean isOption(Object name) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+op    boolean isRole()  {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op boolean hasRole(String role) {
+        roles.contains(role)
+    }
+    
+    op String getRole() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    refers StringList roles
+    /**
+     * @deprecated Use {@linkplain #getRole()}  instead.
+     */
+op    String role() {
+        getRole()
+    }
+
+op    void addRole(String role) {
+      roles.add(role)
+    }
+    
+   op void removeRole(String role) {
+      roles.remove(role)
+    }
+
+    op boolean isReftext() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String getReftext() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String iconUri(String name) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String mediaUri(String target) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String imageUri(String targetImage) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String imageUri(String targetImage, String assetDirKey) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+//    op String readAsset(String path, ObjectObjectMap opts) {
+//        throw new UnsupportedOperationException("Not implemented")
+//    }
+    op String normalizeWebPath(String path, String start, boolean preserveUriTarget) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+}

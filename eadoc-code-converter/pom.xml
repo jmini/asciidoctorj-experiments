@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.jmini.eadoc</groupId>
+  <artifactId>eadoc-code-converter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>oss-jfrog-artifactory</id>
+      <name>oss-jfrog-artifactory-releases</name>
+      <url>https://dl.bintray.com/asciidoctor/maven/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.asciidoctor</groupId>
+      <artifactId>asciidoctorj</artifactId>
+      <version>1.6.0-alpha.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>fr.jmini.eadoc</groupId>
+      <artifactId>eadoc</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>15.0</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <source>${project.java.version}</source>
+          <target>${project.java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -29,7 +29,7 @@ import org.asciidoctor.ast.Table.VerticalAlignment;
 import org.asciidoctor.ast.Title;
 import org.eclipse.emf.ecore.EObject;
 
-public class EAdocCodeConverter {
+public class EadocCodeCreator {
 
     private static final String NL = "\n";
     private static final Map<String, Integer> counter = new HashMap<>();
@@ -195,69 +195,6 @@ public class EAdocCodeConverter {
         sb.append(varName + ".setInitials(" + convertString(author.getInitials()) + ");" + NL);
     }
 
-    private static String createVariable(StringBuilder sb, Class<? extends EObject> eClass) {
-        String key = computeEClassKey(eClass);
-
-        Integer c = counter.get(key);
-        if (c == null) {
-            c = 0;
-        }
-        c = c.intValue() + 1;
-        counter.put(key, c);
-
-        String varName = key + c.toString();
-        sb.append(eClass.getSimpleName() + " " + varName + " = EadocFactory.eINSTANCE.create" + eClass.getSimpleName() + "();" + NL);
-        return varName;
-    }
-
-    private static String computeEClassKey(Class<? extends EObject> eClass) {
-        if (EAuthor.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "a";
-        } else if (EBlock.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "b";
-        } else if (ECell.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "c";
-        } else if (EColumn.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "c";
-        } else if (EContentNode.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "n";
-        } else if (EContentPart.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "p";
-        } else if (ECursor.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "c";
-        } else if (EDescriptionList.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "l";
-        } else if (EDescriptionListEntry.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "e";
-        } else if (EDocument.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "d";
-        } else if (EDocumentHeader.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "h";
-        } else if (EAdocList.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "l";
-        } else if (EListItem.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "i";
-        } else if (EPhraseNode.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "n";
-        } else if (ERevisionInfo.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "r";
-        } else if (ERow.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "r";
-        } else if (ESection.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "s";
-        } else if (EStructuralNode.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "n";
-        } else if (EStructuredDocument.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "d";
-        } else if (ETable.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "t";
-        } else if (ETitle.class.getSimpleName().equals(eClass.getSimpleName())) {
-            return "t";
-        } else {
-            throw new IllegalArgumentException("");
-        }
-    }
-
     private static void appendBlock(StringBuilder sb, String varName, Block block) {
         appendStructuralNode(sb, varName, block);
         sb.append(varName + ".setLines(" + convertStringList(block.getLines()) + ");" + NL);
@@ -268,12 +205,17 @@ public class EAdocCodeConverter {
         // sb.append(varName + .setColumn(convertColumn(convertString(cell.getColumn())) + ");" + NL);
         sb.append(varName + ".setColspan(" + convertInt(cell.getColspan()) + ");" + NL);
         sb.append(varName + ".setRowspan(" + convertInt(cell.getRowspan()) + ");" + NL);
-        // sb.append(varName + ".set(" + convertString(cell.getText()) + ");" + NL);
+        // XXX sb.append(varName + ".set(" + convertString(cell.getText()) + ");" + NL);
         sb.append(varName + ".setSource(" + convertString(cell.getSource()) + ");" + NL);
         sb.append(varName + ".setStyle(" + convertString(cell.getStyle()) + ");" + NL);
         sb.append(varName + ".setHorizontalAlignment(" + convertHorizontalAlignment(cell.getHorizontalAlignment()) + ");" + NL);
         sb.append(varName + ".setVerticalAlignment(" + convertVerticalAlignment(cell.getVerticalAlignment()) + ");" + NL);
-        // XXX sb.append(varName + ".setInnerDocument(" + convertString(cell.getInnerDocument()) + ");" + NL);
+        if (cell.getInnerDocument() != null) {
+            String docVarName = createDocumentCode(sb, cell.getInnerDocument());
+            sb.append(varName + ".setInnerDocument(" + docVarName + ");" + NL);
+        } else {
+            sb.append(varName + ".setInnerDocument(null);" + NL);
+        }
     }
 
     private static void appendColumn(StringBuilder sb, String varName, Column column) {
@@ -381,10 +323,10 @@ public class EAdocCodeConverter {
 
     private static void appendStructuralNode(StringBuilder sb, String varName, StructuralNode structuralNode) {
         appendContentNode(sb, varName, structuralNode);
-        sb.append(varName + ".setTitle(" + structuralNode.getTitle() + ");" + NL);
-        sb.append(varName + ".setStyle(" + structuralNode.getStyle() + ");" + NL);
+        sb.append(varName + ".setTitle(" + convertString(structuralNode.getTitle()) + ");" + NL);
+        sb.append(varName + ".setStyle(" + convertString(structuralNode.getStyle()) + ");" + NL);
         // eStructuralNode.set(structuralNode.getContent());
-        sb.append(varName + ".setLevel(" + structuralNode.getLevel() + ");" + NL);
+        sb.append(varName + ".setLevel(" + convertInt(structuralNode.getLevel()) + ");" + NL);
         // eStructuralNode.setContentModel(structuralNode.getContentModel());
         if (structuralNode.getSourceLocation() != null) {
             String sourceLocationVarName = createCursorCode(sb, structuralNode.getSourceLocation());
@@ -424,6 +366,69 @@ public class EAdocCodeConverter {
         sb.append(varName + ".setSanitized(" + convertBoolean(title.isSanitized()) + ");" + NL);
     }
 
+    private static String createVariable(StringBuilder sb, Class<? extends EObject> eClass) {
+        String key = computeEClassKey(eClass);
+
+        Integer c = counter.get(key);
+        if (c == null) {
+            c = 0;
+        }
+        c = c.intValue() + 1;
+        counter.put(key, c);
+
+        String varName = key + c.toString();
+        sb.append(eClass.getSimpleName() + " " + varName + " = EadocFactory.eINSTANCE.create" + eClass.getSimpleName() + "();" + NL);
+        return varName;
+    }
+
+    private static String computeEClassKey(Class<? extends EObject> eClass) {
+        if (EAuthor.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "a";
+        } else if (EBlock.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "b";
+        } else if (ECell.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "c";
+        } else if (EColumn.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "c";
+        } else if (EContentNode.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "n";
+        } else if (EContentPart.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "p";
+        } else if (ECursor.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "c";
+        } else if (EDescriptionList.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "l";
+        } else if (EDescriptionListEntry.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "e";
+        } else if (EDocument.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "d";
+        } else if (EDocumentHeader.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "h";
+        } else if (EAdocList.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "l";
+        } else if (EListItem.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "i";
+        } else if (EPhraseNode.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "n";
+        } else if (ERevisionInfo.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "r";
+        } else if (ERow.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "r";
+        } else if (ESection.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "s";
+        } else if (EStructuralNode.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "n";
+        } else if (EStructuredDocument.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "d";
+        } else if (ETable.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "t";
+        } else if (ETitle.class.getSimpleName().equals(eClass.getSimpleName())) {
+            return "t";
+        } else {
+            throw new IllegalArgumentException("");
+        }
+    }
+
     private static String convertBoolean(Boolean value) {
         if (value == null) {
             return "null";
@@ -451,13 +456,16 @@ public class EAdocCodeConverter {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("Arrays.asList(");
-        sb.append(value.stream().map(EAdocCodeConverter::convertString).collect(Collectors.joining(",\n")));
+        sb.append(value.stream().map(EadocCodeCreator::convertString).collect(Collectors.joining(",\n")));
         sb.append(")");
         return sb.toString();
     }
 
-    private static String convertHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
-        switch (horizontalAlignment) {
+    private static String convertHorizontalAlignment(HorizontalAlignment value) {
+        if (value == null) {
+            return "null";
+        }
+        switch (value) {
         case LEFT:
             return "Table.HorizontalAlignment.LEFT";
         case CENTER:
@@ -469,8 +477,11 @@ public class EAdocCodeConverter {
         }
     }
 
-    private static String convertVerticalAlignment(VerticalAlignment verticalAlignment) {
-        switch (verticalAlignment) {
+    private static String convertVerticalAlignment(VerticalAlignment value) {
+        if (value == null) {
+            return "null";
+        }
+        switch (value) {
         case TOP:
             return "Table.VerticalAlignment.TOP";
         case MIDDLE:
