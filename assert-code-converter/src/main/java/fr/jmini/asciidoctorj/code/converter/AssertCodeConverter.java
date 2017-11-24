@@ -567,7 +567,7 @@ public class AssertCodeConverter extends AbstractConverter<String> {
             int i = 0;
             for (Object item : value) {
                 String itemClass = computeType(item);
-                String itemVarName = createVariableForExpression(sb, getterExpression + ".get(" + i + ")", item, itemClass);
+                String itemVarName = createVariableForExpression(sb, "(" + itemClass + ") " + getterExpression + ".get(" + i + ")", item, itemClass);
                 appendObject(sb, itemVarName, item);
                 i = i + 1;
             }
