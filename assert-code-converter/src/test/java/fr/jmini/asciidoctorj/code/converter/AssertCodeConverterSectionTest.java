@@ -18,39 +18,39 @@ public class AssertCodeConverterSectionTest {
         when(mockSection.isSpecial()).thenReturn(false);
         when(mockSection.isNumbered()).thenReturn(true);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createSectionCode(sb, mockSection);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockSection);
     }
 
     // tag::generated-code[]
     public void checkAst(Section astSection) {
-        Section s1 = astSection;
-        assertThat(s1.getId()).isNull();
-        assertThat(s1.getNodeName()).isNull();
-        assertThat(s1.getParent()).isNull();
-        assertThat(s1.getContext()).isNull();
-        assertThat(s1.getDocument()).isNull();
-        assertThat(s1.isInline()).isFalse();
-        assertThat(s1.isBlock()).isFalse();
-        assertThat(s1.getAttributes()).isEmpty();
-        assertThat(s1.getRoles()).isEmpty();
-        assertThat(s1.isReftext()).isFalse();
-        assertThat(s1.getTitle()).isNull();
-        assertThat(s1.getStyle()).isNull();
-        assertThat(s1.getLevel()).isEqualTo(0);
-        assertThat(s1.getSourceLocation()).isNull();
-        assertThat(s1.getSubstitutions()).isEmpty();
-        assertThat(s1.getBlocks()).isEmpty();
-        assertThat(s1.getIndex()).isEqualTo(2);
-        assertThat(s1.getNumber()).isEqualTo(10);
-        assertThat(s1.getSectionName()).isEqualTo("nnn");
-        assertThat(s1.isSpecial()).isFalse();
-        assertThat(s1.isNumbered()).isTrue();
+        Section section1 = astSection;
+        assertThat(section1.getId()).isNull();
+        assertThat(section1.getNodeName()).isNull();
+        assertThat(section1.getParent()).isNull();
+        assertThat(section1.getContext()).isNull();
+        assertThat(section1.getDocument()).isNull();
+        assertThat(section1.isInline()).isFalse();
+        assertThat(section1.isBlock()).isFalse();
+        assertThat(section1.getAttributes()).isEmpty();
+        assertThat(section1.getRoles()).isEmpty();
+        assertThat(section1.isReftext()).isFalse();
+        assertThat(section1.getTitle()).isNull();
+        assertThat(section1.getStyle()).isNull();
+        assertThat(section1.getLevel()).isEqualTo(0);
+        assertThat(section1.getContentModel()).isNull();
+        assertThat(section1.getSourceLocation()).isNull();
+        assertThat(section1.getSubstitutions()).isEmpty();
+        assertThat(section1.getBlocks()).isEmpty();
+        assertThat(section1.getIndex()).isEqualTo(2);
+        assertThat(section1.getNumber()).isEqualTo(10);
+        assertThat(section1.getSectionName()).isEqualTo("nnn");
+        assertThat(section1.isSpecial()).isFalse();
+        assertThat(section1.isNumbered()).isTrue();
     }
     // end::generated-code[]
 }

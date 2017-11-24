@@ -22,25 +22,25 @@ public class AssertCodeConverterContentPartTest {
         when(mockContentPart.getContent()).thenReturn("content");
         when(mockContentPart.getParts()).thenReturn(null);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createContentPartCode(sb, mockContentPart);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockContentPart);
     }
 
     // tag::generated-code[]
     public void checkAst(ContentPart astContentPart) {
-        ContentPart p1 = astContentPart;
-        assertThat(p1.getId()).isEqualTo("id");
-        assertThat(p1.getLevel()).isEqualTo(3);
-        assertThat(p1.getContext()).isEqualTo("ctxt");
-        assertThat(p1.getStyle()).isEqualTo("stle");
-        assertThat(p1.getRole()).isEqualTo("role");
-        assertThat(p1.getTitle()).isEqualTo("some-title");
+        ContentPart contentPart1 = astContentPart;
+        assertThat(contentPart1.getId()).isEqualTo("id");
+        assertThat(contentPart1.getLevel()).isEqualTo(3);
+        assertThat(contentPart1.getContext()).isEqualTo("ctxt");
+        assertThat(contentPart1.getStyle()).isEqualTo("stle");
+        assertThat(contentPart1.getRole()).isEqualTo("role");
+        assertThat(contentPart1.getTitle()).isEqualTo("some-title");
+        assertThat(contentPart1.getAttributes()).isNull();
+        assertThat(contentPart1.getParts()).isNull();
     }
-
     // end::generated-code[]
 }

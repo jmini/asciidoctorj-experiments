@@ -17,20 +17,19 @@ public class AssertCodeConverterDescriptionListEntryTest {
         when(mockDescriptionListEntry.getDescription()).thenReturn(null);
         when(mockDescriptionListEntry.getTerms()).thenReturn(Collections.emptyList());
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createDescriptionListEntryCode(sb, mockDescriptionListEntry);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockDescriptionListEntry);
     }
 
     // tag::generated-code[]
     public void checkAst(DescriptionListEntry astDescriptionListEntry) {
-        DescriptionListEntry e1 = astDescriptionListEntry;
-        assertThat(e1.getDescription()).isNull();
-        assertThat(e1.getTerms()).isEmpty();
+        DescriptionListEntry descriptionListEntry1 = astDescriptionListEntry;
+        assertThat(descriptionListEntry1.getDescription()).isNull();
+        assertThat(descriptionListEntry1.getTerms()).isEmpty();
     }
     // end::generated-code[]
 }

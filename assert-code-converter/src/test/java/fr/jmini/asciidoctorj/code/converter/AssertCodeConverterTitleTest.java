@@ -17,22 +17,21 @@ public class AssertCodeConverterTitleTest {
         when(mockTitle.getCombined()).thenReturn("comb");
         when(mockTitle.isSanitized()).thenReturn(true);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createTitleCode(sb, mockTitle);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockTitle);
     }
 
     // tag::generated-code[]
     public void checkAst(Title astTitle) {
-        Title t1 = astTitle;
-        assertThat(t1.getMain()).isEqualTo("main");
-        assertThat(t1.getSubtitle()).isEqualTo("subt");
-        assertThat(t1.getCombined()).isEqualTo("comb");
-        assertThat(t1.isSanitized()).isTrue();
+        Title title1 = astTitle;
+        assertThat(title1.getMain()).isEqualTo("main");
+        assertThat(title1.getSubtitle()).isEqualTo("subt");
+        assertThat(title1.getCombined()).isEqualTo("comb");
+        assertThat(title1.isSanitized()).isTrue();
     }
     // end::generated-code[]
 }

@@ -25,28 +25,27 @@ public class AssertCodeConverterContentNodeTest {
         when(mockContentNode.getRoles()).thenReturn(Collections.singletonList("some-role"));
         when(mockContentNode.isReftext()).thenReturn(false);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createContentNodeCode(sb, mockContentNode);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockContentNode);
     }
 
     // tag::generated-code[]
     public void checkAst(ContentNode astContentNode) {
-        ContentNode n1 = astContentNode;
-        assertThat(n1.getId()).isEqualTo("id");
-        assertThat(n1.getNodeName()).isEqualTo("node-name");
-        assertThat(n1.getParent()).isNull();
-        assertThat(n1.getContext()).isEqualTo("context");
-        assertThat(n1.getDocument()).isNull();
-        assertThat(n1.isInline()).isTrue();
-        assertThat(n1.isBlock()).isFalse();
-        assertThat(n1.getAttributes()).containsEntry("attr-key", "same-value");
-        assertThat(n1.getRoles()).containsExactly("some-role");
-        assertThat(n1.isReftext()).isFalse();
+        ContentNode contentNode1 = astContentNode;
+        assertThat(contentNode1.getId()).isEqualTo("id");
+        assertThat(contentNode1.getNodeName()).isEqualTo("node-name");
+        assertThat(contentNode1.getParent()).isNull();
+        assertThat(contentNode1.getContext()).isEqualTo("context");
+        assertThat(contentNode1.getDocument()).isNull();
+        assertThat(contentNode1.isInline()).isTrue();
+        assertThat(contentNode1.isBlock()).isFalse();
+        assertThat(contentNode1.getAttributes()).containsEntry("attr-key", "same-value");
+        assertThat(contentNode1.getRoles()).containsExactly("some-role");
+        assertThat(contentNode1.isReftext()).isFalse();
     }
     // end::generated-code[]
 }

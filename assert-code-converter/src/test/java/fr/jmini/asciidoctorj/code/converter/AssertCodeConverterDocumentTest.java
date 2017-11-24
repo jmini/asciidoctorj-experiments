@@ -18,37 +18,37 @@ public class AssertCodeConverterDocumentTest {
         when(mockDocument.getDoctitle()).thenReturn("this is a doc title");
         when(mockDocument.getOptions()).thenReturn(Collections.singletonMap("one", true));
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createDocumentCode(sb, mockDocument);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockDocument);
     }
 
     // tag::generated-code[]
     public void checkAst(Document astDocument) {
-        Document d1 = astDocument;
-        assertThat(d1.getId()).isNull();
-        assertThat(d1.getNodeName()).isNull();
-        assertThat(d1.getParent()).isNull();
-        assertThat(d1.getContext()).isNull();
-        assertThat(d1.getDocument()).isNull();
-        assertThat(d1.isInline()).isFalse();
-        assertThat(d1.isBlock()).isFalse();
-        assertThat(d1.getAttributes()).isEmpty();
-        assertThat(d1.getRoles()).isEmpty();
-        assertThat(d1.isReftext()).isFalse();
-        assertThat(d1.getTitle()).isNull();
-        assertThat(d1.getStyle()).isNull();
-        assertThat(d1.getLevel()).isEqualTo(0);
-        assertThat(d1.getSourceLocation()).isNull();
-        assertThat(d1.getSubstitutions()).isEmpty();
-        assertThat(d1.getBlocks()).isEmpty();
-        assertThat(d1.getStructuredDoctitle()).isNull();
-        assertThat(d1.getDoctitle()).isEqualTo("this is a doc title");
-        assertThat(d1.getOptions()).containsEntry("one", true);
+        Document document1 = astDocument;
+        assertThat(document1.getId()).isNull();
+        assertThat(document1.getNodeName()).isNull();
+        assertThat(document1.getParent()).isNull();
+        assertThat(document1.getContext()).isNull();
+        assertThat(document1.getDocument()).isNull();
+        assertThat(document1.isInline()).isFalse();
+        assertThat(document1.isBlock()).isFalse();
+        assertThat(document1.getAttributes()).isEmpty();
+        assertThat(document1.getRoles()).isEmpty();
+        assertThat(document1.isReftext()).isFalse();
+        assertThat(document1.getTitle()).isNull();
+        assertThat(document1.getStyle()).isNull();
+        assertThat(document1.getLevel()).isEqualTo(0);
+        assertThat(document1.getContentModel()).isNull();
+        assertThat(document1.getSourceLocation()).isNull();
+        assertThat(document1.getSubstitutions()).isEmpty();
+        assertThat(document1.getBlocks()).isEmpty();
+        assertThat(document1.getStructuredDoctitle()).isNull();
+        assertThat(document1.getDoctitle()).isEqualTo("this is a doc title");
+        assertThat(document1.getOptions()).containsEntry("one", true);
     }
     // end::generated-code[]
 }

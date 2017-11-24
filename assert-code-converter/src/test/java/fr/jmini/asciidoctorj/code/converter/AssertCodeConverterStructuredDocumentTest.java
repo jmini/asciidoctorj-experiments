@@ -17,20 +17,19 @@ public class AssertCodeConverterStructuredDocumentTest {
         when(mockStructuredDocument.getParts()).thenReturn(Collections.emptyList());
         when(mockStructuredDocument.getHeader()).thenReturn(null);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createStructuredDocumentCode(sb, mockStructuredDocument);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockStructuredDocument);
     }
 
     // tag::generated-code[]
     public void checkAst(StructuredDocument astStructuredDocument) {
-        StructuredDocument d1 = astStructuredDocument;
-        assertThat(d1.getParts()).isEmpty();
-        assertThat(d1.getHeader()).isNull();
+        StructuredDocument structuredDocument1 = astStructuredDocument;
+        assertThat(structuredDocument1.getParts()).isEmpty();
+        assertThat(structuredDocument1.getHeader()).isNull();
     }
     // end::generated-code[]
 }

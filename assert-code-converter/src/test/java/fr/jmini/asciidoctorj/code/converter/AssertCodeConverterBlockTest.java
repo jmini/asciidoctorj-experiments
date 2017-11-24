@@ -28,37 +28,37 @@ public class AssertCodeConverterBlockTest {
         when(mockBlock.getTitle()).thenReturn("some-title");
         when(mockBlock.getRoles()).thenReturn(Arrays.asList("r1", "r2"));
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createBlockCode(sb, mockBlock);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockBlock);
     }
 
     // tag::generated-code[]
     public void checkAst(Block astBlock) {
-        Block b1 = astBlock;
-        assertThat(b1.getId()).isEqualTo("block-id");
-        assertThat(b1.getNodeName()).isEqualTo("some-name");
-        assertThat(b1.getParent()).isNull();
-        assertThat(b1.getContext()).isNull();
-        assertThat(b1.getDocument()).isNull();
-        assertThat(b1.isInline()).isTrue();
-        assertThat(b1.isBlock()).isFalse();
-        assertThat(b1.getAttributes()).containsEntry("one", "lorem")
+        Block block1 = astBlock;
+        assertThat(block1.getId()).isEqualTo("block-id");
+        assertThat(block1.getNodeName()).isEqualTo("some-name");
+        assertThat(block1.getParent()).isNull();
+        assertThat(block1.getContext()).isNull();
+        assertThat(block1.getDocument()).isNull();
+        assertThat(block1.isInline()).isTrue();
+        assertThat(block1.isBlock()).isFalse();
+        assertThat(block1.getAttributes()).containsEntry("one", "lorem")
                 .containsEntry("two", "ipusm");
-        assertThat(b1.getRoles()).containsExactly("r1", "r2");
-        assertThat(b1.isReftext()).isFalse();
-        assertThat(b1.getTitle()).isEqualTo("some-title");
-        assertThat(b1.getStyle()).isNull();
-        assertThat(b1.getLevel()).isEqualTo(0);
-        assertThat(b1.getSourceLocation()).isNull();
-        assertThat(b1.getSubstitutions()).isEmpty();
-        assertThat(b1.getBlocks()).isEmpty();
-        assertThat(b1.getLines()).isEmpty();
-        assertThat(b1.getSource()).isNull();
+        assertThat(block1.getRoles()).containsExactly("r1", "r2");
+        assertThat(block1.isReftext()).isFalse();
+        assertThat(block1.getTitle()).isEqualTo("some-title");
+        assertThat(block1.getStyle()).isNull();
+        assertThat(block1.getLevel()).isEqualTo(0);
+        assertThat(block1.getContentModel()).isNull();
+        assertThat(block1.getSourceLocation()).isNull();
+        assertThat(block1.getSubstitutions()).isEmpty();
+        assertThat(block1.getBlocks()).isEmpty();
+        assertThat(block1.getLines()).isEmpty();
+        assertThat(block1.getSource()).isNull();
     }
     // end::generated-code[]
 }

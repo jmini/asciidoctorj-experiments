@@ -33,34 +33,34 @@ public class AssertCodeConverterStructuralNodeTest {
         when(mockStructuralNode.getSourceLocation()).thenReturn(null);
         when(mockStructuralNode.getSubstitutions()).thenReturn(Collections.emptyList());
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createStructuralNodeCode(sb, mockStructuralNode);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockStructuralNode);
     }
 
     // tag::generated-code[]
     public void checkAst(StructuralNode astStructuralNode) {
-        StructuralNode n1 = astStructuralNode;
-        assertThat(n1.getId()).isEqualTo("my-id");
-        assertThat(n1.getNodeName()).isNull();
-        assertThat(n1.getNodeName()).isNull();
-        assertThat(n1.getContext()).isEqualTo("context");
-        assertThat(n1.getDocument()).isNull();
-        assertThat(n1.isInline()).isTrue();
-        assertThat(n1.isBlock()).isFalse();
-        assertThat(n1.getAttributes()).isEmpty();
-        assertThat(n1.getRoles()).isEmpty();
-        assertThat(n1.isReftext()).isFalse();
-        assertThat(n1.getTitle()).isEqualTo("my-title");
-        assertThat(n1.getStyle()).isEqualTo("my-style");
-        assertThat(n1.getLevel()).isEqualTo(2);
-        assertThat(n1.getSourceLocation()).isNull();
-        assertThat(n1.getSubstitutions()).isEmpty();
-        assertThat(n1.getBlocks()).isEmpty();
+        StructuralNode structuralNode1 = astStructuralNode;
+        assertThat(structuralNode1.getId()).isEqualTo("my-id");
+        assertThat(structuralNode1.getNodeName()).isNull();
+        assertThat(structuralNode1.getParent()).isNull();
+        assertThat(structuralNode1.getContext()).isEqualTo("context");
+        assertThat(structuralNode1.getDocument()).isNull();
+        assertThat(structuralNode1.isInline()).isTrue();
+        assertThat(structuralNode1.isBlock()).isFalse();
+        assertThat(structuralNode1.getAttributes()).isEmpty();
+        assertThat(structuralNode1.getRoles()).isEmpty();
+        assertThat(structuralNode1.isReftext()).isFalse();
+        assertThat(structuralNode1.getTitle()).isEqualTo("my-title");
+        assertThat(structuralNode1.getStyle()).isEqualTo("my-style");
+        assertThat(structuralNode1.getLevel()).isEqualTo(2);
+        assertThat(structuralNode1.getContentModel()).isEqualTo("my-content-model");
+        assertThat(structuralNode1.getSourceLocation()).isNull();
+        assertThat(structuralNode1.getSubstitutions()).isEmpty();
+        assertThat(structuralNode1.getBlocks()).isEmpty();
     }
     // end::generated-code[]
 }

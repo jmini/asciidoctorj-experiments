@@ -22,41 +22,41 @@ public class AssertCodeConverterTableTest {
         when(mockTable.getFrame()).thenReturn("my-frame");
         when(mockTable.getGrid()).thenReturn("my-grid");
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createTableCode(sb, mockTable);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockTable);
     }
 
     // tag::generated-code[]
     public void checkAst(Table astTable) {
-        Table t1 = astTable;
-        assertThat(t1.getId()).isNull();
-        assertThat(t1.getNodeName()).isNull();
-        assertThat(t1.getParent()).isNull();
-        assertThat(t1.getContext()).isNull();
-        assertThat(t1.getDocument()).isNull();
-        assertThat(t1.isInline()).isFalse();
-        assertThat(t1.isBlock()).isFalse();
-        assertThat(t1.getAttributes()).isEmpty();
-        assertThat(t1.getRoles()).isEmpty();
-        assertThat(t1.isReftext()).isFalse();
-        assertThat(t1.getTitle()).isNull();
-        assertThat(t1.getStyle()).isNull();
-        assertThat(t1.getLevel()).isEqualTo(0);
-        assertThat(t1.getSourceLocation()).isNull();
-        assertThat(t1.getSubstitutions()).isEmpty();
-        assertThat(t1.getBlocks()).isEmpty();
-        assertThat(t1.hasHeaderOption()).isTrue();
-        assertThat(t1.getColumns()).isEmpty();
-        assertThat(t1.getHeader()).isEmpty();
-        assertThat(t1.getFooter()).isEmpty();
-        assertThat(t1.getBody()).isEmpty();
-        assertThat(t1.getFrame()).isEqualTo("my-frame");
-        assertThat(t1.getGrid()).isEqualTo("my-grid");
+        Table table1 = astTable;
+        assertThat(table1.getId()).isNull();
+        assertThat(table1.getNodeName()).isNull();
+        assertThat(table1.getParent()).isNull();
+        assertThat(table1.getContext()).isNull();
+        assertThat(table1.getDocument()).isNull();
+        assertThat(table1.isInline()).isFalse();
+        assertThat(table1.isBlock()).isFalse();
+        assertThat(table1.getAttributes()).isEmpty();
+        assertThat(table1.getRoles()).isEmpty();
+        assertThat(table1.isReftext()).isFalse();
+        assertThat(table1.getTitle()).isNull();
+        assertThat(table1.getStyle()).isNull();
+        assertThat(table1.getLevel()).isEqualTo(0);
+        assertThat(table1.getContentModel()).isNull();
+        assertThat(table1.getSourceLocation()).isNull();
+        assertThat(table1.getSubstitutions()).isEmpty();
+        assertThat(table1.getBlocks()).isEmpty();
+        assertThat(table1.hasHeaderOption()).isTrue();
+        assertThat(table1.getColumns()).isEmpty();
+        assertThat(table1.getHeader()).isEmpty();
+        assertThat(table1.getFooter()).isEmpty();
+        assertThat(table1.getBody()).isEmpty();
+        assertThat(table1.getFrame()).isEqualTo("my-frame");
+        assertThat(table1.getGrid()).isEqualTo("my-grid");
     }
     // end::generated-code[]
 }

@@ -19,24 +19,23 @@ public class AssertCodeConverterAuthorTest {
         when(mockAuthor.getMiddleName()).thenReturn(null);
         when(mockAuthor.getInitials()).thenReturn("DW");
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createAuthorCode(sb, mockAuthor);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockAuthor);
     }
 
     // tag::generated-code[]
     public void checkAst(Author astAuthor) {
-        Author a1 = astAuthor;
-        assertThat(a1.getEmail()).isEqualTo("doc.writer@asciidoc.org");
-        assertThat(a1.getFullName()).isEqualTo("Doc Writer");
-        assertThat(a1.getFirstName()).isEqualTo("Doc");
-        assertThat(a1.getLastName()).isEqualTo("Writer");
-        assertThat(a1.getMiddleName()).isNull();
-        assertThat(a1.getInitials()).isEqualTo("DW");
+        Author author1 = astAuthor;
+        assertThat(author1.getEmail()).isEqualTo("doc.writer@asciidoc.org");
+        assertThat(author1.getFullName()).isEqualTo("Doc Writer");
+        assertThat(author1.getFirstName()).isEqualTo("Doc");
+        assertThat(author1.getLastName()).isEqualTo("Writer");
+        assertThat(author1.getMiddleName()).isNull();
+        assertThat(author1.getInitials()).isEqualTo("DW");
     }
     // end::generated-code[]
 }

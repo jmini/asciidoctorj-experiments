@@ -17,38 +17,38 @@ public class AssertCodeConverterListItemTest {
         when(mockListItem.getSource()).thenReturn("s");
         when(mockListItem.hasText()).thenReturn(true);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createListItemCode(sb, mockListItem);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockListItem);
     }
 
     // tag::generated-code[]
     public void checkAst(ListItem astListItem) {
-        ListItem i1 = astListItem;
-        assertThat(i1.getId()).isNull();
-        assertThat(i1.getNodeName()).isNull();
-        assertThat(i1.getParent()).isNull();
-        assertThat(i1.getContext()).isNull();
-        assertThat(i1.getDocument()).isNull();
-        assertThat(i1.isInline()).isFalse();
-        assertThat(i1.isBlock()).isFalse();
-        assertThat(i1.getAttributes()).isEmpty();
-        assertThat(i1.getRoles()).isEmpty();
-        assertThat(i1.isReftext()).isFalse();
-        assertThat(i1.getTitle()).isNull();
-        assertThat(i1.getStyle()).isNull();
-        assertThat(i1.getLevel()).isEqualTo(0);
-        assertThat(i1.getSourceLocation()).isNull();
-        assertThat(i1.getSubstitutions()).isEmpty();
-        assertThat(i1.getBlocks()).isEmpty();
-        assertThat(i1.getMarker()).isEqualTo("m");
-        assertThat(i1.getText()).isEqualTo("t");
-        assertThat(i1.getSource()).isEqualTo("s");
-        assertThat(i1.hasText()).isTrue();
+        ListItem listItem1 = astListItem;
+        assertThat(listItem1.getId()).isNull();
+        assertThat(listItem1.getNodeName()).isNull();
+        assertThat(listItem1.getParent()).isNull();
+        assertThat(listItem1.getContext()).isNull();
+        assertThat(listItem1.getDocument()).isNull();
+        assertThat(listItem1.isInline()).isFalse();
+        assertThat(listItem1.isBlock()).isFalse();
+        assertThat(listItem1.getAttributes()).isEmpty();
+        assertThat(listItem1.getRoles()).isEmpty();
+        assertThat(listItem1.isReftext()).isFalse();
+        assertThat(listItem1.getTitle()).isNull();
+        assertThat(listItem1.getStyle()).isNull();
+        assertThat(listItem1.getLevel()).isEqualTo(0);
+        assertThat(listItem1.getContentModel()).isNull();
+        assertThat(listItem1.getSourceLocation()).isNull();
+        assertThat(listItem1.getSubstitutions()).isEmpty();
+        assertThat(listItem1.getBlocks()).isEmpty();
+        assertThat(listItem1.getMarker()).isEqualTo("m");
+        assertThat(listItem1.getText()).isEqualTo("t");
+        assertThat(listItem1.getSource()).isEqualTo("s");
+        assertThat(listItem1.hasText()).isTrue();
     }
     // end::generated-code[]
 }

@@ -26,25 +26,24 @@ public class AssertCodeConverterDocumentHeaderTest {
                 .build();
         when(mockDocumentHeader.getAttributes()).thenReturn(attributes);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createDocumentHeaderCode(sb, mockDocumentHeader);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockDocumentHeader);
     }
 
     // tag::generated-code[]
     public void checkAst(DocumentHeader astDocumentHeader) {
-        DocumentHeader h1 = astDocumentHeader;
-        assertThat(h1.getAuthors()).isNull();
-        assertThat(h1.getDocumentTitle()).isNull();
-        assertThat(h1.getPageTitle()).isNull();
-        assertThat(h1.getAuthor()).isNull();
-        assertThat(h1.getRevisionInfo()).isNull();
-        assertThat(h1.getPageTitle()).isNull();
-        assertThat(h1.getAttributes()).containsEntry("one", 1)
+        DocumentHeader documentHeader1 = astDocumentHeader;
+        assertThat(documentHeader1.getAuthors()).isNull();
+        assertThat(documentHeader1.getDocumentTitle()).isNull();
+        assertThat(documentHeader1.getPageTitle()).isNull();
+        assertThat(documentHeader1.getAuthor()).isNull();
+        assertThat(documentHeader1.getRevisionInfo()).isNull();
+        assertThat(documentHeader1.getPageTitle()).isNull();
+        assertThat(documentHeader1.getAttributes()).containsEntry("one", 1)
                 .containsEntry("two", 2)
                 .containsEntry("three", 3);
     }

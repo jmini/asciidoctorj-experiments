@@ -26,36 +26,36 @@ public class AssertCodeConverterCellTest {
         when(mockCell.getVerticalAlignment()).thenReturn(VerticalAlignment.BOTTOM);
         when(mockCell.getInnerDocument()).thenReturn(null);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createCellCode(sb, mockCell);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockCell);
     }
 
     // tag::generated-code[]
     public void checkAst(Cell astCell) {
-        Cell c1 = astCell;
-        assertThat(c1.getId()).isNull();
-        assertThat(c1.getNodeName()).isNull();
-        assertThat(c1.getParent()).isNull();
-        assertThat(c1.getContext()).isNull();
-        assertThat(c1.getDocument()).isNull();
-        assertThat(c1.isInline()).isFalse();
-        assertThat(c1.isBlock()).isFalse();
-        assertThat(c1.getAttributes()).isEmpty();
-        assertThat(c1.getRoles()).isEmpty();
-        assertThat(c1.isReftext()).isFalse();
-        assertThat(c1.getColumn()).isNull();
-        assertThat(c1.getColspan()).isEqualTo(1);
-        assertThat(c1.getRowspan()).isEqualTo(2);
-        assertThat(c1.getSource()).isEqualTo("src");
-        assertThat(c1.getStyle()).isEqualTo("stl");
-        assertThat(c1.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
-        assertThat(c1.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.BOTTOM);
-        assertThat(c1.getInnerDocument()).isNull();
+        Cell cell1 = astCell;
+        assertThat(cell1.getId()).isNull();
+        assertThat(cell1.getNodeName()).isNull();
+        assertThat(cell1.getParent()).isNull();
+        assertThat(cell1.getContext()).isNull();
+        assertThat(cell1.getDocument()).isNull();
+        assertThat(cell1.isInline()).isFalse();
+        assertThat(cell1.isBlock()).isFalse();
+        assertThat(cell1.getAttributes()).isEmpty();
+        assertThat(cell1.getRoles()).isEmpty();
+        assertThat(cell1.isReftext()).isFalse();
+        assertThat(cell1.getColumn()).isNull();
+        assertThat(cell1.getColspan()).isEqualTo(1);
+        assertThat(cell1.getRowspan()).isEqualTo(2);
+        assertThat(cell1.getText()).isEqualTo("txt");
+        assertThat(cell1.getSource()).isEqualTo("src");
+        assertThat(cell1.getStyle()).isEqualTo("stl");
+        assertThat(cell1.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
+        assertThat(cell1.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.BOTTOM);
+        assertThat(cell1.getInnerDocument()).isNull();
     }
     // end::generated-code[]
 }

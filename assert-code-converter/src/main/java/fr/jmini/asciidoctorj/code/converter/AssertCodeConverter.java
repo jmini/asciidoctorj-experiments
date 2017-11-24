@@ -484,72 +484,12 @@ public class AssertCodeConverter extends AbstractConverter<String> {
     }
 
     private static String computeClassKey(String astClass) {
-        if (Author.class.getSimpleName()
+        if (org.asciidoctor.ast.List.class.getCanonicalName()
                 .equals(astClass)) {
-            return "a";
-        } else if (Block.class.getSimpleName()
-                .equals(astClass)) {
-            return "b";
-        } else if (Cell.class.getSimpleName()
-                .equals(astClass)) {
-            return "c";
-        } else if (Column.class.getSimpleName()
-                .equals(astClass)) {
-            return "c";
-        } else if (ContentNode.class.getSimpleName()
-                .equals(astClass)) {
-            return "n";
-        } else if (ContentPart.class.getSimpleName()
-                .equals(astClass)) {
-            return "p";
-        } else if (Cursor.class.getSimpleName()
-                .equals(astClass)) {
-            return "c";
-        } else if (DescriptionList.class.getSimpleName()
-                .equals(astClass)) {
-            return "l";
-        } else if (DescriptionListEntry.class.getSimpleName()
-                .equals(astClass)) {
-            return "e";
-        } else if (Document.class.getSimpleName()
-                .equals(astClass)) {
-            return "d";
-        } else if (DocumentHeader.class.getSimpleName()
-                .equals(astClass)) {
-            return "h";
-        } else if (org.asciidoctor.ast.List.class.getSimpleName()
-                .equals(astClass)) {
-            return "l";
-        } else if (ListItem.class.getSimpleName()
-                .equals(astClass)) {
-            return "i";
-        } else if (PhraseNode.class.getSimpleName()
-                .equals(astClass)) {
-            return "n";
-        } else if (RevisionInfo.class.getSimpleName()
-                .equals(astClass)) {
-            return "r";
-        } else if (Row.class.getSimpleName()
-                .equals(astClass)) {
-            return "r";
-        } else if (Section.class.getSimpleName()
-                .equals(astClass)) {
-            return "s";
-        } else if (StructuralNode.class.getSimpleName()
-                .equals(astClass)) {
-            return "n";
-        } else if (StructuredDocument.class.getSimpleName()
-                .equals(astClass)) {
-            return "d";
-        } else if (Table.class.getSimpleName()
-                .equals(astClass)) {
-            return "t";
-        } else if (Title.class.getSimpleName()
-                .equals(astClass)) {
-            return "t";
-        } else {
-            throw new IllegalArgumentException("");
+            return "list";
         }
+        return astClass.substring(0, 1)
+                .toLowerCase() + astClass.substring(1);
     }
 
     private static String computeType(Object object) {
@@ -624,7 +564,7 @@ public class AssertCodeConverter extends AbstractConverter<String> {
             int i = 0;
             for (Object item : value) {
                 String itemClass = computeType(item);
-                String itemVarName = createVariableForExpression(sb, getterExpression + " .get(" + i + ")", item, itemClass);
+                String itemVarName = createVariableForExpression(sb, getterExpression + ".get(" + i + ")", item, itemClass);
                 appendObject(sb, itemVarName, item);
                 i = i + 1;
             }

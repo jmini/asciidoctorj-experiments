@@ -20,34 +20,33 @@ public class AssertCodeConverterColumnTest {
         when(mockColumn.getHorizontalAlignment()).thenReturn(Table.HorizontalAlignment.CENTER);
         when(mockColumn.getVerticalAlignment()).thenReturn(Table.VerticalAlignment.MIDDLE);
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createColumnCode(sb, mockColumn);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockColumn);
     }
 
     // tag::generated-code[]
     public void checkAst(Column astColumn) {
-        Column c1 = astColumn;
-        assertThat(c1.getId()).isNull();
-        assertThat(c1.getNodeName()).isNull();
-        assertThat(c1.getParent()).isNull();
-        assertThat(c1.getContext()).isNull();
-        assertThat(c1.getDocument()).isNull();
-        assertThat(c1.isInline()).isFalse();
-        assertThat(c1.isBlock()).isFalse();
-        assertThat(c1.getAttributes()).isEmpty();
-        assertThat(c1.getRoles()).isEmpty();
-        assertThat(c1.isReftext()).isFalse();
-        assertThat(c1.getStyle()).isEqualTo("STYLE");
-        assertThat(c1.getTable()).isNull();
-        assertThat(c1.getColumnNumber()).isEqualTo(2);
-        assertThat(c1.getWidth()).isEqualTo(550);
-        assertThat(c1.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.CENTER);
-        assertThat(c1.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.MIDDLE);
+        Column column1 = astColumn;
+        assertThat(column1.getId()).isNull();
+        assertThat(column1.getNodeName()).isNull();
+        assertThat(column1.getParent()).isNull();
+        assertThat(column1.getContext()).isNull();
+        assertThat(column1.getDocument()).isNull();
+        assertThat(column1.isInline()).isFalse();
+        assertThat(column1.isBlock()).isFalse();
+        assertThat(column1.getAttributes()).isEmpty();
+        assertThat(column1.getRoles()).isEmpty();
+        assertThat(column1.isReftext()).isFalse();
+        assertThat(column1.getStyle()).isEqualTo("STYLE");
+        assertThat(column1.getTable()).isNull();
+        assertThat(column1.getColumnNumber()).isEqualTo(2);
+        assertThat(column1.getWidth()).isEqualTo(550);
+        assertThat(column1.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.CENTER);
+        assertThat(column1.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.MIDDLE);
     }
     // end::generated-code[]
 }

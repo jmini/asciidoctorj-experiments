@@ -16,21 +16,20 @@ public class AssertCodeConverterRevisionInfoTest {
         when(mockRevisionInfo.getNumber()).thenReturn("3");
         when(mockRevisionInfo.getRemark()).thenReturn("rem");
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createRevisionInfoCode(sb, mockRevisionInfo);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockRevisionInfo);
     }
 
     // tag::generated-code[]
     public void checkAst(RevisionInfo astRevisionInfo) {
-        RevisionInfo r1 = astRevisionInfo;
-        assertThat(r1.getDate()).isEqualTo("2018-01-01");
-        assertThat(r1.getNumber()).isEqualTo("3");
-        assertThat(r1.getRemark()).isEqualTo("rem");
+        RevisionInfo revisionInfo1 = astRevisionInfo;
+        assertThat(revisionInfo1.getDate()).isEqualTo("2018-01-01");
+        assertThat(revisionInfo1.getNumber()).isEqualTo("3");
+        assertThat(revisionInfo1.getRemark()).isEqualTo("rem");
     }
     // end::generated-code[]
 }

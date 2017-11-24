@@ -17,22 +17,21 @@ public class AssertCodeConverterCursorTest {
         when(mockCursor.getDir()).thenReturn("dir");
         when(mockCursor.getFile()).thenReturn("file.txt");
 
-        // TODO replace System.out.println with a check:
         AssertCodeConverter converter = new AssertCodeConverter(null, null);
         StringBuilder sb = new StringBuilder();
         converter.createCursorCode(sb, mockCursor);
-        System.out.println(sb);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
 
         checkAst(mockCursor);
     }
 
     // tag::generated-code[]
     public void checkAst(Cursor astCursor) {
-        Cursor c1 = astCursor;
-        assertThat(c1.getLineNumber()).isEqualTo(234);
-        assertThat(c1.getPath()).isEqualTo("path");
-        assertThat(c1.getDir()).isEqualTo("dir");
-        assertThat(c1.getFile()).isEqualTo("file.txt");
+        Cursor cursor1 = astCursor;
+        assertThat(cursor1.getLineNumber()).isEqualTo(234);
+        assertThat(cursor1.getPath()).isEqualTo("path");
+        assertThat(cursor1.getDir()).isEqualTo("dir");
+        assertThat(cursor1.getFile()).isEqualTo("file.txt");
     }
     // end::generated-code[]
 }
