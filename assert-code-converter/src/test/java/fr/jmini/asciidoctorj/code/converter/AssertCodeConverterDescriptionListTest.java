@@ -29,7 +29,6 @@ public class AssertCodeConverterDescriptionListTest {
         DescriptionList descriptionList1 = astDescriptionList;
         assertThat(descriptionList1.getId()).isNull();
         assertThat(descriptionList1.getNodeName()).isNull();
-        assertThat(descriptionList1.getParent()).isNull();
         assertThat(descriptionList1.getContext()).isNull();
         assertThat(descriptionList1.getDocument()).isNull();
         assertThat(descriptionList1.isInline()).isFalse();

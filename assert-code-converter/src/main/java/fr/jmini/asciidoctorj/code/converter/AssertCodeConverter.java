@@ -277,7 +277,10 @@ public class AssertCodeConverter extends AbstractConverter<String> {
     void appendContentNode(StringBuilder sb, String varName, ContentNode contentNode) {
         sb.append("assertThat(" + varName + ".getId())." + equalsToExpressionString(contentNode.getId()) + ";" + NL);
         sb.append("assertThat(" + varName + ".getNodeName())." + equalsToExpressionString(contentNode.getNodeName()) + ";" + NL);
-        appendEqualsToExpressionObject(sb, varName + ".getParent()", contentNode.getParent());
+        // getParent() can not be called on the root element, see https://github.com/asciidoctor/asciidoctorj/issues/593
+        if (!(contentNode instanceof StructuralNode) || ((StructuralNode) contentNode).getLevel() > 0) {
+            appendEqualsToExpressionObject(sb, varName + ".getParent()", contentNode.getParent());
+        }
         sb.append("assertThat(" + varName + ".getContext())." + equalsToExpressionString(contentNode.getContext()) + ";" + NL);
         appendEqualsToExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
         sb.append("assertThat(" + varName + ".isInline())." + equalsToExpressionBoolean(contentNode.isInline()) + ";" + NL);

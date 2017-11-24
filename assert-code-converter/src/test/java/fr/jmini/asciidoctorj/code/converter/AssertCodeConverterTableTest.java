@@ -35,7 +35,6 @@ public class AssertCodeConverterTableTest {
         Table table1 = astTable;
         assertThat(table1.getId()).isNull();
         assertThat(table1.getNodeName()).isNull();
-        assertThat(table1.getParent()).isNull();
         assertThat(table1.getContext()).isNull();
         assertThat(table1.getDocument()).isNull();
         assertThat(table1.isInline()).isFalse();
