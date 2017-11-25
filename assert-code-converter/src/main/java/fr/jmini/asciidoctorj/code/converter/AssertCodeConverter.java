@@ -63,30 +63,30 @@ public class AssertCodeConverter extends AbstractConverter<String> {
     }
 
     String createAuthorCode(StringBuilder sb, Author aAuthor) {
-        String varName = createCheckMethod(sb, aAuthor, Author.class);
+        String varName = startMethod(sb, aAuthor, Author.class);
         appendAuthor(sb, varName, aAuthor);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createBlockCode(StringBuilder sb, Block aBlock) {
-        String varName = createCheckMethod(sb, aBlock, Block.class);
+        String varName = startMethod(sb, aBlock, Block.class);
         appendBlock(sb, varName, aBlock);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createCellCode(StringBuilder sb, Cell aCell) {
-        String varName = createCheckMethod(sb, aCell, Cell.class);
+        String varName = startMethod(sb, aCell, Cell.class);
         appendCell(sb, varName, aCell);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createColumnCode(StringBuilder sb, Column aColumn) {
-        String varName = createCheckMethod(sb, aColumn, Column.class);
+        String varName = startMethod(sb, aColumn, Column.class);
         appendColumn(sb, varName, aColumn);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
@@ -100,94 +100,94 @@ public class AssertCodeConverter extends AbstractConverter<String> {
         } else if (contentNode instanceof StructuralNode) {
             return createStructuralNodeCode(sb, (StructuralNode) contentNode);
         } else {
-            String varName = createCheckMethod(sb, contentNode, ContentNode.class);
+            String varName = startMethod(sb, contentNode, ContentNode.class);
             appendContentNode(sb, varName, contentNode);
-            sb.append("}");
+            endMethod(sb);
             return varName;
         }
     }
 
     String createContentPartCode(StringBuilder sb, ContentPart aContentPart) {
-        String varName = createCheckMethod(sb, aContentPart, ContentPart.class);
+        String varName = startMethod(sb, aContentPart, ContentPart.class);
         appendContentPart(sb, varName, aContentPart);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createCursorCode(StringBuilder sb, Cursor aCursor) {
-        String varName = createCheckMethod(sb, aCursor, Cursor.class);
+        String varName = startMethod(sb, aCursor, Cursor.class);
         appendCursor(sb, varName, aCursor);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createDescriptionListCode(StringBuilder sb, DescriptionList aDescriptionList) {
-        String varName = createCheckMethod(sb, aDescriptionList, DescriptionList.class);
+        String varName = startMethod(sb, aDescriptionList, DescriptionList.class);
         appendDescriptionList(sb, varName, aDescriptionList);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createDescriptionListEntryCode(StringBuilder sb, DescriptionListEntry aDescriptionListEntry) {
-        String varName = createCheckMethod(sb, aDescriptionListEntry, DescriptionListEntry.class);
+        String varName = startMethod(sb, aDescriptionListEntry, DescriptionListEntry.class);
         appendDescriptionListEntry(sb, varName, aDescriptionListEntry);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createDocumentCode(StringBuilder sb, Document aDocument) {
-        String varName = createCheckMethod(sb, aDocument, Document.class);
+        String varName = startMethod(sb, aDocument, Document.class);
         appendDocument(sb, varName, aDocument);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createDocumentHeaderCode(StringBuilder sb, DocumentHeader aDocumentHeader) {
-        String varName = createCheckMethod(sb, aDocumentHeader, DocumentHeader.class);
+        String varName = startMethod(sb, aDocumentHeader, DocumentHeader.class);
         appendDocumentHeader(sb, varName, aDocumentHeader);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createListCode(StringBuilder sb, org.asciidoctor.ast.List aList) {
-        String varName = createCheckMethod(sb, aList, org.asciidoctor.ast.List.class);
+        String varName = startMethod(sb, aList, org.asciidoctor.ast.List.class);
         appendList(sb, varName, aList);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createListItemCode(StringBuilder sb, ListItem aListItem) {
-        String varName = createCheckMethod(sb, aListItem, ListItem.class);
+        String varName = startMethod(sb, aListItem, ListItem.class);
         appendListItem(sb, varName, aListItem);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createPhraseNodeCode(StringBuilder sb, PhraseNode aPhraseNode) {
-        String varName = createCheckMethod(sb, aPhraseNode, PhraseNode.class);
+        String varName = startMethod(sb, aPhraseNode, PhraseNode.class);
         appendPhraseNode(sb, varName, aPhraseNode);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createRevisionInfoCode(StringBuilder sb, RevisionInfo aRevisionInfo) {
-        String varName = createCheckMethod(sb, aRevisionInfo, RevisionInfo.class);
+        String varName = startMethod(sb, aRevisionInfo, RevisionInfo.class);
         appendRevisionInfo(sb, varName, aRevisionInfo);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createRowCode(StringBuilder sb, Row aRow) {
-        String varName = createCheckMethod(sb, aRow, Row.class);
+        String varName = startMethod(sb, aRow, Row.class);
         appendRow(sb, varName, aRow);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createSectionCode(StringBuilder sb, Section aSection) {
-        String varName = createCheckMethod(sb, aSection, Section.class);
+        String varName = startMethod(sb, aSection, Section.class);
         appendSection(sb, varName, aSection);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
@@ -207,105 +207,105 @@ public class AssertCodeConverter extends AbstractConverter<String> {
         } else if (structuralNode instanceof Table) {
             return createTableCode(sb, (Table) structuralNode);
         } else {
-            String varName = createCheckMethod(sb, structuralNode, StructuralNode.class);
+            String varName = startMethod(sb, structuralNode, StructuralNode.class);
             appendStructuralNode(sb, varName, structuralNode);
-            sb.append("}");
+            endMethod(sb);
             return varName;
         }
     }
 
     String createStructuredDocumentCode(StringBuilder sb, StructuredDocument aStructuredDocument) {
-        String varName = createCheckMethod(sb, aStructuredDocument, StructuredDocument.class);
+        String varName = startMethod(sb, aStructuredDocument, StructuredDocument.class);
         appendStructuredDocument(sb, varName, aStructuredDocument);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createTableCode(StringBuilder sb, Table aTable) {
-        String varName = createCheckMethod(sb, aTable, Table.class);
+        String varName = startMethod(sb, aTable, Table.class);
         appendTable(sb, varName, aTable);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     String createTitleCode(StringBuilder sb, Title aTitle) {
-        String varName = createCheckMethod(sb, aTitle, Title.class);
+        String varName = startMethod(sb, aTitle, Title.class);
         appendTitle(sb, varName, aTitle);
-        sb.append("}");
+        endMethod(sb);
         return varName;
     }
 
     void appendAuthor(StringBuilder sb, String varName, Author author) {
-        sb.append("assertThat(" + varName + ".getEmail())." + equalsToExpressionString(author.getEmail()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getFullName())." + equalsToExpressionString(author.getFullName()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getFirstName())." + equalsToExpressionString(author.getFirstName()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getLastName())." + equalsToExpressionString(author.getLastName()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getMiddleName())." + equalsToExpressionString(author.getMiddleName()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getInitials())." + equalsToExpressionString(author.getInitials()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getEmail()", author.getEmail());
+        appendEqualsToExpressionString(sb, varName + ".getFullName()", author.getFullName());
+        appendEqualsToExpressionString(sb, varName + ".getFirstName()", author.getFirstName());
+        appendEqualsToExpressionString(sb, varName + ".getLastName()", author.getLastName());
+        appendEqualsToExpressionString(sb, varName + ".getMiddleName()", author.getMiddleName());
+        appendEqualsToExpressionString(sb, varName + ".getInitials()", author.getInitials());
     }
 
     void appendBlock(StringBuilder sb, String varName, Block block) {
         appendStructuralNode(sb, varName, block);
-        sb.append("assertThat(" + varName + ".getLines())." + equalsToExpressionStringList(block.getLines()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getSource())." + equalsToExpressionString(block.getSource()) + ";" + NL);
+        appendEqualsToExpressionStringList(sb, varName + ".getLines()", block.getLines());
+        appendEqualsToExpressionString(sb, varName + ".getSource()", block.getSource());
     }
 
     void appendCell(StringBuilder sb, String varName, Cell cell) {
         appendContentNode(sb, varName, cell);
         appendEqualsToExpressionObject(sb, varName + ".getColumn()", cell.getColumn());
-        sb.append("assertThat(" + varName + ".getColspan())." + equalsToExpressionInt(cell.getColspan()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getRowspan())." + equalsToExpressionInt(cell.getRowspan()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getText())." + equalsToExpressionString(cell.getText()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getSource())." + equalsToExpressionString(cell.getSource()) + ";" + NL);
-        // sb.append("assertThat(" + varName + ".getContent())." + equalsToExpressionString(cell.getContent()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getStyle())." + equalsToExpressionString(cell.getStyle()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getHorizontalAlignment())." + equalsToExpressionHorizontalAlignment(cell.getHorizontalAlignment()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getVerticalAlignment())." + equalsToExpressionVerticalAlignment(cell.getVerticalAlignment()) + ";" + NL);
+        appendEqualsToExpressionInt(sb, varName + ".getColspan()", cell.getColspan());
+        appendEqualsToExpressionInt(sb, varName + ".getRowspan()", cell.getRowspan());
+        appendEqualsToExpressionString(sb, varName + ".getText()", cell.getText());
+        appendEqualsToExpressionString(sb, varName + ".getSource()", cell.getSource());
+        // appendEqualsToExpressionString(sb, varName + ".getContent()", cell.getContent());
+        appendEqualsToExpressionString(sb, varName + ".getStyle()", cell.getStyle());
+        appendEqualsToExpressionHorizontalAlignment(sb, varName + ".getHorizontalAlignment()", cell.getHorizontalAlignment());
+        appendEqualsToExpressionVerticalAlignment(sb, varName + ".getVerticalAlignment()", cell.getVerticalAlignment());
         appendEqualsToExpressionObject(sb, varName + ".getInnerDocument()", cell.getInnerDocument());
     }
 
     void appendColumn(StringBuilder sb, String varName, Column column) {
         appendContentNode(sb, varName, column);
-        sb.append("assertThat(" + varName + ".getStyle())." + equalsToExpressionString(column.getStyle()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getStyle()", column.getStyle());
         appendEqualsToExpressionObject(sb, varName + ".getTable()", column.getTable());
-        sb.append("assertThat(" + varName + ".getColumnNumber())." + equalsToExpressionInt(column.getColumnNumber()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getWidth())." + equalsToExpressionInt(column.getWidth()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getHorizontalAlignment())." + equalsToExpressionHorizontalAlignment(column.getHorizontalAlignment()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getVerticalAlignment())." + equalsToExpressionVerticalAlignment(column.getVerticalAlignment()) + ";" + NL);
+        appendEqualsToExpressionInt(sb, varName + ".getColumnNumber()", column.getColumnNumber());
+        appendEqualsToExpressionInt(sb, varName + ".getWidth()", column.getWidth());
+        appendEqualsToExpressionHorizontalAlignment(sb, varName + ".getHorizontalAlignment()", column.getHorizontalAlignment());
+        appendEqualsToExpressionVerticalAlignment(sb, varName + ".getVerticalAlignment()", column.getVerticalAlignment());
     }
 
     void appendContentNode(StringBuilder sb, String varName, ContentNode contentNode) {
-        sb.append("assertThat(" + varName + ".getId())." + equalsToExpressionString(contentNode.getId()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getNodeName())." + equalsToExpressionString(contentNode.getNodeName()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getId()", contentNode.getId());
+        appendEqualsToExpressionString(sb, varName + ".getNodeName()", contentNode.getNodeName());
         // getParent() can not be called on the root element, see https://github.com/asciidoctor/asciidoctorj/issues/593
         if (!(contentNode instanceof StructuralNode) || ((StructuralNode) contentNode).getLevel() > 0) {
             appendEqualsToExpressionObject(sb, varName + ".getParent()", contentNode.getParent());
         }
-        sb.append("assertThat(" + varName + ".getContext())." + equalsToExpressionString(contentNode.getContext()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getContext()", contentNode.getContext());
         appendEqualsToExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
-        sb.append("assertThat(" + varName + ".isInline())." + equalsToExpressionBoolean(contentNode.isInline()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".isBlock())." + equalsToExpressionBoolean(contentNode.isBlock()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getAttributes())." + equalsToExpressionMap(contentNode.getAttributes()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getRoles())." + equalsToExpressionStringList(contentNode.getRoles()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".isReftext())." + equalsToExpressionBoolean(contentNode.isReftext()) + ";" + NL);
+        appendEqualsToExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
+        appendEqualsToExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
+        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes());
+        appendEqualsToExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
+        appendEqualsToExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());
     }
 
     void appendContentPart(StringBuilder sb, String varName, ContentPart contentPart) {
-        sb.append("assertThat(" + varName + ".getId())." + equalsToExpressionString(contentPart.getId()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getLevel())." + equalsToExpressionInt(contentPart.getLevel()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getContext())." + equalsToExpressionString(contentPart.getContext()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getStyle())." + equalsToExpressionString(contentPart.getStyle()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getRole())." + equalsToExpressionString(contentPart.getRole()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getTitle())." + equalsToExpressionString(contentPart.getTitle()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getAttributes())." + equalsToExpressionMap(contentPart.getAttributes()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getId()", contentPart.getId());
+        appendEqualsToExpressionInt(sb, varName + ".getLevel()", contentPart.getLevel());
+        appendEqualsToExpressionString(sb, varName + ".getContext()", contentPart.getContext());
+        appendEqualsToExpressionString(sb, varName + ".getStyle()", contentPart.getStyle());
+        appendEqualsToExpressionString(sb, varName + ".getRole()", contentPart.getRole());
+        appendEqualsToExpressionString(sb, varName + ".getTitle()", contentPart.getTitle());
+        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentPart.getAttributes());
         appendEqualsToExpressionObjectList(sb, varName + ".getParts()", contentPart.getParts());
     }
 
     void appendCursor(StringBuilder sb, String varName, Cursor cursor) {
-        sb.append("assertThat(" + varName + ".getLineNumber())." + equalsToExpressionInt(cursor.getLineNumber()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getPath())." + equalsToExpressionString(cursor.getPath()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getDir())." + equalsToExpressionString(cursor.getDir()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getFile())." + equalsToExpressionString(cursor.getFile()) + ";" + NL);
+        appendEqualsToExpressionInt(sb, varName + ".getLineNumber()", cursor.getLineNumber());
+        appendEqualsToExpressionString(sb, varName + ".getPath()", cursor.getPath());
+        appendEqualsToExpressionString(sb, varName + ".getDir()", cursor.getDir());
+        appendEqualsToExpressionString(sb, varName + ".getFile()", cursor.getFile());
     }
 
     void appendDescriptionList(StringBuilder sb, String varName, DescriptionList descriptionList) {
@@ -321,45 +321,45 @@ public class AssertCodeConverter extends AbstractConverter<String> {
     void appendDocument(StringBuilder sb, String varName, Document document) {
         appendStructuralNode(sb, varName, document);
         appendEqualsToExpressionObject(sb, varName + ".getStructuredDoctitle()", document.getStructuredDoctitle());
-        sb.append("assertThat(" + varName + ".getDoctitle())." + equalsToExpressionString(document.getDoctitle()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getOptions())." + equalsToExpressionMap(document.getOptions()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getDoctitle()", document.getDoctitle());
+        appendEqualsToExpressionMap(sb, varName + ".getOptions()", document.getOptions());
     }
 
     void appendDocumentHeader(StringBuilder sb, String varName, DocumentHeader documentHeader) {
         appendEqualsToExpressionObjectList(sb, varName + ".getAuthors()", documentHeader.getAuthors());
         appendEqualsToExpressionObject(sb, varName + ".getDocumentTitle()", documentHeader.getDocumentTitle());
-        sb.append("assertThat(" + varName + ".getPageTitle())." + equalsToExpressionString(documentHeader.getPageTitle()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getPageTitle()", documentHeader.getPageTitle());
         appendEqualsToExpressionObject(sb, varName + ".getAuthor()", documentHeader.getAuthor());
         appendEqualsToExpressionObject(sb, varName + ".getRevisionInfo()", documentHeader.getRevisionInfo());
-        sb.append("assertThat(" + varName + ".getPageTitle())." + equalsToExpressionString(documentHeader.getPageTitle()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getAttributes())." + equalsToExpressionMap(documentHeader.getAttributes()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getPageTitle()", documentHeader.getPageTitle());
+        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", documentHeader.getAttributes());
     }
 
     void appendList(StringBuilder sb, String varName, org.asciidoctor.ast.List list) {
         appendStructuralNode(sb, varName, list);
         appendEqualsToExpressionObjectList(sb, varName + ".getItems()", list.getItems());
-        sb.append("assertThat(" + varName + ".hasItems())." + equalsToExpressionBoolean(list.hasItems()) + ";" + NL);
+        appendEqualsToExpressionBoolean(sb, varName + ".hasItems()", list.hasItems());
     }
 
     void appendListItem(StringBuilder sb, String varName, ListItem listItem) {
         appendStructuralNode(sb, varName, listItem);
-        sb.append("assertThat(" + varName + ".getMarker())." + equalsToExpressionString(listItem.getMarker()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getText())." + equalsToExpressionString(listItem.getText()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getSource())." + equalsToExpressionString(listItem.getSource()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".hasText())." + equalsToExpressionBoolean(listItem.hasText()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getMarker()", listItem.getMarker());
+        appendEqualsToExpressionString(sb, varName + ".getText()", listItem.getText());
+        appendEqualsToExpressionString(sb, varName + ".getSource()", listItem.getSource());
+        appendEqualsToExpressionBoolean(sb, varName + ".hasText()", listItem.hasText());
     }
 
     void appendPhraseNode(StringBuilder sb, String varName, PhraseNode phraseNode) {
         appendContentNode(sb, varName, phraseNode);
-        sb.append("assertThat(" + varName + ".getType())." + equalsToExpressionString(phraseNode.getType()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getText())." + equalsToExpressionString(phraseNode.getText()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getTarget())." + equalsToExpressionString(phraseNode.getTarget()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getType()", phraseNode.getType());
+        appendEqualsToExpressionString(sb, varName + ".getText()", phraseNode.getText());
+        appendEqualsToExpressionString(sb, varName + ".getTarget()", phraseNode.getTarget());
     }
 
     void appendRevisionInfo(StringBuilder sb, String varName, RevisionInfo revisionInfo) {
-        sb.append("assertThat(" + varName + ".getDate())." + equalsToExpressionString(revisionInfo.getDate()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getNumber())." + equalsToExpressionString(revisionInfo.getNumber()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getRemark())." + equalsToExpressionString(revisionInfo.getRemark()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getDate()", revisionInfo.getDate());
+        appendEqualsToExpressionString(sb, varName + ".getNumber()", revisionInfo.getNumber());
+        appendEqualsToExpressionString(sb, varName + ".getRemark()", revisionInfo.getRemark());
     }
 
     void appendRow(StringBuilder sb, String varName, Row row) {
@@ -368,23 +368,23 @@ public class AssertCodeConverter extends AbstractConverter<String> {
 
     void appendSection(StringBuilder sb, String varName, Section section) {
         appendStructuralNode(sb, varName, section);
-        sb.append("assertThat(" + varName + ".getIndex())." + equalsToExpressionInt(section.getIndex()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getNumber())." + equalsToExpressionInt(section.getNumber()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getSectionName())." + equalsToExpressionString(section.getSectionName()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".isSpecial())." + equalsToExpressionBoolean(section.isSpecial()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".isNumbered())." + equalsToExpressionBoolean(section.isNumbered()) + ";" + NL);
+        appendEqualsToExpressionInt(sb, varName + ".getIndex()", section.getIndex());
+        appendEqualsToExpressionInt(sb, varName + ".getNumber()", section.getNumber());
+        appendEqualsToExpressionString(sb, varName + ".getSectionName()", section.getSectionName());
+        appendEqualsToExpressionBoolean(sb, varName + ".isSpecial()", section.isSpecial());
+        appendEqualsToExpressionBoolean(sb, varName + ".isNumbered()", section.isNumbered());
     }
 
     void appendStructuralNode(StringBuilder sb, String varName, StructuralNode structuralNode) {
         appendContentNode(sb, varName, structuralNode);
-        sb.append("assertThat(" + varName + ".getTitle())." + equalsToExpressionString(structuralNode.getTitle()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getStyle())." + equalsToExpressionString(structuralNode.getStyle()) + ";" + NL);
-        // sb.append("assertThat(" + varName + ".getContent())." + equalsToExpressionString(structuralNode.getContent()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getLevel())." + equalsToExpressionInt(structuralNode.getLevel()) + ";" + NL);
-        // sb.append("assertThat(" + varName + ".getContentModel())." + equalsToExpressionString(structuralNode.getContentModel()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getContentModel())." + equalsToExpressionString(structuralNode.getContentModel()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getTitle()", structuralNode.getTitle());
+        appendEqualsToExpressionString(sb, varName + ".getStyle()", structuralNode.getStyle());
+        // appendEqualsToExpressionString(sb, varName + ".getContent()", structuralNode.getContent());
+        appendEqualsToExpressionInt(sb, varName + ".getLevel()", structuralNode.getLevel());
+        // appendEqualsToExpressionString(sb, varName + ".getContentModel()", structuralNode.getContentModel());
+        appendEqualsToExpressionString(sb, varName + ".getContentModel()", structuralNode.getContentModel());
         appendEqualsToExpressionObject(sb, varName + ".getSourceLocation()", structuralNode.getSourceLocation());
-        sb.append("assertThat(" + varName + ".getSubstitutions())." + equalsToExpressionStringList(structuralNode.getSubstitutions()) + ";" + NL);
+        appendEqualsToExpressionStringList(sb, varName + ".getSubstitutions()", structuralNode.getSubstitutions());
         appendEqualsToExpressionObjectList(sb, varName + ".getBlocks()", structuralNode.getBlocks());
     }
 
@@ -395,20 +395,20 @@ public class AssertCodeConverter extends AbstractConverter<String> {
 
     void appendTable(StringBuilder sb, String varName, Table table) {
         appendStructuralNode(sb, varName, table);
-        sb.append("assertThat(" + varName + ".hasHeaderOption())." + equalsToExpressionBoolean(table.hasHeaderOption()) + ";" + NL);
+        appendEqualsToExpressionBoolean(sb, varName + ".hasHeaderOption()", table.hasHeaderOption());
         appendEqualsToExpressionObjectList(sb, varName + ".getColumns()", table.getColumns());
         appendEqualsToExpressionObjectList(sb, varName + ".getHeader()", table.getHeader());
         appendEqualsToExpressionObjectList(sb, varName + ".getFooter()", table.getFooter());
         appendEqualsToExpressionObjectList(sb, varName + ".getBody()", table.getBody());
-        sb.append("assertThat(" + varName + ".getFrame())." + equalsToExpressionString(table.getFrame()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getGrid())." + equalsToExpressionString(table.getGrid()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getFrame()", table.getFrame());
+        appendEqualsToExpressionString(sb, varName + ".getGrid()", table.getGrid());
     }
 
     void appendTitle(StringBuilder sb, String varName, Title title) {
-        sb.append("assertThat(" + varName + ".getMain())." + equalsToExpressionString(title.getMain()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getSubtitle())." + equalsToExpressionString(title.getSubtitle()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".getCombined())." + equalsToExpressionString(title.getCombined()) + ";" + NL);
-        sb.append("assertThat(" + varName + ".isSanitized())." + equalsToExpressionBoolean(title.isSanitized()) + ";" + NL);
+        appendEqualsToExpressionString(sb, varName + ".getMain()", title.getMain());
+        appendEqualsToExpressionString(sb, varName + ".getSubtitle()", title.getSubtitle());
+        appendEqualsToExpressionString(sb, varName + ".getCombined()", title.getCombined());
+        appendEqualsToExpressionBoolean(sb, varName + ".isSanitized()", title.isSanitized());
     }
 
     private void appendObject(StringBuilder sb, String varName, Object value) {
@@ -460,10 +460,14 @@ public class AssertCodeConverter extends AbstractConverter<String> {
         }
     }
 
-    private <T> String createCheckMethod(StringBuilder sb, T value, Class<T> astClass) {
+    private <T> String startMethod(StringBuilder sb, T value, Class<T> astClass) {
         String astVariable = "ast" + astClass.getSimpleName();
         sb.append("public void checkAst(" + astClass.getSimpleName() + " " + astVariable + ") {" + NL);
         return createVariableForExpression(sb, astVariable, value, astClass.getSimpleName());
+    }
+
+    private void endMethod(StringBuilder sb) {
+        sb.append("}");
     }
 
     private String createVariableForExpression(StringBuilder sb, String expression, Object value, String astClass) {
@@ -542,6 +546,34 @@ public class AssertCodeConverter extends AbstractConverter<String> {
             throw new IllegalArgumentException("Unexpected type: " + object.getClass()
                     .getCanonicalName());
         }
+    }
+
+    private void appendEqualsToExpressionBoolean(StringBuilder sb, String expression, Boolean value) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionBoolean(value) + ";" + NL);
+    }
+
+    private void appendEqualsToExpressionInt(StringBuilder sb, String expression, Integer value) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionInt(value) + ";" + NL);
+    }
+
+    private void appendEqualsToExpressionString(StringBuilder sb, String expression, String value) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionString(value) + ";" + NL);
+    }
+
+    private void appendEqualsToExpressionStringList(StringBuilder sb, String expression, List<String> value) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionStringList(value) + ";" + NL);
+    }
+
+    private void appendEqualsToExpressionMap(StringBuilder sb, String expression, Map<? extends Object, Object> value) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionMap(value) + ";" + NL);
+    }
+
+    private void appendEqualsToExpressionHorizontalAlignment(StringBuilder sb, String expression, HorizontalAlignment value) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionHorizontalAlignment(value) + ";" + NL);
+    }
+
+    private void appendEqualsToExpressionVerticalAlignment(StringBuilder sb, String expression, VerticalAlignment value) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionVerticalAlignment(value) + ";" + NL);
     }
 
     private void appendEqualsToExpressionObject(StringBuilder sb, String getterExpression, Object value) {
