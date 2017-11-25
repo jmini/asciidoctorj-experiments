@@ -1,4 +1,4 @@
-package fr.jmini.asciidoctorj.code.converter;
+package fr.jmini.asciidoctorj.converter.assertcode;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -7,6 +7,9 @@ import static org.mockito.Mockito.when;
 import org.asciidoctor.ast.Column;
 import org.asciidoctor.ast.Table;
 import org.junit.Test;
+
+import fr.jmini.asciidoctorj.converter.assertcode.AssertCodeConverter;
+import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
 public class AssertCodeConverterColumnTest {
 

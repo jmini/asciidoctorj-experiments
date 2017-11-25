@@ -1,4 +1,4 @@
-package fr.jmini.asciidoctorj.code.converter;
+package fr.jmini.asciidoctorj.converter.code;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -86,7 +86,10 @@ public class CodeTestingUtility {
     }
 
     private static File javaFile(Class<?> utClass) {
-        return new File("src/test/java/fr/jmini/asciidoctorj/code/converter/" + utClass.getSimpleName() + ".java");
+        String packageDir = utClass.getPackage()
+                .getName()
+                .replace('.', '/');
+        return new File("src/test/java/" + packageDir + "/" + utClass.getSimpleName() + ".java");
     }
 
 }

@@ -1,4 +1,4 @@
-package fr.jmini.asciidoctorj.code.converter;
+package fr.jmini.asciidoctorj.converter.assertcode;
 
 import java.util.List;
 import java.util.Map;

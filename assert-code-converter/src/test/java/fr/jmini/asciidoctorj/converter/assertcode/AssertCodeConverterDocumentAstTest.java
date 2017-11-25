@@ -1,4 +1,4 @@
-package fr.jmini.asciidoctorj.code.converter;
+package fr.jmini.asciidoctorj.converter.assertcode;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -15,6 +15,9 @@ import org.asciidoctor.ast.Title;
 import org.junit.Test;
 
 import com.google.common.collect.ImmutableMap;
+
+import fr.jmini.asciidoctorj.converter.assertcode.AssertCodeConverter;
+import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
 public class AssertCodeConverterDocumentAstTest {
 

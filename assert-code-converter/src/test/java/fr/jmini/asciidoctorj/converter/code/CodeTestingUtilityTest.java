@@ -1,4 +1,4 @@
-package fr.jmini.asciidoctorj.code.converter;
+package fr.jmini.asciidoctorj.converter.code;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
