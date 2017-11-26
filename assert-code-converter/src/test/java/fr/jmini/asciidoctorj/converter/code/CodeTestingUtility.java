@@ -70,6 +70,7 @@ public class CodeTestingUtility {
         return Arrays.stream(parts)
                 .map(s -> s.trim()
                         .replaceAll("\n[ ]+", " ")
+                        .replaceAll("\n\\.", ".")
                         .replace(" .", "."))
                 .collect(Collectors.toList());
     }

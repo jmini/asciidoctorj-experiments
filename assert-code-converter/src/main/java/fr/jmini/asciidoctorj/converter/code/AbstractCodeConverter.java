@@ -56,28 +56,28 @@ public abstract class AbstractCodeConverter extends AbstractConverter<String> {
     public String createAuthorCode(StringBuilder sb, Author aAuthor) {
         String varName = startMethod(sb, aAuthor, Author.class);
         appendAuthor(sb, varName, aAuthor);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createBlockCode(StringBuilder sb, Block aBlock) {
         String varName = startMethod(sb, aBlock, Block.class);
         appendBlock(sb, varName, aBlock);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createCellCode(StringBuilder sb, Cell aCell) {
         String varName = startMethod(sb, aCell, Cell.class);
         appendCell(sb, varName, aCell);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createColumnCode(StringBuilder sb, Column aColumn) {
         String varName = startMethod(sb, aColumn, Column.class);
         appendColumn(sb, varName, aColumn);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
@@ -93,7 +93,7 @@ public abstract class AbstractCodeConverter extends AbstractConverter<String> {
         } else {
             String varName = startMethod(sb, contentNode, ContentNode.class);
             appendContentNode(sb, varName, contentNode);
-            endMethod(sb);
+            endMethod(sb, varName);
             return varName;
         }
     }
@@ -101,84 +101,84 @@ public abstract class AbstractCodeConverter extends AbstractConverter<String> {
     public String createContentPartCode(StringBuilder sb, ContentPart aContentPart) {
         String varName = startMethod(sb, aContentPart, ContentPart.class);
         appendContentPart(sb, varName, aContentPart);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createCursorCode(StringBuilder sb, Cursor aCursor) {
         String varName = startMethod(sb, aCursor, Cursor.class);
         appendCursor(sb, varName, aCursor);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createDescriptionListCode(StringBuilder sb, DescriptionList aDescriptionList) {
         String varName = startMethod(sb, aDescriptionList, DescriptionList.class);
         appendDescriptionList(sb, varName, aDescriptionList);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createDescriptionListEntryCode(StringBuilder sb, DescriptionListEntry aDescriptionListEntry) {
         String varName = startMethod(sb, aDescriptionListEntry, DescriptionListEntry.class);
         appendDescriptionListEntry(sb, varName, aDescriptionListEntry);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createDocumentCode(StringBuilder sb, Document aDocument) {
         String varName = startMethod(sb, aDocument, Document.class);
         appendDocument(sb, varName, aDocument);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createDocumentHeaderCode(StringBuilder sb, DocumentHeader aDocumentHeader) {
         String varName = startMethod(sb, aDocumentHeader, DocumentHeader.class);
         appendDocumentHeader(sb, varName, aDocumentHeader);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createListCode(StringBuilder sb, org.asciidoctor.ast.List aList) {
         String varName = startMethod(sb, aList, org.asciidoctor.ast.List.class);
         appendList(sb, varName, aList);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createListItemCode(StringBuilder sb, ListItem aListItem) {
         String varName = startMethod(sb, aListItem, ListItem.class);
         appendListItem(sb, varName, aListItem);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createPhraseNodeCode(StringBuilder sb, PhraseNode aPhraseNode) {
         String varName = startMethod(sb, aPhraseNode, PhraseNode.class);
         appendPhraseNode(sb, varName, aPhraseNode);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createRevisionInfoCode(StringBuilder sb, RevisionInfo aRevisionInfo) {
         String varName = startMethod(sb, aRevisionInfo, RevisionInfo.class);
         appendRevisionInfo(sb, varName, aRevisionInfo);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createRowCode(StringBuilder sb, Row aRow) {
         String varName = startMethod(sb, aRow, Row.class);
         appendRow(sb, varName, aRow);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createSectionCode(StringBuilder sb, Section aSection) {
         String varName = startMethod(sb, aSection, Section.class);
         appendSection(sb, varName, aSection);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
@@ -200,7 +200,7 @@ public abstract class AbstractCodeConverter extends AbstractConverter<String> {
         } else {
             String varName = startMethod(sb, structuralNode, StructuralNode.class);
             appendStructuralNode(sb, varName, structuralNode);
-            endMethod(sb);
+            endMethod(sb, varName);
             return varName;
         }
     }
@@ -208,32 +208,33 @@ public abstract class AbstractCodeConverter extends AbstractConverter<String> {
     public String createStructuredDocumentCode(StringBuilder sb, StructuredDocument aStructuredDocument) {
         String varName = startMethod(sb, aStructuredDocument, StructuredDocument.class);
         appendStructuredDocument(sb, varName, aStructuredDocument);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createTableCode(StringBuilder sb, Table aTable) {
         String varName = startMethod(sb, aTable, Table.class);
         appendTable(sb, varName, aTable);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
     public String createTitleCode(StringBuilder sb, Title aTitle) {
         String varName = startMethod(sb, aTitle, Title.class);
         appendTitle(sb, varName, aTitle);
-        endMethod(sb);
+        endMethod(sb, varName);
         return varName;
     }
 
-    protected <T> String startMethod(StringBuilder sb, T value, Class<T> astClass) {
-        String astVariable = "ast" + astClass.getSimpleName();
-        sb.append("public void checkAst(" + astClass.getSimpleName() + " " + astVariable + ") {" + NL);
-        return createVariableForExpression(sb, astVariable, value, astClass.getSimpleName());
-    }
+    protected abstract <T> String startMethod(StringBuilder sb, T value, Class<T> astClass);
 
-    protected void endMethod(StringBuilder sb) {
-        sb.append("}");
+    protected abstract void endMethod(StringBuilder sb, String varName);
+
+    protected String createVariableForExpression(StringBuilder sb, String expression, Object value, String astClass) {
+        String prefix = computeVariablePrefix(astClass);
+        String varName = createVariable(prefix, value);
+        sb.append(astClass + " " + varName + " = " + expression + ";" + NL);
+        return varName;
     }
 
     protected abstract void appendAuthor(StringBuilder sb, String varName, Author author);
@@ -327,23 +328,17 @@ public abstract class AbstractCodeConverter extends AbstractConverter<String> {
         }
     }
 
-    private String createVariableForExpression(StringBuilder sb, String expression, Object value, String astClass) {
-        String varName = createVariable(astClass, value);
-        sb.append(astClass + " " + varName + " = " + expression + ";" + NL);
-        return varName;
-    }
-
-    protected String createVariable(String astClass, Object value) {
-        String key = computeVariablePrefix(astClass);
-
-        Integer c = counter.get(key);
+    protected String createVariable(String prefix, Object value) {
+        Integer c = counter.get(prefix);
         if (c == null) {
             c = 0;
         }
         c = c.intValue() + 1;
-        counter.put(key, c);
-        String varName = key + c.toString();
-        referenceHolder.put(System.identityHashCode(value), varName);
+        counter.put(prefix, c);
+        String varName = prefix + c.toString();
+        if (value != null) {
+            referenceHolder.put(System.identityHashCode(value), varName);
+        }
         return varName;
     }
 
@@ -357,7 +352,7 @@ public abstract class AbstractCodeConverter extends AbstractConverter<String> {
         } else if (object instanceof Cell) {
             return Cell.class.getSimpleName();
         } else if (object instanceof Column) {
-            return Cell.class.getSimpleName();
+            return Column.class.getSimpleName();
         } else if (object instanceof ContentPart) {
             return ContentPart.class.getSimpleName();
         } else if (object instanceof Cursor) {

@@ -32,6 +32,11 @@ public class CodeTestingUtilityTest {
                 + "   assertThat(map).containsEntry(\"one\", 1)\n    .containsEntry(\"two\", 2)\n    .containsEntry(\"three\", 3);"
                 + "}\n");
         assertThat(statements).containsExactly("assertThat(map).containsEntry(\"one\", 1).containsEntry(\"two\", 2).containsEntry(\"three\", 3)");
+
+        statements = CodeTestingUtility.findStatements("public void test(Map<String,Object> map) {\n"
+                + "assertThat(map).containsEntry(\"one\", 1)\n.containsEntry(\"two\", 2);"
+                + "}\n");
+        assertThat(statements).containsExactly("assertThat(map).containsEntry(\"one\", 1).containsEntry(\"two\", 2)");
     }
 
 }
