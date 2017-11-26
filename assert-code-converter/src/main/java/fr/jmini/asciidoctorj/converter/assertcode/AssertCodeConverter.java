@@ -91,8 +91,10 @@ public class AssertCodeConverter extends AbstractCodeConverter {
         }
         appendEqualsToExpressionString(sb, varName + ".getContext()", contentNode.getContext());
         appendEqualsToExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
-        appendEqualsToExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
-        appendEqualsToExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
+        // NOTE: contentNode.isInline() throws NotImplementedError at RUBY.inline?
+        // appendEqualsToExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
+        // NOTE: contentNode.isBlock() throws NotImplementedError at RUBY.block?
+        // appendEqualsToExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
         appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes());
         appendEqualsToExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendEqualsToExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());

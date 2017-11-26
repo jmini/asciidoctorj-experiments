@@ -31,8 +31,6 @@ public class MockCodeConverterDocumentTest {
         when(mockDocument1.getNodeName()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn(null);
         when(mockDocument1.getDocument()).thenReturn(null);
-        when(mockDocument1.isInline()).thenReturn(false);
-        when(mockDocument1.isBlock()).thenReturn(false);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("one", 1)
                 .put("two", 2)

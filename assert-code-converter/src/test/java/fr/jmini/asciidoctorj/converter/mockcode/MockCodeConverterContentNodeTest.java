@@ -30,8 +30,6 @@ public class MockCodeConverterContentNodeTest {
         when(mockContentNode1.getParent()).thenReturn(null);
         when(mockContentNode1.getContext()).thenReturn("context");
         when(mockContentNode1.getDocument()).thenReturn(null);
-        when(mockContentNode1.isInline()).thenReturn(true);
-        when(mockContentNode1.isBlock()).thenReturn(false);
         when(mockContentNode1.getAttributes()).thenReturn(Collections.singletonMap("attr-key", "same-value"));
         when(mockContentNode1.getRoles()).thenReturn(Collections.singletonList("some-role"));
         when(mockContentNode1.isReftext()).thenReturn(false);

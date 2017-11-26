@@ -31,8 +31,6 @@ public class MockCodeConverterCellTest {
         when(mockCell1.getParent()).thenReturn(null);
         when(mockCell1.getContext()).thenReturn(null);
         when(mockCell1.getDocument()).thenReturn(null);
-        when(mockCell1.isInline()).thenReturn(false);
-        when(mockCell1.isBlock()).thenReturn(false);
         when(mockCell1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockCell1.getRoles()).thenReturn(Collections.emptyList());
         when(mockCell1.isReftext()).thenReturn(false);

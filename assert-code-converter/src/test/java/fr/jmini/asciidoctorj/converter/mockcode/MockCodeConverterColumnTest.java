@@ -39,8 +39,6 @@ public class MockCodeConverterColumnTest {
         when(mockColumn1.getParent()).thenReturn(null);
         when(mockColumn1.getContext()).thenReturn(null);
         when(mockColumn1.getDocument()).thenReturn(null);
-        when(mockColumn1.isInline()).thenReturn(false);
-        when(mockColumn1.isBlock()).thenReturn(false);
         when(mockColumn1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockColumn1.getRoles()).thenReturn(Arrays.asList("r1", "r2", "r3"));
         when(mockColumn1.isReftext()).thenReturn(false);

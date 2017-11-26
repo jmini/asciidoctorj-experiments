@@ -93,8 +93,10 @@ public class MockCodeConverter extends AbstractCodeConverter {
         }
         appendWhenExpressionString(sb, varName + ".getContext()", contentNode.getContext());
         appendWhenExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
-        appendWhenExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
-        appendWhenExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
+        // NOTE: contentNode.isInline() throws NotImplementedError at RUBY.inline?
+        // appendWhenExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
+        // NOTE: contentNode.isBlock() throws NotImplementedError at RUBY.block?
+        // appendWhenExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
         appendWhenExpressionMap(sb, varName + ".getAttributes()", String.class, contentNode.getAttributes());
         appendWhenExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendWhenExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());

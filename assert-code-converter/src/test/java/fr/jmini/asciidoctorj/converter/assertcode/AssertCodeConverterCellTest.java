@@ -45,8 +45,6 @@ public class AssertCodeConverterCellTest {
         assertThat(cell1.getParent()).isNull();
         assertThat(cell1.getContext()).isNull();
         assertThat(cell1.getDocument()).isNull();
-        assertThat(cell1.isInline()).isFalse();
-        assertThat(cell1.isBlock()).isFalse();
         assertThat(cell1.getAttributes()).isEmpty();
         assertThat(cell1.getRoles()).isEmpty();
         assertThat(cell1.isReftext()).isFalse();

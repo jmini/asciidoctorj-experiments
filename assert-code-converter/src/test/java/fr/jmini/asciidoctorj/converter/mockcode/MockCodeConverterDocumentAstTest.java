@@ -36,8 +36,6 @@ public class MockCodeConverterDocumentAstTest {
         when(mockDocument1.getNodeName()).thenReturn("document");
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
-        when(mockDocument1.isInline()).thenReturn(false);
-        when(mockDocument1.isBlock()).thenReturn(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("warning-caption", "Warning")
                 .put("figure-caption", "Figure")
@@ -57,8 +55,6 @@ public class MockCodeConverterDocumentAstTest {
         when(mockSection1.getParent()).thenReturn(mockDocument1);
         when(mockSection1.getContext()).thenReturn("section");
         when(mockSection1.getDocument()).thenReturn(mockDocument1);
-        when(mockSection1.isInline()).thenReturn(false);
-        when(mockSection1.isBlock()).thenReturn(true);
         when(mockSection1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockSection1.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection1.isReftext()).thenReturn(false);
@@ -74,8 +70,6 @@ public class MockCodeConverterDocumentAstTest {
         when(mockBlock1.getParent()).thenReturn(mockSection1);
         when(mockBlock1.getContext()).thenReturn("paragraph");
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
-        when(mockBlock1.isInline()).thenReturn(false);
-        when(mockBlock1.isBlock()).thenReturn(true);
         when(mockBlock1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
@@ -94,8 +88,6 @@ public class MockCodeConverterDocumentAstTest {
         when(mockList1.getParent()).thenReturn(mockSection1);
         when(mockList1.getContext()).thenReturn("ulist");
         when(mockList1.getDocument()).thenReturn(mockDocument1);
-        when(mockList1.isInline()).thenReturn(false);
-        when(mockList1.isBlock()).thenReturn(true);
         when(mockList1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockList1.isReftext()).thenReturn(false);
@@ -112,8 +104,6 @@ public class MockCodeConverterDocumentAstTest {
         when(mockListItem1.getParent()).thenReturn(mockList1);
         when(mockListItem1.getContext()).thenReturn("list_item");
         when(mockListItem1.getDocument()).thenReturn(mockDocument1);
-        when(mockListItem1.isInline()).thenReturn(false);
-        when(mockListItem1.isBlock()).thenReturn(true);
         when(mockListItem1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockListItem1.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem1.isReftext()).thenReturn(false);
@@ -134,8 +124,6 @@ public class MockCodeConverterDocumentAstTest {
         when(mockListItem2.getParent()).thenReturn(mockList1);
         when(mockListItem2.getContext()).thenReturn("list_item");
         when(mockListItem2.getDocument()).thenReturn(mockDocument1);
-        when(mockListItem2.isInline()).thenReturn(false);
-        when(mockListItem2.isBlock()).thenReturn(true);
         when(mockListItem2.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockListItem2.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem2.isReftext()).thenReturn(false);
@@ -158,8 +146,6 @@ public class MockCodeConverterDocumentAstTest {
         when(mockBlock2.getParent()).thenReturn(mockSection1);
         when(mockBlock2.getContext()).thenReturn("paragraph");
         when(mockBlock2.getDocument()).thenReturn(mockDocument1);
-        when(mockBlock2.isInline()).thenReturn(false);
-        when(mockBlock2.isBlock()).thenReturn(true);
         when(mockBlock2.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);

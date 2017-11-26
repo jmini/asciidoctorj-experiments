@@ -44,8 +44,6 @@ public class AssertCodeConverterContentNodeTest {
         assertThat(contentNode1.getParent()).isNull();
         assertThat(contentNode1.getContext()).isEqualTo("context");
         assertThat(contentNode1.getDocument()).isNull();
-        assertThat(contentNode1.isInline()).isTrue();
-        assertThat(contentNode1.isBlock()).isFalse();
         assertThat(contentNode1.getAttributes()).containsEntry("attr-key", "same-value");
         assertThat(contentNode1.getRoles()).containsExactly("some-role");
         assertThat(contentNode1.isReftext()).isFalse();

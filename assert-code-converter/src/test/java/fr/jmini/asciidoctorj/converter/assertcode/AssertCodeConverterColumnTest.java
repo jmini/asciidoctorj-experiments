@@ -39,8 +39,6 @@ public class AssertCodeConverterColumnTest {
         assertThat(column1.getParent()).isNull();
         assertThat(column1.getContext()).isNull();
         assertThat(column1.getDocument()).isNull();
-        assertThat(column1.isInline()).isFalse();
-        assertThat(column1.isBlock()).isFalse();
         assertThat(column1.getAttributes()).isEmpty();
         assertThat(column1.getRoles()).isEmpty();
         assertThat(column1.isReftext()).isFalse();

@@ -36,8 +36,6 @@ public class AssertCodeConverterSectionTest {
         assertThat(section1.getNodeName()).isNull();
         assertThat(section1.getContext()).isNull();
         assertThat(section1.getDocument()).isNull();
-        assertThat(section1.isInline()).isFalse();
-        assertThat(section1.isBlock()).isFalse();
         assertThat(section1.getAttributes()).isEmpty();
         assertThat(section1.getRoles()).isEmpty();
         assertThat(section1.isReftext()).isFalse();

@@ -30,8 +30,6 @@ public class MockCodeConverterListItemTest {
         when(mockListItem1.getParent()).thenReturn(null);
         when(mockListItem1.getContext()).thenReturn(null);
         when(mockListItem1.getDocument()).thenReturn(null);
-        when(mockListItem1.isInline()).thenReturn(true);
-        when(mockListItem1.isBlock()).thenReturn(false);
         when(mockListItem1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockListItem1.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem1.isReftext()).thenReturn(false);

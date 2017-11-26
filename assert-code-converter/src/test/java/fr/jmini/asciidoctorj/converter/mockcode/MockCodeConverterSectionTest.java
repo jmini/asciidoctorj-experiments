@@ -29,8 +29,6 @@ public class MockCodeConverterSectionTest {
         when(mockSection1.getNodeName()).thenReturn(null);
         when(mockSection1.getContext()).thenReturn(null);
         when(mockSection1.getDocument()).thenReturn(null);
-        when(mockSection1.isInline()).thenReturn(false);
-        when(mockSection1.isBlock()).thenReturn(false);
         when(mockSection1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockSection1.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection1.isReftext()).thenReturn(false);

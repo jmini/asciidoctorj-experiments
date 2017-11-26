@@ -46,8 +46,6 @@ public class AssertCodeConverterBlockTest {
         assertThat(block1.getNodeName()).isEqualTo("some-name");
         assertThat(block1.getContext()).isNull();
         assertThat(block1.getDocument()).isNull();
-        assertThat(block1.isInline()).isTrue();
-        assertThat(block1.isBlock()).isFalse();
         assertThat(block1.getAttributes()).containsEntry("one", "lorem")
                 .containsEntry("two", "ipusm");
         assertThat(block1.getRoles()).containsExactly("r1", "r2");

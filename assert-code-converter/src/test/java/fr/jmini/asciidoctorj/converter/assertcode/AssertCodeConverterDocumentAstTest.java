@@ -198,8 +198,6 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(document1.getNodeName()).isEqualTo("document");
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
-        assertThat(document1.isInline()).isFalse();
-        assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("warning-caption", "Warning")
                 .containsEntry("figure-caption", "Figure");
         assertThat(document1.getRoles()).isEmpty();
@@ -218,8 +216,6 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(section1.getParent()).isSameAs(document1);
         assertThat(section1.getContext()).isEqualTo("section");
         assertThat(section1.getDocument()).isSameAs(document1);
-        assertThat(section1.isInline()).isFalse();
-        assertThat(section1.isBlock()).isTrue();
         assertThat(section1.getAttributes()).isEmpty();
         assertThat(section1.getRoles()).isEmpty();
         assertThat(section1.isReftext()).isFalse();
@@ -237,8 +233,6 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(block1.getParent()).isSameAs(section1);
         assertThat(block1.getContext()).isEqualTo("paragraph");
         assertThat(block1.getDocument()).isSameAs(document1);
-        assertThat(block1.isInline()).isFalse();
-        assertThat(block1.isBlock()).isTrue();
         assertThat(block1.getAttributes()).isEmpty();
         assertThat(block1.getRoles()).isEmpty();
         assertThat(block1.isReftext()).isFalse();
@@ -258,8 +252,6 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(list1.getParent()).isSameAs(section1);
         assertThat(list1.getContext()).isEqualTo("ulist");
         assertThat(list1.getDocument()).isSameAs(document1);
-        assertThat(list1.isInline()).isFalse();
-        assertThat(list1.isBlock()).isTrue();
         assertThat(list1.getAttributes()).isEmpty();
         assertThat(list1.getRoles()).isEmpty();
         assertThat(list1.isReftext()).isFalse();
@@ -278,8 +270,6 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(listItem1.getParent()).isSameAs(list1);
         assertThat(listItem1.getContext()).isEqualTo("list_item");
         assertThat(listItem1.getDocument()).isSameAs(document1);
-        assertThat(listItem1.isInline()).isFalse();
-        assertThat(listItem1.isBlock()).isTrue();
         assertThat(listItem1.getAttributes()).isEmpty();
         assertThat(listItem1.getRoles()).isEmpty();
         assertThat(listItem1.isReftext()).isFalse();
@@ -301,8 +291,6 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(listItem2.getParent()).isSameAs(list1);
         assertThat(listItem2.getContext()).isEqualTo("list_item");
         assertThat(listItem2.getDocument()).isSameAs(document1);
-        assertThat(listItem2.isInline()).isFalse();
-        assertThat(listItem2.isBlock()).isTrue();
         assertThat(listItem2.getAttributes()).isEmpty();
         assertThat(listItem2.getRoles()).isEmpty();
         assertThat(listItem2.isReftext()).isFalse();
@@ -325,8 +313,6 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(block2.getParent()).isSameAs(section1);
         assertThat(block2.getContext()).isEqualTo("paragraph");
         assertThat(block2.getDocument()).isSameAs(document1);
-        assertThat(block2.isInline()).isFalse();
-        assertThat(block2.isBlock()).isTrue();
         assertThat(block2.getAttributes()).isEmpty();
         assertThat(block2.getRoles()).isEmpty();
         assertThat(block2.isReftext()).isFalse();
@@ -353,6 +339,5 @@ public class AssertCodeConverterDocumentAstTest {
         assertThat(document1.getOptions()).containsEntry("header_footer", false)
                 .containsEntry("attributes", "[]");
     }
-
     // end::generated-code[]
 }

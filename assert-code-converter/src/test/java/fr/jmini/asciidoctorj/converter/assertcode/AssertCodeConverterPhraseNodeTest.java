@@ -35,8 +35,6 @@ public class AssertCodeConverterPhraseNodeTest {
         assertThat(phraseNode1.getParent()).isNull();
         assertThat(phraseNode1.getContext()).isNull();
         assertThat(phraseNode1.getDocument()).isNull();
-        assertThat(phraseNode1.isInline()).isFalse();
-        assertThat(phraseNode1.isBlock()).isFalse();
         assertThat(phraseNode1.getAttributes()).isEmpty();
         assertThat(phraseNode1.getRoles()).isEmpty();
         assertThat(phraseNode1.isReftext()).isFalse();

@@ -35,8 +35,6 @@ public class AssertCodeConverterListItemTest {
         assertThat(listItem1.getNodeName()).isNull();
         assertThat(listItem1.getContext()).isNull();
         assertThat(listItem1.getDocument()).isNull();
-        assertThat(listItem1.isInline()).isFalse();
-        assertThat(listItem1.isBlock()).isFalse();
         assertThat(listItem1.getAttributes()).isEmpty();
         assertThat(listItem1.getRoles()).isEmpty();
         assertThat(listItem1.isReftext()).isFalse();
