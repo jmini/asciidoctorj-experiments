@@ -349,7 +349,7 @@ public class MockCodeConverter extends AbstractCodeConverter {
                 i = i + 1;
             }
             sb.append("when(" + getterExpression + ")");
-            sb.append("thenReturn(");
+            sb.append(".thenReturn(");
             if (itemVarNames.size() == 1) {
                 sb.append("Collections.singletonList(");
             } else {

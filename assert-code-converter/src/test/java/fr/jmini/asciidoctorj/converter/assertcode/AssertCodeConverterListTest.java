@@ -9,7 +9,6 @@ import java.util.Collections;
 import org.asciidoctor.ast.List;
 import org.junit.Test;
 
-import fr.jmini.asciidoctorj.converter.assertcode.AssertCodeConverter;
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
 public class AssertCodeConverterListTest {

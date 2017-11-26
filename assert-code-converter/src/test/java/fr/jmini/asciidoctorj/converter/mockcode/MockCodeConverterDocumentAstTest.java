@@ -1,6 +1,5 @@
-package fr.jmini.asciidoctorj.converter.assertcode;
+package fr.jmini.asciidoctorj.converter.mockcode;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -18,10 +17,20 @@ import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
-public class AssertCodeConverterDocumentAstTest {
+public class MockCodeConverterDocumentAstTest {
 
     @Test
     public void testAst() throws Exception {
+        Document mockDocument = createMock();
+
+        MockCodeConverter converter = new MockCodeConverter(null, null);
+        StringBuilder sb = new StringBuilder();
+        converter.createDocumentCode(sb, mockDocument);
+        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
+    }
+
+    // tag::generated-code[]
+    public Document createMock() {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
@@ -182,177 +191,7 @@ public class AssertCodeConverterDocumentAstTest {
                 .put("attributes", "[]")
                 .build();
         when(mockDocument1.getOptions()).thenReturn(map2);
-
-        AssertCodeConverter converter = new AssertCodeConverter(null, null);
-        StringBuilder sb = new StringBuilder();
-        converter.createDocumentCode(sb, mockDocument1);
-        CodeTestingUtility.testGeneratedCode(sb.toString(), this.getClass());
-
-        checkAst(mockDocument1);
+        return mockDocument1;
     }
-
-    // tag::generated-code[]
-    public void checkAst(Document astDocument) {
-        Document document1 = astDocument;
-        assertThat(document1.getId()).isNull();
-        assertThat(document1.getNodeName()).isEqualTo("document");
-        assertThat(document1.getContext()).isEqualTo("document");
-        assertThat(document1.getDocument()).isSameAs(document1);
-        assertThat(document1.isInline()).isFalse();
-        assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry("warning-caption", "Warning")
-                .containsEntry("figure-caption", "Figure");
-        assertThat(document1.getRoles()).isEmpty();
-        assertThat(document1.isReftext()).isFalse();
-        assertThat(document1.getTitle()).isNull();
-        assertThat(document1.getStyle()).isNull();
-        assertThat(document1.getLevel()).isEqualTo(0);
-        assertThat(document1.getContentModel()).isEqualTo("compound");
-        assertThat(document1.getSourceLocation()).isNull();
-        assertThat(document1.getSubstitutions()).isEmpty();
-        assertThat(document1.getBlocks()).hasSize(1);
-        Section section1 = (Section) document1.getBlocks()
-                .get(0);
-        assertThat(section1.getId()).isEqualTo("_a_small_list");
-        assertThat(section1.getNodeName()).isEqualTo("section");
-        assertThat(section1.getParent()).isSameAs(document1);
-        assertThat(section1.getContext()).isEqualTo("section");
-        assertThat(section1.getDocument()).isSameAs(document1);
-        assertThat(section1.isInline()).isFalse();
-        assertThat(section1.isBlock()).isTrue();
-        assertThat(section1.getAttributes()).isEmpty();
-        assertThat(section1.getRoles()).isEmpty();
-        assertThat(section1.isReftext()).isFalse();
-        assertThat(section1.getTitle()).isEqualTo("A small List");
-        assertThat(section1.getStyle()).isNull();
-        assertThat(section1.getLevel()).isEqualTo(1);
-        assertThat(section1.getContentModel()).isEqualTo("compound");
-        assertThat(section1.getSourceLocation()).isNull();
-        assertThat(section1.getSubstitutions()).isEmpty();
-        assertThat(section1.getBlocks()).hasSize(3);
-        Block block1 = (Block) section1.getBlocks()
-                .get(0);
-        assertThat(block1.getId()).isNull();
-        assertThat(block1.getNodeName()).isEqualTo("paragraph");
-        assertThat(block1.getParent()).isSameAs(section1);
-        assertThat(block1.getContext()).isEqualTo("paragraph");
-        assertThat(block1.getDocument()).isSameAs(document1);
-        assertThat(block1.isInline()).isFalse();
-        assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).isEmpty();
-        assertThat(block1.getRoles()).isEmpty();
-        assertThat(block1.isReftext()).isFalse();
-        assertThat(block1.getTitle()).isNull();
-        assertThat(block1.getStyle()).isNull();
-        assertThat(block1.getLevel()).isEqualTo(1);
-        assertThat(block1.getContentModel()).isEqualTo("simple");
-        assertThat(block1.getSourceLocation()).isNull();
-        assertThat(block1.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(block1.getBlocks()).isEmpty();
-        assertThat(block1.getLines()).containsExactly("Lorem ipsum dolor sit amet:");
-        assertThat(block1.getSource()).isEqualTo("Lorem ipsum dolor sit amet:");
-        org.asciidoctor.ast.List list1 = (org.asciidoctor.ast.List) section1.getBlocks()
-                .get(1);
-        assertThat(list1.getId()).isNull();
-        assertThat(list1.getNodeName()).isEqualTo("ulist");
-        assertThat(list1.getParent()).isSameAs(section1);
-        assertThat(list1.getContext()).isEqualTo("ulist");
-        assertThat(list1.getDocument()).isSameAs(document1);
-        assertThat(list1.isInline()).isFalse();
-        assertThat(list1.isBlock()).isTrue();
-        assertThat(list1.getAttributes()).isEmpty();
-        assertThat(list1.getRoles()).isEmpty();
-        assertThat(list1.isReftext()).isFalse();
-        assertThat(list1.getTitle()).isNull();
-        assertThat(list1.getStyle()).isNull();
-        assertThat(list1.getLevel()).isEqualTo(1);
-        assertThat(list1.getContentModel()).isEqualTo("compound");
-        assertThat(list1.getSourceLocation()).isNull();
-        assertThat(list1.getSubstitutions()).isEmpty();
-        assertThat(list1.getBlocks()).isNull();
-        assertThat(list1.getItems()).hasSize(2);
-        ListItem listItem1 = (ListItem) list1.getItems()
-                .get(0);
-        assertThat(listItem1.getId()).isNull();
-        assertThat(listItem1.getNodeName()).isEqualTo("list_item");
-        assertThat(listItem1.getParent()).isSameAs(list1);
-        assertThat(listItem1.getContext()).isEqualTo("list_item");
-        assertThat(listItem1.getDocument()).isSameAs(document1);
-        assertThat(listItem1.isInline()).isFalse();
-        assertThat(listItem1.isBlock()).isTrue();
-        assertThat(listItem1.getAttributes()).isEmpty();
-        assertThat(listItem1.getRoles()).isEmpty();
-        assertThat(listItem1.isReftext()).isFalse();
-        assertThat(listItem1.getTitle()).isNull();
-        assertThat(listItem1.getStyle()).isNull();
-        assertThat(listItem1.getLevel()).isEqualTo(1);
-        assertThat(listItem1.getContentModel()).isEqualTo("compound");
-        assertThat(listItem1.getSourceLocation()).isNull();
-        assertThat(listItem1.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(listItem1.getBlocks()).isEmpty();
-        assertThat(listItem1.getMarker()).isEqualTo("*");
-        assertThat(listItem1.getText()).isEqualTo("First item");
-        assertThat(listItem1.getSource()).isEqualTo("First item");
-        assertThat(listItem1.hasText()).isTrue();
-        ListItem listItem2 = (ListItem) list1.getItems()
-                .get(1);
-        assertThat(listItem2.getId()).isNull();
-        assertThat(listItem2.getNodeName()).isEqualTo("list_item");
-        assertThat(listItem2.getParent()).isSameAs(list1);
-        assertThat(listItem2.getContext()).isEqualTo("list_item");
-        assertThat(listItem2.getDocument()).isSameAs(document1);
-        assertThat(listItem2.isInline()).isFalse();
-        assertThat(listItem2.isBlock()).isTrue();
-        assertThat(listItem2.getAttributes()).isEmpty();
-        assertThat(listItem2.getRoles()).isEmpty();
-        assertThat(listItem2.isReftext()).isFalse();
-        assertThat(listItem2.getTitle()).isNull();
-        assertThat(listItem2.getStyle()).isNull();
-        assertThat(listItem2.getLevel()).isEqualTo(1);
-        assertThat(listItem2.getContentModel()).isEqualTo("compound");
-        assertThat(listItem2.getSourceLocation()).isNull();
-        assertThat(listItem2.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(listItem2.getBlocks()).isEmpty();
-        assertThat(listItem2.getMarker()).isEqualTo("*");
-        assertThat(listItem2.getText()).isEqualTo("Second item");
-        assertThat(listItem2.getSource()).isEqualTo("Second item");
-        assertThat(listItem2.hasText()).isTrue();
-        assertThat(list1.hasItems()).isTrue();
-        Block block2 = (Block) section1.getBlocks()
-                .get(2);
-        assertThat(block2.getId()).isNull();
-        assertThat(block2.getNodeName()).isEqualTo("paragraph");
-        assertThat(block2.getParent()).isSameAs(section1);
-        assertThat(block2.getContext()).isEqualTo("paragraph");
-        assertThat(block2.getDocument()).isSameAs(document1);
-        assertThat(block2.isInline()).isFalse();
-        assertThat(block2.isBlock()).isTrue();
-        assertThat(block2.getAttributes()).isEmpty();
-        assertThat(block2.getRoles()).isEmpty();
-        assertThat(block2.isReftext()).isFalse();
-        assertThat(block2.getTitle()).isNull();
-        assertThat(block2.getStyle()).isNull();
-        assertThat(block2.getLevel()).isEqualTo(1);
-        assertThat(block2.getContentModel()).isEqualTo("simple");
-        assertThat(block2.getSourceLocation()).isNull();
-        assertThat(block2.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(block2.getBlocks()).isEmpty();
-        assertThat(block2.getLines()).containsExactly("Ut commodo lorem nec lacinia finibus.");
-        assertThat(block2.getSource()).isEqualTo("Ut commodo lorem nec lacinia finibus.");
-        assertThat(section1.getIndex()).isEqualTo(0);
-        assertThat(section1.getNumber()).isEqualTo(1);
-        assertThat(section1.getSectionName()).isEqualTo("section");
-        assertThat(section1.isSpecial()).isFalse();
-        assertThat(section1.isNumbered()).isFalse();
-        Title title1 = document1.getStructuredDoctitle();
-        assertThat(title1.getMain()).isEqualTo("A small List");
-        assertThat(title1.getSubtitle()).isNull();
-        assertThat(title1.getCombined()).isEqualTo("A small List");
-        assertThat(title1.isSanitized()).isFalse();
-        assertThat(document1.getDoctitle()).isEqualTo("A small List");
-        assertThat(document1.getOptions()).containsEntry("header_footer", false)
-                .containsEntry("attributes", "[]");
-    }
-
     // end::generated-code[]
 }
