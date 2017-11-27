@@ -62,8 +62,8 @@ public class CodeTestingUtility {
     }
 
     static List<String> findStatements(String content) {
-        int start = content.indexOf("{", 0) + 1;
-        int end = content.indexOf("}", start);
+        int start = content.indexOf("{") + 1;
+        int end = content.lastIndexOf("}");
         String body = content.substring(start, end)
                 .trim();
         String[] parts = body.split(";");

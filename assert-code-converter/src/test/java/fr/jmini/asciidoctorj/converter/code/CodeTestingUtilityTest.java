@@ -21,6 +21,9 @@ public class CodeTestingUtilityTest {
         statements = CodeTestingUtility.findStatements("public void test(String s) {\n" + "   System.out.println(s);" + "}\n");
         assertThat(statements).containsExactly("System.out.println(s)");
 
+        statements = CodeTestingUtility.findStatements("public void test(String s) {\n" + "   System.out.println(\"{\" + s + \"}\");" + "}\n");
+        assertThat(statements).containsExactly("System.out.println(\"{\" + s + \"}\")");
+
         statements = CodeTestingUtility.findStatements("public void test(String s) {\n"
                 + "   System.out.println(\"This is important:\");"
                 + "   System.out.println(s);"
