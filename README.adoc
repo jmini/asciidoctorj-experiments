@@ -23,7 +23,10 @@ Experiments with AsciidoctorJ.
 == Description
 This repository contains some experiments I do with AsciidoctorJ.
 
-* ast-json
+* Conveters for the AST
+** ast-json
+** assert-code
+** mock-code
 * html2adoc
 
 //end::description[]

@@ -18,7 +18,11 @@ TIP: Do you want to improve this page? Please gh:edit[link-text='edit it on GitH
 
 include::{github-readme}[tags=description]
 
-=== ast-json
+=== AST Conveters
+
+Some converters for the Asciidoctor AST.
+
+==== ast-json
 
 This is an attempt to create a JSON output of the AST of the document.
 (see link:http://discuss.asciidoctor.org/Asciidoctor-AST-output-td4670.html[this discussion] on the mailing list)
@@ -32,6 +36,52 @@ include::../ast-json/src/main/java/ast/json/Main.java[tags='adoc-convert']
 
 I have tried to run it on several examples provided in this folder
 gh:viewdir[path='ast-json/examples', link-text='examples'].
+
+==== assert-code
+
+Some AssertJ code (suitable for usage is a JUnit test case) is generated for a given instance of the Asciidoctor AST.
+The output of this converted is a `checkAst(..)` Method.
+This method will call each method of the AST Object (the complete tree will be traversed) and will expected some method for each method call.
+The generated assertions are valid for the instance used as input.
+
+Take this AsciiDoc snippet as input example:
+
+[source, adoc]
+----
+include::../code-converter/mock-code-converter/src/test/java/fr/jmini/asciidoctorj/converter/mockcode/MockCodeGeneratorExampleTest.java[tags="input"]
+----
+
+When the AsciiDoc Text in is loaded as Asciidoctor AST using the `Asciidoctor.load(String, Map<String, Object>)` method, the output of the converter will be this method:
+
+[source, java]
+----
+include::../code-converter/assert-code-converter/src/test/java/fr/jmini/asciidoctorj/converter/assertcode/AssertCodeGeneratorExampleTest.java[tags="generated-code"]
+----
+
+==== mock-code
+
+In order to be able to replay some JUnit Tests without having to parse AsciiDoc text to produce the AST (JRuby is slow), a solution might be to create an Instance of the AST with Mockito.
+Writing the code to create the mock manually is not really interesting.
+
+The *mock-code* converter can generate the code to initialize the mock for a given AST instance.
+The output of this converted is a `createMock()` method.
+This method will return a mocked implementation for AST interface corresponding to the AST instance used as input.
+The behaviour for the majority of methods in the mock are defined.
+In particular it is possible to traverse the tree.
+
+Take this AsciiDoc snippet as input example:
+
+[source, adoc]
+----
+include::../code-converter/mock-code-converter/src/test/java/fr/jmini/asciidoctorj/converter/mockcode/MockCodeGeneratorExampleTest.java[tags="input"]
+----
+
+When the AsciiDoc Text in is loaded as Asciidoctor AST using the `Asciidoctor.load(String, Map<String, Object>)` method, the output of the converter will be this method:
+
+[source, java]
+----
+include::../code-converter/mock-code-converter/src/test/java/fr/jmini/asciidoctorj/converter/mockcode/MockCodeGeneratorExampleTest.java[tags="generated-code"]
+----
 
 === html2adoc
 
