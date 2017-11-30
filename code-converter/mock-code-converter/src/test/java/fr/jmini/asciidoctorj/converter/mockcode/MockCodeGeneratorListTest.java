@@ -29,6 +29,8 @@ public class MockCodeGeneratorListTest {
         when(mockList1.getNodeName()).thenReturn(null);
         when(mockList1.getContext()).thenReturn(null);
         when(mockList1.getDocument()).thenReturn(null);
+        when(mockList1.isInline()).thenReturn(false);
+        when(mockList1.isBlock()).thenReturn(false);
         when(mockList1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockList1.isReftext()).thenReturn(false);

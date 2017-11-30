@@ -29,6 +29,8 @@ public class MockCodeGeneratorDescriptionListTest {
         when(mockDescriptionList1.getNodeName()).thenReturn(null);
         when(mockDescriptionList1.getContext()).thenReturn(null);
         when(mockDescriptionList1.getDocument()).thenReturn(null);
+        when(mockDescriptionList1.isInline()).thenReturn(false);
+        when(mockDescriptionList1.isBlock()).thenReturn(false);
         when(mockDescriptionList1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockDescriptionList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDescriptionList1.isReftext()).thenReturn(false);

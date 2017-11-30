@@ -33,6 +33,8 @@ public class AssertCodeGeneratorDescriptionListTest {
         assertThat(descriptionList1.getNodeName()).isNull();
         assertThat(descriptionList1.getContext()).isNull();
         assertThat(descriptionList1.getDocument()).isNull();
+        assertThat(descriptionList1.isInline()).isFalse();
+        assertThat(descriptionList1.isBlock()).isFalse();
         assertThat(descriptionList1.getAttributes()).isEmpty();
         assertThat(descriptionList1.getRoles()).isEmpty();
         assertThat(descriptionList1.isReftext()).isFalse();

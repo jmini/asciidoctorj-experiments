@@ -51,6 +51,8 @@ public class AssertCodeGeneratorStructuralNodeTest {
         assertThat(structuralNode1.getParent()).isNull();
         assertThat(structuralNode1.getContext()).isEqualTo("context");
         assertThat(structuralNode1.getDocument()).isNull();
+        assertThat(structuralNode1.isInline()).isTrue();
+        assertThat(structuralNode1.isBlock()).isFalse();
         assertThat(structuralNode1.getAttributes()).isEmpty();
         assertThat(structuralNode1.getRoles()).isEmpty();
         assertThat(structuralNode1.isReftext()).isFalse();

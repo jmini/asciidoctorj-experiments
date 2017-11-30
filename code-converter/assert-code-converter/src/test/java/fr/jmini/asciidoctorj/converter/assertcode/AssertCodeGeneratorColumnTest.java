@@ -1,6 +1,7 @@
 package fr.jmini.asciidoctorj.converter.assertcode;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -15,6 +16,8 @@ public class AssertCodeGeneratorColumnTest {
     @Test
     public void testColumn() throws Exception {
         Column mockColumn = mock(Column.class);
+        when(mockColumn.isInline()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
+        when(mockColumn.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockColumn.getStyle()).thenReturn("STYLE");
         when(mockColumn.getTable()).thenReturn(null);
         when(mockColumn.getColumnNumber()).thenReturn(2);
@@ -38,6 +41,12 @@ public class AssertCodeGeneratorColumnTest {
         assertThat(column1.getParent()).isNull();
         assertThat(column1.getContext()).isNull();
         assertThat(column1.getDocument()).isNull();
+        assertThatThrownBy(() -> {
+            column1.isInline();
+        }).hasMessageContaining("NotImplementedError");
+        assertThatThrownBy(() -> {
+            column1.isBlock();
+        }).hasMessageContaining("NotImplementedError");
         assertThat(column1.getAttributes()).isEmpty();
         assertThat(column1.getRoles()).isEmpty();
         assertThat(column1.isReftext()).isFalse();

@@ -30,6 +30,8 @@ public class MockCodeGeneratorStructuralNodeTest {
         when(mockStructuralNode1.getParent()).thenReturn(null);
         when(mockStructuralNode1.getContext()).thenReturn("context");
         when(mockStructuralNode1.getDocument()).thenReturn(null);
+        when(mockStructuralNode1.isInline()).thenReturn(false);
+        when(mockStructuralNode1.isBlock()).thenReturn(false);
         when(mockStructuralNode1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockStructuralNode1.getRoles()).thenReturn(Collections.emptyList());
         when(mockStructuralNode1.isReftext()).thenReturn(false);

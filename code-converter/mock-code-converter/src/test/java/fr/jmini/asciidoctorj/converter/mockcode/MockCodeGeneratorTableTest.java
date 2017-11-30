@@ -29,6 +29,8 @@ public class MockCodeGeneratorTableTest {
         when(mockTable1.getNodeName()).thenReturn(null);
         when(mockTable1.getContext()).thenReturn(null);
         when(mockTable1.getDocument()).thenReturn(null);
+        when(mockTable1.isInline()).thenReturn(false);
+        when(mockTable1.isBlock()).thenReturn(false);
         when(mockTable1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockTable1.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable1.isReftext()).thenReturn(false);

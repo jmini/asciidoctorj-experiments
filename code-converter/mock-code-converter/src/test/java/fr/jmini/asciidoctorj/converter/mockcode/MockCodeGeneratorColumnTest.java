@@ -32,6 +32,8 @@ public class MockCodeGeneratorColumnTest {
         when(mockColumn1.getParent()).thenReturn(null);
         when(mockColumn1.getContext()).thenReturn("cx");
         when(mockColumn1.getDocument()).thenReturn(null);
+        when(mockColumn1.isInline()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
+        when(mockColumn1.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockColumn1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockColumn1.getRoles()).thenReturn(Arrays.asList("r1", "r2", "r3"));
         when(mockColumn1.isReftext()).thenReturn(false);

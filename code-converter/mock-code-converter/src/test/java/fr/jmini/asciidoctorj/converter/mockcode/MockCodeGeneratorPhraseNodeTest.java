@@ -30,6 +30,8 @@ public class MockCodeGeneratorPhraseNodeTest {
         when(mockPhraseNode1.getParent()).thenReturn(null);
         when(mockPhraseNode1.getContext()).thenReturn(null);
         when(mockPhraseNode1.getDocument()).thenReturn(null);
+        when(mockPhraseNode1.isInline()).thenReturn(false);
+        when(mockPhraseNode1.isBlock()).thenReturn(false);
         when(mockPhraseNode1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockPhraseNode1.getRoles()).thenReturn(Collections.emptyList());
         when(mockPhraseNode1.isReftext()).thenReturn(false);

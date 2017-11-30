@@ -1,6 +1,7 @@
 package fr.jmini.asciidoctorj.converter.assertcode;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -21,8 +22,8 @@ public class AssertCodeGeneratorContentNodeTest {
         when(mockContentNode.getParent()).thenReturn(null);
         when(mockContentNode.getContext()).thenReturn("context");
         when(mockContentNode.getDocument()).thenReturn(null);
-        when(mockContentNode.isInline()).thenReturn(true);
-        when(mockContentNode.isBlock()).thenReturn(false);
+        when(mockContentNode.isInline()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
+        when(mockContentNode.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockContentNode.getAttributes()).thenReturn(Collections.singletonMap("attr-key", "same-value"));
         when(mockContentNode.getRoles()).thenReturn(Collections.singletonList("some-role"));
         when(mockContentNode.isReftext()).thenReturn(false);
@@ -43,6 +44,12 @@ public class AssertCodeGeneratorContentNodeTest {
         assertThat(contentNode1.getParent()).isNull();
         assertThat(contentNode1.getContext()).isEqualTo("context");
         assertThat(contentNode1.getDocument()).isNull();
+        assertThatThrownBy(() -> {
+            contentNode1.isInline();
+        }).hasMessageContaining("NotImplementedError");
+        assertThatThrownBy(() -> {
+            contentNode1.isBlock();
+        }).hasMessageContaining("NotImplementedError");
         assertThat(contentNode1.getAttributes()).containsEntry("attr-key", "same-value");
         assertThat(contentNode1.getRoles()).containsExactly("some-role");
         assertThat(contentNode1.isReftext()).isFalse();

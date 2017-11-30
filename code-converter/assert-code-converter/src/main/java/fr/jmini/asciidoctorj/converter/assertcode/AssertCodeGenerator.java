@@ -85,10 +85,28 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         }
         appendEqualsToExpressionString(sb, varName + ".getContext()", contentNode.getContext());
         appendEqualsToExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
-        // NOTE: contentNode.isInline() throws NotImplementedError at RUBY.inline?
-        // appendEqualsToExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
-        // NOTE: contentNode.isBlock() throws NotImplementedError at RUBY.block?
-        // appendEqualsToExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
+        // NOTE: a NotImplementedError is sometime thrown when contentNode.isInline() is called.
+        try {
+            appendEqualsToExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage()
+                    .contains("NotImplementedError")) {
+                appendNotImplementedError(sb, varName + ".isInline()");
+            } else {
+                throw new IllegalStateException("Unexpected exception", e);
+            }
+        }
+        // NOTE: a NotImplementedError is sometime thrown when contentNode.isBlock() is called.
+        try {
+            appendEqualsToExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage()
+                    .contains("NotImplementedError")) {
+                appendNotImplementedError(sb, varName + ".isBlock()");
+            } else {
+                throw new IllegalStateException("Unexpected exception", e);
+            }
+        }
         appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes());
         appendEqualsToExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendEqualsToExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());
@@ -251,6 +269,10 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         }
         return astClass.substring(0, 1)
                 .toLowerCase() + astClass.substring(1);
+    }
+
+    private void appendNotImplementedError(StringBuilder sb, String expression) {
+        sb.append("assertThatThrownBy(() -> { " + expression + "; }).hasMessageContaining(\"NotImplementedError\");" + NL);
     }
 
     private void appendEqualsToExpressionBoolean(StringBuilder sb, String expression, Boolean value) {

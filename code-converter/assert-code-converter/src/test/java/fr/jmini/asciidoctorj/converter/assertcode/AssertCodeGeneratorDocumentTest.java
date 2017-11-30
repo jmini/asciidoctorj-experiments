@@ -35,6 +35,8 @@ public class AssertCodeGeneratorDocumentTest {
         assertThat(document1.getNodeName()).isNull();
         assertThat(document1.getContext()).isNull();
         assertThat(document1.getDocument()).isNull();
+        assertThat(document1.isInline()).isFalse();
+        assertThat(document1.isBlock()).isFalse();
         assertThat(document1.getAttributes()).isEmpty();
         assertThat(document1.getRoles()).isEmpty();
         assertThat(document1.isReftext()).isFalse();

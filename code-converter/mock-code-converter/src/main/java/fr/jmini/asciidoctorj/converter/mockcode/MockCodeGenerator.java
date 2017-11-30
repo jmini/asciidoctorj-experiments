@@ -87,10 +87,28 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
         }
         appendWhenExpressionString(sb, varName + ".getContext()", contentNode.getContext());
         appendWhenExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
-        // NOTE: contentNode.isInline() throws NotImplementedError at RUBY.inline?
-        // appendWhenExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
-        // NOTE: contentNode.isBlock() throws NotImplementedError at RUBY.block?
-        // appendWhenExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
+        // NOTE: a NotImplementedError is sometime thrown when contentNode.isInline() is called.
+        try {
+            appendWhenExpressionBoolean(sb, varName + ".isInline()", contentNode.isInline());
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage()
+                    .contains("NotImplementedError")) {
+                appendWhenExpressionThrowNotImplementedError(sb, varName + ".isInline()");
+            } else {
+                throw new IllegalStateException("Unexpected exception", e);
+            }
+        }
+        // NOTE: a NotImplementedError is sometime thrown when contentNode.isBlock() is called.
+        try {
+            appendWhenExpressionBoolean(sb, varName + ".isBlock()", contentNode.isBlock());
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage()
+                    .contains("NotImplementedError")) {
+                appendWhenExpressionThrowNotImplementedError(sb, varName + ".isBlock()");
+            } else {
+                throw new IllegalStateException("Unexpected exception", e);
+            }
+        }
         appendWhenExpressionMap(sb, varName + ".getAttributes()", String.class, contentNode.getAttributes());
         appendWhenExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendWhenExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());
@@ -257,6 +275,10 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
             return "mockList";
         }
         return "mock" + astClass;
+    }
+
+    private void appendWhenExpressionThrowNotImplementedError(StringBuilder sb, String expression) {
+        sb.append("when(" + expression + ").thenThrow(new UnsupportedOperationException(\"NotImplementedError\"));" + NL);
     }
 
     private void appendWhenExpressionBoolean(StringBuilder sb, String expression, Boolean value) {

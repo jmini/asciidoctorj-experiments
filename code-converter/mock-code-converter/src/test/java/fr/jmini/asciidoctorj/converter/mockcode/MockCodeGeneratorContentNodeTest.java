@@ -30,6 +30,8 @@ public class MockCodeGeneratorContentNodeTest {
         when(mockContentNode1.getParent()).thenReturn(null);
         when(mockContentNode1.getContext()).thenReturn("context");
         when(mockContentNode1.getDocument()).thenReturn(null);
+        when(mockContentNode1.isInline()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
+        when(mockContentNode1.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockContentNode1.getAttributes()).thenReturn(Collections.singletonMap("attr-key", "same-value"));
         when(mockContentNode1.getRoles()).thenReturn(Collections.singletonList("some-role"));
         when(mockContentNode1.isReftext()).thenReturn(false);

@@ -39,6 +39,8 @@ public class AssertCodeGeneratorTableTest {
         assertThat(table1.getNodeName()).isNull();
         assertThat(table1.getContext()).isNull();
         assertThat(table1.getDocument()).isNull();
+        assertThat(table1.isInline()).isFalse();
+        assertThat(table1.isBlock()).isFalse();
         assertThat(table1.getAttributes()).isEmpty();
         assertThat(table1.getRoles()).isEmpty();
         assertThat(table1.isReftext()).isFalse();
