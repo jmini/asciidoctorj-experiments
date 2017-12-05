@@ -20,7 +20,7 @@ public class ImageConverter extends AbstractConverter {
   public IContext convert(IContext context, Node node, StringBuilder sb) {
     Element element = (Element) node;
     Element parent = element.parent();
-    boolean imageBloc = parent != null && "p".equals(parent.tagName()) && hasNoOtherChild(parent) && isNotInsideATable(parent);
+    boolean imageBloc = parent != null && (("p".equals(parent.tagName()) && hasNoOtherChild(parent)) || "body".equals(parent.tagName())) && isNotInsideATable(parent);
     if (imageBloc) {
       sb.append("\n");
       sb.append("image::");
@@ -32,6 +32,9 @@ public class ImageConverter extends AbstractConverter {
     sb.append("[]");
     if (imageBloc) {
       sb.append("\n");
+      if ("body".equals(parent.tagName())) {
+        sb.append("\n");
+      }
     }
     else {
       sb.append(" ");

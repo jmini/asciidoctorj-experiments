@@ -23,7 +23,7 @@ public class TextNodeConverter extends AbstractConverter {
           addSpaceIfNeeded(context, sb);
         }
         sb.append(trimmedText);
-        boolean spaceNeeded = trimmedText.substring(trimmedText.length() - 1, trimmedText.length()).matches("[a-zA-Z0-9\\./\\(\\)]");
+        boolean spaceNeeded = trimmedText.substring(trimmedText.length() - 1, trimmedText.length()).matches("[a-zA-Z0-9\\.:/\\(\\)]");
         return ContextBuilder.build(context).withSpaceNeeded(spaceNeeded).withLineStarted(true).create();
       }
     }

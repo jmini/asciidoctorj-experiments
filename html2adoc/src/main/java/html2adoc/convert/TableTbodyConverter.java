@@ -23,13 +23,21 @@ public class TableTbodyConverter extends AbstractConverter {
     Element tr = findFirstElement((Element) node, "tr");
     int colsCount = 0;
     Elements children = tr.children();
+    boolean firstRowIsHeader = true;
     for (Element e : children) {
-      if ("td".equals(e.tagName())) {
+      String tagName = e.tagName();
+      if (!"th".equals(tagName)) {
+        firstRowIsHeader = false;
+      }
+      if ("td".equals(tagName) || "th".equals(tagName)) {
         colsCount = colsCount + 1;
       }
     }
-    sb.append("[cols=\"" + colsCount + "*\"]");
-    sb.append("\n");
+    sb.append("[cols=\"" + colsCount + "*\"");
+    if (firstRowIsHeader) {
+      sb.append(", options=\"header\"");
+    }
+    sb.append("]\n");
     sb.append("|===");
     sb.append("\n");
     IContext newContext = ContextBuilder.build(context).withSpaceNeeded(false).create();

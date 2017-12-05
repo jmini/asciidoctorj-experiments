@@ -9,6 +9,7 @@
     <jsoup.version>1.9.2</jsoup.version>
     <junit.version>4.8</junit.version>
     <project.java.version>1.8</project.java.version>
+    <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
   </properties>
 
   <dependencies>

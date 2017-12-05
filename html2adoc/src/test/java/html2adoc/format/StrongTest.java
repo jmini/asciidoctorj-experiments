@@ -109,6 +109,16 @@ public class StrongTest {
   }
 
   @Test
+  public void testKeepSpace5() throws Exception {
+    String html = "<p>Lorem: <strong>Ipsum...</strong></p>";
+    String result = Html2Adoc.convert(html);
+    String expected = "" + //
+        "Lorem: *Ipsum...*\n" + //
+        "\n";
+    assertEquals(expected, result);
+  }
+
+  @Test
   public void testKeepSpaceWithBrackets() throws Exception {
     String html = "<p>(lorem) <strong>is</strong> (ipsum)</p>";
     String result = Html2Adoc.convert(html);

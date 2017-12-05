@@ -16,6 +16,14 @@ public class ImageTest {
   }
 
   @Test
+  public void testImageBlocInBody() throws Exception {
+    String html = "<body><img src=\"images/install002.png\" width=\"360\" height=\"144\" /></body>";
+    String result = Html2Adoc.convert(html);
+    String expected = "\nimage::images/install002.png[]\n\n";
+    assertEquals(expected, result);
+  }
+
+  @Test
   public void testImageBlocAlignCenter() throws Exception {
     String html = "<p align=\"center\"><img src=\"images/install002.png\" width=\"360\" height=\"144\" /></p>";
     String result = Html2Adoc.convert(html);

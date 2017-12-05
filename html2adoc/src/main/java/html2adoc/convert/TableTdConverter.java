@@ -12,7 +12,8 @@ public class TableTdConverter extends AbstractConverter {
   @Override
   public boolean canConvert(IContext context, Node node) {
     if (node instanceof Element) {
-      return "td".equals(((Element) node).tagName());
+      String tagName = ((Element) node).tagName();
+      return "td".equals(tagName) || "th".equals(tagName);
     }
     return false;
   }
