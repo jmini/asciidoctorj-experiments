@@ -640,13 +640,22 @@ public interface EadocPackage extends EPackage {
 	int ECONTENT_NODE__ROLES = CONTENT_NODE_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECONTENT_NODE__REFTEXT = CONTENT_NODE_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>EContent Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECONTENT_NODE_FEATURE_COUNT = CONTENT_NODE_FEATURE_COUNT + 9;
+	int ECONTENT_NODE_FEATURE_COUNT = CONTENT_NODE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EStructuralNodeImpl <em>EStructural Node</em>}' class.
@@ -738,6 +747,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ESTRUCTURAL_NODE__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__REFTEXT = ECONTENT_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -892,6 +910,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int EBLOCK__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__REFTEXT = ESTRUCTURAL_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1064,6 +1091,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ECELL__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECELL__REFTEXT = ECONTENT_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Row</b></em>' container reference.
@@ -1245,6 +1281,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ECOLUMN__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECOLUMN__REFTEXT = ECONTENT_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -1547,6 +1592,15 @@ public interface EadocPackage extends EPackage {
 	int EDESCRIPTION_LIST__ROLES = ESTRUCTURAL_NODE__ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__REFTEXT = ESTRUCTURAL_NODE__REFTEXT;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1745,6 +1799,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDOCUMENT__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__REFTEXT = ESTRUCTURAL_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1992,6 +2055,15 @@ public interface EadocPackage extends EPackage {
 	int EADOC_LIST__ROLES = ESTRUCTURAL_NODE__ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__REFTEXT = ESTRUCTURAL_NODE__REFTEXT;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2153,6 +2225,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELIST_ITEM__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__REFTEXT = ESTRUCTURAL_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2334,6 +2415,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int EPHRASE_NODE__ROLES = ECONTENT_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPHRASE_NODE__REFTEXT = ECONTENT_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -2535,6 +2625,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ESECTION__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__REFTEXT = ESTRUCTURAL_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2771,6 +2870,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ETABLE__ROLES = ESTRUCTURAL_NODE__ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ETABLE__REFTEXT = ESTRUCTURAL_NODE__REFTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -3656,6 +3764,17 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEContentNode_Roles();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EContentNode#getReftext <em>Reftext</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reftext</em>'.
+	 * @see fr.jmini.eadoc.EContentNode#getReftext()
+	 * @see #getEContentNode()
+	 * @generated
+	 */
+	EAttribute getEContentNode_Reftext();
 
 	/**
 	 * Returns the meta object for class '{@link fr.jmini.eadoc.EContentPart <em>EContent Part</em>}'.
@@ -5082,6 +5201,14 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ECONTENT_NODE__ROLES = eINSTANCE.getEContentNode_Roles();
+
+		/**
+		 * The meta object literal for the '<em><b>Reftext</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ECONTENT_NODE__REFTEXT = eINSTANCE.getEContentNode_Reftext();
 
 		/**
 		 * The meta object literal for the '{@link fr.jmini.eadoc.impl.EContentPartImpl <em>EContent Part</em>}' class.

@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.jmini.eadoc.EContentNode#isBlock <em>Block</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EContentNode#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EContentNode#getRoles <em>Roles</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.EContentNode#getReftext <em>Reftext</em>}</li>
  * </ul>
  *
  * @see fr.jmini.eadoc.EadocPackage#getEContentNode()
@@ -268,6 +269,32 @@ public interface EContentNode extends EObject, ContentNode {
 	 * @generated
 	 */
 	void setRoles(List<String> value);
+
+	/**
+	 * Returns the value of the '<em><b>Reftext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reftext</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reftext</em>' attribute.
+	 * @see #setReftext(String)
+	 * @see fr.jmini.eadoc.EadocPackage#getEContentNode_Reftext()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getReftext();
+
+	/**
+	 * Sets the value of the '{@link fr.jmini.eadoc.EContentNode#getReftext <em>Reftext</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reftext</em>' attribute.
+	 * @see #getReftext()
+	 * @generated
+	 */
+	void setReftext(String value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -568,19 +595,10 @@ public interface EContentNode extends EObject, ContentNode {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean _isNullOrEmpty = <%org.eclipse.xtext.xbase.lib.StringExtensions%>.isNullOrEmpty(this.getReftext());\nreturn (!_isNullOrEmpty);'"
 	 * @generated
 	 */
 	boolean isReftext();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
-	 * @generated
-	 */
-	String getReftext();
 
 	/**
 	 * <!-- begin-user-doc -->

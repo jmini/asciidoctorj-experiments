@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>EContent Node</b></em>'.
@@ -37,6 +39,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#isBlock <em>Block</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getRoles <em>Roles</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.impl.EContentNodeImpl#getReftext <em>Reftext</em>}</li>
  * </ul>
  *
  * @generated
@@ -181,6 +184,26 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	 * @ordered
 	 */
 	protected List<String> roles;
+
+	/**
+	 * The default value of the '{@link #getReftext() <em>Reftext</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReftext()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REFTEXT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getReftext() <em>Reftext</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReftext()
+	 * @generated
+	 * @ordered
+	 */
+	protected String reftext = REFTEXT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -422,6 +445,27 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 		roles = newRoles;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EadocPackage.ECONTENT_NODE__ROLES, oldRoles, roles));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getReftext() {
+		return reftext;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReftext(String newReftext) {
+		String oldReftext = reftext;
+		reftext = newReftext;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EadocPackage.ECONTENT_NODE__REFTEXT, oldReftext, reftext));
 	}
 
 	/**
@@ -681,16 +725,8 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 	 * @generated
 	 */
 	public boolean isReftext() {
-		throw new UnsupportedOperationException("Not implemented");
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getReftext() {
-		throw new UnsupportedOperationException("Not implemented");
+		boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(this.getReftext());
+		return (!_isNullOrEmpty);
 	}
 
 	/**
@@ -775,6 +811,8 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 				return getAttributes();
 			case EadocPackage.ECONTENT_NODE__ROLES:
 				return getRoles();
+			case EadocPackage.ECONTENT_NODE__REFTEXT:
+				return getReftext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -815,6 +853,9 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 			case EadocPackage.ECONTENT_NODE__ROLES:
 				setRoles((List<String>)newValue);
 				return;
+			case EadocPackage.ECONTENT_NODE__REFTEXT:
+				setReftext((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -854,6 +895,9 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 			case EadocPackage.ECONTENT_NODE__ROLES:
 				setRoles((List<String>)null);
 				return;
+			case EadocPackage.ECONTENT_NODE__REFTEXT:
+				setReftext(REFTEXT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -884,6 +928,8 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 				return attributes != null;
 			case EadocPackage.ECONTENT_NODE__ROLES:
 				return roles != null;
+			case EadocPackage.ECONTENT_NODE__REFTEXT:
+				return REFTEXT_EDEFAULT == null ? reftext != null : !REFTEXT_EDEFAULT.equals(reftext);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -912,6 +958,8 @@ public class EContentNodeImpl extends MinimalEObjectImpl.Container implements EC
 		result.append(attributes);
 		result.append(", roles: ");
 		result.append(roles);
+		result.append(", reftext: ");
+		result.append(reftext);
 		result.append(')');
 		return result.toString();
 	}

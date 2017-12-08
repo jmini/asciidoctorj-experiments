@@ -1009,6 +1009,15 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEContentNode_Reftext() {
+		return (EAttribute)eContentNodeEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEContentPart() {
 		return eContentPartEClass;
 	}
@@ -1854,6 +1863,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eContentNodeEClass, ECONTENT_NODE__BLOCK);
 		createEAttribute(eContentNodeEClass, ECONTENT_NODE__ATTRIBUTES);
 		createEAttribute(eContentNodeEClass, ECONTENT_NODE__ROLES);
+		createEAttribute(eContentNodeEClass, ECONTENT_NODE__REFTEXT);
 
 		eContentPartEClass = createEClass(ECONTENT_PART);
 		createEAttribute(eContentPartEClass, ECONTENT_PART__ID);
@@ -2115,6 +2125,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getEContentNode_Block(), theEcorePackage.getEBoolean(), "block", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEContentNode_Attributes(), this.getStringObjectMap(), "attributes", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEContentNode_Roles(), this.getStringList(), "roles", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEContentNode_Reftext(), theEcorePackage.getEString(), "reftext", null, 0, 1, EContentNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(eContentNodeEClass, theEcorePackage.getEString(), "id", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
@@ -2209,8 +2220,6 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		addEParameter(op, theEcorePackage.getEString(), "role", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(eContentNodeEClass, theEcorePackage.getEBoolean(), "isReftext", 0, 1, !IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(eContentNodeEClass, theEcorePackage.getEString(), "getReftext", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(eContentNodeEClass, theEcorePackage.getEString(), "iconUri", 0, 1, !IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "name", 0, 1, !IS_UNIQUE, IS_ORDERED);

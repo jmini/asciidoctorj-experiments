@@ -231,7 +231,6 @@ class EContentNode extends ContentNode {
         expected.equals(getAttribute(name))
     }
 
-
     op boolean isAttribute(Object name, Object expected, boolean inherit) {
         throw new UnsupportedOperationException("Not implemented")
     }
@@ -276,12 +275,12 @@ class EContentNode extends ContentNode {
       roles.remove(role)
     }
 
+    String reftext
+
     op boolean isReftext() {
-        throw new UnsupportedOperationException("Not implemented")
+        return !this.getReftext().nullOrEmpty
     }
-    op String getReftext() {
-        throw new UnsupportedOperationException("Not implemented")
-    }
+
     op String iconUri(String name) {
         throw new UnsupportedOperationException("Not implemented")
     }
