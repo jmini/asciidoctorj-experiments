@@ -47,8 +47,8 @@ public class AssertCodeGeneratorColumnTest {
         assertThatThrownBy(() -> {
             column1.isBlock();
         }).hasMessageContaining("NotImplementedError");
-        assertThat(column1.getAttributes()).isEmpty();
-        assertThat(column1.getRoles()).isEmpty();
+        assertThat(column1.getAttributes()).isNullOrEmpty();
+        assertThat(column1.getRoles()).isNullOrEmpty();
         assertThat(column1.isReftext()).isFalse();
         assertThat(column1.getStyle()).isEqualTo("STYLE");
         assertThat(column1.getTable()).isNull();

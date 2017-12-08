@@ -104,14 +104,14 @@ public class AssertCodeGeneratorExampleTest {
                 .containsEntry("filetype", "html")
                 .containsEntry("doctitle", "My page")
                 .containsEntry("doctype", "article");
-        assertThat(document1.getRoles()).isEmpty();
+        assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
         assertThat(document1.getContentModel()).isEqualTo("compound");
         assertThat(document1.getSourceLocation()).isNull();
-        assertThat(document1.getSubstitutions()).isEmpty();
+        assertThat(document1.getSubstitutions()).isNullOrEmpty();
         assertThat(document1.getBlocks()).hasSize(1);
         Block block1 = (Block) document1.getBlocks()
                 .get(0);
@@ -121,8 +121,8 @@ public class AssertCodeGeneratorExampleTest {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).isEmpty();
-        assertThat(block1.getRoles()).isEmpty();
+        assertThat(block1.getAttributes()).isNullOrEmpty();
+        assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isNull();
@@ -130,7 +130,7 @@ public class AssertCodeGeneratorExampleTest {
         assertThat(block1.getContentModel()).isEqualTo("simple");
         assertThat(block1.getSourceLocation()).isNull();
         assertThat(block1.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(block1.getBlocks()).isEmpty();
+        assertThat(block1.getBlocks()).isNullOrEmpty();
         assertThat(block1.getLines()).containsExactly("Some text");
         assertThat(block1.getSource()).isEqualTo("Some text");
         Title title1 = document1.getStructuredDoctitle();

@@ -41,8 +41,8 @@ public class AssertCodeGeneratorContentPartTest {
         assertThat(contentPart1.getStyle()).isEqualTo("stle");
         assertThat(contentPart1.getRole()).isEqualTo("role");
         assertThat(contentPart1.getTitle()).isEqualTo("some-title");
-        assertThat(contentPart1.getAttributes()).isNull();
-        assertThat(contentPart1.getParts()).isNull();
+        assertThat(contentPart1.getAttributes()).isNullOrEmpty();
+        assertThat(contentPart1.getParts()).isNullOrEmpty();
     }
     // end::generated-code[]
 }

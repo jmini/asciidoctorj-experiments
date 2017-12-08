@@ -36,17 +36,17 @@ public class AssertCodeGeneratorListTest {
         assertThat(list1.getDocument()).isNull();
         assertThat(list1.isInline()).isFalse();
         assertThat(list1.isBlock()).isFalse();
-        assertThat(list1.getAttributes()).isEmpty();
-        assertThat(list1.getRoles()).isEmpty();
+        assertThat(list1.getAttributes()).isNullOrEmpty();
+        assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
         assertThat(list1.getTitle()).isNull();
         assertThat(list1.getStyle()).isNull();
         assertThat(list1.getLevel()).isEqualTo(0);
         assertThat(list1.getContentModel()).isNull();
         assertThat(list1.getSourceLocation()).isNull();
-        assertThat(list1.getSubstitutions()).isEmpty();
-        assertThat(list1.getBlocks()).isEmpty();
-        assertThat(list1.getItems()).isEmpty();
+        assertThat(list1.getSubstitutions()).isNullOrEmpty();
+        assertThat(list1.getBlocks()).isNullOrEmpty();
+        assertThat(list1.getItems()).isNullOrEmpty();
         assertThat(list1.hasItems()).isFalse();
     }
     // end::generated-code[]

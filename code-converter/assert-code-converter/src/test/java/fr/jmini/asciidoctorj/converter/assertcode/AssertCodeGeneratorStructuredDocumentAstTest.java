@@ -151,8 +151,8 @@ public class AssertCodeGeneratorStructuredDocumentAstTest {
         assertThat(contentPart1.getStyle()).isNull();
         assertThat(contentPart1.getRole()).isNull();
         assertThat(contentPart1.getTitle()).isNull();
-        assertThat(contentPart1.getAttributes()).isEmpty();
-        assertThat(contentPart1.getParts()).isNull();
+        assertThat(contentPart1.getAttributes()).isNullOrEmpty();
+        assertThat(contentPart1.getParts()).isNullOrEmpty();
         ContentPart contentPart2 = (ContentPart) structuredDocument1.getParts()
                 .get(1);
         assertThat(contentPart2.getId()).isEqualTo("_an_header");
@@ -161,10 +161,10 @@ public class AssertCodeGeneratorStructuredDocumentAstTest {
         assertThat(contentPart2.getStyle()).isNull();
         assertThat(contentPart2.getRole()).isNull();
         assertThat(contentPart2.getTitle()).isEqualTo("An header");
-        assertThat(contentPart2.getAttributes()).isEmpty();
-        assertThat(contentPart2.getParts()).isNull();
+        assertThat(contentPart2.getAttributes()).isNullOrEmpty();
+        assertThat(contentPart2.getParts()).isNullOrEmpty();
         DocumentHeader documentHeader1 = structuredDocument1.getHeader();
-        assertThat(documentHeader1.getAuthors()).isEmpty();
+        assertThat(documentHeader1.getAuthors()).isNullOrEmpty();
         Title title1 = documentHeader1.getDocumentTitle();
         assertThat(title1.getMain()).isEqualTo("My page");
         assertThat(title1.getSubtitle()).isNull();

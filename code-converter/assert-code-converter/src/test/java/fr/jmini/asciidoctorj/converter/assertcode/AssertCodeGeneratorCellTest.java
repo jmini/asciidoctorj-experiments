@@ -53,8 +53,8 @@ public class AssertCodeGeneratorCellTest {
         assertThatThrownBy(() -> {
             cell1.isBlock();
         }).hasMessageContaining("NotImplementedError");
-        assertThat(cell1.getAttributes()).isEmpty();
-        assertThat(cell1.getRoles()).isEmpty();
+        assertThat(cell1.getAttributes()).isNullOrEmpty();
+        assertThat(cell1.getRoles()).isNullOrEmpty();
         assertThat(cell1.isReftext()).isFalse();
         assertThat(cell1.getColumn()).isNull();
         assertThat(cell1.getColspan()).isEqualTo(1);

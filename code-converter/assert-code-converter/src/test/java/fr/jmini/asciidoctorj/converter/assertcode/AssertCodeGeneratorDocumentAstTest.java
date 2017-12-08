@@ -202,14 +202,14 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("warning-caption", "Warning")
                 .containsEntry("figure-caption", "Figure");
-        assertThat(document1.getRoles()).isEmpty();
+        assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
         assertThat(document1.getContentModel()).isEqualTo("compound");
         assertThat(document1.getSourceLocation()).isNull();
-        assertThat(document1.getSubstitutions()).isEmpty();
+        assertThat(document1.getSubstitutions()).isNullOrEmpty();
         assertThat(document1.getBlocks()).hasSize(1);
         Section section1 = (Section) document1.getBlocks()
                 .get(0);
@@ -220,15 +220,15 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(section1.getDocument()).isSameAs(document1);
         assertThat(section1.isInline()).isFalse();
         assertThat(section1.isBlock()).isTrue();
-        assertThat(section1.getAttributes()).isEmpty();
-        assertThat(section1.getRoles()).isEmpty();
+        assertThat(section1.getAttributes()).isNullOrEmpty();
+        assertThat(section1.getRoles()).isNullOrEmpty();
         assertThat(section1.isReftext()).isFalse();
         assertThat(section1.getTitle()).isEqualTo("A small List");
         assertThat(section1.getStyle()).isNull();
         assertThat(section1.getLevel()).isEqualTo(1);
         assertThat(section1.getContentModel()).isEqualTo("compound");
         assertThat(section1.getSourceLocation()).isNull();
-        assertThat(section1.getSubstitutions()).isEmpty();
+        assertThat(section1.getSubstitutions()).isNullOrEmpty();
         assertThat(section1.getBlocks()).hasSize(3);
         Block block1 = (Block) section1.getBlocks()
                 .get(0);
@@ -239,8 +239,8 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).isEmpty();
-        assertThat(block1.getRoles()).isEmpty();
+        assertThat(block1.getAttributes()).isNullOrEmpty();
+        assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isNull();
@@ -248,7 +248,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(block1.getContentModel()).isEqualTo("simple");
         assertThat(block1.getSourceLocation()).isNull();
         assertThat(block1.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(block1.getBlocks()).isEmpty();
+        assertThat(block1.getBlocks()).isNullOrEmpty();
         assertThat(block1.getLines()).containsExactly("Lorem ipsum dolor sit amet:");
         assertThat(block1.getSource()).isEqualTo("Lorem ipsum dolor sit amet:");
         org.asciidoctor.ast.List list1 = (org.asciidoctor.ast.List) section1.getBlocks()
@@ -260,16 +260,16 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(list1.getDocument()).isSameAs(document1);
         assertThat(list1.isInline()).isFalse();
         assertThat(list1.isBlock()).isTrue();
-        assertThat(list1.getAttributes()).isEmpty();
-        assertThat(list1.getRoles()).isEmpty();
+        assertThat(list1.getAttributes()).isNullOrEmpty();
+        assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
         assertThat(list1.getTitle()).isNull();
         assertThat(list1.getStyle()).isNull();
         assertThat(list1.getLevel()).isEqualTo(1);
         assertThat(list1.getContentModel()).isEqualTo("compound");
         assertThat(list1.getSourceLocation()).isNull();
-        assertThat(list1.getSubstitutions()).isEmpty();
-        assertThat(list1.getBlocks()).isNull();
+        assertThat(list1.getSubstitutions()).isNullOrEmpty();
+        assertThat(list1.getBlocks()).isNullOrEmpty();
         assertThat(list1.getItems()).hasSize(2);
         ListItem listItem1 = (ListItem) list1.getItems()
                 .get(0);
@@ -280,8 +280,8 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(listItem1.getDocument()).isSameAs(document1);
         assertThat(listItem1.isInline()).isFalse();
         assertThat(listItem1.isBlock()).isTrue();
-        assertThat(listItem1.getAttributes()).isEmpty();
-        assertThat(listItem1.getRoles()).isEmpty();
+        assertThat(listItem1.getAttributes()).isNullOrEmpty();
+        assertThat(listItem1.getRoles()).isNullOrEmpty();
         assertThat(listItem1.isReftext()).isFalse();
         assertThat(listItem1.getTitle()).isNull();
         assertThat(listItem1.getStyle()).isNull();
@@ -289,7 +289,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(listItem1.getContentModel()).isEqualTo("compound");
         assertThat(listItem1.getSourceLocation()).isNull();
         assertThat(listItem1.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(listItem1.getBlocks()).isEmpty();
+        assertThat(listItem1.getBlocks()).isNullOrEmpty();
         assertThat(listItem1.getMarker()).isEqualTo("*");
         assertThat(listItem1.getText()).isEqualTo("First item");
         assertThat(listItem1.getSource()).isEqualTo("First item");
@@ -303,8 +303,8 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(listItem2.getDocument()).isSameAs(document1);
         assertThat(listItem2.isInline()).isFalse();
         assertThat(listItem2.isBlock()).isTrue();
-        assertThat(listItem2.getAttributes()).isEmpty();
-        assertThat(listItem2.getRoles()).isEmpty();
+        assertThat(listItem2.getAttributes()).isNullOrEmpty();
+        assertThat(listItem2.getRoles()).isNullOrEmpty();
         assertThat(listItem2.isReftext()).isFalse();
         assertThat(listItem2.getTitle()).isNull();
         assertThat(listItem2.getStyle()).isNull();
@@ -312,7 +312,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(listItem2.getContentModel()).isEqualTo("compound");
         assertThat(listItem2.getSourceLocation()).isNull();
         assertThat(listItem2.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(listItem2.getBlocks()).isEmpty();
+        assertThat(listItem2.getBlocks()).isNullOrEmpty();
         assertThat(listItem2.getMarker()).isEqualTo("*");
         assertThat(listItem2.getText()).isEqualTo("Second item");
         assertThat(listItem2.getSource()).isEqualTo("Second item");
@@ -327,8 +327,8 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(block2.getDocument()).isSameAs(document1);
         assertThat(block2.isInline()).isFalse();
         assertThat(block2.isBlock()).isTrue();
-        assertThat(block2.getAttributes()).isEmpty();
-        assertThat(block2.getRoles()).isEmpty();
+        assertThat(block2.getAttributes()).isNullOrEmpty();
+        assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getTitle()).isNull();
         assertThat(block2.getStyle()).isNull();
@@ -336,7 +336,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(block2.getContentModel()).isEqualTo("simple");
         assertThat(block2.getSourceLocation()).isNull();
         assertThat(block2.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(block2.getBlocks()).isEmpty();
+        assertThat(block2.getBlocks()).isNullOrEmpty();
         assertThat(block2.getLines()).containsExactly("Ut commodo lorem nec lacinia finibus.");
         assertThat(block2.getSource()).isEqualTo("Ut commodo lorem nec lacinia finibus.");
         assertThat(section1.getIndex()).isEqualTo(0);

@@ -36,8 +36,8 @@ public class AssertCodeGeneratorPhraseNodeTest {
         assertThat(phraseNode1.getDocument()).isNull();
         assertThat(phraseNode1.isInline()).isFalse();
         assertThat(phraseNode1.isBlock()).isFalse();
-        assertThat(phraseNode1.getAttributes()).isEmpty();
-        assertThat(phraseNode1.getRoles()).isEmpty();
+        assertThat(phraseNode1.getAttributes()).isNullOrEmpty();
+        assertThat(phraseNode1.getRoles()).isNullOrEmpty();
         assertThat(phraseNode1.isReftext()).isFalse();
         assertThat(phraseNode1.getType()).isEqualTo("type");
         assertThat(phraseNode1.getText()).isEqualTo("text");

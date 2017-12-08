@@ -31,7 +31,7 @@ public class AssertCodeGeneratorDescriptionListEntryTest {
     public void checkAst(DescriptionListEntry astDescriptionListEntry) {
         DescriptionListEntry descriptionListEntry1 = astDescriptionListEntry;
         assertThat(descriptionListEntry1.getDescription()).isNull();
-        assertThat(descriptionListEntry1.getTerms()).isEmpty();
+        assertThat(descriptionListEntry1.getTerms()).isNullOrEmpty();
     }
     // end::generated-code[]
 }

@@ -39,7 +39,7 @@ public class AssertCodeGeneratorDocumentHeaderTest {
     // tag::generated-code[]
     public void checkAst(DocumentHeader astDocumentHeader) {
         DocumentHeader documentHeader1 = astDocumentHeader;
-        assertThat(documentHeader1.getAuthors()).isNull();
+        assertThat(documentHeader1.getAuthors()).isNullOrEmpty();
         assertThat(documentHeader1.getDocumentTitle()).isNull();
         assertThat(documentHeader1.getPageTitle()).isNull();
         assertThat(documentHeader1.getAuthor()).isNull();

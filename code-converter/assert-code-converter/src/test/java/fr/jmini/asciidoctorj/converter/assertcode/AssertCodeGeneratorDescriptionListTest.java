@@ -35,17 +35,17 @@ public class AssertCodeGeneratorDescriptionListTest {
         assertThat(descriptionList1.getDocument()).isNull();
         assertThat(descriptionList1.isInline()).isFalse();
         assertThat(descriptionList1.isBlock()).isFalse();
-        assertThat(descriptionList1.getAttributes()).isEmpty();
-        assertThat(descriptionList1.getRoles()).isEmpty();
+        assertThat(descriptionList1.getAttributes()).isNullOrEmpty();
+        assertThat(descriptionList1.getRoles()).isNullOrEmpty();
         assertThat(descriptionList1.isReftext()).isFalse();
         assertThat(descriptionList1.getTitle()).isNull();
         assertThat(descriptionList1.getStyle()).isNull();
         assertThat(descriptionList1.getLevel()).isEqualTo(0);
         assertThat(descriptionList1.getContentModel()).isNull();
         assertThat(descriptionList1.getSourceLocation()).isNull();
-        assertThat(descriptionList1.getSubstitutions()).isEmpty();
-        assertThat(descriptionList1.getBlocks()).isEmpty();
-        assertThat(descriptionList1.getItems()).isEmpty();
+        assertThat(descriptionList1.getSubstitutions()).isNullOrEmpty();
+        assertThat(descriptionList1.getBlocks()).isNullOrEmpty();
+        assertThat(descriptionList1.getItems()).isNullOrEmpty();
     }
     // end::generated-code[]
 }

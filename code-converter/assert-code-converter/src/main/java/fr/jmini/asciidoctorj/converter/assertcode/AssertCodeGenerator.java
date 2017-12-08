@@ -317,10 +317,8 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
     }
 
     private void appendEqualsToExpressionObjectList(StringBuilder sb, String getterExpression, List<?> value) {
-        if (value == null) {
-            sb.append("assertThat(" + getterExpression + ").isNull();" + NL);
-        } else if (value.isEmpty()) {
-            sb.append("assertThat(" + getterExpression + ").isEmpty();" + NL);
+        if (value == null || value.isEmpty()) {
+            sb.append("assertThat(" + getterExpression + ").isNullOrEmpty();" + NL);
         } else {
             sb.append("assertThat(" + getterExpression + ").hasSize(" + value.size() + ");" + NL);
             int i = 0;
@@ -358,10 +356,8 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
     }
 
     private static String equalsToExpressionStringList(List<String> value) {
-        if (value == null) {
-            return "isNull()";
-        } else if (value.isEmpty()) {
-            return "isEmpty()";
+        if (value == null || value.isEmpty()) {
+            return "isNullOrEmpty()";
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("containsExactly(");
@@ -374,10 +370,8 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
     }
 
     private static String equalsToExpressionMap(Map<? extends Object, Object> value) {
-        if (value == null) {
-            return "isNull()";
-        } else if (value.isEmpty()) {
-            return "isEmpty()";
+        if (value == null || value.isEmpty()) {
+            return "isNullOrEmpty()";
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("containsEntry(");

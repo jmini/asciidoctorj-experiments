@@ -53,16 +53,16 @@ public class AssertCodeGeneratorStructuralNodeTest {
         assertThat(structuralNode1.getDocument()).isNull();
         assertThat(structuralNode1.isInline()).isTrue();
         assertThat(structuralNode1.isBlock()).isFalse();
-        assertThat(structuralNode1.getAttributes()).isEmpty();
-        assertThat(structuralNode1.getRoles()).isEmpty();
+        assertThat(structuralNode1.getAttributes()).isNullOrEmpty();
+        assertThat(structuralNode1.getRoles()).isNullOrEmpty();
         assertThat(structuralNode1.isReftext()).isFalse();
         assertThat(structuralNode1.getTitle()).isEqualTo("my-title");
         assertThat(structuralNode1.getStyle()).isEqualTo("my-style");
         assertThat(structuralNode1.getLevel()).isEqualTo(2);
         assertThat(structuralNode1.getContentModel()).isEqualTo("my-content-model");
         assertThat(structuralNode1.getSourceLocation()).isNull();
-        assertThat(structuralNode1.getSubstitutions()).isEmpty();
-        assertThat(structuralNode1.getBlocks()).isEmpty();
+        assertThat(structuralNode1.getSubstitutions()).isNullOrEmpty();
+        assertThat(structuralNode1.getBlocks()).isNullOrEmpty();
     }
     // end::generated-code[]
 }

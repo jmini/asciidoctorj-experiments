@@ -29,7 +29,7 @@ public class AssertCodeGeneratorRowTest {
     // tag::generated-code[]
     public void checkAst(Row astRow) {
         Row row1 = astRow;
-        assertThat(row1.getCells()).isEmpty();
+        assertThat(row1.getCells()).isNullOrEmpty();
     }
     // end::generated-code[]
 }

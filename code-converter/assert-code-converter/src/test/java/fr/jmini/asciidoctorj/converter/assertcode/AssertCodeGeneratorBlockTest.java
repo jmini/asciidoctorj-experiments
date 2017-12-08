@@ -56,9 +56,9 @@ public class AssertCodeGeneratorBlockTest {
         assertThat(block1.getLevel()).isEqualTo(0);
         assertThat(block1.getContentModel()).isNull();
         assertThat(block1.getSourceLocation()).isNull();
-        assertThat(block1.getSubstitutions()).isEmpty();
-        assertThat(block1.getBlocks()).isEmpty();
-        assertThat(block1.getLines()).isEmpty();
+        assertThat(block1.getSubstitutions()).isNullOrEmpty();
+        assertThat(block1.getBlocks()).isNullOrEmpty();
+        assertThat(block1.getLines()).isNullOrEmpty();
         assertThat(block1.getSource()).isNull();
     }
     // end::generated-code[]

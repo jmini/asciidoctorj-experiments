@@ -30,7 +30,7 @@ public class AssertCodeGeneratorStructuredDocumentTest {
     // tag::generated-code[]
     public void checkAst(StructuredDocument astStructuredDocument) {
         StructuredDocument structuredDocument1 = astStructuredDocument;
-        assertThat(structuredDocument1.getParts()).isEmpty();
+        assertThat(structuredDocument1.getParts()).isNullOrEmpty();
         assertThat(structuredDocument1.getHeader()).isNull();
     }
     // end::generated-code[]
