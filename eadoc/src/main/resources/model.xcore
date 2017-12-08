@@ -381,7 +381,11 @@ class EDocumentHeader extends DocumentHeader {
     String pageTitle
 
     op Author getAuthor() {
-        throw new UnsupportedOperationException("Not implemented")
+        if(this.authors.isEmpty) {
+            return EadocFactory.eINSTANCE.createEAuthor();
+        } else {
+            return this.authors.head
+        }
     }
 
     contains ERevisionInfo revisionInfo

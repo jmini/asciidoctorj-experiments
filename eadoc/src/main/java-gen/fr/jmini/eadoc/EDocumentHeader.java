@@ -156,7 +156,7 @@ public interface EDocumentHeader extends EObject, DocumentHeader {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" type="fr.jmini.eadoc.Author" unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean _isEmpty = this.getAuthors().isEmpty();\nif (_isEmpty)\n{\n\treturn <%fr.jmini.eadoc.EadocFactory%>.eINSTANCE.createEAuthor();\n}\nelse\n{\n\treturn <%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%fr.jmini.eadoc.EAuthor%>>head(this.getAuthors());\n}'"
 	 * @generated
 	 */
 	Author getAuthor();

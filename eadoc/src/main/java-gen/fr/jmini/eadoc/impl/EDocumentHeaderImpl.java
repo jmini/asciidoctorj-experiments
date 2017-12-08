@@ -6,6 +6,7 @@ import fr.jmini.eadoc.EAuthor;
 import fr.jmini.eadoc.EDocumentHeader;
 import fr.jmini.eadoc.ERevisionInfo;
 import fr.jmini.eadoc.ETitle;
+import fr.jmini.eadoc.EadocFactory;
 import fr.jmini.eadoc.EadocPackage;
 
 import java.util.Collection;
@@ -26,6 +27,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * <!-- begin-user-doc -->
@@ -270,7 +273,13 @@ public class EDocumentHeaderImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public Author getAuthor() {
-		throw new UnsupportedOperationException("Not implemented");
+		boolean _isEmpty = this.getAuthors().isEmpty();
+		if (_isEmpty) {
+			return EadocFactory.eINSTANCE.createEAuthor();
+		}
+		else {
+			return IterableExtensions.<EAuthor>head(this.getAuthors());
+		}
 	}
 
 	/**
