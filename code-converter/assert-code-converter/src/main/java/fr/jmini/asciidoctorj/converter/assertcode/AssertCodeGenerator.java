@@ -110,6 +110,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes());
         appendEqualsToExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendEqualsToExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());
+        appendEqualsToExpressionString(sb, varName + ".getReftext()", contentNode.getReftext());
     }
 
     @Override

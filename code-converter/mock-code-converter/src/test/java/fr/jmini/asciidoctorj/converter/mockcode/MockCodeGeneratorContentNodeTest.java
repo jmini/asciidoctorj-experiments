@@ -34,7 +34,8 @@ public class MockCodeGeneratorContentNodeTest {
         when(mockContentNode1.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockContentNode1.getAttributes()).thenReturn(Collections.singletonMap("attr-key", "same-value"));
         when(mockContentNode1.getRoles()).thenReturn(Collections.singletonList("some-role"));
-        when(mockContentNode1.isReftext()).thenReturn(false);
+        when(mockContentNode1.isReftext()).thenReturn(true);
+        when(mockContentNode1.getReftext()).thenReturn("bla");
         return mockContentNode1;
     }
     // end::generated-code[]

@@ -26,7 +26,8 @@ public class AssertCodeGeneratorContentNodeTest {
         when(mockContentNode.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockContentNode.getAttributes()).thenReturn(Collections.singletonMap("attr-key", "same-value"));
         when(mockContentNode.getRoles()).thenReturn(Collections.singletonList("some-role"));
-        when(mockContentNode.isReftext()).thenReturn(false);
+        when(mockContentNode.isReftext()).thenReturn(true);
+        when(mockContentNode.getReftext()).thenReturn("bla");
 
         AssertCodeGenerator generator = new AssertCodeGenerator();
         StringBuilder sb = new StringBuilder();
@@ -52,7 +53,8 @@ public class AssertCodeGeneratorContentNodeTest {
         }).hasMessageContaining("NotImplementedError");
         assertThat(contentNode1.getAttributes()).containsEntry("attr-key", "same-value");
         assertThat(contentNode1.getRoles()).containsExactly("some-role");
-        assertThat(contentNode1.isReftext()).isFalse();
+        assertThat(contentNode1.isReftext()).isTrue();
+        assertThat(contentNode1.getReftext()).isEqualTo("bla");
     }
     // end::generated-code[]
 }

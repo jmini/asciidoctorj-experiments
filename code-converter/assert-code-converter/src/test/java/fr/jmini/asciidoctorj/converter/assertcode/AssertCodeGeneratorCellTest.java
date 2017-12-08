@@ -56,6 +56,7 @@ public class AssertCodeGeneratorCellTest {
         assertThat(cell1.getAttributes()).isNullOrEmpty();
         assertThat(cell1.getRoles()).isNullOrEmpty();
         assertThat(cell1.isReftext()).isFalse();
+        assertThat(cell1.getReftext()).isNull();
         assertThat(cell1.getColumn()).isNull();
         assertThat(cell1.getColspan()).isEqualTo(1);
         assertThat(cell1.getRowspan()).isEqualTo(2);

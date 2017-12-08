@@ -37,6 +37,7 @@ public class MockCodeGeneratorColumnTest {
         when(mockColumn1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockColumn1.getRoles()).thenReturn(Arrays.asList("r1", "r2", "r3"));
         when(mockColumn1.isReftext()).thenReturn(false);
+        when(mockColumn1.getReftext()).thenReturn(null);
         when(mockColumn1.getStyle()).thenReturn("STYLE");
         when(mockColumn1.getTable()).thenReturn(null);
         when(mockColumn1.getColumnNumber()).thenReturn(2);

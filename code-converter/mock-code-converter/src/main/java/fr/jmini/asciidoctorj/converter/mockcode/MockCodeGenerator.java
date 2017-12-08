@@ -112,6 +112,7 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
         appendWhenExpressionMap(sb, varName + ".getAttributes()", String.class, contentNode.getAttributes());
         appendWhenExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendWhenExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());
+        appendWhenExpressionString(sb, varName + ".getReftext()", contentNode.getReftext());
     }
 
     @Override

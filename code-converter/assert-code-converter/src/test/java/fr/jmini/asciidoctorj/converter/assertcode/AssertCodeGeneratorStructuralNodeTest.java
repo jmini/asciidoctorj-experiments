@@ -56,6 +56,7 @@ public class AssertCodeGeneratorStructuralNodeTest {
         assertThat(structuralNode1.getAttributes()).isNullOrEmpty();
         assertThat(structuralNode1.getRoles()).isNullOrEmpty();
         assertThat(structuralNode1.isReftext()).isFalse();
+        assertThat(structuralNode1.getReftext()).isNull();
         assertThat(structuralNode1.getTitle()).isEqualTo("my-title");
         assertThat(structuralNode1.getStyle()).isEqualTo("my-style");
         assertThat(structuralNode1.getLevel()).isEqualTo(2);

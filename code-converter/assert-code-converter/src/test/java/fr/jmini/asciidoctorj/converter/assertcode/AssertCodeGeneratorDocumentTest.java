@@ -40,6 +40,7 @@ public class AssertCodeGeneratorDocumentTest {
         assertThat(document1.getAttributes()).isNullOrEmpty();
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
+        assertThat(document1.getReftext()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);

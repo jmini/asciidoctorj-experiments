@@ -204,6 +204,7 @@ public class AssertCodeGeneratorDocumentAstTest {
                 .containsEntry("figure-caption", "Figure");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
+        assertThat(document1.getReftext()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -223,6 +224,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(section1.getAttributes()).isNullOrEmpty();
         assertThat(section1.getRoles()).isNullOrEmpty();
         assertThat(section1.isReftext()).isFalse();
+        assertThat(section1.getReftext()).isNull();
         assertThat(section1.getTitle()).isEqualTo("A small List");
         assertThat(section1.getStyle()).isNull();
         assertThat(section1.getLevel()).isEqualTo(1);
@@ -242,6 +244,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(block1.getAttributes()).isNullOrEmpty();
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
+        assertThat(block1.getReftext()).isNull();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isNull();
         assertThat(block1.getLevel()).isEqualTo(1);
@@ -263,6 +266,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(list1.getAttributes()).isNullOrEmpty();
         assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
+        assertThat(list1.getReftext()).isNull();
         assertThat(list1.getTitle()).isNull();
         assertThat(list1.getStyle()).isNull();
         assertThat(list1.getLevel()).isEqualTo(1);
@@ -283,6 +287,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(listItem1.getAttributes()).isNullOrEmpty();
         assertThat(listItem1.getRoles()).isNullOrEmpty();
         assertThat(listItem1.isReftext()).isFalse();
+        assertThat(listItem1.getReftext()).isNull();
         assertThat(listItem1.getTitle()).isNull();
         assertThat(listItem1.getStyle()).isNull();
         assertThat(listItem1.getLevel()).isEqualTo(1);
@@ -306,6 +311,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(listItem2.getAttributes()).isNullOrEmpty();
         assertThat(listItem2.getRoles()).isNullOrEmpty();
         assertThat(listItem2.isReftext()).isFalse();
+        assertThat(listItem2.getReftext()).isNull();
         assertThat(listItem2.getTitle()).isNull();
         assertThat(listItem2.getStyle()).isNull();
         assertThat(listItem2.getLevel()).isEqualTo(1);
@@ -330,6 +336,7 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(block2.getAttributes()).isNullOrEmpty();
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
+        assertThat(block2.getReftext()).isNull();
         assertThat(block2.getTitle()).isNull();
         assertThat(block2.getStyle()).isNull();
         assertThat(block2.getLevel()).isEqualTo(1);

@@ -41,6 +41,7 @@ public class MockCodeGeneratorBlockTest {
         when(mockBlock1.getAttributes()).thenReturn(map1);
         when(mockBlock1.getRoles()).thenReturn(Arrays.asList("r1", "r2"));
         when(mockBlock1.isReftext()).thenReturn(false);
+        when(mockBlock1.getReftext()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn("some-title");
         when(mockBlock1.getStyle()).thenReturn(null);
         when(mockBlock1.getLevel()).thenReturn(0);

@@ -51,6 +51,7 @@ public class AssertCodeGeneratorBlockTest {
                 .containsEntry("two", "ipusm");
         assertThat(block1.getRoles()).containsExactly("r1", "r2");
         assertThat(block1.isReftext()).isFalse();
+        assertThat(block1.getReftext()).isNull();
         assertThat(block1.getTitle()).isEqualTo("some-title");
         assertThat(block1.getStyle()).isNull();
         assertThat(block1.getLevel()).isEqualTo(0);

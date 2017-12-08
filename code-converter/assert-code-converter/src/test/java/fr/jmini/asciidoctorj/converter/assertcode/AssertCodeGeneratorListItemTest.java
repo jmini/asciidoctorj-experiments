@@ -39,6 +39,7 @@ public class AssertCodeGeneratorListItemTest {
         assertThat(listItem1.getAttributes()).isNullOrEmpty();
         assertThat(listItem1.getRoles()).isNullOrEmpty();
         assertThat(listItem1.isReftext()).isFalse();
+        assertThat(listItem1.getReftext()).isNull();
         assertThat(listItem1.getTitle()).isNull();
         assertThat(listItem1.getStyle()).isNull();
         assertThat(listItem1.getLevel()).isEqualTo(0);

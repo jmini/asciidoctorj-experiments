@@ -41,6 +41,7 @@ public class MockCodeGeneratorDocumentTest {
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
+        when(mockDocument1.getReftext()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);

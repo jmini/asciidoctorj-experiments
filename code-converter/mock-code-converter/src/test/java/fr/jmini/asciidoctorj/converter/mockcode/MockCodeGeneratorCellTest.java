@@ -36,6 +36,7 @@ public class MockCodeGeneratorCellTest {
         when(mockCell1.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockCell1.getRoles()).thenReturn(Collections.emptyList());
         when(mockCell1.isReftext()).thenReturn(false);
+        when(mockCell1.getReftext()).thenReturn(null);
         when(mockCell1.getColumn()).thenReturn(null);
         when(mockCell1.getColspan()).thenReturn(1);
         when(mockCell1.getRowspan()).thenReturn(2);

@@ -38,6 +38,7 @@ public class AssertCodeGeneratorDescriptionListTest {
         assertThat(descriptionList1.getAttributes()).isNullOrEmpty();
         assertThat(descriptionList1.getRoles()).isNullOrEmpty();
         assertThat(descriptionList1.isReftext()).isFalse();
+        assertThat(descriptionList1.getReftext()).isNull();
         assertThat(descriptionList1.getTitle()).isNull();
         assertThat(descriptionList1.getStyle()).isNull();
         assertThat(descriptionList1.getLevel()).isEqualTo(0);
