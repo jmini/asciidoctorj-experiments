@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.jmini.eadoc.impl.EStructuralNodeImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EStructuralNodeImpl#getBlocks <em>Blocks</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EStructuralNodeImpl#getLevel <em>Level</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.impl.EStructuralNodeImpl#getContentModel <em>Content Model</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EStructuralNodeImpl#getSourceLocation <em>Source Location</em>}</li>
  *   <li>{@link fr.jmini.eadoc.impl.EStructuralNodeImpl#getSubstitutions <em>Substitutions</em>}</li>
  * </ul>
@@ -115,6 +116,26 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 	 * @ordered
 	 */
 	protected int level = LEVEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getContentModel() <em>Content Model</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONTENT_MODEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getContentModel() <em>Content Model</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String contentModel = CONTENT_MODEL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSourceLocation() <em>Source Location</em>}' containment reference.
@@ -228,6 +249,27 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 		level = newLevel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EadocPackage.ESTRUCTURAL_NODE__LEVEL, oldLevel, level));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getContentModel() {
+		return contentModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContentModel(String newContentModel) {
+		String oldContentModel = contentModel;
+		contentModel = newContentModel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EadocPackage.ESTRUCTURAL_NODE__CONTENT_MODEL, oldContentModel, contentModel));
 	}
 
 	/**
@@ -362,15 +404,6 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getContentModel() {
-		throw new UnsupportedOperationException("Not implemented");
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isSubstitutionEnabled(final String substitution) {
 		throw new UnsupportedOperationException("Not implemented");
 	}
@@ -443,6 +476,8 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 				return getBlocks();
 			case EadocPackage.ESTRUCTURAL_NODE__LEVEL:
 				return getLevel();
+			case EadocPackage.ESTRUCTURAL_NODE__CONTENT_MODEL:
+				return getContentModel();
 			case EadocPackage.ESTRUCTURAL_NODE__SOURCE_LOCATION:
 				return getSourceLocation();
 			case EadocPackage.ESTRUCTURAL_NODE__SUBSTITUTIONS:
@@ -472,6 +507,9 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 				return;
 			case EadocPackage.ESTRUCTURAL_NODE__LEVEL:
 				setLevel((Integer)newValue);
+				return;
+			case EadocPackage.ESTRUCTURAL_NODE__CONTENT_MODEL:
+				setContentModel((String)newValue);
 				return;
 			case EadocPackage.ESTRUCTURAL_NODE__SOURCE_LOCATION:
 				setSourceLocation((ECursor)newValue);
@@ -504,6 +542,9 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 			case EadocPackage.ESTRUCTURAL_NODE__LEVEL:
 				setLevel(LEVEL_EDEFAULT);
 				return;
+			case EadocPackage.ESTRUCTURAL_NODE__CONTENT_MODEL:
+				setContentModel(CONTENT_MODEL_EDEFAULT);
+				return;
 			case EadocPackage.ESTRUCTURAL_NODE__SOURCE_LOCATION:
 				setSourceLocation((ECursor)null);
 				return;
@@ -530,6 +571,8 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 				return blocks != null && !blocks.isEmpty();
 			case EadocPackage.ESTRUCTURAL_NODE__LEVEL:
 				return level != LEVEL_EDEFAULT;
+			case EadocPackage.ESTRUCTURAL_NODE__CONTENT_MODEL:
+				return CONTENT_MODEL_EDEFAULT == null ? contentModel != null : !CONTENT_MODEL_EDEFAULT.equals(contentModel);
 			case EadocPackage.ESTRUCTURAL_NODE__SOURCE_LOCATION:
 				return sourceLocation != null;
 			case EadocPackage.ESTRUCTURAL_NODE__SUBSTITUTIONS:
@@ -554,6 +597,8 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 		result.append(style);
 		result.append(", level: ");
 		result.append(level);
+		result.append(", contentModel: ");
+		result.append(contentModel);
 		result.append(", substitutions: ");
 		result.append(substitutions);
 		result.append(')');

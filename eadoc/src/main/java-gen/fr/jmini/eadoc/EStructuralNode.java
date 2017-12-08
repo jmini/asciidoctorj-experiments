@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.jmini.eadoc.EStructuralNode#getStyle <em>Style</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EStructuralNode#getBlocks <em>Blocks</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EStructuralNode#getLevel <em>Level</em>}</li>
+ *   <li>{@link fr.jmini.eadoc.EStructuralNode#getContentModel <em>Content Model</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EStructuralNode#getSourceLocation <em>Source Location</em>}</li>
  *   <li>{@link fr.jmini.eadoc.EStructuralNode#getSubstitutions <em>Substitutions</em>}</li>
  * </ul>
@@ -124,6 +125,32 @@ public interface EStructuralNode extends EContentNode, StructuralNode {
 	 * @generated
 	 */
 	void setLevel(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Model</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Model</em>' attribute.
+	 * @see #setContentModel(String)
+	 * @see fr.jmini.eadoc.EadocPackage#getEStructuralNode_ContentModel()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getContentModel();
+
+	/**
+	 * Sets the value of the '{@link fr.jmini.eadoc.EStructuralNode#getContentModel <em>Content Model</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content Model</em>' attribute.
+	 * @see #getContentModel()
+	 * @generated
+	 */
+	void setContentModel(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Source Location</b></em>' containment reference.
@@ -255,15 +282,6 @@ public interface EStructuralNode extends EContentNode, StructuralNode {
 	 * @generated
 	 */
 	List<? extends StructuralNode> findBy(Map<Object, Object> selector);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
-	 * @generated
-	 */
-	String getContentModel();
 
 	/**
 	 * <!-- begin-user-doc -->

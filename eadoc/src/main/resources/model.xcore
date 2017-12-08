@@ -530,9 +530,7 @@ class EStructuralNode extends EContentNode, StructuralNode {
 
     int level
 
-    op String getContentModel() {
-        throw new UnsupportedOperationException("Not implemented")
-    }
+    String contentModel
 
     contains ECursor sourceLocation
 

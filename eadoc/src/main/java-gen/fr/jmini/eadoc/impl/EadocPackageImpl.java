@@ -1531,8 +1531,17 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEStructuralNode_ContentModel() {
+		return (EAttribute)eStructuralNodeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEStructuralNode_SourceLocation() {
-		return (EReference)eStructuralNodeEClass.getEStructuralFeatures().get(4);
+		return (EReference)eStructuralNodeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1541,7 +1550,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 	 * @generated
 	 */
 	public EAttribute getEStructuralNode_Substitutions() {
-		return (EAttribute)eStructuralNodeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)eStructuralNodeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1934,6 +1943,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		createEAttribute(eStructuralNodeEClass, ESTRUCTURAL_NODE__STYLE);
 		createEReference(eStructuralNodeEClass, ESTRUCTURAL_NODE__BLOCKS);
 		createEAttribute(eStructuralNodeEClass, ESTRUCTURAL_NODE__LEVEL);
+		createEAttribute(eStructuralNodeEClass, ESTRUCTURAL_NODE__CONTENT_MODEL);
 		createEReference(eStructuralNodeEClass, ESTRUCTURAL_NODE__SOURCE_LOCATION);
 		createEAttribute(eStructuralNodeEClass, ESTRUCTURAL_NODE__SUBSTITUTIONS);
 
@@ -2362,6 +2372,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEAttribute(getEStructuralNode_Style(), theEcorePackage.getEString(), "style", null, 0, 1, EStructuralNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEStructuralNode_Blocks(), this.getEStructuralNode(), null, "blocks", null, 0, -1, EStructuralNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEStructuralNode_Level(), theEcorePackage.getEInt(), "level", null, 0, 1, EStructuralNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEStructuralNode_ContentModel(), theEcorePackage.getEString(), "contentModel", null, 0, 1, EStructuralNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEStructuralNode_SourceLocation(), this.getECursor(), null, "sourceLocation", null, 0, 1, EStructuralNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEStructuralNode_Substitutions(), theEcorePackage.getEString(), "substitutions", null, 0, -1, EStructuralNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2382,8 +2393,6 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 
 		op = addEOperation(eStructuralNodeEClass, this.getStructuralNodeList(), "findBy", 0, 1, !IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getObjectObjectMap(), "selector", 0, 1, !IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(eStructuralNodeEClass, theEcorePackage.getEString(), "getContentModel", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(eStructuralNodeEClass, theEcorePackage.getEBoolean(), "isSubstitutionEnabled", 0, 1, !IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "substitution", 0, 1, !IS_UNIQUE, IS_ORDERED);

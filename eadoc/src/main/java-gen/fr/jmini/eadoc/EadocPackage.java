@@ -794,13 +794,22 @@ public interface EadocPackage extends EPackage {
 	int ESTRUCTURAL_NODE__LEVEL = ECONTENT_NODE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_NODE__CONTENT_MODEL = ECONTENT_NODE_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_NODE__SOURCE_LOCATION = ECONTENT_NODE_FEATURE_COUNT + 4;
+	int ESTRUCTURAL_NODE__SOURCE_LOCATION = ECONTENT_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Substitutions</b></em>' attribute list.
@@ -809,7 +818,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_NODE__SUBSTITUTIONS = ECONTENT_NODE_FEATURE_COUNT + 5;
+	int ESTRUCTURAL_NODE__SUBSTITUTIONS = ECONTENT_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>EStructural Node</em>' class.
@@ -818,7 +827,7 @@ public interface EadocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_NODE_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 6;
+	int ESTRUCTURAL_NODE_FEATURE_COUNT = ECONTENT_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link fr.jmini.eadoc.impl.EBlockImpl <em>EBlock</em>}' class.
@@ -955,6 +964,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int EBLOCK__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EBLOCK__CONTENT_MODEL = ESTRUCTURAL_NODE__CONTENT_MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
@@ -1637,6 +1655,15 @@ public interface EadocPackage extends EPackage {
 	int EDESCRIPTION_LIST__LEVEL = ESTRUCTURAL_NODE__LEVEL;
 
 	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDESCRIPTION_LIST__CONTENT_MODEL = ESTRUCTURAL_NODE__CONTENT_MODEL;
+
+	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1844,6 +1871,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDOCUMENT__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDOCUMENT__CONTENT_MODEL = ESTRUCTURAL_NODE__CONTENT_MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
@@ -2100,6 +2136,15 @@ public interface EadocPackage extends EPackage {
 	int EADOC_LIST__LEVEL = ESTRUCTURAL_NODE__LEVEL;
 
 	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EADOC_LIST__CONTENT_MODEL = ESTRUCTURAL_NODE__CONTENT_MODEL;
+
+	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2270,6 +2315,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELIST_ITEM__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELIST_ITEM__CONTENT_MODEL = ESTRUCTURAL_NODE__CONTENT_MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
@@ -2672,6 +2726,15 @@ public interface EadocPackage extends EPackage {
 	int ESECTION__LEVEL = ESTRUCTURAL_NODE__LEVEL;
 
 	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESECTION__CONTENT_MODEL = ESTRUCTURAL_NODE__CONTENT_MODEL;
+
+	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2915,6 +2978,15 @@ public interface EadocPackage extends EPackage {
 	 * @ordered
 	 */
 	int ETABLE__LEVEL = ESTRUCTURAL_NODE__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Content Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ETABLE__CONTENT_MODEL = ESTRUCTURAL_NODE__CONTENT_MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Source Location</b></em>' containment reference.
@@ -4391,6 +4463,17 @@ public interface EadocPackage extends EPackage {
 	EAttribute getEStructuralNode_Level();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.jmini.eadoc.EStructuralNode#getContentModel <em>Content Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content Model</em>'.
+	 * @see fr.jmini.eadoc.EStructuralNode#getContentModel()
+	 * @see #getEStructuralNode()
+	 * @generated
+	 */
+	EAttribute getEStructuralNode_ContentModel();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link fr.jmini.eadoc.EStructuralNode#getSourceLocation <em>Source Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5691,6 +5774,14 @@ public interface EadocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ESTRUCTURAL_NODE__LEVEL = eINSTANCE.getEStructuralNode_Level();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Model</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESTRUCTURAL_NODE__CONTENT_MODEL = eINSTANCE.getEStructuralNode_ContentModel();
 
 		/**
 		 * The meta object literal for the '<em><b>Source Location</b></em>' containment reference feature.
