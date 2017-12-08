@@ -29,8 +29,11 @@ public class EadocCodeGeneratorPhraseNodeTest {
         ePhraseNode1.setParent(null);
         ePhraseNode1.setContext(null);
         ePhraseNode1.setDocument(null);
+        ePhraseNode1.setInline(false);
+        ePhraseNode1.setBlock(false);
         ePhraseNode1.setAttributes(Collections.emptyMap());
         ePhraseNode1.setRoles(Collections.emptyList());
+        ePhraseNode1.setReftext(null);
         ePhraseNode1.setType("type");
         ePhraseNode1.setText("text");
         ePhraseNode1.setTarget("targ");

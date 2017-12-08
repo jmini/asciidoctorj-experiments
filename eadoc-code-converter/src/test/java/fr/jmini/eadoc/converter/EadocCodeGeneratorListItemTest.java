@@ -29,11 +29,15 @@ public class EadocCodeGeneratorListItemTest {
         eListItem1.setParent(null);
         eListItem1.setContext(null);
         eListItem1.setDocument(null);
+        eListItem1.setInline(false);
+        eListItem1.setBlock(false);
         eListItem1.setAttributes(Collections.emptyMap());
         eListItem1.setRoles(Collections.emptyList());
+        eListItem1.setReftext(null);
         eListItem1.setTitle("T");
         eListItem1.setStyle("S");
         eListItem1.setLevel(2);
+        eListItem1.setContentModel(null);
         eListItem1.setSourceLocation(null);
         eListItem1.setMarker("m");
         eListItem1.setText("t");

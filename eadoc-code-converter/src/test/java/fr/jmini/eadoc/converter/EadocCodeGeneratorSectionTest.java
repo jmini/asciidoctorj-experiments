@@ -28,11 +28,15 @@ public class EadocCodeGeneratorSectionTest {
         eSection1.setNodeName(null);
         eSection1.setContext(null);
         eSection1.setDocument(null);
+        eSection1.setInline(false);
+        eSection1.setBlock(false);
         eSection1.setAttributes(Collections.emptyMap());
         eSection1.setRoles(Collections.emptyList());
+        eSection1.setReftext(null);
         eSection1.setTitle(null);
         eSection1.setStyle(null);
         eSection1.setLevel(0);
+        eSection1.setContentModel(null);
         eSection1.setSourceLocation(null);
         eSection1.setIndex(2);
         eSection1.setNumber(10);

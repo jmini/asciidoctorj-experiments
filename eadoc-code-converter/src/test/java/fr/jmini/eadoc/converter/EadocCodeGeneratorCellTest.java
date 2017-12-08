@@ -30,8 +30,11 @@ public class EadocCodeGeneratorCellTest {
         eCell1.setParent(null);
         eCell1.setContext("cx");
         eCell1.setDocument(null);
+        eCell1.setInline(false);
+        eCell1.setBlock(false);
         eCell1.setAttributes(Collections.emptyMap());
         eCell1.setRoles(Collections.emptyList());
+        eCell1.setReftext(null);
         eCell1.setColumn(null);
         eCell1.setColspan(1);
         eCell1.setRowspan(2);

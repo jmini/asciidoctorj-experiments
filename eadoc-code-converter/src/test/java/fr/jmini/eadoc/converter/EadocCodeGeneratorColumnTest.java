@@ -31,8 +31,11 @@ public class EadocCodeGeneratorColumnTest {
         eColumn1.setParent(null);
         eColumn1.setContext("txetnoC");
         eColumn1.setDocument(null);
+        eColumn1.setInline(false);
+        eColumn1.setBlock(false);
         eColumn1.setAttributes(Collections.emptyMap());
         eColumn1.setRoles(Arrays.asList("r1", "r2", "r3"));
+        eColumn1.setReftext(null);
         eColumn1.setStyle("STYLE");
         eColumn1.setTable(null);
         eColumn1.setWidth(550);

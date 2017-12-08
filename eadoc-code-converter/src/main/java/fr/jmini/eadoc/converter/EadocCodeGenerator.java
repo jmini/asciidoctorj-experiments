@@ -1,6 +1,5 @@
 package fr.jmini.eadoc.converter;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -118,13 +117,31 @@ public class EadocCodeGenerator extends AbstractCodeGenerator {
         }
         appendSetExpressionString(sb, varName + ".setContext", contentNode.getContext());
         appendSetExpressionObject(sb, varName + ".setDocument", contentNode.getDocument());
-        // NOTE: contentNode.isInline() throws NotImplementedError at RUBY.inline?
-        // appendSetExpressionBoolean(sb, varName + ".isInline", contentNode.isInline());
-        // NOTE: contentNode.isBlock() throws NotImplementedError at RUBY.block?
-        // appendSetExpressionBoolean(sb, varName + ".isBlock", contentNode.isBlock());
+        // NOTE: a NotImplementedError is sometime thrown when contentNode.isInline() is called.
+        try {
+            appendSetExpressionBoolean(sb, varName + ".setInline", contentNode.isInline());
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage()
+                    .contains("NotImplementedError")) {
+                // nothing to do
+            } else {
+                throw new IllegalStateException("Unexpected exception", e);
+            }
+        }
+        // NOTE: a NotImplementedError is sometime thrown when contentNode.isBlock() is called.
+        try {
+            appendSetExpressionBoolean(sb, varName + ".setBlock", contentNode.isBlock());
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage()
+                    .contains("NotImplementedError")) {
+                // nothing to do
+            } else {
+                throw new IllegalStateException("Unexpected exception", e);
+            }
+        }
         appendSetExpressionMap(sb, varName + ".setAttributes", String.class, contentNode.getAttributes());
         appendSetExpressionStringList(sb, varName + ".setRoles", contentNode.getRoles());
-        // appendSetExpressionBoolean(sb, varName + ".setReftext", contentNode.isReftext());
+        appendSetExpressionString(sb, varName + ".setReftext", contentNode.getReftext());
     }
 
     @Override
@@ -181,7 +198,7 @@ public class EadocCodeGenerator extends AbstractCodeGenerator {
     @Override
     protected void appendList(StringBuilder sb, String varName, org.asciidoctor.ast.List list) {
         appendStructuralNode(sb, varName, list);
-        // appendSetExpressionObjectList(sb, varName + ".setItems", list.getItems());
+        appendSetExpressionObjectList(sb, varName + ".getItems()", list.getItems());
         // appendSetExpressionBoolean(sb, varName + ".hasItems", list.hasItems());
     }
 
@@ -191,7 +208,6 @@ public class EadocCodeGenerator extends AbstractCodeGenerator {
         appendSetExpressionString(sb, varName + ".setMarker", listItem.getMarker());
         appendSetExpressionString(sb, varName + ".setText", listItem.getText());
         appendSetExpressionString(sb, varName + ".setSource", listItem.getSource());
-        // appendSetExpressionBoolean(sb, varName + ".hasText", listItem.hasText());
     }
 
     @Override
@@ -231,15 +247,15 @@ public class EadocCodeGenerator extends AbstractCodeGenerator {
         appendSetExpressionString(sb, varName + ".setStyle", structuralNode.getStyle());
         // appendSetExpressionString(sb, varName + ".setContent", structuralNode.getContent());
         appendSetExpressionInt(sb, varName + ".setLevel", structuralNode.getLevel());
-        // appendSetExpressionString(sb, varName + ".setContentModel", structuralNode.getContentModel());
+        appendSetExpressionString(sb, varName + ".setContentModel", structuralNode.getContentModel());
         appendSetExpressionObject(sb, varName + ".setSourceLocation", structuralNode.getSourceLocation());
-        // appendSetExpressionStringList(sb, varName + ".setSubstitutions", structuralNode.getSubstitutions());
-        // appendSetExpressionObjectList(sb, varName + ".setBlocks", structuralNode.getBlocks());
+        appendSetExpressionObjectList(sb, varName + ".getSubstitutions()", structuralNode.getSubstitutions());
+        appendSetExpressionObjectList(sb, varName + ".getBlocks()", structuralNode.getBlocks());
     }
 
     @Override
     protected void appendStructuredDocument(StringBuilder sb, String varName, StructuredDocument structuredDocument) {
-        // appendSetExpressionObjectList(sb, varName + ".setParts", structuredDocument.getParts());
+        appendSetExpressionObjectList(sb, varName + ".getParts()", structuredDocument.getParts());
         appendSetExpressionObject(sb, varName + ".setHeader", structuredDocument.getHeader());
     }
 
@@ -363,33 +379,23 @@ public class EadocCodeGenerator extends AbstractCodeGenerator {
         }
     }
 
-    private void appendSetExpressionObjectList(StringBuilder sb, String expression, List<?> value) {
-        if (value == null) {
-            sb.append(expression + "(null);" + NL);
-        } else if (value.isEmpty()) {
-            sb.append(expression + "(Collections.emptyList());" + NL);
-        } else {
-            List<String> itemVarNames = new ArrayList<>();
-            int i = 0;
+    private void appendSetExpressionObjectList(StringBuilder sb, String listGetterExpression, List<?> value) {
+        if (value != null && !value.isEmpty()) {
             for (Object item : value) {
-                String itemClass = computeType(item);
-                String itemCreateMockExpression = createEInstanceExpression(itemClass);
-                String itemVarName = createVariableForExpression(sb, itemCreateMockExpression, item, itemClass);
-                appendObject(sb, itemVarName, item);
-                itemVarNames.add(itemVarName);
-                i = i + 1;
+                if (item instanceof String) {
+                    sb.append(listGetterExpression);
+                    sb.append(".add(");
+                    sb.append(CodeConverterUtility.convertString((String) item));
+                    sb.append(");" + NL);
+                } else {
+                    String itemClass = computeType(item);
+                    String itemCreateMockExpression = createEInstanceExpression(itemClass);
+                    String itemVarName = createVariableForExpression(sb, itemCreateMockExpression, item, itemClass);
+                    appendObject(sb, itemVarName, item);
+                    sb.append(listGetterExpression);
+                    sb.append(".add(" + itemVarName + ");" + NL);
+                }
             }
-            sb.append(expression);
-            sb.append("(");
-            if (itemVarNames.size() == 1) {
-                sb.append("Collections.singletonList(");
-            } else {
-                sb.append("Arrays.asList(");
-            }
-            sb.append(itemVarNames.stream()
-                    .collect(Collectors.joining(", ")));
-            sb.append("))");
-            sb.append(";" + NL);
         }
     }
 }

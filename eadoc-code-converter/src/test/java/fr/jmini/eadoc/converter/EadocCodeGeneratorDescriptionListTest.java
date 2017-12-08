@@ -28,11 +28,15 @@ public class EadocCodeGeneratorDescriptionListTest {
         eDescriptionList1.setNodeName(null);
         eDescriptionList1.setContext(null);
         eDescriptionList1.setDocument(null);
+        eDescriptionList1.setInline(false);
+        eDescriptionList1.setBlock(false);
         eDescriptionList1.setAttributes(Collections.emptyMap());
         eDescriptionList1.setRoles(Collections.emptyList());
+        eDescriptionList1.setReftext(null);
         eDescriptionList1.setTitle(null);
         eDescriptionList1.setStyle(null);
         eDescriptionList1.setLevel(0);
+        eDescriptionList1.setContentModel(null);
         eDescriptionList1.setSourceLocation(null);
         return eDescriptionList1;
     }

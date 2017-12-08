@@ -29,11 +29,15 @@ public class EadocCodeGeneratorStructuralNodeTest {
         eStructuralNode1.setParent(null);
         eStructuralNode1.setContext("context");
         eStructuralNode1.setDocument(null);
+        eStructuralNode1.setInline(false);
+        eStructuralNode1.setBlock(false);
         eStructuralNode1.setAttributes(Collections.emptyMap());
         eStructuralNode1.setRoles(Collections.emptyList());
+        eStructuralNode1.setReftext(null);
         eStructuralNode1.setTitle("my-title");
         eStructuralNode1.setStyle("my-style");
         eStructuralNode1.setLevel(2);
+        eStructuralNode1.setContentModel("simple");
         eStructuralNode1.setSourceLocation(null);
         return eStructuralNode1;
     }

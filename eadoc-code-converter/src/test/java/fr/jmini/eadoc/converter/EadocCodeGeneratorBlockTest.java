@@ -31,15 +31,19 @@ public class EadocCodeGeneratorBlockTest {
         eBlock1.setNodeName("some-name");
         eBlock1.setContext(null);
         eBlock1.setDocument(null);
+        eBlock1.setInline(false);
+        eBlock1.setBlock(false);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("one", "lorem")
                 .put("two", "ipusm")
                 .build();
         eBlock1.setAttributes(map1);
         eBlock1.setRoles(Arrays.asList("r1", "r2"));
+        eBlock1.setReftext(null);
         eBlock1.setTitle("some-title");
         eBlock1.setStyle(null);
         eBlock1.setLevel(0);
+        eBlock1.setContentModel(null);
         eBlock1.setSourceLocation(null);
         eBlock1.setLines(Collections.emptyList());
         eBlock1.setSource(null);
