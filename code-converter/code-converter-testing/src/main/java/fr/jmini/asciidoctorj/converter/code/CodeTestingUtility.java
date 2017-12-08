@@ -13,15 +13,14 @@ import com.google.common.io.Files;
 
 public class CodeTestingUtility {
 
-    private static final String START_TAG = "tag::generated-code[]";
-    private static final String END_TAG = "end::generated-code[]";
+    private static final String TAG_NAME = "generated-code";
 
     public static void testGeneratedCode(String expectedCode, Class<?> utClass) {
         // System.out.println(expectedCode);
-        // replaceGeneratedBlock(expectedCode, utClass);
+        // replaceGeneratedBlock(expectedCode, utClass, TAG_NAME);
 
         String utCode = readUtCode(utClass);
-        String code = findGeneratedBlock(utCode);
+        String code = findGeneratedBlock(utCode, TAG_NAME);
 
         String expectedDeclaration = findMethodDeclaration(expectedCode);
         String declaration = findMethodDeclaration(code);
@@ -32,25 +31,50 @@ public class CodeTestingUtility {
         assertThat(statements).containsExactlyElementsOf(expectedStatements);
     }
 
-    private static void replaceGeneratedBlock(String expectedCode, Class<?> utClass) {
-        String content = readUtCode(utClass);
-        int start = content.indexOf(START_TAG, 0) + START_TAG.length();
-        int end = content.indexOf(END_TAG, start);
+    public static void replaceContent(File file, String newContent, String tagName, boolean withCommentTag) {
+        String startTag = computeStartTag(tagName);
+        String endTag = computeEndTag(tagName);
 
-        String newContent = content.substring(0, start) + "\n" + expectedCode + "\n // " + content.substring(end);
+        String oldFileContent = readContent(file);
+        int start = oldFileContent.indexOf(startTag, 0);
+        if (start < 0) {
+            throw new IllegalStateException("did not find start tag: " + startTag);
+        }
+        start = start + startTag.length();
+        int end = oldFileContent.indexOf(endTag, start);
+        if (end < 0) {
+            throw new IllegalStateException("did not find start end: " + endTag);
+        }
 
-        // System.out.println(newContent);
-        File file = javaFile(utClass);
+        StringBuilder sb = new StringBuilder();
+        sb.append(oldFileContent.substring(0, start));
+        sb.append("\n");
+        sb.append(newContent);
+        sb.append("\n");
+        if (withCommentTag) {
+            sb.append(" // ");
+        }
+        sb.append(oldFileContent.substring(end));
+        String newFileContent = sb.toString();
         try {
-            Files.write(newContent, file, Charsets.UTF_8);
+            Files.write(newFileContent, file, Charsets.UTF_8);
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
     }
 
-    private static String findGeneratedBlock(String content) {
-        int start = content.indexOf(START_TAG, 0) + START_TAG.length();
-        int end = content.indexOf(END_TAG, start);
+    private static void replaceGeneratedBlock(String expectedCode, Class<?> utClass, String tagName) {
+        File file = javaFile(utClass);
+
+        replaceContent(file, expectedCode, tagName, true);
+    }
+
+    private static String findGeneratedBlock(String content, String tagName) {
+        String startTag = computeStartTag(tagName);
+        String endTag = computeEndTag(tagName);
+
+        int start = content.indexOf(startTag, 0) + startTag.length();
+        int end = content.indexOf(endTag, start);
         return content.substring(start, end)
                 .trim();
     }
@@ -75,9 +99,21 @@ public class CodeTestingUtility {
                 .collect(Collectors.toList());
     }
 
+    private static String computeStartTag(String tagName) {
+        return "tag::" + tagName + "[]";
+    }
+
+    private static String computeEndTag(String tagName) {
+        return "end::" + tagName + "[]";
+    }
+
     private static String readUtCode(Class<?> utClass) {
-        String content;
         File f = javaFile(utClass);
+        return readContent(f);
+    }
+
+    private static String readContent(File f) {
+        String content;
         try {
             content = Files.toString(f, Charsets.UTF_8);
         } catch (IOException e) {
