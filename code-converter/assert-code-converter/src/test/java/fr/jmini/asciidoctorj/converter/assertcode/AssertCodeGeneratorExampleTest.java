@@ -100,10 +100,10 @@ public class AssertCodeGeneratorExampleTest {
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry("tip-caption", "Tip")
+        assertThat(document1.getAttributes()).containsEntry("doctitle", "My page")
+                .containsEntry("doctype", "article")
                 .containsEntry("filetype", "html")
-                .containsEntry("doctitle", "My page")
-                .containsEntry("doctype", "article");
+                .containsEntry("tip-caption", "Tip");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
@@ -141,8 +141,8 @@ public class AssertCodeGeneratorExampleTest {
         assertThat(title1.getCombined()).isEqualTo("My page");
         assertThat(title1.isSanitized()).isFalse();
         assertThat(document1.getDoctitle()).isEqualTo("My page");
-        assertThat(document1.getOptions()).containsEntry("header_footer", false)
-                .containsEntry("attributes", "{}");
+        assertThat(document1.getOptions()).containsEntry("attributes", "{}")
+                .containsEntry("header_footer", false);
     }
     // end::generated-code[]
 }

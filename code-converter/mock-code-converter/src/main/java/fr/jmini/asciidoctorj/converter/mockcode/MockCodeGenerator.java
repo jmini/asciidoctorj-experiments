@@ -317,6 +317,7 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
             sb.append(".put(");
             sb.append(value.entrySet()
                     .stream()
+                    .sorted(entryComparator())
                     .map(e -> {
                         return CodeConverterUtility.convertString(e.getKey()
                                 .toString()) + ", " + CodeConverterUtility.convertObject(e.getValue());

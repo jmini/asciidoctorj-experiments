@@ -47,10 +47,10 @@ public class MockCodeGeneratorExampleTest {
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("tip-caption", "Tip")
-                .put("filetype", "html")
                 .put("doctitle", "My page")
                 .put("doctype", "article")
+                .put("filetype", "html")
+                .put("tip-caption", "Tip")
                 .build();
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
@@ -91,8 +91,8 @@ public class MockCodeGeneratorExampleTest {
         when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
         when(mockDocument1.getDoctitle()).thenReturn("My page");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("header_footer", false)
                 .put("attributes", "{}")
+                .put("header_footer", false)
                 .build();
         when(mockDocument1.getOptions()).thenReturn(map2);
         return mockDocument1;

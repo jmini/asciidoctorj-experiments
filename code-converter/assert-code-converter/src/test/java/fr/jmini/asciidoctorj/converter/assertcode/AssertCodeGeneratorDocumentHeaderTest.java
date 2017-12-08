@@ -46,8 +46,8 @@ public class AssertCodeGeneratorDocumentHeaderTest {
         assertThat(documentHeader1.getRevisionInfo()).isNull();
         assertThat(documentHeader1.getPageTitle()).isNull();
         assertThat(documentHeader1.getAttributes()).containsEntry("one", 1)
-                .containsEntry("two", 2)
-                .containsEntry("three", 3);
+                .containsEntry("three", 3)
+                .containsEntry("two", 2);
     }
     // end::generated-code[]
 }

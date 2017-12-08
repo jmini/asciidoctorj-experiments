@@ -1,7 +1,9 @@
 package fr.jmini.asciidoctorj.converter.code;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.asciidoctor.ast.Author;
 import org.asciidoctor.ast.Block;
@@ -367,5 +369,20 @@ public abstract class AbstractCodeGenerator {
             throw new IllegalArgumentException("Unexpected type: " + object.getClass()
                     .getCanonicalName());
         }
+    }
+
+    public static Comparator<Entry<? extends Object, Object>> entryComparator() {
+        return (Comparator<Map.Entry<? extends Object, Object>>) (e1, e2) -> {
+            if (e1.getKey() instanceof Comparable) {
+                @SuppressWarnings("unchecked")
+                int result = ((Comparable) e1.getKey()).compareTo(e2.getKey());
+                return result;
+            } else {
+                return e1.getKey()
+                        .toString()
+                        .compareTo(e2.getKey()
+                                .toString());
+            }
+        };
     }
 }

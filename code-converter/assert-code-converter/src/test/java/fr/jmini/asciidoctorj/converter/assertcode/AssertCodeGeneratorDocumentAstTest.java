@@ -200,8 +200,8 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry("warning-caption", "Warning")
-                .containsEntry("figure-caption", "Figure");
+        assertThat(document1.getAttributes()).containsEntry("figure-caption", "Figure")
+                .containsEntry("warning-caption", "Warning");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
@@ -357,8 +357,8 @@ public class AssertCodeGeneratorDocumentAstTest {
         assertThat(title1.getCombined()).isEqualTo("A small List");
         assertThat(title1.isSanitized()).isFalse();
         assertThat(document1.getDoctitle()).isEqualTo("A small List");
-        assertThat(document1.getOptions()).containsEntry("header_footer", false)
-                .containsEntry("attributes", "[]");
+        assertThat(document1.getOptions()).containsEntry("attributes", "[]")
+                .containsEntry("header_footer", false);
     }
     // end::generated-code[]
 }

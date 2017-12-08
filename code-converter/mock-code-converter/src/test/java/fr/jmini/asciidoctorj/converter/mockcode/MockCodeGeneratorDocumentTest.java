@@ -35,8 +35,8 @@ public class MockCodeGeneratorDocumentTest {
         when(mockDocument1.isBlock()).thenReturn(false);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("one", 1)
-                .put("two", 2)
                 .put("three", 3)
+                .put("two", 2)
                 .build();
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
@@ -52,8 +52,8 @@ public class MockCodeGeneratorDocumentTest {
         when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument1.getDoctitle()).thenReturn("this is a doc title");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("lorem", true)
                 .put("ipsum", false)
+                .put("lorem", true)
                 .build();
         when(mockDocument1.getOptions()).thenReturn(map2);
         return mockDocument1;
