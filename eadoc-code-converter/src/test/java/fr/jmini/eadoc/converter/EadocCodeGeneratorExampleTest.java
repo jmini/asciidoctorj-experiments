@@ -20,9 +20,12 @@ import fr.jmini.eadoc.EDocument;
 import fr.jmini.eadoc.ETitle;
 import fr.jmini.eadoc.EadocFactory;
 
-/*
-See Input AciiDoc Text in @link{fr.jmini.asciidoctorj.converter.mockcode.MockCodeGeneratorExampleTest}
- */
+/* tag::input-asciidoc[]
+= My page
+
+Some text
+
+end::input-asciidoc[] */
 public class EadocCodeGeneratorExampleTest {
 
     @Test
@@ -39,6 +42,7 @@ public class EadocCodeGeneratorExampleTest {
         checkAst(eDocument);
     }
 
+    // tag::mock-code[]
     public Document createMock() {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
@@ -48,10 +52,9 @@ public class EadocCodeGeneratorExampleTest {
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("tip-caption", "Tip")
-                .put("filetype", "html")
                 .put("doctitle", "My page")
                 .put("doctype", "article")
+                .put("filetype", "html")
                 .build();
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
@@ -94,13 +97,15 @@ public class EadocCodeGeneratorExampleTest {
         when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
         when(mockDocument1.getDoctitle()).thenReturn("My page");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("header_footer", false)
                 .put("attributes", "{}")
+                .put("header_footer", false)
                 .build();
         when(mockDocument1.getOptions()).thenReturn(map2);
         return mockDocument1;
     }
+    // end::mock-code[]
 
+    // tag::assert-code[]
     public void checkAst(Document astDocument) {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
@@ -109,10 +114,9 @@ public class EadocCodeGeneratorExampleTest {
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry("tip-caption", "Tip")
-                .containsEntry("filetype", "html")
-                .containsEntry("doctitle", "My page")
-                .containsEntry("doctype", "article");
+        assertThat(document1.getAttributes()).containsEntry("doctitle", "My page")
+                .containsEntry("doctype", "article")
+                .containsEntry("filetype", "html");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
@@ -150,9 +154,10 @@ public class EadocCodeGeneratorExampleTest {
         assertThat(title1.getCombined()).isEqualTo("My page");
         assertThat(title1.isSanitized()).isFalse();
         assertThat(document1.getDoctitle()).isEqualTo("My page");
-        assertThat(document1.getOptions()).containsEntry("header_footer", false)
-                .containsEntry("attributes", "{}");
+        assertThat(document1.getOptions()).containsEntry("attributes", "{}")
+                .containsEntry("header_footer", false);
     }
+    // end::assert-code[]
 
     // tag::generated-code[]
     public EDocument createEadoc() {
@@ -164,10 +169,9 @@ public class EadocCodeGeneratorExampleTest {
         eDocument1.setInline(false);
         eDocument1.setBlock(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("tip-caption", "Tip")
-                .put("filetype", "html")
                 .put("doctitle", "My page")
                 .put("doctype", "article")
+                .put("filetype", "html")
                 .build();
         eDocument1.setAttributes(map1);
         eDocument1.setRoles(Collections.emptyList());
@@ -216,8 +220,8 @@ public class EadocCodeGeneratorExampleTest {
         eDocument1.setStructuredDoctitle(eTitle1);
         eDocument1.setDoctitle("My page");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("header_footer", false)
                 .put("attributes", "{}")
+                .put("header_footer", false)
                 .build();
         eDocument1.setOptions(map2);
         return eDocument1;

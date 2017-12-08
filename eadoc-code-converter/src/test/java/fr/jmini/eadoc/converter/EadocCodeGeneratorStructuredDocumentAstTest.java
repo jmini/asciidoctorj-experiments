@@ -25,6 +25,16 @@ import fr.jmini.eadoc.EStructuredDocument;
 import fr.jmini.eadoc.ETitle;
 import fr.jmini.eadoc.EadocFactory;
 
+/* tag::input-asciidoc[]
+= My page
+
+Some text
+
+== An header
+
+What does it mean?
+
+end::input-asciidoc[] */
 public class EadocCodeGeneratorStructuredDocumentAstTest {
 
     @Test
@@ -40,7 +50,8 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         checkAst(eStructuredDocument);
     }
 
-    private StructuredDocument createMock() {
+    // tag::mock-code[]
+    public StructuredDocument createMock() {
         StructuredDocument mockStructuredDocument1 = mock(StructuredDocument.class);
         ContentPart mockContentPart1 = mock(ContentPart.class);
         when(mockContentPart1.getId()).thenReturn(null);
@@ -87,15 +98,17 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         when(mockDocumentHeader1.getRevisionInfo()).thenReturn(mockRevisionInfo1);
         when(mockDocumentHeader1.getPageTitle()).thenReturn("My page");
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
+                .put("doctitle", "My page")
+                .put("doctype", "article")
                 .put("filetype", "html")
-                .put("docdir", "")
-                .put("attribute-undefined", "drop-line")
                 .build();
         when(mockDocumentHeader1.getAttributes()).thenReturn(map1);
         when(mockStructuredDocument1.getHeader()).thenReturn(mockDocumentHeader1);
         return mockStructuredDocument1;
     }
+    // end::mock-code[]
 
+    // tag::assert-code[]
     public void checkAst(StructuredDocument astStructuredDocument) {
         StructuredDocument structuredDocument1 = astStructuredDocument;
         assertThat(structuredDocument1.getParts()).hasSize(2);
@@ -107,7 +120,7 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         assertThat(contentPart1.getStyle()).isNull();
         assertThat(contentPart1.getRole()).isNull();
         assertThat(contentPart1.getTitle()).isNull();
-        assertThat(contentPart1.getAttributes()).isEmpty();
+        assertThat(contentPart1.getAttributes()).isNullOrEmpty();
         assertThat(contentPart1.getParts()).isNullOrEmpty();
         ContentPart contentPart2 = (ContentPart) structuredDocument1.getParts()
                 .get(1);
@@ -117,10 +130,10 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         assertThat(contentPart2.getStyle()).isNull();
         assertThat(contentPart2.getRole()).isNull();
         assertThat(contentPart2.getTitle()).isEqualTo("An header");
-        assertThat(contentPart2.getAttributes()).isEmpty();
+        assertThat(contentPart2.getAttributes()).isNullOrEmpty();
         assertThat(contentPart2.getParts()).isNullOrEmpty();
         DocumentHeader documentHeader1 = structuredDocument1.getHeader();
-        assertThat(documentHeader1.getAuthors()).isEmpty();
+        assertThat(documentHeader1.getAuthors()).isNullOrEmpty();
         Title title1 = documentHeader1.getDocumentTitle();
         assertThat(title1.getMain()).isEqualTo("My page");
         assertThat(title1.getSubtitle()).isNull();
@@ -139,10 +152,11 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         assertThat(revisionInfo1.getNumber()).isNull();
         assertThat(revisionInfo1.getRemark()).isNull();
         assertThat(documentHeader1.getPageTitle()).isEqualTo("My page");
-        assertThat(documentHeader1.getAttributes()).containsEntry("docdir", "")
-                .containsEntry("filetype", "html")
-                .containsEntry("attribute-undefined", "drop-line");
+        assertThat(documentHeader1.getAttributes()).containsEntry("doctitle", "My page")
+                .containsEntry("doctype", "article")
+                .containsEntry("filetype", "html");
     }
+    // end::assert-code[]
 
     // tag::generated-code[]
     public EStructuredDocument createEadoc() {
@@ -182,9 +196,9 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         eDocumentHeader1.setRevisionInfo(eRevisionInfo1);
         eDocumentHeader1.setPageTitle("My page");
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
+                .put("doctitle", "My page")
+                .put("doctype", "article")
                 .put("filetype", "html")
-                .put("docdir", "")
-                .put("attribute-undefined", "drop-line")
                 .build();
         eDocumentHeader1.setAttributes(map1);
         eStructuredDocument1.setHeader(eDocumentHeader1);

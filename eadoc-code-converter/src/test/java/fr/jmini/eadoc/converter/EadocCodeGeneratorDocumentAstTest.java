@@ -25,6 +25,17 @@ import fr.jmini.eadoc.ESection;
 import fr.jmini.eadoc.ETitle;
 import fr.jmini.eadoc.EadocFactory;
 
+/* tag::input-asciidoc[]
+== A small List
+
+Lorem ipsum dolor sit amet:
+
+* First item
+* Second item
+
+Ut commodo lorem nec lacinia finibus.
+
+end::input-asciidoc[] */
 public class EadocCodeGeneratorDocumentAstTest {
 
     @Test
@@ -41,6 +52,7 @@ public class EadocCodeGeneratorDocumentAstTest {
         checkAst(eDocument);
     }
 
+    // tag::mock-code[]
     public Document createMock() {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
@@ -50,8 +62,8 @@ public class EadocCodeGeneratorDocumentAstTest {
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("warning-caption", "Warning")
-                .put("figure-caption", "Figure")
+                .put("doctype", "article")
+                .put("filetype", "html")
                 .build();
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
@@ -211,13 +223,15 @@ public class EadocCodeGeneratorDocumentAstTest {
         when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
         when(mockDocument1.getDoctitle()).thenReturn("A small List");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("header_footer", false)
                 .put("attributes", "{}")
+                .put("header_footer", false)
                 .build();
         when(mockDocument1.getOptions()).thenReturn(map2);
         return mockDocument1;
     }
+    // end::mock-code[]
 
+    // tag::assert-code[]
     public void checkAst(Document astDocument) {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
@@ -226,8 +240,8 @@ public class EadocCodeGeneratorDocumentAstTest {
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry("warning-caption", "Warning")
-                .containsEntry("figure-caption", "Figure");
+        assertThat(document1.getAttributes()).containsEntry("doctype", "article")
+                .containsEntry("filetype", "html");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
@@ -383,9 +397,10 @@ public class EadocCodeGeneratorDocumentAstTest {
         assertThat(title1.getCombined()).isEqualTo("A small List");
         assertThat(title1.isSanitized()).isFalse();
         assertThat(document1.getDoctitle()).isEqualTo("A small List");
-        assertThat(document1.getOptions()).containsEntry("header_footer", false)
-                .containsEntry("attributes", "{}");
+        assertThat(document1.getOptions()).containsEntry("attributes", "{}")
+                .containsEntry("header_footer", false);
     }
+    // end::assert-code[]
 
     // tag::generated-code[]
     public EDocument createEadoc() {
@@ -397,8 +412,8 @@ public class EadocCodeGeneratorDocumentAstTest {
         eDocument1.setInline(false);
         eDocument1.setBlock(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("warning-caption", "Warning")
-                .put("figure-caption", "Figure")
+                .put("doctype", "article")
+                .put("filetype", "html")
                 .build();
         eDocument1.setAttributes(map1);
         eDocument1.setRoles(Collections.emptyList());
@@ -587,8 +602,8 @@ public class EadocCodeGeneratorDocumentAstTest {
         eDocument1.setStructuredDoctitle(eTitle1);
         eDocument1.setDoctitle("A small List");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("header_footer", false)
                 .put("attributes", "{}")
+                .put("header_footer", false)
                 .build();
         eDocument1.setOptions(map2);
         return eDocument1;

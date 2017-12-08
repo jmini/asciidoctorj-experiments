@@ -34,8 +34,8 @@ public class EadocCodeGeneratorDocumentTest {
         eDocument1.setBlock(false);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("one", 1)
-                .put("two", 2)
                 .put("three", 3)
+                .put("two", 2)
                 .build();
         eDocument1.setAttributes(map1);
         eDocument1.setRoles(Collections.emptyList());
@@ -48,8 +48,8 @@ public class EadocCodeGeneratorDocumentTest {
         eDocument1.setStructuredDoctitle(null);
         eDocument1.setDoctitle("this is a doc title");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("lorem", true)
                 .put("ipsum", false)
+                .put("lorem", true)
                 .build();
         eDocument1.setOptions(map2);
         return eDocument1;
