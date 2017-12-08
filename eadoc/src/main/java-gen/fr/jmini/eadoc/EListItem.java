@@ -105,7 +105,7 @@ public interface EListItem extends EStructuralNode, ListItem {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean _isNullOrEmpty = <%org.eclipse.xtext.xbase.lib.StringExtensions%>.isNullOrEmpty(this.getText());\nreturn (!_isNullOrEmpty);'"
 	 * @generated
 	 */
 	boolean hasText();

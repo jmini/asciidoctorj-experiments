@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>EList Item</b></em>'.
@@ -175,7 +177,8 @@ public class EListItemImpl extends EStructuralNodeImpl implements EListItem {
 	 * @generated
 	 */
 	public boolean hasText() {
-		throw new UnsupportedOperationException("Not implemented");
+		boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(this.getText());
+		return (!_isNullOrEmpty);
 	}
 
 	/**

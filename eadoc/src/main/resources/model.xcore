@@ -411,7 +411,7 @@ class EListItem extends EStructuralNode, ListItem {
     String source
 
     op boolean hasText() {
-        throw new UnsupportedOperationException("Not implemented")
+        return !this.text.nullOrEmpty
     }
 }
 
