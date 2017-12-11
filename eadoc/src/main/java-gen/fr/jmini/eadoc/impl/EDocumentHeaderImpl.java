@@ -56,7 +56,7 @@ public class EDocumentHeaderImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAuthor> authors;
+	protected EList<Author> authors;
 
 	/**
 	 * The cached value of the '{@link #getDocumentTitle() <em>Document Title</em>}' containment reference.
@@ -132,9 +132,9 @@ public class EDocumentHeaderImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EAuthor> getAuthors() {
+	public EList<Author> getAuthors() {
 		if (authors == null) {
-			authors = new EObjectContainmentEList<EAuthor>(EAuthor.class, this, EadocPackage.EDOCUMENT_HEADER__AUTHORS);
+			authors = new EObjectContainmentEList<Author>(EAuthor.class, this, EadocPackage.EDOCUMENT_HEADER__AUTHORS);
 		}
 		return authors;
 	}
@@ -278,7 +278,7 @@ public class EDocumentHeaderImpl extends MinimalEObjectImpl.Container implements
 			return EadocFactory.eINSTANCE.createEAuthor();
 		}
 		else {
-			return IterableExtensions.<EAuthor>head(this.getAuthors());
+			return IterableExtensions.<Author>head(this.getAuthors());
 		}
 	}
 

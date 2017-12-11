@@ -95,7 +95,7 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EStructuralNode> blocks;
+	protected EList<StructuralNode> blocks;
 
 	/**
 	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
@@ -223,9 +223,9 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EStructuralNode> getBlocks() {
+	public EList<StructuralNode> getBlocks() {
 		if (blocks == null) {
-			blocks = new EObjectContainmentEList<EStructuralNode>(EStructuralNode.class, this, EadocPackage.ESTRUCTURAL_NODE__BLOCKS);
+			blocks = new EObjectContainmentEList<StructuralNode>(EStructuralNode.class, this, EadocPackage.ESTRUCTURAL_NODE__BLOCKS);
 		}
 		return blocks;
 	}
@@ -350,7 +350,7 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<? extends StructuralNode> blocks() {
+	public List<StructuralNode> blocks() {
 		return this.getBlocks();
 	}
 
@@ -395,7 +395,7 @@ public class EStructuralNodeImpl extends EContentNodeImpl implements EStructural
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<? extends StructuralNode> findBy(final Map<Object, Object> selector) {
+	public List<StructuralNode> findBy(final Map<Object, Object> selector) {
 		throw new UnsupportedOperationException("Not implemented");
 	}
 

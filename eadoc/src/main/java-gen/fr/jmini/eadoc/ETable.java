@@ -3,7 +3,7 @@
 package fr.jmini.eadoc;
 
 import org.asciidoctor.ast.Row;
-import org.asciidoctor.ast.Table;
+import org.asciidoctor.ast.Column; import org.asciidoctor.ast.Table;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -72,7 +72,7 @@ public interface ETable extends EStructuralNode, Table {
 	 * @model opposite="table" containment="true"
 	 * @generated
 	 */
-	EList<EColumn> getColumns();
+	EList<Column> getColumns();
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' containment reference list.

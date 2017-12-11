@@ -48,7 +48,7 @@ public class EDescriptionListEntryImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EListItem> terms;
+	protected EList<ListItem> terms;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -84,9 +84,9 @@ public class EDescriptionListEntryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EListItem> getTerms() {
+	public EList<ListItem> getTerms() {
 		if (terms == null) {
-			terms = new EObjectContainmentEList<EListItem>(EListItem.class, this, EadocPackage.EDESCRIPTION_LIST_ENTRY__TERMS);
+			terms = new EObjectContainmentEList<ListItem>(EListItem.class, this, EadocPackage.EDESCRIPTION_LIST_ENTRY__TERMS);
 		}
 		return terms;
 	}

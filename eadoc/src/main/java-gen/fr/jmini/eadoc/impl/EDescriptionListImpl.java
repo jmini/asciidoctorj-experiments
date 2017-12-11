@@ -2,7 +2,7 @@
  */
 package fr.jmini.eadoc.impl;
 
-import fr.jmini.eadoc.EDescriptionList;
+import org.asciidoctor.ast.DescriptionListEntry; import fr.jmini.eadoc.EDescriptionList;
 import fr.jmini.eadoc.EDescriptionListEntry;
 import fr.jmini.eadoc.EadocPackage;
 
@@ -40,7 +40,7 @@ public class EDescriptionListImpl extends EStructuralNodeImpl implements EDescri
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EDescriptionListEntry> items;
+	protected EList<DescriptionListEntry> items;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class EDescriptionListImpl extends EStructuralNodeImpl implements EDescri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EDescriptionListEntry> getItems() {
+	public EList<DescriptionListEntry> getItems() {
 		if (items == null) {
-			items = new EObjectContainmentEList<EDescriptionListEntry>(EDescriptionListEntry.class, this, EadocPackage.EDESCRIPTION_LIST__ITEMS);
+			items = new EObjectContainmentEList<DescriptionListEntry>(EDescriptionListEntry.class, this, EadocPackage.EDESCRIPTION_LIST__ITEMS);
 		}
 		return items;
 	}

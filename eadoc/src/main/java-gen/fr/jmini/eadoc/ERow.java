@@ -2,7 +2,7 @@
  */
 package fr.jmini.eadoc;
 
-import org.asciidoctor.ast.Row;
+import org.asciidoctor.ast.Cell; import org.asciidoctor.ast.Row;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -41,6 +41,6 @@ public interface ERow extends EObject, Row {
 	 * @model opposite="row" containment="true"
 	 * @generated
 	 */
-	EList<ECell> getCells();
+	EList<Cell> getCells();
 
 } // ERow

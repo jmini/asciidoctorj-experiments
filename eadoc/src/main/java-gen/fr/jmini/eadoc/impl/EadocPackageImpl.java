@@ -2455,7 +2455,7 @@ public class EadocPackageImpl extends EPackageImpl implements EadocPackage {
 		initEDataType(objectObjectMapEDataType, Map.class, "ObjectObjectMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.Map<java.lang.Object, java.lang.Object>");
 		initEDataType(stringListEDataType, java.util.List.class, "StringList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<java.lang.String>");
 		initEDataType(contentPartListEDataType, java.util.List.class, "ContentPartList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<org.asciidoctor.ast.ContentPart>");
-		initEDataType(structuralNodeListEDataType, java.util.List.class, "StructuralNodeList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<? extends org.asciidoctor.ast.StructuralNode>");
+		initEDataType(structuralNodeListEDataType, java.util.List.class, "StructuralNodeList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.List<fr.jmini.eadoc.EStructuralNode>");
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,7 +2,7 @@
  */
 package fr.jmini.eadoc;
 
-import org.asciidoctor.ast.DescriptionList;
+import org.asciidoctor.ast.DescriptionList; import org.asciidoctor.ast.DescriptionListEntry;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -37,7 +37,7 @@ public interface EDescriptionList extends EStructuralNode, DescriptionList {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EDescriptionListEntry> getItems();
+	EList<DescriptionListEntry> getItems();
 
 	/**
 	 * <!-- begin-user-doc -->

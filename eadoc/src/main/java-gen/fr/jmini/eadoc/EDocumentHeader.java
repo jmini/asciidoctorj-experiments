@@ -46,7 +46,7 @@ public interface EDocumentHeader extends EObject, DocumentHeader {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EAuthor> getAuthors();
+	EList<Author> getAuthors();
 
 	/**
 	 * Returns the value of the '<em><b>Document Title</b></em>' containment reference.

@@ -233,7 +233,7 @@ public interface EContentPart extends EObject, ContentPart {
 	 * @model opposite="parentPart" containment="true"
 	 * @generated
 	 */
-	EList<EContentPart> getParts();
+	EList<ContentPart> getParts();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Part</b></em>' container reference.

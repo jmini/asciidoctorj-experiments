@@ -2,7 +2,7 @@
  */
 package fr.jmini.eadoc.impl;
 
-import fr.jmini.eadoc.EAdocList;
+import org.asciidoctor.ast.StructuralNode; import fr.jmini.eadoc.EAdocList;
 import fr.jmini.eadoc.EStructuralNode;
 import fr.jmini.eadoc.EadocPackage;
 
@@ -40,7 +40,7 @@ public class EAdocListImpl extends EStructuralNodeImpl implements EAdocList {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EStructuralNode> items;
+	protected EList<StructuralNode> items;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class EAdocListImpl extends EStructuralNodeImpl implements EAdocList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EStructuralNode> getItems() {
+	public EList<StructuralNode> getItems() {
 		if (items == null) {
-			items = new EObjectContainmentEList<EStructuralNode>(EStructuralNode.class, this, EadocPackage.EADOC_LIST__ITEMS);
+			items = new EObjectContainmentEList<StructuralNode>(EStructuralNode.class, this, EadocPackage.EADOC_LIST__ITEMS);
 		}
 		return items;
 	}

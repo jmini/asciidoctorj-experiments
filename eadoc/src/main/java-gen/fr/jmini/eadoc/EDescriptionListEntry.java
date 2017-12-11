@@ -41,7 +41,7 @@ public interface EDescriptionListEntry extends EObject, DescriptionListEntry {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EListItem> getTerms();
+	EList<ListItem> getTerms();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.

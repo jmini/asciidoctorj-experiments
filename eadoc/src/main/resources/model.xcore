@@ -37,7 +37,7 @@ type StringObjectMap wraps java.util.Map<String, Object>
 type ObjectObjectMap wraps java.util.Map<Object, Object>
 type StringList wraps java.util.List<String>
 type ContentPartList wraps java.util.List<org.asciidoctor.ast.ContentPart>
-type StructuralNodeList wraps java.util.List<? extends org.asciidoctor.ast.StructuralNode>
+type StructuralNodeList wraps java.util.List<EStructuralNode>
 
 class EAuthor extends Author {
 	String email

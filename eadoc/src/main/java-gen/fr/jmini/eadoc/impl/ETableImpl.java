@@ -3,7 +3,7 @@
 package fr.jmini.eadoc.impl;
 
 import fr.jmini.eadoc.EColumn;
-import fr.jmini.eadoc.ETable;
+import org.asciidoctor.ast.Column; import fr.jmini.eadoc.ETable;
 import fr.jmini.eadoc.EadocPackage;
 
 import java.util.Collection;
@@ -72,7 +72,7 @@ public class ETableImpl extends EStructuralNodeImpl implements ETable {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EColumn> columns;
+	protected EList<Column> columns;
 
 	/**
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference list.
@@ -189,9 +189,9 @@ public class ETableImpl extends EStructuralNodeImpl implements ETable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EColumn> getColumns() {
+	public EList<Column> getColumns() {
 		if (columns == null) {
-			columns = new EObjectContainmentWithInverseEList<EColumn>(EColumn.class, this, EadocPackage.ETABLE__COLUMNS, EadocPackage.ECOLUMN__TABLE);
+			columns = new EObjectContainmentWithInverseEList<Column>(EColumn.class, this, EadocPackage.ETABLE__COLUMNS, EadocPackage.ECOLUMN__TABLE);
 		}
 		return columns;
 	}

@@ -3,7 +3,7 @@
 package fr.jmini.eadoc.impl;
 
 import fr.jmini.eadoc.ECell;
-import fr.jmini.eadoc.ERow;
+import org.asciidoctor.ast.Cell; import fr.jmini.eadoc.ERow;
 import fr.jmini.eadoc.EadocPackage;
 
 import java.util.Collection;
@@ -42,7 +42,7 @@ public class ERowImpl extends MinimalEObjectImpl.Container implements ERow {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ECell> cells;
+	protected EList<Cell> cells;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class ERowImpl extends MinimalEObjectImpl.Container implements ERow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ECell> getCells() {
+	public EList<Cell> getCells() {
 		if (cells == null) {
-			cells = new EObjectContainmentWithInverseEList<ECell>(ECell.class, this, EadocPackage.EROW__CELLS, EadocPackage.ECELL__ROW);
+			cells = new EObjectContainmentWithInverseEList<Cell>(ECell.class, this, EadocPackage.EROW__CELLS, EadocPackage.ECELL__ROW);
 		}
 		return cells;
 	}

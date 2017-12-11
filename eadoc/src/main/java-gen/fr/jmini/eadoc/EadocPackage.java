@@ -4740,7 +4740,7 @@ public interface EadocPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Structural Node List</em>'.
 	 * @see java.util.List
-	 * @model instanceClass="java.util.List<? extends org.asciidoctor.ast.StructuralNode>"
+	 * @model instanceClass="java.util.List<fr.jmini.eadoc.EStructuralNode>"
 	 * @generated
 	 */
 	EDataType getStructuralNodeList();

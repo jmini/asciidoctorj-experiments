@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.asciidoctor.ast.ContentPart;
-import org.asciidoctor.ast.StructuralNode;
 import org.asciidoctor.ast.Table;
 
 import org.eclipse.emf.ecore.EClass;
@@ -472,8 +471,8 @@ public class EadocFactoryImpl extends EFactoryImpl implements EadocFactory {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public List<? extends StructuralNode> createStructuralNodeListFromString(EDataType eDataType, String initialValue) {
-		return (List<? extends StructuralNode>)super.createFromString(initialValue);
+	public List<EStructuralNode> createStructuralNodeListFromString(EDataType eDataType, String initialValue) {
+		return (List<EStructuralNode>)super.createFromString(initialValue);
 	}
 
 	/**

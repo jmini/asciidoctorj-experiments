@@ -57,7 +57,7 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EContentPart> parts;
+	protected EList<ContentPart> parts;
 
 	/**
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' reference.
@@ -93,9 +93,9 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EContentPart> getParts() {
+	public EList<ContentPart> getParts() {
 		if (parts == null) {
-			parts = new EObjectContainmentEList<EContentPart>(EContentPart.class, this, EadocPackage.ESTRUCTURED_DOCUMENT__PARTS);
+			parts = new EObjectContainmentEList<ContentPart>(EContentPart.class, this, EadocPackage.ESTRUCTURED_DOCUMENT__PARTS);
 		}
 		return parts;
 	}
@@ -147,12 +147,12 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 		if ((partId == null)) {
 			return null;
 		}
-		final Function1<EContentPart, Boolean> _function = new Function1<EContentPart, Boolean>() {
-			public Boolean apply(final EContentPart it) {
+		final Function1<ContentPart, Boolean> _function = new Function1<ContentPart, Boolean>() {
+			public Boolean apply(final ContentPart it) {
 				return Boolean.valueOf(partId.equals(it.getId()));
 			}
 		};
-		return IterableExtensions.<EContentPart>findFirst(this.getParts(), _function);
+		return IterableExtensions.<ContentPart>findFirst(this.getParts(), _function);
 	}
 
 	/**
@@ -164,12 +164,12 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 		if ((style == null)) {
 			return null;
 		}
-		final Function1<EContentPart, Boolean> _function = new Function1<EContentPart, Boolean>() {
-			public Boolean apply(final EContentPart it) {
+		final Function1<ContentPart, Boolean> _function = new Function1<ContentPart, Boolean>() {
+			public Boolean apply(final ContentPart it) {
 				return Boolean.valueOf(style.equals(it.getStyle()));
 			}
 		};
-		return IterableExtensions.<EContentPart>findFirst(this.getParts(), _function);
+		return IterableExtensions.<ContentPart>findFirst(this.getParts(), _function);
 	}
 
 	/**
@@ -181,12 +181,12 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 		if ((role == null)) {
 			return null;
 		}
-		final Function1<EContentPart, Boolean> _function = new Function1<EContentPart, Boolean>() {
-			public Boolean apply(final EContentPart it) {
+		final Function1<ContentPart, Boolean> _function = new Function1<ContentPart, Boolean>() {
+			public Boolean apply(final ContentPart it) {
 				return Boolean.valueOf(role.equals(it.getRole()));
 			}
 		};
-		return IterableExtensions.<EContentPart>findFirst(this.getParts(), _function);
+		return IterableExtensions.<ContentPart>findFirst(this.getParts(), _function);
 	}
 
 	/**
@@ -198,12 +198,12 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 		if ((context == null)) {
 			return CollectionLiterals.<ContentPart>emptyList();
 		}
-		final Function1<EContentPart, Boolean> _function = new Function1<EContentPart, Boolean>() {
-			public Boolean apply(final EContentPart it) {
+		final Function1<ContentPart, Boolean> _function = new Function1<ContentPart, Boolean>() {
+			public Boolean apply(final ContentPart it) {
 				return Boolean.valueOf(context.equals(it.getContext()));
 			}
 		};
-		return ECollections.<ContentPart>asEList(((ContentPart[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(IterableExtensions.<EContentPart>filter(this.getParts(), _function), ContentPart.class)));
+		return ECollections.<ContentPart>asEList(((ContentPart[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(IterableExtensions.<ContentPart>filter(this.getParts(), _function), ContentPart.class)));
 	}
 
 	/**
@@ -215,12 +215,12 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 		if ((style == null)) {
 			return CollectionLiterals.<ContentPart>emptyList();
 		}
-		final Function1<EContentPart, Boolean> _function = new Function1<EContentPart, Boolean>() {
-			public Boolean apply(final EContentPart it) {
+		final Function1<ContentPart, Boolean> _function = new Function1<ContentPart, Boolean>() {
+			public Boolean apply(final ContentPart it) {
 				return Boolean.valueOf(style.equals(it.getStyle()));
 			}
 		};
-		return ECollections.<ContentPart>asEList(((ContentPart[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(IterableExtensions.<EContentPart>filter(this.getParts(), _function), ContentPart.class)));
+		return ECollections.<ContentPart>asEList(((ContentPart[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(IterableExtensions.<ContentPart>filter(this.getParts(), _function), ContentPart.class)));
 	}
 
 	/**
@@ -232,12 +232,12 @@ public class EStructuredDocumentImpl extends MinimalEObjectImpl.Container implem
 		if ((role == null)) {
 			return CollectionLiterals.<ContentPart>emptyList();
 		}
-		final Function1<EContentPart, Boolean> _function = new Function1<EContentPart, Boolean>() {
-			public Boolean apply(final EContentPart it) {
+		final Function1<ContentPart, Boolean> _function = new Function1<ContentPart, Boolean>() {
+			public Boolean apply(final ContentPart it) {
 				return Boolean.valueOf(role.equals(it.getRole()));
 			}
 		};
-		return ECollections.<ContentPart>asEList(((ContentPart[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(IterableExtensions.<EContentPart>filter(this.getParts(), _function), ContentPart.class)));
+		return ECollections.<ContentPart>asEList(((ContentPart[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(IterableExtensions.<ContentPart>filter(this.getParts(), _function), ContentPart.class)));
 	}
 
 	/**

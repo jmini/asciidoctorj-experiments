@@ -44,7 +44,7 @@ public interface EStructuredDocument extends EObject, StructuredDocument {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EContentPart> getParts();
+	EList<ContentPart> getParts();
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' reference.

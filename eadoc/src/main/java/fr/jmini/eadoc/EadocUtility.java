@@ -263,7 +263,7 @@ public class EadocUtility {
         return eTitle;
     }
 
-    public static void convertAndAddAllContentPart(EList<EContentPart> eList, List<? extends ContentPart> parts) {
+    public static void convertAndAddAllContentPart(EList<ContentPart> eList, List<? extends ContentPart> parts) {
         if (parts != null) {
             List<EContentPart> items = parts.stream().map(EadocUtility::convertContentPart).collect(Collectors.toList());
             eList.addAll(items);

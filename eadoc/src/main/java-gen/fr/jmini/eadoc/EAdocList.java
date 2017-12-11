@@ -2,7 +2,7 @@
  */
 package fr.jmini.eadoc;
 
-import org.asciidoctor.ast.List;
+import org.asciidoctor.ast.List; import org.asciidoctor.ast.StructuralNode;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -37,7 +37,7 @@ public interface EAdocList extends EStructuralNode, List {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EStructuralNode> getItems();
+	EList<StructuralNode> getItems();
 
 	/**
 	 * <!-- begin-user-doc -->

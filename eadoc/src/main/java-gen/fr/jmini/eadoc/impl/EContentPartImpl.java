@@ -2,7 +2,7 @@
  */
 package fr.jmini.eadoc.impl;
 
-import fr.jmini.eadoc.EContentPart;
+import org.asciidoctor.ast.ContentPart; import fr.jmini.eadoc.EContentPart;
 import fr.jmini.eadoc.EadocPackage;
 
 import java.util.Collection;
@@ -183,7 +183,7 @@ public class EContentPartImpl extends MinimalEObjectImpl.Container implements EC
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EContentPart> parts;
+	protected EList<ContentPart> parts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -356,9 +356,9 @@ public class EContentPartImpl extends MinimalEObjectImpl.Container implements EC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EContentPart> getParts() {
+	public EList<ContentPart> getParts() {
 		if (parts == null) {
-			parts = new EObjectContainmentWithInverseEList<EContentPart>(EContentPart.class, this, EadocPackage.ECONTENT_PART__PARTS, EadocPackage.ECONTENT_PART__PARENT_PART);
+			parts = new EObjectContainmentWithInverseEList<ContentPart>(EContentPart.class, this, EadocPackage.ECONTENT_PART__PARTS, EadocPackage.ECONTENT_PART__PARENT_PART);
 		}
 		return parts;
 	}

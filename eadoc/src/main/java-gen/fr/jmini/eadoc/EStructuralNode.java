@@ -98,7 +98,7 @@ public interface EStructuralNode extends EContentNode, StructuralNode {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EStructuralNode> getBlocks();
+	EList<StructuralNode> getBlocks();
 
 	/**
 	 * Returns the value of the '<em><b>Level</b></em>' attribute.
@@ -232,7 +232,7 @@ public interface EStructuralNode extends EContentNode, StructuralNode {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getBlocks();'"
 	 * @generated
 	 */
-	List<? extends StructuralNode> blocks();
+	List<StructuralNode> blocks();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,7 +281,7 @@ public interface EStructuralNode extends EContentNode, StructuralNode {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Not implemented\");'"
 	 * @generated
 	 */
-	List<? extends StructuralNode> findBy(Map<Object, Object> selector);
+	List<StructuralNode> findBy(Map<Object, Object> selector);
 
 	/**
 	 * <!-- begin-user-doc -->

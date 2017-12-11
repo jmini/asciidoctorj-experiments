@@ -223,6 +223,52 @@
                         <configuration>
                             <target>
                                 <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="EList&#60;E" value="EList&#60;" />
+                                    <replacefilter token="List&#60;EStructuralNode&#62; findBy" value="List&#60;StructuralNode&#62; findBy" />
+                                    <replacefilter token="List&#60;EStructuralNode&#62; blocks" value="List&#60;StructuralNode&#62; blocks" />
+                                    <replacefilter token="List&#60;EStructuralNode&#62; getItems" value="List&#60;StructuralNode&#62; getItems" />
+                                    <replacefilter token="Function1&#60;E" value="Function1&#60;" />
+                                    <replacefilter token="apply(final E" value="apply(final " />
+                                    <replacefilter token="IterableExtensions.&#60;E" value="IterableExtensions.&#60;" />
+                                    <include name="**/E*.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import org.asciidoctor.ast.List;" value="import org.asciidoctor.ast.List; import org.asciidoctor.ast.StructuralNode;" />
+                                    <include name="**/EAdocList.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import fr.jmini.eadoc.EAdocList;" value="import org.asciidoctor.ast.StructuralNode; import fr.jmini.eadoc.EAdocList;" />
+                                    <include name="**/EAdocListImpl.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import org.asciidoctor.ast.DescriptionList;" value="import org.asciidoctor.ast.DescriptionList; import org.asciidoctor.ast.DescriptionListEntry;" />
+                                    <include name="**/EDescriptionList.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import fr.jmini.eadoc.EDescriptionList;" value="import org.asciidoctor.ast.DescriptionListEntry; import fr.jmini.eadoc.EDescriptionList;" />
+                                    <include name="**/EDescriptionListImpl.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import fr.jmini.eadoc.EContentPart;" value="import org.asciidoctor.ast.ContentPart; import fr.jmini.eadoc.EContentPart;" />
+                                    <include name="**/EContentPartImpl.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import org.asciidoctor.ast.Row;" value="import org.asciidoctor.ast.Cell; import org.asciidoctor.ast.Row;" />
+                                    <include name="**/ERow.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import fr.jmini.eadoc.ERow;" value="import org.asciidoctor.ast.Cell; import fr.jmini.eadoc.ERow;" />
+                                    <include name="**/ERowImpl.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import org.asciidoctor.ast.Table;" value="import org.asciidoctor.ast.Column; import org.asciidoctor.ast.Table;" />
+                                    <include name="**/ETable.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
+                                    <replacefilter token="import fr.jmini.eadoc.ETable;" value="import org.asciidoctor.ast.Column; import fr.jmini.eadoc.ETable;" />
+                                    <include name="**/ETableImpl.java"/>
+                                </replace>
+                                <replace dir="${project.basedir}/src/main/java-gen/">
                                     <replacefilter token="setSubstitutions(String" value="setSubstitutions(String..." />
                                     <replacefilter token="setSubstitutions(final String" value="setSubstitutions(final String..." />
                                     <include name="**/*EStructuralNode*.java"/>
