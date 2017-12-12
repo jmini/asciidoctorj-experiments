@@ -86,9 +86,7 @@ public class EadocCodeGeneratorExampleTest {
         when(mockBlock1.getBlocks()).thenReturn(Collections.emptyList());
         when(mockBlock1.getLines()).thenReturn(Collections.singletonList("Some text"));
         when(mockBlock1.getSource()).thenReturn("Some text");
-        when(mockDocument1.getBlocks()).thenAnswer(i -> {
-            return Collections.singletonList(mockBlock1);
-        });
+        when(mockDocument1.getBlocks()).thenReturn(Collections.singletonList(mockBlock1));
         Title mockTitle1 = mock(Title.class);
         when(mockTitle1.getMain()).thenReturn("My page");
         when(mockTitle1.getSubtitle()).thenReturn(null);

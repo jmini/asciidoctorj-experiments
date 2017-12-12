@@ -71,9 +71,7 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         when(mockContentPart2.getTitle()).thenReturn("An header");
         when(mockContentPart2.getAttributes()).thenReturn(Collections.emptyMap());
         when(mockContentPart2.getParts()).thenReturn(null);
-        when(mockStructuredDocument1.getParts()).thenAnswer(i -> {
-            return Arrays.asList(mockContentPart1, mockContentPart2);
-        });
+        when(mockStructuredDocument1.getParts()).thenReturn(Arrays.asList(mockContentPart1, mockContentPart2));
         DocumentHeader mockDocumentHeader1 = mock(DocumentHeader.class);
         when(mockDocumentHeader1.getAuthors()).thenReturn(Collections.emptyList());
         Title mockTitle1 = mock(Title.class);

@@ -179,9 +179,7 @@ public class EadocCodeGeneratorDocumentAstTest {
         when(mockListItem2.getText()).thenReturn("Second item");
         when(mockListItem2.getSource()).thenReturn("Second item");
         when(mockListItem2.hasText()).thenReturn(true);
-        when(mockList1.getItems()).thenAnswer(i -> {
-            return Arrays.asList(mockListItem1, mockListItem2);
-        });
+        when(mockList1.getItems()).thenReturn(Arrays.asList(mockListItem1, mockListItem2));
         when(mockList1.hasItems()).thenReturn(true);
         Block mockBlock2 = mock(Block.class);
         when(mockBlock2.getId()).thenReturn(null);
@@ -204,17 +202,13 @@ public class EadocCodeGeneratorDocumentAstTest {
         when(mockBlock2.getBlocks()).thenReturn(Collections.emptyList());
         when(mockBlock2.getLines()).thenReturn(Collections.singletonList("Ut commodo lorem nec lacinia finibus."));
         when(mockBlock2.getSource()).thenReturn("Ut commodo lorem nec lacinia finibus.");
-        when(mockSection1.getBlocks()).thenAnswer(i -> {
-            return Arrays.asList(mockBlock1, mockList1, mockBlock2);
-        });
+        when(mockSection1.getBlocks()).thenReturn(Arrays.asList(mockBlock1, mockList1, mockBlock2));
         when(mockSection1.getIndex()).thenReturn(0);
         when(mockSection1.getNumber()).thenReturn(1);
         when(mockSection1.getSectionName()).thenReturn("section");
         when(mockSection1.isSpecial()).thenReturn(false);
         when(mockSection1.isNumbered()).thenReturn(false);
-        when(mockDocument1.getBlocks()).thenAnswer(i -> {
-            return Collections.singletonList(mockSection1);
-        });
+        when(mockDocument1.getBlocks()).thenReturn(Collections.singletonList(mockSection1));
         Title mockTitle1 = mock(Title.class);
         when(mockTitle1.getMain()).thenReturn("A small List");
         when(mockTitle1.getSubtitle()).thenReturn(null);
