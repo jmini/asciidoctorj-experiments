@@ -141,8 +141,7 @@ public class AssertCodeGeneratorExampleTest {
         assertThat(title1.getCombined()).isEqualTo("My page");
         assertThat(title1.isSanitized()).isFalse();
         assertThat(document1.getDoctitle()).isEqualTo("My page");
-        assertThat(document1.getOptions()).containsEntry("attributes", "{}")
-                .containsEntry("header_footer", false);
+        assertThat(document1.getOptions()).containsEntry("header_footer", false);
     }
     // end::generated-code[]
 }

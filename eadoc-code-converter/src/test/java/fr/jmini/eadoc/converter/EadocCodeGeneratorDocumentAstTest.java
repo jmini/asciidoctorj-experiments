@@ -391,8 +391,7 @@ public class EadocCodeGeneratorDocumentAstTest {
         assertThat(title1.getCombined()).isEqualTo("A small List");
         assertThat(title1.isSanitized()).isFalse();
         assertThat(document1.getDoctitle()).isEqualTo("A small List");
-        assertThat(document1.getOptions()).containsEntry("attributes", "{}")
-                .containsEntry("header_footer", false);
+        assertThat(document1.getOptions()).containsEntry("header_footer", false);
     }
     // end::assert-code[]
 
