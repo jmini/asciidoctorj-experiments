@@ -5,7 +5,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Charsets;
@@ -20,7 +22,11 @@ public class CodeTestingUtility {
         // replaceGeneratedBlock(expectedCode, utClass, TAG_NAME);
 
         String utCode = readUtCode(utClass);
-        String code = findGeneratedBlock(utCode, TAG_NAME);
+        testGeneratedCode(expectedCode, utCode, TAG_NAME);
+    }
+
+    public static void testGeneratedCode(String expectedCode, String content, String tagName) {
+        String code = findGeneratedBlock(content, tagName);
 
         String expectedDeclaration = findMethodDeclaration(expectedCode);
         String declaration = findMethodDeclaration(code);
@@ -31,31 +37,9 @@ public class CodeTestingUtility {
         assertThat(statements).containsExactlyElementsOf(expectedStatements);
     }
 
-    public static void replaceContent(File file, String newContent, String tagName, boolean withCommentTag) {
-        String startTag = computeStartTag(tagName);
-        String endTag = computeEndTag(tagName);
-
+    public static void replaceContentInFile(File file, String newContent, String tagName, boolean withCommentTag) {
         String oldFileContent = readContent(file);
-        int start = oldFileContent.indexOf(startTag, 0);
-        if (start < 0) {
-            throw new IllegalStateException("did not find start tag: " + startTag);
-        }
-        start = start + startTag.length();
-        int end = oldFileContent.indexOf(endTag, start);
-        if (end < 0) {
-            throw new IllegalStateException("did not find start end: " + endTag);
-        }
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(oldFileContent.substring(0, start));
-        sb.append("\n");
-        sb.append(newContent);
-        sb.append("\n");
-        if (withCommentTag) {
-            sb.append(" // ");
-        }
-        sb.append(oldFileContent.substring(end));
-        String newFileContent = sb.toString();
+        String newFileContent = replaceContent(oldFileContent, newContent, tagName, withCommentTag);
         try {
             Files.write(newFileContent, file, Charsets.UTF_8);
         } catch (IOException e) {
@@ -63,10 +47,37 @@ public class CodeTestingUtility {
         }
     }
 
+    public static String replaceContent(String existingContent, String newContent, String tagName, boolean withCommentTag) {
+        String startTag = computeStartTag(tagName);
+        String endTag = computeEndTag(tagName);
+
+        int start = existingContent.indexOf(startTag, 0);
+        if (start < 0) {
+            throw new IllegalStateException("did not find start tag: " + startTag);
+        }
+        start = start + startTag.length();
+        int end = existingContent.indexOf(endTag, start);
+        if (end < 0) {
+            throw new IllegalStateException("did not find start end: " + endTag);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(existingContent.substring(0, start));
+        sb.append("\n");
+        sb.append(newContent);
+        sb.append("\n");
+        if (withCommentTag) {
+            sb.append(" // ");
+        }
+        sb.append(existingContent.substring(end));
+        String newFileContent = sb.toString();
+        return newFileContent;
+    }
+
     private static void replaceGeneratedBlock(String expectedCode, Class<?> utClass, String tagName) {
         File file = javaFile(utClass);
 
-        replaceContent(file, expectedCode, tagName, true);
+        replaceContentInFile(file, expectedCode, tagName, true);
     }
 
     private static String findGeneratedBlock(String content, String tagName) {
@@ -129,4 +140,18 @@ public class CodeTestingUtility {
         return new File("src/test/java/" + packageDir + "/" + utClass.getSimpleName() + ".java");
     }
 
+    public static void rewriteAttributes(Map<String, Object> attributes) {
+        Map<String, Object> newAttributes = new HashMap<>();
+        if (attributes.containsKey("filetype")) {
+            newAttributes.put("filetype", attributes.get("filetype"));
+        }
+        if (attributes.containsKey("doctitle")) {
+            newAttributes.put("doctitle", attributes.get("doctitle"));
+        }
+        if (attributes.containsKey("doctype")) {
+            newAttributes.put("doctype", attributes.get("doctype"));
+        }
+        attributes.clear();
+        attributes.putAll(newAttributes);
+    }
 }

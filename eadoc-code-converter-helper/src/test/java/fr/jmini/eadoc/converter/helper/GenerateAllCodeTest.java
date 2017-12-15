@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
@@ -64,24 +62,23 @@ public class GenerateAllCodeTest {
         File utFile = new File("../eadoc-code-converter/src/test/java/fr/jmini/eadoc/converter/" + testName + ".java");
         assertThat(utFile).exists();
 
-        CodeTestingUtility.replaceContent(utFile, adocInput, "input-asciidoc", false);
+        CodeTestingUtility.replaceContentInFile(utFile, adocInput, "input-asciidoc", false);
 
         Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
         Document document = asciidoctor.load(adocInput, new java.util.HashMap<String, Object>());
-
-        rewriteAttributes(document.getAttributes());
+        CodeTestingUtility.rewriteAttributes(document.getAttributes());
 
         StringBuilder sb;
 
         MockCodeGenerator mockConverter = new MockCodeGenerator();
         sb = new StringBuilder();
         mockConverter.createDocumentCode(sb, document);
-        CodeTestingUtility.replaceContent(utFile, sb.toString(), "mock-code", true);
+        CodeTestingUtility.replaceContentInFile(utFile, sb.toString(), "mock-code", true);
 
         AssertCodeGenerator assertConverter = new AssertCodeGenerator();
         sb = new StringBuilder();
         assertConverter.createDocumentCode(sb, document);
-        CodeTestingUtility.replaceContent(utFile, sb.toString(), "assert-code", true);
+        CodeTestingUtility.replaceContentInFile(utFile, sb.toString(), "assert-code", true);
     }
 
     private void generateStructuredDocumentCode(String testName, String adocInput) throws IOException {
@@ -91,13 +88,13 @@ public class GenerateAllCodeTest {
         File utFile = new File("../eadoc-code-converter/src/test/java/fr/jmini/eadoc/converter/" + testName + ".java");
         assertThat(utFile).exists();
 
-        CodeTestingUtility.replaceContent(utFile, adocInput, "input-asciidoc", false);
+        CodeTestingUtility.replaceContentInFile(utFile, adocInput, "input-asciidoc", false);
 
         Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
         StructuredDocument structuredDocument = asciidoctor.readDocumentStructure(adocInput, new java.util.HashMap<String, Object>());
 
         if (structuredDocument.getHeader() != null) {
-            rewriteAttributes(structuredDocument.getHeader()
+            CodeTestingUtility.rewriteAttributes(structuredDocument.getHeader()
                     .getAttributes());
         }
 
@@ -106,26 +103,11 @@ public class GenerateAllCodeTest {
         MockCodeGenerator mockConverter = new MockCodeGenerator();
         sb = new StringBuilder();
         mockConverter.createStructuredDocumentCode(sb, structuredDocument);
-        CodeTestingUtility.replaceContent(utFile, sb.toString(), "mock-code", true);
+        CodeTestingUtility.replaceContentInFile(utFile, sb.toString(), "mock-code", true);
 
         AssertCodeGenerator assertConverter = new AssertCodeGenerator();
         sb = new StringBuilder();
         assertConverter.createStructuredDocumentCode(sb, structuredDocument);
-        CodeTestingUtility.replaceContent(utFile, sb.toString(), "assert-code", true);
-    }
-
-    private void rewriteAttributes(Map<String, Object> attributes) {
-        Map<String, Object> newAttributes = new HashMap<>();
-        if (attributes.containsKey("filetype")) {
-            newAttributes.put("filetype", attributes.get("filetype"));
-        }
-        if (attributes.containsKey("doctitle")) {
-            newAttributes.put("doctitle", attributes.get("doctitle"));
-        }
-        if (attributes.containsKey("doctype")) {
-            newAttributes.put("doctype", attributes.get("doctype"));
-        }
-        attributes.clear();
-        attributes.putAll(newAttributes);
+        CodeTestingUtility.replaceContentInFile(utFile, sb.toString(), "assert-code", true);
     }
 }
