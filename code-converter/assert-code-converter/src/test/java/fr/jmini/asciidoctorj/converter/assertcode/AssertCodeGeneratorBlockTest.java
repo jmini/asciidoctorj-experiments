@@ -48,7 +48,8 @@ public class AssertCodeGeneratorBlockTest {
         assertThat(block1.isInline()).isTrue();
         assertThat(block1.isBlock()).isFalse();
         assertThat(block1.getAttributes()).containsEntry("one", "lorem")
-                .containsEntry("two", "ipusm");
+                .containsEntry("two", "ipusm")
+                .doesNotContainKey("notitle");
         assertThat(block1.getRoles()).containsExactly("r1", "r2");
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();

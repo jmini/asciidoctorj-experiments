@@ -51,7 +51,8 @@ public class AssertCodeGeneratorContentNodeTest {
         assertThatThrownBy(() -> {
             contentNode1.isBlock();
         }).hasMessageContaining("NotImplementedError");
-        assertThat(contentNode1.getAttributes()).containsEntry("attr-key", "same-value");
+        assertThat(contentNode1.getAttributes()).containsEntry("attr-key", "same-value")
+                .doesNotContainKey("notitle");
         assertThat(contentNode1.getRoles()).containsExactly("some-role");
         assertThat(contentNode1.isReftext()).isTrue();
         assertThat(contentNode1.getReftext()).isEqualTo("bla");

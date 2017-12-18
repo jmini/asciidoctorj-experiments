@@ -142,16 +142,17 @@ public class CodeTestingUtility {
 
     public static void rewriteAttributes(Map<String, Object> attributes) {
         Map<String, Object> newAttributes = new HashMap<>();
-        if (attributes.containsKey("filetype")) {
-            newAttributes.put("filetype", attributes.get("filetype"));
-        }
-        if (attributes.containsKey("doctitle")) {
-            newAttributes.put("doctitle", attributes.get("doctitle"));
-        }
-        if (attributes.containsKey("doctype")) {
-            newAttributes.put("doctype", attributes.get("doctype"));
-        }
+        copyValue("filetype", attributes, newAttributes);
+        copyValue("doctitle", attributes, newAttributes);
+        copyValue("doctype", attributes, newAttributes);
+        copyValue("notitle", attributes, newAttributes);
         attributes.clear();
         attributes.putAll(newAttributes);
+    }
+
+    private static <T> void copyValue(T key, Map<T, Object> fromMap, Map<T, Object> toMap) {
+        if (fromMap.containsKey(key)) {
+            toMap.put(key, fromMap.get(key));
+        }
     }
 }

@@ -1,5 +1,7 @@
 package fr.jmini.asciidoctorj.converter.assertcode;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,6 +33,9 @@ import fr.jmini.asciidoctorj.converter.code.AbstractCodeGenerator;
 import fr.jmini.asciidoctorj.converter.code.CodeConverterUtility;
 
 public class AssertCodeGenerator extends AbstractCodeGenerator {
+
+    private static final Collection<String> OPTIONS_KEYS = Collections.emptyList();
+    private static final Collection<String> ATTRIBUTES_KEYS = Collections.singletonList("notitle");
 
     @Override
     protected void appendAuthor(StringBuilder sb, String varName, Author author) {
@@ -107,7 +112,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
                 throw new IllegalStateException("Unexpected exception", e);
             }
         }
-        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes());
+        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes(), ATTRIBUTES_KEYS);
         appendEqualsToExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendEqualsToExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());
         appendEqualsToExpressionString(sb, varName + ".getReftext()", contentNode.getReftext());
@@ -121,7 +126,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         appendEqualsToExpressionString(sb, varName + ".getStyle()", contentPart.getStyle());
         appendEqualsToExpressionString(sb, varName + ".getRole()", contentPart.getRole());
         appendEqualsToExpressionString(sb, varName + ".getTitle()", contentPart.getTitle());
-        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentPart.getAttributes());
+        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentPart.getAttributes(), ATTRIBUTES_KEYS);
         appendEqualsToExpressionObjectList(sb, varName + ".getParts()", contentPart.getParts());
     }
 
@@ -150,7 +155,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         appendStructuralNode(sb, varName, document);
         appendEqualsToExpressionObject(sb, varName + ".getStructuredDoctitle()", document.getStructuredDoctitle());
         appendEqualsToExpressionString(sb, varName + ".getDoctitle()", document.getDoctitle());
-        appendEqualsToExpressionMap(sb, varName + ".getOptions()", document.getOptions());
+        appendEqualsToExpressionMap(sb, varName + ".getOptions()", document.getOptions(), OPTIONS_KEYS);
     }
 
     @Override
@@ -161,7 +166,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         appendEqualsToExpressionObject(sb, varName + ".getAuthor()", documentHeader.getAuthor());
         appendEqualsToExpressionObject(sb, varName + ".getRevisionInfo()", documentHeader.getRevisionInfo());
         appendEqualsToExpressionString(sb, varName + ".getPageTitle()", documentHeader.getPageTitle());
-        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", documentHeader.getAttributes());
+        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", documentHeader.getAttributes(), ATTRIBUTES_KEYS);
     }
 
     @Override
@@ -292,8 +297,8 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         sb.append("assertThat(" + expression + ")." + equalsToExpressionStringList(value) + ";" + NL);
     }
 
-    private void appendEqualsToExpressionMap(StringBuilder sb, String expression, Map<? extends Object, Object> value) {
-        sb.append("assertThat(" + expression + ")." + equalsToExpressionMap(value) + ";" + NL);
+    private void appendEqualsToExpressionMap(StringBuilder sb, String expression, Map<? extends Object, Object> value, Collection<String> keysForAbsentAssertion) {
+        sb.append("assertThat(" + expression + ")." + equalsToExpressionMap(value, keysForAbsentAssertion) + ";" + NL);
     }
 
     private void appendEqualsToExpressionHorizontalAlignment(StringBuilder sb, String expression, HorizontalAlignment value) {
@@ -370,7 +375,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
         }
     }
 
-    private static String equalsToExpressionMap(Map<? extends Object, Object> value) {
+    static String equalsToExpressionMap(Map<? extends Object, Object> value, Collection<String> keysForAbsentAssertion) {
         if (value == null || value.isEmpty()) {
             return "isNullOrEmpty()";
         } else {
@@ -386,6 +391,17 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
                     })
                     .collect(Collectors.joining(").containsEntry(")));
             sb.append(")");
+            if (keysForAbsentAssertion.size() > 0) {
+                List<String> remainingKeys = keysForAbsentAssertion.stream()
+                        .filter(i -> !value.containsKey(i))
+                        .sorted()
+                        .map(CodeConverterUtility::convertString)
+                        .collect(Collectors.toList());
+                if (remainingKeys.size() > 0) {
+                    sb.append(remainingKeys.stream()
+                            .collect(Collectors.joining(").doesNotContainKey(", ".doesNotContainKey(", ")")));
+                }
+            }
             return sb.toString();
         }
     }
