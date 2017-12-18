@@ -55,6 +55,7 @@ public class EadocCodeGeneratorExampleTest {
                 .put("doctitle", "My page")
                 .put("doctype", "article")
                 .put("filetype", "html")
+                .put("notitle", "")
                 .build();
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
@@ -114,7 +115,8 @@ public class EadocCodeGeneratorExampleTest {
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctitle", "My page")
                 .containsEntry("doctype", "article")
-                .containsEntry("filetype", "html");
+                .containsEntry("filetype", "html")
+                .containsEntry("notitle", "");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
@@ -169,6 +171,7 @@ public class EadocCodeGeneratorExampleTest {
                 .put("doctitle", "My page")
                 .put("doctype", "article")
                 .put("filetype", "html")
+                .put("notitle", "")
                 .build();
         eDocument1.setAttributes(map1);
         eDocument1.setRoles(Collections.emptyList());

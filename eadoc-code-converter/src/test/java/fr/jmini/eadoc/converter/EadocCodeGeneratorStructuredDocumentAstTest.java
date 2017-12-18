@@ -99,6 +99,7 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
                 .put("doctitle", "My page")
                 .put("doctype", "article")
                 .put("filetype", "html")
+                .put("notitle", "")
                 .build();
         when(mockDocumentHeader1.getAttributes()).thenReturn(map1);
         when(mockStructuredDocument1.getHeader()).thenReturn(mockDocumentHeader1);
@@ -152,7 +153,8 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
         assertThat(documentHeader1.getPageTitle()).isEqualTo("My page");
         assertThat(documentHeader1.getAttributes()).containsEntry("doctitle", "My page")
                 .containsEntry("doctype", "article")
-                .containsEntry("filetype", "html");
+                .containsEntry("filetype", "html")
+                .containsEntry("notitle", "");
     }
     // end::assert-code[]
 
@@ -197,6 +199,7 @@ public class EadocCodeGeneratorStructuredDocumentAstTest {
                 .put("doctitle", "My page")
                 .put("doctype", "article")
                 .put("filetype", "html")
+                .put("notitle", "")
                 .build();
         eDocumentHeader1.setAttributes(map1);
         eStructuredDocument1.setHeader(eDocumentHeader1);

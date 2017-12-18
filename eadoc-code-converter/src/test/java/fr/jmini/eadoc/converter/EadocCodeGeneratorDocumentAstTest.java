@@ -64,6 +64,7 @@ public class EadocCodeGeneratorDocumentAstTest {
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("doctype", "article")
                 .put("filetype", "html")
+                .put("notitle", "")
                 .build();
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
@@ -235,7 +236,8 @@ public class EadocCodeGeneratorDocumentAstTest {
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctype", "article")
-                .containsEntry("filetype", "html");
+                .containsEntry("filetype", "html")
+                .containsEntry("notitle", "");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
@@ -407,6 +409,7 @@ public class EadocCodeGeneratorDocumentAstTest {
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("doctype", "article")
                 .put("filetype", "html")
+                .put("notitle", "")
                 .build();
         eDocument1.setAttributes(map1);
         eDocument1.setRoles(Collections.emptyList());
