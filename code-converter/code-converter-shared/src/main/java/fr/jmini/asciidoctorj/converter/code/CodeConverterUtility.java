@@ -25,7 +25,7 @@ public class CodeConverterUtility {
         }
         return "\"" + value.replace("\\", "\\\\")
                 .replace("\"", "\\\"")
-                .replace("\n", "\\n") + "\"";
+                .replace("\n", "\\n\" +\n\"") + "\"";
     }
 
     public static String convertHorizontalAlignment(HorizontalAlignment value) {
