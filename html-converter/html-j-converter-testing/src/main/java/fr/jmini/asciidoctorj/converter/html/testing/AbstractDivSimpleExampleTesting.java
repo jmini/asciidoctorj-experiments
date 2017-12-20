@@ -10,8 +10,8 @@ import org.junit.Test;
 public abstract class AbstractDivSimpleExampleTesting {
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\">\n" +
-            "<p>Some text</p>\n" +
+    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
+            " <p>Some text</p> \n" +
             "</div>";
     // end::expected-html[]
 
@@ -22,6 +22,7 @@ public abstract class AbstractDivSimpleExampleTesting {
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
 
+        html = HtmlConverterTestingUtility.normalizeHtml(html);
         assertThat(html).isXmlEqualTo(EXPECTED_HTML);
     }
 

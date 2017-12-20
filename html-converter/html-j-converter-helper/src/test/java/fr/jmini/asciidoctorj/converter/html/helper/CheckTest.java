@@ -12,7 +12,6 @@ import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
 import fr.jmini.asciidoctorj.converter.assertcode.AssertCodeGenerator;
-import fr.jmini.asciidoctorj.converter.code.CodeConverterUtility;
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 
@@ -28,7 +27,7 @@ public class CheckTest {
 
             Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
             Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-            String expectedHtml = "public static final String EXPECTED_HTML = " + CodeConverterUtility.convertString(document.convert()) + ";";
+            String expectedHtml = HtmlConverterHelper.computeExpectedHtmlConstant(document);
             CodeTestingUtility.rewriteAttributes(document.getAttributes());
 
             AssertCodeGenerator assertGenerator = new AssertCodeGenerator();

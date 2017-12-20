@@ -41,9 +41,7 @@ public class HtmlConverter extends StringConverter {
                 div.attr("class", String.join(" ", classAttributeMembers));
                 if (structuralNode instanceof org.asciidoctor.ast.Block) {
                     Element p = div.appendElement("p");
-                    for (String line : ((Block) structuralNode).getLines()) {
-                        p.text(line);
-                    }
+                    p.text(String.join("\n", ((Block) structuralNode).getLines()));
                 }
             }
         }
