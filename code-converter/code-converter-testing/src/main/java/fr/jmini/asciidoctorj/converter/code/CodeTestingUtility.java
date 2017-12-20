@@ -22,29 +22,38 @@ public class CodeTestingUtility {
         // replaceGeneratedBlock(expectedCode, utClass, TAG_NAME);
 
         String utCode = readUtCode(utClass);
-        testGeneratedCode(expectedCode, utCode, TAG_NAME);
+        testGeneratedCode(expectedCode, utCode, TAG_NAME, true);
     }
 
-    public static void testGeneratedCode(String expectedCode, String content, String tagName) {
+    public static void testGeneratedCode(String expectedCode, String content, String tagName, boolean isFunction) {
         String code = findGeneratedBlock(content, tagName);
 
-        String expectedDeclaration = findMethodDeclaration(expectedCode);
-        String declaration = findMethodDeclaration(code);
-        assertThat(declaration).isEqualTo(expectedDeclaration);
+        if (isFunction) {
+            String expectedDeclaration = findMethodDeclaration(expectedCode);
+            String declaration = findMethodDeclaration(code);
+            assertThat(declaration).isEqualTo(expectedDeclaration);
+        }
 
-        List<String> expectedStatements = findStatements(expectedCode);
-        List<String> statements = findStatements(code);
+        List<String> expectedStatements = findStatements(expectedCode, isFunction);
+        List<String> statements = findStatements(code, isFunction);
         assertThat(statements).containsExactlyElementsOf(expectedStatements);
     }
 
-    public static void replaceContentInFile(File file, String newContent, String tagName, boolean withCommentTag) {
+    public static void replaceContentInFile(File file, String newContent, String tagName, boolean insideCodeBlock, boolean withCommentTag) {
         String oldFileContent = readContent(file);
-        String newFileContent = replaceContent(oldFileContent, newContent, tagName, withCommentTag);
-        try {
-            Files.write(newFileContent, file, Charsets.UTF_8);
-        } catch (IOException e) {
-            throw new IllegalStateException(e);
+        String oldContent = findGeneratedBlock(oldFileContent, tagName);
+
+        List<String> oldStatements = findStatements(oldContent, insideCodeBlock);
+        List<String> newStatements = findStatements(newContent, insideCodeBlock);
+        if (!oldStatements.equals(newStatements)) {
+            String newFileContent = replaceContent(oldFileContent, newContent, tagName, withCommentTag);
+            try {
+                Files.write(newFileContent, file, Charsets.UTF_8);
+            } catch (IOException e) {
+                throw new IllegalStateException(e);
+            }
         }
+
     }
 
     public static String replaceContent(String existingContent, String newContent, String tagName, boolean withCommentTag) {
@@ -77,7 +86,7 @@ public class CodeTestingUtility {
     private static void replaceGeneratedBlock(String expectedCode, Class<?> utClass, String tagName) {
         File file = javaFile(utClass);
 
-        replaceContentInFile(file, expectedCode, tagName, true);
+        replaceContentInFile(file, expectedCode, tagName, true, true);
     }
 
     private static String findGeneratedBlock(String content, String tagName) {
@@ -96,15 +105,23 @@ public class CodeTestingUtility {
                 .trim();
     }
 
-    static List<String> findStatements(String content) {
-        int start = content.indexOf("{") + 1;
-        int end = content.lastIndexOf("}");
-        String body = content.substring(start, end)
-                .trim();
+    static List<String> findStatements(String content, boolean insideCodeBlock) {
+        String body;
+        if (insideCodeBlock) {
+            int start = content.indexOf("{") + 1;
+            int end = content.lastIndexOf("}");
+            body = content.substring(start, end)
+                    .trim();
+        } else {
+            body = content.trim();
+        }
+
         String[] parts = body.split(";");
         return Arrays.stream(parts)
+                .filter(s -> !s.trim()
+                        .startsWith("//"))
                 .map(s -> s.trim()
-                        .replaceAll("\n[ ]+", " ")
+                        .replaceAll("[ ]*\n[ ]*", " ")
                         .replaceAll("\n\\.", ".")
                         .replace(" .", "."))
                 .collect(Collectors.toList());

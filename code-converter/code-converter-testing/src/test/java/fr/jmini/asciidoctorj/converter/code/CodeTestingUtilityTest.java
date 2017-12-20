@@ -18,28 +18,51 @@ public class CodeTestingUtilityTest {
     public void testFindStatements() throws Exception {
         List<String> statements;
 
-        statements = CodeTestingUtility.findStatements("public void test(String s) {\n" + "   System.out.println(s);" + "}\n");
+        statements = CodeTestingUtility.findStatements("public void test(String s) {\n"
+                + "   System.out.println(s);"
+                + "}\n", true);
         assertThat(statements).containsExactly("System.out.println(s)");
 
-        statements = CodeTestingUtility.findStatements("public void test(String s) {\n" + "   System.out.println(\"{\" + s + \"}\");" + "}\n");
+        statements = CodeTestingUtility.findStatements("public void test(String s) {\n"
+                + "   System.out.println(s);"
+                + "   // System.out.println();"
+                + "}\n", true);
+        assertThat(statements).containsExactly("System.out.println(s)");
+
+        statements = CodeTestingUtility.findStatements("   System.out.println(s);", false);
+        assertThat(statements).containsExactly("System.out.println(s)");
+
+        statements = CodeTestingUtility.findStatements("public void test(String s) {\n"
+                + "   System.out.println(\"{\" + s + \"}\");"
+                + "}\n", true);
+        assertThat(statements).containsExactly("System.out.println(\"{\" + s + \"}\")");
+
+        statements = CodeTestingUtility.findStatements("   System.out.println(\"{\" + s + \"}\");", false);
         assertThat(statements).containsExactly("System.out.println(\"{\" + s + \"}\")");
 
         statements = CodeTestingUtility.findStatements("public void test(String s) {\n"
                 + "   System.out.println(\"This is important:\");"
                 + "   System.out.println(s);"
                 + "   System.out.println(\"This is \"\n    + \"the end!\");"
-                + "}\n");
+                + "}\n", true);
         assertThat(statements).containsExactly("System.out.println(\"This is important:\")", "System.out.println(s)", "System.out.println(\"This is \" + \"the end!\")");
 
         statements = CodeTestingUtility.findStatements("public void test(Map<String,Object> map) {\n"
                 + "   assertThat(map).containsEntry(\"one\", 1)\n    .containsEntry(\"two\", 2)\n    .containsEntry(\"three\", 3);"
-                + "}\n");
+                + "}\n", true);
         assertThat(statements).containsExactly("assertThat(map).containsEntry(\"one\", 1).containsEntry(\"two\", 2).containsEntry(\"three\", 3)");
 
         statements = CodeTestingUtility.findStatements("public void test(Map<String,Object> map) {\n"
                 + "assertThat(map).containsEntry(\"one\", 1)\n.containsEntry(\"two\", 2);"
-                + "}\n");
+                + "}\n", true);
         assertThat(statements).containsExactly("assertThat(map).containsEntry(\"one\", 1).containsEntry(\"two\", 2)");
+
+        statements = CodeTestingUtility.findStatements(""
+                + "   String s = \"aaa\\n\" + \n"
+                + "            \"bb\\n\" + \n"
+                + "            \"c\";", false);
+
+        assertThat(statements).containsExactly("String s = \"aaa\\n\" + \"bb\\n\" + \"c\"");
     }
 
 }

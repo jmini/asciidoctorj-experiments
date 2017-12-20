@@ -14,6 +14,8 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.Files;
 
+import fr.jmini.asciidoctorj.converter.assertcode.AssertCodeGenerator;
+import fr.jmini.asciidoctorj.converter.code.CodeConverterUtility;
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleExampleTesting;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
@@ -40,33 +42,42 @@ public class HtmlConverterHelper {
                 throw new IllegalStateException(abstractTestingClassName + " key is missing in ASCIIDOC_CONTENT_MAP");
             }
         }
-        for (File file : files) {
-            String abstractTestingClassName = computeClassName(file);
+        for (File abstractTestingFile : files) {
+            String abstractTestingClassName = computeClassName(abstractTestingFile);
             String asciidocContent = ASCIIDOC_CONTENT_MAP.get(abstractTestingClassName);
 
             File resourcesFile = findAsciidocRessourceFile(abstractTestingClassName);
             Files.write(asciidocContent, resourcesFile, Charsets.UTF_8);
 
+            Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
+            Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
+            CodeTestingUtility.rewriteAttributes(document.getAttributes());
+
+            StringBuilder sb;
+            AssertCodeGenerator assertGenerator = new AssertCodeGenerator();
+            sb = new StringBuilder();
+            assertGenerator.createDocumentCode(sb, document);
+            CodeTestingUtility.replaceContentInFile(abstractTestingFile, sb.toString(), ASSERT_CODE_TAG_NAME, true, true);
+
+            String expectedHtml = "public static final String EXPECTED_HTML = " + CodeConverterUtility.convertString(document.convert()) + ";";
+            CodeTestingUtility.replaceContentInFile(abstractTestingFile, expectedHtml, EXPECTED_HTML_TAG_NAME, false, true);
+
             File testFile = findTestFile(abstractTestingClassName);
             if (!testFile.exists()) {
                 String testClassName = computeClassName(testFile);
                 String testFileContent = createTestFile(testClassName, abstractTestingClassName);
+
+                MockCodeGenerator mockGenerator = new MockCodeGenerator();
+                sb = new StringBuilder();
+                mockGenerator.createDocumentCode(sb, document);
+
+                testFileContent = CodeTestingUtility.replaceContent(testFileContent, sb.toString(), MOCK_CODE_TAG_NAME, true);
                 Files.write(testFileContent, testFile, Charsets.UTF_8);
             }
             File referenceTestFile = findReferenceTestFile(abstractTestingClassName);
             if (!referenceTestFile.exists()) {
-                Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
-                Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-                CodeTestingUtility.rewriteAttributes(document.getAttributes());
-
-                StringBuilder sb;
-                MockCodeGenerator mockConverter = new MockCodeGenerator();
-                sb = new StringBuilder();
-                mockConverter.createDocumentCode(sb, document);
-
                 String referenceClassName = computeClassName(referenceTestFile);
                 String testFileContent = createReferenceTestFile(referenceClassName, abstractTestingClassName);
-                CodeTestingUtility.replaceContent(testFileContent, sb.toString(), MOCK_CODE_TAG_NAME, true);
                 Files.write(testFileContent, referenceTestFile, Charsets.UTF_8);
             }
         }

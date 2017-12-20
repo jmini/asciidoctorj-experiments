@@ -28,19 +28,18 @@ public class CheckTest {
 
             Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
             Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-            String expectedHtml = "public static final String EXPECTED_HTML =" + CodeConverterUtility.convertString(document.convert()) + ";";
+            String expectedHtml = "public static final String EXPECTED_HTML = " + CodeConverterUtility.convertString(document.convert()) + ";";
             CodeTestingUtility.rewriteAttributes(document.getAttributes());
 
-            AssertCodeGenerator assertConverter = new AssertCodeGenerator();
+            AssertCodeGenerator assertGenerator = new AssertCodeGenerator();
             StringBuilder sb = new StringBuilder();
-            assertConverter.createDocumentCode(sb, document);
+            assertGenerator.createDocumentCode(sb, document);
 
             String content = Files.toString(abstractTestingFile, Charsets.UTF_8);
-            CodeTestingUtility.testGeneratedCode(sb.toString(), content, HtmlConverterHelper.ASSERT_CODE_TAG_NAME);
+            CodeTestingUtility.testGeneratedCode(sb.toString(), content, HtmlConverterHelper.ASSERT_CODE_TAG_NAME, true);
 
-            if (!content.contains("public static final String EXPECTED_HTML") || content.contains("public static final String EXPECTED_HTML = \"\"")) {
-                CodeTestingUtility.replaceContentInFile(abstractTestingFile, expectedHtml, HtmlConverterHelper.EXPECTED_HTML_TAG_NAME, true);
-            }
+            assertThat(content).contains("public static final String EXPECTED_HTML");
+            CodeTestingUtility.testGeneratedCode(expectedHtml, content, HtmlConverterHelper.EXPECTED_HTML_TAG_NAME, false);
         }
     }
 
@@ -60,10 +59,10 @@ public class CheckTest {
             Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
             CodeTestingUtility.rewriteAttributes(document.getAttributes());
 
-            MockCodeGenerator mockConverter = new MockCodeGenerator();
+            MockCodeGenerator mockGenerator = new MockCodeGenerator();
             StringBuilder sb = new StringBuilder();
-            mockConverter.createDocumentCode(sb, document);
-            CodeTestingUtility.testGeneratedCode(sb.toString(), content, HtmlConverterHelper.MOCK_CODE_TAG_NAME);
+            mockGenerator.createDocumentCode(sb, document);
+            CodeTestingUtility.testGeneratedCode(sb.toString(), content, HtmlConverterHelper.MOCK_CODE_TAG_NAME, true);
         }
     }
 
