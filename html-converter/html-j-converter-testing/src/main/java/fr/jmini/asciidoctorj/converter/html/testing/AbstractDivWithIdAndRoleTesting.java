@@ -7,11 +7,11 @@ import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.Title;
 import org.junit.Test;
 
-public abstract class AbstractDivSimpleExampleTesting {
+public abstract class AbstractDivWithIdAndRoleTesting {
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
-            " <p>Some text</p> \n" +
+    public static final String EXPECTED_HTML = "<div id=\"idname\" class=\"paragraph rolename\"> \n" +
+            " <p>This text</p> \n" +
             "</div>";
     // end::expected-html[]
 
@@ -28,7 +28,8 @@ public abstract class AbstractDivSimpleExampleTesting {
 
     public static final String ASCIIDOC = "= My page\n"
             + "\n"
-            + "Some text\n";
+            + "[#idname.rolename]\n"
+            + "This text\n";
 
     public String createAsciiDocInput() {
         return ASCIIDOC;
@@ -63,14 +64,15 @@ public abstract class AbstractDivSimpleExampleTesting {
         assertThat(document1.getBlocks()).hasSize(1);
         Block block1 = (Block) document1.getBlocks()
                 .get(0);
-        assertThat(block1.getId()).isNull();
+        assertThat(block1.getId()).isEqualTo("idname");
         assertThat(block1.getNodeName()).isEqualTo("paragraph");
         assertThat(block1.getContext()).isEqualTo("paragraph");
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).isNullOrEmpty();
-        assertThat(block1.getRoles()).isNullOrEmpty();
+        assertThat(block1.getAttributes()).containsEntry("id", "idname")
+                .containsEntry("role", "rolename");
+        assertThat(block1.getRoles()).containsExactly("rolename");
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
         assertThat(block1.getTitle()).isNull();
@@ -80,8 +82,8 @@ public abstract class AbstractDivSimpleExampleTesting {
         assertThat(block1.getSourceLocation()).isNull();
         assertThat(block1.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
         assertThat(block1.getBlocks()).isNullOrEmpty();
-        assertThat(block1.getLines()).containsExactly("Some text");
-        assertThat(block1.getSource()).isEqualTo("Some text");
+        assertThat(block1.getLines()).containsExactly("This text");
+        assertThat(block1.getSource()).isEqualTo("This text");
         Title title1 = document1.getStructuredDoctitle();
         assertThat(title1.getMain()).isEqualTo("My page");
         assertThat(title1.getSubtitle()).isNull();

@@ -8,12 +8,13 @@ import java.util.Collections;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
+import org.asciidoctor.ast.Title;
 
 import com.google.common.collect.ImmutableMap;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineExampleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 
-public class DivMultilineExampleTest extends AbstractDivMultilineExampleTesting {
+public class DivSimpleTest extends AbstractDivSimpleTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc) {
@@ -36,6 +37,7 @@ public class DivMultilineExampleTest extends AbstractDivMultilineExampleTesting 
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
+                .put("doctitle", "My page")
                 .put("doctype", "article")
                 .put("filetype", "html")
                 .put("notitle", "")
@@ -68,13 +70,16 @@ public class DivMultilineExampleTest extends AbstractDivMultilineExampleTesting 
         when(mockBlock1.getSourceLocation()).thenReturn(null);
         when(mockBlock1.getSubstitutions()).thenReturn(Arrays.asList("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements"));
         when(mockBlock1.getBlocks()).thenReturn(Collections.emptyList());
-        when(mockBlock1.getLines()).thenReturn(Arrays.asList("Line one", "Second line", "This is line three"));
-        when(mockBlock1.getSource()).thenReturn("Line one\n" +
-                "Second line\n" +
-                "This is line three");
+        when(mockBlock1.getLines()).thenReturn(Collections.singletonList("Some text"));
+        when(mockBlock1.getSource()).thenReturn("Some text");
         when(mockDocument1.getBlocks()).thenReturn(Collections.singletonList(mockBlock1));
-        when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
-        when(mockDocument1.getDoctitle()).thenReturn(null);
+        Title mockTitle1 = mock(Title.class);
+        when(mockTitle1.getMain()).thenReturn("My page");
+        when(mockTitle1.getSubtitle()).thenReturn(null);
+        when(mockTitle1.getCombined()).thenReturn("My page");
+        when(mockTitle1.isSanitized()).thenReturn(false);
+        when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
+        when(mockDocument1.getDoctitle()).thenReturn("My page");
         ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
                 .put("attributes", "{}")
                 .put("header_footer", false)

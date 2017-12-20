@@ -6,9 +6,9 @@ import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineExampleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 
-public class DivMultilineExampleReferenceTest extends AbstractDivMultilineExampleTesting {
+public class DivSimpleReferenceTest extends AbstractDivSimpleTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc) {

@@ -14,9 +14,9 @@ import com.google.common.io.Files;
 import fr.jmini.asciidoctorj.converter.assertcode.AssertCodeGenerator;
 import fr.jmini.asciidoctorj.converter.code.CodeConverterUtility;
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineExampleTesting;
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleExampleTesting;
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleExampleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 
@@ -27,9 +27,9 @@ public class HtmlConverterHelper {
     public static final String EXPECTED_HTML_TAG_NAME = "expected-html";
 
     public static Map<String, String> ASCIIDOC_CONTENT_MAP = ImmutableMap.<String, String>builder()
-            .put(AbstractDivMultilineExampleTesting.class.getSimpleName(), AbstractDivMultilineExampleTesting.ASCIIDOC)
-            .put(AbstractDivSimpleExampleTesting.class.getSimpleName(), AbstractDivSimpleExampleTesting.ASCIIDOC)
-            .put(AbstractDivWithIdAndRoleExampleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleExampleTesting.ASCIIDOC)
+            .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
+            .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
+            .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
             .build();
 
     public static void main(String[] args) throws IOException {
@@ -120,7 +120,7 @@ public class HtmlConverterHelper {
      * @return testFile
      */
     public static File findAsciidocRessourceFile(String abstractTestingClassName) {
-        return new File("../html-j-converter/src/test/resources/" + abstractTestingClassName + ".adoc");
+        return new File("../html-j-converter-testing/src/main/resources/" + abstractTestingClassName + ".adoc");
     }
 
     /**

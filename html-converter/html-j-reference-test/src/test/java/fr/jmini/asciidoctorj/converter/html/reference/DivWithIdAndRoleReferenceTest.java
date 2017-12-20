@@ -6,9 +6,9 @@ import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleExampleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
 
-public class DivWithIdAndRoleExampleReferenceTest extends AbstractDivWithIdAndRoleExampleTesting {
+public class DivWithIdAndRoleReferenceTest extends AbstractDivWithIdAndRoleTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc) {
