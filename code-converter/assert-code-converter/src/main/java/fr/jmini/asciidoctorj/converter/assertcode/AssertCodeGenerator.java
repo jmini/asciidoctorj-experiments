@@ -35,7 +35,8 @@ import fr.jmini.asciidoctorj.converter.code.CodeConverterUtility;
 public class AssertCodeGenerator extends AbstractCodeGenerator {
 
     private static final Collection<String> OPTIONS_KEYS = Collections.emptyList();
-    private static final Collection<String> ATTRIBUTES_KEYS = Collections.singletonList("notitle");
+    private static final Collection<String> ATTRIBUTES_KEYS = Collections.emptyList();
+    private static final Collection<String> DOCUMENT_ATTRIBUTES_KEYS = Collections.singletonList("notitle");
 
     @Override
     protected void appendAuthor(StringBuilder sb, String varName, Author author) {
@@ -112,7 +113,11 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
                 throw new IllegalStateException("Unexpected exception", e);
             }
         }
-        appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes(), ATTRIBUTES_KEYS);
+        if (contentNode instanceof Document) {
+            appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes(), DOCUMENT_ATTRIBUTES_KEYS);
+        } else {
+            appendEqualsToExpressionMap(sb, varName + ".getAttributes()", contentNode.getAttributes(), ATTRIBUTES_KEYS);
+        }
         appendEqualsToExpressionStringList(sb, varName + ".getRoles()", contentNode.getRoles());
         appendEqualsToExpressionBoolean(sb, varName + ".isReftext()", contentNode.isReftext());
         appendEqualsToExpressionString(sb, varName + ".getReftext()", contentNode.getReftext());

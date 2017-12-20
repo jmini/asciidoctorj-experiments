@@ -20,8 +20,9 @@ public class AssertCodeGeneratorBlockTest {
         Block mockBlock = mock(Block.class);
         when(mockBlock.getId()).thenReturn("block-id");
         ImmutableMap<String, Object> attributes = ImmutableMap.<String, Object>builder()
-                .put("one", "lorem")
-                .put("two", "ipusm")
+                .put("1", "#idname.rolename")
+                .put("id", "idname")
+                .put("role", "rolename")
                 .build();
         when(mockBlock.getAttributes()).thenReturn(attributes);
         when(mockBlock.getParent()).thenReturn(null);
@@ -47,9 +48,9 @@ public class AssertCodeGeneratorBlockTest {
         assertThat(block1.getDocument()).isNull();
         assertThat(block1.isInline()).isTrue();
         assertThat(block1.isBlock()).isFalse();
-        assertThat(block1.getAttributes()).containsEntry("one", "lorem")
-                .containsEntry("two", "ipusm")
-                .doesNotContainKey("notitle");
+        assertThat(block1.getAttributes()).containsEntry("1", "#idname.rolename")
+                .containsEntry("id", "idname")
+                .containsEntry("role", "rolename");
         assertThat(block1.getRoles()).containsExactly("r1", "r2");
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();

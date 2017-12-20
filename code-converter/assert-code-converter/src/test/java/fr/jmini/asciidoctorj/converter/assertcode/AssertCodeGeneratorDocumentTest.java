@@ -9,6 +9,8 @@ import java.util.Collections;
 import org.asciidoctor.ast.Document;
 import org.junit.Test;
 
+import com.google.common.collect.ImmutableMap;
+
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
 public class AssertCodeGeneratorDocumentTest {
@@ -19,6 +21,13 @@ public class AssertCodeGeneratorDocumentTest {
         when(mockDocument.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument.getDoctitle()).thenReturn("this is a doc title");
         when(mockDocument.getOptions()).thenReturn(Collections.singletonMap("one", true));
+        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
+                .put("doctitle", "My page")
+                .put("doctype", "article")
+                .put("filetype", "html")
+                .put("notitle", "")
+                .build();
+        when(mockDocument.getAttributes()).thenReturn(map1);
 
         AssertCodeGenerator generator = new AssertCodeGenerator();
         StringBuilder sb = new StringBuilder();
@@ -37,7 +46,10 @@ public class AssertCodeGeneratorDocumentTest {
         assertThat(document1.getDocument()).isNull();
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isFalse();
-        assertThat(document1.getAttributes()).isNullOrEmpty();
+        assertThat(document1.getAttributes()).containsEntry("doctitle", "My page")
+                .containsEntry("doctype", "article")
+                .containsEntry("filetype", "html")
+                .containsEntry("notitle", "");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
