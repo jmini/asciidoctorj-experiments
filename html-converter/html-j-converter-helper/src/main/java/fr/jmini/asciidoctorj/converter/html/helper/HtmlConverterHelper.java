@@ -1,6 +1,3 @@
-/**
- *
- */
 package fr.jmini.asciidoctorj.converter.html.helper;
 
 import java.io.File;
@@ -18,12 +15,9 @@ import fr.jmini.asciidoctorj.converter.assertcode.AssertCodeGenerator;
 import fr.jmini.asciidoctorj.converter.code.CodeConverterUtility;
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleExampleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleExampleTesting;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 
-/**
- * @author jbr
- *
- */
 public class HtmlConverterHelper {
 
     public static final String ASSERT_CODE_TAG_NAME = "assert-code";
@@ -32,6 +26,7 @@ public class HtmlConverterHelper {
 
     public static Map<String, String> ASCIIDOC_CONTENT_MAP = ImmutableMap.<String, String>builder()
             .put(AbstractDivSimpleExampleTesting.class.getSimpleName(), AbstractDivSimpleExampleTesting.ASCIIDOC)
+            .put(AbstractDivWithIdAndRoleExampleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleExampleTesting.ASCIIDOC)
             .build();
 
     public static void main(String[] args) throws IOException {

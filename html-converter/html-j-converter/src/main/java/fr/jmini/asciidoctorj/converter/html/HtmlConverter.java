@@ -1,8 +1,12 @@
 package fr.jmini.asciidoctorj.converter.html;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
+import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.ContentNode;
+import org.asciidoctor.ast.StructuralNode;
 import org.asciidoctor.converter.ConverterFor;
 import org.asciidoctor.converter.StringConverter;
 import org.jsoup.nodes.Document;
@@ -17,19 +21,32 @@ public class HtmlConverter extends StringConverter {
 
     @Override
     public String convert(ContentNode node, String transform, Map<Object, Object> o) {
-        // TODO some hardcoded method stub
-        Document d1 = new Document("");
-        Element html = d1.appendElement("html");
+        // TODO work in progress
+        Document jsoupDocument = new Document("");
+        Element html = jsoupDocument.appendElement("html");
         Element body = html.appendElement("body");
-        Element div = body.appendElement("div");
-        div.attr("class", "paragraph");
-        Element p = div.appendElement("p");
-        p.text("Some text");
 
-        // Document d = Jsoup.parse("<div class=\"paragraph\">\n" +
-        // "<p>Some text</p>\n" +
-        // "</div>");
-
+        if (node instanceof org.asciidoctor.ast.Document) {
+            List<StructuralNode> blocks = ((StructuralNode) node).getBlocks();
+            for (StructuralNode structuralNode : blocks) {
+                Element div = body.appendElement("div");
+                if (structuralNode.getId() != null) {
+                    div.attr("id", structuralNode.getId());
+                }
+                List<String> classAttributeMembers = new ArrayList<>();
+                classAttributeMembers.add(structuralNode.getContext());
+                if (structuralNode.getRoles() != null) {
+                    classAttributeMembers.addAll(structuralNode.getRoles());
+                }
+                div.attr("class", String.join(" ", classAttributeMembers));
+                if (structuralNode instanceof org.asciidoctor.ast.Block) {
+                    Element p = div.appendElement("p");
+                    for (String line : ((Block) structuralNode).getLines()) {
+                        p.text(line);
+                    }
+                }
+            }
+        }
         return body.html();
     }
 
