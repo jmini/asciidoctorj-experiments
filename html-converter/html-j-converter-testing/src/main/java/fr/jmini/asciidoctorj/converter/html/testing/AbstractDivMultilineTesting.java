@@ -22,7 +22,7 @@ public abstract class AbstractDivMultilineTesting {
         String html = convertToHtml(astDocument);
 
         html = HtmlConverterTestingUtility.normalizeHtml(html);
-        assertThat(html).isXmlEqualTo(EXPECTED_HTML);
+        assertThat(html).isEqualTo(EXPECTED_HTML);
     }
 
     public static final String ASCIIDOC = ""

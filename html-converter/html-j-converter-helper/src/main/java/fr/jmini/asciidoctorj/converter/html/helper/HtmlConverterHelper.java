@@ -17,6 +17,7 @@ import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 
@@ -30,6 +31,7 @@ public class HtmlConverterHelper {
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractMultiDivTesting.class.getSimpleName(), AbstractMultiDivTesting.ASCIIDOC)
             .build();
 
     public static void main(String[] args) throws IOException {

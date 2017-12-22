@@ -4,14 +4,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
-import org.asciidoctor.ast.Title;
 import org.junit.Test;
 
-public abstract class AbstractDivSimpleTesting {
+public abstract class AbstractMultiDivTesting {
 
     // tag::expected-html[]
     public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
-            " <p>Some text</p> \n" +
+            " <p>This is some text</p> \n" +
+            "</div> \n" +
+            "<div id=\"secid\" class=\"paragraph\"> \n" +
+            " <p>Other text</p> \n" +
             "</div>";
     // end::expected-html[]
 
@@ -26,9 +28,11 @@ public abstract class AbstractDivSimpleTesting {
         assertThat(html).isEqualTo(EXPECTED_HTML);
     }
 
-    public static final String ASCIIDOC = "= My page\n"
+    public static final String ASCIIDOC = ""
+            + "This is some text\n"
             + "\n"
-            + "Some text\n";
+            + "[[secid]]\n"
+            + "Other text\n";
 
     public String createAsciiDocInput() {
         return ASCIIDOC;
@@ -47,8 +51,7 @@ public abstract class AbstractDivSimpleTesting {
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry("doctitle", "My page")
-                .containsEntry("doctype", "article")
+        assertThat(document1.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "");
         assertThat(document1.getRoles()).isNullOrEmpty();
@@ -60,7 +63,7 @@ public abstract class AbstractDivSimpleTesting {
         assertThat(document1.getContentModel()).isEqualTo("compound");
         assertThat(document1.getSourceLocation()).isNull();
         assertThat(document1.getSubstitutions()).isNullOrEmpty();
-        assertThat(document1.getBlocks()).hasSize(1);
+        assertThat(document1.getBlocks()).hasSize(2);
         Block block1 = (Block) document1.getBlocks()
                 .get(0);
         assertThat(block1.getId()).isNull();
@@ -80,14 +83,31 @@ public abstract class AbstractDivSimpleTesting {
         assertThat(block1.getSourceLocation()).isNull();
         assertThat(block1.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
         assertThat(block1.getBlocks()).isNullOrEmpty();
-        assertThat(block1.getLines()).containsExactly("Some text");
-        assertThat(block1.getSource()).isEqualTo("Some text");
-        Title title1 = document1.getStructuredDoctitle();
-        assertThat(title1.getMain()).isEqualTo("My page");
-        assertThat(title1.getSubtitle()).isNull();
-        assertThat(title1.getCombined()).isEqualTo("My page");
-        assertThat(title1.isSanitized()).isFalse();
-        assertThat(document1.getDoctitle()).isEqualTo("My page");
+        assertThat(block1.getLines()).containsExactly("This is some text");
+        assertThat(block1.getSource()).isEqualTo("This is some text");
+        Block block2 = (Block) document1.getBlocks()
+                .get(1);
+        assertThat(block2.getId()).isEqualTo("secid");
+        assertThat(block2.getNodeName()).isEqualTo("paragraph");
+        assertThat(block2.getContext()).isEqualTo("paragraph");
+        assertThat(block2.getDocument()).isSameAs(document1);
+        assertThat(block2.isInline()).isFalse();
+        assertThat(block2.isBlock()).isTrue();
+        assertThat(block2.getAttributes()).containsEntry("id", "secid");
+        assertThat(block2.getRoles()).isNullOrEmpty();
+        assertThat(block2.isReftext()).isFalse();
+        assertThat(block2.getReftext()).isNull();
+        assertThat(block2.getTitle()).isNull();
+        assertThat(block2.getStyle()).isNull();
+        assertThat(block2.getLevel()).isEqualTo(0);
+        assertThat(block2.getContentModel()).isEqualTo("simple");
+        assertThat(block2.getSourceLocation()).isNull();
+        assertThat(block2.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
+        assertThat(block2.getBlocks()).isNullOrEmpty();
+        assertThat(block2.getLines()).containsExactly("Other text");
+        assertThat(block2.getSource()).isEqualTo("Other text");
+        assertThat(document1.getStructuredDoctitle()).isNull();
+        assertThat(document1.getDoctitle()).isNull();
         assertThat(document1.getOptions()).containsEntry("header_footer", false);
     }
     // end::assert-code[]
