@@ -137,15 +137,19 @@ public class HtmlConverter extends StringConverter {
 
     }
 
-    public void convertSection(Element e, Section aSection) {
+    public void convertSection(Element e, Section section) {
         Element div = e.appendElement("div");
-        handleRoles(div, aSection, "sect1");
-        Element header = div.appendElement("h2");
-        handleId(header, aSection);
-        header.text(aSection.getTitle());
-        Element sectionbody = div.appendElement("div");
-        sectionbody.attr("class", "sectionbody");
-        handleStructuralNodeBlocs(sectionbody, aSection);
+        handleRoles(div, section, "sect" + section.getLevel());
+        Element header = div.appendElement("h" + (section.getLevel() + 1));
+        handleId(header, section);
+        header.text(section.getTitle());
+        if (section.getLevel() == 1) {
+            Element sectionbody = div.appendElement("div");
+            sectionbody.attr("class", "sectionbody");
+            handleStructuralNodeBlocs(sectionbody, section);
+        } else {
+            handleStructuralNodeBlocs(div, section);
+        }
     }
 
     public void convertStructuralNode(Element e, StructuralNode structuralNode) {
