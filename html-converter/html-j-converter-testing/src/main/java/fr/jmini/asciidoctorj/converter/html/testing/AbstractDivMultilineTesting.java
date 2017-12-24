@@ -8,12 +8,6 @@ import org.junit.Test;
 
 public abstract class AbstractDivMultilineTesting {
 
-    // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
-            " <p>Line one Second line This is line three</p> \n" +
-            "</div>";
-    // end::expected-html[]
-
     @Test
     public void test() throws Exception {
         String asciiDoc = createAsciiDocInput();
@@ -29,6 +23,12 @@ public abstract class AbstractDivMultilineTesting {
             + "Line one\n"
             + "Second line\n"
             + "This is line three\n";
+
+    // tag::expected-html[]
+    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
+            " <p>Line one Second line This is line three</p> \n" +
+            "</div>";
+    // end::expected-html[]
 
     public String createAsciiDocInput() {
         return ASCIIDOC;

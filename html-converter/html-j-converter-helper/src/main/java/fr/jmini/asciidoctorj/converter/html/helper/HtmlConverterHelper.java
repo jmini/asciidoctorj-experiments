@@ -18,6 +18,7 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 
@@ -32,6 +33,7 @@ public class HtmlConverterHelper {
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
             .put(AbstractMultiDivTesting.class.getSimpleName(), AbstractMultiDivTesting.ASCIIDOC)
+            .put(AbstractSectionTesting.class.getSimpleName(), AbstractSectionTesting.ASCIIDOC)
             .build();
 
     public static void main(String[] args) throws IOException {
@@ -53,26 +55,22 @@ public class HtmlConverterHelper {
             Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
             CodeTestingUtility.rewriteAttributes(document.getAttributes());
 
-            StringBuilder sb;
-            AssertCodeGenerator assertGenerator = new AssertCodeGenerator();
-            sb = new StringBuilder();
-            assertGenerator.createDocumentCode(sb, document);
-            CodeTestingUtility.replaceContentInFile(abstractTestingFile, sb.toString(), ASSERT_CODE_TAG_NAME, true, true);
+            String assertCode = computeAssertCode(document);
+            CodeTestingUtility.replaceContentInFile(abstractTestingFile, assertCode, ASSERT_CODE_TAG_NAME, true, true);
 
             String expectedHtml = computeExpectedHtmlConstant(document);
             CodeTestingUtility.replaceContentInFile(abstractTestingFile, expectedHtml, EXPECTED_HTML_TAG_NAME, false, true);
 
+            String mockCode = computeMockCode(document);
             File testFile = findTestFile(abstractTestingClassName);
             if (!testFile.exists()) {
                 String testClassName = computeClassName(testFile);
                 String testFileContent = createTestFile(testClassName, abstractTestingClassName);
 
-                MockCodeGenerator mockGenerator = new MockCodeGenerator();
-                sb = new StringBuilder();
-                mockGenerator.createDocumentCode(sb, document);
-
-                testFileContent = CodeTestingUtility.replaceContent(testFileContent, sb.toString(), MOCK_CODE_TAG_NAME, true);
+                testFileContent = CodeTestingUtility.replaceContent(testFileContent, mockCode, MOCK_CODE_TAG_NAME, true);
                 Files.write(testFileContent, testFile, Charsets.UTF_8);
+            } else {
+                CodeTestingUtility.replaceContentInFile(testFile, mockCode, MOCK_CODE_TAG_NAME, true, true);
             }
             File referenceTestFile = findReferenceTestFile(abstractTestingClassName);
             if (!referenceTestFile.exists()) {
@@ -81,6 +79,20 @@ public class HtmlConverterHelper {
                 Files.write(testFileContent, referenceTestFile, Charsets.UTF_8);
             }
         }
+    }
+
+    private static String computeAssertCode(Document document) {
+        StringBuilder sb = new StringBuilder();
+        AssertCodeGenerator assertGenerator = new AssertCodeGenerator();
+        assertGenerator.createDocumentCode(sb, document);
+        return sb.toString();
+    }
+
+    private static String computeMockCode(Document document) {
+        StringBuilder sb = new StringBuilder();
+        MockCodeGenerator mockGenerator = new MockCodeGenerator();
+        mockGenerator.createDocumentCode(sb, document);
+        return sb.toString();
     }
 
     public static String computeExpectedHtmlConstant(Document document) {

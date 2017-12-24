@@ -4,12 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.asciidoctor.ast.Author;
 import org.asciidoctor.ast.Block;
+import org.asciidoctor.ast.Cell;
+import org.asciidoctor.ast.Column;
 import org.asciidoctor.ast.ContentNode;
+import org.asciidoctor.ast.ContentPart;
+import org.asciidoctor.ast.Cursor;
+import org.asciidoctor.ast.DescriptionList;
+import org.asciidoctor.ast.DescriptionListEntry;
+import org.asciidoctor.ast.Document;
+import org.asciidoctor.ast.DocumentHeader;
+import org.asciidoctor.ast.ListItem;
+import org.asciidoctor.ast.PhraseNode;
+import org.asciidoctor.ast.RevisionInfo;
+import org.asciidoctor.ast.Row;
+import org.asciidoctor.ast.Section;
 import org.asciidoctor.ast.StructuralNode;
+import org.asciidoctor.ast.StructuredDocument;
+import org.asciidoctor.ast.Table;
+import org.asciidoctor.ast.Title;
 import org.asciidoctor.converter.ConverterFor;
 import org.asciidoctor.converter.StringConverter;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 @ConverterFor("html-j")
@@ -21,31 +37,155 @@ public class HtmlConverter extends StringConverter {
 
     @Override
     public String convert(ContentNode node, String transform, Map<Object, Object> o) {
-        // TODO work in progress
-        Document jsoupDocument = new Document("");
+        org.jsoup.nodes.Document jsoupDocument = new org.jsoup.nodes.Document("");
         Element html = jsoupDocument.appendElement("html");
         Element body = html.appendElement("body");
-
-        if (node instanceof org.asciidoctor.ast.Document) {
-            List<StructuralNode> blocks = ((StructuralNode) node).getBlocks();
-            for (StructuralNode structuralNode : blocks) {
-                Element div = body.appendElement("div");
-                if (structuralNode.getId() != null) {
-                    div.attr("id", structuralNode.getId());
-                }
-                List<String> classAttributeMembers = new ArrayList<>();
-                classAttributeMembers.add(structuralNode.getContext());
-                if (structuralNode.getRoles() != null) {
-                    classAttributeMembers.addAll(structuralNode.getRoles());
-                }
-                div.attr("class", String.join(" ", classAttributeMembers));
-                if (structuralNode instanceof org.asciidoctor.ast.Block) {
-                    Element p = div.appendElement("p");
-                    p.text(String.join("\n", ((Block) structuralNode).getLines()));
-                }
-            }
-        }
+        convertContentNode(body, node);
         return body.html();
+    }
+
+    public void convertAuthor(Element e, Author aAuthor) {
+
+    }
+
+    public void convertBlock(Element e, Block aBlock) {
+        Element div = e.appendElement("div");
+        handleId(div, aBlock);
+        handleRoles(div, aBlock, aBlock.getContext());
+        Element p = div.appendElement("p");
+        p.text(String.join("\n", aBlock.getLines()));
+    }
+
+    public void convertCell(Element e, Cell aCell) {
+
+    }
+
+    public void convertColumn(Element e, Column aColumn) {
+
+    }
+
+    public void convertContentNode(Element e, ContentNode contentNode) {
+        if (contentNode instanceof Cell) {
+            convertCell(e, (Cell) contentNode);
+        } else if (contentNode instanceof Column) {
+            convertColumn(e, (Column) contentNode);
+        } else if (contentNode instanceof PhraseNode) {
+            convertPhraseNode(e, (PhraseNode) contentNode);
+        } else if (contentNode instanceof StructuralNode) {
+            convertStructuralNode(e, (StructuralNode) contentNode);
+        } else {
+            // TODO
+        }
+    }
+
+    private void handleId(Element e, ContentNode contentNode) {
+        if (contentNode.getId() != null) {
+            e.attr("id", contentNode.getId());
+        }
+    }
+
+    private void handleRoles(Element div, ContentNode contentNode, String initialClass) {
+        List<String> classAttributeMembers = new ArrayList<>();
+        classAttributeMembers.add(initialClass);
+        if (contentNode.getRoles() != null) {
+            classAttributeMembers.addAll(contentNode.getRoles());
+        }
+        div.attr("class", String.join(" ", classAttributeMembers));
+    }
+
+    public void convertContentPart(Element e, ContentPart aContentPart) {
+
+    }
+
+    public void convertCursor(Element e, Cursor aCursor) {
+
+    }
+
+    public void convertDescriptionList(Element e, DescriptionList aDescriptionList) {
+
+    }
+
+    public void convertDescriptionListEntry(Element e, DescriptionListEntry aDescriptionListEntry) {
+
+    }
+
+    public void convertDocument(Element e, Document aDocument) {
+        handleStructuralNodeBlocs(e, aDocument);
+    }
+
+    public void convertDocumentHeader(Element e, DocumentHeader aDocumentHeader) {
+
+    }
+
+    public void convertList(Element e, org.asciidoctor.ast.List aList) {
+
+    }
+
+    public void convertListItem(Element e, ListItem aListItem) {
+
+    }
+
+    public void convertPhraseNode(Element e, PhraseNode aPhraseNode) {
+
+    }
+
+    public void convertRevisionInfo(Element e, RevisionInfo aRevisionInfo) {
+
+    }
+
+    public void convertRow(Element e, Row aRow) {
+
+    }
+
+    public void convertSection(Element e, Section aSection) {
+        Element div = e.appendElement("div");
+        handleRoles(div, aSection, "sect1");
+        Element header = div.appendElement("h2");
+        handleId(header, aSection);
+        header.text(aSection.getTitle());
+        Element sectionbody = div.appendElement("div");
+        sectionbody.attr("class", "sectionbody");
+        handleStructuralNodeBlocs(sectionbody, aSection);
+    }
+
+    public void convertStructuralNode(Element e, StructuralNode structuralNode) {
+        if (structuralNode instanceof Block) {
+            convertBlock(e, (Block) structuralNode);
+        } else if (structuralNode instanceof DescriptionList) {
+            convertDescriptionList(e, (DescriptionList) structuralNode);
+        } else if (structuralNode instanceof Document) {
+            convertDocument(e, (Document) structuralNode);
+        } else if (structuralNode instanceof org.asciidoctor.ast.List) {
+            convertList(e, (org.asciidoctor.ast.List) structuralNode);
+        } else if (structuralNode instanceof ListItem) {
+            convertListItem(e, (ListItem) structuralNode);
+        } else if (structuralNode instanceof Section) {
+            convertSection(e, (Section) structuralNode);
+        } else if (structuralNode instanceof Table) {
+            convertTable(e, (Table) structuralNode);
+        } else {
+            // TODO
+            handleStructuralNodeBlocs(e, structuralNode);
+        }
+    }
+
+    private void handleStructuralNodeBlocs(Element e, StructuralNode structuralNode) {
+        List<StructuralNode> blocks = structuralNode.getBlocks();
+        for (StructuralNode block : blocks) {
+            convertStructuralNode(e, block);
+        }
+    }
+
+    public void convertStructuredDocument(Element e, StructuredDocument aStructuredDocument) {
+
+    }
+
+    public void convertTable(Element e, Table aTable) {
+
+    }
+
+    public void convertTitle(Element e, Title aTitle) {
+
     }
 
 }

@@ -9,12 +9,6 @@ import org.junit.Test;
 
 public abstract class AbstractDivSimpleTesting {
 
-    // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
-            " <p>Some text</p> \n" +
-            "</div>";
-    // end::expected-html[]
-
     @Test
     public void test() throws Exception {
         String asciiDoc = createAsciiDocInput();
@@ -29,6 +23,12 @@ public abstract class AbstractDivSimpleTesting {
     public static final String ASCIIDOC = "= My page\n"
             + "\n"
             + "Some text\n";
+
+    // tag::expected-html[]
+    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
+            " <p>Some text</p> \n" +
+            "</div>";
+    // end::expected-html[]
 
     public String createAsciiDocInput() {
         return ASCIIDOC;

@@ -8,15 +8,6 @@ import org.junit.Test;
 
 public abstract class AbstractMultiDivTesting {
 
-    // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
-            " <p>This is some text</p> \n" +
-            "</div> \n" +
-            "<div id=\"secid\" class=\"paragraph\"> \n" +
-            " <p>Other text</p> \n" +
-            "</div>";
-    // end::expected-html[]
-
     @Test
     public void test() throws Exception {
         String asciiDoc = createAsciiDocInput();
@@ -33,6 +24,15 @@ public abstract class AbstractMultiDivTesting {
             + "\n"
             + "[[secid]]\n"
             + "Other text\n";
+
+    // tag::expected-html[]
+    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
+            " <p>This is some text</p> \n" +
+            "</div> \n" +
+            "<div id=\"secid\" class=\"paragraph\"> \n" +
+            " <p>Other text</p> \n" +
+            "</div>";
+    // end::expected-html[]
 
     public String createAsciiDocInput() {
         return ASCIIDOC;

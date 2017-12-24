@@ -9,12 +9,6 @@ import org.junit.Test;
 
 public abstract class AbstractDivWithIdAndRoleTesting {
 
-    // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div id=\"idname\" class=\"paragraph rolename\"> \n" +
-            " <p>This text</p> \n" +
-            "</div>";
-    // end::expected-html[]
-
     @Test
     public void test() throws Exception {
         String asciiDoc = createAsciiDocInput();
@@ -30,6 +24,12 @@ public abstract class AbstractDivWithIdAndRoleTesting {
             + "\n"
             + "[#idname.rolename]\n"
             + "This text\n";
+
+    // tag::expected-html[]
+    public static final String EXPECTED_HTML = "<div id=\"idname\" class=\"paragraph rolename\"> \n" +
+            " <p>This text</p> \n" +
+            "</div>";
+    // end::expected-html[]
 
     public String createAsciiDocInput() {
         return ASCIIDOC;
