@@ -17,6 +17,8 @@ import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListUlTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionAllTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
@@ -33,6 +35,8 @@ public class HtmlConverterHelper {
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractListOlTesting.class.getSimpleName(), AbstractListOlTesting.ASCIIDOC)
+            .put(AbstractListUlTesting.class.getSimpleName(), AbstractListUlTesting.ASCIIDOC)
             .put(AbstractMultiDivTesting.class.getSimpleName(), AbstractMultiDivTesting.ASCIIDOC)
             .put(AbstractSectionAllTesting.class.getSimpleName(), AbstractSectionAllTesting.ASCIIDOC)
             .put(AbstractSectionTesting.class.getSimpleName(), AbstractSectionTesting.ASCIIDOC)

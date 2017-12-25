@@ -20,12 +20,13 @@ public abstract class AbstractDivMultilineTesting {
     }
 
     public static final String ASCIIDOC = ""
+            + "[.lead]\n"
             + "Line one\n"
             + "Second line\n"
             + "This is line three\n";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
+    public static final String EXPECTED_HTML = "<div class=\"paragraph lead\"> \n" +
             " <p>Line one Second line This is line three</p> \n" +
             "</div>";
     // end::expected-html[]
@@ -68,8 +69,8 @@ public abstract class AbstractDivMultilineTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).isNullOrEmpty();
-        assertThat(block1.getRoles()).isNullOrEmpty();
+        assertThat(block1.getAttributes()).containsEntry("role", "lead");
+        assertThat(block1.getRoles()).containsExactly("lead");
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
         assertThat(block1.getTitle()).isNull();

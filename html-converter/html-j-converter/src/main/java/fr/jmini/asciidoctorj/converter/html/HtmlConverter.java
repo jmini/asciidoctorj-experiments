@@ -85,8 +85,15 @@ public class HtmlConverter extends StringConverter {
     }
 
     private void handleRoles(Element div, ContentNode contentNode, String initialClass) {
+        handleStyleAndRoles(div, contentNode, null, initialClass);
+    }
+
+    private void handleStyleAndRoles(Element div, ContentNode contentNode, String style, String initialClass) {
         List<String> classAttributeMembers = new ArrayList<>();
         classAttributeMembers.add(initialClass);
+        if (style != null && !style.isEmpty()) {
+            classAttributeMembers.add(style);
+        }
         if (contentNode.getRoles() != null) {
             classAttributeMembers.addAll(contentNode.getRoles());
         }
@@ -110,19 +117,30 @@ public class HtmlConverter extends StringConverter {
     }
 
     public void convertDocument(Element e, Document aDocument) {
-        handleStructuralNodeBlocs(e, aDocument);
+        handleStructuralNodeBlocks(e, aDocument);
     }
 
     public void convertDocumentHeader(Element e, DocumentHeader aDocumentHeader) {
 
     }
 
-    public void convertList(Element e, org.asciidoctor.ast.List aList) {
-
+    public void convertList(Element e, org.asciidoctor.ast.List list) {
+        Element div = e.appendElement("div");
+        handleId(div, list);
+        handleStyleAndRoles(div, list, list.getStyle(), list.getContext());
+        Element l = div.appendElement(list.getNodeName()
+                .substring(0, 2));
+        if (list.getStyle() != null) {
+            l.attr("class", list.getStyle());
+        }
+        handleStructuralNodeList(l, list.getItems());
     }
 
-    public void convertListItem(Element e, ListItem aListItem) {
-
+    public void convertListItem(Element e, ListItem listItem) {
+        Element li = e.appendElement("li");
+        Element p = li.appendElement("p");
+        p.text(listItem.getText());
+        handleStructuralNodeBlocks(li, listItem);
     }
 
     public void convertPhraseNode(Element e, PhraseNode aPhraseNode) {
@@ -146,9 +164,9 @@ public class HtmlConverter extends StringConverter {
         if (section.getLevel() == 1) {
             Element sectionbody = div.appendElement("div");
             sectionbody.attr("class", "sectionbody");
-            handleStructuralNodeBlocs(sectionbody, section);
+            handleStructuralNodeBlocks(sectionbody, section);
         } else {
-            handleStructuralNodeBlocs(div, section);
+            handleStructuralNodeBlocks(div, section);
         }
     }
 
@@ -169,14 +187,19 @@ public class HtmlConverter extends StringConverter {
             convertTable(e, (Table) structuralNode);
         } else {
             // TODO
-            handleStructuralNodeBlocs(e, structuralNode);
+            handleStructuralNodeBlocks(e, structuralNode);
         }
     }
 
-    private void handleStructuralNodeBlocs(Element e, StructuralNode structuralNode) {
-        List<StructuralNode> blocks = structuralNode.getBlocks();
-        for (StructuralNode block : blocks) {
-            convertStructuralNode(e, block);
+    private void handleStructuralNodeBlocks(Element e, StructuralNode structuralNode) {
+        handleStructuralNodeList(e, structuralNode.getBlocks());
+    }
+
+    private void handleStructuralNodeList(Element e, List<StructuralNode> items) {
+        if (items != null) {
+            for (StructuralNode item : items) {
+                convertStructuralNode(e, item);
+            }
         }
     }
 

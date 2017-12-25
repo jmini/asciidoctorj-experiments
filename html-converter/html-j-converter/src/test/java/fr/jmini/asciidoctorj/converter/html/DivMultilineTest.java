@@ -57,8 +57,12 @@ public class DivMultilineTest extends AbstractDivMultilineTesting {
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(false);
         when(mockBlock1.isBlock()).thenReturn(true);
-        when(mockBlock1.getAttributes()).thenReturn(Collections.emptyMap());
-        when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
+        ImmutableMap<String, Object> map2 = ImmutableMap.<String, Object>builder()
+                .put("1", ".lead")
+                .put("role", "lead")
+                .build();
+        when(mockBlock1.getAttributes()).thenReturn(map2);
+        when(mockBlock1.getRoles()).thenReturn(Collections.singletonList("lead"));
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn(null);
@@ -75,11 +79,11 @@ public class DivMultilineTest extends AbstractDivMultilineTesting {
         when(mockDocument1.getBlocks()).thenReturn(Collections.singletonList(mockBlock1));
         when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument1.getDoctitle()).thenReturn(null);
-        ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
+        ImmutableMap<Object, Object> map3 = ImmutableMap.<Object, Object>builder()
                 .put("attributes", "{}")
                 .put("header_footer", false)
                 .build();
-        when(mockDocument1.getOptions()).thenReturn(map2);
+        when(mockDocument1.getOptions()).thenReturn(map3);
         return mockDocument1;
     }
     // end::mock-code[]

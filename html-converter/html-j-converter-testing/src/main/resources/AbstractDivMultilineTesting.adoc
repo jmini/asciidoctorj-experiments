@@ -1,3 +1,4 @@
+[.lead]
 Line one
 Second line
 This is line three
