@@ -6,10 +6,10 @@ import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlReversedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 
-public class DivWithIdAndRoleReferenceTest extends AbstractDivWithIdAndRoleTesting {
+public class ListOlReversedReferenceTest extends AbstractListOlReversedTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc) {

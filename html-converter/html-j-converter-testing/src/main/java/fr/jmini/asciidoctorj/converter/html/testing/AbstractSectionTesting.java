@@ -16,8 +16,6 @@ public abstract class AbstractSectionTesting {
         Document astDocument = createAstDocument(asciiDoc);
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
-
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
         assertThat(html).isEqualTo(EXPECTED_HTML);
     }
 
@@ -36,24 +34,24 @@ public abstract class AbstractSectionTesting {
             + "";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"sect1\"> \n" +
-            " <h2 id=\"_first_section\">First Section</h2> \n" +
-            " <div class=\"sectionbody\"> \n" +
-            "  <div class=\"paragraph\"> \n" +
-            "   <p>Some text for 1.</p> \n" +
-            "  </div> \n" +
-            "  <div class=\"paragraph\"> \n" +
-            "   <p>Additional text for 1.</p> \n" +
-            "  </div> \n" +
-            " </div> \n" +
-            "</div> \n" +
-            "<div class=\"sect1 somerole\"> \n" +
-            " <h2 id=\"someid\">Second Section</h2> \n" +
-            " <div class=\"sectionbody\"> \n" +
-            "  <div class=\"paragraph\"> \n" +
-            "   <p>Some text for 2.</p> \n" +
-            "  </div> \n" +
-            " </div> \n" +
+    public static final String EXPECTED_HTML = "<div class=\"sect1\">\n" +
+            "<h2 id=\"_first_section\">First Section</h2>\n" +
+            "<div class=\"sectionbody\">\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Some text for 1.</p>\n" +
+            "</div>\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Additional text for 1.</p>\n" +
+            "</div>\n" +
+            "</div>\n" +
+            "</div>\n" +
+            "<div class=\"sect1 somerole\">\n" +
+            "<h2 id=\"someid\">Second Section</h2>\n" +
+            "<div class=\"sectionbody\">\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Some text for 2.</p>\n" +
+            "</div>\n" +
+            "</div>\n" +
             "</div>";
     // end::expected-html[]
 

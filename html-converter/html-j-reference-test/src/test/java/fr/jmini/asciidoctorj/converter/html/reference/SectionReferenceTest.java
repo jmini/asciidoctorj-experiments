@@ -7,6 +7,7 @@ import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 
 public class SectionReferenceTest extends AbstractSectionTesting {
 
@@ -24,7 +25,9 @@ public class SectionReferenceTest extends AbstractSectionTesting {
 
     @Override
     protected String convertToHtml(Document astDocument) {
-        return astDocument.convert();
+        String html = astDocument.convert();
+        html = HtmlConverterTestingUtility.normalizeHtml(html);
+        return html;
     }
 
 }

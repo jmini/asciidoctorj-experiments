@@ -15,9 +15,7 @@ public abstract class AbstractDivWithIdAndRoleTesting {
         Document astDocument = createAstDocument(asciiDoc);
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
-
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
-        assertThat(html).isEqualTo(EXPECTED_HTML);
+        assertThat(html).isXmlEqualTo(EXPECTED_HTML);
     }
 
     public static final String ASCIIDOC = "= My page\n"
@@ -26,8 +24,8 @@ public abstract class AbstractDivWithIdAndRoleTesting {
             + "This text\n";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div id=\"idname\" class=\"paragraph rolename\"> \n" +
-            " <p>This text</p> \n" +
+    public static final String EXPECTED_HTML = "<div id=\"idname\" class=\"paragraph rolename\">\n" +
+            "<p>This text</p>\n" +
             "</div>";
     // end::expected-html[]
 

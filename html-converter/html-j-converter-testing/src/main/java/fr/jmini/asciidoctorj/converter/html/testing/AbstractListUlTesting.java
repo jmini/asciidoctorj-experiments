@@ -14,8 +14,6 @@ public abstract class AbstractListUlTesting {
         Document astDocument = createAstDocument(asciiDoc);
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
-
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
         assertThat(html).isXmlEqualTo(EXPECTED_HTML);
     }
 
@@ -27,12 +25,12 @@ public abstract class AbstractListUlTesting {
             + "  With more content\n";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div id=\"iid\" class=\"ulist rrole\"> \n" +
-            " <ul> \n" +
-            "  <li> <p>Line one</p> </li> \n" +
-            "  <li> <p>Second line</p> </li> \n" +
-            "  <li> <p>This is line three. With more content</p> </li> \n" +
-            " </ul> \n" +
+    public static final String EXPECTED_HTML = "<div id=\"iid\" class=\"ulist rrole\">\n" +
+            "<ul>\n" +
+            "<li> <p>Line one</p> </li>\n" +
+            "<li> <p>Second line</p> </li>\n" +
+            "<li> <p>This is line three. With more content</p> </li>\n" +
+            "</ul>\n" +
             "</div>";
     // end::expected-html[]
 

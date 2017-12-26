@@ -16,9 +16,7 @@ public abstract class AbstractSectionAllTesting {
         Document astDocument = createAstDocument(asciiDoc);
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
-
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
-        assertThat(html).isEqualTo(EXPECTED_HTML);
+        assertThat(html).isXmlEqualTo(EXPECTED_HTML);
     }
 
     public static final String ASCIIDOC = ""
@@ -46,37 +44,37 @@ public abstract class AbstractSectionAllTesting {
             + "";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"sect1\"> \n" +
-            " <h2 id=\"_section_1\">Section 1</h2> \n" +
-            " <div class=\"sectionbody\"> \n" +
-            "  <div class=\"paragraph\"> \n" +
-            "   <p>Some text for 1.</p> \n" +
-            "  </div> \n" +
-            "  <div class=\"sect2\"> \n" +
-            "   <h3 id=\"_section_2\">Section 2</h3> \n" +
-            "   <div class=\"paragraph\"> \n" +
-            "    <p>Some text for 2.</p> \n" +
-            "   </div> \n" +
-            "   <div class=\"sect3\"> \n" +
-            "    <h4 id=\"somesec\">Section 3</h4> \n" +
-            "    <div class=\"paragraph\"> \n" +
-            "     <p>Some text for 3.</p> \n" +
-            "    </div> \n" +
-            "    <div class=\"sect4\"> \n" +
-            "     <h5 id=\"_section_4\">Section 4</h5> \n" +
-            "     <div class=\"paragraph\"> \n" +
-            "      <p>Some text for 4.</p> \n" +
-            "     </div> \n" +
-            "     <div class=\"sect5\"> \n" +
-            "      <h6 id=\"_section_5\">Section 5</h6> \n" +
-            "      <div class=\"paragraph\"> \n" +
-            "       <p>Some text for 5.</p> \n" +
-            "      </div> \n" +
-            "     </div> \n" +
-            "    </div> \n" +
-            "   </div> \n" +
-            "  </div> \n" +
-            " </div> \n" +
+    public static final String EXPECTED_HTML = "<div class=\"sect1\">\n" +
+            "<h2 id=\"_section_1\">Section 1</h2>\n" +
+            "<div class=\"sectionbody\">\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Some text for 1.</p>\n" +
+            "</div>\n" +
+            "<div class=\"sect2\">\n" +
+            "<h3 id=\"_section_2\">Section 2</h3>\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Some text for 2.</p>\n" +
+            "</div>\n" +
+            "<div class=\"sect3\">\n" +
+            "<h4 id=\"somesec\">Section 3</h4>\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Some text for 3.</p>\n" +
+            "</div>\n" +
+            "<div class=\"sect4\">\n" +
+            "<h5 id=\"_section_4\">Section 4</h5>\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Some text for 4.</p>\n" +
+            "</div>\n" +
+            "<div class=\"sect5\">\n" +
+            "<h6 id=\"_section_5\">Section 5</h6>\n" +
+            "<div class=\"paragraph\">\n" +
+            "<p>Some text for 5.</p>\n" +
+            "</div>\n" +
+            "</div>\n" +
+            "</div>\n" +
+            "</div>\n" +
+            "</div>\n" +
+            "</div>\n" +
             "</div>";
     // end::expected-html[]
 

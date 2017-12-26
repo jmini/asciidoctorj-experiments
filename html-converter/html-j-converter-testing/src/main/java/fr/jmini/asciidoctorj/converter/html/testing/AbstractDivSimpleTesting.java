@@ -15,9 +15,7 @@ public abstract class AbstractDivSimpleTesting {
         Document astDocument = createAstDocument(asciiDoc);
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
-
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
-        assertThat(html).isEqualTo(EXPECTED_HTML);
+        assertThat(html).isXmlEqualTo(EXPECTED_HTML);
     }
 
     public static final String ASCIIDOC = "= My page\n"
@@ -25,8 +23,8 @@ public abstract class AbstractDivSimpleTesting {
             + "Some text\n";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
-            " <p>Some text</p> \n" +
+    public static final String EXPECTED_HTML = "<div class=\"paragraph\">\n" +
+            "<p>Some text</p>\n" +
             "</div>";
     // end::expected-html[]
 

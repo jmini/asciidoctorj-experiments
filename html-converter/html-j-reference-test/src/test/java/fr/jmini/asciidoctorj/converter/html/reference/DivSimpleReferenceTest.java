@@ -7,6 +7,7 @@ import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 
 public class DivSimpleReferenceTest extends AbstractDivSimpleTesting {
 
@@ -24,7 +25,9 @@ public class DivSimpleReferenceTest extends AbstractDivSimpleTesting {
 
     @Override
     protected String convertToHtml(Document astDocument) {
-        return astDocument.convert();
+        String html = astDocument.convert();
+        html = HtmlConverterTestingUtility.normalizeHtml(html);
+        return html;
     }
 
 }

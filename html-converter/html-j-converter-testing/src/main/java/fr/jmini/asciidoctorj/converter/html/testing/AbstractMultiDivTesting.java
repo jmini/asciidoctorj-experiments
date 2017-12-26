@@ -14,8 +14,6 @@ public abstract class AbstractMultiDivTesting {
         Document astDocument = createAstDocument(asciiDoc);
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
-
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
         assertThat(html).isEqualTo(EXPECTED_HTML);
     }
 
@@ -26,11 +24,11 @@ public abstract class AbstractMultiDivTesting {
             + "Other text\n";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph\"> \n" +
-            " <p>This is some text</p> \n" +
-            "</div> \n" +
-            "<div id=\"secid\" class=\"paragraph\"> \n" +
-            " <p>Other text</p> \n" +
+    public static final String EXPECTED_HTML = "<div class=\"paragraph\">\n" +
+            "<p>This is some text</p>\n" +
+            "</div>\n" +
+            "<div id=\"secid\" class=\"paragraph\">\n" +
+            "<p>Other text</p>\n" +
             "</div>";
     // end::expected-html[]
 

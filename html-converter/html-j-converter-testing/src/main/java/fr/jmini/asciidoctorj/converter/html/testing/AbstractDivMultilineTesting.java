@@ -14,9 +14,7 @@ public abstract class AbstractDivMultilineTesting {
         Document astDocument = createAstDocument(asciiDoc);
         checkAst(astDocument);
         String html = convertToHtml(astDocument);
-
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
-        assertThat(html).isEqualTo(EXPECTED_HTML);
+        assertThat(html).isXmlEqualTo(EXPECTED_HTML);
     }
 
     public static final String ASCIIDOC = ""
@@ -26,8 +24,8 @@ public abstract class AbstractDivMultilineTesting {
             + "This is line three\n";
 
     // tag::expected-html[]
-    public static final String EXPECTED_HTML = "<div class=\"paragraph lead\"> \n" +
-            " <p>Line one Second line This is line three</p> \n" +
+    public static final String EXPECTED_HTML = "<div class=\"paragraph lead\">\n" +
+            "<p>Line one Second line This is line three</p>\n" +
             "</div>";
     // end::expected-html[]
 

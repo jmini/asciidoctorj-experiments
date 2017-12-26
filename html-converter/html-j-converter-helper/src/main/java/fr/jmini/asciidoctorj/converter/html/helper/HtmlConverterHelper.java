@@ -17,6 +17,8 @@ import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLowerromanTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlReversedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListUlTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
@@ -35,6 +37,8 @@ public class HtmlConverterHelper {
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractListOlLowerromanTesting.class.getSimpleName(), AbstractListOlLowerromanTesting.ASCIIDOC)
+            .put(AbstractListOlReversedTesting.class.getSimpleName(), AbstractListOlReversedTesting.ASCIIDOC)
             .put(AbstractListOlTesting.class.getSimpleName(), AbstractListOlTesting.ASCIIDOC)
             .put(AbstractListUlTesting.class.getSimpleName(), AbstractListUlTesting.ASCIIDOC)
             .put(AbstractMultiDivTesting.class.getSimpleName(), AbstractMultiDivTesting.ASCIIDOC)
@@ -51,6 +55,7 @@ public class HtmlConverterHelper {
             }
         }
         for (File abstractTestingFile : files) {
+            System.out.println(abstractTestingFile.getName());
             String abstractTestingClassName = computeClassName(abstractTestingFile);
             String asciidocContent = ASCIIDOC_CONTENT_MAP.get(abstractTestingClassName);
 
@@ -85,6 +90,7 @@ public class HtmlConverterHelper {
                 Files.write(testFileContent, referenceTestFile, Charsets.UTF_8);
             }
         }
+        System.out.println("-");
     }
 
     private static String computeAssertCode(Document document) {
@@ -233,6 +239,7 @@ public class HtmlConverterHelper {
                 "import org.asciidoctor.ast.impl.DocumentImpl;\n" +
                 "\n" +
                 "import fr.jmini.asciidoctorj.converter.html.testing." + abstractTestingClassName + ";\n" +
+                "import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;\n" +
                 "\n" +
                 "public class " + referenceClassName + " extends " + abstractTestingClassName + " {\n" +
                 "\n" +
@@ -250,7 +257,9 @@ public class HtmlConverterHelper {
                 "\n" +
                 "    @Override\n" +
                 "    protected String convertToHtml(Document astDocument) {\n" +
-                "        return astDocument.convert();\n" +
+                "        String html = astDocument.convert();\n" +
+                "        html = HtmlConverterTestingUtility.normalizeHtml(html);\n" +
+                "        return html;\n" +
                 "    }\n" +
                 "\n" +
                 "}\n" +
