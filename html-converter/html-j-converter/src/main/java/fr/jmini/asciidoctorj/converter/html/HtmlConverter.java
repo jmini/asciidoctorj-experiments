@@ -138,7 +138,7 @@ public class HtmlConverter extends StringConverter {
         if (list.getStyle() != null) {
             l.attr("class", list.getStyle());
             String type = convertListType(list.getStyle());
-            if (!"a".equals(type)) {
+            if (!"1".equals(type)) {
                 l.attr("type", type);
             }
         }
@@ -166,13 +166,12 @@ public class HtmlConverter extends StringConverter {
         case "upperroman":
             return "I";
         case "lowergreek":
-            return "a";
         case "arabic":
-            return "a";
         case "decimal":
-            return "a";
+            return "1";
+        default:
+            return null;
         }
-        return null;
     }
 
     public void convertListItem(Element e, ListItem listItem) {

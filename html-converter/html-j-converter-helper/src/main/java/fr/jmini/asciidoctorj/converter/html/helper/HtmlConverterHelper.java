@@ -17,9 +17,14 @@ import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlDecimalTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLoweralphaTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLowergreekTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLowerromanTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlReversedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperalphaTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperromanTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListUlTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionAllTesting;
@@ -37,9 +42,14 @@ public class HtmlConverterHelper {
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractListOlDecimalTesting.class.getSimpleName(), AbstractListOlDecimalTesting.ASCIIDOC)
+            .put(AbstractListOlLoweralphaTesting.class.getSimpleName(), AbstractListOlLoweralphaTesting.ASCIIDOC)
+            .put(AbstractListOlLowergreekTesting.class.getSimpleName(), AbstractListOlLowergreekTesting.ASCIIDOC)
             .put(AbstractListOlLowerromanTesting.class.getSimpleName(), AbstractListOlLowerromanTesting.ASCIIDOC)
             .put(AbstractListOlReversedTesting.class.getSimpleName(), AbstractListOlReversedTesting.ASCIIDOC)
             .put(AbstractListOlTesting.class.getSimpleName(), AbstractListOlTesting.ASCIIDOC)
+            .put(AbstractListOlUpperalphaTesting.class.getSimpleName(), AbstractListOlUpperalphaTesting.ASCIIDOC)
+            .put(AbstractListOlUpperromanTesting.class.getSimpleName(), AbstractListOlUpperromanTesting.ASCIIDOC)
             .put(AbstractListUlTesting.class.getSimpleName(), AbstractListUlTesting.ASCIIDOC)
             .put(AbstractMultiDivTesting.class.getSimpleName(), AbstractMultiDivTesting.ASCIIDOC)
             .put(AbstractSectionAllTesting.class.getSimpleName(), AbstractSectionAllTesting.ASCIIDOC)
