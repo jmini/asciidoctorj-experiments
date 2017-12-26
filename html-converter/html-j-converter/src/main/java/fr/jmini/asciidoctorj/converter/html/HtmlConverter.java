@@ -137,9 +137,11 @@ public class HtmlConverter extends StringConverter {
                 .substring(0, 2));
         if (list.getStyle() != null) {
             l.attr("class", list.getStyle());
-            String type = convertListType(list.getStyle());
-            if (!"1".equals(type)) {
-                l.attr("type", type);
+            if ("olist".equals(list.getNodeName())) {
+                String type = convertListType(list.getStyle());
+                if (!"1".equals(type)) {
+                    l.attr("type", type);
+                }
             }
         }
         if (list.getAttributes()
