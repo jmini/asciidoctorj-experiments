@@ -112,12 +112,29 @@ public class HtmlConverter extends StringConverter {
         // not implemented yet
     }
 
-    public void convertDescriptionList(Element e, DescriptionList aDescriptionList) {
-        // not implemented yet
+    public void convertDescriptionList(Element e, DescriptionList descriptionList) {
+        Element div = e.appendElement("div");
+        handleId(div, descriptionList);
+        handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), descriptionList.getContext());
+        handleTitle(div, descriptionList);
+        Element dl = div.appendElement("dl");
+        List<DescriptionListEntry> items = descriptionList.getItems();
+        if (items != null) {
+            for (DescriptionListEntry entry : items) {
+                convertDescriptionListEntry(dl, entry);
+            }
+        }
     }
 
-    public void convertDescriptionListEntry(Element e, DescriptionListEntry aDescriptionListEntry) {
+    public void convertDescriptionListEntry(Element e, DescriptionListEntry descriptionListEntry) {
         // not implemented yet
+        List<ListItem> terms = descriptionListEntry.getTerms();
+        for (ListItem term : terms) {
+            Element dt = e.appendElement("dt");
+            dt.attr("class", "hdlist1");
+            dt.text(term.getText());
+        }
+        convertListItem(e, descriptionListEntry.getDescription(), "dd");
     }
 
     public void convertDocument(Element e, Document aDocument) {
@@ -176,8 +193,8 @@ public class HtmlConverter extends StringConverter {
         }
     }
 
-    public void convertListItem(Element e, ListItem listItem) {
-        Element li = e.appendElement("li");
+    public void convertListItem(Element e, ListItem listItem, String tagName) {
+        Element li = e.appendElement(tagName);
         Element p = li.appendElement("p");
         p.text(listItem.getText());
         handleStructuralNodeBlocks(li, listItem);
@@ -220,7 +237,7 @@ public class HtmlConverter extends StringConverter {
         } else if (structuralNode instanceof org.asciidoctor.ast.List) {
             convertList(e, (org.asciidoctor.ast.List) structuralNode);
         } else if (structuralNode instanceof ListItem) {
-            convertListItem(e, (ListItem) structuralNode);
+            convertListItem(e, (ListItem) structuralNode, "li");
         } else if (structuralNode instanceof Section) {
             convertSection(e, (Section) structuralNode);
         } else if (structuralNode instanceof Table) {

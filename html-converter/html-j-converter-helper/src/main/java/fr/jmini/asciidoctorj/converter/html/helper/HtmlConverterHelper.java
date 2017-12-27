@@ -17,6 +17,8 @@ import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListNestedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlDecimalTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLoweralphaTesting;
@@ -43,6 +45,8 @@ public class HtmlConverterHelper {
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractListLabeledTesting.class.getSimpleName(), AbstractListLabeledTesting.ASCIIDOC)
+            .put(AbstractListLabeledWithIdAndRoleTesting.class.getSimpleName(), AbstractListLabeledWithIdAndRoleTesting.ASCIIDOC)
             .put(AbstractListNestedTesting.class.getSimpleName(), AbstractListNestedTesting.ASCIIDOC)
             .put(AbstractListOlDecimalTesting.class.getSimpleName(), AbstractListOlDecimalTesting.ASCIIDOC)
             .put(AbstractListOlLoweralphaTesting.class.getSimpleName(), AbstractListOlLoweralphaTesting.ASCIIDOC)
