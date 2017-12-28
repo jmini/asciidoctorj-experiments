@@ -32,6 +32,7 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperalphaTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperromanTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListUlTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCustomCaptionTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingParagraphSyntaxTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingTesting;
@@ -55,6 +56,7 @@ public class HtmlConverterHelper {
             .put(AbstractExampleCustomCaptionTesting.class.getSimpleName(), AbstractExampleCustomCaptionTesting.ASCIIDOC)
             .put(AbstractExampleNestedTesting.class.getSimpleName(), AbstractExampleNestedTesting.ASCIIDOC)
             .put(AbstractExampleTesting.class.getSimpleName(), AbstractExampleTesting.ASCIIDOC)
+            .put(AbstractListingCustomCaptionTesting.class.getSimpleName(), AbstractListingCustomCaptionTesting.ASCIIDOC)
             .put(AbstractListingMultilineTesting.class.getSimpleName(), AbstractListingMultilineTesting.ASCIIDOC)
             .put(AbstractListingParagraphSyntaxTesting.class.getSimpleName(), AbstractListingParagraphSyntaxTesting.ASCIIDOC)
             .put(AbstractListingTesting.class.getSimpleName(), AbstractListingTesting.ASCIIDOC)

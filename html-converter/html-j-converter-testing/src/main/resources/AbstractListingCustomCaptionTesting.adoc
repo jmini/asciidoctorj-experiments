@@ -1,0 +1,11 @@
+:listing-caption: Listing
+
+.first caption
+----
+First listing
+----
+
+.second caption
+----
+Second listing
+----

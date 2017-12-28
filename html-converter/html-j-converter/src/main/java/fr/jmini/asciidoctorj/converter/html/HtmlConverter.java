@@ -60,7 +60,7 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "listingblock");
-            handleTitle(div, block, null);
+            handleTitle(div, block, "listing-caption");
             Element content = appendContentDiv(div);
             Element pre = content.appendElement("pre");
             List<String> classAttributeMembers = new ArrayList<>();
