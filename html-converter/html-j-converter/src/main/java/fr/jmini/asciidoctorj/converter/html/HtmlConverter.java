@@ -48,23 +48,51 @@ public class HtmlConverter extends StringConverter {
         return body.html();
     }
 
-    public void convertAuthor(Element e, Author aAuthor) {
+    public void convertAuthor(Element e, Author author) {
         // not implemented yet
     }
 
-    public void convertBlock(Element e, Block aBlock) {
-        Element div = e.appendElement("div");
-        handleId(div, aBlock);
-        handleRoles(div, aBlock, aBlock.getContext());
-        Element p = div.appendElement("p");
-        p.text(String.join("\n", aBlock.getLines()));
+    public void convertBlock(Element e, Block block) {
+        if ("listing".equals(block.getNodeName())) {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, "listingblock");
+            handleTitle(div, block);
+            Element content = div.appendElement("div");
+            content.attr("class", "content");
+            Element pre = content.appendElement("pre");
+            List<String> classAttributeMembers = new ArrayList<>();
+            if ("source".equals(block.getStyle())) {
+                classAttributeMembers.add("highlight");
+            }
+            if (!block.getDocument()
+                    .getAttributes()
+                    .containsKey("prewrap")
+                    || block.getAttributes()
+                            .containsKey("nowrap-option")) {
+                classAttributeMembers.add("nowrap");
+            }
+            addClassAttribute(pre, classAttributeMembers);
+            if ("source".equals(block.getStyle())) {
+                Element code = pre.appendElement("code");
+                code.text(String.join("\n", block.getLines()));
+            } else {
+                pre.text(String.join("\n", block.getLines()));
+            }
+        } else {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, block.getContext());
+            Element p = div.appendElement("p");
+            p.text(String.join("\n", block.getLines()));
+        }
     }
 
-    public void convertCell(Element e, Cell aCell) {
+    public void convertCell(Element e, Cell cell) {
         // not implemented yet
     }
 
-    public void convertColumn(Element e, Column aColumn) {
+    public void convertColumn(Element e, Column column) {
         // not implemented yet
     }
 
@@ -101,14 +129,20 @@ public class HtmlConverter extends StringConverter {
         if (contentNode.getRoles() != null) {
             classAttributeMembers.addAll(contentNode.getRoles());
         }
-        div.attr("class", String.join(" ", classAttributeMembers));
+        addClassAttribute(div, classAttributeMembers);
     }
 
-    public void convertContentPart(Element e, ContentPart aContentPart) {
+    private void addClassAttribute(Element e, List<String> classAttributeMembers) {
+        if (!classAttributeMembers.isEmpty()) {
+            e.attr("class", String.join(" ", classAttributeMembers));
+        }
+    }
+
+    public void convertContentPart(Element e, ContentPart contentPart) {
         // not implemented yet
     }
 
-    public void convertCursor(Element e, Cursor aCursor) {
+    public void convertCursor(Element e, Cursor cursor) {
         // not implemented yet
     }
 
@@ -137,11 +171,11 @@ public class HtmlConverter extends StringConverter {
         convertListItem(e, descriptionListEntry.getDescription(), "dd");
     }
 
-    public void convertDocument(Element e, Document aDocument) {
-        handleStructuralNodeBlocks(e, aDocument);
+    public void convertDocument(Element e, Document document) {
+        handleStructuralNodeBlocks(e, document);
     }
 
-    public void convertDocumentHeader(Element e, DocumentHeader aDocumentHeader) {
+    public void convertDocumentHeader(Element e, DocumentHeader documentHeader) {
         // not implemented yet
     }
 
@@ -200,15 +234,15 @@ public class HtmlConverter extends StringConverter {
         handleStructuralNodeBlocks(li, listItem);
     }
 
-    public void convertPhraseNode(Element e, PhraseNode aPhraseNode) {
+    public void convertPhraseNode(Element e, PhraseNode phraseNode) {
         // not implemented yet
     }
 
-    public void convertRevisionInfo(Element e, RevisionInfo aRevisionInfo) {
+    public void convertRevisionInfo(Element e, RevisionInfo revisionInfo) {
         // not implemented yet
     }
 
-    public void convertRow(Element e, Row aRow) {
+    public void convertRow(Element e, Row row) {
         // not implemented yet
     }
 
@@ -268,15 +302,15 @@ public class HtmlConverter extends StringConverter {
         }
     }
 
-    public void convertStructuredDocument(Element e, StructuredDocument aStructuredDocument) {
+    public void convertStructuredDocument(Element e, StructuredDocument structuredDocument) {
         // not implemented yet
     }
 
-    public void convertTable(Element e, Table aTable) {
+    public void convertTable(Element e, Table table) {
         // not implemented yet
     }
 
-    public void convertTitle(Element e, Title aTitle) {
+    public void convertTitle(Element e, Title title) {
         // not implemented yet
     }
 

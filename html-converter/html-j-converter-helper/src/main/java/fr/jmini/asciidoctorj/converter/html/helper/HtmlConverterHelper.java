@@ -29,6 +29,10 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperalphaTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperromanTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListUlTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingMultilineTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingParagraphSyntaxTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingUnsetPrewrapTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionAllTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
@@ -45,6 +49,10 @@ public class HtmlConverterHelper {
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractListingMultilineTesting.class.getSimpleName(), AbstractListingMultilineTesting.ASCIIDOC)
+            .put(AbstractListingParagraphSyntaxTesting.class.getSimpleName(), AbstractListingParagraphSyntaxTesting.ASCIIDOC)
+            .put(AbstractListingTesting.class.getSimpleName(), AbstractListingTesting.ASCIIDOC)
+            .put(AbstractListingUnsetPrewrapTesting.class.getSimpleName(), AbstractListingUnsetPrewrapTesting.ASCIIDOC)
             .put(AbstractListLabeledTesting.class.getSimpleName(), AbstractListLabeledTesting.ASCIIDOC)
             .put(AbstractListLabeledWithIdAndRoleTesting.class.getSimpleName(), AbstractListLabeledWithIdAndRoleTesting.ASCIIDOC)
             .put(AbstractListNestedTesting.class.getSimpleName(), AbstractListNestedTesting.ASCIIDOC)

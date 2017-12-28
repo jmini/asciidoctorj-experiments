@@ -1,0 +1,6 @@
+:prewrap!:
+
+----
+This is an example of a _listing block_.
+The content inside is displayed as <pre> text.
+----
