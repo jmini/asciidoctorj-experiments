@@ -1,5 +1,6 @@
 package fr.jmini.asciidoctorj.converter.assertcode;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -36,7 +37,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
 
     private static final Collection<String> OPTIONS_KEYS = Collections.emptyList();
     private static final Collection<String> ATTRIBUTES_KEYS = Collections.emptyList();
-    private static final Collection<String> DOCUMENT_ATTRIBUTES_KEYS = Collections.singletonList("notitle");
+    private static final Collection<String> DOCUMENT_ATTRIBUTES_KEYS = Arrays.asList("notitle", "prewrap");
 
     @Override
     protected void appendAuthor(StringBuilder sb, String varName, Author author) {

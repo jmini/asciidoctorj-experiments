@@ -104,7 +104,8 @@ public class AssertCodeGeneratorExampleTest {
                 .containsEntry("doctype", "article")
                 .containsEntry("filetype", "html")
                 .containsEntry("tip-caption", "Tip")
-                .doesNotContainKey("notitle");
+                .doesNotContainKey("notitle")
+                .doesNotContainKey("prewrap");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
