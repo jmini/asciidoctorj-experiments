@@ -74,36 +74,39 @@ public class HtmlConverterHelper {
             System.out.println(abstractTestingFile.getName());
             String abstractTestingClassName = computeClassName(abstractTestingFile);
             String asciidocContent = ASCIIDOC_CONTENT_MAP.get(abstractTestingClassName);
-
-            File resourcesFile = findAsciidocRessourceFile(abstractTestingClassName);
-            Files.write(asciidocContent, resourcesFile, Charsets.UTF_8);
-
-            Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
-            Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-            CodeTestingUtility.rewriteAttributes(document.getAttributes());
-
-            String assertCode = computeAssertCode(document);
-            CodeTestingUtility.replaceContentInFile(abstractTestingFile, assertCode, ASSERT_CODE_TAG_NAME, true, true);
-
-            String expectedHtml = computeExpectedHtmlConstant(document);
-            CodeTestingUtility.replaceContentInFile(abstractTestingFile, expectedHtml, EXPECTED_HTML_TAG_NAME, false, true);
-
-            String mockCode = computeMockCode(document);
-            File testFile = findTestFile(abstractTestingClassName);
-            if (!testFile.exists()) {
-                String testClassName = computeClassName(testFile);
-                String testFileContent = createTestFile(testClassName, abstractTestingClassName);
-
-                testFileContent = CodeTestingUtility.replaceContent(testFileContent, mockCode, MOCK_CODE_TAG_NAME, true);
-                Files.write(testFileContent, testFile, Charsets.UTF_8);
+            if (asciidocContent == null) {
+                System.out.println("Content missing in ASCIIDOC_CONTENT_MAP");
             } else {
-                CodeTestingUtility.replaceContentInFile(testFile, mockCode, MOCK_CODE_TAG_NAME, true, true);
-            }
-            File referenceTestFile = findReferenceTestFile(abstractTestingClassName);
-            if (!referenceTestFile.exists()) {
-                String referenceClassName = computeClassName(referenceTestFile);
-                String testFileContent = createReferenceTestFile(referenceClassName, abstractTestingClassName);
-                Files.write(testFileContent, referenceTestFile, Charsets.UTF_8);
+                File resourcesFile = findAsciidocRessourceFile(abstractTestingClassName);
+                Files.write(asciidocContent, resourcesFile, Charsets.UTF_8);
+
+                Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
+                Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
+                CodeTestingUtility.rewriteAttributes(document.getAttributes());
+
+                String assertCode = computeAssertCode(document);
+                CodeTestingUtility.replaceContentInFile(abstractTestingFile, assertCode, ASSERT_CODE_TAG_NAME, true, true);
+
+                String expectedHtml = computeExpectedHtmlConstant(document);
+                CodeTestingUtility.replaceContentInFile(abstractTestingFile, expectedHtml, EXPECTED_HTML_TAG_NAME, false, true);
+
+                String mockCode = computeMockCode(document);
+                File testFile = findTestFile(abstractTestingClassName);
+                if (!testFile.exists()) {
+                    String testClassName = computeClassName(testFile);
+                    String testFileContent = createTestFile(testClassName, abstractTestingClassName);
+
+                    testFileContent = CodeTestingUtility.replaceContent(testFileContent, mockCode, MOCK_CODE_TAG_NAME, true);
+                    Files.write(testFileContent, testFile, Charsets.UTF_8);
+                } else {
+                    CodeTestingUtility.replaceContentInFile(testFile, mockCode, MOCK_CODE_TAG_NAME, true, true);
+                }
+                File referenceTestFile = findReferenceTestFile(abstractTestingClassName);
+                if (!referenceTestFile.exists()) {
+                    String referenceClassName = computeClassName(referenceTestFile);
+                    String testFileContent = createReferenceTestFile(referenceClassName, abstractTestingClassName);
+                    Files.write(testFileContent, referenceTestFile, Charsets.UTF_8);
+                }
             }
         }
         System.out.println("-");

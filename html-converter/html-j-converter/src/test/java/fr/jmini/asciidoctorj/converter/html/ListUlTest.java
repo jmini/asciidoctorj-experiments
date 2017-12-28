@@ -39,6 +39,7 @@ public class ListUlTest extends AbstractListUlTesting {
                 .put("doctype", "article")
                 .put("filetype", "html")
                 .put("notitle", "")
+                .put("prewrap", "")
                 .build();
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());

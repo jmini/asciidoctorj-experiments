@@ -97,7 +97,8 @@ public abstract class AbstractSectionAllTesting {
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("filetype", "html")
-                .containsEntry("notitle", "");
+                .containsEntry("notitle", "")
+                .containsEntry("prewrap", "");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
