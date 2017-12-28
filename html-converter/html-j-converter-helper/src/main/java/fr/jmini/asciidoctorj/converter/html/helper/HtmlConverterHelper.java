@@ -17,6 +17,9 @@ import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCustomCaptionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleNestedTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListNestedTesting;
@@ -49,6 +52,9 @@ public class HtmlConverterHelper {
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractExampleCustomCaptionTesting.class.getSimpleName(), AbstractExampleCustomCaptionTesting.ASCIIDOC)
+            .put(AbstractExampleNestedTesting.class.getSimpleName(), AbstractExampleNestedTesting.ASCIIDOC)
+            .put(AbstractExampleTesting.class.getSimpleName(), AbstractExampleTesting.ASCIIDOC)
             .put(AbstractListingMultilineTesting.class.getSimpleName(), AbstractListingMultilineTesting.ASCIIDOC)
             .put(AbstractListingParagraphSyntaxTesting.class.getSimpleName(), AbstractListingParagraphSyntaxTesting.ASCIIDOC)
             .put(AbstractListingTesting.class.getSimpleName(), AbstractListingTesting.ASCIIDOC)
@@ -95,10 +101,11 @@ public class HtmlConverterHelper {
                 String assertCode = computeAssertCode(document);
                 CodeTestingUtility.replaceContentInFile(abstractTestingFile, assertCode, ASSERT_CODE_TAG_NAME, true, true);
 
+                String mockCode = computeMockCode(document);
+
                 String expectedHtml = computeExpectedHtmlConstant(document);
                 CodeTestingUtility.replaceContentInFile(abstractTestingFile, expectedHtml, EXPECTED_HTML_TAG_NAME, false, true);
 
-                String mockCode = computeMockCode(document);
                 File testFile = findTestFile(abstractTestingClassName);
                 if (!testFile.exists()) {
                     String testClassName = computeClassName(testFile);

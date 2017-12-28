@@ -1,6 +1,7 @@
 package fr.jmini.asciidoctorj.converter.html;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,6 +33,8 @@ import org.jsoup.nodes.Element;
 @ConverterFor("html-j")
 public class HtmlConverter extends StringConverter {
 
+    Map<String, Integer> counter = new HashMap<>();
+
     public HtmlConverter(String backend, Map<String, Object> opts) {
         super(backend, opts);
     }
@@ -57,9 +60,8 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "listingblock");
-            handleTitle(div, block);
-            Element content = div.appendElement("div");
-            content.attr("class", "content");
+            handleTitle(div, block, null);
+            Element content = appendContentDiv(div);
             Element pre = content.appendElement("pre");
             List<String> classAttributeMembers = new ArrayList<>();
             if ("source".equals(block.getStyle())) {
@@ -79,6 +81,13 @@ public class HtmlConverter extends StringConverter {
             } else {
                 pre.text(String.join("\n", block.getLines()));
             }
+        } else if ("example".equals(block.getNodeName())) {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, "exampleblock");
+            handleTitle(div, block, "example-caption");
+            Element content = appendContentDiv(div);
+            handleStructuralNodeBlocks(content, block);
         } else {
             Element div = e.appendElement("div");
             handleId(div, block);
@@ -86,6 +95,12 @@ public class HtmlConverter extends StringConverter {
             Element p = div.appendElement("p");
             p.text(String.join("\n", block.getLines()));
         }
+    }
+
+    private Element appendContentDiv(Element div) {
+        Element content = div.appendElement("div");
+        content.attr("class", "content");
+        return content;
     }
 
     public void convertCell(Element e, Cell cell) {
@@ -150,7 +165,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, descriptionList);
         handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), descriptionList.getContext());
-        handleTitle(div, descriptionList);
+        handleTitle(div, descriptionList, null);
         Element dl = div.appendElement("dl");
         List<DescriptionListEntry> items = descriptionList.getItems();
         if (items != null) {
@@ -183,7 +198,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, list);
         handleStyleAndRoles(div, list, list.getStyle(), list.getContext());
-        handleTitle(div, list);
+        handleTitle(div, list, null);
         Element l = div.appendElement(list.getNodeName()
                 .substring(0, 2));
         if (list.getStyle() != null) {
@@ -281,12 +296,24 @@ public class HtmlConverter extends StringConverter {
         }
     }
 
-    private void handleTitle(Element e, StructuralNode structuralNode) {
+    private void handleTitle(Element e, StructuralNode structuralNode, String captionKey) {
         String title = structuralNode.getTitle();
         if (title != null && !title.isEmpty()) {
             Element div = e.appendElement("div");
             div.attr("class", "title");
-            div.text(title);
+            if (captionKey != null
+                    && structuralNode.getDocument()
+                            .getAttributes()
+                            .containsKey(captionKey)) {
+                int captionCounter = incrementCounterAndGet(captionKey);
+                String captionLabel = structuralNode.getDocument()
+                        .getAttributes()
+                        .get(captionKey)
+                        .toString();
+                div.text(captionLabel + " " + captionCounter + ". " + title);
+            } else {
+                div.text(title);
+            }
         }
     }
 
@@ -312,6 +339,18 @@ public class HtmlConverter extends StringConverter {
 
     public void convertTitle(Element e, Title title) {
         // not implemented yet
+    }
+
+    private int incrementCounterAndGet(String key) {
+        Integer value;
+        if (counter.containsKey(key)) {
+            value = counter.get(key);
+        } else {
+            value = 0;
+        }
+        value = value + 1;
+        counter.put(key, value);
+        return value;
     }
 
 }
