@@ -39,6 +39,7 @@ public class DivWithIdAndRoleTest extends AbstractDivWithIdAndRoleTesting {
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("doctitle", "My page")
                 .put("doctype", "article")
+                .put("example-caption", "Example")
                 .put("filetype", "html")
                 .put("notitle", "")
                 .put("prewrap", "")

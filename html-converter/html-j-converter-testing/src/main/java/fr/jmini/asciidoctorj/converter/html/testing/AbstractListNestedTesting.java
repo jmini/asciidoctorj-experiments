@@ -88,6 +88,7 @@ public abstract class AbstractListNestedTesting {
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctype", "article")
+                .containsEntry("example-caption", "Example")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "");

@@ -48,6 +48,7 @@ public abstract class AbstractDivWithIdAndRoleTesting {
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctitle", "My page")
                 .containsEntry("doctype", "article")
+                .containsEntry("example-caption", "Example")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "");

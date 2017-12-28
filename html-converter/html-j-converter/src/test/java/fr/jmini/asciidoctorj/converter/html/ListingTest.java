@@ -36,6 +36,7 @@ public class ListingTest extends AbstractListingTesting {
         when(mockDocument1.isBlock()).thenReturn(true);
         ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
                 .put("doctype", "article")
+                .put("example-caption", "Example")
                 .put("filetype", "html")
                 .put("notitle", "")
                 .put("prewrap", "")
