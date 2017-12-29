@@ -186,7 +186,11 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
     protected void appendListItem(StringBuilder sb, String varName, ListItem listItem) {
         appendStructuralNode(sb, varName, listItem);
         appendEqualsToExpressionString(sb, varName + ".getMarker()", listItem.getMarker());
-        appendEqualsToExpressionString(sb, varName + ".getText()", listItem.getText());
+        if (listItem.hasText()) {
+            // getText(..) can only be called if there is text, it throws an exception otherwise:
+            // see https://github.com/asciidoctor/asciidoctorj/issues/607
+            appendEqualsToExpressionString(sb, varName + ".getText()", listItem.getText());
+        }
         appendEqualsToExpressionString(sb, varName + ".getSource()", listItem.getSource());
         appendEqualsToExpressionBoolean(sb, varName + ".hasText()", listItem.hasText());
     }

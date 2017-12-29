@@ -93,7 +93,7 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
         } catch (Exception e) {
             if (e.getMessage() != null && e.getMessage()
                     .contains("NotImplementedError")) {
-                appendWhenExpressionThrowNotImplementedError(sb, varName + ".isInline()");
+                appendWhenExpressionThrowException(sb, varName + ".isInline()", "NotImplementedError");
             } else {
                 throw new IllegalStateException("Unexpected exception", e);
             }
@@ -104,7 +104,7 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
         } catch (Exception e) {
             if (e.getMessage() != null && e.getMessage()
                     .contains("NotImplementedError")) {
-                appendWhenExpressionThrowNotImplementedError(sb, varName + ".isBlock()");
+                appendWhenExpressionThrowException(sb, varName + ".isBlock()", "NotImplementedError");
             } else {
                 throw new IllegalStateException("Unexpected exception", e);
             }
@@ -177,7 +177,13 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
     protected void appendListItem(StringBuilder sb, String varName, ListItem listItem) {
         appendStructuralNode(sb, varName, listItem);
         appendWhenExpressionString(sb, varName + ".getMarker()", listItem.getMarker());
-        appendWhenExpressionString(sb, varName + ".getText()", listItem.getText());
+        if (listItem.hasText()) {
+            // getText(..) can only be called if there is text, it throws an exception otherwise:
+            // see https://github.com/asciidoctor/asciidoctorj/issues/607
+            appendWhenExpressionString(sb, varName + ".getText()", listItem.getText());
+        } else {
+            appendWhenExpressionThrowException(sb, varName + ".getText()", "NoMethodError");
+        }
         appendWhenExpressionString(sb, varName + ".getSource()", listItem.getSource());
         appendWhenExpressionBoolean(sb, varName + ".hasText()", listItem.hasText());
     }
@@ -278,8 +284,8 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
         return "mock" + astClass;
     }
 
-    private void appendWhenExpressionThrowNotImplementedError(StringBuilder sb, String expression) {
-        sb.append("when(" + expression + ").thenThrow(new UnsupportedOperationException(\"NotImplementedError\"));" + NL);
+    private void appendWhenExpressionThrowException(StringBuilder sb, String expression, String rubyExceptionName) {
+        sb.append("when(" + expression + ").thenThrow(new UnsupportedOperationException(\"" + rubyExceptionName + "\"));" + NL);
     }
 
     private void appendWhenExpressionBoolean(StringBuilder sb, String expression, Boolean value) {
