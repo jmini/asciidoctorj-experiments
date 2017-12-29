@@ -20,6 +20,7 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTest
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCustomCaptionTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleNestedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractHorizontalRuleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledNestedMixedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledNestedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledTesting;
@@ -58,6 +59,7 @@ public class HtmlConverterHelper {
             .put(AbstractExampleCustomCaptionTesting.class.getSimpleName(), AbstractExampleCustomCaptionTesting.ASCIIDOC)
             .put(AbstractExampleNestedTesting.class.getSimpleName(), AbstractExampleNestedTesting.ASCIIDOC)
             .put(AbstractExampleTesting.class.getSimpleName(), AbstractExampleTesting.ASCIIDOC)
+            .put(AbstractHorizontalRuleTesting.class.getSimpleName(), AbstractHorizontalRuleTesting.ASCIIDOC)
             .put(AbstractListingCustomCaptionTesting.class.getSimpleName(), AbstractListingCustomCaptionTesting.ASCIIDOC)
             .put(AbstractListingMultilineTesting.class.getSimpleName(), AbstractListingMultilineTesting.ASCIIDOC)
             .put(AbstractListingParagraphSyntaxTesting.class.getSimpleName(), AbstractListingParagraphSyntaxTesting.ASCIIDOC)
