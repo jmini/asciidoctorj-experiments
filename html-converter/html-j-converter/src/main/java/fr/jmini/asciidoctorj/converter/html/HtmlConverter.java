@@ -244,8 +244,10 @@ public class HtmlConverter extends StringConverter {
 
     public void convertListItem(Element e, ListItem listItem, String tagName) {
         Element li = e.appendElement(tagName);
-        Element p = li.appendElement("p");
-        p.text(listItem.getText());
+        if (listItem.hasText()) {
+            Element p = li.appendElement("p");
+            p.text(listItem.getText());
+        }
         handleStructuralNodeBlocks(li, listItem);
     }
 
