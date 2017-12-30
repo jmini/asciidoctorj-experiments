@@ -40,7 +40,11 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingMultilineTest
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingParagraphSyntaxTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingUnsetPrewrapTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingWithoutBlockDelimiterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithoutBlockDelimiterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionAllTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
@@ -65,6 +69,7 @@ public class HtmlConverterHelper {
             .put(AbstractListingParagraphSyntaxTesting.class.getSimpleName(), AbstractListingParagraphSyntaxTesting.ASCIIDOC)
             .put(AbstractListingTesting.class.getSimpleName(), AbstractListingTesting.ASCIIDOC)
             .put(AbstractListingUnsetPrewrapTesting.class.getSimpleName(), AbstractListingUnsetPrewrapTesting.ASCIIDOC)
+            .put(AbstractListingWithoutBlockDelimiterTesting.class.getSimpleName(), AbstractListingWithoutBlockDelimiterTesting.ASCIIDOC)
             .put(AbstractListLabeledNestedMixedTesting.class.getSimpleName(), AbstractListLabeledNestedMixedTesting.ASCIIDOC)
             .put(AbstractListLabeledNestedTesting.class.getSimpleName(), AbstractListLabeledNestedTesting.ASCIIDOC)
             .put(AbstractListLabeledTesting.class.getSimpleName(), AbstractListLabeledTesting.ASCIIDOC)
@@ -80,6 +85,9 @@ public class HtmlConverterHelper {
             .put(AbstractListOlUpperromanTesting.class.getSimpleName(), AbstractListOlUpperromanTesting.ASCIIDOC)
             .put(AbstractListUlTesting.class.getSimpleName(), AbstractListUlTesting.ASCIIDOC)
             .put(AbstractMultiDivTesting.class.getSimpleName(), AbstractMultiDivTesting.ASCIIDOC)
+            .put(AbstractQuoteWithIdAndRoleTesting.class.getSimpleName(), AbstractQuoteWithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractQuoteTesting.class.getSimpleName(), AbstractQuoteTesting.ASCIIDOC)
+            .put(AbstractQuoteWithoutBlockDelimiterTesting.class.getSimpleName(), AbstractQuoteWithoutBlockDelimiterTesting.ASCIIDOC)
             .put(AbstractSectionAllTesting.class.getSimpleName(), AbstractSectionAllTesting.ASCIIDOC)
             .put(AbstractSectionTesting.class.getSimpleName(), AbstractSectionTesting.ASCIIDOC)
             .build();

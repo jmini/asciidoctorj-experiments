@@ -88,6 +88,14 @@ public class HtmlConverter extends StringConverter {
             handleTitle(div, block, "example-caption");
             Element content = appendContentDiv(div);
             handleStructuralNodeBlocks(content, block);
+        } else if ("quote".equals(block.getNodeName())) {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, "quoteblock");
+            handleTitle(div, block, null);
+            Element blockquote = div.appendElement("blockquote");
+            blockquote.text(String.join("\n", block.getLines()));
+            handleStructuralNodeBlocks(blockquote, block);
         } else if ("thematic_break".equals(block.getNodeName())) {
             e.appendElement("hr");
         } else {
