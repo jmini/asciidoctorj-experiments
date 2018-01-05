@@ -4,6 +4,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.ContentNode;
 import org.junit.Test;
@@ -32,7 +34,9 @@ public class MockCodeGeneratorContentNodeTest {
         when(mockContentNode1.getDocument()).thenReturn(null);
         when(mockContentNode1.isInline()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockContentNode1.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
-        when(mockContentNode1.getAttributes()).thenReturn(Collections.singletonMap("attr-key", "same-value"));
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("attr-key", "same-value");
+        when(mockContentNode1.getAttributes()).thenReturn(map1);
         when(mockContentNode1.getRoles()).thenReturn(Collections.singletonList("some-role"));
         when(mockContentNode1.isReftext()).thenReturn(true);
         when(mockContentNode1.getReftext()).thenReturn("bla");

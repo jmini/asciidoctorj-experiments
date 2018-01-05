@@ -5,12 +5,12 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.ListItem;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithIdAndRoleTesting;
 
@@ -36,13 +36,12 @@ public class QuoteWithIdAndRoleTest extends AbstractQuoteWithIdAndRoleTesting {
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("doctype", "article")
-                .put("example-caption", "Example")
-                .put("filetype", "html")
-                .put("notitle", "")
-                .put("prewrap", "")
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("doctype", "article");
+        map1.put("example-caption", "Example");
+        map1.put("filetype", "html");
+        map1.put("notitle", "");
+        map1.put("prewrap", "");
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
@@ -60,13 +59,12 @@ public class QuoteWithIdAndRoleTest extends AbstractQuoteWithIdAndRoleTesting {
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(false);
         when(mockBlock1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map2 = ImmutableMap.<String, Object>builder()
-                .put("1", "#idd.rolee")
-                .put("id", "idd")
-                .put("role", "rolee")
-                .put("style", "quote")
-                .put("title", "some caption")
-                .build();
+        Map<String, Object> map2 = new HashMap<>();
+        map2.put("1", "#idd.rolee");
+        map2.put("id", "idd");
+        map2.put("role", "rolee");
+        map2.put("style", "quote");
+        map2.put("title", "some caption");
         when(mockBlock1.getAttributes()).thenReturn(map2);
         when(mockBlock1.getRoles()).thenReturn(Collections.singletonList("rolee"));
         when(mockBlock1.isReftext()).thenReturn(false);
@@ -173,10 +171,9 @@ public class QuoteWithIdAndRoleTest extends AbstractQuoteWithIdAndRoleTesting {
         when(mockDocument1.getBlocks()).thenReturn(Collections.singletonList(mockBlock1));
         when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument1.getDoctitle()).thenReturn(null);
-        ImmutableMap<Object, Object> map3 = ImmutableMap.<Object, Object>builder()
-                .put("attributes", "{}")
-                .put("header_footer", false)
-                .build();
+        Map<Object, Object> map3 = new HashMap<>();
+        map3.put("attributes", "{}");
+        map3.put("header_footer", false);
         when(mockDocument1.getOptions()).thenReturn(map3);
         return mockDocument1;
     }

@@ -5,11 +5,11 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
 
@@ -35,13 +35,12 @@ public class MultiDivTest extends AbstractMultiDivTesting {
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("doctype", "article")
-                .put("example-caption", "Example")
-                .put("filetype", "html")
-                .put("notitle", "")
-                .put("prewrap", "")
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("doctype", "article");
+        map1.put("example-caption", "Example");
+        map1.put("filetype", "html");
+        map1.put("notitle", "");
+        map1.put("prewrap", "");
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
@@ -79,7 +78,9 @@ public class MultiDivTest extends AbstractMultiDivTesting {
         when(mockBlock2.getDocument()).thenReturn(mockDocument1);
         when(mockBlock2.isInline()).thenReturn(false);
         when(mockBlock2.isBlock()).thenReturn(true);
-        when(mockBlock2.getAttributes()).thenReturn(Collections.singletonMap("id", "secid"));
+        Map<String, Object> map2 = new HashMap<>();
+        map2.put("id", "secid");
+        when(mockBlock2.getAttributes()).thenReturn(map2);
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
@@ -95,11 +96,10 @@ public class MultiDivTest extends AbstractMultiDivTesting {
         when(mockDocument1.getBlocks()).thenReturn(Arrays.asList(mockBlock1, mockBlock2));
         when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument1.getDoctitle()).thenReturn(null);
-        ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("attributes", "{}")
-                .put("header_footer", false)
-                .build();
-        when(mockDocument1.getOptions()).thenReturn(map2);
+        Map<Object, Object> map3 = new HashMap<>();
+        map3.put("attributes", "{}");
+        map3.put("header_footer", false);
+        when(mockDocument1.getOptions()).thenReturn(map3);
         return mockDocument1;
     }
     // end::mock-code[]

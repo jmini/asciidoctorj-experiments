@@ -5,6 +5,8 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
@@ -12,8 +14,6 @@ import org.asciidoctor.ast.ListItem;
 import org.asciidoctor.ast.Section;
 import org.asciidoctor.ast.Title;
 import org.junit.Test;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
@@ -38,10 +38,9 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("figure-caption", "Figure")
-                .put("warning-caption", "Warning")
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("figure-caption", "Figure");
+        map1.put("warning-caption", "Warning");
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
@@ -193,10 +192,9 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockTitle1.isSanitized()).thenReturn(false);
         when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
         when(mockDocument1.getDoctitle()).thenReturn("A small List");
-        ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("attributes", "{}")
-                .put("header_footer", false)
-                .build();
+        Map<Object, Object> map2 = new HashMap<>();
+        map2.put("attributes", "{}");
+        map2.put("header_footer", false);
         when(mockDocument1.getOptions()).thenReturn(map2);
         return mockDocument1;
     }

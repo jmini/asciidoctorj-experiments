@@ -5,12 +5,12 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.Title;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
 
@@ -36,14 +36,13 @@ public class DivWithIdAndRoleTest extends AbstractDivWithIdAndRoleTesting {
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("doctitle", "My page")
-                .put("doctype", "article")
-                .put("example-caption", "Example")
-                .put("filetype", "html")
-                .put("notitle", "")
-                .put("prewrap", "")
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("doctitle", "My page");
+        map1.put("doctype", "article");
+        map1.put("example-caption", "Example");
+        map1.put("filetype", "html");
+        map1.put("notitle", "");
+        map1.put("prewrap", "");
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
@@ -61,11 +60,10 @@ public class DivWithIdAndRoleTest extends AbstractDivWithIdAndRoleTesting {
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(false);
         when(mockBlock1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map2 = ImmutableMap.<String, Object>builder()
-                .put("1", "#idname.rolename")
-                .put("id", "idname")
-                .put("role", "rolename")
-                .build();
+        Map<String, Object> map2 = new HashMap<>();
+        map2.put("1", "#idname.rolename");
+        map2.put("id", "idname");
+        map2.put("role", "rolename");
         when(mockBlock1.getAttributes()).thenReturn(map2);
         when(mockBlock1.getRoles()).thenReturn(Collections.singletonList("rolename"));
         when(mockBlock1.isReftext()).thenReturn(false);
@@ -87,10 +85,9 @@ public class DivWithIdAndRoleTest extends AbstractDivWithIdAndRoleTesting {
         when(mockTitle1.isSanitized()).thenReturn(false);
         when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
         when(mockDocument1.getDoctitle()).thenReturn("My page");
-        ImmutableMap<Object, Object> map3 = ImmutableMap.<Object, Object>builder()
-                .put("attributes", "{}")
-                .put("header_footer", false)
-                .build();
+        Map<Object, Object> map3 = new HashMap<>();
+        map3.put("attributes", "{}");
+        map3.put("header_footer", false);
         when(mockDocument1.getOptions()).thenReturn(map3);
         return mockDocument1;
     }

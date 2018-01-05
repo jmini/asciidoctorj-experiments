@@ -5,11 +5,11 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCustomCaptionTesting;
 
@@ -35,13 +35,12 @@ public class ExampleCustomCaptionTest extends AbstractExampleCustomCaptionTestin
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("doctype", "article")
-                .put("example-caption", "Ex")
-                .put("filetype", "html")
-                .put("notitle", "")
-                .put("prewrap", "")
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("doctype", "article");
+        map1.put("example-caption", "Ex");
+        map1.put("filetype", "html");
+        map1.put("notitle", "");
+        map1.put("prewrap", "");
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
@@ -59,10 +58,9 @@ public class ExampleCustomCaptionTest extends AbstractExampleCustomCaptionTestin
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(false);
         when(mockBlock1.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map2 = ImmutableMap.<String, Object>builder()
-                .put("style", "example")
-                .put("title", "first caption")
-                .build();
+        Map<String, Object> map2 = new HashMap<>();
+        map2.put("style", "example");
+        map2.put("title", "first caption");
         when(mockBlock1.getAttributes()).thenReturn(map2);
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
@@ -103,10 +101,9 @@ public class ExampleCustomCaptionTest extends AbstractExampleCustomCaptionTestin
         when(mockBlock3.getDocument()).thenReturn(mockDocument1);
         when(mockBlock3.isInline()).thenReturn(false);
         when(mockBlock3.isBlock()).thenReturn(true);
-        ImmutableMap<String, Object> map3 = ImmutableMap.<String, Object>builder()
-                .put("style", "example")
-                .put("title", "second caption")
-                .build();
+        Map<String, Object> map3 = new HashMap<>();
+        map3.put("style", "example");
+        map3.put("title", "second caption");
         when(mockBlock3.getAttributes()).thenReturn(map3);
         when(mockBlock3.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock3.isReftext()).thenReturn(false);
@@ -143,10 +140,9 @@ public class ExampleCustomCaptionTest extends AbstractExampleCustomCaptionTestin
         when(mockDocument1.getBlocks()).thenReturn(Arrays.asList(mockBlock1, mockBlock3));
         when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument1.getDoctitle()).thenReturn(null);
-        ImmutableMap<Object, Object> map4 = ImmutableMap.<Object, Object>builder()
-                .put("attributes", "{}")
-                .put("header_footer", false)
-                .build();
+        Map<Object, Object> map4 = new HashMap<>();
+        map4.put("attributes", "{}");
+        map4.put("header_footer", false);
         when(mockDocument1.getOptions()).thenReturn(map4);
         return mockDocument1;
     }

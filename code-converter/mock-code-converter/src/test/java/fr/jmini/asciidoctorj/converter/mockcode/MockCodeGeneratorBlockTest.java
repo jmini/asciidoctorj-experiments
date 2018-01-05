@@ -5,11 +5,11 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Block;
 import org.junit.Test;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
@@ -34,10 +34,9 @@ public class MockCodeGeneratorBlockTest {
         when(mockBlock1.getDocument()).thenReturn(null);
         when(mockBlock1.isInline()).thenReturn(false);
         when(mockBlock1.isBlock()).thenReturn(false);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("one", "lorem")
-                .put("two", "ipusm")
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("one", "lorem");
+        map1.put("two", "ipusm");
         when(mockBlock1.getAttributes()).thenReturn(map1);
         when(mockBlock1.getRoles()).thenReturn(Arrays.asList("r1", "r2"));
         when(mockBlock1.isReftext()).thenReturn(false);

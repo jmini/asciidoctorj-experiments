@@ -5,6 +5,8 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Author;
 import org.asciidoctor.ast.ContentPart;
@@ -13,8 +15,6 @@ import org.asciidoctor.ast.RevisionInfo;
 import org.asciidoctor.ast.StructuredDocument;
 import org.asciidoctor.ast.Title;
 import org.junit.Test;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
@@ -75,68 +75,67 @@ public class MockCodeGeneratorStructuredDocumentAstTest {
         when(mockRevisionInfo1.getRemark()).thenReturn(null);
         when(mockDocumentHeader1.getRevisionInfo()).thenReturn(mockRevisionInfo1);
         when(mockDocumentHeader1.getPageTitle()).thenReturn("My page");
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("appendix-caption", "Appendix")
-                .put("appendix-refsig", "Appendix")
-                .put("asciidoctor", "")
-                .put("asciidoctor-version", "1.5.6.1")
-                .put("attribute-missing", "skip")
-                .put("attribute-undefined", "drop-line")
-                .put("backend", "html5")
-                .put("backend-html5", "")
-                .put("backend-html5-doctype-article", "")
-                .put("basebackend", "html")
-                .put("basebackend-html", "")
-                .put("basebackend-html-doctype-article", "")
-                .put("caution-caption", "Caution")
-                .put("chapter-refsig", "Chapter")
-                .put("docdate", "2017-11-26")
-                .put("docdatetime", "2017-11-26 18:46:11 CET")
-                .put("docdir", "")
-                .put("doctime", "18:46:11 CET")
-                .put("doctitle", "My page")
-                .put("doctype", "article")
-                .put("doctype-article", "")
-                .put("docyear", "2017")
-                .put("embedded", "")
-                .put("example-caption", "Example")
-                .put("figure-caption", "Figure")
-                .put("filetype", "html")
-                .put("filetype-html", "")
-                .put("htmlsyntax", "html")
-                .put("iconfont-remote", "")
-                .put("iconsdir", "./images/icons")
-                .put("important-caption", "Important")
-                .put("last-update-label", "Last updated")
-                .put("linkcss", "")
-                .put("localdate", "2017-11-26")
-                .put("localdatetime", "2017-11-26 18:46:11 CET")
-                .put("localtime", "18:46:11 CET")
-                .put("localyear", "2017")
-                .put("manname-title", "NAME")
-                .put("max-attribute-value-size", "4096")
-                .put("max-include-depth", "64")
-                .put("note-caption", "Note")
-                .put("notitle", "")
-                .put("outfilesuffix", ".html")
-                .put("prewrap", "")
-                .put("safe-mode-level", "20")
-                .put("safe-mode-name", "secure")
-                .put("safe-mode-secure", "")
-                .put("sectids", "")
-                .put("section-refsig", "Section")
-                .put("stylesdir", ".")
-                .put("stylesheet", "")
-                .put("table-caption", "Table")
-                .put("tip-caption", "Tip")
-                .put("toc-placement", "auto")
-                .put("toc-title", "Table of Contents")
-                .put("untitled-label", "Untitled")
-                .put("user-home", ".")
-                .put("version-label", "Version")
-                .put("warning-caption", "Warning")
-                .put("webfonts", "")
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("appendix-caption", "Appendix");
+        map1.put("appendix-refsig", "Appendix");
+        map1.put("asciidoctor", "");
+        map1.put("asciidoctor-version", "1.5.6.1");
+        map1.put("attribute-missing", "skip");
+        map1.put("attribute-undefined", "drop-line");
+        map1.put("backend", "html5");
+        map1.put("backend-html5", "");
+        map1.put("backend-html5-doctype-article", "");
+        map1.put("basebackend", "html");
+        map1.put("basebackend-html", "");
+        map1.put("basebackend-html-doctype-article", "");
+        map1.put("caution-caption", "Caution");
+        map1.put("chapter-refsig", "Chapter");
+        map1.put("docdate", "2017-11-26");
+        map1.put("docdatetime", "2017-11-26 18:46:11 CET");
+        map1.put("docdir", "");
+        map1.put("doctime", "18:46:11 CET");
+        map1.put("doctitle", "My page");
+        map1.put("doctype", "article");
+        map1.put("doctype-article", "");
+        map1.put("docyear", "2017");
+        map1.put("embedded", "");
+        map1.put("example-caption", "Example");
+        map1.put("figure-caption", "Figure");
+        map1.put("filetype", "html");
+        map1.put("filetype-html", "");
+        map1.put("htmlsyntax", "html");
+        map1.put("iconfont-remote", "");
+        map1.put("iconsdir", "./images/icons");
+        map1.put("important-caption", "Important");
+        map1.put("last-update-label", "Last updated");
+        map1.put("linkcss", "");
+        map1.put("localdate", "2017-11-26");
+        map1.put("localdatetime", "2017-11-26 18:46:11 CET");
+        map1.put("localtime", "18:46:11 CET");
+        map1.put("localyear", "2017");
+        map1.put("manname-title", "NAME");
+        map1.put("max-attribute-value-size", "4096");
+        map1.put("max-include-depth", "64");
+        map1.put("note-caption", "Note");
+        map1.put("notitle", "");
+        map1.put("outfilesuffix", ".html");
+        map1.put("prewrap", "");
+        map1.put("safe-mode-level", "20");
+        map1.put("safe-mode-name", "secure");
+        map1.put("safe-mode-secure", "");
+        map1.put("sectids", "");
+        map1.put("section-refsig", "Section");
+        map1.put("stylesdir", ".");
+        map1.put("stylesheet", "");
+        map1.put("table-caption", "Table");
+        map1.put("tip-caption", "Tip");
+        map1.put("toc-placement", "auto");
+        map1.put("toc-title", "Table of Contents");
+        map1.put("untitled-label", "Untitled");
+        map1.put("user-home", ".");
+        map1.put("version-label", "Version");
+        map1.put("warning-caption", "Warning");
+        map1.put("webfonts", "");
         when(mockDocumentHeader1.getAttributes()).thenReturn(map1);
         when(mockStructuredDocument1.getHeader()).thenReturn(mockDocumentHeader1);
         return mockStructuredDocument1;

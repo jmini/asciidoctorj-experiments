@@ -4,11 +4,11 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Document;
 import org.junit.Test;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
@@ -33,11 +33,10 @@ public class MockCodeGeneratorDocumentTest {
         when(mockDocument1.getDocument()).thenReturn(null);
         when(mockDocument1.isInline()).thenReturn(false);
         when(mockDocument1.isBlock()).thenReturn(false);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("one", 1)
-                .put("three", 3)
-                .put("two", 2)
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("one", 1);
+        map1.put("three", 3);
+        map1.put("two", 2);
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
@@ -51,10 +50,9 @@ public class MockCodeGeneratorDocumentTest {
         when(mockDocument1.getBlocks()).thenReturn(Collections.emptyList());
         when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument1.getDoctitle()).thenReturn("this is a doc title");
-        ImmutableMap<Object, Object> map2 = ImmutableMap.<Object, Object>builder()
-                .put("ipsum", false)
-                .put("lorem", true)
-                .build();
+        Map<Object, Object> map2 = new HashMap<>();
+        map2.put("ipsum", false);
+        map2.put("lorem", true);
         when(mockDocument1.getOptions()).thenReturn(map2);
         return mockDocument1;
     }

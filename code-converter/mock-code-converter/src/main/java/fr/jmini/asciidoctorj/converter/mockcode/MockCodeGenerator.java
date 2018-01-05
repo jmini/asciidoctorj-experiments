@@ -3,7 +3,6 @@ package fr.jmini.asciidoctorj.converter.mockcode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import org.asciidoctor.ast.Author;
@@ -309,18 +308,10 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
             sb.append("when(" + expression + ").thenReturn(null);" + NL);
         } else if (value.isEmpty()) {
             sb.append("when(" + expression + ").thenReturn(Collections.emptyMap());" + NL);
-        } else if (value.size() == 1) {
-            Entry<? extends Object, Object> e = value.entrySet()
-                    .iterator()
-                    .next();
-            String entryKey = CodeConverterUtility.convertString(e.getKey()
-                    .toString());
-            String entryValue = CodeConverterUtility.convertObject(e.getValue());
-            sb.append("when(" + expression + ").thenReturn(Collections.singletonMap(" + entryKey + ", " + entryValue + "));" + NL);
         } else {
             String mapVarName = createVariable("map", null);
-            sb.append("ImmutableMap<" + keyClass.getSimpleName() + ", Object> " + mapVarName + " = ImmutableMap.<" + keyClass.getSimpleName() + ", Object>builder()" + NL);
-            sb.append(".put(");
+            sb.append("Map<" + keyClass.getSimpleName() + ", Object> " + mapVarName + " = new HashMap<>();" + NL);
+            sb.append(mapVarName + ".put(");
             sb.append(value.entrySet()
                     .stream()
                     .sorted(entryComparator())
@@ -328,8 +319,8 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
                         return CodeConverterUtility.convertString(e.getKey()
                                 .toString()) + ", " + CodeConverterUtility.convertObject(e.getValue());
                     })
-                    .collect(Collectors.joining(")" + NL + ".put(")));
-            sb.append(")" + NL + ".build();" + NL);
+                    .collect(Collectors.joining(");" + NL + mapVarName + ".put(")));
+            sb.append(");" + NL);
 
             sb.append("when(" + expression + ").thenReturn(" + mapVarName + ");" + NL);
         }

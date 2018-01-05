@@ -3,10 +3,11 @@ package fr.jmini.asciidoctorj.converter.mockcode;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.asciidoctor.ast.DocumentHeader;
 import org.junit.Test;
-
-import com.google.common.collect.ImmutableMap;
 
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 
@@ -31,10 +32,9 @@ public class MockCodeGeneratorDocumentHeaderTest {
         when(mockDocumentHeader1.getAuthor()).thenReturn(null);
         when(mockDocumentHeader1.getRevisionInfo()).thenReturn(null);
         when(mockDocumentHeader1.getPageTitle()).thenReturn(null);
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
-                .put("one", 1)
-                .put("two", 2)
-                .build();
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("one", 1);
+        map1.put("two", 2);
         when(mockDocumentHeader1.getAttributes()).thenReturn(map1);
         return mockDocumentHeader1;
     }
