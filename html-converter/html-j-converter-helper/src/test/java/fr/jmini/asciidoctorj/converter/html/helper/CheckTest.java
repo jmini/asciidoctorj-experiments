@@ -27,7 +27,6 @@ public class CheckTest {
 
             Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
             Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-            String expectedHtml = HtmlConverterHelper.computeExpectedHtmlConstant(document);
             CodeTestingUtility.rewriteAttributes(document.getAttributes());
 
             AssertCodeGenerator assertGenerator = new AssertCodeGenerator();
@@ -38,6 +37,7 @@ public class CheckTest {
             CodeTestingUtility.testGeneratedCode(sb.toString(), content, HtmlConverterHelper.ASSERT_CODE_TAG_NAME, true);
 
             assertThat(content).contains("public static final String EXPECTED_HTML");
+            String expectedHtml = HtmlConverterHelper.computeExpectedHtmlConstant(document);
             CodeTestingUtility.testGeneratedCode(expectedHtml, content, HtmlConverterHelper.EXPECTED_HTML_TAG_NAME, false);
         }
     }

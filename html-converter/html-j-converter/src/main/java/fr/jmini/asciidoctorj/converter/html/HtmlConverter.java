@@ -1,7 +1,6 @@
 package fr.jmini.asciidoctorj.converter.html;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +32,6 @@ import org.jsoup.nodes.Element;
 @ConverterFor("html-j")
 public class HtmlConverter extends StringConverter {
 
-    Map<String, Integer> counter = new HashMap<>();
-
     public HtmlConverter(String backend, Map<String, Object> opts) {
         super(backend, opts);
     }
@@ -60,7 +57,7 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "listingblock");
-            handleTitle(div, block, "listing-caption");
+            handleTitle(div, block, true);
             Element content = appendContentDiv(div);
             Element pre = content.appendElement("pre");
             List<String> classAttributeMembers = new ArrayList<>();
@@ -85,14 +82,14 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "exampleblock");
-            handleTitle(div, block, "example-caption");
+            handleTitle(div, block, true);
             Element content = appendContentDiv(div);
             handleStructuralNodeBlocks(content, block);
         } else if ("quote".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "quoteblock");
-            handleTitle(div, block, null);
+            handleTitle(div, block, false);
             Element blockquote = div.appendElement("blockquote");
             blockquote.text(String.join("\n", block.getLines()));
             handleStructuralNodeBlocks(blockquote, block);
@@ -175,7 +172,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, descriptionList);
         handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), descriptionList.getContext());
-        handleTitle(div, descriptionList, null);
+        handleTitle(div, descriptionList, false);
         Element dl = div.appendElement("dl");
         List<DescriptionListEntry> items = descriptionList.getItems();
         if (items != null) {
@@ -208,7 +205,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, list);
         handleStyleAndRoles(div, list, list.getStyle(), list.getContext());
-        handleTitle(div, list, null);
+        handleTitle(div, list, false);
         Element l = div.appendElement(list.getNodeName()
                 .substring(0, 2));
         if (list.getStyle() != null) {
@@ -308,16 +305,17 @@ public class HtmlConverter extends StringConverter {
         }
     }
 
-    private void handleTitle(Element e, StructuralNode structuralNode, String captionKey) {
+    private void handleTitle(Element e, StructuralNode structuralNode, boolean hasCaption) {
         String title = structuralNode.getTitle();
         if (title != null && !title.isEmpty()) {
             Element div = e.appendElement("div");
             div.attr("class", "title");
-            if (captionKey != null
+            String captionKey = structuralNode.getNodeName() + "-caption";
+            if (hasCaption
                     && structuralNode.getDocument()
                             .getAttributes()
                             .containsKey(captionKey)) {
-                int captionCounter = incrementCounterAndGet(captionKey);
+                int captionCounter = incrementCounterAndGet(structuralNode);
                 String captionLabel = structuralNode.getDocument()
                         .getAttributes()
                         .get(captionKey)
@@ -353,15 +351,19 @@ public class HtmlConverter extends StringConverter {
         // not implemented yet
     }
 
-    private int incrementCounterAndGet(String key) {
+    private int incrementCounterAndGet(StructuralNode structuralNode) {
         Integer value;
-        if (counter.containsKey(key)) {
-            value = counter.get(key);
+        String counterKey = structuralNode.getNodeName() + "-number";
+        Map<String, Object> attributes = structuralNode.getDocument()
+                .getAttributes();
+        if (attributes.containsKey(counterKey)) {
+            value = Integer.valueOf(attributes.get(counterKey)
+                    .toString());
         } else {
             value = 0;
         }
         value = value + 1;
-        counter.put(key, value);
+        attributes.put(counterKey, value.toString());
         return value;
     }
 

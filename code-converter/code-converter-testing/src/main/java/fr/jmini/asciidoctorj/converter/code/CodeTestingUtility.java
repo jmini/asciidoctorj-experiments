@@ -160,7 +160,9 @@ public class CodeTestingUtility {
     public static void rewriteAttributes(Map<String, Object> attributes) {
         Map<String, Object> newAttributes = new HashMap<>();
         copyValue("example-caption", attributes, newAttributes);
+        copyValue("example-number", attributes, newAttributes);
         copyValue("listing-caption", attributes, newAttributes);
+        copyValue("listing-number", attributes, newAttributes);
         copyValue("filetype", attributes, newAttributes);
         copyValue("doctitle", attributes, newAttributes);
         copyValue("doctype", attributes, newAttributes);

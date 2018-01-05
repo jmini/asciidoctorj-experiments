@@ -18,6 +18,7 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCustomCaptionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCustomCounterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleNestedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractHorizontalRuleTesting;
@@ -36,6 +37,7 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperalphaTest
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperromanTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListUlTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCustomCaptionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCustomCounterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingMultilineTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingParagraphSyntaxTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingTesting;
@@ -61,10 +63,12 @@ public class HtmlConverterHelper {
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
             .put(AbstractDivWithIdAndRoleTesting.class.getSimpleName(), AbstractDivWithIdAndRoleTesting.ASCIIDOC)
             .put(AbstractExampleCustomCaptionTesting.class.getSimpleName(), AbstractExampleCustomCaptionTesting.ASCIIDOC)
+            .put(AbstractExampleCustomCounterTesting.class.getSimpleName(), AbstractExampleCustomCounterTesting.ASCIIDOC)
             .put(AbstractExampleNestedTesting.class.getSimpleName(), AbstractExampleNestedTesting.ASCIIDOC)
             .put(AbstractExampleTesting.class.getSimpleName(), AbstractExampleTesting.ASCIIDOC)
             .put(AbstractHorizontalRuleTesting.class.getSimpleName(), AbstractHorizontalRuleTesting.ASCIIDOC)
             .put(AbstractListingCustomCaptionTesting.class.getSimpleName(), AbstractListingCustomCaptionTesting.ASCIIDOC)
+            .put(AbstractListingCustomCounterTesting.class.getSimpleName(), AbstractListingCustomCounterTesting.ASCIIDOC)
             .put(AbstractListingMultilineTesting.class.getSimpleName(), AbstractListingMultilineTesting.ASCIIDOC)
             .put(AbstractListingParagraphSyntaxTesting.class.getSimpleName(), AbstractListingParagraphSyntaxTesting.ASCIIDOC)
             .put(AbstractListingTesting.class.getSimpleName(), AbstractListingTesting.ASCIIDOC)

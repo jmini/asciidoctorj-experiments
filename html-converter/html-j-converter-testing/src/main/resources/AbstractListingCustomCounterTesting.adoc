@@ -1,0 +1,12 @@
+:listing-caption: Listing
+:listing-number: 10
+
+.first caption
+----
+First listing
+----
+
+.second caption
+----
+Second listing
+----
