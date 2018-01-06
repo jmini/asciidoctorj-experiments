@@ -5,6 +5,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Table;
 import org.junit.Test;
@@ -16,6 +18,12 @@ public class AssertCodeGeneratorTableTest {
     @Test
     public void testTable() throws Exception {
         Table mockTable = mock(Table.class);
+        Map<String, Object> attributes = new HashMap<>();
+        attributes.put("colcount", 2L);
+        attributes.put("rowcount", 1L);
+        attributes.put("style", "table");
+        attributes.put("tablepcwidth", 100L);
+        when(mockTable.getAttributes()).thenReturn(attributes);
         when(mockTable.hasHeaderOption()).thenReturn(true);
         when(mockTable.getColumns()).thenReturn(Collections.emptyList());
         when(mockTable.getHeader()).thenReturn(Collections.emptyList());
@@ -41,7 +49,10 @@ public class AssertCodeGeneratorTableTest {
         assertThat(table1.getDocument()).isNull();
         assertThat(table1.isInline()).isFalse();
         assertThat(table1.isBlock()).isFalse();
-        assertThat(table1.getAttributes()).isNullOrEmpty();
+        assertThat(table1.getAttributes()).containsEntry("colcount", 2L)
+                .containsEntry("rowcount", 1L)
+                .containsEntry("style", "table")
+                .containsEntry("tablepcwidth", 100L);
         assertThat(table1.getRoles()).isNullOrEmpty();
         assertThat(table1.isReftext()).isFalse();
         assertThat(table1.getReftext()).isNull();

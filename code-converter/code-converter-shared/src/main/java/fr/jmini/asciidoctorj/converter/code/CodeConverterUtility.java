@@ -19,6 +19,13 @@ public class CodeConverterUtility {
         return value.toString();
     }
 
+    public static String convertLong(Long value) {
+        if (value == null) {
+            return "null";
+        }
+        return value.toString() + "L";
+    }
+
     public static String convertString(String value) {
         if (value == null) {
             return "null";
@@ -69,6 +76,9 @@ public class CodeConverterUtility {
         }
         if (value instanceof Integer) {
             return convertInt((Integer) value);
+        }
+        if (value instanceof Long) {
+            return convertLong((Long) value);
         }
         if (value instanceof HorizontalAlignment) {
             return convertHorizontalAlignment((HorizontalAlignment) value);

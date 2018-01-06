@@ -4,6 +4,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Table;
 import org.junit.Test;
@@ -31,7 +33,12 @@ public class MockCodeGeneratorTableTest {
         when(mockTable1.getDocument()).thenReturn(null);
         when(mockTable1.isInline()).thenReturn(false);
         when(mockTable1.isBlock()).thenReturn(false);
-        when(mockTable1.getAttributes()).thenReturn(Collections.emptyMap());
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("colcount", 2L);
+        map1.put("rowcount", 1L);
+        map1.put("style", "table");
+        map1.put("tablepcwidth", 100L);
+        when(mockTable1.getAttributes()).thenReturn(map1);
         when(mockTable1.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable1.isReftext()).thenReturn(false);
         when(mockTable1.getReftext()).thenReturn(null);

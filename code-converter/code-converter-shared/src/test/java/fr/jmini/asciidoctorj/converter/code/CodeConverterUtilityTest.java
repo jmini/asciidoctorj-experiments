@@ -22,6 +22,12 @@ public class CodeConverterUtilityTest {
     }
 
     @Test
+    public void testConvertLong() {
+        assertThat(CodeConverterUtility.convertLong(null)).isEqualTo("null");
+        assertThat(CodeConverterUtility.convertLong(123L)).isEqualTo("123L");
+    }
+
+    @Test
     public void testConvertString() {
         assertThat(CodeConverterUtility.convertString(null)).isEqualTo("null");
         assertThat(CodeConverterUtility.convertString("some")).isEqualTo("\"some\"");
