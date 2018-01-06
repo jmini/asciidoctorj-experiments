@@ -163,6 +163,8 @@ public class CodeTestingUtility {
         copyValue("example-number", attributes, newAttributes);
         copyValue("listing-caption", attributes, newAttributes);
         copyValue("listing-number", attributes, newAttributes);
+        copyValue("table-caption", attributes, newAttributes);
+        copyValue("table-number", attributes, newAttributes);
         copyValue("filetype", attributes, newAttributes);
         copyValue("doctitle", attributes, newAttributes);
         copyValue("doctype", attributes, newAttributes);

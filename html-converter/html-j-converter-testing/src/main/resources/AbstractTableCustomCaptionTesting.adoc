@@ -1,0 +1,14 @@
+:table-caption: Tbl
+
+.some first caption
+|=== 
+
+| T1, Cell in column 1, row 1        |          T1, Cell in column 2, row 1
+
+|===
+.some second caption
+|=== 
+
+| T2, Cell in column 1, row 1     |   T2, Cell in column 2, row 1     
+
+|===

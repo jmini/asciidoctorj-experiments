@@ -40,6 +40,7 @@ public class ListingUnsetPrewrapTest extends AbstractListingUnsetPrewrapTesting 
         map1.put("example-caption", "Example");
         map1.put("filetype", "html");
         map1.put("notitle", "");
+        map1.put("table-caption", "Table");
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);

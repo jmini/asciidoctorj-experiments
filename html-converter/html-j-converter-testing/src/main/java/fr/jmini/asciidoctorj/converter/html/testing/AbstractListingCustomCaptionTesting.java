@@ -71,7 +71,8 @@ public abstract class AbstractListingCustomCaptionTesting {
                 .containsEntry("filetype", "html")
                 .containsEntry("listing-caption", "Listing")
                 .containsEntry("notitle", "")
-                .containsEntry("prewrap", "");
+                .containsEntry("prewrap", "")
+                .containsEntry("table-caption", "Table");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();

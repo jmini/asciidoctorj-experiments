@@ -42,6 +42,7 @@ public class ExampleCustomCounterTest extends AbstractExampleCustomCounterTestin
         map1.put("filetype", "html");
         map1.put("notitle", "");
         map1.put("prewrap", "");
+        map1.put("table-caption", "Table");
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);

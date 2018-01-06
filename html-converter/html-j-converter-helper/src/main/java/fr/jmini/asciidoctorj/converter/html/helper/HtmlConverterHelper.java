@@ -49,6 +49,10 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithIdAndRoleTe
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithoutBlockDelimiterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionAllTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCustomCaptionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCustomCounterTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableWhithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 
@@ -94,6 +98,10 @@ public class HtmlConverterHelper {
             .put(AbstractQuoteWithoutBlockDelimiterTesting.class.getSimpleName(), AbstractQuoteWithoutBlockDelimiterTesting.ASCIIDOC)
             .put(AbstractSectionAllTesting.class.getSimpleName(), AbstractSectionAllTesting.ASCIIDOC)
             .put(AbstractSectionTesting.class.getSimpleName(), AbstractSectionTesting.ASCIIDOC)
+            .put(AbstractTableCustomCaptionTesting.class.getSimpleName(), AbstractTableCustomCaptionTesting.ASCIIDOC)
+            .put(AbstractTableCustomCounterTesting.class.getSimpleName(), AbstractTableCustomCounterTesting.ASCIIDOC)
+            .put(AbstractTableTesting.class.getSimpleName(), AbstractTableTesting.ASCIIDOC)
+            .put(AbstractTableWhithIdAndRoleTesting.class.getSimpleName(), AbstractTableWhithIdAndRoleTesting.ASCIIDOC)
             .build();
 
     public static void main(String[] args) throws IOException {

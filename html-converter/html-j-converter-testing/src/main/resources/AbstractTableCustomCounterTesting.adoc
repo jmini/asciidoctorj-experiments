@@ -1,0 +1,15 @@
+:table-number: 10
+
+.this is the first caption
+|=== 
+
+|Cell in column 1, T 1 |Cell in column 2, T 1 |Cell in column 3, T 1
+
+|=== 
+
+.this is the second caption
+|=== 
+
+|Cell in column 1, T 2 |Cell in column 2, T 2 |Cell in column 3, T 2
+
+|===

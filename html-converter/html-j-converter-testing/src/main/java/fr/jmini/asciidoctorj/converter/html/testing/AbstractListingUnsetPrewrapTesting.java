@@ -55,6 +55,7 @@ public abstract class AbstractListingUnsetPrewrapTesting {
                 .containsEntry("example-caption", "Example")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
+                .containsEntry("table-caption", "Table")
                 .doesNotContainKey("prewrap");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();

@@ -57,7 +57,7 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "listingblock");
-            handleTitle(div, block, true);
+            handleTitle(div, block, "div", true);
             Element content = appendContentDiv(div);
             Element pre = content.appendElement("pre");
             List<String> classAttributeMembers = new ArrayList<>();
@@ -82,14 +82,14 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "exampleblock");
-            handleTitle(div, block, true);
+            handleTitle(div, block, "div", true);
             Element content = appendContentDiv(div);
             handleStructuralNodeBlocks(content, block);
         } else if ("quote".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "quoteblock");
-            handleTitle(div, block, false);
+            handleTitle(div, block, "div", false);
             Element blockquote = div.appendElement("blockquote");
             blockquote.text(String.join("\n", block.getLines()));
             handleStructuralNodeBlocks(blockquote, block);
@@ -111,11 +111,19 @@ public class HtmlConverter extends StringConverter {
     }
 
     public void convertCell(Element e, Cell cell) {
-        // not implemented yet
+        Element td = e.appendElement("td");
+        handleId(td, cell);
+        handleRoles(td, cell, "tableblock halign-left valign-top");
+
+        Element p = td.appendElement("p");
+        p.attr("class", "tableblock");
+        p.text(cell.getSource());
     }
 
     public void convertColumn(Element e, Column column) {
-        // not implemented yet
+        Element col = e.appendElement("col");
+        col.attr("style", "width: " + column.getAttributes()
+                .get("colpcwidth") + "%;");
     }
 
     public void convertContentNode(Element e, ContentNode contentNode) {
@@ -172,7 +180,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, descriptionList);
         handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), descriptionList.getContext());
-        handleTitle(div, descriptionList, false);
+        handleTitle(div, descriptionList, "div", false);
         Element dl = div.appendElement("dl");
         List<DescriptionListEntry> items = descriptionList.getItems();
         if (items != null) {
@@ -205,7 +213,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, list);
         handleStyleAndRoles(div, list, list.getStyle(), list.getContext());
-        handleTitle(div, list, false);
+        handleTitle(div, list, "div", false);
         Element l = div.appendElement(list.getNodeName()
                 .substring(0, 2));
         if (list.getStyle() != null) {
@@ -267,7 +275,10 @@ public class HtmlConverter extends StringConverter {
     }
 
     public void convertRow(Element e, Row row) {
-        // not implemented yet
+        Element tr = e.appendElement("tr");
+        for (Cell cell : row.getCells()) {
+            convertCell(tr, cell);
+        }
     }
 
     public void convertSection(Element e, Section section) {
@@ -305,10 +316,10 @@ public class HtmlConverter extends StringConverter {
         }
     }
 
-    private void handleTitle(Element e, StructuralNode structuralNode, boolean hasCaption) {
+    private void handleTitle(Element e, StructuralNode structuralNode, String tagName, boolean hasCaption) {
         String title = structuralNode.getTitle();
         if (title != null && !title.isEmpty()) {
-            Element div = e.appendElement("div");
+            Element div = e.appendElement(tagName);
             div.attr("class", "title");
             String captionKey = structuralNode.getNodeName() + "-caption";
             if (hasCaption
@@ -344,7 +355,27 @@ public class HtmlConverter extends StringConverter {
     }
 
     public void convertTable(Element e, Table table) {
-        // not implemented yet
+        Element t = e.appendElement("table");
+        handleId(t, table);
+        handleRoles(t, table, "tableblock frame-all grid-all spread");
+        handleTitle(t, table, "caption", true);
+
+        Element cg = t.appendElement("colgroup");
+        for (Column column : table.getColumns()) {
+            convertColumn(cg, column);
+        }
+
+        Element tbody = t.appendElement("tbody");
+        for (Row row : table.getHeader()) {
+            convertRow(tbody, row);
+        }
+        for (Row row : table.getBody()) {
+            convertRow(tbody, row);
+        }
+        for (Row row : table.getFooter()) {
+            convertRow(tbody, row);
+        }
+
     }
 
     public void convertTitle(Element e, Title title) {
