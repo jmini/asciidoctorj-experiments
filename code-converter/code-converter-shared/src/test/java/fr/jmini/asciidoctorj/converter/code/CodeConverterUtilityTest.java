@@ -28,6 +28,13 @@ public class CodeConverterUtilityTest {
     }
 
     @Test
+    public void testConvertDouble() {
+        assertThat(CodeConverterUtility.convertDouble(null)).isEqualTo("null");
+        assertThat(CodeConverterUtility.convertDouble(10.0)).isEqualTo("10.0");
+        assertThat(CodeConverterUtility.convertDouble(1.23)).isEqualTo("1.23");
+    }
+
+    @Test
     public void testConvertString() {
         assertThat(CodeConverterUtility.convertString(null)).isEqualTo("null");
         assertThat(CodeConverterUtility.convertString("some")).isEqualTo("\"some\"");

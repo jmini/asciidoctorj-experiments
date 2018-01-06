@@ -5,6 +5,9 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.asciidoctor.ast.Column;
 import org.asciidoctor.ast.Table;
 import org.junit.Test;
@@ -16,6 +19,13 @@ public class AssertCodeGeneratorColumnTest {
     @Test
     public void testColumn() throws Exception {
         Column mockColumn = mock(Column.class);
+        Map<String, Object> attributes = new HashMap<>();
+        attributes.put("colnumber", 1L);
+        attributes.put("colpcwidth", 33.3333);
+        attributes.put("halign", "left");
+        attributes.put("valign", "top");
+        attributes.put("width", 1L);
+        when(mockColumn.getAttributes()).thenReturn(attributes);
         when(mockColumn.isInline()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockColumn.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockColumn.getStyle()).thenReturn("STYLE");
@@ -47,7 +57,11 @@ public class AssertCodeGeneratorColumnTest {
         assertThatThrownBy(() -> {
             column1.isBlock();
         }).hasMessageContaining("NotImplementedError");
-        assertThat(column1.getAttributes()).isNullOrEmpty();
+        assertThat(column1.getAttributes()).containsEntry("colnumber", 1L)
+                .containsEntry("colpcwidth", 33.3333)
+                .containsEntry("halign", "left")
+                .containsEntry("valign", "top")
+                .containsEntry("width", 1L);
         assertThat(column1.getRoles()).isNullOrEmpty();
         assertThat(column1.isReftext()).isFalse();
         assertThat(column1.getReftext()).isNull();

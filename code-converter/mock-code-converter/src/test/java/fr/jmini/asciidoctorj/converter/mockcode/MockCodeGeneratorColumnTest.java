@@ -4,7 +4,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.asciidoctor.ast.Column;
 import org.asciidoctor.ast.Table;
@@ -34,7 +35,13 @@ public class MockCodeGeneratorColumnTest {
         when(mockColumn1.getDocument()).thenReturn(null);
         when(mockColumn1.isInline()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
         when(mockColumn1.isBlock()).thenThrow(new UnsupportedOperationException("NotImplementedError"));
-        when(mockColumn1.getAttributes()).thenReturn(Collections.emptyMap());
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("colnumber", 1L);
+        map1.put("colpcwidth", 33.3333);
+        map1.put("halign", "left");
+        map1.put("valign", "top");
+        map1.put("width", 1L);
+        when(mockColumn1.getAttributes()).thenReturn(map1);
         when(mockColumn1.getRoles()).thenReturn(Arrays.asList("r1", "r2", "r3"));
         when(mockColumn1.isReftext()).thenReturn(false);
         when(mockColumn1.getReftext()).thenReturn(null);
