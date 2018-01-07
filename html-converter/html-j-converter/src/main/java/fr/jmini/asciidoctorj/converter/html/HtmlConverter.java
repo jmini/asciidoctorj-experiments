@@ -1,6 +1,7 @@
 package fr.jmini.asciidoctorj.converter.html;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -110,14 +111,22 @@ public class HtmlConverter extends StringConverter {
         return content;
     }
 
-    public void convertCell(Element e, Cell cell) {
-        Element td = e.appendElement("td");
-        handleId(td, cell);
-        handleRoles(td, cell, "tableblock halign-left valign-top");
+    public void convertCell(Element e, Cell cell, String cellTagName) {
+        Element c = e.appendElement(cellTagName);
+        handleId(c, cell);
+        addClassAttribute(c, Arrays.asList("tableblock",
+                "halign-" + cell.getAttributes()
+                        .get("halign"),
+                "valign-" + cell.getAttributes()
+                        .get("valign")));
 
-        Element p = td.appendElement("p");
-        p.attr("class", "tableblock");
-        p.text(cell.getSource());
+        if ("th".equals(cellTagName)) {
+            c.text(cell.getSource());
+        } else {
+            Element p = c.appendElement("p");
+            p.attr("class", "tableblock");
+            p.text(cell.getSource());
+        }
     }
 
     public void convertColumn(Element e, Column column) {
@@ -128,7 +137,7 @@ public class HtmlConverter extends StringConverter {
 
     public void convertContentNode(Element e, ContentNode contentNode) {
         if (contentNode instanceof Cell) {
-            convertCell(e, (Cell) contentNode);
+            convertCell(e, (Cell) contentNode, "td");
         } else if (contentNode instanceof Column) {
             convertColumn(e, (Column) contentNode);
         } else if (contentNode instanceof PhraseNode) {
@@ -274,10 +283,10 @@ public class HtmlConverter extends StringConverter {
         // not implemented yet
     }
 
-    public void convertRow(Element e, Row row) {
+    public void convertRow(Element e, Row row, String cellTagName) {
         Element tr = e.appendElement("tr");
         for (Cell cell : row.getCells()) {
-            convertCell(tr, cell);
+            convertCell(tr, cell, cellTagName);
         }
     }
 
@@ -365,17 +374,27 @@ public class HtmlConverter extends StringConverter {
             convertColumn(cg, column);
         }
 
-        Element tbody = t.appendElement("tbody");
-        for (Row row : table.getHeader()) {
-            convertRow(tbody, row);
+        List<Row> header = table.getHeader();
+        if (header.size() > 0) {
+            Element thead = t.appendElement("thead");
+            for (Row row : header) {
+                convertRow(thead, row, "th");
+            }
         }
-        for (Row row : table.getBody()) {
-            convertRow(tbody, row);
+        List<Row> footer = table.getFooter();
+        if (footer.size() > 0) {
+            Element tfoot = t.appendElement("tfoot");
+            for (Row row : footer) {
+                convertRow(tfoot, row, "td");
+            }
         }
-        for (Row row : table.getFooter()) {
-            convertRow(tbody, row);
+        List<Row> body = table.getBody();
+        if (body.size() > 0) {
+            Element tbody = t.appendElement("tbody");
+            for (Row row : body) {
+                convertRow(tbody, row, "td");
+            }
         }
-
     }
 
     public void convertTitle(Element e, Title title) {
