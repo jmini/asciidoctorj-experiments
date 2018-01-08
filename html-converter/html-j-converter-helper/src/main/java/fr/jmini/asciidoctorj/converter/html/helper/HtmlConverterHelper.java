@@ -142,7 +142,7 @@ public class HtmlConverterHelper {
 
                 Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
                 Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-                CodeTestingUtility.rewriteAttributes(document.getAttributes());
+                CodeTestingUtility.rewriteAttributes(document);
 
                 String assertCode = computeAssertCode(document);
                 CodeTestingUtility.replaceContentInFile(abstractTestingFile, assertCode, ASSERT_CODE_TAG_NAME, true, true);

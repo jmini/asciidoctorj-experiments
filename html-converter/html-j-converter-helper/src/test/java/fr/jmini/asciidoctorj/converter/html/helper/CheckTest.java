@@ -27,7 +27,7 @@ public class CheckTest {
 
             Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
             Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-            CodeTestingUtility.rewriteAttributes(document.getAttributes());
+            CodeTestingUtility.rewriteAttributes(document);
 
             AssertCodeGenerator assertGenerator = new AssertCodeGenerator();
             StringBuilder sb = new StringBuilder();
@@ -56,7 +56,7 @@ public class CheckTest {
 
             Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
             Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
-            CodeTestingUtility.rewriteAttributes(document.getAttributes());
+            CodeTestingUtility.rewriteAttributes(document);
 
             MockCodeGenerator mockGenerator = new MockCodeGenerator();
             StringBuilder sb = new StringBuilder();

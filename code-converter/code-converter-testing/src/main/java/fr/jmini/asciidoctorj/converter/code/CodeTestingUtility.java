@@ -8,7 +8,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
+
+import org.asciidoctor.ast.Document;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
@@ -155,6 +158,13 @@ public class CodeTestingUtility {
                 .getName()
                 .replace('.', '/');
         return new File("src/test/java/" + packageDir + "/" + utClass.getSimpleName() + ".java");
+    }
+
+    public static void rewriteAttributes(Document document) {
+        Set<Document> documents = AsciidocAstUtility.findAllDocumentNode(document);
+        for (Document d : documents) {
+            rewriteAttributes(d.getAttributes());
+        }
     }
 
     public static void rewriteAttributes(Map<String, Object> attributes) {
