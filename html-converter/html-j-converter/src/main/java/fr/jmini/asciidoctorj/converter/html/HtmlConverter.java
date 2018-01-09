@@ -112,7 +112,12 @@ public class HtmlConverter extends StringConverter {
     }
 
     public void convertCell(Element e, Cell cell, String cellTagName) {
-        Element c = e.appendElement(cellTagName);
+        Element c;
+        if ("header".equals(cell.getStyle())) {
+            c = e.appendElement("th");
+        } else {
+            c = e.appendElement(cellTagName);
+        }
         handleId(c, cell);
         addClassAttribute(c, Arrays.asList("tableblock",
                 "halign-" + cell.getAttributes()
@@ -120,12 +125,37 @@ public class HtmlConverter extends StringConverter {
                 "valign-" + cell.getAttributes()
                         .get("valign")));
 
-        if ("th".equals(cellTagName)) {
+        if (cell.getInnerDocument() != null) {
+            Element div = c.appendElement("div");
+            convertDocument(div, cell.getInnerDocument());
+        } else if ("literal".equals(cell.getStyle())) {
+            Element div = c.appendElement("div");
+            div.attr("class", "literal");
+            Element pre = div.appendElement("pre");
+            pre.text(cell.getSource());
+        } else if ("verse".equals(cell.getStyle())) {
+            Element div = c.appendElement("div");
+            div.attr("class", "verse");
+            div.text(cell.getSource());
+        } else if ("th".equals(cellTagName)) {
             c.text(cell.getSource());
         } else {
             Element p = c.appendElement("p");
             p.attr("class", "tableblock");
-            p.text(cell.getSource());
+            Element textElement;
+            if ("emphasis".equals(cell.getStyle())) {
+                Element em = p.appendElement("em");
+                textElement = em;
+            } else if ("monospaced".equals(cell.getStyle())) {
+                Element code = p.appendElement("code");
+                textElement = code;
+            } else if ("strong".equals(cell.getStyle())) {
+                Element strong = p.appendElement("strong");
+                textElement = strong;
+            } else {
+                textElement = p;
+            }
+            textElement.text(cell.getSource());
         }
     }
 
