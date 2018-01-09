@@ -314,6 +314,7 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
             sb.append(mapVarName + ".put(");
             sb.append(value.entrySet()
                     .stream()
+                    .filter(e -> !"base_dir".equals(e.getKey()))
                     .sorted(entryComparator())
                     .map(e -> {
                         return CodeConverterUtility.convertString(e.getKey()

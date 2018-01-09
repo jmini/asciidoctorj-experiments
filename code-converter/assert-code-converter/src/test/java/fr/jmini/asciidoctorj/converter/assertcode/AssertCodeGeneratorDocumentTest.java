@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.util.Collections;
-
 import org.asciidoctor.ast.Document;
 import org.junit.Test;
 
@@ -20,15 +18,22 @@ public class AssertCodeGeneratorDocumentTest {
         Document mockDocument = mock(Document.class);
         when(mockDocument.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument.getDoctitle()).thenReturn("this is a doc title");
-        when(mockDocument.getOptions()).thenReturn(Collections.singletonMap("one", true));
-        ImmutableMap<String, Object> map1 = ImmutableMap.<String, Object>builder()
+        ImmutableMap<String, Object> attributes = ImmutableMap.<String, Object>builder()
                 .put("doctitle", "My page")
                 .put("doctype", "article")
                 .put("filetype", "html")
                 .put("notitle", "")
                 .put("prewrap", "")
                 .build();
-        when(mockDocument.getAttributes()).thenReturn(map1);
+        when(mockDocument.getAttributes()).thenReturn(attributes);
+        ImmutableMap<Object, Object> options = ImmutableMap.<Object, Object>builder()
+                .put("attributes", "a")
+                .put("base_dir", "b")
+                .put("1", false)
+                .put("one", 1L)
+                .put("two", true)
+                .build();
+        when(mockDocument.getOptions()).thenReturn(options);
 
         AssertCodeGenerator generator = new AssertCodeGenerator();
         StringBuilder sb = new StringBuilder();
@@ -64,7 +69,8 @@ public class AssertCodeGeneratorDocumentTest {
         assertThat(document1.getBlocks()).isNullOrEmpty();
         assertThat(document1.getStructuredDoctitle()).isNull();
         assertThat(document1.getDoctitle()).isEqualTo("this is a doc title");
-        assertThat(document1.getOptions()).containsEntry("one", true);
+        assertThat(document1.getOptions()).containsEntry("one", 1L)
+                .containsEntry("two", true);
     }
     // end::generated-code[]
 }

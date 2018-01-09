@@ -393,9 +393,11 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
             sb.append("containsEntry(");
             sb.append(value.entrySet()
                     .stream()
-                    .filter(e -> !"attributes".equals(e.getKey()) && !e.getKey()
-                            .toString()
-                            .matches("[0-9]+"))
+                    .filter(e -> !"attributes".equals(e.getKey())
+                            && !"base_dir".equals(e.getKey())
+                            && !e.getKey()
+                                    .toString()
+                                    .matches("[0-9]+"))
                     .sorted(entryComparator())
                     .map(e -> {
                         return CodeConverterUtility.convertString(e.getKey()

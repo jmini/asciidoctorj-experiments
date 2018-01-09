@@ -17,6 +17,11 @@ public class MockCodeGeneratorDocumentTest {
     @Test
     public void testDocument() throws Exception {
         Document mockDocument = createMock();
+        Map<Object, Object> options = new HashMap<>();
+        options.put("base_dir", "b");
+        options.put("ipsum", false);
+        options.put("lorem", 1L);
+        when(mockDocument.getOptions()).thenReturn(options);
 
         MockCodeGenerator generator = new MockCodeGenerator();
         StringBuilder sb = new StringBuilder();
@@ -52,7 +57,7 @@ public class MockCodeGeneratorDocumentTest {
         when(mockDocument1.getDoctitle()).thenReturn("this is a doc title");
         Map<Object, Object> map2 = new HashMap<>();
         map2.put("ipsum", false);
-        map2.put("lorem", true);
+        map2.put("lorem", 1L);
         when(mockDocument1.getOptions()).thenReturn(map2);
         return mockDocument1;
     }
