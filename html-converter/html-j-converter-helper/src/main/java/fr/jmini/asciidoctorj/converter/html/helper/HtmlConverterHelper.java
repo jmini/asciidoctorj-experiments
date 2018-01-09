@@ -2,7 +2,9 @@ package fr.jmini.asciidoctorj.converter.html.helper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
@@ -49,6 +51,8 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithIdAndRoleTe
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithoutBlockDelimiterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionAllTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableAutowidthSpreadTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableAutowidthTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColsAttributeTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingHalignTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingValignTesting;
@@ -63,6 +67,7 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowOnlyTe
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableWhithIdAndRoleTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableWidthTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 
@@ -71,7 +76,9 @@ public class HtmlConverterHelper {
     public static final String ASSERT_CODE_TAG_NAME = "assert-code";
     public static final String MOCK_CODE_TAG_NAME = "mock-code";
     public static final String EXPECTED_HTML_TAG_NAME = "expected-html";
+    public static final String CONENT_MAP_TAG_NAME = "content-map";
 
+    // tag::content-map[]
     public static Map<String, String> ASCIIDOC_CONTENT_MAP = ImmutableMap.<String, String>builder()
             .put(AbstractDivMultilineTesting.class.getSimpleName(), AbstractDivMultilineTesting.ASCIIDOC)
             .put(AbstractDivSimpleTesting.class.getSimpleName(), AbstractDivSimpleTesting.ASCIIDOC)
@@ -108,6 +115,8 @@ public class HtmlConverterHelper {
             .put(AbstractQuoteWithoutBlockDelimiterTesting.class.getSimpleName(), AbstractQuoteWithoutBlockDelimiterTesting.ASCIIDOC)
             .put(AbstractSectionAllTesting.class.getSimpleName(), AbstractSectionAllTesting.ASCIIDOC)
             .put(AbstractSectionTesting.class.getSimpleName(), AbstractSectionTesting.ASCIIDOC)
+            .put(AbstractTableAutowidthSpreadTesting.class.getSimpleName(), AbstractTableAutowidthSpreadTesting.ASCIIDOC)
+            .put(AbstractTableAutowidthTesting.class.getSimpleName(), AbstractTableAutowidthTesting.ASCIIDOC)
             .put(AbstractTableColsAttributeTesting.class.getSimpleName(), AbstractTableColsAttributeTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingHalignTesting.class.getSimpleName(), AbstractTableColumnFormattingHalignTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingValignTesting.class.getSimpleName(), AbstractTableColumnFormattingValignTesting.ASCIIDOC)
@@ -122,15 +131,34 @@ public class HtmlConverterHelper {
             .put(AbstractTableHeaderRowTesting.class.getSimpleName(), AbstractTableHeaderRowTesting.ASCIIDOC)
             .put(AbstractTableTesting.class.getSimpleName(), AbstractTableTesting.ASCIIDOC)
             .put(AbstractTableWhithIdAndRoleTesting.class.getSimpleName(), AbstractTableWhithIdAndRoleTesting.ASCIIDOC)
+            .put(AbstractTableWidthTesting.class.getSimpleName(), AbstractTableWidthTesting.ASCIIDOC)
             .build();
+    // end::content-map[]
 
     public static void main(String[] args) throws IOException {
         File[] files = findTestingFiles();
+        boolean allFilePresent = true;
         for (File file : files) {
             String abstractTestingClassName = computeClassName(file);
             if (!ASCIIDOC_CONTENT_MAP.containsKey(abstractTestingClassName)) {
-                throw new IllegalStateException(abstractTestingClassName + " key is missing in ASCIIDOC_CONTENT_MAP");
+                allFilePresent = false;
             }
+        }
+        if (!allFilePresent) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("public static Map<String, String> ASCIIDOC_CONTENT_MAP = ImmutableMap.<String, String>builder()\n");
+            sb.append(Arrays.stream(files)
+                    .sorted()
+                    .map(f -> {
+                        String name = f.getName()
+                                .replace(".java", "");
+                        return ".put(" + name + ".class.getSimpleName(), " + name + ".ASCIIDOC)";
+                    })
+                    .collect(Collectors.joining("\n")));
+            sb.append(".build();");
+            CodeTestingUtility.replaceContentInFile(CodeTestingUtility.javaFile("main", HtmlConverterHelper.class), sb.toString(), CONENT_MAP_TAG_NAME, false, true);
+
+            throw new IllegalStateException("Some keys are missing in ASCIIDOC_CONTENT_MAP");
         }
         for (File abstractTestingFile : files) {
             System.out.println(abstractTestingFile.getName());

@@ -2,6 +2,7 @@ package fr.jmini.asciidoctorj.converter.html;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -161,8 +162,12 @@ public class HtmlConverter extends StringConverter {
 
     public void convertColumn(Element e, Column column) {
         Element col = e.appendElement("col");
-        col.attr("style", "width: " + column.getAttributes()
-                .get("colpcwidth") + "%;");
+        if (!column.getTable()
+                .getAttributes()
+                .containsKey("autowidth-option")) {
+            col.attr("style", "width: " + column.getAttributes()
+                    .get("colpcwidth") + "%;");
+        }
     }
 
     public void convertContentNode(Element e, ContentNode contentNode) {
@@ -186,12 +191,16 @@ public class HtmlConverter extends StringConverter {
     }
 
     private void handleRoles(Element div, ContentNode contentNode, String initialClass) {
-        handleStyleAndRoles(div, contentNode, null, initialClass);
+        handleStyleAndRoles(div, contentNode, null, Collections.singletonList(initialClass));
     }
 
-    private void handleStyleAndRoles(Element div, ContentNode contentNode, String style, String initialClass) {
+    private void handleRoles(Element div, ContentNode contentNode, List<String> initialClasses) {
+        handleStyleAndRoles(div, contentNode, null, initialClasses);
+    }
+
+    private void handleStyleAndRoles(Element div, ContentNode contentNode, String style, List<String> initialClasses) {
         List<String> classAttributeMembers = new ArrayList<>();
-        classAttributeMembers.add(initialClass);
+        classAttributeMembers.addAll(initialClasses);
         if (style != null && !style.isEmpty()) {
             classAttributeMembers.add(style);
         }
@@ -218,7 +227,7 @@ public class HtmlConverter extends StringConverter {
     public void convertDescriptionList(Element e, DescriptionList descriptionList) {
         Element div = e.appendElement("div");
         handleId(div, descriptionList);
-        handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), descriptionList.getContext());
+        handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), Collections.singletonList(descriptionList.getContext()));
         handleTitle(div, descriptionList, "div", false);
         Element dl = div.appendElement("dl");
         List<DescriptionListEntry> items = descriptionList.getItems();
@@ -251,7 +260,7 @@ public class HtmlConverter extends StringConverter {
     public void convertList(Element e, org.asciidoctor.ast.List list) {
         Element div = e.appendElement("div");
         handleId(div, list);
-        handleStyleAndRoles(div, list, list.getStyle(), list.getContext());
+        handleStyleAndRoles(div, list, list.getStyle(), Collections.singletonList(list.getContext()));
         handleTitle(div, list, "div", false);
         Element l = div.appendElement(list.getNodeName()
                 .substring(0, 2));
@@ -396,7 +405,19 @@ public class HtmlConverter extends StringConverter {
     public void convertTable(Element e, Table table) {
         Element t = e.appendElement("table");
         handleId(t, table);
-        handleRoles(t, table, "tableblock frame-all grid-all spread");
+        if (table.getAttributes()
+                .containsKey("autowidth-option") ||
+                table.getAttributes()
+                        .containsKey("width")) {
+            handleRoles(t, table, Arrays.asList("tableblock", "frame-all", "grid-all"));
+        } else {
+            handleRoles(t, table, Arrays.asList("tableblock", "frame-all", "grid-all", "spread"));
+        }
+        if (table.getAttributes()
+                .containsKey("width")) {
+            t.attr("style", "width: " + table.getAttributes()
+                    .get("width") + ";");
+        }
         handleTitle(t, table, "caption", true);
 
         Element cg = t.appendElement("colgroup");

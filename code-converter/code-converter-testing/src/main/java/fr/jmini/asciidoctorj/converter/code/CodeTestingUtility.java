@@ -153,11 +153,15 @@ public class CodeTestingUtility {
         return content;
     }
 
-    private static File javaFile(Class<?> utClass) {
-        String packageDir = utClass.getPackage()
+    private static File javaFile(Class<?> cls) {
+        return javaFile("test", cls);
+    }
+
+    public static File javaFile(String srcType, Class<?> cls) {
+        String packageDir = cls.getPackage()
                 .getName()
                 .replace('.', '/');
-        return new File("src/test/java/" + packageDir + "/" + utClass.getSimpleName() + ".java");
+        return new File("src/" + srcType + "/java/" + packageDir + "/" + cls.getSimpleName() + ".java");
     }
 
     public static void rewriteAttributes(Document document) {
