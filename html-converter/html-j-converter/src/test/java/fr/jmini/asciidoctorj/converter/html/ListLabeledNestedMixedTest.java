@@ -33,6 +33,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -57,6 +58,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         DescriptionList mockDescriptionList1 = mock(DescriptionList.class);
         when(mockDescriptionList1.getId()).thenReturn(null);
         when(mockDescriptionList1.getNodeName()).thenReturn("dlist");
+        when(mockDescriptionList1.getParent()).thenReturn(mockDocument1);
         when(mockDescriptionList1.getContext()).thenReturn("dlist");
         when(mockDescriptionList1.getDocument()).thenReturn(mockDocument1);
         when(mockDescriptionList1.isInline()).thenReturn(false);
@@ -76,6 +78,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem1 = mock(ListItem.class);
         when(mockListItem1.getId()).thenReturn(null);
         when(mockListItem1.getNodeName()).thenReturn("list_item");
+        when(mockListItem1.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem1.getContext()).thenReturn("list_item");
         when(mockListItem1.getDocument()).thenReturn(mockDocument1);
         when(mockListItem1.isInline()).thenReturn(false);
@@ -93,6 +96,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         DescriptionList mockDescriptionList2 = mock(DescriptionList.class);
         when(mockDescriptionList2.getId()).thenReturn(null);
         when(mockDescriptionList2.getNodeName()).thenReturn("dlist");
+        when(mockDescriptionList2.getParent()).thenReturn(mockListItem1);
         when(mockDescriptionList2.getContext()).thenReturn("dlist");
         when(mockDescriptionList2.getDocument()).thenReturn(mockDocument1);
         when(mockDescriptionList2.isInline()).thenReturn(false);
@@ -112,6 +116,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem2 = mock(ListItem.class);
         when(mockListItem2.getId()).thenReturn(null);
         when(mockListItem2.getNodeName()).thenReturn("list_item");
+        when(mockListItem2.getParent()).thenReturn(mockDescriptionList2);
         when(mockListItem2.getContext()).thenReturn("list_item");
         when(mockListItem2.getDocument()).thenReturn(mockDocument1);
         when(mockListItem2.isInline()).thenReturn(false);
@@ -315,6 +320,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem8 = mock(ListItem.class);
         when(mockListItem8.getId()).thenReturn(null);
         when(mockListItem8.getNodeName()).thenReturn("list_item");
+        when(mockListItem8.getParent()).thenReturn(mockDescriptionList2);
         when(mockListItem8.getContext()).thenReturn("list_item");
         when(mockListItem8.getDocument()).thenReturn(mockDocument1);
         when(mockListItem8.isInline()).thenReturn(false);
@@ -339,6 +345,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem9 = mock(ListItem.class);
         when(mockListItem9.getId()).thenReturn(null);
         when(mockListItem9.getNodeName()).thenReturn("list_item");
+        when(mockListItem9.getParent()).thenReturn(mockDescriptionList2);
         when(mockListItem9.getContext()).thenReturn("list_item");
         when(mockListItem9.getDocument()).thenReturn(mockDocument1);
         when(mockListItem9.isInline()).thenReturn(false);
@@ -431,6 +438,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem12 = mock(ListItem.class);
         when(mockListItem12.getId()).thenReturn(null);
         when(mockListItem12.getNodeName()).thenReturn("list_item");
+        when(mockListItem12.getParent()).thenReturn(mockDescriptionList2);
         when(mockListItem12.getContext()).thenReturn("list_item");
         when(mockListItem12.getDocument()).thenReturn(mockDocument1);
         when(mockListItem12.isInline()).thenReturn(false);
@@ -461,6 +469,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem13 = mock(ListItem.class);
         when(mockListItem13.getId()).thenReturn(null);
         when(mockListItem13.getNodeName()).thenReturn("list_item");
+        when(mockListItem13.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem13.getContext()).thenReturn("list_item");
         when(mockListItem13.getDocument()).thenReturn(mockDocument1);
         when(mockListItem13.isInline()).thenReturn(false);
@@ -485,6 +494,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem14 = mock(ListItem.class);
         when(mockListItem14.getId()).thenReturn(null);
         when(mockListItem14.getNodeName()).thenReturn("list_item");
+        when(mockListItem14.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem14.getContext()).thenReturn("list_item");
         when(mockListItem14.getDocument()).thenReturn(mockDocument1);
         when(mockListItem14.isInline()).thenReturn(false);
@@ -502,6 +512,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         DescriptionList mockDescriptionList3 = mock(DescriptionList.class);
         when(mockDescriptionList3.getId()).thenReturn(null);
         when(mockDescriptionList3.getNodeName()).thenReturn("dlist");
+        when(mockDescriptionList3.getParent()).thenReturn(mockListItem14);
         when(mockDescriptionList3.getContext()).thenReturn("dlist");
         when(mockDescriptionList3.getDocument()).thenReturn(mockDocument1);
         when(mockDescriptionList3.isInline()).thenReturn(false);
@@ -521,6 +532,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem15 = mock(ListItem.class);
         when(mockListItem15.getId()).thenReturn(null);
         when(mockListItem15.getNodeName()).thenReturn("list_item");
+        when(mockListItem15.getParent()).thenReturn(mockDescriptionList3);
         when(mockListItem15.getContext()).thenReturn("list_item");
         when(mockListItem15.getDocument()).thenReturn(mockDocument1);
         when(mockListItem15.isInline()).thenReturn(false);
@@ -613,6 +625,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem18 = mock(ListItem.class);
         when(mockListItem18.getId()).thenReturn(null);
         when(mockListItem18.getNodeName()).thenReturn("list_item");
+        when(mockListItem18.getParent()).thenReturn(mockDescriptionList3);
         when(mockListItem18.getContext()).thenReturn("list_item");
         when(mockListItem18.getDocument()).thenReturn(mockDocument1);
         when(mockListItem18.isInline()).thenReturn(false);
@@ -637,6 +650,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem19 = mock(ListItem.class);
         when(mockListItem19.getId()).thenReturn(null);
         when(mockListItem19.getNodeName()).thenReturn("list_item");
+        when(mockListItem19.getParent()).thenReturn(mockDescriptionList3);
         when(mockListItem19.getContext()).thenReturn("list_item");
         when(mockListItem19.getDocument()).thenReturn(mockDocument1);
         when(mockListItem19.isInline()).thenReturn(false);
@@ -729,6 +743,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem22 = mock(ListItem.class);
         when(mockListItem22.getId()).thenReturn(null);
         when(mockListItem22.getNodeName()).thenReturn("list_item");
+        when(mockListItem22.getParent()).thenReturn(mockDescriptionList3);
         when(mockListItem22.getContext()).thenReturn("list_item");
         when(mockListItem22.getDocument()).thenReturn(mockDocument1);
         when(mockListItem22.isInline()).thenReturn(false);
@@ -759,6 +774,7 @@ public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTe
         ListItem mockListItem23 = mock(ListItem.class);
         when(mockListItem23.getId()).thenReturn(null);
         when(mockListItem23.getNodeName()).thenReturn("list_item");
+        when(mockListItem23.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem23.getContext()).thenReturn("list_item");
         when(mockListItem23.getDocument()).thenReturn(mockDocument1);
         when(mockListItem23.isInline()).thenReturn(false);

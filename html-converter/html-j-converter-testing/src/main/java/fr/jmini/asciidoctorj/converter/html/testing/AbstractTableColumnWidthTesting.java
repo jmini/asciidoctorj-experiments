@@ -59,6 +59,7 @@ public abstract class AbstractTableColumnWidthTesting {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo("document");
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
@@ -83,6 +84,7 @@ public abstract class AbstractTableColumnWidthTesting {
                 .get(0);
         assertThat(table1.getId()).isNull();
         assertThat(table1.getNodeName()).isEqualTo("table");
+        assertThat(table1.getParent()).isSameAs(document1);
         assertThat(table1.getContext()).isEqualTo("table");
         assertThat(table1.getDocument()).isSameAs(document1);
         assertThat(table1.isInline()).isFalse();

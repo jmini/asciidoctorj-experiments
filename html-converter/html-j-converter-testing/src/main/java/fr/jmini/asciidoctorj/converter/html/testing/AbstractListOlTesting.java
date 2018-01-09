@@ -50,6 +50,7 @@ public abstract class AbstractListOlTesting {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo("document");
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();

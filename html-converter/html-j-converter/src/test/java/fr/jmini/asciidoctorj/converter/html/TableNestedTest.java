@@ -35,6 +35,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -59,6 +60,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Table mockTable1 = mock(Table.class);
         when(mockTable1.getId()).thenReturn(null);
         when(mockTable1.getNodeName()).thenReturn("table");
+        when(mockTable1.getParent()).thenReturn(mockDocument1);
         when(mockTable1.getContext()).thenReturn("table");
         when(mockTable1.getDocument()).thenReturn(mockDocument1);
         when(mockTable1.isInline()).thenReturn(false);
@@ -191,6 +193,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Document mockDocument2 = mock(Document.class);
         when(mockDocument2.getId()).thenReturn(null);
         when(mockDocument2.getNodeName()).thenReturn("document");
+        when(mockDocument2.getParent()).thenReturn(null);
         when(mockDocument2.getContext()).thenReturn("document");
         when(mockDocument2.getDocument()).thenReturn(mockDocument2);
         when(mockDocument2.isInline()).thenReturn(false);
@@ -215,6 +218,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Block mockBlock1 = mock(Block.class);
         when(mockBlock1.getId()).thenReturn(null);
         when(mockBlock1.getNodeName()).thenReturn("paragraph");
+        when(mockBlock1.getParent()).thenReturn(mockDocument2);
         when(mockBlock1.getContext()).thenReturn("paragraph");
         when(mockBlock1.getDocument()).thenReturn(mockDocument2);
         when(mockBlock1.isInline()).thenReturn(false);
@@ -301,6 +305,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Document mockDocument3 = mock(Document.class);
         when(mockDocument3.getId()).thenReturn(null);
         when(mockDocument3.getNodeName()).thenReturn("document");
+        when(mockDocument3.getParent()).thenReturn(null);
         when(mockDocument3.getContext()).thenReturn("document");
         when(mockDocument3.getDocument()).thenReturn(mockDocument3);
         when(mockDocument3.isInline()).thenReturn(false);
@@ -325,6 +330,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Block mockBlock2 = mock(Block.class);
         when(mockBlock2.getId()).thenReturn(null);
         when(mockBlock2.getNodeName()).thenReturn("paragraph");
+        when(mockBlock2.getParent()).thenReturn(mockDocument3);
         when(mockBlock2.getContext()).thenReturn("paragraph");
         when(mockBlock2.getDocument()).thenReturn(mockDocument3);
         when(mockBlock2.isInline()).thenReturn(false);
@@ -427,6 +433,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Document mockDocument4 = mock(Document.class);
         when(mockDocument4.getId()).thenReturn(null);
         when(mockDocument4.getNodeName()).thenReturn("document");
+        when(mockDocument4.getParent()).thenReturn(null);
         when(mockDocument4.getContext()).thenReturn("document");
         when(mockDocument4.getDocument()).thenReturn(mockDocument4);
         when(mockDocument4.isInline()).thenReturn(false);
@@ -451,6 +458,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Block mockBlock3 = mock(Block.class);
         when(mockBlock3.getId()).thenReturn(null);
         when(mockBlock3.getNodeName()).thenReturn("paragraph");
+        when(mockBlock3.getParent()).thenReturn(mockDocument4);
         when(mockBlock3.getContext()).thenReturn("paragraph");
         when(mockBlock3.getDocument()).thenReturn(mockDocument4);
         when(mockBlock3.isInline()).thenReturn(false);
@@ -471,6 +479,7 @@ public class TableNestedTest extends AbstractTableNestedTesting {
         Table mockTable2 = mock(Table.class);
         when(mockTable2.getId()).thenReturn(null);
         when(mockTable2.getNodeName()).thenReturn("table");
+        when(mockTable2.getParent()).thenReturn(mockDocument4);
         when(mockTable2.getContext()).thenReturn("table");
         when(mockTable2.getDocument()).thenReturn(mockDocument4);
         when(mockTable2.isInline()).thenReturn(false);

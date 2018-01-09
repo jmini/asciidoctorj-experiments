@@ -110,6 +110,7 @@ public abstract class AbstractTableNestedTesting {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo("document");
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
@@ -134,6 +135,7 @@ public abstract class AbstractTableNestedTesting {
                 .get(0);
         assertThat(table1.getId()).isNull();
         assertThat(table1.getNodeName()).isEqualTo("table");
+        assertThat(table1.getParent()).isSameAs(document1);
         assertThat(table1.getContext()).isEqualTo("table");
         assertThat(table1.getDocument()).isSameAs(document1);
         assertThat(table1.isInline()).isFalse();
@@ -277,6 +279,7 @@ public abstract class AbstractTableNestedTesting {
         Document document2 = cell2.getInnerDocument();
         assertThat(document2.getId()).isNull();
         assertThat(document2.getNodeName()).isEqualTo("document");
+        assertThat(document2.getParent()).isNull();
         assertThat(document2.getContext()).isEqualTo("document");
         assertThat(document2.getDocument()).isSameAs(document2);
         assertThat(document2.isInline()).isFalse();
@@ -301,6 +304,7 @@ public abstract class AbstractTableNestedTesting {
                 .get(0);
         assertThat(block1.getId()).isNull();
         assertThat(block1.getNodeName()).isEqualTo("paragraph");
+        assertThat(block1.getParent()).isSameAs(document2);
         assertThat(block1.getContext()).isEqualTo("paragraph");
         assertThat(block1.getDocument()).isSameAs(document2);
         assertThat(block1.isInline()).isFalse();
@@ -388,6 +392,7 @@ public abstract class AbstractTableNestedTesting {
         Document document3 = cell4.getInnerDocument();
         assertThat(document3.getId()).isNull();
         assertThat(document3.getNodeName()).isEqualTo("document");
+        assertThat(document3.getParent()).isNull();
         assertThat(document3.getContext()).isEqualTo("document");
         assertThat(document3.getDocument()).isSameAs(document3);
         assertThat(document3.isInline()).isFalse();
@@ -412,6 +417,7 @@ public abstract class AbstractTableNestedTesting {
                 .get(0);
         assertThat(block2.getId()).isNull();
         assertThat(block2.getNodeName()).isEqualTo("paragraph");
+        assertThat(block2.getParent()).isSameAs(document3);
         assertThat(block2.getContext()).isEqualTo("paragraph");
         assertThat(block2.getDocument()).isSameAs(document3);
         assertThat(block2.isInline()).isFalse();
@@ -515,6 +521,7 @@ public abstract class AbstractTableNestedTesting {
         Document document4 = cell6.getInnerDocument();
         assertThat(document4.getId()).isNull();
         assertThat(document4.getNodeName()).isEqualTo("document");
+        assertThat(document4.getParent()).isNull();
         assertThat(document4.getContext()).isEqualTo("document");
         assertThat(document4.getDocument()).isSameAs(document4);
         assertThat(document4.isInline()).isFalse();
@@ -539,6 +546,7 @@ public abstract class AbstractTableNestedTesting {
                 .get(0);
         assertThat(block3.getId()).isNull();
         assertThat(block3.getNodeName()).isEqualTo("paragraph");
+        assertThat(block3.getParent()).isSameAs(document4);
         assertThat(block3.getContext()).isEqualTo("paragraph");
         assertThat(block3.getDocument()).isSameAs(document4);
         assertThat(block3.isInline()).isFalse();
@@ -560,6 +568,7 @@ public abstract class AbstractTableNestedTesting {
                 .get(1);
         assertThat(table2.getId()).isNull();
         assertThat(table2.getNodeName()).isEqualTo("table");
+        assertThat(table2.getParent()).isSameAs(document4);
         assertThat(table2.getContext()).isEqualTo("table");
         assertThat(table2.getDocument()).isSameAs(document4);
         assertThat(table2.isInline()).isFalse();

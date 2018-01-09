@@ -85,6 +85,7 @@ public abstract class AbstractTableCaptionCustomTesting {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo("document");
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
@@ -109,6 +110,7 @@ public abstract class AbstractTableCaptionCustomTesting {
                 .get(0);
         assertThat(table1.getId()).isNull();
         assertThat(table1.getNodeName()).isEqualTo("table");
+        assertThat(table1.getParent()).isSameAs(document1);
         assertThat(table1.getContext()).isEqualTo("table");
         assertThat(table1.getDocument()).isSameAs(document1);
         assertThat(table1.isInline()).isFalse();
@@ -253,6 +255,7 @@ public abstract class AbstractTableCaptionCustomTesting {
                 .get(1);
         assertThat(table2.getId()).isNull();
         assertThat(table2.getNodeName()).isEqualTo("table");
+        assertThat(table2.getParent()).isSameAs(document1);
         assertThat(table2.getContext()).isEqualTo("table");
         assertThat(table2.getDocument()).isSameAs(document1);
         assertThat(table2.isInline()).isFalse();

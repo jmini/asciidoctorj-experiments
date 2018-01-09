@@ -32,6 +32,7 @@ public class AssertCodeGeneratorListItemTest {
         ListItem listItem1 = astListItem;
         assertThat(listItem1.getId()).isNull();
         assertThat(listItem1.getNodeName()).isNull();
+        assertThat(listItem1.getParent()).isNull();
         assertThat(listItem1.getContext()).isNull();
         assertThat(listItem1.getDocument()).isNull();
         assertThat(listItem1.isInline()).isFalse();

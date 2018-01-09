@@ -63,6 +63,7 @@ public abstract class AbstractListLabeledTesting {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo("document");
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
@@ -87,6 +88,7 @@ public abstract class AbstractListLabeledTesting {
                 .get(0);
         assertThat(descriptionList1.getId()).isNull();
         assertThat(descriptionList1.getNodeName()).isEqualTo("dlist");
+        assertThat(descriptionList1.getParent()).isSameAs(document1);
         assertThat(descriptionList1.getContext()).isEqualTo("dlist");
         assertThat(descriptionList1.getDocument()).isSameAs(document1);
         assertThat(descriptionList1.isInline()).isFalse();
@@ -108,6 +110,7 @@ public abstract class AbstractListLabeledTesting {
         ListItem listItem1 = descriptionListEntry1.getDescription();
         assertThat(listItem1.getId()).isNull();
         assertThat(listItem1.getNodeName()).isEqualTo("list_item");
+        assertThat(listItem1.getParent()).isSameAs(descriptionList1);
         assertThat(listItem1.getContext()).isEqualTo("list_item");
         assertThat(listItem1.getDocument()).isSameAs(document1);
         assertThat(listItem1.isInline()).isFalse();
@@ -132,6 +135,7 @@ public abstract class AbstractListLabeledTesting {
                 .get(0);
         assertThat(listItem2.getId()).isNull();
         assertThat(listItem2.getNodeName()).isEqualTo("list_item");
+        assertThat(listItem2.getParent()).isSameAs(descriptionList1);
         assertThat(listItem2.getContext()).isEqualTo("list_item");
         assertThat(listItem2.getDocument()).isSameAs(document1);
         assertThat(listItem2.isInline()).isFalse();
@@ -156,6 +160,7 @@ public abstract class AbstractListLabeledTesting {
         ListItem listItem3 = descriptionListEntry2.getDescription();
         assertThat(listItem3.getId()).isNull();
         assertThat(listItem3.getNodeName()).isEqualTo("list_item");
+        assertThat(listItem3.getParent()).isSameAs(descriptionList1);
         assertThat(listItem3.getContext()).isEqualTo("list_item");
         assertThat(listItem3.getDocument()).isSameAs(document1);
         assertThat(listItem3.isInline()).isFalse();
@@ -180,6 +185,7 @@ public abstract class AbstractListLabeledTesting {
                 .get(0);
         assertThat(listItem4.getId()).isNull();
         assertThat(listItem4.getNodeName()).isEqualTo("list_item");
+        assertThat(listItem4.getParent()).isSameAs(descriptionList1);
         assertThat(listItem4.getContext()).isEqualTo("list_item");
         assertThat(listItem4.getDocument()).isSameAs(document1);
         assertThat(listItem4.isInline()).isFalse();
@@ -204,6 +210,7 @@ public abstract class AbstractListLabeledTesting {
         ListItem listItem5 = descriptionListEntry3.getDescription();
         assertThat(listItem5.getId()).isNull();
         assertThat(listItem5.getNodeName()).isEqualTo("list_item");
+        assertThat(listItem5.getParent()).isSameAs(descriptionList1);
         assertThat(listItem5.getContext()).isEqualTo("list_item");
         assertThat(listItem5.getDocument()).isSameAs(document1);
         assertThat(listItem5.isInline()).isFalse();
@@ -228,6 +235,7 @@ public abstract class AbstractListLabeledTesting {
                 .get(0);
         assertThat(listItem6.getId()).isNull();
         assertThat(listItem6.getNodeName()).isEqualTo("list_item");
+        assertThat(listItem6.getParent()).isSameAs(descriptionList1);
         assertThat(listItem6.getContext()).isEqualTo("list_item");
         assertThat(listItem6.getDocument()).isSameAs(document1);
         assertThat(listItem6.isInline()).isFalse();

@@ -27,6 +27,7 @@ public class MockCodeGeneratorListTest {
         List mockList1 = mock(org.asciidoctor.ast.List.class);
         when(mockList1.getId()).thenReturn(null);
         when(mockList1.getNodeName()).thenReturn(null);
+        when(mockList1.getParent()).thenReturn(null);
         when(mockList1.getContext()).thenReturn(null);
         when(mockList1.getDocument()).thenReturn(null);
         when(mockList1.isInline()).thenReturn(false);

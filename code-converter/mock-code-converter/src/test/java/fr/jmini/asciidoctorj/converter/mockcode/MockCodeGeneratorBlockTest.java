@@ -30,6 +30,7 @@ public class MockCodeGeneratorBlockTest {
         Block mockBlock1 = mock(Block.class);
         when(mockBlock1.getId()).thenReturn("block-id");
         when(mockBlock1.getNodeName()).thenReturn("some-name");
+        when(mockBlock1.getParent()).thenReturn(null);
         when(mockBlock1.getContext()).thenReturn(null);
         when(mockBlock1.getDocument()).thenReturn(null);
         when(mockBlock1.isInline()).thenReturn(false);

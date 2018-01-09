@@ -37,6 +37,7 @@ public abstract class AbstractHorizontalRuleTesting {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo("document");
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
@@ -61,6 +62,7 @@ public abstract class AbstractHorizontalRuleTesting {
                 .get(0);
         assertThat(block1.getId()).isNull();
         assertThat(block1.getNodeName()).isEqualTo("thematic_break");
+        assertThat(block1.getParent()).isSameAs(document1);
         assertThat(block1.getContext()).isEqualTo("thematic_break");
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();

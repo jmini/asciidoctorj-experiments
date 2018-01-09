@@ -33,6 +33,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -57,6 +58,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         DescriptionList mockDescriptionList1 = mock(DescriptionList.class);
         when(mockDescriptionList1.getId()).thenReturn("idd");
         when(mockDescriptionList1.getNodeName()).thenReturn("dlist");
+        when(mockDescriptionList1.getParent()).thenReturn(mockDocument1);
         when(mockDescriptionList1.getContext()).thenReturn("dlist");
         when(mockDescriptionList1.getDocument()).thenReturn(mockDocument1);
         when(mockDescriptionList1.isInline()).thenReturn(false);
@@ -80,6 +82,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         ListItem mockListItem1 = mock(ListItem.class);
         when(mockListItem1.getId()).thenReturn(null);
         when(mockListItem1.getNodeName()).thenReturn("list_item");
+        when(mockListItem1.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem1.getContext()).thenReturn("list_item");
         when(mockListItem1.getDocument()).thenReturn(mockDocument1);
         when(mockListItem1.isInline()).thenReturn(false);
@@ -103,6 +106,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         ListItem mockListItem2 = mock(ListItem.class);
         when(mockListItem2.getId()).thenReturn(null);
         when(mockListItem2.getNodeName()).thenReturn("list_item");
+        when(mockListItem2.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem2.getContext()).thenReturn("list_item");
         when(mockListItem2.getDocument()).thenReturn(mockDocument1);
         when(mockListItem2.isInline()).thenReturn(false);
@@ -127,6 +131,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         ListItem mockListItem3 = mock(ListItem.class);
         when(mockListItem3.getId()).thenReturn(null);
         when(mockListItem3.getNodeName()).thenReturn("list_item");
+        when(mockListItem3.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem3.getContext()).thenReturn("list_item");
         when(mockListItem3.getDocument()).thenReturn(mockDocument1);
         when(mockListItem3.isInline()).thenReturn(false);
@@ -150,6 +155,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         ListItem mockListItem4 = mock(ListItem.class);
         when(mockListItem4.getId()).thenReturn(null);
         when(mockListItem4.getNodeName()).thenReturn("list_item");
+        when(mockListItem4.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem4.getContext()).thenReturn("list_item");
         when(mockListItem4.getDocument()).thenReturn(mockDocument1);
         when(mockListItem4.isInline()).thenReturn(false);
@@ -174,6 +180,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         ListItem mockListItem5 = mock(ListItem.class);
         when(mockListItem5.getId()).thenReturn(null);
         when(mockListItem5.getNodeName()).thenReturn("list_item");
+        when(mockListItem5.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem5.getContext()).thenReturn("list_item");
         when(mockListItem5.getDocument()).thenReturn(mockDocument1);
         when(mockListItem5.isInline()).thenReturn(false);
@@ -197,6 +204,7 @@ public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRo
         ListItem mockListItem6 = mock(ListItem.class);
         when(mockListItem6.getId()).thenReturn(null);
         when(mockListItem6.getNodeName()).thenReturn("list_item");
+        when(mockListItem6.getParent()).thenReturn(mockDescriptionList1);
         when(mockListItem6.getContext()).thenReturn("list_item");
         when(mockListItem6.getDocument()).thenReturn(mockDocument1);
         when(mockListItem6.isInline()).thenReturn(false);

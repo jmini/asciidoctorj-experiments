@@ -34,6 +34,7 @@ public class MockCodeGeneratorDocumentTest {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn(null);
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn(null);
         when(mockDocument1.getDocument()).thenReturn(null);
         when(mockDocument1.isInline()).thenReturn(false);

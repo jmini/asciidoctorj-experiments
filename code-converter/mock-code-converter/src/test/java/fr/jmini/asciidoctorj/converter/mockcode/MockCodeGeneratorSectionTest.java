@@ -27,6 +27,7 @@ public class MockCodeGeneratorSectionTest {
         Section mockSection1 = mock(Section.class);
         when(mockSection1.getId()).thenReturn(null);
         when(mockSection1.getNodeName()).thenReturn(null);
+        when(mockSection1.getParent()).thenReturn(null);
         when(mockSection1.getContext()).thenReturn(null);
         when(mockSection1.getDocument()).thenReturn(null);
         when(mockSection1.isInline()).thenReturn(false);

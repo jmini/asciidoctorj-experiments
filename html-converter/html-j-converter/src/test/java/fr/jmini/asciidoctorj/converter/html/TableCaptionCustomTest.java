@@ -34,6 +34,7 @@ public class TableCaptionCustomTest extends AbstractTableCaptionCustomTesting {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -58,6 +59,7 @@ public class TableCaptionCustomTest extends AbstractTableCaptionCustomTesting {
         Table mockTable1 = mock(Table.class);
         when(mockTable1.getId()).thenReturn(null);
         when(mockTable1.getNodeName()).thenReturn("table");
+        when(mockTable1.getParent()).thenReturn(mockDocument1);
         when(mockTable1.getContext()).thenReturn("table");
         when(mockTable1.getDocument()).thenReturn(mockDocument1);
         when(mockTable1.isInline()).thenReturn(false);
@@ -190,6 +192,7 @@ public class TableCaptionCustomTest extends AbstractTableCaptionCustomTesting {
         Table mockTable2 = mock(Table.class);
         when(mockTable2.getId()).thenReturn(null);
         when(mockTable2.getNodeName()).thenReturn("table");
+        when(mockTable2.getParent()).thenReturn(mockDocument1);
         when(mockTable2.getContext()).thenReturn("table");
         when(mockTable2.getDocument()).thenReturn(mockDocument1);
         when(mockTable2.isInline()).thenReturn(false);

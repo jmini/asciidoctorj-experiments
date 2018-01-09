@@ -44,6 +44,7 @@ public class AssertCodeGeneratorBlockTest {
         Block block1 = astBlock;
         assertThat(block1.getId()).isEqualTo("block-id");
         assertThat(block1.getNodeName()).isEqualTo("some-name");
+        assertThat(block1.getParent()).isNull();
         assertThat(block1.getContext()).isNull();
         assertThat(block1.getDocument()).isNull();
         assertThat(block1.isInline()).isTrue();

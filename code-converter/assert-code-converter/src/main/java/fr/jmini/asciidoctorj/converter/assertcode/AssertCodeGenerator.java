@@ -86,10 +86,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
     protected void appendContentNode(StringBuilder sb, String varName, ContentNode contentNode) {
         appendEqualsToExpressionString(sb, varName + ".getId()", contentNode.getId());
         appendEqualsToExpressionString(sb, varName + ".getNodeName()", contentNode.getNodeName());
-        // getParent() can not be called on the root element, see https://github.com/asciidoctor/asciidoctorj/issues/593
-        if (!(contentNode instanceof StructuralNode) || ((StructuralNode) contentNode).getLevel() > 0) {
-            appendEqualsToExpressionObject(sb, varName + ".getParent()", contentNode.getParent());
-        }
+        appendEqualsToExpressionObject(sb, varName + ".getParent()", contentNode.getParent());
         appendEqualsToExpressionString(sb, varName + ".getContext()", contentNode.getContext());
         appendEqualsToExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
         // NOTE: a NotImplementedError is sometime thrown when contentNode.isInline() is called.

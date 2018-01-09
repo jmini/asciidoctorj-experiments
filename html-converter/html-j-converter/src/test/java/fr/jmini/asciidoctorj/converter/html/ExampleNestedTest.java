@@ -31,6 +31,7 @@ public class ExampleNestedTest extends AbstractExampleNestedTesting {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -55,6 +56,7 @@ public class ExampleNestedTest extends AbstractExampleNestedTesting {
         Block mockBlock1 = mock(Block.class);
         when(mockBlock1.getId()).thenReturn(null);
         when(mockBlock1.getNodeName()).thenReturn("example");
+        when(mockBlock1.getParent()).thenReturn(mockDocument1);
         when(mockBlock1.getContext()).thenReturn("example");
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(false);
@@ -75,6 +77,7 @@ public class ExampleNestedTest extends AbstractExampleNestedTesting {
         Block mockBlock2 = mock(Block.class);
         when(mockBlock2.getId()).thenReturn(null);
         when(mockBlock2.getNodeName()).thenReturn("paragraph");
+        when(mockBlock2.getParent()).thenReturn(mockBlock1);
         when(mockBlock2.getContext()).thenReturn("paragraph");
         when(mockBlock2.getDocument()).thenReturn(mockDocument1);
         when(mockBlock2.isInline()).thenReturn(false);
@@ -95,6 +98,7 @@ public class ExampleNestedTest extends AbstractExampleNestedTesting {
         Block mockBlock3 = mock(Block.class);
         when(mockBlock3.getId()).thenReturn(null);
         when(mockBlock3.getNodeName()).thenReturn("listing");
+        when(mockBlock3.getParent()).thenReturn(mockBlock1);
         when(mockBlock3.getContext()).thenReturn("listing");
         when(mockBlock3.getDocument()).thenReturn(mockDocument1);
         when(mockBlock3.isInline()).thenReturn(false);
@@ -122,6 +126,7 @@ public class ExampleNestedTest extends AbstractExampleNestedTesting {
         Block mockBlock4 = mock(Block.class);
         when(mockBlock4.getId()).thenReturn(null);
         when(mockBlock4.getNodeName()).thenReturn("paragraph");
+        when(mockBlock4.getParent()).thenReturn(mockBlock1);
         when(mockBlock4.getContext()).thenReturn("paragraph");
         when(mockBlock4.getDocument()).thenReturn(mockDocument1);
         when(mockBlock4.isInline()).thenReturn(false);

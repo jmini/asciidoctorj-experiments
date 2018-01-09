@@ -51,6 +51,7 @@ public abstract class AbstractQuoteTesting {
         Document document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo("document");
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo("document");
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
@@ -75,6 +76,7 @@ public abstract class AbstractQuoteTesting {
                 .get(0);
         assertThat(block1.getId()).isNull();
         assertThat(block1.getNodeName()).isEqualTo("quote");
+        assertThat(block1.getParent()).isSameAs(document1);
         assertThat(block1.getContext()).isEqualTo("quote");
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
@@ -94,6 +96,7 @@ public abstract class AbstractQuoteTesting {
                 .get(0);
         assertThat(block2.getId()).isNull();
         assertThat(block2.getNodeName()).isEqualTo("paragraph");
+        assertThat(block2.getParent()).isSameAs(block1);
         assertThat(block2.getContext()).isEqualTo("paragraph");
         assertThat(block2.getDocument()).isSameAs(document1);
         assertThat(block2.isInline()).isFalse();
@@ -115,6 +118,7 @@ public abstract class AbstractQuoteTesting {
                 .get(1);
         assertThat(block3.getId()).isNull();
         assertThat(block3.getNodeName()).isEqualTo("paragraph");
+        assertThat(block3.getParent()).isSameAs(block1);
         assertThat(block3.getContext()).isEqualTo("paragraph");
         assertThat(block3.getDocument()).isSameAs(document1);
         assertThat(block3.isInline()).isFalse();

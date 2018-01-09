@@ -31,6 +31,7 @@ public class MultiDivTest extends AbstractMultiDivTesting {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -55,6 +56,7 @@ public class MultiDivTest extends AbstractMultiDivTesting {
         Block mockBlock1 = mock(Block.class);
         when(mockBlock1.getId()).thenReturn(null);
         when(mockBlock1.getNodeName()).thenReturn("paragraph");
+        when(mockBlock1.getParent()).thenReturn(mockDocument1);
         when(mockBlock1.getContext()).thenReturn("paragraph");
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(false);
@@ -75,6 +77,7 @@ public class MultiDivTest extends AbstractMultiDivTesting {
         Block mockBlock2 = mock(Block.class);
         when(mockBlock2.getId()).thenReturn("secid");
         when(mockBlock2.getNodeName()).thenReturn("paragraph");
+        when(mockBlock2.getParent()).thenReturn(mockDocument1);
         when(mockBlock2.getContext()).thenReturn("paragraph");
         when(mockBlock2.getDocument()).thenReturn(mockDocument1);
         when(mockBlock2.isInline()).thenReturn(false);

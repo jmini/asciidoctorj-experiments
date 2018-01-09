@@ -27,6 +27,7 @@ public class MockCodeGeneratorDescriptionListTest {
         DescriptionList mockDescriptionList1 = mock(DescriptionList.class);
         when(mockDescriptionList1.getId()).thenReturn(null);
         when(mockDescriptionList1.getNodeName()).thenReturn(null);
+        when(mockDescriptionList1.getParent()).thenReturn(null);
         when(mockDescriptionList1.getContext()).thenReturn(null);
         when(mockDescriptionList1.getDocument()).thenReturn(null);
         when(mockDescriptionList1.isInline()).thenReturn(false);

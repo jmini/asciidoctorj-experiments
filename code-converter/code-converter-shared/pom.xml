@@ -11,7 +11,7 @@
   <dependencies>
     <dependency>
       <groupId>org.asciidoctor</groupId>
-      <artifactId>asciidoctorj</artifactId>
+      <artifactId>asciidoctorj-api</artifactId>
     </dependency>
 
     <dependency>

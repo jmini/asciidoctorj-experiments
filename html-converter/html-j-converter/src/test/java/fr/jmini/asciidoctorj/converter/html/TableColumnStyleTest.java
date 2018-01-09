@@ -35,6 +35,7 @@ public class TableColumnStyleTest extends AbstractTableColumnStyleTesting {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -59,6 +60,7 @@ public class TableColumnStyleTest extends AbstractTableColumnStyleTesting {
         Table mockTable1 = mock(Table.class);
         when(mockTable1.getId()).thenReturn(null);
         when(mockTable1.getNodeName()).thenReturn("table");
+        when(mockTable1.getParent()).thenReturn(mockDocument1);
         when(mockTable1.getContext()).thenReturn("table");
         when(mockTable1.getDocument()).thenReturn(mockDocument1);
         when(mockTable1.isInline()).thenReturn(false);
@@ -315,6 +317,7 @@ public class TableColumnStyleTest extends AbstractTableColumnStyleTesting {
         Document mockDocument2 = mock(Document.class);
         when(mockDocument2.getId()).thenReturn(null);
         when(mockDocument2.getNodeName()).thenReturn("document");
+        when(mockDocument2.getParent()).thenReturn(null);
         when(mockDocument2.getContext()).thenReturn("document");
         when(mockDocument2.getDocument()).thenReturn(mockDocument2);
         when(mockDocument2.isInline()).thenReturn(false);
@@ -339,6 +342,7 @@ public class TableColumnStyleTest extends AbstractTableColumnStyleTesting {
         Block mockBlock1 = mock(Block.class);
         when(mockBlock1.getId()).thenReturn(null);
         when(mockBlock1.getNodeName()).thenReturn("paragraph");
+        when(mockBlock1.getParent()).thenReturn(mockDocument2);
         when(mockBlock1.getContext()).thenReturn("paragraph");
         when(mockBlock1.getDocument()).thenReturn(mockDocument2);
         when(mockBlock1.isInline()).thenReturn(false);
@@ -592,6 +596,7 @@ public class TableColumnStyleTest extends AbstractTableColumnStyleTesting {
         Document mockDocument3 = mock(Document.class);
         when(mockDocument3.getId()).thenReturn(null);
         when(mockDocument3.getNodeName()).thenReturn("document");
+        when(mockDocument3.getParent()).thenReturn(null);
         when(mockDocument3.getContext()).thenReturn("document");
         when(mockDocument3.getDocument()).thenReturn(mockDocument3);
         when(mockDocument3.isInline()).thenReturn(false);
@@ -616,6 +621,7 @@ public class TableColumnStyleTest extends AbstractTableColumnStyleTesting {
         Block mockBlock2 = mock(Block.class);
         when(mockBlock2.getId()).thenReturn(null);
         when(mockBlock2.getNodeName()).thenReturn("paragraph");
+        when(mockBlock2.getParent()).thenReturn(mockDocument3);
         when(mockBlock2.getContext()).thenReturn("paragraph");
         when(mockBlock2.getDocument()).thenReturn(mockDocument3);
         when(mockBlock2.isInline()).thenReturn(false);

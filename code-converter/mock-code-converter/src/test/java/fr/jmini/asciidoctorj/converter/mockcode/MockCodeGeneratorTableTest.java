@@ -29,6 +29,7 @@ public class MockCodeGeneratorTableTest {
         Table mockTable1 = mock(Table.class);
         when(mockTable1.getId()).thenReturn(null);
         when(mockTable1.getNodeName()).thenReturn(null);
+        when(mockTable1.getParent()).thenReturn(null);
         when(mockTable1.getContext()).thenReturn(null);
         when(mockTable1.getDocument()).thenReturn(null);
         when(mockTable1.isInline()).thenReturn(false);

@@ -80,10 +80,7 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
     protected void appendContentNode(StringBuilder sb, String varName, ContentNode contentNode) {
         appendWhenExpressionString(sb, varName + ".getId()", contentNode.getId());
         appendWhenExpressionString(sb, varName + ".getNodeName()", contentNode.getNodeName());
-        // getParent() can not be called on the root element, see https://github.com/asciidoctor/asciidoctorj/issues/593
-        if (!(contentNode instanceof StructuralNode) || ((StructuralNode) contentNode).getLevel() > 0) {
-            appendWhenExpressionObject(sb, varName + ".getParent()", contentNode.getParent());
-        }
+        appendWhenExpressionObject(sb, varName + ".getParent()", contentNode.getParent());
         appendWhenExpressionString(sb, varName + ".getContext()", contentNode.getContext());
         appendWhenExpressionObject(sb, varName + ".getDocument()", contentNode.getDocument());
         // NOTE: a NotImplementedError is sometime thrown when contentNode.isInline() is called.

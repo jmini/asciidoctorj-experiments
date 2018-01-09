@@ -30,6 +30,7 @@ public class HorizontalRuleTest extends AbstractHorizontalRuleTesting {
         Document mockDocument1 = mock(Document.class);
         when(mockDocument1.getId()).thenReturn(null);
         when(mockDocument1.getNodeName()).thenReturn("document");
+        when(mockDocument1.getParent()).thenReturn(null);
         when(mockDocument1.getContext()).thenReturn("document");
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(false);
@@ -54,6 +55,7 @@ public class HorizontalRuleTest extends AbstractHorizontalRuleTesting {
         Block mockBlock1 = mock(Block.class);
         when(mockBlock1.getId()).thenReturn(null);
         when(mockBlock1.getNodeName()).thenReturn("thematic_break");
+        when(mockBlock1.getParent()).thenReturn(mockDocument1);
         when(mockBlock1.getContext()).thenReturn("thematic_break");
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(false);
