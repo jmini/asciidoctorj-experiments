@@ -53,6 +53,12 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionAllTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableAutowidthSpreadTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableAutowidthTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderFrameNoneTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderFrameSidesTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderFrameTopbotTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridColsTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridNoneTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridRowsTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColsAttributeTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingHalignTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingValignTesting;
@@ -117,6 +123,12 @@ public class HtmlConverterHelper {
             .put(AbstractSectionTesting.class.getSimpleName(), AbstractSectionTesting.ASCIIDOC)
             .put(AbstractTableAutowidthSpreadTesting.class.getSimpleName(), AbstractTableAutowidthSpreadTesting.ASCIIDOC)
             .put(AbstractTableAutowidthTesting.class.getSimpleName(), AbstractTableAutowidthTesting.ASCIIDOC)
+            .put(AbstractTableBorderFrameNoneTesting.class.getSimpleName(), AbstractTableBorderFrameNoneTesting.ASCIIDOC)
+            .put(AbstractTableBorderFrameSidesTesting.class.getSimpleName(), AbstractTableBorderFrameSidesTesting.ASCIIDOC)
+            .put(AbstractTableBorderFrameTopbotTesting.class.getSimpleName(), AbstractTableBorderFrameTopbotTesting.ASCIIDOC)
+            .put(AbstractTableBorderGridColsTesting.class.getSimpleName(), AbstractTableBorderGridColsTesting.ASCIIDOC)
+            .put(AbstractTableBorderGridNoneTesting.class.getSimpleName(), AbstractTableBorderGridNoneTesting.ASCIIDOC)
+            .put(AbstractTableBorderGridRowsTesting.class.getSimpleName(), AbstractTableBorderGridRowsTesting.ASCIIDOC)
             .put(AbstractTableColsAttributeTesting.class.getSimpleName(), AbstractTableColsAttributeTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingHalignTesting.class.getSimpleName(), AbstractTableColumnFormattingHalignTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingValignTesting.class.getSimpleName(), AbstractTableColumnFormattingValignTesting.ASCIIDOC)

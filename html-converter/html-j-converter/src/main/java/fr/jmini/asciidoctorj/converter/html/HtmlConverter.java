@@ -405,14 +405,17 @@ public class HtmlConverter extends StringConverter {
     public void convertTable(Element e, Table table) {
         Element t = e.appendElement("table");
         handleId(t, table);
-        if (table.getAttributes()
-                .containsKey("autowidth-option") ||
-                table.getAttributes()
+        List<String> rolesList = new ArrayList<>();
+        rolesList.add("tableblock");
+        rolesList.add("frame-" + table.getFrame());
+        rolesList.add("grid-" + table.getGrid());
+        if (!table.getAttributes()
+                .containsKey("autowidth-option") &&
+                !table.getAttributes()
                         .containsKey("width")) {
-            handleRoles(t, table, Arrays.asList("tableblock", "frame-all", "grid-all"));
-        } else {
-            handleRoles(t, table, Arrays.asList("tableblock", "frame-all", "grid-all", "spread"));
+            rolesList.add("spread");
         }
+        handleRoles(t, table, rolesList);
         if (table.getAttributes()
                 .containsKey("width")) {
             t.attr("style", "width: " + table.getAttributes()
