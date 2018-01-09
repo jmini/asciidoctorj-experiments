@@ -397,7 +397,11 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
                             && !"base_dir".equals(e.getKey())
                             && !e.getKey()
                                     .toString()
-                                    .matches("[0-9]+"))
+                                    .matches("[0-9]+")
+                            && !e.getValue()
+                                    .getClass()
+                                    .getName()
+                                    .startsWith("org.jruby."))
                     .sorted(entryComparator())
                     .map(e -> {
                         return CodeConverterUtility.convertString(e.getKey()
