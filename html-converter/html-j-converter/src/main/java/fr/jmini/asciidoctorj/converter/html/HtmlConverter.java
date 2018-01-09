@@ -126,7 +126,9 @@ public class HtmlConverter extends StringConverter {
                 "valign-" + cell.getAttributes()
                         .get("valign")));
 
-        if (cell.getInnerDocument() != null) {
+        if ("th".equals(cellTagName)) {
+            c.text(cell.getSource());
+        } else if (cell.getInnerDocument() != null) {
             Element div = c.appendElement("div");
             convertDocument(div, cell.getInnerDocument());
         } else if ("literal".equals(cell.getStyle())) {
@@ -138,8 +140,6 @@ public class HtmlConverter extends StringConverter {
             Element div = c.appendElement("div");
             div.attr("class", "verse");
             div.text(cell.getSource());
-        } else if ("th".equals(cellTagName)) {
-            c.text(cell.getSource());
         } else {
             Element p = c.appendElement("p");
             p.attr("class", "tableblock");

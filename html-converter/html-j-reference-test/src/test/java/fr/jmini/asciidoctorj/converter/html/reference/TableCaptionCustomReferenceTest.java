@@ -6,10 +6,10 @@ import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCustomCounterTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionCustomTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
 
-public class TableCustomCounterReferenceTest extends AbstractTableCustomCounterTesting {
+public class TableCaptionCustomReferenceTest extends AbstractTableCaptionCustomTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc) {

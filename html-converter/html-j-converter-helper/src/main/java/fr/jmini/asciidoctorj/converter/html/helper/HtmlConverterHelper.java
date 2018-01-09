@@ -59,18 +59,20 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderFrameTopb
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridColsTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridNoneTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridRowsTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionCustomCounterTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionCustomTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionUnsetTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColsAttributeTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingHalignTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingValignTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnStyleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnWidthTesting;
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCustomCaptionTesting;
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCustomCounterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableFooterRowTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowImplicitTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowNoheaderTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowOnlyTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableNestedTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableWhithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableWidthTesting;
@@ -129,18 +131,20 @@ public class HtmlConverterHelper {
             .put(AbstractTableBorderGridColsTesting.class.getSimpleName(), AbstractTableBorderGridColsTesting.ASCIIDOC)
             .put(AbstractTableBorderGridNoneTesting.class.getSimpleName(), AbstractTableBorderGridNoneTesting.ASCIIDOC)
             .put(AbstractTableBorderGridRowsTesting.class.getSimpleName(), AbstractTableBorderGridRowsTesting.ASCIIDOC)
+            .put(AbstractTableCaptionCustomCounterTesting.class.getSimpleName(), AbstractTableCaptionCustomCounterTesting.ASCIIDOC)
+            .put(AbstractTableCaptionCustomTesting.class.getSimpleName(), AbstractTableCaptionCustomTesting.ASCIIDOC)
+            .put(AbstractTableCaptionUnsetTesting.class.getSimpleName(), AbstractTableCaptionUnsetTesting.ASCIIDOC)
             .put(AbstractTableColsAttributeTesting.class.getSimpleName(), AbstractTableColsAttributeTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingHalignTesting.class.getSimpleName(), AbstractTableColumnFormattingHalignTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingValignTesting.class.getSimpleName(), AbstractTableColumnFormattingValignTesting.ASCIIDOC)
             .put(AbstractTableColumnStyleTesting.class.getSimpleName(), AbstractTableColumnStyleTesting.ASCIIDOC)
             .put(AbstractTableColumnWidthTesting.class.getSimpleName(), AbstractTableColumnWidthTesting.ASCIIDOC)
-            .put(AbstractTableCustomCaptionTesting.class.getSimpleName(), AbstractTableCustomCaptionTesting.ASCIIDOC)
-            .put(AbstractTableCustomCounterTesting.class.getSimpleName(), AbstractTableCustomCounterTesting.ASCIIDOC)
             .put(AbstractTableFooterRowTesting.class.getSimpleName(), AbstractTableFooterRowTesting.ASCIIDOC)
             .put(AbstractTableHeaderRowImplicitTesting.class.getSimpleName(), AbstractTableHeaderRowImplicitTesting.ASCIIDOC)
             .put(AbstractTableHeaderRowNoheaderTesting.class.getSimpleName(), AbstractTableHeaderRowNoheaderTesting.ASCIIDOC)
             .put(AbstractTableHeaderRowOnlyTesting.class.getSimpleName(), AbstractTableHeaderRowOnlyTesting.ASCIIDOC)
             .put(AbstractTableHeaderRowTesting.class.getSimpleName(), AbstractTableHeaderRowTesting.ASCIIDOC)
+            .put(AbstractTableNestedTesting.class.getSimpleName(), AbstractTableNestedTesting.ASCIIDOC)
             .put(AbstractTableTesting.class.getSimpleName(), AbstractTableTesting.ASCIIDOC)
             .put(AbstractTableWhithIdAndRoleTesting.class.getSimpleName(), AbstractTableWhithIdAndRoleTesting.ASCIIDOC)
             .put(AbstractTableWidthTesting.class.getSimpleName(), AbstractTableWidthTesting.ASCIIDOC)

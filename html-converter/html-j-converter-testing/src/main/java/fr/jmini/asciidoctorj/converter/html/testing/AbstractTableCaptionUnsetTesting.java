@@ -10,7 +10,7 @@ import org.asciidoctor.ast.Row;
 import org.asciidoctor.ast.Table;
 import org.junit.Test;
 
-public abstract class AbstractTableCustomCaptionTesting {
+public abstract class AbstractTableCaptionUnsetTesting {
 
     @Test
     public void test() throws Exception {
@@ -22,19 +22,12 @@ public abstract class AbstractTableCustomCaptionTesting {
     }
 
     public static final String ASCIIDOC = "" +
-            ":table-caption: Tbl\n" +
+            ":table-caption!:\n" +
             "\n" +
             ".some first caption\n" +
             "|=== \n" +
             "\n" +
-            "| T1, Cell in column 1, row 1        |          T1, Cell in column 2, row 1\n" +
-            "\n" +
-            "|===" +
-            "\n" +
-            ".some second caption\n" +
-            "|=== \n" +
-            "\n" +
-            "| T2, Cell in column 1, row 1     |   T2, Cell in column 2, row 1     \n" +
+            "| Cell in column 1, row 1 | Cell in column 2, row 1\n" +
             "\n" +
             "|===" +
             "";
@@ -42,7 +35,7 @@ public abstract class AbstractTableCustomCaptionTesting {
     // tag::expected-html[]
     public static final String EXPECTED_HTML = "<table class=\"tableblock frame-all grid-all spread\">\n" +
             "<caption class=\"title\">\n" +
-            "Tbl 1. some first caption\n" +
+            "some first caption\n" +
             "</caption>\n" +
             "<colgroup>\n" +
             "<col style=\"width: 50%;\" />\n" +
@@ -50,23 +43,8 @@ public abstract class AbstractTableCustomCaptionTesting {
             "</colgroup>\n" +
             "<tbody>\n" +
             "<tr>\n" +
-            "<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">T1, Cell in column 1, row 1</p></td>\n" +
-            "<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">T1, Cell in column 2, row 1</p></td>\n" +
-            "</tr>\n" +
-            "</tbody>\n" +
-            "</table>\n" +
-            "<table class=\"tableblock frame-all grid-all spread\">\n" +
-            "<caption class=\"title\">\n" +
-            "Tbl 2. some second caption\n" +
-            "</caption>\n" +
-            "<colgroup>\n" +
-            "<col style=\"width: 50%;\" />\n" +
-            "<col style=\"width: 50%;\" />\n" +
-            "</colgroup>\n" +
-            "<tbody>\n" +
-            "<tr>\n" +
-            "<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">T2, Cell in column 1, row 1</p></td>\n" +
-            "<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">T2, Cell in column 2, row 1</p></td>\n" +
+            "<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">Cell in column 1, row 1</p></td>\n" +
+            "<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">Cell in column 2, row 1</p></td>\n" +
             "</tr>\n" +
             "</tbody>\n" +
             "</table>";
@@ -93,8 +71,7 @@ public abstract class AbstractTableCustomCaptionTesting {
                 .containsEntry("example-caption", "Example")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
-                .containsEntry("prewrap", "")
-                .containsEntry("table-caption", "Tbl");
+                .containsEntry("prewrap", "");
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
@@ -104,7 +81,7 @@ public abstract class AbstractTableCustomCaptionTesting {
         assertThat(document1.getContentModel()).isEqualTo("compound");
         assertThat(document1.getSourceLocation()).isNull();
         assertThat(document1.getSubstitutions()).isNullOrEmpty();
-        assertThat(document1.getBlocks()).hasSize(2);
+        assertThat(document1.getBlocks()).hasSize(1);
         Table table1 = (Table) document1.getBlocks()
                 .get(0);
         assertThat(table1.getId()).isNull();
@@ -212,8 +189,8 @@ public abstract class AbstractTableCustomCaptionTesting {
         assertThat(cell1.getColumn()).isSameAs(column1);
         assertThat(cell1.getColspan()).isEqualTo(0);
         assertThat(cell1.getRowspan()).isEqualTo(0);
-        assertThat(cell1.getText()).isEqualTo("T1, Cell in column 1, row 1");
-        assertThat(cell1.getSource()).isEqualTo("T1, Cell in column 1, row 1");
+        assertThat(cell1.getText()).isEqualTo("Cell in column 1, row 1");
+        assertThat(cell1.getSource()).isEqualTo("Cell in column 1, row 1");
         assertThat(cell1.getStyle()).isNull();
         assertThat(cell1.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
         assertThat(cell1.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.TOP);
@@ -241,158 +218,14 @@ public abstract class AbstractTableCustomCaptionTesting {
         assertThat(cell2.getColumn()).isSameAs(column2);
         assertThat(cell2.getColspan()).isEqualTo(0);
         assertThat(cell2.getRowspan()).isEqualTo(0);
-        assertThat(cell2.getText()).isEqualTo("T1, Cell in column 2, row 1");
-        assertThat(cell2.getSource()).isEqualTo("T1, Cell in column 2, row 1");
+        assertThat(cell2.getText()).isEqualTo("Cell in column 2, row 1");
+        assertThat(cell2.getSource()).isEqualTo("Cell in column 2, row 1");
         assertThat(cell2.getStyle()).isNull();
         assertThat(cell2.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
         assertThat(cell2.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.TOP);
         assertThat(cell2.getInnerDocument()).isNull();
         assertThat(table1.getFrame()).isEqualTo("all");
         assertThat(table1.getGrid()).isEqualTo("all");
-        Table table2 = (Table) document1.getBlocks()
-                .get(1);
-        assertThat(table2.getId()).isNull();
-        assertThat(table2.getNodeName()).isEqualTo("table");
-        assertThat(table2.getContext()).isEqualTo("table");
-        assertThat(table2.getDocument()).isSameAs(document1);
-        assertThat(table2.isInline()).isFalse();
-        assertThat(table2.isBlock()).isTrue();
-        assertThat(table2.getAttributes()).containsEntry("colcount", 2L)
-                .containsEntry("rowcount", 1L)
-                .containsEntry("style", "table")
-                .containsEntry("tablepcwidth", 100L);
-        assertThat(table2.getRoles()).isNullOrEmpty();
-        assertThat(table2.isReftext()).isFalse();
-        assertThat(table2.getReftext()).isNull();
-        assertThat(table2.getTitle()).isEqualTo("some second caption");
-        assertThat(table2.getStyle()).isEqualTo("table");
-        assertThat(table2.getLevel()).isEqualTo(0);
-        assertThat(table2.getContentModel()).isEqualTo("compound");
-        assertThat(table2.getSourceLocation()).isNull();
-        assertThat(table2.getSubstitutions()).isNullOrEmpty();
-        assertThat(table2.getBlocks()).isNullOrEmpty();
-        assertThat(table2.hasHeaderOption()).isFalse();
-        assertThat(table2.getColumns()).hasSize(2);
-        Column column3 = (Column) table2.getColumns()
-                .get(0);
-        assertThat(column3.getId()).isNull();
-        assertThat(column3.getNodeName()).isEqualTo("column");
-        assertThat(column3.getParent()).isSameAs(table2);
-        assertThat(column3.getContext()).isEqualTo("column");
-        assertThat(column3.getDocument()).isSameAs(document1);
-        assertThatThrownBy(() -> {
-            column3.isInline();
-        }).hasMessageContaining("NotImplementedError");
-        assertThatThrownBy(() -> {
-            column3.isBlock();
-        }).hasMessageContaining("NotImplementedError");
-        assertThat(column3.getAttributes()).containsEntry("colnumber", 1L)
-                .containsEntry("colpcwidth", 50L)
-                .containsEntry("halign", "left")
-                .containsEntry("valign", "top")
-                .containsEntry("width", 1L);
-        assertThat(column3.getRoles()).isNullOrEmpty();
-        assertThat(column3.isReftext()).isFalse();
-        assertThat(column3.getReftext()).isNull();
-        assertThat(column3.getStyle()).isNull();
-        assertThat(column3.getTable()).isSameAs(table2);
-        assertThat(column3.getColumnNumber()).isEqualTo(1);
-        assertThat(column3.getWidth()).isEqualTo(1);
-        assertThat(column3.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
-        assertThat(column3.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.TOP);
-        Column column4 = (Column) table2.getColumns()
-                .get(1);
-        assertThat(column4.getId()).isNull();
-        assertThat(column4.getNodeName()).isEqualTo("column");
-        assertThat(column4.getParent()).isSameAs(table2);
-        assertThat(column4.getContext()).isEqualTo("column");
-        assertThat(column4.getDocument()).isSameAs(document1);
-        assertThatThrownBy(() -> {
-            column4.isInline();
-        }).hasMessageContaining("NotImplementedError");
-        assertThatThrownBy(() -> {
-            column4.isBlock();
-        }).hasMessageContaining("NotImplementedError");
-        assertThat(column4.getAttributes()).containsEntry("colnumber", 2L)
-                .containsEntry("colpcwidth", 50L)
-                .containsEntry("halign", "left")
-                .containsEntry("valign", "top")
-                .containsEntry("width", 1L);
-        assertThat(column4.getRoles()).isNullOrEmpty();
-        assertThat(column4.isReftext()).isFalse();
-        assertThat(column4.getReftext()).isNull();
-        assertThat(column4.getStyle()).isNull();
-        assertThat(column4.getTable()).isSameAs(table2);
-        assertThat(column4.getColumnNumber()).isEqualTo(2);
-        assertThat(column4.getWidth()).isEqualTo(1);
-        assertThat(column4.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
-        assertThat(column4.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.TOP);
-        assertThat(table2.getHeader()).isNullOrEmpty();
-        assertThat(table2.getFooter()).isNullOrEmpty();
-        assertThat(table2.getBody()).hasSize(1);
-        Row row2 = (Row) table2.getBody()
-                .get(0);
-        assertThat(row2.getCells()).hasSize(2);
-        Cell cell3 = (Cell) row2.getCells()
-                .get(0);
-        assertThat(cell3.getId()).isNull();
-        assertThat(cell3.getNodeName()).isEqualTo("cell");
-        assertThat(cell3.getParent()).isSameAs(column3);
-        assertThat(cell3.getContext()).isEqualTo("cell");
-        assertThat(cell3.getDocument()).isSameAs(document1);
-        assertThatThrownBy(() -> {
-            cell3.isInline();
-        }).hasMessageContaining("NotImplementedError");
-        assertThatThrownBy(() -> {
-            cell3.isBlock();
-        }).hasMessageContaining("NotImplementedError");
-        assertThat(cell3.getAttributes()).containsEntry("colnumber", 1L)
-                .containsEntry("halign", "left")
-                .containsEntry("valign", "top")
-                .containsEntry("width", 1L);
-        assertThat(cell3.getRoles()).isNullOrEmpty();
-        assertThat(cell3.isReftext()).isFalse();
-        assertThat(cell3.getReftext()).isNull();
-        assertThat(cell3.getColumn()).isSameAs(column3);
-        assertThat(cell3.getColspan()).isEqualTo(0);
-        assertThat(cell3.getRowspan()).isEqualTo(0);
-        assertThat(cell3.getText()).isEqualTo("T2, Cell in column 1, row 1");
-        assertThat(cell3.getSource()).isEqualTo("T2, Cell in column 1, row 1");
-        assertThat(cell3.getStyle()).isNull();
-        assertThat(cell3.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
-        assertThat(cell3.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.TOP);
-        assertThat(cell3.getInnerDocument()).isNull();
-        Cell cell4 = (Cell) row2.getCells()
-                .get(1);
-        assertThat(cell4.getId()).isNull();
-        assertThat(cell4.getNodeName()).isEqualTo("cell");
-        assertThat(cell4.getParent()).isSameAs(column4);
-        assertThat(cell4.getContext()).isEqualTo("cell");
-        assertThat(cell4.getDocument()).isSameAs(document1);
-        assertThatThrownBy(() -> {
-            cell4.isInline();
-        }).hasMessageContaining("NotImplementedError");
-        assertThatThrownBy(() -> {
-            cell4.isBlock();
-        }).hasMessageContaining("NotImplementedError");
-        assertThat(cell4.getAttributes()).containsEntry("colnumber", 2L)
-                .containsEntry("halign", "left")
-                .containsEntry("valign", "top")
-                .containsEntry("width", 1L);
-        assertThat(cell4.getRoles()).isNullOrEmpty();
-        assertThat(cell4.isReftext()).isFalse();
-        assertThat(cell4.getReftext()).isNull();
-        assertThat(cell4.getColumn()).isSameAs(column4);
-        assertThat(cell4.getColspan()).isEqualTo(0);
-        assertThat(cell4.getRowspan()).isEqualTo(0);
-        assertThat(cell4.getText()).isEqualTo("T2, Cell in column 2, row 1");
-        assertThat(cell4.getSource()).isEqualTo("T2, Cell in column 2, row 1");
-        assertThat(cell4.getStyle()).isNull();
-        assertThat(cell4.getHorizontalAlignment()).isEqualTo(Table.HorizontalAlignment.LEFT);
-        assertThat(cell4.getVerticalAlignment()).isEqualTo(Table.VerticalAlignment.TOP);
-        assertThat(cell4.getInnerDocument()).isNull();
-        assertThat(table2.getFrame()).isEqualTo("all");
-        assertThat(table2.getGrid()).isEqualTo("all");
         assertThat(document1.getStructuredDoctitle()).isNull();
         assertThat(document1.getDoctitle()).isNull();
         assertThat(document1.getOptions()).containsEntry("header_footer", false);
