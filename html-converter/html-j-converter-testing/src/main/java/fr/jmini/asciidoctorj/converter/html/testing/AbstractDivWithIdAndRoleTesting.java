@@ -73,7 +73,8 @@ public abstract class AbstractDivWithIdAndRoleTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("id", "idname")
+        assertThat(block1.getAttributes()).containsEntry("1", "#idname.rolename")
+                .containsEntry("id", "idname")
                 .containsEntry("role", "rolename");
         assertThat(block1.getRoles()).containsExactly("rolename");
         assertThat(block1.isReftext()).isFalse();

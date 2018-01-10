@@ -107,7 +107,8 @@ public abstract class AbstractTableAutowidthTesting {
         assertThat(table1.getDocument()).isSameAs(document1);
         assertThat(table1.isInline()).isFalse();
         assertThat(table1.isBlock()).isTrue();
-        assertThat(table1.getAttributes()).containsEntry("autowidth-option", "")
+        assertThat(table1.getAttributes()).containsEntry("1", "%autowidth")
+                .containsEntry("autowidth-option", "")
                 .containsEntry("colcount", 3L)
                 .containsEntry("header-option", "")
                 .containsEntry("options", "autowidth,header")

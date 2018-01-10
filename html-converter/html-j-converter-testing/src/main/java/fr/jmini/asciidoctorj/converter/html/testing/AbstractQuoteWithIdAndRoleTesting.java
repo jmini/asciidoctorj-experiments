@@ -87,7 +87,8 @@ public abstract class AbstractQuoteWithIdAndRoleTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("id", "idd")
+        assertThat(block1.getAttributes()).containsEntry("1", "#idd.rolee")
+                .containsEntry("id", "idd")
                 .containsEntry("role", "rolee")
                 .containsEntry("style", "quote")
                 .containsEntry("title", "some caption");

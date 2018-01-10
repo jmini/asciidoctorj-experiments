@@ -81,7 +81,8 @@ public abstract class AbstractQuoteTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("style", "quote");
+        assertThat(block1.getAttributes()).containsEntry("1", "quote")
+                .containsEntry("style", "quote");
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();

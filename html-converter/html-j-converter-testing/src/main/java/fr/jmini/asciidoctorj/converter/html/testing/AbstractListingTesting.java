@@ -74,7 +74,8 @@ public abstract class AbstractListingTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("nowrap-option", "")
+        assertThat(block1.getAttributes()).containsEntry("1", "source%nowrap")
+                .containsEntry("nowrap-option", "")
                 .containsEntry("options", "nowrap")
                 .containsEntry("style", "source");
         assertThat(block1.getRoles()).isNullOrEmpty();

@@ -91,7 +91,8 @@ public abstract class AbstractTableWhithIdAndRoleTesting {
         assertThat(table1.getDocument()).isSameAs(document1);
         assertThat(table1.isInline()).isFalse();
         assertThat(table1.isBlock()).isTrue();
-        assertThat(table1.getAttributes()).containsEntry("colcount", 2L)
+        assertThat(table1.getAttributes()).containsEntry("1", "#idd.rolee")
+                .containsEntry("colcount", 2L)
                 .containsEntry("id", "idd")
                 .containsEntry("role", "rolee")
                 .containsEntry("rowcount", 1L)

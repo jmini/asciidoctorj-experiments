@@ -98,7 +98,8 @@ public abstract class AbstractListLabeledWithIdAndRoleTesting {
         assertThat(descriptionList1.getDocument()).isSameAs(document1);
         assertThat(descriptionList1.isInline()).isFalse();
         assertThat(descriptionList1.isBlock()).isTrue();
-        assertThat(descriptionList1.getAttributes()).containsEntry("id", "idd")
+        assertThat(descriptionList1.getAttributes()).containsEntry("1", "#idd.rolee")
+                .containsEntry("id", "idd")
                 .containsEntry("role", "rolee");
         assertThat(descriptionList1.getRoles()).containsExactly("rolee");
         assertThat(descriptionList1.isReftext()).isFalse();

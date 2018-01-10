@@ -81,7 +81,8 @@ public abstract class AbstractListOlReversedTesting {
         assertThat(list1.getDocument()).isSameAs(document1);
         assertThat(list1.isInline()).isFalse();
         assertThat(list1.isBlock()).isTrue();
-        assertThat(list1.getAttributes()).containsEntry("options", "reversed")
+        assertThat(list1.getAttributes()).containsEntry("1", "%reversed")
+                .containsEntry("options", "reversed")
                 .containsEntry("reversed-option", "")
                 .containsEntry("style", "arabic");
         assertThat(list1.getRoles()).isNullOrEmpty();

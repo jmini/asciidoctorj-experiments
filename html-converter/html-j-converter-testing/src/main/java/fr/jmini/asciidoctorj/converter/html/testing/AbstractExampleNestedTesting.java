@@ -145,7 +145,8 @@ public abstract class AbstractExampleNestedTesting {
         assertThat(block3.getDocument()).isSameAs(document1);
         assertThat(block3.isInline()).isFalse();
         assertThat(block3.isBlock()).isTrue();
-        assertThat(block3.getAttributes()).containsEntry("style", "listing");
+        assertThat(block3.getAttributes()).containsEntry("1", "listing")
+                .containsEntry("style", "listing");
         assertThat(block3.getRoles()).isNullOrEmpty();
         assertThat(block3.isReftext()).isFalse();
         assertThat(block3.getReftext()).isNull();

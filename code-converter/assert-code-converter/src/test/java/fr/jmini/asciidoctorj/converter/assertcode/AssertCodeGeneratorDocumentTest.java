@@ -70,7 +70,8 @@ public class AssertCodeGeneratorDocumentTest {
         assertThat(document1.getBlocks()).isNullOrEmpty();
         assertThat(document1.getStructuredDoctitle()).isNull();
         assertThat(document1.getDoctitle()).isEqualTo("this is a doc title");
-        assertThat(document1.getOptions()).containsEntry("one", 1L)
+        assertThat(document1.getOptions()).containsEntry("1", false)
+                .containsEntry("one", 1L)
                 .containsEntry("two", true);
     }
     // end::generated-code[]

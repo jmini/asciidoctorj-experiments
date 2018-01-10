@@ -80,7 +80,8 @@ public abstract class AbstractListOlTesting {
         assertThat(list1.getDocument()).isSameAs(document1);
         assertThat(list1.isInline()).isFalse();
         assertThat(list1.isBlock()).isTrue();
-        assertThat(list1.getAttributes()).containsEntry("id", "iid")
+        assertThat(list1.getAttributes()).containsEntry("1", "#iid.rrole")
+                .containsEntry("id", "iid")
                 .containsEntry("role", "rrole")
                 .containsEntry("style", "arabic");
         assertThat(list1.getRoles()).containsExactly("rrole");

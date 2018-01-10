@@ -72,7 +72,8 @@ public abstract class AbstractDivMultilineTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("role", "lead");
+        assertThat(block1.getAttributes()).containsEntry("1", ".lead")
+                .containsEntry("role", "lead");
         assertThat(block1.getRoles()).containsExactly("lead");
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();

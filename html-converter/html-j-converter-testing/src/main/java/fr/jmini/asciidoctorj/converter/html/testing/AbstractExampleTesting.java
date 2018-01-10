@@ -76,7 +76,8 @@ public abstract class AbstractExampleTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("id", "di")
+        assertThat(block1.getAttributes()).containsEntry("1", "#di.elor")
+                .containsEntry("id", "di")
                 .containsEntry("role", "elor")
                 .containsEntry("style", "example");
         assertThat(block1.getRoles()).containsExactly("elor");

@@ -77,7 +77,8 @@ public abstract class AbstractListOlUpperalphaTesting {
         assertThat(list1.getDocument()).isSameAs(document1);
         assertThat(list1.isInline()).isFalse();
         assertThat(list1.isBlock()).isTrue();
-        assertThat(list1.getAttributes()).containsEntry("style", "upperalpha");
+        assertThat(list1.getAttributes()).containsEntry("1", "upperalpha")
+                .containsEntry("style", "upperalpha");
         assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
         assertThat(list1.getReftext()).isNull();

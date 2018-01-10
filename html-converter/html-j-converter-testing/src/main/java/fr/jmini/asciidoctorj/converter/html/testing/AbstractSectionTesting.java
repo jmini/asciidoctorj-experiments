@@ -167,7 +167,8 @@ public abstract class AbstractSectionTesting {
         assertThat(section2.getDocument()).isSameAs(document1);
         assertThat(section2.isInline()).isFalse();
         assertThat(section2.isBlock()).isTrue();
-        assertThat(section2.getAttributes()).containsEntry("id", "someid")
+        assertThat(section2.getAttributes()).containsEntry("1", "#someid.somerole")
+                .containsEntry("id", "someid")
                 .containsEntry("role", "somerole");
         assertThat(section2.getRoles()).containsExactly("somerole");
         assertThat(section2.isReftext()).isFalse();

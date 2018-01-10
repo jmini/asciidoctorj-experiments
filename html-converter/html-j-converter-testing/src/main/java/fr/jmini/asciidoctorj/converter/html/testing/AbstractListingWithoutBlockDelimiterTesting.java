@@ -72,7 +72,8 @@ public abstract class AbstractListingWithoutBlockDelimiterTesting {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("style", "listing");
+        assertThat(block1.getAttributes()).containsEntry("1", "listing")
+                .containsEntry("style", "listing");
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();

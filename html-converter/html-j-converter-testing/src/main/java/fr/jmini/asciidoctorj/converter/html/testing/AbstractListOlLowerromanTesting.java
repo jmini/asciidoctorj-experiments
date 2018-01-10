@@ -77,7 +77,8 @@ public abstract class AbstractListOlLowerromanTesting {
         assertThat(list1.getDocument()).isSameAs(document1);
         assertThat(list1.isInline()).isFalse();
         assertThat(list1.isBlock()).isTrue();
-        assertThat(list1.getAttributes()).containsEntry("start", "5")
+        assertThat(list1.getAttributes()).containsEntry("1", "lowerroman")
+                .containsEntry("start", "5")
                 .containsEntry("style", "lowerroman");
         assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
