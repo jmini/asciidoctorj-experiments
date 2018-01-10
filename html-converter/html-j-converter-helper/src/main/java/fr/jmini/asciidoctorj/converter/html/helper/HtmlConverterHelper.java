@@ -62,6 +62,11 @@ import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridRowsT
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionCustomCounterTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionCustomTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionUnsetTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellAlignedTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellColspanRowspanTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellColspanTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellDuplicatedTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellRowspanTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColsAttributeTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingHalignTesting;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingValignTesting;
@@ -134,6 +139,11 @@ public class HtmlConverterHelper {
             .put(AbstractTableCaptionCustomCounterTesting.class.getSimpleName(), AbstractTableCaptionCustomCounterTesting.ASCIIDOC)
             .put(AbstractTableCaptionCustomTesting.class.getSimpleName(), AbstractTableCaptionCustomTesting.ASCIIDOC)
             .put(AbstractTableCaptionUnsetTesting.class.getSimpleName(), AbstractTableCaptionUnsetTesting.ASCIIDOC)
+            .put(AbstractTableCellAlignedTesting.class.getSimpleName(), AbstractTableCellAlignedTesting.ASCIIDOC)
+            .put(AbstractTableCellColspanRowspanTesting.class.getSimpleName(), AbstractTableCellColspanRowspanTesting.ASCIIDOC)
+            .put(AbstractTableCellColspanTesting.class.getSimpleName(), AbstractTableCellColspanTesting.ASCIIDOC)
+            .put(AbstractTableCellDuplicatedTesting.class.getSimpleName(), AbstractTableCellDuplicatedTesting.ASCIIDOC)
+            .put(AbstractTableCellRowspanTesting.class.getSimpleName(), AbstractTableCellRowspanTesting.ASCIIDOC)
             .put(AbstractTableColsAttributeTesting.class.getSimpleName(), AbstractTableColsAttributeTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingHalignTesting.class.getSimpleName(), AbstractTableColumnFormattingHalignTesting.ASCIIDOC)
             .put(AbstractTableColumnFormattingValignTesting.class.getSimpleName(), AbstractTableColumnFormattingValignTesting.ASCIIDOC)

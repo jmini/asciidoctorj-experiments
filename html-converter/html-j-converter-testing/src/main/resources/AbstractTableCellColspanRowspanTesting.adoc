@@ -1,0 +1,13 @@
+[cols="3"]
+|===
+
+| Cell in column 1, row 1 
+| Cell in column 2, row 1 
+| Cell in column 3, row 1
+
+2.2+| Cell spans 2 cols, 2 rows
+| Cell in column 3, row 2
+
+| Cell in column 3, row 3
+
+|===

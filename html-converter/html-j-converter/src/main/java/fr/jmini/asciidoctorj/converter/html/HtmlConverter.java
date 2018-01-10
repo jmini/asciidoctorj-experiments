@@ -126,6 +126,13 @@ public class HtmlConverter extends StringConverter {
                 "valign-" + cell.getAttributes()
                         .get("valign")));
 
+        if (cell.getColspan() > 0) {
+            c.attr("colspan", Integer.toString(cell.getColspan()));
+        }
+        if (cell.getRowspan() > 0) {
+            c.attr("rowspan", Integer.toString(cell.getRowspan()));
+        }
+
         if ("th".equals(cellTagName)) {
             c.text(cell.getSource());
         } else if (cell.getInnerDocument() != null) {

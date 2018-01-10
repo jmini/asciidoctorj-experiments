@@ -1,0 +1,13 @@
+[cols="3"]
+|===
+^|Cell a
+<|Cell b
+>|Cell c
+
+.^|Cell d
+.<|Cell e
+.>|Cell f
+
+3+^.^|This content spans three columns and is centered horizontally and vertically within the cell.
+
+|===
