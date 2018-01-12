@@ -23,6 +23,7 @@ Experiments with AsciidoctorJ.
 == Description
 This repository contains some experiments I do with AsciidoctorJ.
 
+* Asciidoctor Test suite
 * Conveters for the AST
 ** ast-json
 ** assert-code

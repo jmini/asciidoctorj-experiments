@@ -1,0 +1,6 @@
+[quote]
+____
+Quoted text.
+
+Another paragraph in quote.
+____

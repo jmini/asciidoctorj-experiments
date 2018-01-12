@@ -18,6 +18,25 @@ TIP: Do you want to improve this page? Please gh:edit[link-text='edit it on GitH
 
 include::{github-readme}[tags=description]
 
+=== Asciidoctor Test suite
+
+The `adoc-test-cases` project contains the asciidoctor test suite used by other projects of this repository.
+For each test case, following elements are provided:
+
+* the AsciiDoc source input
+* the input options map used to run asciidoctor
+* the expected html output
+* some java code (written with link:http://joel-costigliola.github.io/assertj/[AssertJ]) to ensure that the AST corresponding to the input source and options is well-formed.
+* some link:http://site.mockito.org/[Mockito] Java code to produce the corresponding AST, without having to parse the AsciiDoc input and without having to rely on the JRuby bridge.
+
+Each test case implements the gh:viewfile[path='test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCase.java', link-text='AdocTestCase'] interface.
+
+For each test case, a AsciiDoc file is also provided in the gh:viewdir[path='test-cases/adoc-test-cases/src/main/resources', link-text='resources'] folder.
+This can be usefull to preview the test case in a web-browser.
+
+The gh:viewfile[path='test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCases.java', link-text='AdocTestCases'] class provides a list of each test cases with the `getAllTestCases()` method.
+
+
 === AST Conveters
 
 Some converters for the Asciidoctor AST.

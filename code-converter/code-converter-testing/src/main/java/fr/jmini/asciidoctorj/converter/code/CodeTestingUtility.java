@@ -154,14 +154,18 @@ public class CodeTestingUtility {
     }
 
     private static File javaFile(Class<?> cls) {
-        return javaFile("test", cls);
+        return javaFile("", "test", cls);
     }
 
     public static File javaFile(String srcType, Class<?> cls) {
+        return javaFile("", srcType, cls);
+    }
+
+    public static File javaFile(String project, String srcType, Class<?> cls) {
         String packageDir = cls.getPackage()
                 .getName()
                 .replace('.', '/');
-        return new File("src/" + srcType + "/java/" + packageDir + "/" + cls.getSimpleName() + ".java");
+        return new File(project + "src/" + srcType + "/java/" + packageDir + "/" + cls.getSimpleName() + ".java");
     }
 
     public static void rewriteAttributes(Document document) {

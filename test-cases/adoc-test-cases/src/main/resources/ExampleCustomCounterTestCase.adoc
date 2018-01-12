@@ -1,0 +1,11 @@
+:example-number: 10
+
+.first caption
+====
+First example
+====
+
+.second caption
+====
+Second example
+====

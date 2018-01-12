@@ -1,0 +1,4 @@
+[decimal]
+. lorem
+. ipsum
+. dolor
