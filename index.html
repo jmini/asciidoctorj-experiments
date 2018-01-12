@@ -557,6 +557,9 @@ Do you want to improve this page? Please <a href="https://github.com/jmini/ascii
 <div class="ulist">
 <ul>
 <li>
+<p>Asciidoctor Test suite</p>
+</li>
+<li>
 <p>Conveters for the AST</p>
 <div class="ulist">
 <ul>
@@ -576,6 +579,42 @@ Do you want to improve this page? Please <a href="https://github.com/jmini/ascii
 <p>html2adoc</p>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="asciidoctor-test-suite"><a class="anchor" href="#asciidoctor-test-suite"></a>Asciidoctor Test suite</h3>
+<div class="paragraph">
+<p>The <code>adoc-test-cases</code> project contains the asciidoctor test suite used by other projects of this repository.
+For each test case, following elements are provided:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the AsciiDoc source input</p>
+</li>
+<li>
+<p>the input options map used to run asciidoctor</p>
+</li>
+<li>
+<p>the expected html output</p>
+</li>
+<li>
+<p>some java code (written with <a href="http://joel-costigliola.github.io/assertj/">AssertJ</a>) to ensure that the AST corresponding to the input source and options is well-formed.</p>
+</li>
+<li>
+<p>some <a href="http://site.mockito.org/">Mockito</a> Java code to produce the corresponding AST, without having to parse the AsciiDoc input and without having to rely on the JRuby bridge.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each test case implements the <a href="https://github.com/jmini/asciidoctorj-experiments/edit/master/test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCase.java">AdocTestCase</a> interface.</p>
+</div>
+<div class="paragraph">
+<p>For each test case, a AsciiDoc file is also provided in the <a href="https://github.com/jmini/asciidoctorj-experiments/tree/master/test-cases/adoc-test-cases/src/main/resources">resources</a> folder.
+This can be usefull to preview the test case in a web-browser.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://github.com/jmini/asciidoctorj-experiments/edit/master/test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCases.java">AdocTestCases</a> class provides a list of each test cases with the <code>getAllTestCases()</code> method.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="ast-conveters"><a class="anchor" href="#ast-conveters"></a>AST Conveters</h3>
@@ -632,41 +671,47 @@ Some text</code></pre>
         <span class="predefined-type">Document</span> document1 = astDocument;
         assertThat(document1.getId()).isNull();
         assertThat(document1.getNodeName()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
+        assertThat(document1.getParent()).isNull();
         assertThat(document1.getContext()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
         assertThat(document1.getDocument()).isSameAs(document1);
         assertThat(document1.isInline()).isFalse();
         assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>)
+        assertThat(document1.getAttributes()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>)
+                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>)
                 .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">filetype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span>)
-                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>)
-                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>);
-        assertThat(document1.getRoles()).isEmpty();
+                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>)
+                .doesNotContainKey(<span class="string"><span class="delimiter">&quot;</span><span class="content">notitle</span><span class="delimiter">&quot;</span></span>)
+                .doesNotContainKey(<span class="string"><span class="delimiter">&quot;</span><span class="content">prewrap</span><span class="delimiter">&quot;</span></span>);
+        assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
+        assertThat(document1.getReftext()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(<span class="integer">0</span>);
         assertThat(document1.getContentModel()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">compound</span><span class="delimiter">&quot;</span></span>);
         assertThat(document1.getSourceLocation()).isNull();
-        assertThat(document1.getSubstitutions()).isEmpty();
+        assertThat(document1.getSubstitutions()).isNullOrEmpty();
         assertThat(document1.getBlocks()).hasSize(<span class="integer">1</span>);
         Block block1 = (Block) document1.getBlocks()
                 .get(<span class="integer">0</span>);
         assertThat(block1.getId()).isNull();
         assertThat(block1.getNodeName()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
+        assertThat(block1.getParent()).isNull();
         assertThat(block1.getContext()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).isEmpty();
-        assertThat(block1.getRoles()).isEmpty();
+        assertThat(block1.getAttributes()).isNullOrEmpty();
+        assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
+        assertThat(block1.getReftext()).isNull();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isNull();
         assertThat(block1.getLevel()).isEqualTo(<span class="integer">0</span>);
         assertThat(block1.getContentModel()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">simple</span><span class="delimiter">&quot;</span></span>);
         assertThat(block1.getSourceLocation()).isNull();
         assertThat(block1.getSubstitutions()).containsExactly(<span class="string"><span class="delimiter">&quot;</span><span class="content">specialcharacters</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">quotes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">replacements</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">macros</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">post_replacements</span><span class="delimiter">&quot;</span></span>);
-        assertThat(block1.getBlocks()).isEmpty();
+        assertThat(block1.getBlocks()).isNullOrEmpty();
         assertThat(block1.getLines()).containsExactly(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
         assertThat(block1.getSource()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
         Title title1 = document1.getStructuredDoctitle();
@@ -675,8 +720,7 @@ Some text</code></pre>
         assertThat(title1.getCombined()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
         assertThat(title1.isSanitized()).isFalse();
         assertThat(document1.getDoctitle()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        assertThat(document1.getOptions()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>)
-                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>);
+        assertThat(document1.getOptions()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>);
     }</code></pre>
 </div>
 </div>
@@ -713,19 +757,20 @@ Some text</code></pre>
         <span class="predefined-type">Document</span> mockDocument1 = mock(<span class="predefined-type">Document</span>.class);
         when(mockDocument1.getId()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockDocument1.getNodeName()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
+        when(mockDocument1.getParent()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockDocument1.getContext()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
         when(mockDocument1.getDocument()).thenReturn(mockDocument1);
         when(mockDocument1.isInline()).thenReturn(<span class="predefined-constant">false</span>);
         when(mockDocument1.isBlock()).thenReturn(<span class="predefined-constant">true</span>);
-        ImmutableMap&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt; map1 = ImmutableMap.&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt;builder()
-                .put(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>)
-                .put(<span class="string"><span class="delimiter">&quot;</span><span class="content">filetype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span>)
-                .put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>)
-                .put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>)
-                .build();
+        <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt; map1 = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
+        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>);
+        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">filetype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span>);
+        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>);
         when(mockDocument1.getAttributes()).thenReturn(map1);
         when(mockDocument1.getRoles()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
         when(mockDocument1.isReftext()).thenReturn(<span class="predefined-constant">false</span>);
+        when(mockDocument1.getReftext()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockDocument1.getTitle()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockDocument1.getStyle()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockDocument1.getLevel()).thenReturn(<span class="integer">0</span>);
@@ -735,6 +780,7 @@ Some text</code></pre>
         Block mockBlock1 = mock(Block.class);
         when(mockBlock1.getId()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockBlock1.getNodeName()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
+        when(mockBlock1.getParent()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockBlock1.getContext()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
         when(mockBlock1.getDocument()).thenReturn(mockDocument1);
         when(mockBlock1.isInline()).thenReturn(<span class="predefined-constant">false</span>);
@@ -742,6 +788,7 @@ Some text</code></pre>
         when(mockBlock1.getAttributes()).thenReturn(<span class="predefined-type">Collections</span>.emptyMap());
         when(mockBlock1.getRoles()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
         when(mockBlock1.isReftext()).thenReturn(<span class="predefined-constant">false</span>);
+        when(mockBlock1.getReftext()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockBlock1.getTitle()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockBlock1.getStyle()).thenReturn(<span class="predefined-constant">null</span>);
         when(mockBlock1.getLevel()).thenReturn(<span class="integer">0</span>);
@@ -759,10 +806,9 @@ Some text</code></pre>
         when(mockTitle1.isSanitized()).thenReturn(<span class="predefined-constant">false</span>);
         when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
         when(mockDocument1.getDoctitle()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        ImmutableMap&lt;<span class="predefined-type">Object</span>, <span class="predefined-type">Object</span>&gt; map2 = ImmutableMap.&lt;<span class="predefined-type">Object</span>, <span class="predefined-type">Object</span>&gt;builder()
-                .put(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>)
-                .put(<span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>)
-                .build();
+        <span class="predefined-type">Map</span>&lt;<span class="predefined-type">Object</span>, <span class="predefined-type">Object</span>&gt; map2 = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
+        map2.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>);
+        map2.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>);
         when(mockDocument1.getOptions()).thenReturn(map2);
         <span class="keyword">return</span> mockDocument1;
     }</code></pre>
@@ -801,7 +847,7 @@ It is using JSoup to parse the HTML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-30 09:13:37 CET
+Last updated 2018-01-12 23:33:44 CET
 </div>
 </div>
 </body>
