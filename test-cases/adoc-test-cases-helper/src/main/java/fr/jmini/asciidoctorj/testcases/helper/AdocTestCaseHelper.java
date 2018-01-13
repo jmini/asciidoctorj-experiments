@@ -18,6 +18,7 @@ import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.converter.mockcode.MockCodeGenerator;
 import fr.jmini.asciidoctorj.testcases.AdocTestCase;
 import fr.jmini.asciidoctorj.testcases.AdocTestCases;
+import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
 public class AdocTestCaseHelper {
 
@@ -171,9 +172,9 @@ public class AdocTestCaseHelper {
                 "                .asMap();\n" +
                 "    }\n" +
                 "\n" +
-                "    // tag::expected-html[]\n" +
+                "    // tag::" + EXPECTED_HTML_TAG_NAME + "[]\n" +
                 "    public static final String EXPECTED_HTML = \"\";\n" +
-                "    // end::expected-html[]\n" +
+                "    // end::" + EXPECTED_HTML_TAG_NAME + "[]\n" +
                 "\n" +
                 "    @Override\n" +
                 "    public String getHtmlOutput() {\n" +
@@ -181,18 +182,18 @@ public class AdocTestCaseHelper {
                 "    }\n" +
                 "\n" +
                 "    @Override\n" +
-                "    // tag::assert-code[]\n" +
+                "    // tag::" + ASSERT_CODE_TAG_NAME + "[]\n" +
                 "    public void checkAst(Document astDocument) {\n" +
                 "    }\n" +
-                "    // end::assert-code[]\n" +
+                "    // end::" + ASSERT_CODE_TAG_NAME + "[]\n" +
                 "\n" +
                 "    @Override\n" +
-                "    // tag::mock-code[]\n" +
+                "    // tag::" + MOCK_CODE_TAG_NAME + "[]\n" +
                 "    public Document createMock() {\n" +
                 "        Document mockDocument1 = mock(Document.class);\n" +
                 "        return mockDocument1;\n" +
                 "    }\n" +
-                "    // end::mock-code[]\n" +
+                "    // end::" + MOCK_CODE_TAG_NAME + "[]\n" +
                 "}";
     }
 }

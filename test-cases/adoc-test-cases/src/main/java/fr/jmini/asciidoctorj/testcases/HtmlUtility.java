@@ -1,10 +1,10 @@
-package fr.jmini.asciidoctorj.converter.html.testing;
+package fr.jmini.asciidoctorj.testcases;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Document.OutputSettings.Syntax;
 
-public class HtmlConverterTestingUtility {
+public class HtmlUtility {
 
     public static String normalizeHtml(String html) {
         Document doc = Jsoup.parseBodyFragment(html);

@@ -2,32 +2,29 @@ package fr.jmini.asciidoctorj.converter.html.reference;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Map;
+
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCustomCaptionTesting;
-import fr.jmini.asciidoctorj.converter.html.testing.HtmlConverterTestingUtility;
+import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
 public class ExampleCustomCaptionReferenceTest extends AbstractExampleCustomCaptionTesting {
 
     @Override
-    protected Document createAstDocument(String asciiDoc) {
+    protected Document createAstDocument(String asciiDoc, Map<String, Object> options) {
         Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
-        return asciidoctor.load(asciiDoc, new java.util.HashMap<String, Object>());
-    }
-
-    @Override
-    public void checkAst(Document astDocument) {
-        assertThat(astDocument).isInstanceOf(DocumentImpl.class);
-        super.checkAst(astDocument);
+        Document document = asciidoctor.load(asciiDoc, options);
+        assertThat(document).isInstanceOf(DocumentImpl.class);
+        return document;
     }
 
     @Override
     protected String convertToHtml(Document astDocument) {
         String html = astDocument.convert();
-        html = HtmlConverterTestingUtility.normalizeHtml(html);
-        return html;
+        return HtmlUtility.normalizeHtml(html);
     }
 
 }

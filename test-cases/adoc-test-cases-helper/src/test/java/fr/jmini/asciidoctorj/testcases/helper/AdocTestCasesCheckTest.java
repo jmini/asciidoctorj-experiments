@@ -16,6 +16,7 @@ import com.google.common.io.Files;
 import fr.jmini.asciidoctorj.converter.code.CodeTestingUtility;
 import fr.jmini.asciidoctorj.testcases.AdocTestCase;
 import fr.jmini.asciidoctorj.testcases.AdocTestCases;
+import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
 public class AdocTestCasesCheckTest {
 

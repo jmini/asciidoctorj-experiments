@@ -1,24 +1,24 @@
-package fr.jmini.asciidoctorj.converter.html.testing;
+package fr.jmini.asciidoctorj.testcases;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
-public class HtmlConverterTestingUtilityTest {
+public class HtmlUtilityTest {
 
     @Test
     public void testNormalizeHtml() throws Exception {
         String html;
-        html = HtmlConverterTestingUtility.normalizeHtml("<ol start=\"5\"><li>one</li></ol>");
+        html = HtmlUtility.normalizeHtml("<ol start=\"5\"><li>one</li></ol>");
         assertThat(html).isEqualTo("<ol start=\"5\">\n" +
                 "<li>one</li>\n" +
                 "</ol>");
 
-        html = HtmlConverterTestingUtility.normalizeHtml("<ol reversed><li>one</li></ol>");
+        html = HtmlUtility.normalizeHtml("<ol reversed><li>one</li></ol>");
         assertThat(html).isEqualTo("<ol reversed=\"\">\n" +
                 "<li>one</li>\n" +
                 "</ol>");
-        System.out.println(HtmlConverterTestingUtility.normalizeHtml("<ol reversed><li>one</li></ol>"));
+        System.out.println(HtmlUtility.normalizeHtml("<ol reversed><li>one</li></ol>"));
 
     }
 
