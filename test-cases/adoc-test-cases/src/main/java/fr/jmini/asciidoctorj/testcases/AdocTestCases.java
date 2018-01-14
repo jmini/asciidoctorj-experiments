@@ -39,11 +39,15 @@ public class AdocTestCases {
         list.add(new ListOlUpperromanTestCase());
         list.add(new ListUlTestCase());
         list.add(new MultiDivTestCase());
+        list.add(new NoTitleUnsetTestCase());
         list.add(new QuoteTestCase());
         list.add(new QuoteWithIdAndRoleTestCase());
         list.add(new QuoteWithoutBlockDelimiterTestCase());
         list.add(new SectionAllTestCase());
         list.add(new SectionTestCase());
+        list.add(new ShowTitleFalseTestCase());
+        list.add(new ShowTitleTrueTestCase());
+        list.add(new ShowTitleTrueWithoutTitleTestCase());
         list.add(new TableAutowidthSpreadTestCase());
         list.add(new TableAutowidthTestCase());
         list.add(new TableBorderFrameNoneTestCase());

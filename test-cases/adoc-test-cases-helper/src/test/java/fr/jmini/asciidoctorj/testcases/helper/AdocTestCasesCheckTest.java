@@ -3,7 +3,9 @@ package fr.jmini.asciidoctorj.testcases.helper;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
@@ -21,6 +23,21 @@ import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 public class AdocTestCasesCheckTest {
 
     @Test
+    public void ensureAllTestCasesIsComplete() throws Exception {
+        List<String> testCasesNames = AdocTestCases.getAllTestCases()
+                .stream()
+                .map(c -> c.getClass()
+                        .getSimpleName())
+                .collect(Collectors.toList());
+
+        List<String> testCasesFromFiles = Arrays.stream(AdocTestCaseHelper.findTestCasesFiles())
+                .map(AdocTestCaseHelper::computeClassName)
+                .collect(Collectors.toList());
+
+        assertThat(testCasesNames).containsExactlyElementsOf(testCasesFromFiles);
+    }
+
+    @Test
     public void ensureAllTestCasesAreCorrect() throws Exception {
         SoftAssertions assertions = new SoftAssertions();
         List<AdocTestCase> testCases = AdocTestCases.getAllTestCases();
@@ -32,7 +49,7 @@ public class AdocTestCasesCheckTest {
             String content = Files.toString(file, Charsets.UTF_8);
 
             Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
-            Document document = asciidoctor.load(asciidocContent, new java.util.HashMap<String, Object>());
+            Document document = asciidoctor.load(asciidocContent, testCase.getInputOptions());
             CodeTestingUtility.rewriteAttributes(document);
 
             String assertCode = AdocTestCaseHelper.computeAssertCode(document);

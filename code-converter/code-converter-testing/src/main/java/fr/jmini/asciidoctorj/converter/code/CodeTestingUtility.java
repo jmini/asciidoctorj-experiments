@@ -187,6 +187,7 @@ public class CodeTestingUtility {
         copyValue("doctitle", attributes, newAttributes);
         copyValue("doctype", attributes, newAttributes);
         copyValue("notitle", attributes, newAttributes);
+        copyValue("showtitle", attributes, newAttributes);
         copyValue("prewrap", attributes, newAttributes);
         attributes.clear();
         attributes.putAll(newAttributes);

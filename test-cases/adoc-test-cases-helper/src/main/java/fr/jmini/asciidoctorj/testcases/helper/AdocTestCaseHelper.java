@@ -37,8 +37,8 @@ public class AdocTestCaseHelper {
         File[] files = findTestCasesFiles();
         boolean allFilePresent = true;
         for (File file : files) {
-            String TestCaseClassName = computeClassName(file);
-            if (!testCasesNames.contains(TestCaseClassName)) {
+            String testCaseClassName = computeClassName(file);
+            if (!testCasesNames.contains(testCaseClassName)) {
                 allFilePresent = false;
             }
         }
@@ -58,7 +58,7 @@ public class AdocTestCaseHelper {
             sb.append("}");
             CodeTestingUtility.replaceContentInFile(CodeTestingUtility.javaFile("../adoc-test-cases/", "main", AdocTestCases.class), sb.toString(), ALL_CASES_TAG_NAME, false, true);
 
-            throw new IllegalStateException("Some items are missing in AdocTestCases.getAllTestCases()");
+            throw new IllegalStateException("Some items are missing \n\tsee file fr.jmini.asciidoctorj.testcases.AdocTestCases.getAllTestCases(AdocTestCases.java:10)");
         }
         for (AdocTestCase testCase : AdocTestCases.getAllTestCases()) {
             System.out.println(testCase.getClass()

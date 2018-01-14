@@ -257,6 +257,16 @@ public class HtmlConverter extends StringConverter {
     }
 
     public void convertDocument(Element e, Document document) {
+        if (document.getDoctitle() != null
+                && document.getDoctitle()
+                        .length() > 0
+                && ((document.getAttributes()
+                        .containsKey("showtitle"))
+                        || !document.getAttributes()
+                                .containsKey("notitle"))) {
+            Element h1 = e.appendElement("h1");
+            h1.text(document.getDoctitle());
+        }
         handleStructuralNodeBlocks(e, document);
     }
 
