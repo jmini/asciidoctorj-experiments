@@ -8,11 +8,11 @@ import org.asciidoctor.ast.Document;
 import org.junit.Test;
 
 import fr.jmini.asciidoctorj.testcases.AdocTestCase;
-import fr.jmini.asciidoctorj.testcases.ExampleCustomCaptionTestCase;
+import fr.jmini.asciidoctorj.testcases.ListingCaptionCustomTestCase;
 
-public abstract class AbstractExampleCustomCaptionTesting {
+public abstract class AbstractListingCaptionCustomTesting {
 
-    protected AdocTestCase testCase = new ExampleCustomCaptionTestCase();
+    protected AdocTestCase testCase = new ListingCaptionCustomTestCase();
 
     @Test
     public void test() throws Exception {

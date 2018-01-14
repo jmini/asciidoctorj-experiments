@@ -13,11 +13,10 @@ import org.asciidoctor.OptionsBuilder;
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
 
-public class ListingCustomCounterTestCase implements AdocTestCase {
+public class ListingCaptionCustomTestCase implements AdocTestCase {
 
     public static final String ASCIIDOC = "" +
             ":listing-caption: Listing\n" +
-            ":listing-number: 10\n" +
             "\n" +
             ".first caption\n" +
             "----\n" +
@@ -45,7 +44,7 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
     public static final String EXPECTED_HTML = "" +
             "<div class=\"listingblock\">\n" +
             "<div class=\"title\">\n" +
-            "Listing 11. first caption\n" +
+            "Listing 1. first caption\n" +
             "</div>\n" +
             "<div class=\"content\">\n" +
             "<pre>First listing</pre>\n" +
@@ -53,7 +52,7 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
             "</div>\n" +
             "<div class=\"listingblock\">\n" +
             "<div class=\"title\">\n" +
-            "Listing 12. second caption\n" +
+            "Listing 2. second caption\n" +
             "</div>\n" +
             "<div class=\"content\">\n" +
             "<pre>Second listing</pre>\n" +
@@ -81,7 +80,6 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
                 .containsEntry("example-caption", "Example")
                 .containsEntry("filetype", "html")
                 .containsEntry("listing-caption", "Listing")
-                .containsEntry("listing-number", "10")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
                 .containsEntry("table-caption", "Table");
@@ -110,7 +108,7 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
-        assertThat(block1.getCaption()).isEqualTo("Listing 11. ");
+        assertThat(block1.getCaption()).isEqualTo("Listing 1. ");
         assertThat(block1.getTitle()).isEqualTo("first caption");
         assertThat(block1.getStyle()).isEqualTo("listing");
         assertThat(block1.getLevel()).isEqualTo(0);
@@ -134,7 +132,7 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getReftext()).isNull();
-        assertThat(block2.getCaption()).isEqualTo("Listing 12. ");
+        assertThat(block2.getCaption()).isEqualTo("Listing 2. ");
         assertThat(block2.getTitle()).isEqualTo("second caption");
         assertThat(block2.getStyle()).isEqualTo("listing");
         assertThat(block2.getLevel()).isEqualTo(0);
@@ -166,7 +164,6 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
         map1.put("example-caption", "Example");
         map1.put("filetype", "html");
         map1.put("listing-caption", "Listing");
-        map1.put("listing-number", "10");
         map1.put("notitle", "");
         map1.put("prewrap", "");
         map1.put("table-caption", "Table");
@@ -196,7 +193,7 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
-        when(mockBlock1.getCaption()).thenReturn("Listing 11. ");
+        when(mockBlock1.getCaption()).thenReturn("Listing 1. ");
         when(mockBlock1.getTitle()).thenReturn("first caption");
         when(mockBlock1.getStyle()).thenReturn("listing");
         when(mockBlock1.getLevel()).thenReturn(0);
@@ -221,7 +218,7 @@ public class ListingCustomCounterTestCase implements AdocTestCase {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
-        when(mockBlock2.getCaption()).thenReturn("Listing 12. ");
+        when(mockBlock2.getCaption()).thenReturn("Listing 2. ");
         when(mockBlock2.getTitle()).thenReturn("second caption");
         when(mockBlock2.getStyle()).thenReturn("listing");
         when(mockBlock2.getLevel()).thenReturn(0);

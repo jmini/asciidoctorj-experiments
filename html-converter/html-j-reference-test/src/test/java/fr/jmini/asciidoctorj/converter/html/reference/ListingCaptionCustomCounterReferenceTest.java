@@ -8,10 +8,10 @@ import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCustomCounterTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCaptionCustomCounterTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
-public class ListingCustomCounterReferenceTest extends AbstractListingCustomCounterTesting {
+public class ListingCaptionCustomCounterReferenceTest extends AbstractListingCaptionCustomCounterTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc, Map<String, Object> options) {

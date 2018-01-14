@@ -1,0 +1,12 @@
+:example-caption: Ex
+
+[caption="Example A. "]
+.first caption
+====
+First example
+====
+
+.second caption
+====
+Second example
+====

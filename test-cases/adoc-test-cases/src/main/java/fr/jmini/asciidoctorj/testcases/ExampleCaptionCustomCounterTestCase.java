@@ -13,7 +13,7 @@ import org.asciidoctor.OptionsBuilder;
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
 
-public class ExampleCustomCounterTestCase implements AdocTestCase {
+public class ExampleCaptionCustomCounterTestCase implements AdocTestCase {
 
     public static final String ASCIIDOC = "" +
             ":example-number: 10\n" +

@@ -13,19 +13,15 @@ import org.asciidoctor.OptionsBuilder;
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
 
-public class ExampleCustomCaptionTestCase implements AdocTestCase {
+public class ExampleCaptionEmptyTestCase implements AdocTestCase {
 
     public static final String ASCIIDOC = "" +
             ":example-caption: Ex\n" +
             "\n" +
-            ".first caption\n" +
+            "[caption=\"\"]\n" +
+            ".This is the caption\n" +
             "====\n" +
-            "First example\n" +
-            "====\n" +
-            "\n" +
-            ".second caption\n" +
-            "====\n" +
-            "Second example\n" +
+            "An example\n" +
             "====\n" +
             "";
 
@@ -44,21 +40,11 @@ public class ExampleCustomCaptionTestCase implements AdocTestCase {
     public static final String EXPECTED_HTML = "" +
             "<div class=\"exampleblock\">\n" +
             "<div class=\"title\">\n" +
-            "Ex 1. first caption\n" +
+            "This is the caption\n" +
             "</div>\n" +
             "<div class=\"content\">\n" +
             "<div class=\"paragraph\">\n" +
-            "<p>First example</p>\n" +
-            "</div>\n" +
-            "</div>\n" +
-            "</div>\n" +
-            "<div class=\"exampleblock\">\n" +
-            "<div class=\"title\">\n" +
-            "Ex 2. second caption\n" +
-            "</div>\n" +
-            "<div class=\"content\">\n" +
-            "<div class=\"paragraph\">\n" +
-            "<p>Second example</p>\n" +
+            "<p>An example</p>\n" +
             "</div>\n" +
             "</div>\n" +
             "</div>";
@@ -96,7 +82,7 @@ public class ExampleCustomCaptionTestCase implements AdocTestCase {
         assertThat(document1.getContentModel()).isEqualTo("compound");
         assertThat(document1.getSourceLocation()).isNull();
         assertThat(document1.getSubstitutions()).isNullOrEmpty();
-        assertThat(document1.getBlocks()).hasSize(2);
+        assertThat(document1.getBlocks()).hasSize(1);
         Block block1 = (Block) document1.getBlocks()
                 .get(0);
         assertThat(block1.getId()).isNull();
@@ -106,13 +92,14 @@ public class ExampleCustomCaptionTestCase implements AdocTestCase {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("style", "example")
-                .containsEntry("title", "first caption");
+        assertThat(block1.getAttributes()).containsEntry("caption", "")
+                .containsEntry("style", "example")
+                .containsEntry("title", "This is the caption");
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
-        assertThat(block1.getCaption()).isEqualTo("Ex 1. ");
-        assertThat(block1.getTitle()).isEqualTo("first caption");
+        assertThat(block1.getCaption()).isEqualTo("");
+        assertThat(block1.getTitle()).isEqualTo("This is the caption");
         assertThat(block1.getStyle()).isEqualTo("example");
         assertThat(block1.getLevel()).isEqualTo(0);
         assertThat(block1.getContentModel()).isEqualTo("compound");
@@ -140,57 +127,10 @@ public class ExampleCustomCaptionTestCase implements AdocTestCase {
         assertThat(block2.getSourceLocation()).isNull();
         assertThat(block2.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
         assertThat(block2.getBlocks()).isNullOrEmpty();
-        assertThat(block2.getLines()).containsExactly("First example");
-        assertThat(block2.getSource()).isEqualTo("First example");
+        assertThat(block2.getLines()).containsExactly("An example");
+        assertThat(block2.getSource()).isEqualTo("An example");
         assertThat(block1.getLines()).isNullOrEmpty();
         assertThat(block1.getSource()).isEqualTo("");
-        Block block3 = (Block) document1.getBlocks()
-                .get(1);
-        assertThat(block3.getId()).isNull();
-        assertThat(block3.getNodeName()).isEqualTo("example");
-        assertThat(block3.getParent()).isSameAs(document1);
-        assertThat(block3.getContext()).isEqualTo("example");
-        assertThat(block3.getDocument()).isSameAs(document1);
-        assertThat(block3.isInline()).isFalse();
-        assertThat(block3.isBlock()).isTrue();
-        assertThat(block3.getAttributes()).containsEntry("style", "example")
-                .containsEntry("title", "second caption");
-        assertThat(block3.getRoles()).isNullOrEmpty();
-        assertThat(block3.isReftext()).isFalse();
-        assertThat(block3.getReftext()).isNull();
-        assertThat(block3.getCaption()).isEqualTo("Ex 2. ");
-        assertThat(block3.getTitle()).isEqualTo("second caption");
-        assertThat(block3.getStyle()).isEqualTo("example");
-        assertThat(block3.getLevel()).isEqualTo(0);
-        assertThat(block3.getContentModel()).isEqualTo("compound");
-        assertThat(block3.getSourceLocation()).isNull();
-        assertThat(block3.getSubstitutions()).isNullOrEmpty();
-        assertThat(block3.getBlocks()).hasSize(1);
-        Block block4 = (Block) block3.getBlocks()
-                .get(0);
-        assertThat(block4.getId()).isNull();
-        assertThat(block4.getNodeName()).isEqualTo("paragraph");
-        assertThat(block4.getParent()).isSameAs(block3);
-        assertThat(block4.getContext()).isEqualTo("paragraph");
-        assertThat(block4.getDocument()).isSameAs(document1);
-        assertThat(block4.isInline()).isFalse();
-        assertThat(block4.isBlock()).isTrue();
-        assertThat(block4.getAttributes()).isNullOrEmpty();
-        assertThat(block4.getRoles()).isNullOrEmpty();
-        assertThat(block4.isReftext()).isFalse();
-        assertThat(block4.getReftext()).isNull();
-        assertThat(block4.getCaption()).isNull();
-        assertThat(block4.getTitle()).isNull();
-        assertThat(block4.getStyle()).isNull();
-        assertThat(block4.getLevel()).isEqualTo(0);
-        assertThat(block4.getContentModel()).isEqualTo("simple");
-        assertThat(block4.getSourceLocation()).isNull();
-        assertThat(block4.getSubstitutions()).containsExactly("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements");
-        assertThat(block4.getBlocks()).isNullOrEmpty();
-        assertThat(block4.getLines()).containsExactly("Second example");
-        assertThat(block4.getSource()).isEqualTo("Second example");
-        assertThat(block3.getLines()).isNullOrEmpty();
-        assertThat(block3.getSource()).isEqualTo("");
         assertThat(document1.getStructuredDoctitle()).isNull();
         assertThat(document1.getDoctitle()).isNull();
         assertThat(document1.getOptions()).containsEntry("header_footer", false);
@@ -235,14 +175,15 @@ public class ExampleCustomCaptionTestCase implements AdocTestCase {
         when(mockBlock1.isInline()).thenReturn(false);
         when(mockBlock1.isBlock()).thenReturn(true);
         Map<String, Object> map2 = new HashMap<>();
+        map2.put("caption", "");
         map2.put("style", "example");
-        map2.put("title", "first caption");
+        map2.put("title", "This is the caption");
         when(mockBlock1.getAttributes()).thenReturn(map2);
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
-        when(mockBlock1.getCaption()).thenReturn("Ex 1. ");
-        when(mockBlock1.getTitle()).thenReturn("first caption");
+        when(mockBlock1.getCaption()).thenReturn("");
+        when(mockBlock1.getTitle()).thenReturn("This is the caption");
         when(mockBlock1.getStyle()).thenReturn("example");
         when(mockBlock1.getLevel()).thenReturn(0);
         when(mockBlock1.getContentModel()).thenReturn("compound");
@@ -268,65 +209,18 @@ public class ExampleCustomCaptionTestCase implements AdocTestCase {
         when(mockBlock2.getSourceLocation()).thenReturn(null);
         when(mockBlock2.getSubstitutions()).thenReturn(Arrays.asList("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements"));
         when(mockBlock2.getBlocks()).thenReturn(Collections.emptyList());
-        when(mockBlock2.getLines()).thenReturn(Collections.singletonList("First example"));
-        when(mockBlock2.getSource()).thenReturn("First example");
+        when(mockBlock2.getLines()).thenReturn(Collections.singletonList("An example"));
+        when(mockBlock2.getSource()).thenReturn("An example");
         when(mockBlock1.getBlocks()).thenReturn(Collections.singletonList(mockBlock2));
         when(mockBlock1.getLines()).thenReturn(Collections.emptyList());
         when(mockBlock1.getSource()).thenReturn("");
-        Block mockBlock3 = mock(Block.class);
-        when(mockBlock3.getId()).thenReturn(null);
-        when(mockBlock3.getNodeName()).thenReturn("example");
-        when(mockBlock3.getParent()).thenReturn(mockDocument1);
-        when(mockBlock3.getContext()).thenReturn("example");
-        when(mockBlock3.getDocument()).thenReturn(mockDocument1);
-        when(mockBlock3.isInline()).thenReturn(false);
-        when(mockBlock3.isBlock()).thenReturn(true);
-        Map<String, Object> map3 = new HashMap<>();
-        map3.put("style", "example");
-        map3.put("title", "second caption");
-        when(mockBlock3.getAttributes()).thenReturn(map3);
-        when(mockBlock3.getRoles()).thenReturn(Collections.emptyList());
-        when(mockBlock3.isReftext()).thenReturn(false);
-        when(mockBlock3.getReftext()).thenReturn(null);
-        when(mockBlock3.getCaption()).thenReturn("Ex 2. ");
-        when(mockBlock3.getTitle()).thenReturn("second caption");
-        when(mockBlock3.getStyle()).thenReturn("example");
-        when(mockBlock3.getLevel()).thenReturn(0);
-        when(mockBlock3.getContentModel()).thenReturn("compound");
-        when(mockBlock3.getSourceLocation()).thenReturn(null);
-        when(mockBlock3.getSubstitutions()).thenReturn(Collections.emptyList());
-        Block mockBlock4 = mock(Block.class);
-        when(mockBlock4.getId()).thenReturn(null);
-        when(mockBlock4.getNodeName()).thenReturn("paragraph");
-        when(mockBlock4.getParent()).thenReturn(mockBlock3);
-        when(mockBlock4.getContext()).thenReturn("paragraph");
-        when(mockBlock4.getDocument()).thenReturn(mockDocument1);
-        when(mockBlock4.isInline()).thenReturn(false);
-        when(mockBlock4.isBlock()).thenReturn(true);
-        when(mockBlock4.getAttributes()).thenReturn(Collections.emptyMap());
-        when(mockBlock4.getRoles()).thenReturn(Collections.emptyList());
-        when(mockBlock4.isReftext()).thenReturn(false);
-        when(mockBlock4.getReftext()).thenReturn(null);
-        when(mockBlock4.getCaption()).thenReturn(null);
-        when(mockBlock4.getTitle()).thenReturn(null);
-        when(mockBlock4.getStyle()).thenReturn(null);
-        when(mockBlock4.getLevel()).thenReturn(0);
-        when(mockBlock4.getContentModel()).thenReturn("simple");
-        when(mockBlock4.getSourceLocation()).thenReturn(null);
-        when(mockBlock4.getSubstitutions()).thenReturn(Arrays.asList("specialcharacters", "quotes", "attributes", "replacements", "macros", "post_replacements"));
-        when(mockBlock4.getBlocks()).thenReturn(Collections.emptyList());
-        when(mockBlock4.getLines()).thenReturn(Collections.singletonList("Second example"));
-        when(mockBlock4.getSource()).thenReturn("Second example");
-        when(mockBlock3.getBlocks()).thenReturn(Collections.singletonList(mockBlock4));
-        when(mockBlock3.getLines()).thenReturn(Collections.emptyList());
-        when(mockBlock3.getSource()).thenReturn("");
-        when(mockDocument1.getBlocks()).thenReturn(Arrays.asList(mockBlock1, mockBlock3));
+        when(mockDocument1.getBlocks()).thenReturn(Collections.singletonList(mockBlock1));
         when(mockDocument1.getStructuredDoctitle()).thenReturn(null);
         when(mockDocument1.getDoctitle()).thenReturn(null);
-        Map<Object, Object> map4 = new HashMap<>();
-        map4.put("attributes", "{}");
-        map4.put("header_footer", false);
-        when(mockDocument1.getOptions()).thenReturn(map4);
+        Map<Object, Object> map3 = new HashMap<>();
+        map3.put("attributes", "{}");
+        map3.put("header_footer", false);
+        when(mockDocument1.getOptions()).thenReturn(map3);
         return mockDocument1;
     }
     // end::mock-code[]

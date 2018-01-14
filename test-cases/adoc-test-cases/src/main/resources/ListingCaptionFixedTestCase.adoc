@@ -1,0 +1,12 @@
+:listing-caption: Listing
+
+[caption="Lst A. "]
+.first caption
+----
+First listing
+----
+
+.second caption
+----
+Second listing
+----

@@ -1,0 +1,7 @@
+:listing-caption: Listing
+
+[caption=]
+.a caption
+----
+A listing
+----

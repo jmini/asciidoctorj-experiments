@@ -8,10 +8,10 @@ import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.ast.impl.DocumentImpl;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCustomCaptionTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCaptionCustomTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
-public class ListingCustomCaptionReferenceTest extends AbstractListingCustomCaptionTesting {
+public class ExampleCaptionCustomReferenceTest extends AbstractExampleCaptionCustomTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc, Map<String, Object> options) {

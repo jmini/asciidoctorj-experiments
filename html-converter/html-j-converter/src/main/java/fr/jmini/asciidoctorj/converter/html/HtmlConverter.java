@@ -59,7 +59,7 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "listingblock");
-            handleTitle(div, block, "div", true);
+            handleTitle(div, block, "div");
             Element content = appendContentDiv(div);
             Element pre = content.appendElement("pre");
             List<String> classAttributeMembers = new ArrayList<>();
@@ -84,14 +84,14 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "exampleblock");
-            handleTitle(div, block, "div", true);
+            handleTitle(div, block, "div");
             Element content = appendContentDiv(div);
             handleStructuralNodeBlocks(content, block);
         } else if ("quote".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "quoteblock");
-            handleTitle(div, block, "div", false);
+            handleTitle(div, block, "div");
             Element blockquote = div.appendElement("blockquote");
             blockquote.text(String.join("\n", block.getLines()));
             handleStructuralNodeBlocks(blockquote, block);
@@ -235,7 +235,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, descriptionList);
         handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), Collections.singletonList(descriptionList.getContext()));
-        handleTitle(div, descriptionList, "div", false);
+        handleTitle(div, descriptionList, "div");
         Element dl = div.appendElement("dl");
         List<DescriptionListEntry> items = descriptionList.getItems();
         if (items != null) {
@@ -278,7 +278,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, list);
         handleStyleAndRoles(div, list, list.getStyle(), Collections.singletonList(list.getContext()));
-        handleTitle(div, list, "div", false);
+        handleTitle(div, list, "div");
         Element l = div.appendElement(list.getNodeName()
                 .substring(0, 2));
         if (list.getStyle() != null) {
@@ -381,22 +381,13 @@ public class HtmlConverter extends StringConverter {
         }
     }
 
-    private void handleTitle(Element e, StructuralNode structuralNode, String tagName, boolean hasCaption) {
+    private void handleTitle(Element e, StructuralNode structuralNode, String tagName) {
         String title = structuralNode.getTitle();
         if (title != null && !title.isEmpty()) {
             Element div = e.appendElement(tagName);
             div.attr("class", "title");
-            String captionKey = structuralNode.getNodeName() + "-caption";
-            if (hasCaption
-                    && structuralNode.getDocument()
-                            .getAttributes()
-                            .containsKey(captionKey)) {
-                int captionCounter = incrementCounterAndGet(structuralNode);
-                String captionLabel = structuralNode.getDocument()
-                        .getAttributes()
-                        .get(captionKey)
-                        .toString();
-                div.text(captionLabel + " " + captionCounter + ". " + title);
+            if (structuralNode.getCaption() != null) {
+                div.text(structuralNode.getCaption() + title);
             } else {
                 div.text(title);
             }
@@ -438,7 +429,7 @@ public class HtmlConverter extends StringConverter {
             t.attr("style", "width: " + table.getAttributes()
                     .get("width") + ";");
         }
-        handleTitle(t, table, "caption", true);
+        handleTitle(t, table, "caption");
 
         Element cg = t.appendElement("colgroup");
         for (Column column : table.getColumns()) {

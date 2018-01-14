@@ -13,11 +13,12 @@ import org.asciidoctor.OptionsBuilder;
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;
 
-public class ListingCustomCaptionTestCase implements AdocTestCase {
+public class ListingCaptionFixedTestCase implements AdocTestCase {
 
     public static final String ASCIIDOC = "" +
             ":listing-caption: Listing\n" +
             "\n" +
+            "[caption=\"Lst A. \"]\n" +
             ".first caption\n" +
             "----\n" +
             "First listing\n" +
@@ -44,7 +45,7 @@ public class ListingCustomCaptionTestCase implements AdocTestCase {
     public static final String EXPECTED_HTML = "" +
             "<div class=\"listingblock\">\n" +
             "<div class=\"title\">\n" +
-            "Listing 1. first caption\n" +
+            "Lst A. first caption\n" +
             "</div>\n" +
             "<div class=\"content\">\n" +
             "<pre>First listing</pre>\n" +
@@ -52,7 +53,7 @@ public class ListingCustomCaptionTestCase implements AdocTestCase {
             "</div>\n" +
             "<div class=\"listingblock\">\n" +
             "<div class=\"title\">\n" +
-            "Listing 2. second caption\n" +
+            "Listing 1. second caption\n" +
             "</div>\n" +
             "<div class=\"content\">\n" +
             "<pre>Second listing</pre>\n" +
@@ -103,12 +104,13 @@ public class ListingCustomCaptionTestCase implements AdocTestCase {
         assertThat(block1.getDocument()).isSameAs(document1);
         assertThat(block1.isInline()).isFalse();
         assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).containsEntry("style", "listing")
+        assertThat(block1.getAttributes()).containsEntry("caption", "Lst A. ")
+                .containsEntry("style", "listing")
                 .containsEntry("title", "first caption");
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
-        assertThat(block1.getCaption()).isEqualTo("Listing 1. ");
+        assertThat(block1.getCaption()).isEqualTo("Lst A. ");
         assertThat(block1.getTitle()).isEqualTo("first caption");
         assertThat(block1.getStyle()).isEqualTo("listing");
         assertThat(block1.getLevel()).isEqualTo(0);
@@ -132,7 +134,7 @@ public class ListingCustomCaptionTestCase implements AdocTestCase {
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getReftext()).isNull();
-        assertThat(block2.getCaption()).isEqualTo("Listing 2. ");
+        assertThat(block2.getCaption()).isEqualTo("Listing 1. ");
         assertThat(block2.getTitle()).isEqualTo("second caption");
         assertThat(block2.getStyle()).isEqualTo("listing");
         assertThat(block2.getLevel()).isEqualTo(0);
@@ -187,13 +189,14 @@ public class ListingCustomCaptionTestCase implements AdocTestCase {
         when(mockBlock1.isInline()).thenReturn(false);
         when(mockBlock1.isBlock()).thenReturn(true);
         Map<String, Object> map2 = new HashMap<>();
+        map2.put("caption", "Lst A. ");
         map2.put("style", "listing");
         map2.put("title", "first caption");
         when(mockBlock1.getAttributes()).thenReturn(map2);
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
-        when(mockBlock1.getCaption()).thenReturn("Listing 1. ");
+        when(mockBlock1.getCaption()).thenReturn("Lst A. ");
         when(mockBlock1.getTitle()).thenReturn("first caption");
         when(mockBlock1.getStyle()).thenReturn("listing");
         when(mockBlock1.getLevel()).thenReturn(0);
@@ -218,7 +221,7 @@ public class ListingCustomCaptionTestCase implements AdocTestCase {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
-        when(mockBlock2.getCaption()).thenReturn("Listing 2. ");
+        when(mockBlock2.getCaption()).thenReturn("Listing 1. ");
         when(mockBlock2.getTitle()).thenReturn("second caption");
         when(mockBlock2.getStyle()).thenReturn("listing");
         when(mockBlock2.getLevel()).thenReturn(0);

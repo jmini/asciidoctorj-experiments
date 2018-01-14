@@ -4,9 +4,9 @@ import java.util.Map;
 
 import org.asciidoctor.ast.Document;
 
-import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCustomCounterTesting;
+import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCaptionEmptyTesting;
 
-public class ExampleCustomCounterTest extends AbstractExampleCustomCounterTesting {
+public class ListingCaptionEmptyTest extends AbstractListingCaptionEmptyTesting {
 
     @Override
     protected Document createAstDocument(String asciiDoc, Map<String, Object> options) {

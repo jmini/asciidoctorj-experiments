@@ -1,0 +1,7 @@
+:example-caption: Ex
+
+[caption=""]
+.This is the caption
+====
+An example
+====
