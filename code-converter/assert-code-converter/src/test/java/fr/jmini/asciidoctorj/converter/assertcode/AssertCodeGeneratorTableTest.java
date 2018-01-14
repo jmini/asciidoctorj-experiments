@@ -57,6 +57,7 @@ public class AssertCodeGeneratorTableTest {
         assertThat(table1.getRoles()).isNullOrEmpty();
         assertThat(table1.isReftext()).isFalse();
         assertThat(table1.getReftext()).isNull();
+        assertThat(table1.getCaption()).isNull();
         assertThat(table1.getTitle()).isNull();
         assertThat(table1.getStyle()).isNull();
         assertThat(table1.getLevel()).isEqualTo(0);

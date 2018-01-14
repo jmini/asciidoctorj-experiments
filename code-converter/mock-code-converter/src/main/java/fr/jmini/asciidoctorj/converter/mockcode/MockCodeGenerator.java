@@ -217,6 +217,7 @@ public class MockCodeGenerator extends AbstractCodeGenerator {
     @Override
     protected void appendStructuralNode(StringBuilder sb, String varName, StructuralNode structuralNode) {
         appendContentNode(sb, varName, structuralNode);
+        appendWhenExpressionString(sb, varName + ".getCaption()", structuralNode.getCaption());
         appendWhenExpressionString(sb, varName + ".getTitle()", structuralNode.getTitle());
         appendWhenExpressionString(sb, varName + ".getStyle()", structuralNode.getStyle());
         // appendWhenExpressionString(sb, varName + ".getContent()", structuralNode.getContent());

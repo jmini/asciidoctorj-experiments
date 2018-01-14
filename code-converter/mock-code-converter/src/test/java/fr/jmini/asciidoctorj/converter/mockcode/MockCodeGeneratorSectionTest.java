@@ -36,6 +36,7 @@ public class MockCodeGeneratorSectionTest {
         when(mockSection1.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection1.isReftext()).thenReturn(false);
         when(mockSection1.getReftext()).thenReturn(null);
+        when(mockSection1.getCaption()).thenReturn(null);
         when(mockSection1.getTitle()).thenReturn(null);
         when(mockSection1.getStyle()).thenReturn(null);
         when(mockSection1.getLevel()).thenReturn(0);

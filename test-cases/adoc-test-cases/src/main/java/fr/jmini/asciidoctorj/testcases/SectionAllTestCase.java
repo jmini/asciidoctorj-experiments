@@ -113,6 +113,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -133,6 +134,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(section1.getRoles()).isNullOrEmpty();
         assertThat(section1.isReftext()).isFalse();
         assertThat(section1.getReftext()).isNull();
+        assertThat(section1.getCaption()).isNull();
         assertThat(section1.getTitle()).isEqualTo("Section 1");
         assertThat(section1.getStyle()).isNull();
         assertThat(section1.getLevel()).isEqualTo(1);
@@ -153,6 +155,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
+        assertThat(block1.getCaption()).isNull();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isNull();
         assertThat(block1.getLevel()).isEqualTo(1);
@@ -175,6 +178,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(section2.getRoles()).isNullOrEmpty();
         assertThat(section2.isReftext()).isFalse();
         assertThat(section2.getReftext()).isNull();
+        assertThat(section2.getCaption()).isNull();
         assertThat(section2.getTitle()).isEqualTo("Section 2");
         assertThat(section2.getStyle()).isNull();
         assertThat(section2.getLevel()).isEqualTo(2);
@@ -195,6 +199,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getReftext()).isNull();
+        assertThat(block2.getCaption()).isNull();
         assertThat(block2.getTitle()).isNull();
         assertThat(block2.getStyle()).isNull();
         assertThat(block2.getLevel()).isEqualTo(2);
@@ -217,6 +222,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(section3.getRoles()).isNullOrEmpty();
         assertThat(section3.isReftext()).isFalse();
         assertThat(section3.getReftext()).isNull();
+        assertThat(section3.getCaption()).isNull();
         assertThat(section3.getTitle()).isEqualTo("Section 3");
         assertThat(section3.getStyle()).isNull();
         assertThat(section3.getLevel()).isEqualTo(3);
@@ -237,6 +243,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(block3.getRoles()).isNullOrEmpty();
         assertThat(block3.isReftext()).isFalse();
         assertThat(block3.getReftext()).isNull();
+        assertThat(block3.getCaption()).isNull();
         assertThat(block3.getTitle()).isNull();
         assertThat(block3.getStyle()).isNull();
         assertThat(block3.getLevel()).isEqualTo(3);
@@ -259,6 +266,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(section4.getRoles()).isNullOrEmpty();
         assertThat(section4.isReftext()).isFalse();
         assertThat(section4.getReftext()).isNull();
+        assertThat(section4.getCaption()).isNull();
         assertThat(section4.getTitle()).isEqualTo("Section 4");
         assertThat(section4.getStyle()).isNull();
         assertThat(section4.getLevel()).isEqualTo(4);
@@ -279,6 +287,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(block4.getRoles()).isNullOrEmpty();
         assertThat(block4.isReftext()).isFalse();
         assertThat(block4.getReftext()).isNull();
+        assertThat(block4.getCaption()).isNull();
         assertThat(block4.getTitle()).isNull();
         assertThat(block4.getStyle()).isNull();
         assertThat(block4.getLevel()).isEqualTo(4);
@@ -301,6 +310,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(section5.getRoles()).isNullOrEmpty();
         assertThat(section5.isReftext()).isFalse();
         assertThat(section5.getReftext()).isNull();
+        assertThat(section5.getCaption()).isNull();
         assertThat(section5.getTitle()).isEqualTo("Section 5");
         assertThat(section5.getStyle()).isNull();
         assertThat(section5.getLevel()).isEqualTo(5);
@@ -321,6 +331,7 @@ public class SectionAllTestCase implements AdocTestCase {
         assertThat(block5.getRoles()).isNullOrEmpty();
         assertThat(block5.isReftext()).isFalse();
         assertThat(block5.getReftext()).isNull();
+        assertThat(block5.getCaption()).isNull();
         assertThat(block5.getTitle()).isNull();
         assertThat(block5.getStyle()).isNull();
         assertThat(block5.getLevel()).isEqualTo(5);
@@ -387,6 +398,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -405,6 +417,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockSection1.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection1.isReftext()).thenReturn(false);
         when(mockSection1.getReftext()).thenReturn(null);
+        when(mockSection1.getCaption()).thenReturn(null);
         when(mockSection1.getTitle()).thenReturn("Section 1");
         when(mockSection1.getStyle()).thenReturn(null);
         when(mockSection1.getLevel()).thenReturn(1);
@@ -423,6 +436,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
+        when(mockBlock1.getCaption()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn(null);
         when(mockBlock1.getStyle()).thenReturn(null);
         when(mockBlock1.getLevel()).thenReturn(1);
@@ -444,6 +458,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockSection2.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection2.isReftext()).thenReturn(false);
         when(mockSection2.getReftext()).thenReturn(null);
+        when(mockSection2.getCaption()).thenReturn(null);
         when(mockSection2.getTitle()).thenReturn("Section 2");
         when(mockSection2.getStyle()).thenReturn(null);
         when(mockSection2.getLevel()).thenReturn(2);
@@ -462,6 +477,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
+        when(mockBlock2.getCaption()).thenReturn(null);
         when(mockBlock2.getTitle()).thenReturn(null);
         when(mockBlock2.getStyle()).thenReturn(null);
         when(mockBlock2.getLevel()).thenReturn(2);
@@ -485,6 +501,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockSection3.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection3.isReftext()).thenReturn(false);
         when(mockSection3.getReftext()).thenReturn(null);
+        when(mockSection3.getCaption()).thenReturn(null);
         when(mockSection3.getTitle()).thenReturn("Section 3");
         when(mockSection3.getStyle()).thenReturn(null);
         when(mockSection3.getLevel()).thenReturn(3);
@@ -503,6 +520,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockBlock3.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock3.isReftext()).thenReturn(false);
         when(mockBlock3.getReftext()).thenReturn(null);
+        when(mockBlock3.getCaption()).thenReturn(null);
         when(mockBlock3.getTitle()).thenReturn(null);
         when(mockBlock3.getStyle()).thenReturn(null);
         when(mockBlock3.getLevel()).thenReturn(3);
@@ -524,6 +542,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockSection4.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection4.isReftext()).thenReturn(false);
         when(mockSection4.getReftext()).thenReturn(null);
+        when(mockSection4.getCaption()).thenReturn(null);
         when(mockSection4.getTitle()).thenReturn("Section 4");
         when(mockSection4.getStyle()).thenReturn(null);
         when(mockSection4.getLevel()).thenReturn(4);
@@ -542,6 +561,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockBlock4.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock4.isReftext()).thenReturn(false);
         when(mockBlock4.getReftext()).thenReturn(null);
+        when(mockBlock4.getCaption()).thenReturn(null);
         when(mockBlock4.getTitle()).thenReturn(null);
         when(mockBlock4.getStyle()).thenReturn(null);
         when(mockBlock4.getLevel()).thenReturn(4);
@@ -563,6 +583,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockSection5.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection5.isReftext()).thenReturn(false);
         when(mockSection5.getReftext()).thenReturn(null);
+        when(mockSection5.getCaption()).thenReturn(null);
         when(mockSection5.getTitle()).thenReturn("Section 5");
         when(mockSection5.getStyle()).thenReturn(null);
         when(mockSection5.getLevel()).thenReturn(5);
@@ -581,6 +602,7 @@ public class SectionAllTestCase implements AdocTestCase {
         when(mockBlock5.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock5.isReftext()).thenReturn(false);
         when(mockBlock5.getReftext()).thenReturn(null);
+        when(mockBlock5.getCaption()).thenReturn(null);
         when(mockBlock5.getTitle()).thenReturn(null);
         when(mockBlock5.getStyle()).thenReturn(null);
         when(mockBlock5.getLevel()).thenReturn(5);

@@ -36,6 +36,7 @@ public class MockCodeGeneratorListItemTest {
         when(mockListItem1.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem1.isReftext()).thenReturn(false);
         when(mockListItem1.getReftext()).thenReturn(null);
+        when(mockListItem1.getCaption()).thenReturn(null);
         when(mockListItem1.getTitle()).thenReturn("T");
         when(mockListItem1.getStyle()).thenReturn("S");
         when(mockListItem1.getLevel()).thenReturn(2);

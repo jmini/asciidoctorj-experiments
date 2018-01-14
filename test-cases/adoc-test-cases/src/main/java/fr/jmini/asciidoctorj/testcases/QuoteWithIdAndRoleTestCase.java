@@ -79,6 +79,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -103,6 +104,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         assertThat(block1.getRoles()).containsExactly("rolee");
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
+        assertThat(block1.getCaption()).isNull();
         assertThat(block1.getTitle()).isEqualTo("some caption");
         assertThat(block1.getStyle()).isEqualTo("quote");
         assertThat(block1.getLevel()).isEqualTo(0);
@@ -123,6 +125,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
         assertThat(list1.getReftext()).isNull();
+        assertThat(list1.getCaption()).isNull();
         assertThat(list1.getTitle()).isNull();
         assertThat(list1.getStyle()).isNull();
         assertThat(list1.getLevel()).isEqualTo(1);
@@ -144,6 +147,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         assertThat(listItem1.getRoles()).isNullOrEmpty();
         assertThat(listItem1.isReftext()).isFalse();
         assertThat(listItem1.getReftext()).isNull();
+        assertThat(listItem1.getCaption()).isNull();
         assertThat(listItem1.getTitle()).isNull();
         assertThat(listItem1.getStyle()).isNull();
         assertThat(listItem1.getLevel()).isEqualTo(1);
@@ -168,6 +172,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         assertThat(listItem2.getRoles()).isNullOrEmpty();
         assertThat(listItem2.isReftext()).isFalse();
         assertThat(listItem2.getReftext()).isNull();
+        assertThat(listItem2.getCaption()).isNull();
         assertThat(listItem2.getTitle()).isNull();
         assertThat(listItem2.getStyle()).isNull();
         assertThat(listItem2.getLevel()).isEqualTo(1);
@@ -192,6 +197,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         assertThat(listItem3.getRoles()).isNullOrEmpty();
         assertThat(listItem3.isReftext()).isFalse();
         assertThat(listItem3.getReftext()).isNull();
+        assertThat(listItem3.getCaption()).isNull();
         assertThat(listItem3.getTitle()).isNull();
         assertThat(listItem3.getStyle()).isNull();
         assertThat(listItem3.getLevel()).isEqualTo(1);
@@ -234,6 +240,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -258,6 +265,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         when(mockBlock1.getRoles()).thenReturn(Collections.singletonList("rolee"));
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
+        when(mockBlock1.getCaption()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn("some caption");
         when(mockBlock1.getStyle()).thenReturn("quote");
         when(mockBlock1.getLevel()).thenReturn(0);
@@ -276,6 +284,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         when(mockList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockList1.isReftext()).thenReturn(false);
         when(mockList1.getReftext()).thenReturn(null);
+        when(mockList1.getCaption()).thenReturn(null);
         when(mockList1.getTitle()).thenReturn(null);
         when(mockList1.getStyle()).thenReturn(null);
         when(mockList1.getLevel()).thenReturn(1);
@@ -295,6 +304,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         when(mockListItem1.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem1.isReftext()).thenReturn(false);
         when(mockListItem1.getReftext()).thenReturn(null);
+        when(mockListItem1.getCaption()).thenReturn(null);
         when(mockListItem1.getTitle()).thenReturn(null);
         when(mockListItem1.getStyle()).thenReturn(null);
         when(mockListItem1.getLevel()).thenReturn(1);
@@ -318,6 +328,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         when(mockListItem2.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem2.isReftext()).thenReturn(false);
         when(mockListItem2.getReftext()).thenReturn(null);
+        when(mockListItem2.getCaption()).thenReturn(null);
         when(mockListItem2.getTitle()).thenReturn(null);
         when(mockListItem2.getStyle()).thenReturn(null);
         when(mockListItem2.getLevel()).thenReturn(1);
@@ -341,6 +352,7 @@ public class QuoteWithIdAndRoleTestCase implements AdocTestCase {
         when(mockListItem3.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem3.isReftext()).thenReturn(false);
         when(mockListItem3.getReftext()).thenReturn(null);
+        when(mockListItem3.getCaption()).thenReturn(null);
         when(mockListItem3.getTitle()).thenReturn(null);
         when(mockListItem3.getStyle()).thenReturn(null);
         when(mockListItem3.getLevel()).thenReturn(1);

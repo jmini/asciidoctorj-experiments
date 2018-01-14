@@ -42,6 +42,7 @@ public class AssertCodeGeneratorSectionTest {
         assertThat(section1.getRoles()).isNullOrEmpty();
         assertThat(section1.isReftext()).isFalse();
         assertThat(section1.getReftext()).isNull();
+        assertThat(section1.getCaption()).isNull();
         assertThat(section1.getTitle()).isNull();
         assertThat(section1.getStyle()).isNull();
         assertThat(section1.getLevel()).isEqualTo(0);

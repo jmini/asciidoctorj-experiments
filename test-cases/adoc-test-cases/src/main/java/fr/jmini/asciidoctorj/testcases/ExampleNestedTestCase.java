@@ -94,6 +94,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -115,6 +116,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
+        assertThat(block1.getCaption()).isEqualTo("Example 1. ");
         assertThat(block1.getTitle()).isEqualTo("Sample document");
         assertThat(block1.getStyle()).isEqualTo("example");
         assertThat(block1.getLevel()).isEqualTo(0);
@@ -135,6 +137,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getReftext()).isNull();
+        assertThat(block2.getCaption()).isNull();
         assertThat(block2.getTitle()).isNull();
         assertThat(block2.getStyle()).isNull();
         assertThat(block2.getLevel()).isEqualTo(0);
@@ -158,6 +161,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         assertThat(block3.getRoles()).isNullOrEmpty();
         assertThat(block3.isReftext()).isFalse();
         assertThat(block3.getReftext()).isNull();
+        assertThat(block3.getCaption()).isNull();
         assertThat(block3.getTitle()).isNull();
         assertThat(block3.getStyle()).isEqualTo("listing");
         assertThat(block3.getLevel()).isEqualTo(0);
@@ -184,6 +188,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         assertThat(block4.getRoles()).isNullOrEmpty();
         assertThat(block4.isReftext()).isFalse();
         assertThat(block4.getReftext()).isNull();
+        assertThat(block4.getCaption()).isNull();
         assertThat(block4.getTitle()).isNull();
         assertThat(block4.getStyle()).isNull();
         assertThat(block4.getLevel()).isEqualTo(0);
@@ -223,6 +228,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -244,6 +250,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
+        when(mockBlock1.getCaption()).thenReturn("Example 1. ");
         when(mockBlock1.getTitle()).thenReturn("Sample document");
         when(mockBlock1.getStyle()).thenReturn("example");
         when(mockBlock1.getLevel()).thenReturn(0);
@@ -262,6 +269,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
+        when(mockBlock2.getCaption()).thenReturn(null);
         when(mockBlock2.getTitle()).thenReturn(null);
         when(mockBlock2.getStyle()).thenReturn(null);
         when(mockBlock2.getLevel()).thenReturn(0);
@@ -286,6 +294,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         when(mockBlock3.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock3.isReftext()).thenReturn(false);
         when(mockBlock3.getReftext()).thenReturn(null);
+        when(mockBlock3.getCaption()).thenReturn(null);
         when(mockBlock3.getTitle()).thenReturn(null);
         when(mockBlock3.getStyle()).thenReturn("listing");
         when(mockBlock3.getLevel()).thenReturn(0);
@@ -311,6 +320,7 @@ public class ExampleNestedTestCase implements AdocTestCase {
         when(mockBlock4.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock4.isReftext()).thenReturn(false);
         when(mockBlock4.getReftext()).thenReturn(null);
+        when(mockBlock4.getCaption()).thenReturn(null);
         when(mockBlock4.getTitle()).thenReturn(null);
         when(mockBlock4.getStyle()).thenReturn(null);
         when(mockBlock4.getLevel()).thenReturn(0);

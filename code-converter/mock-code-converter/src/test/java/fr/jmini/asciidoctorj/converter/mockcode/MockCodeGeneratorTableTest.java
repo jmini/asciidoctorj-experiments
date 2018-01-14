@@ -43,6 +43,7 @@ public class MockCodeGeneratorTableTest {
         when(mockTable1.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable1.isReftext()).thenReturn(false);
         when(mockTable1.getReftext()).thenReturn(null);
+        when(mockTable1.getCaption()).thenReturn(null);
         when(mockTable1.getTitle()).thenReturn(null);
         when(mockTable1.getStyle()).thenReturn(null);
         when(mockTable1.getLevel()).thenReturn(0);

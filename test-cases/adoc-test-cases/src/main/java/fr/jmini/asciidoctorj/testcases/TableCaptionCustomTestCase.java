@@ -105,6 +105,7 @@ public class TableCaptionCustomTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -128,6 +129,7 @@ public class TableCaptionCustomTestCase implements AdocTestCase {
         assertThat(table1.getRoles()).isNullOrEmpty();
         assertThat(table1.isReftext()).isFalse();
         assertThat(table1.getReftext()).isNull();
+        assertThat(table1.getCaption()).isEqualTo("Tbl 1. ");
         assertThat(table1.getTitle()).isEqualTo("some first caption");
         assertThat(table1.getStyle()).isEqualTo("table");
         assertThat(table1.getLevel()).isEqualTo(0);
@@ -273,6 +275,7 @@ public class TableCaptionCustomTestCase implements AdocTestCase {
         assertThat(table2.getRoles()).isNullOrEmpty();
         assertThat(table2.isReftext()).isFalse();
         assertThat(table2.getReftext()).isNull();
+        assertThat(table2.getCaption()).isEqualTo("Tbl 2. ");
         assertThat(table2.getTitle()).isEqualTo("some second caption");
         assertThat(table2.getStyle()).isEqualTo("table");
         assertThat(table2.getLevel()).isEqualTo(0);
@@ -430,6 +433,7 @@ public class TableCaptionCustomTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -453,6 +457,7 @@ public class TableCaptionCustomTestCase implements AdocTestCase {
         when(mockTable1.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable1.isReftext()).thenReturn(false);
         when(mockTable1.getReftext()).thenReturn(null);
+        when(mockTable1.getCaption()).thenReturn("Tbl 1. ");
         when(mockTable1.getTitle()).thenReturn("some first caption");
         when(mockTable1.getStyle()).thenReturn("table");
         when(mockTable1.getLevel()).thenReturn(0);
@@ -586,6 +591,7 @@ public class TableCaptionCustomTestCase implements AdocTestCase {
         when(mockTable2.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable2.isReftext()).thenReturn(false);
         when(mockTable2.getReftext()).thenReturn(null);
+        when(mockTable2.getCaption()).thenReturn("Tbl 2. ");
         when(mockTable2.getTitle()).thenReturn("some second caption");
         when(mockTable2.getStyle()).thenReturn("table");
         when(mockTable2.getLevel()).thenReturn(0);

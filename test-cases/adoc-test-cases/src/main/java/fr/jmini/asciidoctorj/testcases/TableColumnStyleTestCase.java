@@ -138,6 +138,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -162,6 +163,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(table1.getRoles()).isNullOrEmpty();
         assertThat(table1.isReftext()).isFalse();
         assertThat(table1.getReftext()).isNull();
+        assertThat(table1.getCaption()).isNull();
         assertThat(table1.getTitle()).isNull();
         assertThat(table1.getStyle()).isEqualTo("table");
         assertThat(table1.getLevel()).isEqualTo(0);
@@ -439,6 +441,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(document2.getRoles()).isNullOrEmpty();
         assertThat(document2.isReftext()).isFalse();
         assertThat(document2.getReftext()).isNull();
+        assertThat(document2.getCaption()).isNull();
         assertThat(document2.getTitle()).isNull();
         assertThat(document2.getStyle()).isNull();
         assertThat(document2.getLevel()).isEqualTo(0);
@@ -459,6 +462,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
+        assertThat(block1.getCaption()).isNull();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isNull();
         assertThat(block1.getLevel()).isEqualTo(0);
@@ -730,6 +734,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(document3.getRoles()).isNullOrEmpty();
         assertThat(document3.isReftext()).isFalse();
         assertThat(document3.getReftext()).isNull();
+        assertThat(document3.getCaption()).isNull();
         assertThat(document3.getTitle()).isNull();
         assertThat(document3.getStyle()).isNull();
         assertThat(document3.getLevel()).isEqualTo(0);
@@ -750,6 +755,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getReftext()).isNull();
+        assertThat(block2.getCaption()).isNull();
         assertThat(block2.getTitle()).isNull();
         assertThat(block2.getStyle()).isNull();
         assertThat(block2.getLevel()).isEqualTo(0);
@@ -1002,6 +1008,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -1026,6 +1033,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         when(mockTable1.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable1.isReftext()).thenReturn(false);
         when(mockTable1.getReftext()).thenReturn(null);
+        when(mockTable1.getCaption()).thenReturn(null);
         when(mockTable1.getTitle()).thenReturn(null);
         when(mockTable1.getStyle()).thenReturn("table");
         when(mockTable1.getLevel()).thenReturn(0);
@@ -1284,6 +1292,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         when(mockDocument2.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument2.isReftext()).thenReturn(false);
         when(mockDocument2.getReftext()).thenReturn(null);
+        when(mockDocument2.getCaption()).thenReturn(null);
         when(mockDocument2.getTitle()).thenReturn(null);
         when(mockDocument2.getStyle()).thenReturn(null);
         when(mockDocument2.getLevel()).thenReturn(0);
@@ -1302,6 +1311,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
+        when(mockBlock1.getCaption()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn(null);
         when(mockBlock1.getStyle()).thenReturn(null);
         when(mockBlock1.getLevel()).thenReturn(0);
@@ -1563,6 +1573,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         when(mockDocument3.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument3.isReftext()).thenReturn(false);
         when(mockDocument3.getReftext()).thenReturn(null);
+        when(mockDocument3.getCaption()).thenReturn(null);
         when(mockDocument3.getTitle()).thenReturn(null);
         when(mockDocument3.getStyle()).thenReturn(null);
         when(mockDocument3.getLevel()).thenReturn(0);
@@ -1581,6 +1592,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
+        when(mockBlock2.getCaption()).thenReturn(null);
         when(mockBlock2.getTitle()).thenReturn(null);
         when(mockBlock2.getStyle()).thenReturn(null);
         when(mockBlock2.getLevel()).thenReturn(0);

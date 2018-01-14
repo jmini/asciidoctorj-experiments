@@ -132,6 +132,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -158,6 +159,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(table1.getRoles()).isNullOrEmpty();
         assertThat(table1.isReftext()).isFalse();
         assertThat(table1.getReftext()).isNull();
+        assertThat(table1.getCaption()).isNull();
         assertThat(table1.getTitle()).isNull();
         assertThat(table1.getStyle()).isEqualTo("table");
         assertThat(table1.getLevel()).isEqualTo(0);
@@ -301,6 +303,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document2.getRoles()).isNullOrEmpty();
         assertThat(document2.isReftext()).isFalse();
         assertThat(document2.getReftext()).isNull();
+        assertThat(document2.getCaption()).isNull();
         assertThat(document2.getTitle()).isNull();
         assertThat(document2.getStyle()).isNull();
         assertThat(document2.getLevel()).isEqualTo(0);
@@ -321,6 +324,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
+        assertThat(block1.getCaption()).isNull();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isNull();
         assertThat(block1.getLevel()).isEqualTo(0);
@@ -414,6 +418,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document3.getRoles()).isNullOrEmpty();
         assertThat(document3.isReftext()).isFalse();
         assertThat(document3.getReftext()).isNull();
+        assertThat(document3.getCaption()).isNull();
         assertThat(document3.getTitle()).isNull();
         assertThat(document3.getStyle()).isNull();
         assertThat(document3.getLevel()).isEqualTo(0);
@@ -434,6 +439,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getReftext()).isNull();
+        assertThat(block2.getCaption()).isNull();
         assertThat(block2.getTitle()).isNull();
         assertThat(block2.getStyle()).isNull();
         assertThat(block2.getLevel()).isEqualTo(0);
@@ -543,6 +549,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document4.getRoles()).isNullOrEmpty();
         assertThat(document4.isReftext()).isFalse();
         assertThat(document4.getReftext()).isNull();
+        assertThat(document4.getCaption()).isNull();
         assertThat(document4.getTitle()).isNull();
         assertThat(document4.getStyle()).isNull();
         assertThat(document4.getLevel()).isEqualTo(0);
@@ -563,6 +570,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(block3.getRoles()).isNullOrEmpty();
         assertThat(block3.isReftext()).isFalse();
         assertThat(block3.getReftext()).isNull();
+        assertThat(block3.getCaption()).isNull();
         assertThat(block3.getTitle()).isNull();
         assertThat(block3.getStyle()).isNull();
         assertThat(block3.getLevel()).isEqualTo(0);
@@ -591,6 +599,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(table2.getRoles()).isNullOrEmpty();
         assertThat(table2.isReftext()).isFalse();
         assertThat(table2.getReftext()).isNull();
+        assertThat(table2.getCaption()).isNull();
         assertThat(table2.getTitle()).isNull();
         assertThat(table2.getStyle()).isEqualTo("table");
         assertThat(table2.getLevel()).isEqualTo(0);
@@ -818,6 +827,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -844,6 +854,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockTable1.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable1.isReftext()).thenReturn(false);
         when(mockTable1.getReftext()).thenReturn(null);
+        when(mockTable1.getCaption()).thenReturn(null);
         when(mockTable1.getTitle()).thenReturn(null);
         when(mockTable1.getStyle()).thenReturn("table");
         when(mockTable1.getLevel()).thenReturn(0);
@@ -976,6 +987,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockDocument2.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument2.isReftext()).thenReturn(false);
         when(mockDocument2.getReftext()).thenReturn(null);
+        when(mockDocument2.getCaption()).thenReturn(null);
         when(mockDocument2.getTitle()).thenReturn(null);
         when(mockDocument2.getStyle()).thenReturn(null);
         when(mockDocument2.getLevel()).thenReturn(0);
@@ -994,6 +1006,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
+        when(mockBlock1.getCaption()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn(null);
         when(mockBlock1.getStyle()).thenReturn(null);
         when(mockBlock1.getLevel()).thenReturn(0);
@@ -1088,6 +1101,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockDocument3.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument3.isReftext()).thenReturn(false);
         when(mockDocument3.getReftext()).thenReturn(null);
+        when(mockDocument3.getCaption()).thenReturn(null);
         when(mockDocument3.getTitle()).thenReturn(null);
         when(mockDocument3.getStyle()).thenReturn(null);
         when(mockDocument3.getLevel()).thenReturn(0);
@@ -1106,6 +1120,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
+        when(mockBlock2.getCaption()).thenReturn(null);
         when(mockBlock2.getTitle()).thenReturn(null);
         when(mockBlock2.getStyle()).thenReturn(null);
         when(mockBlock2.getLevel()).thenReturn(0);
@@ -1216,6 +1231,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockDocument4.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument4.isReftext()).thenReturn(false);
         when(mockDocument4.getReftext()).thenReturn(null);
+        when(mockDocument4.getCaption()).thenReturn(null);
         when(mockDocument4.getTitle()).thenReturn(null);
         when(mockDocument4.getStyle()).thenReturn(null);
         when(mockDocument4.getLevel()).thenReturn(0);
@@ -1234,6 +1250,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockBlock3.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock3.isReftext()).thenReturn(false);
         when(mockBlock3.getReftext()).thenReturn(null);
+        when(mockBlock3.getCaption()).thenReturn(null);
         when(mockBlock3.getTitle()).thenReturn(null);
         when(mockBlock3.getStyle()).thenReturn(null);
         when(mockBlock3.getLevel()).thenReturn(0);
@@ -1263,6 +1280,7 @@ public class TableNestedTestCase implements AdocTestCase {
         when(mockTable2.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable2.isReftext()).thenReturn(false);
         when(mockTable2.getReftext()).thenReturn(null);
+        when(mockTable2.getCaption()).thenReturn(null);
         when(mockTable2.getTitle()).thenReturn(null);
         when(mockTable2.getStyle()).thenReturn("table");
         when(mockTable2.getLevel()).thenReturn(0);

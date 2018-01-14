@@ -225,6 +225,7 @@ public class AssertCodeGenerator extends AbstractCodeGenerator {
     @Override
     protected void appendStructuralNode(StringBuilder sb, String varName, StructuralNode structuralNode) {
         appendContentNode(sb, varName, structuralNode);
+        appendEqualsToExpressionString(sb, varName + ".getCaption()", structuralNode.getCaption());
         appendEqualsToExpressionString(sb, varName + ".getTitle()", structuralNode.getTitle());
         appendEqualsToExpressionString(sb, varName + ".getStyle()", structuralNode.getStyle());
         // appendEqualsToExpressionString(sb, varName + ".getContent()", structuralNode.getContent());

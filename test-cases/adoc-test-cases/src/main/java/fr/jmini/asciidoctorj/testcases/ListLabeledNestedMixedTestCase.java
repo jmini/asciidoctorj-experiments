@@ -154,6 +154,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -174,6 +175,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(descriptionList1.getRoles()).isNullOrEmpty();
         assertThat(descriptionList1.isReftext()).isFalse();
         assertThat(descriptionList1.getReftext()).isNull();
+        assertThat(descriptionList1.getCaption()).isNull();
         assertThat(descriptionList1.getTitle()).isNull();
         assertThat(descriptionList1.getStyle()).isNull();
         assertThat(descriptionList1.getLevel()).isEqualTo(0);
@@ -196,6 +198,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem1.getRoles()).isNullOrEmpty();
         assertThat(listItem1.isReftext()).isFalse();
         assertThat(listItem1.getReftext()).isNull();
+        assertThat(listItem1.getCaption()).isNull();
         assertThat(listItem1.getTitle()).isNull();
         assertThat(listItem1.getStyle()).isNull();
         assertThat(listItem1.getLevel()).isEqualTo(0);
@@ -216,6 +219,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(descriptionList2.getRoles()).isNullOrEmpty();
         assertThat(descriptionList2.isReftext()).isFalse();
         assertThat(descriptionList2.getReftext()).isNull();
+        assertThat(descriptionList2.getCaption()).isNull();
         assertThat(descriptionList2.getTitle()).isNull();
         assertThat(descriptionList2.getStyle()).isNull();
         assertThat(descriptionList2.getLevel()).isEqualTo(0);
@@ -238,6 +242,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem2.getRoles()).isNullOrEmpty();
         assertThat(listItem2.isReftext()).isFalse();
         assertThat(listItem2.getReftext()).isNull();
+        assertThat(listItem2.getCaption()).isNull();
         assertThat(listItem2.getTitle()).isNull();
         assertThat(listItem2.getStyle()).isNull();
         assertThat(listItem2.getLevel()).isEqualTo(0);
@@ -258,6 +263,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
         assertThat(list1.getReftext()).isNull();
+        assertThat(list1.getCaption()).isNull();
         assertThat(list1.getTitle()).isNull();
         assertThat(list1.getStyle()).isEqualTo("arabic");
         assertThat(list1.getLevel()).isEqualTo(1);
@@ -279,6 +285,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem3.getRoles()).isNullOrEmpty();
         assertThat(listItem3.isReftext()).isFalse();
         assertThat(listItem3.getReftext()).isNull();
+        assertThat(listItem3.getCaption()).isNull();
         assertThat(listItem3.getTitle()).isNull();
         assertThat(listItem3.getStyle()).isNull();
         assertThat(listItem3.getLevel()).isEqualTo(1);
@@ -299,6 +306,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(list2.getRoles()).isNullOrEmpty();
         assertThat(list2.isReftext()).isFalse();
         assertThat(list2.getReftext()).isNull();
+        assertThat(list2.getCaption()).isNull();
         assertThat(list2.getTitle()).isNull();
         assertThat(list2.getStyle()).isNull();
         assertThat(list2.getLevel()).isEqualTo(1);
@@ -320,6 +328,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem4.getRoles()).isNullOrEmpty();
         assertThat(listItem4.isReftext()).isFalse();
         assertThat(listItem4.getReftext()).isNull();
+        assertThat(listItem4.getCaption()).isNull();
         assertThat(listItem4.getTitle()).isNull();
         assertThat(listItem4.getStyle()).isNull();
         assertThat(listItem4.getLevel()).isEqualTo(1);
@@ -349,6 +358,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem5.getRoles()).isNullOrEmpty();
         assertThat(listItem5.isReftext()).isFalse();
         assertThat(listItem5.getReftext()).isNull();
+        assertThat(listItem5.getCaption()).isNull();
         assertThat(listItem5.getTitle()).isNull();
         assertThat(listItem5.getStyle()).isNull();
         assertThat(listItem5.getLevel()).isEqualTo(1);
@@ -369,6 +379,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(list3.getRoles()).isNullOrEmpty();
         assertThat(list3.isReftext()).isFalse();
         assertThat(list3.getReftext()).isNull();
+        assertThat(list3.getCaption()).isNull();
         assertThat(list3.getTitle()).isNull();
         assertThat(list3.getStyle()).isNull();
         assertThat(list3.getLevel()).isEqualTo(1);
@@ -390,6 +401,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem6.getRoles()).isNullOrEmpty();
         assertThat(listItem6.isReftext()).isFalse();
         assertThat(listItem6.getReftext()).isNull();
+        assertThat(listItem6.getCaption()).isNull();
         assertThat(listItem6.getTitle()).isNull();
         assertThat(listItem6.getStyle()).isNull();
         assertThat(listItem6.getLevel()).isEqualTo(1);
@@ -414,6 +426,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem7.getRoles()).isNullOrEmpty();
         assertThat(listItem7.isReftext()).isFalse();
         assertThat(listItem7.getReftext()).isNull();
+        assertThat(listItem7.getCaption()).isNull();
         assertThat(listItem7.getTitle()).isNull();
         assertThat(listItem7.getStyle()).isNull();
         assertThat(listItem7.getLevel()).isEqualTo(1);
@@ -448,6 +461,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem8.getRoles()).isNullOrEmpty();
         assertThat(listItem8.isReftext()).isFalse();
         assertThat(listItem8.getReftext()).isNull();
+        assertThat(listItem8.getCaption()).isNull();
         assertThat(listItem8.getTitle()).isNull();
         assertThat(listItem8.getStyle()).isNull();
         assertThat(listItem8.getLevel()).isEqualTo(0);
@@ -473,6 +487,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem9.getRoles()).isNullOrEmpty();
         assertThat(listItem9.isReftext()).isFalse();
         assertThat(listItem9.getReftext()).isNull();
+        assertThat(listItem9.getCaption()).isNull();
         assertThat(listItem9.getTitle()).isNull();
         assertThat(listItem9.getStyle()).isNull();
         assertThat(listItem9.getLevel()).isEqualTo(0);
@@ -493,6 +508,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(list4.getRoles()).isNullOrEmpty();
         assertThat(list4.isReftext()).isFalse();
         assertThat(list4.getReftext()).isNull();
+        assertThat(list4.getCaption()).isNull();
         assertThat(list4.getTitle()).isNull();
         assertThat(list4.getStyle()).isEqualTo("arabic");
         assertThat(list4.getLevel()).isEqualTo(1);
@@ -514,6 +530,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem10.getRoles()).isNullOrEmpty();
         assertThat(listItem10.isReftext()).isFalse();
         assertThat(listItem10.getReftext()).isNull();
+        assertThat(listItem10.getCaption()).isNull();
         assertThat(listItem10.getTitle()).isNull();
         assertThat(listItem10.getStyle()).isNull();
         assertThat(listItem10.getLevel()).isEqualTo(1);
@@ -538,6 +555,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem11.getRoles()).isNullOrEmpty();
         assertThat(listItem11.isReftext()).isFalse();
         assertThat(listItem11.getReftext()).isNull();
+        assertThat(listItem11.getCaption()).isNull();
         assertThat(listItem11.getTitle()).isNull();
         assertThat(listItem11.getStyle()).isNull();
         assertThat(listItem11.getLevel()).isEqualTo(1);
@@ -567,6 +585,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem12.getRoles()).isNullOrEmpty();
         assertThat(listItem12.isReftext()).isFalse();
         assertThat(listItem12.getReftext()).isNull();
+        assertThat(listItem12.getCaption()).isNull();
         assertThat(listItem12.getTitle()).isNull();
         assertThat(listItem12.getStyle()).isNull();
         assertThat(listItem12.getLevel()).isEqualTo(0);
@@ -595,6 +614,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem13.getRoles()).isNullOrEmpty();
         assertThat(listItem13.isReftext()).isFalse();
         assertThat(listItem13.getReftext()).isNull();
+        assertThat(listItem13.getCaption()).isNull();
         assertThat(listItem13.getTitle()).isNull();
         assertThat(listItem13.getStyle()).isNull();
         assertThat(listItem13.getLevel()).isEqualTo(0);
@@ -620,6 +640,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem14.getRoles()).isNullOrEmpty();
         assertThat(listItem14.isReftext()).isFalse();
         assertThat(listItem14.getReftext()).isNull();
+        assertThat(listItem14.getCaption()).isNull();
         assertThat(listItem14.getTitle()).isNull();
         assertThat(listItem14.getStyle()).isNull();
         assertThat(listItem14.getLevel()).isEqualTo(0);
@@ -640,6 +661,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(descriptionList3.getRoles()).isNullOrEmpty();
         assertThat(descriptionList3.isReftext()).isFalse();
         assertThat(descriptionList3.getReftext()).isNull();
+        assertThat(descriptionList3.getCaption()).isNull();
         assertThat(descriptionList3.getTitle()).isNull();
         assertThat(descriptionList3.getStyle()).isNull();
         assertThat(descriptionList3.getLevel()).isEqualTo(0);
@@ -662,6 +684,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem15.getRoles()).isNullOrEmpty();
         assertThat(listItem15.isReftext()).isFalse();
         assertThat(listItem15.getReftext()).isNull();
+        assertThat(listItem15.getCaption()).isNull();
         assertThat(listItem15.getTitle()).isNull();
         assertThat(listItem15.getStyle()).isNull();
         assertThat(listItem15.getLevel()).isEqualTo(0);
@@ -682,6 +705,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(list5.getRoles()).isNullOrEmpty();
         assertThat(list5.isReftext()).isFalse();
         assertThat(list5.getReftext()).isNull();
+        assertThat(list5.getCaption()).isNull();
         assertThat(list5.getTitle()).isNull();
         assertThat(list5.getStyle()).isEqualTo("arabic");
         assertThat(list5.getLevel()).isEqualTo(1);
@@ -703,6 +727,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem16.getRoles()).isNullOrEmpty();
         assertThat(listItem16.isReftext()).isFalse();
         assertThat(listItem16.getReftext()).isNull();
+        assertThat(listItem16.getCaption()).isNull();
         assertThat(listItem16.getTitle()).isNull();
         assertThat(listItem16.getStyle()).isNull();
         assertThat(listItem16.getLevel()).isEqualTo(1);
@@ -727,6 +752,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem17.getRoles()).isNullOrEmpty();
         assertThat(listItem17.isReftext()).isFalse();
         assertThat(listItem17.getReftext()).isNull();
+        assertThat(listItem17.getCaption()).isNull();
         assertThat(listItem17.getTitle()).isNull();
         assertThat(listItem17.getStyle()).isNull();
         assertThat(listItem17.getLevel()).isEqualTo(1);
@@ -756,6 +782,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem18.getRoles()).isNullOrEmpty();
         assertThat(listItem18.isReftext()).isFalse();
         assertThat(listItem18.getReftext()).isNull();
+        assertThat(listItem18.getCaption()).isNull();
         assertThat(listItem18.getTitle()).isNull();
         assertThat(listItem18.getStyle()).isNull();
         assertThat(listItem18.getLevel()).isEqualTo(0);
@@ -781,6 +808,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem19.getRoles()).isNullOrEmpty();
         assertThat(listItem19.isReftext()).isFalse();
         assertThat(listItem19.getReftext()).isNull();
+        assertThat(listItem19.getCaption()).isNull();
         assertThat(listItem19.getTitle()).isNull();
         assertThat(listItem19.getStyle()).isNull();
         assertThat(listItem19.getLevel()).isEqualTo(0);
@@ -801,6 +829,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(list6.getRoles()).isNullOrEmpty();
         assertThat(list6.isReftext()).isFalse();
         assertThat(list6.getReftext()).isNull();
+        assertThat(list6.getCaption()).isNull();
         assertThat(list6.getTitle()).isNull();
         assertThat(list6.getStyle()).isEqualTo("arabic");
         assertThat(list6.getLevel()).isEqualTo(1);
@@ -822,6 +851,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem20.getRoles()).isNullOrEmpty();
         assertThat(listItem20.isReftext()).isFalse();
         assertThat(listItem20.getReftext()).isNull();
+        assertThat(listItem20.getCaption()).isNull();
         assertThat(listItem20.getTitle()).isNull();
         assertThat(listItem20.getStyle()).isNull();
         assertThat(listItem20.getLevel()).isEqualTo(1);
@@ -846,6 +876,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem21.getRoles()).isNullOrEmpty();
         assertThat(listItem21.isReftext()).isFalse();
         assertThat(listItem21.getReftext()).isNull();
+        assertThat(listItem21.getCaption()).isNull();
         assertThat(listItem21.getTitle()).isNull();
         assertThat(listItem21.getStyle()).isNull();
         assertThat(listItem21.getLevel()).isEqualTo(1);
@@ -875,6 +906,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem22.getRoles()).isNullOrEmpty();
         assertThat(listItem22.isReftext()).isFalse();
         assertThat(listItem22.getReftext()).isNull();
+        assertThat(listItem22.getCaption()).isNull();
         assertThat(listItem22.getTitle()).isNull();
         assertThat(listItem22.getStyle()).isNull();
         assertThat(listItem22.getLevel()).isEqualTo(0);
@@ -903,6 +935,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         assertThat(listItem23.getRoles()).isNullOrEmpty();
         assertThat(listItem23.isReftext()).isFalse();
         assertThat(listItem23.getReftext()).isNull();
+        assertThat(listItem23.getCaption()).isNull();
         assertThat(listItem23.getTitle()).isNull();
         assertThat(listItem23.getStyle()).isNull();
         assertThat(listItem23.getLevel()).isEqualTo(0);
@@ -942,6 +975,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -960,6 +994,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockDescriptionList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDescriptionList1.isReftext()).thenReturn(false);
         when(mockDescriptionList1.getReftext()).thenReturn(null);
+        when(mockDescriptionList1.getCaption()).thenReturn(null);
         when(mockDescriptionList1.getTitle()).thenReturn(null);
         when(mockDescriptionList1.getStyle()).thenReturn(null);
         when(mockDescriptionList1.getLevel()).thenReturn(0);
@@ -980,6 +1015,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem1.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem1.isReftext()).thenReturn(false);
         when(mockListItem1.getReftext()).thenReturn(null);
+        when(mockListItem1.getCaption()).thenReturn(null);
         when(mockListItem1.getTitle()).thenReturn(null);
         when(mockListItem1.getStyle()).thenReturn(null);
         when(mockListItem1.getLevel()).thenReturn(0);
@@ -998,6 +1034,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockDescriptionList2.getRoles()).thenReturn(Collections.emptyList());
         when(mockDescriptionList2.isReftext()).thenReturn(false);
         when(mockDescriptionList2.getReftext()).thenReturn(null);
+        when(mockDescriptionList2.getCaption()).thenReturn(null);
         when(mockDescriptionList2.getTitle()).thenReturn(null);
         when(mockDescriptionList2.getStyle()).thenReturn(null);
         when(mockDescriptionList2.getLevel()).thenReturn(0);
@@ -1018,6 +1055,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem2.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem2.isReftext()).thenReturn(false);
         when(mockListItem2.getReftext()).thenReturn(null);
+        when(mockListItem2.getCaption()).thenReturn(null);
         when(mockListItem2.getTitle()).thenReturn(null);
         when(mockListItem2.getStyle()).thenReturn(null);
         when(mockListItem2.getLevel()).thenReturn(0);
@@ -1038,6 +1076,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockList1.isReftext()).thenReturn(false);
         when(mockList1.getReftext()).thenReturn(null);
+        when(mockList1.getCaption()).thenReturn(null);
         when(mockList1.getTitle()).thenReturn(null);
         when(mockList1.getStyle()).thenReturn("arabic");
         when(mockList1.getLevel()).thenReturn(1);
@@ -1057,6 +1096,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem3.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem3.isReftext()).thenReturn(false);
         when(mockListItem3.getReftext()).thenReturn(null);
+        when(mockListItem3.getCaption()).thenReturn(null);
         when(mockListItem3.getTitle()).thenReturn(null);
         when(mockListItem3.getStyle()).thenReturn(null);
         when(mockListItem3.getLevel()).thenReturn(1);
@@ -1075,6 +1115,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockList2.getRoles()).thenReturn(Collections.emptyList());
         when(mockList2.isReftext()).thenReturn(false);
         when(mockList2.getReftext()).thenReturn(null);
+        when(mockList2.getCaption()).thenReturn(null);
         when(mockList2.getTitle()).thenReturn(null);
         when(mockList2.getStyle()).thenReturn(null);
         when(mockList2.getLevel()).thenReturn(1);
@@ -1094,6 +1135,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem4.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem4.isReftext()).thenReturn(false);
         when(mockListItem4.getReftext()).thenReturn(null);
+        when(mockListItem4.getCaption()).thenReturn(null);
         when(mockListItem4.getTitle()).thenReturn(null);
         when(mockListItem4.getStyle()).thenReturn(null);
         when(mockListItem4.getLevel()).thenReturn(1);
@@ -1124,6 +1166,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem5.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem5.isReftext()).thenReturn(false);
         when(mockListItem5.getReftext()).thenReturn(null);
+        when(mockListItem5.getCaption()).thenReturn(null);
         when(mockListItem5.getTitle()).thenReturn(null);
         when(mockListItem5.getStyle()).thenReturn(null);
         when(mockListItem5.getLevel()).thenReturn(1);
@@ -1142,6 +1185,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockList3.getRoles()).thenReturn(Collections.emptyList());
         when(mockList3.isReftext()).thenReturn(false);
         when(mockList3.getReftext()).thenReturn(null);
+        when(mockList3.getCaption()).thenReturn(null);
         when(mockList3.getTitle()).thenReturn(null);
         when(mockList3.getStyle()).thenReturn(null);
         when(mockList3.getLevel()).thenReturn(1);
@@ -1161,6 +1205,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem6.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem6.isReftext()).thenReturn(false);
         when(mockListItem6.getReftext()).thenReturn(null);
+        when(mockListItem6.getCaption()).thenReturn(null);
         when(mockListItem6.getTitle()).thenReturn(null);
         when(mockListItem6.getStyle()).thenReturn(null);
         when(mockListItem6.getLevel()).thenReturn(1);
@@ -1184,6 +1229,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem7.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem7.isReftext()).thenReturn(false);
         when(mockListItem7.getReftext()).thenReturn(null);
+        when(mockListItem7.getCaption()).thenReturn(null);
         when(mockListItem7.getTitle()).thenReturn(null);
         when(mockListItem7.getStyle()).thenReturn(null);
         when(mockListItem7.getLevel()).thenReturn(1);
@@ -1222,6 +1268,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem8.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem8.isReftext()).thenReturn(false);
         when(mockListItem8.getReftext()).thenReturn(null);
+        when(mockListItem8.getCaption()).thenReturn(null);
         when(mockListItem8.getTitle()).thenReturn(null);
         when(mockListItem8.getStyle()).thenReturn(null);
         when(mockListItem8.getLevel()).thenReturn(0);
@@ -1247,6 +1294,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem9.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem9.isReftext()).thenReturn(false);
         when(mockListItem9.getReftext()).thenReturn(null);
+        when(mockListItem9.getCaption()).thenReturn(null);
         when(mockListItem9.getTitle()).thenReturn(null);
         when(mockListItem9.getStyle()).thenReturn(null);
         when(mockListItem9.getLevel()).thenReturn(0);
@@ -1267,6 +1315,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockList4.getRoles()).thenReturn(Collections.emptyList());
         when(mockList4.isReftext()).thenReturn(false);
         when(mockList4.getReftext()).thenReturn(null);
+        when(mockList4.getCaption()).thenReturn(null);
         when(mockList4.getTitle()).thenReturn(null);
         when(mockList4.getStyle()).thenReturn("arabic");
         when(mockList4.getLevel()).thenReturn(1);
@@ -1286,6 +1335,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem10.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem10.isReftext()).thenReturn(false);
         when(mockListItem10.getReftext()).thenReturn(null);
+        when(mockListItem10.getCaption()).thenReturn(null);
         when(mockListItem10.getTitle()).thenReturn(null);
         when(mockListItem10.getStyle()).thenReturn(null);
         when(mockListItem10.getLevel()).thenReturn(1);
@@ -1309,6 +1359,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem11.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem11.isReftext()).thenReturn(false);
         when(mockListItem11.getReftext()).thenReturn(null);
+        when(mockListItem11.getCaption()).thenReturn(null);
         when(mockListItem11.getTitle()).thenReturn(null);
         when(mockListItem11.getStyle()).thenReturn(null);
         when(mockListItem11.getLevel()).thenReturn(1);
@@ -1340,6 +1391,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem12.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem12.isReftext()).thenReturn(false);
         when(mockListItem12.getReftext()).thenReturn(null);
+        when(mockListItem12.getCaption()).thenReturn(null);
         when(mockListItem12.getTitle()).thenReturn(null);
         when(mockListItem12.getStyle()).thenReturn(null);
         when(mockListItem12.getLevel()).thenReturn(0);
@@ -1371,6 +1423,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem13.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem13.isReftext()).thenReturn(false);
         when(mockListItem13.getReftext()).thenReturn(null);
+        when(mockListItem13.getCaption()).thenReturn(null);
         when(mockListItem13.getTitle()).thenReturn(null);
         when(mockListItem13.getStyle()).thenReturn(null);
         when(mockListItem13.getLevel()).thenReturn(0);
@@ -1396,6 +1449,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem14.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem14.isReftext()).thenReturn(false);
         when(mockListItem14.getReftext()).thenReturn(null);
+        when(mockListItem14.getCaption()).thenReturn(null);
         when(mockListItem14.getTitle()).thenReturn(null);
         when(mockListItem14.getStyle()).thenReturn(null);
         when(mockListItem14.getLevel()).thenReturn(0);
@@ -1414,6 +1468,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockDescriptionList3.getRoles()).thenReturn(Collections.emptyList());
         when(mockDescriptionList3.isReftext()).thenReturn(false);
         when(mockDescriptionList3.getReftext()).thenReturn(null);
+        when(mockDescriptionList3.getCaption()).thenReturn(null);
         when(mockDescriptionList3.getTitle()).thenReturn(null);
         when(mockDescriptionList3.getStyle()).thenReturn(null);
         when(mockDescriptionList3.getLevel()).thenReturn(0);
@@ -1434,6 +1489,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem15.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem15.isReftext()).thenReturn(false);
         when(mockListItem15.getReftext()).thenReturn(null);
+        when(mockListItem15.getCaption()).thenReturn(null);
         when(mockListItem15.getTitle()).thenReturn(null);
         when(mockListItem15.getStyle()).thenReturn(null);
         when(mockListItem15.getLevel()).thenReturn(0);
@@ -1454,6 +1510,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockList5.getRoles()).thenReturn(Collections.emptyList());
         when(mockList5.isReftext()).thenReturn(false);
         when(mockList5.getReftext()).thenReturn(null);
+        when(mockList5.getCaption()).thenReturn(null);
         when(mockList5.getTitle()).thenReturn(null);
         when(mockList5.getStyle()).thenReturn("arabic");
         when(mockList5.getLevel()).thenReturn(1);
@@ -1473,6 +1530,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem16.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem16.isReftext()).thenReturn(false);
         when(mockListItem16.getReftext()).thenReturn(null);
+        when(mockListItem16.getCaption()).thenReturn(null);
         when(mockListItem16.getTitle()).thenReturn(null);
         when(mockListItem16.getStyle()).thenReturn(null);
         when(mockListItem16.getLevel()).thenReturn(1);
@@ -1496,6 +1554,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem17.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem17.isReftext()).thenReturn(false);
         when(mockListItem17.getReftext()).thenReturn(null);
+        when(mockListItem17.getCaption()).thenReturn(null);
         when(mockListItem17.getTitle()).thenReturn(null);
         when(mockListItem17.getStyle()).thenReturn(null);
         when(mockListItem17.getLevel()).thenReturn(1);
@@ -1527,6 +1586,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem18.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem18.isReftext()).thenReturn(false);
         when(mockListItem18.getReftext()).thenReturn(null);
+        when(mockListItem18.getCaption()).thenReturn(null);
         when(mockListItem18.getTitle()).thenReturn(null);
         when(mockListItem18.getStyle()).thenReturn(null);
         when(mockListItem18.getLevel()).thenReturn(0);
@@ -1552,6 +1612,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem19.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem19.isReftext()).thenReturn(false);
         when(mockListItem19.getReftext()).thenReturn(null);
+        when(mockListItem19.getCaption()).thenReturn(null);
         when(mockListItem19.getTitle()).thenReturn(null);
         when(mockListItem19.getStyle()).thenReturn(null);
         when(mockListItem19.getLevel()).thenReturn(0);
@@ -1572,6 +1633,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockList6.getRoles()).thenReturn(Collections.emptyList());
         when(mockList6.isReftext()).thenReturn(false);
         when(mockList6.getReftext()).thenReturn(null);
+        when(mockList6.getCaption()).thenReturn(null);
         when(mockList6.getTitle()).thenReturn(null);
         when(mockList6.getStyle()).thenReturn("arabic");
         when(mockList6.getLevel()).thenReturn(1);
@@ -1591,6 +1653,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem20.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem20.isReftext()).thenReturn(false);
         when(mockListItem20.getReftext()).thenReturn(null);
+        when(mockListItem20.getCaption()).thenReturn(null);
         when(mockListItem20.getTitle()).thenReturn(null);
         when(mockListItem20.getStyle()).thenReturn(null);
         when(mockListItem20.getLevel()).thenReturn(1);
@@ -1614,6 +1677,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem21.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem21.isReftext()).thenReturn(false);
         when(mockListItem21.getReftext()).thenReturn(null);
+        when(mockListItem21.getCaption()).thenReturn(null);
         when(mockListItem21.getTitle()).thenReturn(null);
         when(mockListItem21.getStyle()).thenReturn(null);
         when(mockListItem21.getLevel()).thenReturn(1);
@@ -1645,6 +1709,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem22.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem22.isReftext()).thenReturn(false);
         when(mockListItem22.getReftext()).thenReturn(null);
+        when(mockListItem22.getCaption()).thenReturn(null);
         when(mockListItem22.getTitle()).thenReturn(null);
         when(mockListItem22.getStyle()).thenReturn(null);
         when(mockListItem22.getLevel()).thenReturn(0);
@@ -1676,6 +1741,7 @@ public class ListLabeledNestedMixedTestCase implements AdocTestCase {
         when(mockListItem23.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem23.isReftext()).thenReturn(false);
         when(mockListItem23.getReftext()).thenReturn(null);
+        when(mockListItem23.getCaption()).thenReturn(null);
         when(mockListItem23.getTitle()).thenReturn(null);
         when(mockListItem23.getStyle()).thenReturn(null);
         when(mockListItem23.getLevel()).thenReturn(0);

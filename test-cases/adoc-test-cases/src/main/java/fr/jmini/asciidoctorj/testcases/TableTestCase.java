@@ -90,6 +90,7 @@ public class TableTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -113,6 +114,7 @@ public class TableTestCase implements AdocTestCase {
         assertThat(table1.getRoles()).isNullOrEmpty();
         assertThat(table1.isReftext()).isFalse();
         assertThat(table1.getReftext()).isNull();
+        assertThat(table1.getCaption()).isNull();
         assertThat(table1.getTitle()).isNull();
         assertThat(table1.getStyle()).isEqualTo("table");
         assertThat(table1.getLevel()).isEqualTo(0);
@@ -392,6 +394,7 @@ public class TableTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -415,6 +418,7 @@ public class TableTestCase implements AdocTestCase {
         when(mockTable1.getRoles()).thenReturn(Collections.emptyList());
         when(mockTable1.isReftext()).thenReturn(false);
         when(mockTable1.getReftext()).thenReturn(null);
+        when(mockTable1.getCaption()).thenReturn(null);
         when(mockTable1.getTitle()).thenReturn(null);
         when(mockTable1.getStyle()).thenReturn("table");
         when(mockTable1.getLevel()).thenReturn(0);

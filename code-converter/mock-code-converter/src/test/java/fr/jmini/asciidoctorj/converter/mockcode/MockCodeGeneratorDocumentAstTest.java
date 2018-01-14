@@ -46,6 +46,7 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -64,6 +65,7 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockSection1.getRoles()).thenReturn(Collections.emptyList());
         when(mockSection1.isReftext()).thenReturn(false);
         when(mockSection1.getReftext()).thenReturn(null);
+        when(mockSection1.getCaption()).thenReturn(null);
         when(mockSection1.getTitle()).thenReturn("A small List");
         when(mockSection1.getStyle()).thenReturn(null);
         when(mockSection1.getLevel()).thenReturn(1);
@@ -82,6 +84,7 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
+        when(mockBlock1.getCaption()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn(null);
         when(mockBlock1.getStyle()).thenReturn(null);
         when(mockBlock1.getLevel()).thenReturn(1);
@@ -103,6 +106,7 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockList1.isReftext()).thenReturn(false);
         when(mockList1.getReftext()).thenReturn(null);
+        when(mockList1.getCaption()).thenReturn(null);
         when(mockList1.getTitle()).thenReturn(null);
         when(mockList1.getStyle()).thenReturn(null);
         when(mockList1.getLevel()).thenReturn(1);
@@ -122,6 +126,7 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockListItem1.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem1.isReftext()).thenReturn(false);
         when(mockListItem1.getReftext()).thenReturn(null);
+        when(mockListItem1.getCaption()).thenReturn(null);
         when(mockListItem1.getTitle()).thenReturn(null);
         when(mockListItem1.getStyle()).thenReturn(null);
         when(mockListItem1.getLevel()).thenReturn(1);
@@ -145,6 +150,7 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockListItem2.getRoles()).thenReturn(Collections.emptyList());
         when(mockListItem2.isReftext()).thenReturn(false);
         when(mockListItem2.getReftext()).thenReturn(null);
+        when(mockListItem2.getCaption()).thenReturn(null);
         when(mockListItem2.getTitle()).thenReturn(null);
         when(mockListItem2.getStyle()).thenReturn(null);
         when(mockListItem2.getLevel()).thenReturn(1);
@@ -170,6 +176,7 @@ public class MockCodeGeneratorDocumentAstTest {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
+        when(mockBlock2.getCaption()).thenReturn(null);
         when(mockBlock2.getTitle()).thenReturn(null);
         when(mockBlock2.getStyle()).thenReturn(null);
         when(mockBlock2.getLevel()).thenReturn(1);

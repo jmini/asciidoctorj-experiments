@@ -41,6 +41,7 @@ public class AssertCodeGeneratorListTest {
         assertThat(list1.getRoles()).isNullOrEmpty();
         assertThat(list1.isReftext()).isFalse();
         assertThat(list1.getReftext()).isNull();
+        assertThat(list1.getCaption()).isNull();
         assertThat(list1.getTitle()).isNull();
         assertThat(list1.getStyle()).isNull();
         assertThat(list1.getLevel()).isEqualTo(0);

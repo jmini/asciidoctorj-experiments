@@ -36,6 +36,7 @@ public class MockCodeGeneratorDescriptionListTest {
         when(mockDescriptionList1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDescriptionList1.isReftext()).thenReturn(false);
         when(mockDescriptionList1.getReftext()).thenReturn(null);
+        when(mockDescriptionList1.getCaption()).thenReturn(null);
         when(mockDescriptionList1.getTitle()).thenReturn(null);
         when(mockDescriptionList1.getStyle()).thenReturn(null);
         when(mockDescriptionList1.getLevel()).thenReturn(0);

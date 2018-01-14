@@ -73,6 +73,7 @@ public class QuoteTestCase implements AdocTestCase {
         assertThat(document1.getRoles()).isNullOrEmpty();
         assertThat(document1.isReftext()).isFalse();
         assertThat(document1.getReftext()).isNull();
+        assertThat(document1.getCaption()).isNull();
         assertThat(document1.getTitle()).isNull();
         assertThat(document1.getStyle()).isNull();
         assertThat(document1.getLevel()).isEqualTo(0);
@@ -94,6 +95,7 @@ public class QuoteTestCase implements AdocTestCase {
         assertThat(block1.getRoles()).isNullOrEmpty();
         assertThat(block1.isReftext()).isFalse();
         assertThat(block1.getReftext()).isNull();
+        assertThat(block1.getCaption()).isNull();
         assertThat(block1.getTitle()).isNull();
         assertThat(block1.getStyle()).isEqualTo("quote");
         assertThat(block1.getLevel()).isEqualTo(0);
@@ -114,6 +116,7 @@ public class QuoteTestCase implements AdocTestCase {
         assertThat(block2.getRoles()).isNullOrEmpty();
         assertThat(block2.isReftext()).isFalse();
         assertThat(block2.getReftext()).isNull();
+        assertThat(block2.getCaption()).isNull();
         assertThat(block2.getTitle()).isNull();
         assertThat(block2.getStyle()).isNull();
         assertThat(block2.getLevel()).isEqualTo(0);
@@ -136,6 +139,7 @@ public class QuoteTestCase implements AdocTestCase {
         assertThat(block3.getRoles()).isNullOrEmpty();
         assertThat(block3.isReftext()).isFalse();
         assertThat(block3.getReftext()).isNull();
+        assertThat(block3.getCaption()).isNull();
         assertThat(block3.getTitle()).isNull();
         assertThat(block3.getStyle()).isNull();
         assertThat(block3.getLevel()).isEqualTo(0);
@@ -175,6 +179,7 @@ public class QuoteTestCase implements AdocTestCase {
         when(mockDocument1.getRoles()).thenReturn(Collections.emptyList());
         when(mockDocument1.isReftext()).thenReturn(false);
         when(mockDocument1.getReftext()).thenReturn(null);
+        when(mockDocument1.getCaption()).thenReturn(null);
         when(mockDocument1.getTitle()).thenReturn(null);
         when(mockDocument1.getStyle()).thenReturn(null);
         when(mockDocument1.getLevel()).thenReturn(0);
@@ -196,6 +201,7 @@ public class QuoteTestCase implements AdocTestCase {
         when(mockBlock1.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock1.isReftext()).thenReturn(false);
         when(mockBlock1.getReftext()).thenReturn(null);
+        when(mockBlock1.getCaption()).thenReturn(null);
         when(mockBlock1.getTitle()).thenReturn(null);
         when(mockBlock1.getStyle()).thenReturn("quote");
         when(mockBlock1.getLevel()).thenReturn(0);
@@ -214,6 +220,7 @@ public class QuoteTestCase implements AdocTestCase {
         when(mockBlock2.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock2.isReftext()).thenReturn(false);
         when(mockBlock2.getReftext()).thenReturn(null);
+        when(mockBlock2.getCaption()).thenReturn(null);
         when(mockBlock2.getTitle()).thenReturn(null);
         when(mockBlock2.getStyle()).thenReturn(null);
         when(mockBlock2.getLevel()).thenReturn(0);
@@ -235,6 +242,7 @@ public class QuoteTestCase implements AdocTestCase {
         when(mockBlock3.getRoles()).thenReturn(Collections.emptyList());
         when(mockBlock3.isReftext()).thenReturn(false);
         when(mockBlock3.getReftext()).thenReturn(null);
+        when(mockBlock3.getCaption()).thenReturn(null);
         when(mockBlock3.getTitle()).thenReturn(null);
         when(mockBlock3.getStyle()).thenReturn(null);
         when(mockBlock3.getLevel()).thenReturn(0);

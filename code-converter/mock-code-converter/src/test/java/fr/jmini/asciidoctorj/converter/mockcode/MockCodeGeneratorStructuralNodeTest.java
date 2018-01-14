@@ -36,6 +36,7 @@ public class MockCodeGeneratorStructuralNodeTest {
         when(mockStructuralNode1.getRoles()).thenReturn(Collections.emptyList());
         when(mockStructuralNode1.isReftext()).thenReturn(false);
         when(mockStructuralNode1.getReftext()).thenReturn(null);
+        when(mockStructuralNode1.getCaption()).thenReturn(null);
         when(mockStructuralNode1.getTitle()).thenReturn("my-title");
         when(mockStructuralNode1.getStyle()).thenReturn("my-style");
         when(mockStructuralNode1.getLevel()).thenReturn(2);
