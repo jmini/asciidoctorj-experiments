@@ -1,0 +1,20 @@
+:idprefix:
+:idseparator: -
+
+== Section 1
+
+Some text for 1.
+
+[[somesec]]
+=== Section 2
+
+Some text for 2.
+
+=== A  Section   Three!
+
+Some text for 3.
+
+=== This_is_section_4
+
+Some text for 4.
+

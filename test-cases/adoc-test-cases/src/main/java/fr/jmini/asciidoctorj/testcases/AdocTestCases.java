@@ -48,6 +48,7 @@ public class AdocTestCases {
         list.add(new QuoteWithIdAndRoleTestCase());
         list.add(new QuoteWithoutBlockDelimiterTestCase());
         list.add(new SectionAllTestCase());
+        list.add(new SectionCustomIdAttributesTestCase());
         list.add(new SectionTestCase());
         list.add(new ShowTitleFalseTestCase());
         list.add(new ShowTitleTrueTestCase());

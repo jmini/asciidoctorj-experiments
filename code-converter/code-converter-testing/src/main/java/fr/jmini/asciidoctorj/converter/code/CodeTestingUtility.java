@@ -189,6 +189,8 @@ public class CodeTestingUtility {
         copyValue("notitle", attributes, newAttributes);
         copyValue("showtitle", attributes, newAttributes);
         copyValue("prewrap", attributes, newAttributes);
+        copyValue("idprefix", attributes, newAttributes);
+        copyValue("idseparator", attributes, newAttributes);
         attributes.clear();
         attributes.putAll(newAttributes);
     }
