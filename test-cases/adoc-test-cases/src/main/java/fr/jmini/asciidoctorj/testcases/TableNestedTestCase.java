@@ -125,6 +125,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -296,6 +297,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document2.isBlock()).isTrue();
         assertThat(document2.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -411,6 +413,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document3.isBlock()).isTrue();
         assertThat(document3.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -542,6 +545,7 @@ public class TableNestedTestCase implements AdocTestCase {
         assertThat(document4.isBlock()).isTrue();
         assertThat(document4.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -819,6 +823,7 @@ public class TableNestedTestCase implements AdocTestCase {
         Map<String, Object> map1 = new HashMap<>();
         map1.put("doctype", "article");
         map1.put("example-caption", "Example");
+        map1.put("figure-caption", "Figure");
         map1.put("filetype", "html");
         map1.put("notitle", "");
         map1.put("prewrap", "");
@@ -979,6 +984,7 @@ public class TableNestedTestCase implements AdocTestCase {
         Map<String, Object> map7 = new HashMap<>();
         map7.put("doctype", "article");
         map7.put("example-caption", "Example");
+        map7.put("figure-caption", "Figure");
         map7.put("filetype", "html");
         map7.put("notitle", "");
         map7.put("prewrap", "");
@@ -1093,6 +1099,7 @@ public class TableNestedTestCase implements AdocTestCase {
         Map<String, Object> map11 = new HashMap<>();
         map11.put("doctype", "article");
         map11.put("example-caption", "Example");
+        map11.put("figure-caption", "Figure");
         map11.put("filetype", "html");
         map11.put("notitle", "");
         map11.put("prewrap", "");
@@ -1223,6 +1230,7 @@ public class TableNestedTestCase implements AdocTestCase {
         Map<String, Object> map15 = new HashMap<>();
         map15.put("doctype", "article");
         map15.put("example-caption", "Example");
+        map15.put("figure-caption", "Figure");
         map15.put("filetype", "html");
         map15.put("notitle", "");
         map15.put("prewrap", "");

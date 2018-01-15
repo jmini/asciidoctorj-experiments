@@ -131,6 +131,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -434,6 +435,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(document2.isBlock()).isTrue();
         assertThat(document2.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -727,6 +729,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         assertThat(document3.isBlock()).isTrue();
         assertThat(document3.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -1000,6 +1003,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         Map<String, Object> map1 = new HashMap<>();
         map1.put("doctype", "article");
         map1.put("example-caption", "Example");
+        map1.put("figure-caption", "Figure");
         map1.put("filetype", "html");
         map1.put("notitle", "");
         map1.put("prewrap", "");
@@ -1284,6 +1288,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         Map<String, Object> map12 = new HashMap<>();
         map12.put("doctype", "article");
         map12.put("example-caption", "Example");
+        map12.put("figure-caption", "Figure");
         map12.put("filetype", "html");
         map12.put("notitle", "");
         map12.put("prewrap", "");
@@ -1565,6 +1570,7 @@ public class TableColumnStyleTestCase implements AdocTestCase {
         Map<String, Object> map22 = new HashMap<>();
         map22.put("doctype", "article");
         map22.put("example-caption", "Example");
+        map22.put("figure-caption", "Figure");
         map22.put("filetype", "html");
         map22.put("notitle", "");
         map22.put("prewrap", "");

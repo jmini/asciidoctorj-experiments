@@ -1,0 +1,7 @@
+:figure-caption!:
+
+.first caption
+image::sunset1.jpg[]
+
+.second caption
+image::sunset2.jpg[]

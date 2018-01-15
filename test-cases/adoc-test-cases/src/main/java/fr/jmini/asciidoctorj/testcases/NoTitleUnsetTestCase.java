@@ -64,6 +64,7 @@ public class NoTitleUnsetTestCase implements AdocTestCase {
         assertThat(document1.getAttributes()).containsEntry("doctitle", "A title")
                 .containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("prewrap", "")
                 .containsEntry("table-caption", "Table")
@@ -127,6 +128,7 @@ public class NoTitleUnsetTestCase implements AdocTestCase {
         map1.put("doctitle", "A title");
         map1.put("doctype", "article");
         map1.put("example-caption", "Example");
+        map1.put("figure-caption", "Figure");
         map1.put("filetype", "html");
         map1.put("prewrap", "");
         map1.put("table-caption", "Table");

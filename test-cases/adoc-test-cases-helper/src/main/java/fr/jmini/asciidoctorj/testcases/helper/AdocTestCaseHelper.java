@@ -60,6 +60,9 @@ public class AdocTestCaseHelper {
 
             throw new IllegalStateException("Some items are missing \n\tsee file fr.jmini.asciidoctorj.testcases.AdocTestCases.getAllTestCases(AdocTestCases.java:10)");
         }
+        File resourcesFolder = new File("../adoc-test-cases/src/main/resources/");
+        Arrays.stream(resourcesFolder.listFiles())
+                .forEach(File::delete);
         for (AdocTestCase testCase : AdocTestCases.getAllTestCases()) {
             System.out.println(testCase.getClass()
                     .getSimpleName());
@@ -68,7 +71,7 @@ public class AdocTestCaseHelper {
                 System.out.println("Content missing in " + testCase.getClass()
                         .getName());
             } else {
-                File resourcesFile = findAsciidocRessourceFile(testCase);
+                File resourcesFile = findAsciidocRessourceFile(resourcesFolder, testCase);
                 Files.write(asciidocContent, resourcesFile, Charsets.UTF_8);
 
                 File testCaseFile = CodeTestingUtility.javaFile("../adoc-test-cases/", "main", testCase.getClass());
@@ -137,8 +140,8 @@ public class AdocTestCaseHelper {
         return className;
     }
 
-    public static File findAsciidocRessourceFile(AdocTestCase testCase) {
-        return new File("../adoc-test-cases/src/main/resources/" + testCase.getClass()
+    public static File findAsciidocRessourceFile(File folder, AdocTestCase testCase) {
+        return new File(folder, testCase.getClass()
                 .getSimpleName() + ".adoc");
     }
 

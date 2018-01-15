@@ -64,6 +64,7 @@ public class ShowTitleTrueTestCase implements AdocTestCase {
         assertThat(document1.getAttributes()).containsEntry("doctitle", "My page")
                 .containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -128,6 +129,7 @@ public class ShowTitleTrueTestCase implements AdocTestCase {
         map1.put("doctitle", "My page");
         map1.put("doctype", "article");
         map1.put("example-caption", "Example");
+        map1.put("figure-caption", "Figure");
         map1.put("filetype", "html");
         map1.put("notitle", "");
         map1.put("prewrap", "");

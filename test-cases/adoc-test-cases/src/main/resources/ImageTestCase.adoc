@@ -1,0 +1,2 @@
+[#di.elor]
+image::http://asciidoctor.org/images/sunset.jpg[]

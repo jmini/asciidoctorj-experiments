@@ -1,0 +1,17 @@
+image::./img/sunset0.png[]
+
+image::../../other/./sunset1.png[]
+
+image::img/./sunset2.png[]
+
+image::other/../img/sunset3.jpg[]
+
+image::other/.././img/sunset4.jpg[]
+
+image::other/../../img/sunset5.jpg[]
+
+image::./other/../../img/sunset6.jpg[]
+
+image::/absolute/../img/sunset7.jpg[]
+
+image::/absolute/../../sunset8.jpg[]

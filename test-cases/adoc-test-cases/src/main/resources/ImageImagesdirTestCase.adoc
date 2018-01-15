@@ -1,0 +1,18 @@
+:imagesdir: imgs
+
+image::sunset.jpg[]
+
+image::../cover.png[]
+
+image::http://asciidoctor.org/images/sunset.jpg[]
+
+image::https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png[]
+
+image::ftp://site.com/sunset.jpg[]
+
+image::file:///C:/absolute/cover.png[]
+
+image::file:///absolute/cover.png[]
+
+image::/absolute/sunset2.jpg[]
+

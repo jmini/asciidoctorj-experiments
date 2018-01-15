@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import org.asciidoctor.ast.Author;
 import org.asciidoctor.ast.Block;
@@ -31,6 +32,8 @@ import org.asciidoctor.converter.StringConverter;
 import org.jsoup.nodes.Document.OutputSettings.Syntax;
 import org.jsoup.nodes.Element;
 
+import com.google.common.base.Splitter;
+
 @ConverterFor("html-j")
 public class HtmlConverter extends StringConverter {
 
@@ -55,6 +58,7 @@ public class HtmlConverter extends StringConverter {
     }
 
     public void convertBlock(Element e, Block block) {
+        Map<String, Object> blockAttributes = block.getAttributes();
         if ("listing".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
@@ -69,7 +73,7 @@ public class HtmlConverter extends StringConverter {
             if (!block.getDocument()
                     .getAttributes()
                     .containsKey("prewrap")
-                    || block.getAttributes()
+                    || blockAttributes
                             .containsKey("nowrap-option")) {
                 classAttributeMembers.add("nowrap");
             }
@@ -80,6 +84,54 @@ public class HtmlConverter extends StringConverter {
             } else {
                 pre.text(String.join("\n", block.getLines()));
             }
+        } else if ("image".equals(block.getNodeName())) {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, "imageblock");
+            Element content = appendContentDiv(div);
+            Element container;
+            if (blockAttributes.containsKey("link")) {
+                container = content.appendElement("a");
+                container.attr("class", "image");
+                container.attr("href", blockAttributes.get("link")
+                        .toString());
+            } else {
+                container = content;
+            }
+            Element img = container.appendElement("img");
+            if (blockAttributes.containsKey("alt")) {
+                img.attr("alt", blockAttributes.get("alt")
+                        .toString());
+            }
+            if (blockAttributes.containsKey("height")) {
+                img.attr("height", blockAttributes.get("height")
+                        .toString());
+            }
+            if (blockAttributes.containsKey("target")) {
+                String target = blockAttributes.get("target")
+                        .toString();
+                String src = "";
+                if (!Pattern.matches("(?:\\/|[a-zA-Z]\\:[\\\\\\/]|(?:https?|ftp|file)\\:\\/\\/)[^\\s]+", target)
+                        && block.getDocument()
+                                .getAttributes()
+                                .containsKey("imagesdir")) {
+                    src = block.getDocument()
+                            .getAttributes()
+                            .get("imagesdir")
+                            .toString();
+                    if (!src.endsWith("/")) {
+                        src = src + "/";
+                    }
+                }
+                src = normalizePath(src + target);
+                img.attr("src", src);
+            }
+            if (blockAttributes.containsKey("width")) {
+                img.attr("width", blockAttributes.get("width")
+                        .toString());
+            }
+            handleStructuralNodeBlocks(content, block);
+            handleTitle(div, block, "div");
         } else if ("example".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
@@ -463,20 +515,44 @@ public class HtmlConverter extends StringConverter {
         // not implemented yet
     }
 
-    private int incrementCounterAndGet(StructuralNode structuralNode) {
-        Integer value;
-        String counterKey = structuralNode.getNodeName() + "-number";
-        Map<String, Object> attributes = structuralNode.getDocument()
-                .getAttributes();
-        if (attributes.containsKey(counterKey)) {
-            value = Integer.valueOf(attributes.get(counterKey)
-                    .toString());
-        } else {
-            value = 0;
+    static String normalizePath(String path) {
+        if (Pattern.matches("(https?|ftp|file)\\:\\/.+", path)) {
+            return path;
         }
-        value = value + 1;
-        attributes.put(counterKey, value.toString());
-        return value;
+
+        List<String> parts = new ArrayList<>();
+        Iterable<String> split = Splitter.on('/')
+                .split(path);
+        int folderIndex = -1;
+        boolean isFirst = true;
+        for (String part : split) {
+            if (!".".equals(part) || isFirst) {
+                if ("..".equals(part)) {
+                    if (folderIndex >= 0 && parts.size() > 0) {
+                        parts.remove(folderIndex);
+                        folderIndex = findLastFolder(parts);
+                    } else if (folderIndex != Integer.MIN_VALUE) {
+                        parts.add(part);
+                    }
+                } else {
+                    parts.add(part);
+                    folderIndex = findLastFolder(parts);
+                }
+            }
+            isFirst = false;
+        }
+        return String.join("/", parts);
     }
 
+    private static int findLastFolder(List<String> parts) {
+        for (int i = parts.size() - 1; i > -1; i--) {
+            if (i == 0 && "".equals(parts.get(0))) {
+                return Integer.MIN_VALUE;
+            }
+            if (!"".equals(parts.get(i)) && !".".equals(parts.get(i)) && !"..".equals(parts.get(i))) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

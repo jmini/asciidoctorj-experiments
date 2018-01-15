@@ -16,9 +16,18 @@ public class AdocTestCases {
         list.add(new ExampleCaptionCustomTestCase());
         list.add(new ExampleCaptionEmptyTestCase());
         list.add(new ExampleCaptionFixedTestCase());
+        list.add(new ExampleCaptionUnsetTestCase());
         list.add(new ExampleNestedTestCase());
         list.add(new ExampleTestCase());
         list.add(new HorizontalRuleTestCase());
+        list.add(new ImageCaptionCustomCounterTestCase());
+        list.add(new ImageCaptionCustomTestCase());
+        list.add(new ImageCaptionEmptyTestCase());
+        list.add(new ImageCaptionFixedTestCase());
+        list.add(new ImageCaptionUnsetTestCase());
+        list.add(new ImageImagesdirTestCase());
+        list.add(new ImageNormalizeSrcTestCase());
+        list.add(new ImageTestCase());
         list.add(new ListingCaptionCustomCounterTestCase());
         list.add(new ListingCaptionCustomTestCase());
         list.add(new ListingCaptionEmptyTestCase());

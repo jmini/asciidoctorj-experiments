@@ -1,0 +1,8 @@
+:figure-number: 10
+
+[.right.text-center]
+.first caption
+image::sunset.jpg[]
+
+.second caption
+image::http://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg[Tux,250,350]

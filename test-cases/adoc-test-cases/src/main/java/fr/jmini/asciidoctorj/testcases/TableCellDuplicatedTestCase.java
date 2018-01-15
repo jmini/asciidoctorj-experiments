@@ -89,6 +89,7 @@ public class TableCellDuplicatedTestCase implements AdocTestCase {
         assertThat(document1.isBlock()).isTrue();
         assertThat(document1.getAttributes()).containsEntry("doctype", "article")
                 .containsEntry("example-caption", "Example")
+                .containsEntry("figure-caption", "Figure")
                 .containsEntry("filetype", "html")
                 .containsEntry("notitle", "")
                 .containsEntry("prewrap", "")
@@ -506,6 +507,7 @@ public class TableCellDuplicatedTestCase implements AdocTestCase {
         Map<String, Object> map1 = new HashMap<>();
         map1.put("doctype", "article");
         map1.put("example-caption", "Example");
+        map1.put("figure-caption", "Figure");
         map1.put("filetype", "html");
         map1.put("notitle", "");
         map1.put("prewrap", "");

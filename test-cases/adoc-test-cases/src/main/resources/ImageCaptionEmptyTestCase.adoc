@@ -1,0 +1,6 @@
+:figure-caption: Fig
+:imagesdir: imgs/
+
+[caption=""]
+.This is the caption
+image::sunset.jpg[Sunset]

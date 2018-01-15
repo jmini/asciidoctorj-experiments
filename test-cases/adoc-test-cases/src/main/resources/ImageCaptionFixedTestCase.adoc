@@ -1,0 +1,9 @@
+:figure-caption: Picture
+:imagesdir: imgs
+
+[caption="Image A. "]
+.first caption
+image::http://asciidoctor.org/images/sunset.jpg[]
+
+.second caption
+image::sunset.jpg[]

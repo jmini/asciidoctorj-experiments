@@ -179,6 +179,8 @@ public class CodeTestingUtility {
         Map<String, Object> newAttributes = new HashMap<>();
         copyValue("example-caption", attributes, newAttributes);
         copyValue("example-number", attributes, newAttributes);
+        copyValue("figure-caption", attributes, newAttributes);
+        copyValue("figure-number", attributes, newAttributes);
         copyValue("listing-caption", attributes, newAttributes);
         copyValue("listing-number", attributes, newAttributes);
         copyValue("table-caption", attributes, newAttributes);
@@ -191,6 +193,7 @@ public class CodeTestingUtility {
         copyValue("prewrap", attributes, newAttributes);
         copyValue("idprefix", attributes, newAttributes);
         copyValue("idseparator", attributes, newAttributes);
+        copyValue("imagesdir", attributes, newAttributes);
         attributes.clear();
         attributes.putAll(newAttributes);
     }
