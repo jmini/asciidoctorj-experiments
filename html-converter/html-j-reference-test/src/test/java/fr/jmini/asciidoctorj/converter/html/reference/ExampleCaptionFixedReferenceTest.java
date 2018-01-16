@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCaptionFixedTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ExampleCaptionFixedTestCase} (ruby engine) .
+ */
 public class ExampleCaptionFixedReferenceTest extends AbstractExampleCaptionFixedTesting {
 
     @Override

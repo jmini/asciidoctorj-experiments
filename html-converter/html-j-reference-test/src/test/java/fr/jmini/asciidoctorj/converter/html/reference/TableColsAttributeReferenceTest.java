@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColsAttributeTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableColsAttributeTestCase} (ruby engine) .
+ */
 public class TableColsAttributeReferenceTest extends AbstractTableColsAttributeTesting {
 
     @Override

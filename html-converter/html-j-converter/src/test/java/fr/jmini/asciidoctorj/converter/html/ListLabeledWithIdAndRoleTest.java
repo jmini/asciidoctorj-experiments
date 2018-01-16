@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledWithIdAndRoleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListLabeledWithIdAndRoleTestCase} (mocked AST, java html backend) .
+ */
 public class ListLabeledWithIdAndRoleTest extends AbstractListLabeledWithIdAndRoleTesting {
 
     @Override

@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionEmptyTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableCaptionEmptyTestCase} (ruby engine) .
+ */
 public class TableCaptionEmptyReferenceTest extends AbstractTableCaptionEmptyTesting {
 
     @Override

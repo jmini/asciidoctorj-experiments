@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLowergreekTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListOlLowergreekTestCase} (mocked AST, java html backend) .
+ */
 public class ListOlLowergreekTest extends AbstractListOlLowergreekTesting {
 
     @Override

@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableWhithIdAndRoleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableWhithIdAndRoleTestCase} (mocked AST, java html backend) .
+ */
 public class TableWhithIdAndRoleTest extends AbstractTableWhithIdAndRoleTesting {
 
     @Override

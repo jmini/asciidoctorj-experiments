@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingWithoutBlockDelimiterTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListingWithoutBlockDelimiterTestCase} (mocked AST, java html backend) .
+ */
 public class ListingWithoutBlockDelimiterTest extends AbstractListingWithoutBlockDelimiterTesting {
 
     @Override

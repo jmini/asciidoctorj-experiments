@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ExampleTestCase} (ruby engine) .
+ */
 public class ExampleReferenceTest extends AbstractExampleTesting {
 
     @Override

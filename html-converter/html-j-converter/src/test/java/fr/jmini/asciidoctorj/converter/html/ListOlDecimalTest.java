@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlDecimalTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListOlDecimalTestCase} (mocked AST, java html backend) .
+ */
 public class ListOlDecimalTest extends AbstractListOlDecimalTesting {
 
     @Override

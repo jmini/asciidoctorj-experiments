@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractNoTitleUnsetTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.NoTitleUnsetTestCase} (ruby engine) .
+ */
 public class NoTitleUnsetReferenceTest extends AbstractNoTitleUnsetTesting {
 
     @Override

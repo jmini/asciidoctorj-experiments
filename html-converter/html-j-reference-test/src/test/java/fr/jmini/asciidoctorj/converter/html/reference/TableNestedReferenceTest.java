@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableNestedTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableNestedTestCase} (ruby engine) .
+ */
 public class TableNestedReferenceTest extends AbstractTableNestedTesting {
 
     @Override

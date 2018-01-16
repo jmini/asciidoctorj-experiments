@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractHorizontalRuleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.HorizontalRuleTestCase} (mocked AST, java html backend) .
+ */
 public class HorizontalRuleTest extends AbstractHorizontalRuleTesting {
 
     @Override

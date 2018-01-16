@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowOnlyTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableHeaderRowOnlyTestCase} (mocked AST, java html backend) .
+ */
 public class TableHeaderRowOnlyTest extends AbstractTableHeaderRowOnlyTesting {
 
     @Override

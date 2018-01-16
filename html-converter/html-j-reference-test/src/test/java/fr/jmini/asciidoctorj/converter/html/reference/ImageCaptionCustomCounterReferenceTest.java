@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageCaptionCustomCounterTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ImageCaptionCustomCounterTestCase} (ruby engine) .
+ */
 public class ImageCaptionCustomCounterReferenceTest extends AbstractImageCaptionCustomCounterTesting {
 
     @Override

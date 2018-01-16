@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionCustomTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableCaptionCustomTestCase} (mocked AST, java html backend) .
+ */
 public class TableCaptionCustomTest extends AbstractTableCaptionCustomTesting {
 
     @Override

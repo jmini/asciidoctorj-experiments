@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperalphaTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListOlUpperalphaTestCase} (ruby engine) .
+ */
 public class ListOlUpperalphaReferenceTest extends AbstractListOlUpperalphaTesting {
 
     @Override

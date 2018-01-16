@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingHalignTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableColumnFormattingHalignTestCase} (ruby engine) .
+ */
 public class TableColumnFormattingHalignReferenceTest extends AbstractTableColumnFormattingHalignTesting {
 
     @Override

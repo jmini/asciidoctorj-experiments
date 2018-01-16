@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingParagraphSyntaxTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListingParagraphSyntaxTestCase} (mocked AST, java html backend) .
+ */
 public class ListingParagraphSyntaxTest extends AbstractListingParagraphSyntaxTesting {
 
     @Override

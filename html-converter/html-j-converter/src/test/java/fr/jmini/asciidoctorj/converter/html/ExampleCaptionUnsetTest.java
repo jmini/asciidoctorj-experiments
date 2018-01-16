@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCaptionUnsetTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ExampleCaptionUnsetTestCase} (mocked AST, java html backend) .
+ */
 public class ExampleCaptionUnsetTest extends AbstractExampleCaptionUnsetTesting {
 
     @Override

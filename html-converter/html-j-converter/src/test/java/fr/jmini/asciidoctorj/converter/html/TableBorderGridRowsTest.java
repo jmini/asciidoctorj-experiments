@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridRowsTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableBorderGridRowsTestCase} (mocked AST, java html backend) .
+ */
 public class TableBorderGridRowsTest extends AbstractTableBorderGridRowsTesting {
 
     @Override

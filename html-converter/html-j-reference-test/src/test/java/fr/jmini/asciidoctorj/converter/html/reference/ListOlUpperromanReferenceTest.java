@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlUpperromanTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListOlUpperromanTestCase} (ruby engine) .
+ */
 public class ListOlUpperromanReferenceTest extends AbstractListOlUpperromanTesting {
 
     @Override

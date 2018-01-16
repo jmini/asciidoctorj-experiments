@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnStyleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableColumnStyleTestCase} (mocked AST, java html backend) .
+ */
 public class TableColumnStyleTest extends AbstractTableColumnStyleTesting {
 
     @Override

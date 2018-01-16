@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnWidthTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableColumnWidthTestCase} (mocked AST, java html backend) .
+ */
 public class TableColumnWidthTest extends AbstractTableColumnWidthTesting {
 
     @Override

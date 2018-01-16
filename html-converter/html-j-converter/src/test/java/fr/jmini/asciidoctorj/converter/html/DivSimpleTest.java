@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivSimpleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.DivSimpleTestCase} (mocked AST, java html backend) .
+ */
 public class DivSimpleTest extends AbstractDivSimpleTesting {
 
     @Override

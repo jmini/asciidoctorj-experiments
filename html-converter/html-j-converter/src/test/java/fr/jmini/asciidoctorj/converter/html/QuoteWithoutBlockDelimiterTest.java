@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithoutBlockDelimiterTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.QuoteWithoutBlockDelimiterTestCase} (mocked AST, java html backend) .
+ */
 public class QuoteWithoutBlockDelimiterTest extends AbstractQuoteWithoutBlockDelimiterTesting {
 
     @Override

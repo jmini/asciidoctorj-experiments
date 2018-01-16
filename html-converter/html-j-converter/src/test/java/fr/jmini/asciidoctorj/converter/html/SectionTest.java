@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.SectionTestCase} (mocked AST, java html backend) .
+ */
 public class SectionTest extends AbstractSectionTesting {
 
     @Override

@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellRowspanTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableCellRowspanTestCase} (mocked AST, java html backend) .
+ */
 public class TableCellRowspanTest extends AbstractTableCellRowspanTesting {
 
     @Override

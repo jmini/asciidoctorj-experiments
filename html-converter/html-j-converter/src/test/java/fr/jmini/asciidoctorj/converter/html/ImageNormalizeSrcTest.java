@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageNormalizeSrcTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ImageNormalizeSrcTestCase} (mocked AST, java html backend) .
+ */
 public class ImageNormalizeSrcTest extends AbstractImageNormalizeSrcTesting {
 
     @Override

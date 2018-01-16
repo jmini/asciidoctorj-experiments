@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowNoheaderTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableHeaderRowNoheaderTestCase} (ruby engine) .
+ */
 public class TableHeaderRowNoheaderReferenceTest extends AbstractTableHeaderRowNoheaderTesting {
 
     @Override

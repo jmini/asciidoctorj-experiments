@@ -34,8 +34,10 @@ import org.jsoup.nodes.Element;
 
 import com.google.common.base.Splitter;
 
-@ConverterFor("html-j")
+@ConverterFor(HtmlConverter.ID)
 public class HtmlConverter extends StringConverter {
+
+    public static final String ID = "html-j";
 
     public HtmlConverter(String backend, Map<String, Object> opts) {
         super(backend, opts);

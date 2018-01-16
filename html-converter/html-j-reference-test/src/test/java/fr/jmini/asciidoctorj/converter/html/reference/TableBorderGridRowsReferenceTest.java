@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderGridRowsTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableBorderGridRowsTestCase} (ruby engine) .
+ */
 public class TableBorderGridRowsReferenceTest extends AbstractTableBorderGridRowsTesting {
 
     @Override

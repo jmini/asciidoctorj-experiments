@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListNestedTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListNestedTestCase} (ruby engine) .
+ */
 public class ListNestedReferenceTest extends AbstractListNestedTesting {
 
     @Override

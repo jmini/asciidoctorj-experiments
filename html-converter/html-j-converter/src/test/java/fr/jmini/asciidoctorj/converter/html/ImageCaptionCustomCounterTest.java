@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageCaptionCustomCounterTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ImageCaptionCustomCounterTestCase} (mocked AST, java html backend) .
+ */
 public class ImageCaptionCustomCounterTest extends AbstractImageCaptionCustomCounterTesting {
 
     @Override

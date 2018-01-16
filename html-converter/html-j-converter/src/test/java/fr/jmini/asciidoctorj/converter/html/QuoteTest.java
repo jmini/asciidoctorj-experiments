@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.QuoteTestCase} (mocked AST, java html backend) .
+ */
 public class QuoteTest extends AbstractQuoteTesting {
 
     @Override

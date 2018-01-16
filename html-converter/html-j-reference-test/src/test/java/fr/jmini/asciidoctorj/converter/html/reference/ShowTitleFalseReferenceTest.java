@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractShowTitleFalseTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ShowTitleFalseTestCase} (ruby engine) .
+ */
 public class ShowTitleFalseReferenceTest extends AbstractShowTitleFalseTesting {
 
     @Override

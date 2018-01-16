@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.QuoteWithIdAndRoleTestCase} (ruby engine) .
+ */
 public class QuoteWithIdAndRoleReferenceTest extends AbstractQuoteWithIdAndRoleTesting {
 
     @Override

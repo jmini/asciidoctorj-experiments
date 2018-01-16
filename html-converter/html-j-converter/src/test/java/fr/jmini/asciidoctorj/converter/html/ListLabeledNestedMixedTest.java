@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledNestedMixedTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListLabeledNestedMixedTestCase} (mocked AST, java html backend) .
+ */
 public class ListLabeledNestedMixedTest extends AbstractListLabeledNestedMixedTesting {
 
     @Override

@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageImagesdirTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ImageImagesdirTestCase} (mocked AST, java html backend) .
+ */
 public class ImageImagesdirTest extends AbstractImageImagesdirTesting {
 
     @Override

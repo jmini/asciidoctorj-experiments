@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageNormalizeSrcTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ImageNormalizeSrcTestCase} (ruby engine) .
+ */
 public class ImageNormalizeSrcReferenceTest extends AbstractImageNormalizeSrcTesting {
 
     @Override

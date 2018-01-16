@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableAutowidthSpreadTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableAutowidthSpreadTestCase} (ruby engine) .
+ */
 public class TableAutowidthSpreadReferenceTest extends AbstractTableAutowidthSpreadTesting {
 
     @Override

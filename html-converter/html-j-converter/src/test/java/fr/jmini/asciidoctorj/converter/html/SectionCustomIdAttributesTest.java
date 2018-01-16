@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionCustomIdAttributesTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.SectionCustomIdAttributesTestCase} (mocked AST, java html backend) .
+ */
 public class SectionCustomIdAttributesTest extends AbstractSectionCustomIdAttributesTesting {
 
     @Override

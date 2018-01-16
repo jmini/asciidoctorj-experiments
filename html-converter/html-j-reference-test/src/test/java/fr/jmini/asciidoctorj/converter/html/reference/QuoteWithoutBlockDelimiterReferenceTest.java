@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithoutBlockDelimiterTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.QuoteWithoutBlockDelimiterTestCase} (ruby engine) .
+ */
 public class QuoteWithoutBlockDelimiterReferenceTest extends AbstractQuoteWithoutBlockDelimiterTesting {
 
     @Override

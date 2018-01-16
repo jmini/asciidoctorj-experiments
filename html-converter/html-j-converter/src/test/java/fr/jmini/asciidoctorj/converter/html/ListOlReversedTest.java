@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlReversedTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListOlReversedTestCase} (mocked AST, java html backend) .
+ */
 public class ListOlReversedTest extends AbstractListOlReversedTesting {
 
     @Override

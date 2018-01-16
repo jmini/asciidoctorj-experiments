@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingValignTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableColumnFormattingValignTestCase} (mocked AST, java html backend) .
+ */
 public class TableColumnFormattingValignTest extends AbstractTableColumnFormattingValignTesting {
 
     @Override

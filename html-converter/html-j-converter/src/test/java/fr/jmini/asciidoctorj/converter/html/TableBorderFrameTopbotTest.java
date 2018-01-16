@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderFrameTopbotTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableBorderFrameTopbotTestCase} (mocked AST, java html backend) .
+ */
 public class TableBorderFrameTopbotTest extends AbstractTableBorderFrameTopbotTesting {
 
     @Override

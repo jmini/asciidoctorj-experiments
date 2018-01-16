@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionEmptyTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableCaptionEmptyTestCase} (mocked AST, java html backend) .
+ */
 public class TableCaptionEmptyTest extends AbstractTableCaptionEmptyTesting {
 
     @Override

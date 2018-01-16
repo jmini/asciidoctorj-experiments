@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListLabeledTestCase} (ruby engine) .
+ */
 public class ListLabeledReferenceTest extends AbstractListLabeledTesting {
 
     @Override

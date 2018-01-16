@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractMultiDivTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.MultiDivTestCase} (mocked AST, java html backend) .
+ */
 public class MultiDivTest extends AbstractMultiDivTesting {
 
     @Override

@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellRowspanTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableCellRowspanTestCase} (ruby engine) .
+ */
 public class TableCellRowspanReferenceTest extends AbstractTableCellRowspanTesting {
 
     @Override

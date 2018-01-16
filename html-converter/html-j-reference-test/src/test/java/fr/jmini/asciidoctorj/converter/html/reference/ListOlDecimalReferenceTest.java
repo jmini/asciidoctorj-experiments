@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlDecimalTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListOlDecimalTestCase} (ruby engine) .
+ */
 public class ListOlDecimalReferenceTest extends AbstractListOlDecimalTesting {
 
     @Override

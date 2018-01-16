@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListLabeledWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListLabeledWithIdAndRoleTestCase} (ruby engine) .
+ */
 public class ListLabeledWithIdAndRoleReferenceTest extends AbstractListLabeledWithIdAndRoleTesting {
 
     @Override

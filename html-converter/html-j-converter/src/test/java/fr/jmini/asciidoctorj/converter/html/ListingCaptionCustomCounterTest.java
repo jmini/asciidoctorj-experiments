@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCaptionCustomCounterTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListingCaptionCustomCounterTestCase} (mocked AST, java html backend) .
+ */
 public class ListingCaptionCustomCounterTest extends AbstractListingCaptionCustomCounterTesting {
 
     @Override

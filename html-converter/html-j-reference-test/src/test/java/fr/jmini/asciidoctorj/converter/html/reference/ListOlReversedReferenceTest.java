@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlReversedTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListOlReversedTestCase} (ruby engine) .
+ */
 public class ListOlReversedReferenceTest extends AbstractListOlReversedTesting {
 
     @Override

@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionFixedTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableCaptionFixedTestCase} (ruby engine) .
+ */
 public class TableCaptionFixedReferenceTest extends AbstractTableCaptionFixedTesting {
 
     @Override

@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageCaptionFixedTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ImageCaptionFixedTestCase} (mocked AST, java html backend) .
+ */
 public class ImageCaptionFixedTest extends AbstractImageCaptionFixedTesting {
 
     @Override

@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingHalignTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableColumnFormattingHalignTestCase} (mocked AST, java html backend) .
+ */
 public class TableColumnFormattingHalignTest extends AbstractTableColumnFormattingHalignTesting {
 
     @Override

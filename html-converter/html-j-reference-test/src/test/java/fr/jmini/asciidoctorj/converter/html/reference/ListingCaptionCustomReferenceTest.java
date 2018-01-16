@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingCaptionCustomTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListingCaptionCustomTestCase} (ruby engine) .
+ */
 public class ListingCaptionCustomReferenceTest extends AbstractListingCaptionCustomTesting {
 
     @Override

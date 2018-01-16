@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableHeaderRowImplicitTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableHeaderRowImplicitTestCase} (ruby engine) .
+ */
 public class TableHeaderRowImplicitReferenceTest extends AbstractTableHeaderRowImplicitTesting {
 
     @Override

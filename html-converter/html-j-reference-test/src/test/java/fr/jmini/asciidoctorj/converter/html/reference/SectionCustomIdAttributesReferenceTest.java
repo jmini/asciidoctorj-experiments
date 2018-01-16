@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractSectionCustomIdAttributesTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.SectionCustomIdAttributesTestCase} (ruby engine) .
+ */
 public class SectionCustomIdAttributesReferenceTest extends AbstractSectionCustomIdAttributesTesting {
 
     @Override

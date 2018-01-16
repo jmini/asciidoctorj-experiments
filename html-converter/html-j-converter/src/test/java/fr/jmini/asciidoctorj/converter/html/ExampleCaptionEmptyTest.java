@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractExampleCaptionEmptyTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ExampleCaptionEmptyTestCase} (mocked AST, java html backend) .
+ */
 public class ExampleCaptionEmptyTest extends AbstractExampleCaptionEmptyTesting {
 
     @Override

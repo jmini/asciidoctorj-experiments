@@ -8,6 +8,7 @@
   <modules>
     <module>html-j-converter</module>
     <module>html-j-converter-testing</module>
+    <module>html-j-integration-test</module>
     <module>html-j-reference-test</module>
     <module>html-j-converter-helper</module>
   </modules>

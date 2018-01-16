@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellAlignedTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableCellAlignedTestCase} (ruby engine) .
+ */
 public class TableCellAlignedReferenceTest extends AbstractTableCellAlignedTesting {
 
     @Override

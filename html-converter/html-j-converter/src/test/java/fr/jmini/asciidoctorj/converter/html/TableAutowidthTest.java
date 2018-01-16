@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableAutowidthTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableAutowidthTestCase} (mocked AST, java html backend) .
+ */
 public class TableAutowidthTest extends AbstractTableAutowidthTesting {
 
     @Override

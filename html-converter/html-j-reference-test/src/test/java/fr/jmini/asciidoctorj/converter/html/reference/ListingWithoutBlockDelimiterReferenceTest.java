@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingWithoutBlockDelimiterTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListingWithoutBlockDelimiterTestCase} (ruby engine) .
+ */
 public class ListingWithoutBlockDelimiterReferenceTest extends AbstractListingWithoutBlockDelimiterTesting {
 
     @Override

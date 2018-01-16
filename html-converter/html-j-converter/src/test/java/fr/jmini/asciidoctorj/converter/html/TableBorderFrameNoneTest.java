@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderFrameNoneTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableBorderFrameNoneTestCase} (mocked AST, java html backend) .
+ */
 public class TableBorderFrameNoneTest extends AbstractTableBorderFrameNoneTesting {
 
     @Override

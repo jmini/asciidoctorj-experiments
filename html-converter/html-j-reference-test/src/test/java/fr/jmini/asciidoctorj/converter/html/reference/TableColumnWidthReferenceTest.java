@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnWidthTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableColumnWidthTestCase} (ruby engine) .
+ */
 public class TableColumnWidthReferenceTest extends AbstractTableColumnWidthTesting {
 
     @Override

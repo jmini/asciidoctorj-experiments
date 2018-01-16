@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractHorizontalRuleTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.HorizontalRuleTestCase} (ruby engine) .
+ */
 public class HorizontalRuleReferenceTest extends AbstractHorizontalRuleTesting {
 
     @Override

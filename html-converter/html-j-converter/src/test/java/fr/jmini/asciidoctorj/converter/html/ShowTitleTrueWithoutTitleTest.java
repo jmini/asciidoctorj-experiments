@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractShowTitleTrueWithoutTitleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ShowTitleTrueWithoutTitleTestCase} (mocked AST, java html backend) .
+ */
 public class ShowTitleTrueWithoutTitleTest extends AbstractShowTitleTrueWithoutTitleTesting {
 
     @Override

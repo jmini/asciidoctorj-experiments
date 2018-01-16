@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellDuplicatedTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableCellDuplicatedTestCase} (ruby engine) .
+ */
 public class TableCellDuplicatedReferenceTest extends AbstractTableCellDuplicatedTesting {
 
     @Override

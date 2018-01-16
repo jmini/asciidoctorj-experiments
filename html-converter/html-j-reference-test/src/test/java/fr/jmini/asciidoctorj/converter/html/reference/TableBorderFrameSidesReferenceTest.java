@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableBorderFrameSidesTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableBorderFrameSidesTestCase} (ruby engine) .
+ */
 public class TableBorderFrameSidesReferenceTest extends AbstractTableBorderFrameSidesTesting {
 
     @Override

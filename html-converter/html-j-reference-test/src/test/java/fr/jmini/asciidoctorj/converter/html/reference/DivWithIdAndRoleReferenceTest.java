@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.DivWithIdAndRoleTestCase} (ruby engine) .
+ */
 public class DivWithIdAndRoleReferenceTest extends AbstractDivWithIdAndRoleTesting {
 
     @Override

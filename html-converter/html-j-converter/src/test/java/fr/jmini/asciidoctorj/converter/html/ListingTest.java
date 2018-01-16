@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListingTestCase} (mocked AST, java html backend) .
+ */
 public class ListingTest extends AbstractListingTesting {
 
     @Override

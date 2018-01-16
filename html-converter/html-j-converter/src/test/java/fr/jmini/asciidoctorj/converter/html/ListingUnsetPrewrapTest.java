@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingUnsetPrewrapTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListingUnsetPrewrapTestCase} (mocked AST, java html backend) .
+ */
 public class ListingUnsetPrewrapTest extends AbstractListingUnsetPrewrapTesting {
 
     @Override

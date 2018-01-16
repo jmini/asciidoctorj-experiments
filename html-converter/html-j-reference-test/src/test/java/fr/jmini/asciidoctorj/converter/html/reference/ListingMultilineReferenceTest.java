@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListingMultilineTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListingMultilineTestCase} (ruby engine) .
+ */
 public class ListingMultilineReferenceTest extends AbstractListingMultilineTesting {
 
     @Override

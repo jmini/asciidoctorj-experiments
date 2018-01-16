@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.QuoteTestCase} (ruby engine) .
+ */
 public class QuoteReferenceTest extends AbstractQuoteTesting {
 
     @Override

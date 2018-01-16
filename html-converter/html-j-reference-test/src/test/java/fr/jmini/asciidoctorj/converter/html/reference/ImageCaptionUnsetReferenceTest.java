@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageCaptionUnsetTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ImageCaptionUnsetTestCase} (ruby engine) .
+ */
 public class ImageCaptionUnsetReferenceTest extends AbstractImageCaptionUnsetTesting {
 
     @Override

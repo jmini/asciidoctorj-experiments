@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractDivWithIdAndRoleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.DivWithIdAndRoleTestCase} (mocked AST, java html backend) .
+ */
 public class DivWithIdAndRoleTest extends AbstractDivWithIdAndRoleTesting {
 
     @Override

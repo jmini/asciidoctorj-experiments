@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLoweralphaTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListOlLoweralphaTestCase} (ruby engine) .
+ */
 public class ListOlLoweralphaReferenceTest extends AbstractListOlLoweralphaTesting {
 
     @Override

@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnFormattingValignTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableColumnFormattingValignTestCase} (ruby engine) .
+ */
 public class TableColumnFormattingValignReferenceTest extends AbstractTableColumnFormattingValignTesting {
 
     @Override

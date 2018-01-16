@@ -56,4 +56,18 @@ public class HtmlConverterCheckTest {
             assertThat(content).contains(" extends " + abstractTestingClassName);
         }
     }
+
+    @Test
+    public void ensureAllIntegrationFileExists() throws Exception {
+        List<AdocTestCase> testCases = AdocTestCases.getAllTestCases();
+        for (AdocTestCase testCase : testCases) {
+            String abstractTestingClassName = HtmlConverterHelper.computeAbstractTestingClassName(testCase);
+            String integrationTestClassName = HtmlConverterHelper.computeIntegrationTestClassName(testCase);
+
+            File integrationTestFile = HtmlConverterHelper.findIntegrationTestFile(integrationTestClassName);
+            assertThat(integrationTestFile).exists();
+            String content = Files.toString(integrationTestFile, Charsets.UTF_8);
+            assertThat(content).contains(" extends " + abstractTestingClassName);
+        }
+    }
 }

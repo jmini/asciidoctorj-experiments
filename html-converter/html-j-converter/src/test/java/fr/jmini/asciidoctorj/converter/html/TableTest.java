@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableTestCase} (mocked AST, java html backend) .
+ */
 public class TableTest extends AbstractTableTesting {
 
     @Override

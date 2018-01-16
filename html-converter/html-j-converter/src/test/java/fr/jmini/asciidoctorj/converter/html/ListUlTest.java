@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListUlTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.ListUlTestCase} (mocked AST, java html backend) .
+ */
 public class ListUlTest extends AbstractListUlTesting {
 
     @Override

@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractNoTitleUnsetTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.NoTitleUnsetTestCase} (mocked AST, java html backend) .
+ */
 public class NoTitleUnsetTest extends AbstractNoTitleUnsetTesting {
 
     @Override

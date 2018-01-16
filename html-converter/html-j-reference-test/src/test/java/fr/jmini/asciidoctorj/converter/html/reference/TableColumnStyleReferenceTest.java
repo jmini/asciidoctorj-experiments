@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableColumnStyleTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableColumnStyleTestCase} (ruby engine) .
+ */
 public class TableColumnStyleReferenceTest extends AbstractTableColumnStyleTesting {
 
     @Override

@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCaptionUnsetTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.TableCaptionUnsetTestCase} (ruby engine) .
+ */
 public class TableCaptionUnsetReferenceTest extends AbstractTableCaptionUnsetTesting {
 
     @Override

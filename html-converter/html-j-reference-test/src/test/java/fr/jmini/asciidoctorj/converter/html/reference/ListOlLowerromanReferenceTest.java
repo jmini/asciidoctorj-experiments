@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractListOlLowerromanTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ListOlLowerromanTestCase} (ruby engine) .
+ */
 public class ListOlLowerromanReferenceTest extends AbstractListOlLowerromanTesting {
 
     @Override

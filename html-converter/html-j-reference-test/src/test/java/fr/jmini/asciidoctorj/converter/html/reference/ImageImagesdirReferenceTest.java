@@ -11,6 +11,9 @@ import org.asciidoctor.ast.impl.DocumentImpl;
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractImageImagesdirTesting;
 import fr.jmini.asciidoctorj.testcases.HtmlUtility;
 
+/**
+ * Reference test for {@link fr.jmini.asciidoctorj.testcases.ImageImagesdirTestCase} (ruby engine) .
+ */
 public class ImageImagesdirReferenceTest extends AbstractImageImagesdirTesting {
 
     @Override

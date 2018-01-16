@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractQuoteWithIdAndRoleTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.QuoteWithIdAndRoleTestCase} (mocked AST, java html backend) .
+ */
 public class QuoteWithIdAndRoleTest extends AbstractQuoteWithIdAndRoleTesting {
 
     @Override

@@ -6,6 +6,9 @@ import org.asciidoctor.ast.Document;
 
 import fr.jmini.asciidoctorj.converter.html.testing.AbstractTableCellColspanTesting;
 
+/**
+ * Test for {@link fr.jmini.asciidoctorj.testcases.TableCellColspanTestCase} (mocked AST, java html backend) .
+ */
 public class TableCellColspanTest extends AbstractTableCellColspanTesting {
 
     @Override
