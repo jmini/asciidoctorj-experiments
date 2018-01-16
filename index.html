@@ -510,11 +510,28 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .head .head{color:#f4f}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>AsciidoctorJ Experiments</h1>
 <div class="details">
 <span id="author" class="author">Experiments with AsciidoctorJ.</span><br>
+<span id="revdate"></span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#urls">URLs</a></li>
+<li><a href="#description">Description</a>
+<ul class="sectlevel2">
+<li><a href="#html-backend-java-implementation">Html backend (java implementation)</a></li>
+<li><a href="#asciidoctor-test-suite">Asciidoctor Test suite</a></li>
+<li><a href="#ast-conveters">AST Conveters</a></li>
+<li><a href="#html2adoc">html2adoc</a></li>
+</ul>
+</li>
+<li><a href="#get-in-touch">Get in touch</a></li>
+<li><a href="#license">License</a></li>
+</ul>
 </div>
 </div>
 <div id="content">
@@ -557,6 +574,9 @@ Do you want to improve this page? Please <a href="https://github.com/jmini/ascii
 <div class="ulist">
 <ul>
 <li>
+<p>Html backend (java implementation)</p>
+</li>
+<li>
 <p>Asciidoctor Test suite</p>
 </li>
 <li>
@@ -581,6 +601,74 @@ Do you want to improve this page? Please <a href="https://github.com/jmini/ascii
 </ul>
 </div>
 <div class="sect2">
+<h3 id="html-backend-java-implementation"><a class="anchor" href="#html-backend-java-implementation"></a>Html backend (java implementation)</h3>
+<div class="paragraph">
+<p>The <code>html-j-converter</code> project contains an html backend written in Java.
+The main class is <code>fr.jmini.asciidoctorj.converter.html.HtmlConverter</code>.
+The id is <code>html-j</code> (see constant <code>HtmlConverter.ID</code>).</p>
+</div>
+<div class="paragraph">
+<p>The goal is to obtain an alternative implementation to the ruby implementation.
+There is still a lot of work to do.
+I do not recommend using this in production.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">String</span> s = <span class="string"><span class="delimiter">&quot;</span><span class="content">= My page</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> +
+        <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> +
+        <span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
+
+Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
+asciidoctor.javaConverterRegistry()
+        .register(HtmlConverter.class);
+
+OptionsBuilder optionsBuilder = org.asciidoctor.OptionsBuilder.options()
+        .backend(HtmlConverter.ID);
+<span class="predefined-type">String</span> output = asciidoctor.convert(s, optionsBuilder);
+
+<span class="predefined-type">System</span>.out.println(output);</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="motivation"><a class="anchor" href="#motivation"></a>Motivation:</h4>
+<div class="paragraph">
+<p>This is the occasion to learn how the Asciidoctor AST works and to ensure that the ruby-to-java bridge is working correctly (see the issues reported for the <a href="https://github.com/asciidoctor/asciidoctorj/milestone/17?closed=1">1.6.0-alpha.7 milestone</a> of asciidoctorj).</p>
+</div>
+<div class="paragraph">
+<p>This is also a first step for a ruby-independent implementation. Other persons have already discussed the possibility to write a parser in Java.
+To achieve this vision, a java implementation of the AST interfaces will also be required.</p>
+</div>
+<div class="paragraph">
+<p>The development of the <code>html-j</code> backend follows the TDD approach (Test-driven development): for each modification, a test case should be present in the test suite (see the <a href="#asciidoctor-test-suite">Asciidoctor Test suite</a> Section).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="code-organization"><a class="anchor" href="#code-organization"></a>Code organization:</h4>
+<div class="paragraph">
+<p>For now all the code is in the <code>HtmlConverter</code> class in the <code>html-j-converter</code> project.</p>
+</div>
+<div class="paragraph">
+<p>For each test case, we have:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A test in the <code>html-j-converter</code> project: for performance reason, it uses a mocked AST instance (relying on Mockito).</p>
+</li>
+<li>
+<p>An integration test in the <code>html-j-integration-test</code> project: the ruby parser and AST are used, the output is produced by the <code>HtmlConverter</code> class (do not forget to register it).</p>
+</li>
+<li>
+<p>A reference test in the <code>html-j-reference-test</code> project. This uses only the ruby engine. This project has no dependency on the <code>html-j-converter</code> project</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="asciidoctor-test-suite"><a class="anchor" href="#asciidoctor-test-suite"></a>Asciidoctor Test suite</h3>
 <div class="paragraph">
 <p>The <code>adoc-test-cases</code> project contains the asciidoctor test suite used by other projects of this repository.
@@ -598,22 +686,22 @@ For each test case, following elements are provided:</p>
 <p>the expected html output</p>
 </li>
 <li>
-<p>some java code (written with <a href="http://joel-costigliola.github.io/assertj/">AssertJ</a>) to ensure that the AST corresponding to the input source and options is well-formed.</p>
+<p>some java code (written with <a href="http://joel-costigliola.github.io/assertj/">AssertJ</a>) to ensure that the AST corresponding to the input source and options is well-formed. This code is generated by the <a href="#assert-code">assert-code</a> Converter.</p>
 </li>
 <li>
-<p>some <a href="http://site.mockito.org/">Mockito</a> Java code to produce the corresponding AST, without having to parse the AsciiDoc input and without having to rely on the JRuby bridge.</p>
+<p>some <a href="http://site.mockito.org/">Mockito</a> Java code to produce the corresponding AST, without having to parse the AsciiDoc input and without having to rely on the JRuby bridge. This code is generated by the <a href="#mock-code">mock-code</a> Converter.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Each test case implements the <a href="https://github.com/jmini/asciidoctorj-experiments/edit/master/test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCase.java">AdocTestCase</a> interface.</p>
+<p>Each test case implements the <a href="https://github.com/jmini/asciidoctorj-experiments/blob/master/test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCase.java">AdocTestCase</a> interface.</p>
 </div>
 <div class="paragraph">
 <p>For each test case, a AsciiDoc file is also provided in the <a href="https://github.com/jmini/asciidoctorj-experiments/tree/master/test-cases/adoc-test-cases/src/main/resources">resources</a> folder.
 This can be usefull to preview the test case in a web-browser.</p>
 </div>
 <div class="paragraph">
-<p>The <a href="https://github.com/jmini/asciidoctorj-experiments/edit/master/test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCases.java">AdocTestCases</a> class provides a list of each test cases with the <code>getAllTestCases()</code> method.</p>
+<p>The <a href="https://github.com/jmini/asciidoctorj-experiments/blob/master/test-cases/adoc-test-cases/src/main/java/fr/jmini/asciidoctorj/testcases/AdocTestCases.java">AdocTestCases</a> class provides a list of each test cases with the <code>getAllTestCases()</code> method.</p>
 </div>
 </div>
 <div class="sect2">
@@ -667,61 +755,63 @@ Some text</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">    <span class="directive">public</span> <span class="type">void</span> checkAst(<span class="predefined-type">Document</span> astDocument) {
-        <span class="predefined-type">Document</span> document1 = astDocument;
-        assertThat(document1.getId()).isNull();
-        assertThat(document1.getNodeName()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
-        assertThat(document1.getParent()).isNull();
-        assertThat(document1.getContext()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
-        assertThat(document1.getDocument()).isSameAs(document1);
-        assertThat(document1.isInline()).isFalse();
-        assertThat(document1.isBlock()).isTrue();
-        assertThat(document1.getAttributes()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>)
-                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>)
-                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">filetype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span>)
-                .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>)
-                .doesNotContainKey(<span class="string"><span class="delimiter">&quot;</span><span class="content">notitle</span><span class="delimiter">&quot;</span></span>)
-                .doesNotContainKey(<span class="string"><span class="delimiter">&quot;</span><span class="content">prewrap</span><span class="delimiter">&quot;</span></span>);
-        assertThat(document1.getRoles()).isNullOrEmpty();
-        assertThat(document1.isReftext()).isFalse();
-        assertThat(document1.getReftext()).isNull();
-        assertThat(document1.getTitle()).isNull();
-        assertThat(document1.getStyle()).isNull();
-        assertThat(document1.getLevel()).isEqualTo(<span class="integer">0</span>);
-        assertThat(document1.getContentModel()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">compound</span><span class="delimiter">&quot;</span></span>);
-        assertThat(document1.getSourceLocation()).isNull();
-        assertThat(document1.getSubstitutions()).isNullOrEmpty();
-        assertThat(document1.getBlocks()).hasSize(<span class="integer">1</span>);
-        Block block1 = (Block) document1.getBlocks()
-                .get(<span class="integer">0</span>);
-        assertThat(block1.getId()).isNull();
-        assertThat(block1.getNodeName()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
-        assertThat(block1.getParent()).isNull();
-        assertThat(block1.getContext()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
-        assertThat(block1.getDocument()).isSameAs(document1);
-        assertThat(block1.isInline()).isFalse();
-        assertThat(block1.isBlock()).isTrue();
-        assertThat(block1.getAttributes()).isNullOrEmpty();
-        assertThat(block1.getRoles()).isNullOrEmpty();
-        assertThat(block1.isReftext()).isFalse();
-        assertThat(block1.getReftext()).isNull();
-        assertThat(block1.getTitle()).isNull();
-        assertThat(block1.getStyle()).isNull();
-        assertThat(block1.getLevel()).isEqualTo(<span class="integer">0</span>);
-        assertThat(block1.getContentModel()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">simple</span><span class="delimiter">&quot;</span></span>);
-        assertThat(block1.getSourceLocation()).isNull();
-        assertThat(block1.getSubstitutions()).containsExactly(<span class="string"><span class="delimiter">&quot;</span><span class="content">specialcharacters</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">quotes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">replacements</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">macros</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">post_replacements</span><span class="delimiter">&quot;</span></span>);
-        assertThat(block1.getBlocks()).isNullOrEmpty();
-        assertThat(block1.getLines()).containsExactly(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
-        assertThat(block1.getSource()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
-        Title title1 = document1.getStructuredDoctitle();
-        assertThat(title1.getMain()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        assertThat(title1.getSubtitle()).isNull();
-        assertThat(title1.getCombined()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        assertThat(title1.isSanitized()).isFalse();
-        assertThat(document1.getDoctitle()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        assertThat(document1.getOptions()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>);
-    }</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> checkAst(<span class="predefined-type">Document</span> astDocument) {
+    <span class="predefined-type">Document</span> document1 = astDocument;
+    assertThat(document1.getId()).isNull();
+    assertThat(document1.getNodeName()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
+    assertThat(document1.getParent()).isNull();
+    assertThat(document1.getContext()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
+    assertThat(document1.getDocument()).isSameAs(document1);
+    assertThat(document1.isInline()).isFalse();
+    assertThat(document1.isBlock()).isTrue();
+    assertThat(document1.getAttributes()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>)
+            .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>)
+            .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">filetype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span>)
+            .containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>)
+            .doesNotContainKey(<span class="string"><span class="delimiter">&quot;</span><span class="content">notitle</span><span class="delimiter">&quot;</span></span>)
+            .doesNotContainKey(<span class="string"><span class="delimiter">&quot;</span><span class="content">prewrap</span><span class="delimiter">&quot;</span></span>);
+    assertThat(document1.getRoles()).isNullOrEmpty();
+    assertThat(document1.isReftext()).isFalse();
+    assertThat(document1.getReftext()).isNull();
+    assertThat(document1.getCaption()).isNull();
+    assertThat(document1.getTitle()).isNull();
+    assertThat(document1.getStyle()).isNull();
+    assertThat(document1.getLevel()).isEqualTo(<span class="integer">0</span>);
+    assertThat(document1.getContentModel()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">compound</span><span class="delimiter">&quot;</span></span>);
+    assertThat(document1.getSourceLocation()).isNull();
+    assertThat(document1.getSubstitutions()).isNullOrEmpty();
+    assertThat(document1.getBlocks()).hasSize(<span class="integer">1</span>);
+    Block block1 = (Block) document1.getBlocks()
+            .get(<span class="integer">0</span>);
+    assertThat(block1.getId()).isNull();
+    assertThat(block1.getNodeName()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
+    assertThat(block1.getParent()).isNull();
+    assertThat(block1.getContext()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
+    assertThat(block1.getDocument()).isSameAs(document1);
+    assertThat(block1.isInline()).isFalse();
+    assertThat(block1.isBlock()).isTrue();
+    assertThat(block1.getAttributes()).isNullOrEmpty();
+    assertThat(block1.getRoles()).isNullOrEmpty();
+    assertThat(block1.isReftext()).isFalse();
+    assertThat(block1.getReftext()).isNull();
+    assertThat(block1.getCaption()).isNull();
+    assertThat(block1.getTitle()).isNull();
+    assertThat(block1.getStyle()).isNull();
+    assertThat(block1.getLevel()).isEqualTo(<span class="integer">0</span>);
+    assertThat(block1.getContentModel()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">simple</span><span class="delimiter">&quot;</span></span>);
+    assertThat(block1.getSourceLocation()).isNull();
+    assertThat(block1.getSubstitutions()).containsExactly(<span class="string"><span class="delimiter">&quot;</span><span class="content">specialcharacters</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">quotes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">replacements</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">macros</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">post_replacements</span><span class="delimiter">&quot;</span></span>);
+    assertThat(block1.getBlocks()).isNullOrEmpty();
+    assertThat(block1.getLines()).containsExactly(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
+    assertThat(block1.getSource()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
+    Title title1 = document1.getStructuredDoctitle();
+    assertThat(title1.getMain()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+    assertThat(title1.getSubtitle()).isNull();
+    assertThat(title1.getCombined()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+    assertThat(title1.isSanitized()).isFalse();
+    assertThat(document1.getDoctitle()).isEqualTo(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+    assertThat(document1.getOptions()).containsEntry(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>);
+}</code></pre>
 </div>
 </div>
 </div>
@@ -753,65 +843,67 @@ Some text</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">    <span class="directive">public</span> <span class="predefined-type">Document</span> createMock() {
-        <span class="predefined-type">Document</span> mockDocument1 = mock(<span class="predefined-type">Document</span>.class);
-        when(mockDocument1.getId()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockDocument1.getNodeName()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
-        when(mockDocument1.getParent()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockDocument1.getContext()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
-        when(mockDocument1.getDocument()).thenReturn(mockDocument1);
-        when(mockDocument1.isInline()).thenReturn(<span class="predefined-constant">false</span>);
-        when(mockDocument1.isBlock()).thenReturn(<span class="predefined-constant">true</span>);
-        <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt; map1 = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
-        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>);
-        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">filetype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span>);
-        map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>);
-        when(mockDocument1.getAttributes()).thenReturn(map1);
-        when(mockDocument1.getRoles()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
-        when(mockDocument1.isReftext()).thenReturn(<span class="predefined-constant">false</span>);
-        when(mockDocument1.getReftext()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockDocument1.getTitle()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockDocument1.getStyle()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockDocument1.getLevel()).thenReturn(<span class="integer">0</span>);
-        when(mockDocument1.getContentModel()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">compound</span><span class="delimiter">&quot;</span></span>);
-        when(mockDocument1.getSourceLocation()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockDocument1.getSubstitutions()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
-        Block mockBlock1 = mock(Block.class);
-        when(mockBlock1.getId()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockBlock1.getNodeName()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
-        when(mockBlock1.getParent()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockBlock1.getContext()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
-        when(mockBlock1.getDocument()).thenReturn(mockDocument1);
-        when(mockBlock1.isInline()).thenReturn(<span class="predefined-constant">false</span>);
-        when(mockBlock1.isBlock()).thenReturn(<span class="predefined-constant">true</span>);
-        when(mockBlock1.getAttributes()).thenReturn(<span class="predefined-type">Collections</span>.emptyMap());
-        when(mockBlock1.getRoles()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
-        when(mockBlock1.isReftext()).thenReturn(<span class="predefined-constant">false</span>);
-        when(mockBlock1.getReftext()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockBlock1.getTitle()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockBlock1.getStyle()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockBlock1.getLevel()).thenReturn(<span class="integer">0</span>);
-        when(mockBlock1.getContentModel()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">simple</span><span class="delimiter">&quot;</span></span>);
-        when(mockBlock1.getSourceLocation()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockBlock1.getSubstitutions()).thenReturn(<span class="predefined-type">Arrays</span>.asList(<span class="string"><span class="delimiter">&quot;</span><span class="content">specialcharacters</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">quotes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">replacements</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">macros</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">post_replacements</span><span class="delimiter">&quot;</span></span>));
-        when(mockBlock1.getBlocks()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
-        when(mockBlock1.getLines()).thenReturn(<span class="predefined-type">Collections</span>.singletonList(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>));
-        when(mockBlock1.getSource()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
-        when(mockDocument1.getBlocks()).thenReturn(<span class="predefined-type">Collections</span>.singletonList(mockBlock1));
-        Title mockTitle1 = mock(Title.class);
-        when(mockTitle1.getMain()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        when(mockTitle1.getSubtitle()).thenReturn(<span class="predefined-constant">null</span>);
-        when(mockTitle1.getCombined()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        when(mockTitle1.isSanitized()).thenReturn(<span class="predefined-constant">false</span>);
-        when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
-        when(mockDocument1.getDoctitle()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
-        <span class="predefined-type">Map</span>&lt;<span class="predefined-type">Object</span>, <span class="predefined-type">Object</span>&gt; map2 = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
-        map2.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>);
-        map2.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>);
-        when(mockDocument1.getOptions()).thenReturn(map2);
-        <span class="keyword">return</span> mockDocument1;
-    }</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">Document</span> createMock() {
+    <span class="predefined-type">Document</span> mockDocument1 = mock(<span class="predefined-type">Document</span>.class);
+    when(mockDocument1.getId()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockDocument1.getNodeName()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
+    when(mockDocument1.getParent()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockDocument1.getContext()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">document</span><span class="delimiter">&quot;</span></span>);
+    when(mockDocument1.getDocument()).thenReturn(mockDocument1);
+    when(mockDocument1.isInline()).thenReturn(<span class="predefined-constant">false</span>);
+    when(mockDocument1.isBlock()).thenReturn(<span class="predefined-constant">true</span>);
+    <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt; map1 = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
+    map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctitle</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+    map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">doctype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">article</span><span class="delimiter">&quot;</span></span>);
+    map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">filetype</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span>);
+    map1.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">tip-caption</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Tip</span><span class="delimiter">&quot;</span></span>);
+    when(mockDocument1.getAttributes()).thenReturn(map1);
+    when(mockDocument1.getRoles()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
+    when(mockDocument1.isReftext()).thenReturn(<span class="predefined-constant">false</span>);
+    when(mockDocument1.getReftext()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockDocument1.getCaption()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockDocument1.getTitle()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockDocument1.getStyle()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockDocument1.getLevel()).thenReturn(<span class="integer">0</span>);
+    when(mockDocument1.getContentModel()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">compound</span><span class="delimiter">&quot;</span></span>);
+    when(mockDocument1.getSourceLocation()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockDocument1.getSubstitutions()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
+    Block mockBlock1 = mock(Block.class);
+    when(mockBlock1.getId()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockBlock1.getNodeName()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
+    when(mockBlock1.getParent()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockBlock1.getContext()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">paragraph</span><span class="delimiter">&quot;</span></span>);
+    when(mockBlock1.getDocument()).thenReturn(mockDocument1);
+    when(mockBlock1.isInline()).thenReturn(<span class="predefined-constant">false</span>);
+    when(mockBlock1.isBlock()).thenReturn(<span class="predefined-constant">true</span>);
+    when(mockBlock1.getAttributes()).thenReturn(<span class="predefined-type">Collections</span>.emptyMap());
+    when(mockBlock1.getRoles()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
+    when(mockBlock1.isReftext()).thenReturn(<span class="predefined-constant">false</span>);
+    when(mockBlock1.getReftext()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockBlock1.getCaption()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockBlock1.getTitle()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockBlock1.getStyle()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockBlock1.getLevel()).thenReturn(<span class="integer">0</span>);
+    when(mockBlock1.getContentModel()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">simple</span><span class="delimiter">&quot;</span></span>);
+    when(mockBlock1.getSourceLocation()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockBlock1.getSubstitutions()).thenReturn(<span class="predefined-type">Arrays</span>.asList(<span class="string"><span class="delimiter">&quot;</span><span class="content">specialcharacters</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">quotes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">replacements</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">macros</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">post_replacements</span><span class="delimiter">&quot;</span></span>));
+    when(mockBlock1.getBlocks()).thenReturn(<span class="predefined-type">Collections</span>.emptyList());
+    when(mockBlock1.getLines()).thenReturn(<span class="predefined-type">Collections</span>.singletonList(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>));
+    when(mockBlock1.getSource()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">Some text</span><span class="delimiter">&quot;</span></span>);
+    when(mockDocument1.getBlocks()).thenReturn(<span class="predefined-type">Collections</span>.singletonList(mockBlock1));
+    Title mockTitle1 = mock(Title.class);
+    when(mockTitle1.getMain()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+    when(mockTitle1.getSubtitle()).thenReturn(<span class="predefined-constant">null</span>);
+    when(mockTitle1.getCombined()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+    when(mockTitle1.isSanitized()).thenReturn(<span class="predefined-constant">false</span>);
+    when(mockDocument1.getStructuredDoctitle()).thenReturn(mockTitle1);
+    when(mockDocument1.getDoctitle()).thenReturn(<span class="string"><span class="delimiter">&quot;</span><span class="content">My page</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">Map</span>&lt;<span class="predefined-type">Object</span>, <span class="predefined-type">Object</span>&gt; map2 = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;&gt;();
+    map2.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">attributes</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>);
+    map2.put(<span class="string"><span class="delimiter">&quot;</span><span class="content">header_footer</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">false</span>);
+    when(mockDocument1.getOptions()).thenReturn(map2);
+    <span class="keyword">return</span> mockDocument1;
+}</code></pre>
 </div>
 </div>
 </div>
@@ -847,7 +939,7 @@ It is using JSoup to parse the HTML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-12 23:33:44 CET
+Last updated 2018-01-16 09:49:00 CET
 </div>
 </div>
 </body>
