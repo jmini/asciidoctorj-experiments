@@ -162,6 +162,15 @@ public class HtmlConverter extends StringConverter {
                 handleTitle(content, block, "div", true, true);
                 handleStructuralNodeBlocks(content, block);
             }
+        } else if ("open".equals(block.getNodeName())) {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, "openblock");
+            handleTitle(div, block, "div", true, true);
+            Element content = div.appendElement("div");
+            content.attr("class", "content");
+            content.text(String.join("\n", block.getLines()));
+            handleStructuralNodeBlocks(content, block);
         } else if ("admonition".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);

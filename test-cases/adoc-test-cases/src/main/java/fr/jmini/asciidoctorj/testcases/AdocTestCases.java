@@ -65,6 +65,10 @@ public class AdocTestCases {
         list.add(new MultiDivTestCase());
         list.add(new NoTitleUnsetTestCase());
         list.add(new OpenBlockSidebarTestCase());
+        list.add(new OpenBlockSourceTestCase());
+        list.add(new OpenBlockTestCase());
+        list.add(new OpenBlockWithCaptionTestCase());
+        list.add(new OpenBlockWithIdAndRoleTestCase());
         list.add(new QuoteTestCase());
         list.add(new QuoteWithIdAndRoleTestCase());
         list.add(new QuoteWithoutBlockDelimiterTestCase());
