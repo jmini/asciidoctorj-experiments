@@ -64,6 +64,7 @@ public class AdocTestCases {
         list.add(new ListingWithoutBlockDelimiterTestCase());
         list.add(new MultiDivTestCase());
         list.add(new NoTitleUnsetTestCase());
+        list.add(new OpenBlockSidebarTestCase());
         list.add(new QuoteTestCase());
         list.add(new QuoteWithIdAndRoleTestCase());
         list.add(new QuoteWithoutBlockDelimiterTestCase());
@@ -73,6 +74,8 @@ public class AdocTestCases {
         list.add(new ShowTitleFalseTestCase());
         list.add(new ShowTitleTrueTestCase());
         list.add(new ShowTitleTrueWithoutTitleTestCase());
+        list.add(new SidebarTestCase());
+        list.add(new SidebarWithIdAndRoleTestCase());
         list.add(new TableAutowidthSpreadTestCase());
         list.add(new TableAutowidthTestCase());
         list.add(new TableBorderFrameNoneTestCase());

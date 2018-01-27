@@ -149,6 +149,19 @@ public class HtmlConverter extends StringConverter {
             Element blockquote = div.appendElement("blockquote");
             blockquote.text(String.join("\n", block.getLines()));
             handleStructuralNodeBlocks(blockquote, block);
+        } else if ("sidebar".equals(block.getNodeName())) {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, "sidebarblock");
+            Element content = div.appendElement("div");
+            content.attr("class", "content");
+            if (block.getLines() != null && block.getLines()
+                    .size() > 0) {
+                content.text(String.join("\n", block.getLines()));
+            } else {
+                handleTitle(content, block, "div", true, true);
+                handleStructuralNodeBlocks(content, block);
+            }
         } else if ("admonition".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
