@@ -65,7 +65,7 @@ public class HtmlConverter extends StringConverter {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "listingblock");
-            handleTitle(div, block, "div");
+            handleTitle(div, block, "div", true, true);
             Element content = appendContentDiv(div);
             Element pre = content.appendElement("pre");
             List<String> classAttributeMembers = new ArrayList<>();
@@ -133,22 +133,42 @@ public class HtmlConverter extends StringConverter {
                         .toString());
             }
             handleStructuralNodeBlocks(content, block);
-            handleTitle(div, block, "div");
+            handleTitle(div, block, "div", true, true);
         } else if ("example".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "exampleblock");
-            handleTitle(div, block, "div");
+            handleTitle(div, block, "div", true, true);
             Element content = appendContentDiv(div);
             handleStructuralNodeBlocks(content, block);
         } else if ("quote".equals(block.getNodeName())) {
             Element div = e.appendElement("div");
             handleId(div, block);
             handleRoles(div, block, "quoteblock");
-            handleTitle(div, block, "div");
+            handleTitle(div, block, "div", true, true);
             Element blockquote = div.appendElement("blockquote");
             blockquote.text(String.join("\n", block.getLines()));
             handleStructuralNodeBlocks(blockquote, block);
+        } else if ("admonition".equals(block.getNodeName())) {
+            Element div = e.appendElement("div");
+            handleId(div, block);
+            handleRoles(div, block, Arrays.asList("admonitionblock", block.getStyle()
+                    .toLowerCase()));
+            Element table = div.appendElement("table");
+            Element tbody = table.appendElement("tbody");
+            Element tr = tbody.appendElement("tr");
+            Element td1 = tr.appendElement("td");
+            td1.attr("class", "icon");
+            handleTitle(td1, block, "div", true, false);
+            Element td2 = tr.appendElement("td");
+            td2.attr("class", "content");
+            if (block.getLines() != null && block.getLines()
+                    .size() > 0) {
+                td2.text(" " + String.join("\n", block.getLines()) + " ");
+            } else {
+                handleTitle(td2, block, "div", false, true);
+                handleStructuralNodeBlocks(td2, block);
+            }
         } else if ("thematic_break".equals(block.getNodeName())) {
             e.appendElement("hr");
         } else {
@@ -289,7 +309,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, descriptionList);
         handleStyleAndRoles(div, descriptionList, descriptionList.getStyle(), Collections.singletonList(descriptionList.getContext()));
-        handleTitle(div, descriptionList, "div");
+        handleTitle(div, descriptionList, "div", true, true);
         Element dl = div.appendElement("dl");
         List<DescriptionListEntry> items = descriptionList.getItems();
         if (items != null) {
@@ -332,7 +352,7 @@ public class HtmlConverter extends StringConverter {
         Element div = e.appendElement("div");
         handleId(div, list);
         handleStyleAndRoles(div, list, list.getStyle(), Collections.singletonList(list.getContext()));
-        handleTitle(div, list, "div");
+        handleTitle(div, list, "div", true, true);
         Element l = div.appendElement(list.getNodeName()
                 .substring(0, 2));
         if (list.getStyle() != null) {
@@ -435,16 +455,18 @@ public class HtmlConverter extends StringConverter {
         }
     }
 
-    private void handleTitle(Element e, StructuralNode structuralNode, String tagName) {
-        String title = structuralNode.getTitle();
-        if (title != null && !title.isEmpty()) {
+    private void handleTitle(Element e, StructuralNode structuralNode, String tagName, boolean includeCaption, boolean includeTitle) {
+        String text = "";
+        if (includeCaption && structuralNode.getCaption() != null) {
+            text = structuralNode.getCaption();
+        }
+        if (includeTitle && structuralNode.getTitle() != null) {
+            text = text + structuralNode.getTitle();
+        }
+        if (!text.isEmpty()) {
             Element div = e.appendElement(tagName);
             div.attr("class", "title");
-            if (structuralNode.getCaption() != null) {
-                div.text(structuralNode.getCaption() + title);
-            } else {
-                div.text(title);
-            }
+            div.text(text);
         }
     }
 
@@ -483,7 +505,7 @@ public class HtmlConverter extends StringConverter {
             t.attr("style", "width: " + table.getAttributes()
                     .get("width") + ";");
         }
-        handleTitle(t, table, "caption");
+        handleTitle(t, table, "caption", true, true);
 
         Element cg = t.appendElement("colgroup");
         for (Column column : table.getColumns()) {

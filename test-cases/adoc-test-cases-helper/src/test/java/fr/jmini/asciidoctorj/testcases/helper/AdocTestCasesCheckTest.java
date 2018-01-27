@@ -34,7 +34,8 @@ public class AdocTestCasesCheckTest {
                 .map(AdocTestCaseHelper::computeClassName)
                 .collect(Collectors.toList());
 
-        assertThat(testCasesNames).containsExactlyElementsOf(testCasesFromFiles);
+        assertThat(testCasesNames).containsAll(testCasesFromFiles);
+        assertThat(testCasesNames).containsOnlyElementsOf(testCasesFromFiles);
     }
 
     @Test

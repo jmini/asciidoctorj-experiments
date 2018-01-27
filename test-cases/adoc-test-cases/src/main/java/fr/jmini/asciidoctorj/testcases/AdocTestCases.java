@@ -9,6 +9,17 @@ public class AdocTestCases {
     // tag::all-cases[]
     public static List<AdocTestCase> getAllTestCases() {
         List<AdocTestCase> list = new ArrayList<>();
+        list.add(new AdmonitionBlockCautionTestCase());
+        list.add(new AdmonitionBlockImportantTestCase());
+        list.add(new AdmonitionBlockNoteTestCase());
+        list.add(new AdmonitionBlockTipTestCase());
+        list.add(new AdmonitionBlockWarningTestCase());
+        list.add(new AdmonitionParagraphCautionTestCase());
+        list.add(new AdmonitionParagraphImportantTestCase());
+        list.add(new AdmonitionParagraphNoteTestCase());
+        list.add(new AdmonitionParagraphTipTestCase());
+        list.add(new AdmonitionParagraphWarningTestCase());
+        list.add(new AdmonitionParagraphWarningWithIdAndRoleTestCase());
         list.add(new DivMultilineTestCase());
         list.add(new DivSimpleTestCase());
         list.add(new DivWithIdAndRoleTestCase());
@@ -28,15 +39,6 @@ public class AdocTestCases {
         list.add(new ImageImagesdirTestCase());
         list.add(new ImageNormalizeSrcTestCase());
         list.add(new ImageTestCase());
-        list.add(new ListingCaptionCustomCounterTestCase());
-        list.add(new ListingCaptionCustomTestCase());
-        list.add(new ListingCaptionEmptyTestCase());
-        list.add(new ListingCaptionFixedTestCase());
-        list.add(new ListingMultilineTestCase());
-        list.add(new ListingParagraphSyntaxTestCase());
-        list.add(new ListingTestCase());
-        list.add(new ListingUnsetPrewrapTestCase());
-        list.add(new ListingWithoutBlockDelimiterTestCase());
         list.add(new ListLabeledNestedMixedTestCase());
         list.add(new ListLabeledNestedTestCase());
         list.add(new ListLabeledTestCase());
@@ -51,6 +53,15 @@ public class AdocTestCases {
         list.add(new ListOlUpperalphaTestCase());
         list.add(new ListOlUpperromanTestCase());
         list.add(new ListUlTestCase());
+        list.add(new ListingCaptionCustomCounterTestCase());
+        list.add(new ListingCaptionCustomTestCase());
+        list.add(new ListingCaptionEmptyTestCase());
+        list.add(new ListingCaptionFixedTestCase());
+        list.add(new ListingMultilineTestCase());
+        list.add(new ListingParagraphSyntaxTestCase());
+        list.add(new ListingTestCase());
+        list.add(new ListingUnsetPrewrapTestCase());
+        list.add(new ListingWithoutBlockDelimiterTestCase());
         list.add(new MultiDivTestCase());
         list.add(new NoTitleUnsetTestCase());
         list.add(new QuoteTestCase());

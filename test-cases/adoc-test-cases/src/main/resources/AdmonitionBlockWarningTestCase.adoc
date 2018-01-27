@@ -1,0 +1,6 @@
+[WARNING] 
+.lorem ipsum dolor sit amet
+==== 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec aliquam tempus quam et sollicitudin.
+====
