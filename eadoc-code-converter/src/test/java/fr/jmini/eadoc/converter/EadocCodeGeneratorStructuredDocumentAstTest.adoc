@@ -1,7 +1,0 @@
-= My page
-
-Some text
-
-== An header
-
-What does it mean?

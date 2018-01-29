@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+	<property name="project.basedir" value="."/>
+
+    <target name="default" description="description">
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="EList&#60;SAuthor&#62;" value="EList&#60;Author&#62;" />
+    	                                    <replacefilter token="EList&#60;SCell&#62;" value="EList&#60;Cell&#62;" />
+    	                                    <replacefilter token="EList&#60;SColumn&#62;" value="EList&#60;Column&#62;" />
+    	                                    <replacefilter token="EList&#60;SContentPart&#62;" value="EList&#60;ContentPart&#62;" />
+    	                                    <replacefilter token="EList&#60;SDescriptionListEntry&#62;" value="EList&#60;DescriptionListEntry&#62;" />
+    	                                    <replacefilter token="EList&#60;SListItem&#62;" value="EList&#60;ListItem&#62;" />
+    	                                    <replacefilter token="EList&#60;SStructuralNode&#62;" value="EList&#60;StructuralNode&#62;" />
+    	                                    <replacefilter token="List&#60;SStructuralNode&#62; findBy" value="List&#60;StructuralNode&#62; findBy" />
+    	                                    <replacefilter token="List&#60;SStructuralNode&#62; blocks" value="List&#60;StructuralNode&#62; blocks" />
+    	                                    <replacefilter token="List&#60;SStructuralNode&#62; getItems" value="List&#60;StructuralNode&#62; getItems" />
+    	                                    <replacefilter token="Function1&#60;S" value="Function1&#60;" />
+    	                                    <replacefilter token="apply(final S" value="apply(final " />
+    	                                    <replacefilter token="IterableExtensions.&#60;S" value="IterableExtensions.&#60;" />
+    	                                    <include name="**/S*.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import org.asciidoctor.ast.List;" value="import org.asciidoctor.ast.List; import org.asciidoctor.ast.StructuralNode;" />
+    	                                    <include name="**/SList.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import fr.jmini.sciid.SList;" value="import org.asciidoctor.ast.StructuralNode; import fr.jmini.sciid.SList;" />
+    	                                    <include name="**/SListImpl.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import org.asciidoctor.ast.DescriptionList;" value="import org.asciidoctor.ast.DescriptionList; import org.asciidoctor.ast.DescriptionListEntry;" />
+    	                                    <include name="**/SDescriptionList.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import fr.jmini.sciid.SDescriptionList;" value="import org.asciidoctor.ast.DescriptionListEntry; import fr.jmini.sciid.SDescriptionList;" />
+    	                                    <include name="**/SDescriptionListImpl.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import fr.jmini.sciid.SContentPart;" value="import org.asciidoctor.ast.ContentPart; import fr.jmini.sciid.SContentPart;" />
+    	                                    <include name="**/SContentPartImpl.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import org.asciidoctor.ast.Row;" value="import org.asciidoctor.ast.Cell; import org.asciidoctor.ast.Row;" />
+    	                                    <include name="**/SRow.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import fr.jmini.sciid.SRow;" value="import org.asciidoctor.ast.Cell; import fr.jmini.sciid.SRow;" />
+    	                                    <include name="**/SRowImpl.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import org.asciidoctor.ast.Table;" value="import org.asciidoctor.ast.Column; import org.asciidoctor.ast.Table;" />
+    	                                    <include name="**/STable.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="import fr.jmini.sciid.STable;" value="import org.asciidoctor.ast.Column; import fr.jmini.sciid.STable;" />
+    	                                    <include name="**/STableImpl.java"/>
+    	                                </replace>
+    	                                <replace dir="${project.basedir}/src/main/java-gen/">
+    	                                    <replacefilter token="setSubstitutions(String " value="setSubstitutions(String... " />
+    	                                    <replacefilter token="setSubstitutions(final String " value="setSubstitutions(final String... " />
+    	                                    <include name="**/*SStructuralNode*.java"/>
+    	                                </replace>	
+    </target>
+</project>

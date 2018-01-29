@@ -1,0 +1,625 @@
+@GenModel(
+    bundleManifest="false",
+    operationReflection="false",
+    modelDirectory="sciid/src/main/java-gen",
+    complianceLevel="8.0"
+)
+package fr.jmini.sciid
+
+interface Author wraps org.asciidoctor.ast.Author {}
+interface Block wraps org.asciidoctor.ast.Block {}
+interface Cell wraps org.asciidoctor.ast.Cell {}
+interface Column wraps org.asciidoctor.ast.Column {}
+interface ContentNode wraps org.asciidoctor.ast.ContentNode {}
+interface ContentPart wraps org.asciidoctor.ast.ContentPart {}
+interface Cursor wraps org.asciidoctor.ast.Cursor {}
+interface DescriptionList wraps org.asciidoctor.ast.DescriptionList {}
+interface DescriptionListEntry wraps org.asciidoctor.ast.DescriptionListEntry {}
+interface Document wraps org.asciidoctor.ast.Document {}
+interface DocumentHeader wraps org.asciidoctor.ast.DocumentHeader {}
+interface AstList wraps org.asciidoctor.ast.List {}
+interface ListItem wraps org.asciidoctor.ast.ListItem {}
+interface PhraseNode wraps org.asciidoctor.ast.PhraseNode {}
+interface RevisionInfo wraps org.asciidoctor.ast.RevisionInfo {}
+interface Row wraps org.asciidoctor.ast.Row {}
+interface Section wraps org.asciidoctor.ast.Section {}
+interface StructuralNode wraps org.asciidoctor.ast.StructuralNode {}
+interface StructuredDocument wraps org.asciidoctor.ast.StructuredDocument {}
+interface Table wraps org.asciidoctor.ast.Table {}
+interface Title wraps org.asciidoctor.ast.Title {}
+
+type HorizontalAlignment wraps org.asciidoctor.ast.Table.HorizontalAlignment
+type VerticalAlignment wraps org.asciidoctor.ast.Table.VerticalAlignment
+
+type SciidUtility wraps fr.jmini.sciid.SciidUtility
+
+type StringObjectMap wraps java.util.Map<String, Object>
+type ObjectObjectMap wraps java.util.Map<Object, Object>
+type StringList wraps java.util.List<String>
+type ContentPartList wraps java.util.List<org.asciidoctor.ast.ContentPart>
+type StructuralNodeList wraps java.util.List<SStructuralNode>
+
+class SAuthor extends Author {
+	String email
+	String fullName
+	String firstName
+	String lastName
+	String middleName
+	String initials
+}
+
+class SBlock extends SStructuralNode, Block {
+    /**
+     * @deprecated Please use {@link #getLines}
+     */
+    op StringList lines() {
+    	this.getLines()
+    }
+
+    /**
+     * @return The original content of this block
+     */
+    StringList lines
+
+    /**
+     * @deprecated Please use {@link #getSource}
+     */
+    op String source() {
+    	this.getSource
+    }
+
+    String source
+}
+
+class SCell extends SContentNode, Cell {
+
+    container SRow row opposite cells
+    refers SColumn column
+
+    int colspan
+
+    int rowspan
+
+    op String getText() {
+    	
+    }
+
+    String source
+
+    op Object getContent() {
+    	
+    }
+
+    String style
+
+    HorizontalAlignment horizontalAlignment
+    VerticalAlignment verticalAlignment
+
+    contains Document innerDocument
+}
+
+class SColumn extends SContentNode, Column {
+    String style
+    container STable table opposite columns
+    
+    op int getColumnNumber() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    int width
+    HorizontalAlignment horizontalAlignment
+    VerticalAlignment verticalAlignment
+}
+
+class SContentNode extends ContentNode {
+    String ^id
+
+    /**
+     * @deprecated Please use {@link #getId()}
+     */
+    op String ^id() {
+        this.getId
+    }
+
+    String nodeName
+
+    refers ContentNode parent
+    /**
+     * @deprecated Use {@linkplain #getParent()} instead.
+     */
+    op ContentNode parent() {
+        this.getParent
+    }
+
+	String context
+	
+    /**
+     * @deprecated Use {@linkplain #getContext()}  instead.
+     */
+    op String context() {
+        this.getContext
+    }
+
+     refers Document document
+    /**
+     * @deprecated Use {@linkplain #getDocument()}  instead.
+     */
+      op Document document() {
+          this.getDocument
+      }
+
+      boolean inline
+      
+      boolean block
+      
+      StringObjectMap attributes
+
+    /**
+     * @deprecated Use {@link #getAttribute(Object, Object, boolean)} instead
+     */
+    op Object getAttr(Object name, Object defaultValue, boolean inherit) {
+        this.getAttribute(name, defaultValue, inherit)
+    }
+
+    /**
+     * @deprecated Use {@link #getAttribute(Object, Object)} instead
+     */
+    op Object getAttr(Object name, Object defaultValue) {
+        this.getAttribute(name, defaultValue)
+    }
+
+    /**
+     * @deprecated Use {@link #getAttribute(Object)} instead
+     */
+    op Object getAttr(Object name) {
+        this.getAttribute(name)
+    }
+
+    op Object getAttribute(Object name, Object defaultValue, boolean inherit) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op Object getAttribute(Object name, Object defaultValue) {
+    	if(this.attributes.containsKey(name)) {
+    		this.attributes.get(name)
+    	} else {
+    		defaultValue
+    	}
+    }
+
+    op Object getAttribute(Object name) {
+        return this.attributes.get(name)
+    }
+
+    /**
+     * @deprecated Use {@link #hasAttribute(Object)} instead
+     */
+    op boolean hasAttr(Object name) {
+        hasAttribute(name)
+    }
+
+    /**
+     * @deprecated Use {@link #hasAttribute(Object, boolean)} instead
+     */
+    op boolean hasAttr(Object name, boolean inherited) {
+        hasAttribute(name, inherited)
+    }
+
+      op boolean hasAttribute(Object name) {
+      	this.attributes.containsKey(name)
+      }
+
+    op boolean hasAttribute(Object name, boolean inherited) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    /**
+     * @deprecated Use {@link #isAttribute(Object, Object)} instead.
+     */
+    op boolean isAttr(Object name, Object expected) {
+	isAttribute(name, expected)
+    }
+
+    /**
+     * @deprecated Use {@link #isAttribute(Object, Object, boolean)} instead.
+     */
+    op boolean isAttr(Object name, Object expected, boolean inherit) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op boolean isAttribute(Object name, Object expected) {
+        expected.equals(getAttribute(name))
+    }
+
+    op boolean isAttribute(Object name, Object expected, boolean inherit) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    /**
+     * @deprecated Use {@link #setAttribute(Object, Object, boolean)} instead.
+     */
+    op boolean setAttr(Object name, Object value, boolean overwrite) {
+        setAttribute(name, value, overwrite)
+    }
+
+    op boolean setAttribute(Object name, Object value, boolean overwrite) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op boolean isOption(Object name) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op boolean isRole()  {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op boolean hasRole(String role) {
+        roles.contains(role)
+    }
+    
+    op String getRole() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    StringList roles
+    /**
+     * @deprecated Use {@linkplain #getRole()}  instead.
+     */
+    op String role() {
+        getRole()
+    }
+
+    op void addRole(String role) {
+      roles.add(role)
+    }
+    
+    op void removeRole(String role) {
+      roles.remove(role)
+    }
+
+    String reftext
+
+    op boolean isReftext() {
+        return !this.getReftext().nullOrEmpty
+    }
+
+    op String iconUri(String name) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String mediaUri(String target) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String imageUri(String targetImage) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String imageUri(String targetImage, String assetDirKey) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String readAsset(String path, ObjectObjectMap opts) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op String normalizeWebPath(String path, String start, boolean preserveUriTarget) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+}
+
+class SContentPart extends ContentPart {
+	String ^id
+	int level
+	String context
+	String style
+	String role
+	String title
+	StringObjectMap attributes
+	contains SContentPart[] parts opposite parentPart
+	
+	op String getContent()
+	
+	container SContentPart parentPart opposite parts
+}
+
+class SCursor extends Cursor {
+	int lineNumber
+	String path
+	String dir
+	String file
+}
+
+class SDescriptionList extends SStructuralNode, DescriptionList {
+	contains SDescriptionListEntry[] items
+	op boolean hasItems() {
+		!this.items.isEmpty
+	}
+	op String render()
+	op String ^convert()
+}
+
+class SDescriptionListEntry extends DescriptionListEntry {
+	contains SListItem[] terms
+	contains SListItem description
+	
+	op void setDescription(ListItem item) {
+		this.setDescription(SciidUtility.convertListItem(item))
+	}
+}
+
+class SDocument extends SStructuralNode, Document {
+    contains STitle structuredDoctitle
+    String doctitle
+    /**
+     * @deprecated Please use {@link #getDoctitle()}
+     */
+    op String doctitle() {
+        this.getDoctitle
+    }
+    op boolean isBasebackend(String backend) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    /**
+     * @deprecated Please use {@link #isBasebackend(String)}
+     */
+    op boolean basebackend(String backend) {
+    	this.isBasebackend(backend)
+    }
+
+    ObjectObjectMap options
+
+    op int getAndIncrementCounter(String name) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op int getAndIncrementCounter(String name, int initialValue) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+}
+
+class SDocumentHeader extends DocumentHeader {
+    contains SAuthor[] authors
+
+    contains STitle documentTitle
+
+    String pageTitle
+
+    op Author getAuthor() {
+        if(this.authors.isEmpty) {
+            return SciidFactory.eINSTANCE.createSAuthor();
+        } else {
+            return this.authors.head
+        }
+    }
+
+    contains SRevisionInfo revisionInfo
+
+    StringObjectMap attributes
+}
+
+class SList extends SStructuralNode, AstList {
+    contains SStructuralNode[] items
+
+    op boolean hasItems() {
+    	!this.items.isEmpty
+    }
+
+	op String render()
+	op String ^convert()
+}
+
+class SListItem extends SStructuralNode, ListItem {
+    String marker
+
+    String text
+
+    String source
+
+    op boolean hasText() {
+        return !this.text.nullOrEmpty
+    }
+}
+
+class SPhraseNode extends SContentNode, PhraseNode {
+	op String render()
+	op String ^convert()
+	String target
+	String text
+	String ^type
+}
+
+class SRevisionInfo extends RevisionInfo {
+	String date
+	String number
+	String remark
+}
+
+class SRow extends Row {
+	contains SCell[] cells opposite row
+}
+
+class SSection extends SStructuralNode, Section {
+    /**
+     * @deprecated Please use {@link #getIndex()}
+     */
+    op int index() {
+    	this.getIndex
+    }
+
+    int index
+
+    /**
+     * @deprecated Please use {@link #getNumber()}
+     */
+    op int number() {
+    	this.getNumber
+    }
+
+    int number
+
+    /**
+     * @deprecated Please use {@link #getSectionName()}
+     */
+    op String sectname() {
+    	return this.getSectionName
+    }
+
+    String sectionName
+
+    /**
+     * @deprecated Please use {@link #isSpecial()}
+     */
+    op boolean special() {
+    	this.isSpecial
+    }
+
+    boolean special
+
+    /**
+     * @deprecated Please use {@link #isNumbered()}
+     */
+    op boolean numbered() {
+    	this.isNumbered
+    }
+
+    boolean numbered
+}
+
+class SStructuralNode extends SContentNode, StructuralNode {
+    /**
+     * @deprecated Please use {@linkplain #getTitle()} instead
+     */
+    op String title() {
+    	this.getTitle
+    }
+    String title
+
+    String caption
+
+    /**
+     * @deprecated Please use {@linkplain #getStyle()} instead
+     */
+    op String style() {
+    	this.getStyle
+    }
+    String style
+
+    /**
+     * @return The list of child blocks of this block
+     * @deprecated Please use {@linkplain #getBlocks()} instead
+     */
+    op StructuralNodeList blocks() {
+    	this.getBlocks
+    }
+    
+    contains SStructuralNode[] blocks
+
+    op void append(StructuralNode block) {
+        this.getBlocks.add(SciidUtility.convertStructuralNode(block))
+    }
+
+    /**
+     * @deprecated Please use {@linkplain #getContent()} instead
+     */
+    op Object content() {
+    	this.getContent
+    }
+    
+    op Object getContent() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op String ^convert() {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+    op StructuralNodeList findBy(ObjectObjectMap selector)  {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    int level
+
+    String contentModel
+
+    contains SCursor sourceLocation
+
+    String[] substitutions
+
+    op boolean isSubstitutionEnabled(String substitution) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op void removeSubstitution(String substitution) {
+        throw new UnsupportedOperationException("Not implemented")
+    }
+
+    op void addSubstitution(String substitution) {
+    	this.substitutions.add(substitution)
+    }
+
+    op void prependSubstitution(String substitution) {
+    	this.substitutions.add(0, substitution)
+    }
+    
+    op void setSubstitutions(String substitution){
+        throw new UnsupportedOperationException("Not implemented")
+    }
+}
+
+class SStructuredDocument extends StructuredDocument {
+	contains SContentPart[] parts
+	refers DocumentHeader header
+
+	op ContentPart getPartById(String partId) {
+		if(partId === null) {
+			return null
+		}
+		return parts.findFirst[partId.equals(it.getId)]
+	}
+	op ContentPart getPartByStyle(String style) {
+		if(style === null) {
+			return null
+		}
+		return parts.findFirst[style.equals(it.getStyle)]
+	}
+	op ContentPart getPartByRole(String role) {
+		if(role === null) {
+			return null
+		}
+		return parts.findFirst[role.equals(it.getRole)]
+	}
+	op ContentPartList getPartsByContext(String context) {
+		if(context === null) {
+			return emptyList
+		}
+		return parts.filter[context.equals(it.getContext)].asEList
+	}
+	op ContentPartList getPartsByStyle(String style) {
+		if(style === null) {
+			return emptyList
+		}
+		return parts.filter[style.equals(it.getStyle)].asEList
+	}
+	op ContentPartList getPartsByRole(String role) {
+		if(role === null) {
+			return emptyList
+		}
+		return parts.filter[role.equals(it.getRole)].asEList
+	}
+}
+
+class STable extends SStructuralNode , Table {
+	boolean headerOption
+
+	op boolean hasHeaderOption() {
+		return this.isHeaderOption
+	}
+
+    contains SColumn[] columns opposite table
+    contains Row[] header
+    contains Row[] footer
+    contains Row[] body
+    String frame
+    String grid
+}
+
+class STitle extends Title{
+	String main
+	String subtitle
+	String combined
+	boolean sanitized
+}
