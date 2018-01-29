@@ -75,6 +75,9 @@ public class AdocTestCases {
         list.add(new SectionAllTestCase());
         list.add(new SectionCustomIdAttributesTestCase());
         list.add(new SectionTestCase());
+        list.add(new SectionWithLeveloffsetTestCase());
+        list.add(new SectionWithSectnum2TestCase());
+        list.add(new SectionWithSectnumTestCase());
         list.add(new ShowTitleFalseTestCase());
         list.add(new ShowTitleTrueTestCase());
         list.add(new ShowTitleTrueWithoutTitleTestCase());

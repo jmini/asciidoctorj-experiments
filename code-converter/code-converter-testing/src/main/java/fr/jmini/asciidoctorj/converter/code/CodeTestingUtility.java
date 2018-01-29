@@ -193,6 +193,9 @@ public class CodeTestingUtility {
         copyValue("prewrap", attributes, newAttributes);
         copyValue("idprefix", attributes, newAttributes);
         copyValue("idseparator", attributes, newAttributes);
+        copyValue("leveloffset", attributes, newAttributes);
+        copyValue("sectnums", attributes, newAttributes);
+        copyValue("sectnumlevels", attributes, newAttributes);
         copyValue("imagesdir", attributes, newAttributes);
         attributes.clear();
         attributes.putAll(newAttributes);

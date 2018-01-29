@@ -27,7 +27,15 @@ public class AdocTestCaseHelper {
     public static final String EXPECTED_HTML_TAG_NAME = "expected-html";
     public static final String ALL_CASES_TAG_NAME = "all-cases";
 
+    public static final File RESOURCES_FOLDER = new File("../adoc-test-cases/src/main/resources/");
+
     public static void main(String[] args) throws IOException {
+        checkAllTestCases();
+        // checkTestCase(new fr.jmini.asciidoctorj.testcases.SectionWithSectnumTestCase());
+        System.out.println("-");
+    }
+
+    private static void checkAllTestCases() throws IOException {
         List<String> testCasesNames = AdocTestCases.getAllTestCases()
                 .stream()
                 .map(c -> c.getClass()
@@ -60,37 +68,39 @@ public class AdocTestCaseHelper {
 
             throw new IllegalStateException("Some items are missing \n\tsee file fr.jmini.asciidoctorj.testcases.AdocTestCases.getAllTestCases(AdocTestCases.java:10)");
         }
-        File resourcesFolder = new File("../adoc-test-cases/src/main/resources/");
-        Arrays.stream(resourcesFolder.listFiles())
+        Arrays.stream(RESOURCES_FOLDER.listFiles())
                 .forEach(File::delete);
         for (AdocTestCase testCase : AdocTestCases.getAllTestCases()) {
-            System.out.println(testCase.getClass()
-                    .getSimpleName());
-            String asciidocContent = testCase.getAdocInput();
-            if (asciidocContent == null) {
-                System.out.println("Content missing in " + testCase.getClass()
-                        .getName());
-            } else {
-                File resourcesFile = findAsciidocRessourceFile(resourcesFolder, testCase);
-                Files.write(asciidocContent, resourcesFile, Charsets.UTF_8);
-
-                File testCaseFile = CodeTestingUtility.javaFile("../adoc-test-cases/", "main", testCase.getClass());
-
-                Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
-                Document document = asciidoctor.load(asciidocContent, testCase.getInputOptions());
-                CodeTestingUtility.rewriteAttributes(document);
-
-                String assertCode = computeAssertCode(document);
-                CodeTestingUtility.replaceContentInFile(testCaseFile, assertCode, ASSERT_CODE_TAG_NAME, true, true);
-
-                String mockCode = computeMockCode(document);
-                CodeTestingUtility.replaceContentInFile(testCaseFile, mockCode, MOCK_CODE_TAG_NAME, true, true);
-
-                String expectedHtml = computeExpectedHtmlConstant(document);
-                CodeTestingUtility.replaceContentInFile(testCaseFile, expectedHtml, EXPECTED_HTML_TAG_NAME, false, true);
-            }
+            checkTestCase(testCase);
         }
-        System.out.println("-");
+    }
+
+    private static void checkTestCase(AdocTestCase testCase) throws IOException {
+        System.out.println(testCase.getClass()
+                .getSimpleName());
+        String asciidocContent = testCase.getAdocInput();
+        if (asciidocContent == null) {
+            System.out.println("Content missing in " + testCase.getClass()
+                    .getName());
+        } else {
+            File resourcesFile = findAsciidocRessourceFile(RESOURCES_FOLDER, testCase);
+            Files.write(asciidocContent, resourcesFile, Charsets.UTF_8);
+
+            File testCaseFile = CodeTestingUtility.javaFile("../adoc-test-cases/", "main", testCase.getClass());
+
+            Asciidoctor asciidoctor = org.asciidoctor.Asciidoctor.Factory.create();
+            Document document = asciidoctor.load(asciidocContent, testCase.getInputOptions());
+            // CodeTestingUtility.rewriteAttributes(document);
+
+            String assertCode = computeAssertCode(document);
+            CodeTestingUtility.replaceContentInFile(testCaseFile, assertCode, ASSERT_CODE_TAG_NAME, true, true);
+
+            String mockCode = computeMockCode(document);
+            CodeTestingUtility.replaceContentInFile(testCaseFile, mockCode, MOCK_CODE_TAG_NAME, true, true);
+
+            String expectedHtml = computeExpectedHtmlConstant(document);
+            CodeTestingUtility.replaceContentInFile(testCaseFile, expectedHtml, EXPECTED_HTML_TAG_NAME, false, true);
+        }
     }
 
     static String computeAssertCode(Document document) {

@@ -1,0 +1,31 @@
+:sectnums:
+:sectnumlevels: 1
+
+== First Section
+
+Some text for 1.
+
+=== Subsection A
+
+Some text for 2.
+
+=== Subsection B
+
+Some text for 3.
+
+=== Subsection C
+
+Some text for 4.
+
+== Second Section
+
+Some text for 5.
+
+=== Subsection a
+
+Some text for 6.
+
+=== Subsection b
+
+Some text for 7.
+

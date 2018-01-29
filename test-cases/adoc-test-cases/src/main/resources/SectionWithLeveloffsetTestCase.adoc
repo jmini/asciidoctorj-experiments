@@ -1,0 +1,10 @@
+:leveloffset: 2
+
+== First Section
+
+Some text for 1.
+
+=== Other Section
+
+Some text for 2.
+
