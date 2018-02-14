@@ -12,9 +12,23 @@
 
   <repositories>
     <repository>
-      <id>oss-jfrog-artifactory</id>
-      <name>oss-jfrog-artifactory-releases</name>
+      <id>bintray-asciidoctor-maven</id>
+      <name>bintray-asciidoctor-maven</name>
+      <url>https://dl.bintray.com/asciidoctor/maven/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>oss-jfrog-artifactory-snapshot</id>
+      <name>oss-jfrog-artifactory-snapshot</name>
       <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>

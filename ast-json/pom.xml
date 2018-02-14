@@ -11,11 +11,14 @@
 
   <repositories>
     <repository>
-      <id>oss-jfrog-artifactory</id>
-      <name>oss-jfrog-artifactory-releases</name>
+      <id>bintray-asciidoctor-maven</id>
+      <name>bintray-asciidoctor-maven</name>
       <url>https://dl.bintray.com/asciidoctor/maven/</url>
-      <snapshots>
+      <releases>
         <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
       </snapshots>
     </repository>
   </repositories>
