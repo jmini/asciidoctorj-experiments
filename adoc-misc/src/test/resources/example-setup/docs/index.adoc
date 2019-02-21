@@ -1,0 +1,15 @@
+// {root} shoud point to the `docs/` folder
+ifndef::root[]
+:root: 
+endif::[]
+// init this page in case of standalone display
+ifndef::init[]
+include::{root}_init.adoc[]
+endif::[]
+
+== All pages
+
+Concepts:
+
+* {lorem}
+* {ipsum}

@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+}
+
+wrapper {
+    gradleVersion = '5.0'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'fr.jmini.utils:substring-finder:1.0.1'
+
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testCompile "org.assertj:assertj-core:$assertjVersion"
+
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    //workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=538956
+    testRuntime "org.junit.jupiter:junit-jupiter-migrationsupport:$junitVersion"
+}
+

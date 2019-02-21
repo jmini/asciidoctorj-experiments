@@ -1,0 +1,9 @@
+//references start
+:all-pages: <<{root}index.adoc#, All pages>>
+:finibus-lorem: <<{root}concepts/lorem.adoc#, finibus lorem>>
+:ipsum: <<{root}concepts/ipsum.adoc#, Ipsum>>
+:lorem: <<{root}concepts/lorem.adoc#, Lorem>>
+:_lorem: <<{root}concepts/lorem.adoc#, lorem>>
+//references end
+
+:init: OK

@@ -1,0 +1,17 @@
+// {root} shoud point to the `docs/` folder
+ifndef::root[]
+:root: ../
+endif::[]
+// init this page in case of standalone display:
+ifndef::init[]
+include::{root}_init.adoc[]
+endif::[]
+
+//ALIAS: lorem
+// ALIAS: finibus lorem
+
+== Lorem
+
+Lorem diam sed, efficitur massa.
+
+// ALIAS: wrong alias

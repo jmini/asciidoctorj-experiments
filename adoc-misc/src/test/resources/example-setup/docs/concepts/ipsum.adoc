@@ -1,0 +1,13 @@
+// {root} shoud point to the `docs/` folder
+ifndef::root[]
+:root: ../
+endif::[]
+ifndef::init[]
+include::{root}_init.adoc[]
+endif::[]
+
+//tag::description[]
+== Ipsum
+
+Ipsum sed in risus rutrum, commodo quam nec, viverra nulla.
+Curabitur porta tincidunt urna.s
