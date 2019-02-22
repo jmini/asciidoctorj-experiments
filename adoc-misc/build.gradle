@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation 'fr.jmini.utils:substring-finder:1.0.1'
+    implementation 'org.jsoup:jsoup:1.10.2'
 
     testCompile "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testCompile "org.assertj:assertj-core:$assertjVersion"
